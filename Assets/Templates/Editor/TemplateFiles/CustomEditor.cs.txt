@@ -1,0 +1,20 @@
+/*****************************************************************************
+// File Name : #SCRIPTNAME#.cs
+// Author :
+// Creation Date : 
+// Last Modified : 
+//
+// Brief Description : 
+*****************************************************************************/
+using UnityEditor
+
+    #ROOTNAMESPACEBEGIN#
+[CustomEditor(typeof(YourComponentType))]
+public class #SCRIPTNAME# : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+    }
+}
+#ROOTNAMESPACEEND#
