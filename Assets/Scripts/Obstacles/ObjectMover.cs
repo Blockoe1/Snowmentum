@@ -1,5 +1,5 @@
 /*****************************************************************************
-// File Name : ObstacleMover.cs
+// File Name : ObjectMover.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/13/2025
 // Last Modified : 9/13/2025
@@ -10,7 +10,8 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    public class ObstacleMover : MonoBehaviour
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class ObjectMover : MonoBehaviour
     {
         [SerializeField] private ScriptableValue obstacleSpeed;
         [SerializeField, Tooltip("The angle that the snowball moves at, based on the approximate angle of " +
