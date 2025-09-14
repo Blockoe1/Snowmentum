@@ -14,9 +14,9 @@ namespace Snowmentum
     [CreateAssetMenu(fileName = "ScriptableValue", menuName = "ScriptableObjects/ScriptableValue")]
     public class ScriptableValue : ScriptableObject
     {
-        private float val;
+        [SerializeField] private float val;
 
-        public event Action<float> OnValueChanged;
+        public event Action<float, float> OnValueChanged;
  
         #region Properties
         public float Value
@@ -24,8 +24,9 @@ namespace Snowmentum
             get { return val; }
             set
             {
+                float oldVal = val;
                 val = value;
-                OnValueChanged?.Invoke(val);
+                OnValueChanged?.Invoke(val, oldVal);
             }
         }
         #endregion
@@ -35,7 +36,15 @@ namespace Snowmentum
         /// </summary>
         private void OnEnable()
         {
-            val = 0;
+            Value = 0;
+        }
+
+        /// <summary>
+        /// Call the Value setter when we modify the value of val in the inspector.
+        /// </summary>
+        private void OnValidate()
+        {
+            Value = val;
         }
     }
 }

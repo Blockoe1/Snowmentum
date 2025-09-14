@@ -13,15 +13,11 @@ namespace Snowmentum
     [RequireComponent(typeof(Rigidbody2D))]
     public class ObjectMover : MonoBehaviour
     {
+        [SerializeField] ObstacleSettings settings;
         [SerializeField] private ScriptableValue obstacleSpeed;
-        [SerializeField, Tooltip("The angle that the snowball moves at, based on the approximate angle of " +
-            "the hillside.  Should be based on 0 degrees being to the right.")] 
-        private float moveAngle;
-
-        //private float speed = 5f;
-        [SerializeField, HideInInspector] private Vector2 moveVector;
 
         #region Component References
+        [Header("Components")]
         [SerializeReference] private Rigidbody2D rb;
 
         /// <summary>
@@ -43,19 +39,11 @@ namespace Snowmentum
         //#endregion
 
         /// <summary>
-        /// When the value of MoveAngle is changed, we should update our value of MoveVector automatically.
-        /// </summary>
-        private void OnValidate()
-        {
-            moveVector = MathHelpers.DegAngleToUnitVector(moveAngle);
-        }
-
-        /// <summary>
         /// Continually moves the obstacles along their given move angle.
         /// </summary>
         private void FixedUpdate()
         {
-            rb.linearVelocity = moveVector * obstacleSpeed.Value;
+            rb.linearVelocity = settings.MoveVector * obstacleSpeed.Value;
         }
     }
 }

@@ -4,6 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - settings: {fileID: 11400000, guid: 4b57ef89a5f5b514584bd86fe5ba2096, type: 2}
   - snowballSize: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
