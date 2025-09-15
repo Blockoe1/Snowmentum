@@ -17,6 +17,7 @@ namespace Snowmentum
         [SerializeField] private float startingValue;
         [SerializeField, Tooltip("The amount the ScriptableValue increases each second.")] 
         private float increasePerSecond;
+        [SerializeField] private bool useFixedUpdate;
 
         /// <summary>
         /// Resets the scriptable value to it's starting value
@@ -34,7 +35,18 @@ namespace Snowmentum
         /// </summary>
         private void Update()
         {
-            value.Value += increasePerSecond * Time.deltaTime;
+            if (!useFixedUpdate)
+            {
+                value.Value += increasePerSecond * Time.deltaTime;
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            if (useFixedUpdate)
+            {
+                value.Value += increasePerSecond * Time.fixedDeltaTime;
+            }
         }
     }
 }

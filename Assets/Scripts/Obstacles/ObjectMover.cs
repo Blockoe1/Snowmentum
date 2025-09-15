@@ -43,7 +43,7 @@ namespace Snowmentum
         /// </summary>
         private void FixedUpdate()
         {
-            rb.linearVelocity = settings.MoveVector * obstacleSpeed.Value;
+            rb.MovePosition(rb.position + (settings.MoveVector * obstacleSpeed.Value * Time.fixedDeltaTime));
         }
     }
 }

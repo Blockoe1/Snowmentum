@@ -106,6 +106,7 @@ MonoBehaviour:
   value: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
   startingValue: 2
   increasePerSecond: 0.1
+  useFixedUpdate: 1
 --- !u!114 &2857301978595599755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +122,7 @@ MonoBehaviour:
   value: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
   startingValue: 1
   increasePerSecond: 0.1
+  useFixedUpdate: 1
 --- !u!50 &3341841721575561879
 Rigidbody2D:
   serializedVersion: 5
