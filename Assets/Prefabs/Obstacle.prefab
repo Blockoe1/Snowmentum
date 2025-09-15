@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8871070839524519023}
   - component: {fileID: 3304603884408545833}
   - component: {fileID: 8392171218554760631}
-  - component: {fileID: 4024112017765397815}
   - component: {fileID: 8657666669540303953}
   m_Layer: 0
   m_Name: Obstacle
@@ -164,21 +163,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4024112017765397815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5150288299065344882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2762447730aecdf45953659c21997511, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 4b57ef89a5f5b514584bd86fe5ba2096, type: 2}
-  obstacleSpeed: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
-  rb: {fileID: 3304603884408545833}
 --- !u!114 &8657666669540303953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: 4b57ef89a5f5b514584bd86fe5ba2096, type: 2}
+  obstacleSpeed: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
+  rb: {fileID: 3304603884408545833}
   obstacleSize: 4
   snowballSize: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
-  rb: {fileID: 3304603884408545833}

@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    public class ObstacleScaler : MonoBehaviour
+    public class ObstacleScaleMover : ObjectMover
     {
         [Header("Values")]
         [SerializeField, Tooltip("The in-game size of this obstacle.  Used to determine how large this obstacle is " +
@@ -19,25 +19,11 @@ namespace Snowmentum
         private float obstacleSize;
 
         [Header("SO References")]
-        [SerializeField] ObstacleSettings settings;
         [SerializeField, Tooltip("The ScriptableValue that holds the current size of the snowball.")] 
         private ScriptableValue snowballSize;
 
         private Vector3 baseSize;
-
-        #region Component References
-        [Header("Components")]
-        [SerializeReference] private Rigidbody2D rb;
-
-        /// <summary>
-        /// Get components on reset.
-        /// </summary>
-        [ContextMenu("Get Component References")]
-        private void Reset()
-        {
-            rb = GetComponent<Rigidbody2D>();
-        }
-        #endregion
+        private float oldSize = 1;
 
         #region Properties
         private Vector2 PivotPoint
@@ -58,36 +44,96 @@ namespace Snowmentum
         {
             // Store our base size.
             baseSize = transform.localScale;
-            snowballSize.OnValueChanged += UpdateSize;
+            //snowballSize.OnValueChanged += UpdateSize;
         }
         private void OnDestroy()
         {
-            snowballSize.OnValueChanged -= UpdateSize;
+            //snowballSize.OnValueChanged -= UpdateSize;
         }
 
         /// <summary>
         /// Updates the scale of this obstacle based on the snowball's size.
         /// </summary>
         /// <param name="snowballSize">The current size of the snowball.</param>
-        private void UpdateSize(float snowballSize, float oldSize)
-        {
-            // Dont allow any scale updating if the snowball is set to a size of 0.
-            if (snowballSize == 0) { return; }
+        //private void UpdateSize(float snowballSize, float oldSize)
+        //{
+        //    // Dont allow any scale updating if the snowball is set to a size of 0.
+        //    if (snowballSize == 0) { return; }
 
-            float sizeRatio = obstacleSize / snowballSize;
+        //    float sizeRatio = obstacleSize / snowballSize;
+        //    if (settings.ScalePerspective)
+        //    {
+        //        // Scale the obstacle's position based on the size ratio so that the perspective scales.  Two obstacles
+        //        // get closer to each other as they are scaled down.
+        //        // Debug.Log(oldSize);
+        //        float oldSizeRatio = obstacleSize / oldSize;
+        //        ScaleAround(PivotPoint, oldSizeRatio, sizeRatio);
+        //    }
+        //    else
+        //    {
+        //        // Scales the object based on the ratio of the obstacle and snowball sizes.
+        //        ScaleObstacle(sizeRatio);
+        //    }
+        //}
+
+        /// <summary>
+        /// Continually update the size of our obstacle based on the size of the snowball.
+        /// </summary>
+        protected override Vector2 MoveUpdate(Vector2 targetPos)
+        {
+            
+            // Scales the obstacle around a given pivot point.
+            void ScaleAround(Vector2 pivot, float oldScale, float newScale)
+            {
+                if (newScale == Mathf.Infinity || oldScale == Mathf.Infinity || oldScale == 0)
+                {
+                    // If either scale invalid, then we should skip any scaling because values of infinity or 0 will
+                    // make the math break.
+                    return;
+                }
+
+                // Calculates the vector pointing from the pivot point to the current position.
+                Vector2 pivotToCurrent = targetPos - pivot;
+                // Calculates the change in scale between the old and new scales.  Used to determine how much to scale
+                // the position by.
+                float scaleFactor = newScale / oldScale;
+                //Calculates the final position of the obstacle by scaling our pivotToCurrent vector by our scaleFactor.
+                Vector3 finalPosition = pivot + (pivotToCurrent * scaleFactor);
+                // Apply the scaling and translation.
+                ScaleObstacle(newScale);
+                // update our target position to account for changes in scale.
+                targetPos = finalPosition;
+            }
+
+            // Dont allow any scale updating if the snowball is set to a size of 0.
+            if(snowballSize.Value == 0) { return targetPos; }
+
+            float sizeRatio = obstacleSize / snowballSize.Value;
+            // Save the size ratio of this iteration so that changes in size can be tracked.
             if (settings.ScalePerspective)
             {
                 // Scale the obstacle's position based on the size ratio so that the perspective scales.  Two obstacles
                 // get closer to each other as they are scaled down.
-                // Debug.Log(oldSize);
-                float oldSizeRatio = obstacleSize / oldSize;
-                ScaleAround(PivotPoint, oldSizeRatio, sizeRatio);
+                ScaleAround(PivotPoint, oldSize, sizeRatio);
             }
             else
             {
                 // Scales the object based on the ratio of the obstacle and snowball sizes.
                 ScaleObstacle(sizeRatio);
             }
+
+            // Store the size ratio used this update so that we can reference it next update.
+            oldSize = sizeRatio;
+            return base.MoveUpdate(targetPos);
+        }
+
+        /// <summary>
+        /// Scales this obstacle based on it's base size.
+        /// </summary>
+        /// <param name="scale">The scale to set for this obstacle.</param>
+        private void ScaleObstacle(float scale)
+        {
+            transform.localScale = baseSize * scale;
         }
 
         ///// <summary>
@@ -154,36 +200,29 @@ namespace Snowmentum
         /// <param name="pivot">The pivot point to scale the obstacle around.</param>
         /// <param name="oldScale">The old scale of the obstacle</param>
         /// <param name="newScale">The new scale of the obstacle.</param>
-        private void ScaleAround(Vector2 pivot, float oldScale, float newScale)
-        {
-            if (newScale == Mathf.Infinity || oldScale == Mathf.Infinity || oldScale == 0)
-            {
-                // If either scale invalid, then we should skip any scaling because values of infinity or 0 will
-                // make the math break.
-                return;
-            }
+        //private void ScaleAround(Vector2 pivot, float oldScale, float newScale)
+        //{
+        //    if (newScale == Mathf.Infinity || oldScale == Mathf.Infinity || oldScale == 0)
+        //    {
+        //        // If either scale invalid, then we should skip any scaling because values of infinity or 0 will
+        //        // make the math break.
+        //        return;
+        //    }
 
-            // Gets the current position of the obstacle.s
-            Vector2 currentPos = rb.position;
-            // Calculates the vector pointing from the pivot point to the current position.
-            Vector2 pivotToCurrent = currentPos - pivot;
-            // Calculates the change in scale between the old and new scales.  Used to determine how much to scale
-            // the position by.
-            float scaleFactor = newScale / oldScale;
-            //Calculates the final position of the obstacle by scaling our pivotToCurrent vector by our scaleFactor.
-            Vector3 finalPosition = pivot + (pivotToCurrent * scaleFactor);
-            // Apply the scaling and translation.
-            ScaleObstacle(newScale);
-            rb.MovePosition(finalPosition);
-        }
-
-        /// <summary>
-        /// Scales this obstacle based on it's base size.
-        /// </summary>
-        /// <param name="scale">The scale to set for this obstacle.</param>
-        private void ScaleObstacle(float scale)
-        {
-            transform.localScale = baseSize * scale;
-        }
+        //    // Gets the current position of the obstacle.s
+        //    Vector2 currentPos = rb.position;
+        //    // Calculates the vector pointing from the pivot point to the current position.
+        //    Vector2 pivotToCurrent = currentPos - pivot;
+        //    // Calculates the change in scale between the old and new scales.  Used to determine how much to scale
+        //    // the position by.
+        //    float scaleFactor = newScale / oldScale;
+        //    //Calculates the final position of the obstacle by scaling our pivotToCurrent vector by our scaleFactor.
+        //    Vector3 finalPosition = pivot + (pivotToCurrent * scaleFactor);
+        //    // Apply the scaling and translation.
+        //    ScaleObstacle(newScale);
+        //    //Debug.Log("Obstacle scaler happened for " + name);
+        //    // Have to use .position instead of movePosition
+        //    rb.position = finalPosition;
+        //}
     }
 }

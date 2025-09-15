@@ -13,12 +13,12 @@ namespace Snowmentum
     [RequireComponent(typeof(Rigidbody2D))]
     public class ObjectMover : MonoBehaviour
     {
-        [SerializeField] ObstacleSettings settings;
+        [SerializeField] protected ObstacleSettings settings;
         [SerializeField] private ScriptableValue obstacleSpeed;
 
         #region Component References
         [Header("Components")]
-        [SerializeReference] private Rigidbody2D rb;
+        [SerializeReference] protected Rigidbody2D rb;
 
         /// <summary>
         /// Get components on reset.
@@ -43,7 +43,23 @@ namespace Snowmentum
         /// </summary>
         private void FixedUpdate()
         {
-            rb.MovePosition(rb.position + (settings.MoveVector * obstacleSpeed.Value * Time.fixedDeltaTime));
+            //Debug.Log(name + "" + (settings.MoveVector * obstacleSpeed.Value * Time.fixedDeltaTime));
+            // Default movement determined by the speed of the snowball.
+            Vector2 targetPos = rb.position + (settings.MoveVector * obstacleSpeed.Value * Time.fixedDeltaTime);
+            // Update the target pos based on overrides of child classes.
+            targetPos = MoveUpdate(targetPos);
+            rb.MovePosition(targetPos);
+        }
+
+        /// <summary>
+        /// Loop for determining updates to the player's position each physics update.
+        /// </summary>
+        /// <param name="targetPos">The current target position that the object is trying to move to.</param>
+        /// <returns>The new target position after the update.</returns>
+        protected virtual Vector2 MoveUpdate(Vector2 targetPos)
+        {
+            // By default, just pass target pos back in.
+            return targetPos;
         }
     }
 }
