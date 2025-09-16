@@ -38,6 +38,8 @@ namespace Snowmentum
                 return new Vector2(-5, 0);
             }
         }
+
+        public float Size => obstacleSize;
         #endregion
 
         /// <summary>
