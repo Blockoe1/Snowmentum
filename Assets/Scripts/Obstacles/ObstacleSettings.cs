@@ -19,11 +19,15 @@ namespace Snowmentum
         [SerializeField, Tooltip("If true, then the obstacle's position in the hill will automatically be adjusted" +
     " to add to the illusion of the snowball getting bigger.")]
         private bool scalePerspective;
+        [SerializeField, Tooltip("When set to true, the object will scale it's position based on it's starting size" +
+    " when it spawns.  This results in obstacles spawning at varied locations based on their size.")]
+        private bool scaleOnSpawn;
 
         [SerializeField, HideInInspector] private Vector2 moveVector;
 
         #region Properties
         public bool ScalePerspective => scalePerspective;
+        public bool ScaleOnSpawn => scaleOnSpawn;
         public float MoveAngle => moveAngle;
         public Vector2 MoveVector => moveVector;
         #endregion
