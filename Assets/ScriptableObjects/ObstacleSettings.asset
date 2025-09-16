@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveAngle: 177.5
   scalePerspective: 1
+  scaleOnSpawn: 0
   moveVector: {x: -0.99904823, y: 0.04361953}

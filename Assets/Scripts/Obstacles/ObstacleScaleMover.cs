@@ -43,6 +43,7 @@ namespace Snowmentum
         private void Awake()
         {
             // Store our base size.
+            oldSize = settings.ScaleOnSpawn ? 1 : 0;
             baseSize = transform.localScale;
             //snowballSize.OnValueChanged += UpdateSize;
         }
