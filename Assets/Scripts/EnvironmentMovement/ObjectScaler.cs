@@ -53,7 +53,7 @@ namespace Snowmentum
         /// <summary>
         /// Continually update the size of our obstacle based on the size of the snowball.
         /// </summary>
-        public Vector2 MoveUpdate(Vector2 targetPos)
+        public Vector2 MoveUpdate(Vector2 targetPos, float moveAngle)
         {
             // Scales the obstacle around a given pivot point.
             void ScaleAround(Vector2 pivot, float oldScale, float newScale)

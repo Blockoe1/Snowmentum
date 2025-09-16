@@ -67,7 +67,7 @@ namespace Snowmentum
             // Update the target pos based on overrides of movement modifiers, such as scaling with perspective.
             foreach(IMovementModifier modifier in moveModifiers)
             {
-                targetPos = modifier.MoveUpdate(targetPos);
+                targetPos = modifier.MoveUpdate(targetPos, moveAngle);
             }
             myRigidbody.MovePosition(targetPos);
         }
