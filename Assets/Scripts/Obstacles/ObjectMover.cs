@@ -2,9 +2,9 @@
 // File Name : ObjectMover.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/13/2025
-// Last Modified : 9/13/2025
+// Last Modified : 9/16/2025
 //
-// Brief Description : Moves the obstacles towards the snowball.
+// Brief Description : Moves objects across the screen based on some settings for this type of object.
 *****************************************************************************/
 using UnityEngine;
 
@@ -13,7 +13,7 @@ namespace Snowmentum
     [RequireComponent(typeof(Rigidbody2D))]
     public class ObjectMover : MonoBehaviour
     {
-        [SerializeField] protected ObstacleSettings settings;
+        [SerializeField] protected MovementSettings settings;
         [SerializeField] private ScriptableValue obstacleSpeed;
 
         #region Component References
