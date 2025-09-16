@@ -1,26 +1,23 @@
 /*****************************************************************************
-// File Name : ObstacleScaler.cs
+// File Name : ObjectScaler.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/13/2025
-// Last Modified : 9/13/2025
+// Last Modified : 9/16/2025
 //
-// Brief Description : Scales obstacle sizes based on the size of the snowball to give the illusion of the snowball
-// getting larger.
+// Brief Description : Scales the object according to the size of the snowball.
 *****************************************************************************/
 using UnityEngine;
 
 namespace Snowmentum
 {
-    public class ObstacleScaleMover : ObjectMover
+    public class ObjectScaler : MonoBehaviour
     {
+        [SerializeField, Tooltip("The ScriptableValue that holds the current size of the snowball.")]
+        private ScriptableValue snowballSize;
         [Header("Values")]
         [SerializeField, Tooltip("The in-game size of this obstacle.  Used to determine how large this obstacle is " +
     "in relation to the snowball.")]
         private float obstacleSize;
-
-        [Header("SO References")]
-        [SerializeField, Tooltip("The ScriptableValue that holds the current size of the snowball.")] 
-        private ScriptableValue snowballSize;
 
         private Vector3 baseSize;
         private float oldSize = 1;
