@@ -453,9 +453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2762447730aecdf45953659c21997511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 4b57ef89a5f5b514584bd86fe5ba2096, type: 2}
+  movementSettings: {fileID: 11400000, guid: 4b57ef89a5f5b514584bd86fe5ba2096, type: 2}
   obstacleSpeed: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
-  rb: {fileID: 1554472131}
+  myRigidbody: {fileID: 1554472131}
 --- !u!50 &1554472131
 Rigidbody2D:
   serializedVersion: 5
@@ -654,9 +654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2762447730aecdf45953659c21997511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 4b57ef89a5f5b514584bd86fe5ba2096, type: 2}
+  movementSettings: {fileID: 11400000, guid: 4b57ef89a5f5b514584bd86fe5ba2096, type: 2}
   obstacleSpeed: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
-  rb: {fileID: 1921170543}
+  myRigidbody: {fileID: 1921170543}
 --- !u!50 &1921170543
 Rigidbody2D:
   serializedVersion: 5

@@ -6,6 +6,7 @@
 //
 // Brief Description : Moves objects across the screen based on some settings for this type of object.
 *****************************************************************************/
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Snowmentum
@@ -13,12 +14,14 @@ namespace Snowmentum
     [RequireComponent(typeof(Rigidbody2D))]
     public class ObjectMover : MonoBehaviour
     {
-        [SerializeField] protected MovementSettings settings;
+        [SerializeField] protected MovementSettings movementSettings;
         [SerializeField] private ScriptableValue obstacleSpeed;
+
+        private IMovementModifier[] moveModifiers;
 
         #region Component References
         [Header("Components")]
-        [SerializeReference] protected Rigidbody2D rb;
+        [SerializeReference] protected Rigidbody2D myRigidbody;
 
         /// <summary>
         /// Get components on reset.
@@ -26,7 +29,7 @@ namespace Snowmentum
         [ContextMenu("Get Component References")]
         private void Reset()
         {
-            rb = GetComponent<Rigidbody2D>();
+            myRigidbody = GetComponent<Rigidbody2D>();
         }
         #endregion
 
@@ -39,27 +42,32 @@ namespace Snowmentum
         //#endregion
 
         /// <summary>
+        /// Get all components on this object that modify movement so that they can be updated each FixedUpdate.
+        /// </summary>
+        private void Awake()
+        {
+            moveModifiers = GetComponents<IMovementModifier>();
+            // Give all of our movement modifiers our movement settings automatically.
+            foreach(IMovementModifier modifier in moveModifiers)
+            {
+                modifier.PassSettings(movementSettings);
+            }
+        }
+
+        /// <summary>
         /// Continually moves the obstacles along their given move angle.
         /// </summary>
         private void FixedUpdate()
         {
             //Debug.Log(name + "" + (settings.MoveVector * obstacleSpeed.Value * Time.fixedDeltaTime));
             // Default movement determined by the speed of the snowball.
-            Vector2 targetPos = rb.position + (settings.MoveVector * obstacleSpeed.Value * Time.fixedDeltaTime);
-            // Update the target pos based on overrides of child classes.
-            targetPos = MoveUpdate(targetPos);
-            rb.MovePosition(targetPos);
-        }
-
-        /// <summary>
-        /// Loop for determining updates to the player's position each physics update.
-        /// </summary>
-        /// <param name="targetPos">The current target position that the object is trying to move to.</param>
-        /// <returns>The new target position after the update.</returns>
-        protected virtual Vector2 MoveUpdate(Vector2 targetPos)
-        {
-            // By default, just pass target pos back in.
-            return targetPos;
+            Vector2 targetPos = myRigidbody.position + (movementSettings.MoveVector * obstacleSpeed.Value * Time.fixedDeltaTime);
+            // Update the target pos based on overrides of movement modifiers, such as scaling with perspective.
+            foreach(IMovementModifier modifier in moveModifiers)
+            {
+                targetPos = modifier.MoveUpdate(targetPos);
+            }
+            myRigidbody.MovePosition(targetPos);
         }
     }
 }

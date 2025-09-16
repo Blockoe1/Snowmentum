@@ -10,7 +10,8 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    public class ObjectScaler : MonoBehaviour
+    [RequireComponent(typeof(ObjectMover))]
+    public class ObjectScaler : MonoBehaviour, IMovementModifier
     {
         [SerializeField, Tooltip("The ScriptableValue that holds the current size of the snowball.")]
         private ScriptableValue snowballSize;
@@ -18,6 +19,8 @@ namespace Snowmentum
         [SerializeField, Tooltip("The in-game size of this obstacle.  Used to determine how large this obstacle is " +
     "in relation to the snowball.")]
         private float obstacleSize;
+
+        private MovementSettings movementSettings;
 
         private Vector3 baseSize;
         private float oldSize = 1;
@@ -40,14 +43,22 @@ namespace Snowmentum
         private void Awake()
         {
             // Store our base size.
-            oldSize = settings.ScaleOnSpawn ? 1 : 0;
             baseSize = transform.localScale;
-            //snowballSize.OnValueChanged += UpdateSize;
         }
-        private void OnDestroy()
+
+        /// <summary>
+        /// Get the MovementSettings from the ObjectMover on this object.
+        /// </summary>
+        /// <remarks>
+        /// Called on Awake.
+        /// </remarks>
+        /// <param name="settings"></param>
+        public void PassSettings(MovementSettings settings)
         {
-            //snowballSize.OnValueChanged -= UpdateSize;
+            movementSettings = settings;
+            oldSize = settings.ScaleOnSpawn ? 1 : 0;
         }
+
 
         /// <summary>
         /// Updates the scale of this obstacle based on the snowball's size.
@@ -77,9 +88,8 @@ namespace Snowmentum
         /// <summary>
         /// Continually update the size of our obstacle based on the size of the snowball.
         /// </summary>
-        protected override Vector2 MoveUpdate(Vector2 targetPos)
+        public Vector2 MoveUpdate(Vector2 targetPos)
         {
-            
             // Scales the obstacle around a given pivot point.
             void ScaleAround(Vector2 pivot, float oldScale, float newScale)
             {
@@ -108,7 +118,7 @@ namespace Snowmentum
 
             float sizeRatio = obstacleSize / snowballSize.Value;
             // Save the size ratio of this iteration so that changes in size can be tracked.
-            if (settings.ScalePerspective)
+            if (movementSettings.ScalePerspective)
             {
                 // Scale the obstacle's position based on the size ratio so that the perspective scales.  Two obstacles
                 // get closer to each other as they are scaled down.
@@ -122,7 +132,7 @@ namespace Snowmentum
 
             // Store the size ratio used this update so that we can reference it next update.
             oldSize = sizeRatio;
-            return base.MoveUpdate(targetPos);
+            return targetPos;
         }
 
         /// <summary>
