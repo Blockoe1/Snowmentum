@@ -13,7 +13,6 @@ namespace Snowmentum
 {
     public interface IMovementModifier
     {
-        void PassSettings(MovementSettings settings);
         Vector2 MoveUpdate(Vector2 targetPos);
     }
 }

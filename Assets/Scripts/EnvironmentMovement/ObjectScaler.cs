@@ -15,12 +15,15 @@ namespace Snowmentum
     {
         [SerializeField, Tooltip("The ScriptableValue that holds the current size of the snowball.")]
         private ScriptableValue snowballSize;
-        [Header("Values")]
         [SerializeField, Tooltip("The in-game size of this obstacle.  Used to determine how large this obstacle is " +
     "in relation to the snowball.")]
         private float obstacleSize;
-
-        private MovementSettings movementSettings;
+        [SerializeField, Tooltip("If true, then the obstacle's position in the hill will automatically be adjusted" +
+    " to add to the illusion of the snowball getting bigger.")]
+        private bool scalePerspective;
+        [SerializeField, Tooltip("When set to true, the object will scale it's position based on it's starting size" +
+    " when it spawns.  This results in obstacles spawning at varied locations based on their size.")]
+        private bool scaleOnSpawn;
 
         private Vector3 baseSize;
         private float oldSize = 1;
@@ -44,46 +47,8 @@ namespace Snowmentum
         {
             // Store our base size.
             baseSize = transform.localScale;
+            oldSize = scaleOnSpawn ? 1 : 0;
         }
-
-        /// <summary>
-        /// Get the MovementSettings from the ObjectMover on this object.
-        /// </summary>
-        /// <remarks>
-        /// Called on Awake.
-        /// </remarks>
-        /// <param name="settings"></param>
-        public void PassSettings(MovementSettings settings)
-        {
-            movementSettings = settings;
-            oldSize = settings.ScaleOnSpawn ? 1 : 0;
-        }
-
-
-        /// <summary>
-        /// Updates the scale of this obstacle based on the snowball's size.
-        /// </summary>
-        /// <param name="snowballSize">The current size of the snowball.</param>
-        //private void UpdateSize(float snowballSize, float oldSize)
-        //{
-        //    // Dont allow any scale updating if the snowball is set to a size of 0.
-        //    if (snowballSize == 0) { return; }
-
-        //    float sizeRatio = obstacleSize / snowballSize;
-        //    if (settings.ScalePerspective)
-        //    {
-        //        // Scale the obstacle's position based on the size ratio so that the perspective scales.  Two obstacles
-        //        // get closer to each other as they are scaled down.
-        //        // Debug.Log(oldSize);
-        //        float oldSizeRatio = obstacleSize / oldSize;
-        //        ScaleAround(PivotPoint, oldSizeRatio, sizeRatio);
-        //    }
-        //    else
-        //    {
-        //        // Scales the object based on the ratio of the obstacle and snowball sizes.
-        //        ScaleObstacle(sizeRatio);
-        //    }
-        //}
 
         /// <summary>
         /// Continually update the size of our obstacle based on the size of the snowball.
@@ -118,7 +83,7 @@ namespace Snowmentum
 
             float sizeRatio = obstacleSize / snowballSize.Value;
             // Save the size ratio of this iteration so that changes in size can be tracked.
-            if (movementSettings.ScalePerspective)
+            if (scalePerspective)
             {
                 // Scale the obstacle's position based on the size ratio so that the perspective scales.  Two obstacles
                 // get closer to each other as they are scaled down.
@@ -143,94 +108,5 @@ namespace Snowmentum
         {
             transform.localScale = baseSize * scale;
         }
-
-        ///// <summary>
-        ///// Scales this object's position on the hill based on it's size to give the illusion of proper scaling.
-        ///// </summary>
-        ///// <param name="newScale">The ratio of this obstacle's size to the snowball's size.</param>
-        ///// <param name="oldScale">
-        ///// The old size ratio, as caluclated by the value of the previous snowball size
-        ///// </param>
-        //private void ScaleObstaclePosition(float newScale, float oldScale)
-        //{
-        //    // Calculate the change in the ratio of the obstacles size vs the snowball size.  This value will be used
-        //    // to determine how much to scale our position by.
-        //    //float ratioChange = newScale / oldScale;
-        //    //Debug.Log($"Old Ratio: {oldScale}.  New Ratio: {newScale}");
-        //    //Debug.Log(oldSizeRatio);
-        //    //// Calculate the percentage change in the snowball's size.
-        //    //float oldSize = snowballSize - snowballSizeChange;
-        //    //float percentChange = oldSize == 0 ? 0 : (snowballSizeChange / oldSize);
-        //    //Debug.Log(percentChange);
-        //    // Going to use -5 as a magic number for now.  In the future replace this w/ a value that corresponds
-        //    // to the player's X position.
-        //    //Vector2 pivotPoint = GetPivotPoint(rb.position, -5, settings.MoveAngle);
-        //    Vector2 pivotPoint = new Vector2(-5, 0);
-
-        //    // Calculate a new position to jump to based on if we need to get closer or further away from our target
-        //    // position.
-        //    //pos = pivotPoint + (-toPointVector * ratioChange);
-
-        //    ScaleAround(pivotPoint, oldScale, newScale);
-
-        //    // Return the player's position to be relative to 0,0
-        //    //pos.x += playerXPos;
-        //    //rb.MovePosition(pos);
-        //}
-
-        /// <summary>
-        /// Calculates the scale pivot point of a given obstacle along the player's line of movement
-        /// </summary>
-        /// <param name="currentPosition">The current position of the obstacle.</param>
-        /// <param name="playerXPosition">
-        /// The X position of the player.  Used to calculate the pivot point along this obstacle's path of movement.
-        /// </param>
-        /// <param name="angle">The angle that the obstacle is moving at.</param>
-        /// <returns>The pivot point of the obstacle.</returns>
-        private static Vector2 GetPivotPoint(Vector2 currentPosition, float playerXPosition, float angle)
-        {
-            // Offsets the obstacle's position to use the player's X position as it's pivot point.
-            currentPosition.x -= playerXPosition;
-
-            // Get the vector that points from the obstacle's current position to the point they'll cross the player's
-            // X position.
-
-            // Calculate the inner angle of the triangle used to find the point vector.
-            float theta = Mathf.Deg2Rad * (180 - angle);
-            Vector2 toPointVector = new Vector2(-currentPosition.x, currentPosition.x * Mathf.Tan(theta));
-            
-            return currentPosition + toPointVector;
-        }
-
-        /// <summary>
-        /// Scales an object around a given pivot point using a Rigidbody.
-        /// </summary>
-        /// <param name="pivot">The pivot point to scale the obstacle around.</param>
-        /// <param name="oldScale">The old scale of the obstacle</param>
-        /// <param name="newScale">The new scale of the obstacle.</param>
-        //private void ScaleAround(Vector2 pivot, float oldScale, float newScale)
-        //{
-        //    if (newScale == Mathf.Infinity || oldScale == Mathf.Infinity || oldScale == 0)
-        //    {
-        //        // If either scale invalid, then we should skip any scaling because values of infinity or 0 will
-        //        // make the math break.
-        //        return;
-        //    }
-
-        //    // Gets the current position of the obstacle.s
-        //    Vector2 currentPos = rb.position;
-        //    // Calculates the vector pointing from the pivot point to the current position.
-        //    Vector2 pivotToCurrent = currentPos - pivot;
-        //    // Calculates the change in scale between the old and new scales.  Used to determine how much to scale
-        //    // the position by.
-        //    float scaleFactor = newScale / oldScale;
-        //    //Calculates the final position of the obstacle by scaling our pivotToCurrent vector by our scaleFactor.
-        //    Vector3 finalPosition = pivot + (pivotToCurrent * scaleFactor);
-        //    // Apply the scaling and translation.
-        //    ScaleObstacle(newScale);
-        //    //Debug.Log("Obstacle scaler happened for " + name);
-        //    // Have to use .position instead of movePosition
-        //    rb.position = finalPosition;
-        //}
     }
 }

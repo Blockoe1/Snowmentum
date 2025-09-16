@@ -6,7 +6,6 @@
 //
 // Brief Description : Moves objects across the screen based on some settings for this type of object.
 *****************************************************************************/
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Snowmentum
@@ -14,8 +13,15 @@ namespace Snowmentum
     [RequireComponent(typeof(Rigidbody2D))]
     public class ObjectMover : MonoBehaviour
     {
-        [SerializeField] protected MovementSettings movementSettings;
         [SerializeField] private ScriptableValue obstacleSpeed;
+        [SerializeField, Tooltip("The angle that the snowball moves at, based on the approximate angle of " +
+            "the hillside.  Should be based on 0 degrees being to the right.")]
+        private float moveAngle;
+        [SerializeField, Tooltip("How quickly this object should move in comparison to the snowball's speed.  " +
+            "Obstacles should have this value set to 1.")]
+        private float speedScale = 1;
+
+        [SerializeField, HideInInspector] private Vector2 moveVector;
 
         private IMovementModifier[] moveModifiers;
 
@@ -33,13 +39,13 @@ namespace Snowmentum
         }
         #endregion
 
-        //#region Properties
-        //public float Speed
-        //{
-        //    get { return speed; }
-        //    set { speed = value; }
-        //}
-        //#endregion
+        /// <summary>
+        /// When the value of MoveAngle is changed, we should update our value of MoveVector automatically.
+        /// </summary>
+        private void OnValidate()
+        {
+            moveVector = MathHelpers.DegAngleToUnitVector(moveAngle);
+        }
 
         /// <summary>
         /// Get all components on this object that modify movement so that they can be updated each FixedUpdate.
@@ -47,11 +53,6 @@ namespace Snowmentum
         private void Awake()
         {
             moveModifiers = GetComponents<IMovementModifier>();
-            // Give all of our movement modifiers our movement settings automatically.
-            foreach(IMovementModifier modifier in moveModifiers)
-            {
-                modifier.PassSettings(movementSettings);
-            }
         }
 
         /// <summary>
@@ -59,9 +60,10 @@ namespace Snowmentum
         /// </summary>
         private void FixedUpdate()
         {
-            //Debug.Log(name + "" + (settings.MoveVector * obstacleSpeed.Value * Time.fixedDeltaTime));
-            // Default movement determined by the speed of the snowball.
-            Vector2 targetPos = myRigidbody.position + (movementSettings.MoveVector * obstacleSpeed.Value * Time.fixedDeltaTime);
+            // Default movement determined by the speed of the snowball and the speedScale of our settings.
+            Vector2 targetPos = myRigidbody.position + 
+                (moveVector * obstacleSpeed.Value * Time.fixedDeltaTime * speedScale);
+
             // Update the target pos based on overrides of movement modifiers, such as scaling with perspective.
             foreach(IMovementModifier modifier in moveModifiers)
             {
