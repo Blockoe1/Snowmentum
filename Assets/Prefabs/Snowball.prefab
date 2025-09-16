@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
-  startingValue: 2
+  startingValue: 1
   increasePerSecond: 0.1
   useFixedUpdate: 1
 --- !u!114 &2857301978595599755
