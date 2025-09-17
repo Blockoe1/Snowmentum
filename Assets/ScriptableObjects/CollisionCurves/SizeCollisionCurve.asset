@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: SizeCollisionCurve
   m_EditorClassIdentifier: 
   curveSteepness: 2
+  maxDamageProportion: 0.25
   maxGain: 0
   useSizeAsMax: 1

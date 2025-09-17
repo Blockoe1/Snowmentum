@@ -26,6 +26,7 @@ namespace Snowmentum
             {
                 float oldVal = val;
                 val = value;
+                Debug.Log(val);
                 OnValueChanged?.Invoke(val, oldVal);
             }
         }

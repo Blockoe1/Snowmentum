@@ -89,6 +89,7 @@ namespace Snowmentum
         private static void UpdateValue(ScriptableValue value, CollisionResultCurve resultCurve,  
             float obstacleSize, float snowballSize)
         {
+            //Debug.Log(resultCurve.Evaluate(snowballSize, obstacleSize));
             value.Value += resultCurve.Evaluate(snowballSize, obstacleSize);
         }
 

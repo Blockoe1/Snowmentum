@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snowballSize: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
-  obstacleSize: 1
+  obstacleSize: 5
   scalePerspective: 1
   scaleOnSpawn: 0
 --- !u!114 &2339446773185272735

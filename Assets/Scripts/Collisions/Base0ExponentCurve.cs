@@ -24,7 +24,7 @@ namespace Snowmentum
         private float curveScale = 0.01f;
 
         /// <summary>
-        /// Evaluates the values of x and y in the equasion -(curveSteepness ^ (-snowballSize + obstacleSize)) / .
+        /// Evaluates the values of x and y in the equasion -(curveSteepness ^ (-snowballSize + obstacleSize)) / curveScale.
         /// </summary>
         /// <param name="snowballSize"></param>
         /// <param name="obstacleSize"></param>
@@ -34,7 +34,7 @@ namespace Snowmentum
         /// </returns>
         public override float Evaluate(float snowballSize, float obstacleSize)
         {
-            return -Mathf.Pow(curveSteepness, (-snowballSize + obstacleSize)) / curveScale;
+            return -Mathf.Pow(curveSteepness, (-snowballSize + obstacleSize)) * curveScale;
         }
     }
 }
