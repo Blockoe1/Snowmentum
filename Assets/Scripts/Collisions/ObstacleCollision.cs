@@ -71,7 +71,6 @@ namespace Snowmentum
                 UpdateValue(snowballSize, effectOnSize, ObstacleSize, snowballSize.Value);
                 UpdateValue(snowballSpeed, effectOnSpeed, ObstacleSize, snowballSize.Value);
 
-                // Destroy this obstacle if the player is larger than this.
                 if (flagForDestroy)
                 {
                     DestroyObstacle();
