@@ -68,8 +68,9 @@ namespace Snowmentum
                 Debug.Log("Collided with Player");
 
                 // Change the player's values based on our result curves.
-                UpdateValue(snowballSize, effectOnSize, ObstacleSize, snowballSize.Value);
                 UpdateValue(snowballSpeed, effectOnSpeed, ObstacleSize, snowballSize.Value);
+                // Need to update size last so it doesnt interfere with our other calculations.
+                UpdateValue(snowballSize, effectOnSize, ObstacleSize, snowballSize.Value);
 
                 if (flagForDestroy)
                 {
@@ -88,7 +89,7 @@ namespace Snowmentum
         private static void UpdateValue(ScriptableValue value, CollisionResultCurve resultCurve,  
             float obstacleSize, float snowballSize)
         {
-
+            value.Value += resultCurve.Evaluate(snowballSize, obstacleSize);
         }
 
         /// <summary>
