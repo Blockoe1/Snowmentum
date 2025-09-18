@@ -31,6 +31,8 @@ namespace Snowmentum
 
         private Vector2 mouseDelta;
 
+        //used for Player Movement
+        private Rigidbody2D snowballRigidbody;
 
         private void Start()
         {
@@ -39,6 +41,9 @@ namespace Snowmentum
             playerInput.currentActionMap.Enable();
             mouseMovement = playerInput.currentActionMap.FindAction("MouseMovement");
             mouseMovement.started += Handle_SnowballMouseMovement;
+
+
+            snowballRigidbody = GetComponent<Rigidbody2D>();
             
         }
         
@@ -62,7 +67,11 @@ namespace Snowmentum
         //this function moves the snowball up and down in accordance with the movement of the mouse
         private void MoveSnowball()
         {
-            transform.Translate(Vector3.up * mouseDelta.y * movementSensitivity);
+            
+            snowballRigidbody.AddForce(Vector2.up * movementSensitivity * mouseDelta.y);
+
+            //Old movement that used transform.translate. Can probably remove but leaving it for now just in case, I guess
+            //transform.Translate(Vector3.up * mouseDelta.y * movementSensitivity);
         }
     }
 }
