@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8392171218554760631}
   - component: {fileID: 8657666669540303953}
   - component: {fileID: 2339446773185272735}
+  - component: {fileID: 3549831470322472451}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -177,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snowballSize: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
-  obstacleSize: 4
+  obstacleSize: 5
   scalePerspective: 1
   scaleOnSpawn: 0
 --- !u!114 &2339446773185272735
@@ -197,3 +198,19 @@ MonoBehaviour:
   speedScale: 1
   moveVector: {x: -0.99904823, y: 0.04361953}
   myRigidbody: {fileID: 3304603884408545833}
+--- !u!114 &3549831470322472451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150288299065344882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89e720f3f62be04f8728ff34c436b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDestroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  scaler: {fileID: 8657666669540303953}

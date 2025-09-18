@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ff660ebc9ad374f8c5448d943dbdf6, type: 3}
-  m_Name: SnowballSpeed
+  m_Script: {fileID: 11500000, guid: ce56c202d2a7e2a43b0936ea8eb1b65f, type: 3}
+  m_Name: SizeCollisionCurve
   m_EditorClassIdentifier: 
-  val: 0
-  min: -Infinity
-  max: Infinity
+  applyType: 0
+  maxDamageProportion: 0.25
+  curveSteepness: 2
+  maxGain: 0
+  useSizeAsMax: 1
