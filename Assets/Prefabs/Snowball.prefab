@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8017b6cba120b47b2429cc354aea32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
+  value: {fileID: 11400000, guid: bd0488ec5cd6ee943a8fca43014c66c2, type: 2}
   startingValue: 1
   increasePerSecond: 0.1
   useFixedUpdate: 1

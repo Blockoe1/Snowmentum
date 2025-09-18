@@ -19,15 +19,13 @@ namespace Snowmentum
         private const string PLAYER_TAG = "Player";
         #endregion
 
-        [Header("Size")]
-        [SerializeField] private ScriptableValue snowballSize;
-        [SerializeField, Tooltip("A ScriptableObject that holds the formula for determiining the effect on player " +
-            "size when this obstacle collides with the player.")]
-        private CollisionResultCurve effectOnSize;
+        [SerializeField] private DamagedValue[] damagedValues;
+
+        
         [Header("Speed")]
         [SerializeField] private ScriptableValue snowballSpeed;
-        [SerializeField, Tooltip("A ScriptableObject that holds the formula for determiining the effect on player " +
-            "speed when this obstacle collides with the player.")]
+        [SerializeField, Tooltip("A ScriptableObject that holds the formula for determining the effect on the " +
+            "actual speed of the snowball due to a collision.  Used to create the knockback effect.")]
         private CollisionResultCurve effectOnSpeed;
 
         [Header("Events")]
@@ -49,6 +47,19 @@ namespace Snowmentum
 
         #region Nested
         public float ObstacleSize => scaler.Size;
+        // Represents a value that is damaged by collisions with obstacles
+        [System.Serializable]
+        private struct DamagedValue
+        {
+            [SerializeField] internal ScriptableValue value;
+            [SerializeField, Tooltip("A ScriptableObject that holds the formula for determining the effect on " +
+                "this value when this obstacle collides with the snowball.")]
+            internal CollisionResultCurve effectOnSize;
+            [SerializeField, Tooltip("The maximum proportion of this value that can be lost from a " +
+        "collision, unless it is reduced to less than 0.")]
+            internal float maxDamageProportion;
+        }
+
         #endregion
 
         /// <summary>
@@ -65,7 +76,7 @@ namespace Snowmentum
                 bool flagForDestroy = snowballSize.Value > ObstacleSize;
 
                 float sizeRatio = ObstacleSize / snowballSize.Value;
-                Debug.Log("Collided with Player");
+                Debug.Log("Collided with " + collision.gameObject.name);
 
                 // Change the player's values based on our result curves.
                 UpdateValue(snowballSpeed, effectOnSpeed, ObstacleSize, snowballSize.Value);
@@ -89,6 +100,13 @@ namespace Snowmentum
         private static void UpdateValue(ScriptableValue value, CollisionResultCurve resultCurve,  
             float obstacleSize, float snowballSize)
         {
+            // If the player is taking damage,
+            // and the player is not taking enough damage to be one shot,
+            // then we need to clamp the return value so that it doesnt exceed maxDamageProportion
+            if (returnValue < 0 && Mathf.Abs(returnValue) < obstacleSize)
+            {
+                returnValue = Mathf.Max(returnValue, -obstacleSize * maxDamageProportion);
+            }
             //Debug.Log(resultCurve.Evaluate(snowballSize, obstacleSize));
             value.Value += resultCurve.Evaluate(snowballSize, obstacleSize);
         }

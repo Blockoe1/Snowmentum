@@ -1,5 +1,5 @@
 /*****************************************************************************
-// File Name : SizeCollisionCurve.cs
+// File Name : ExponentialCollisionCurve.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/16/2025
 // Last Modified : 9/16/2025
@@ -11,16 +11,13 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    [CreateAssetMenu(fileName = "SizeCollisionCurve", menuName = 
-        "ScriptableObjects/Collision Curves/SizeCollisionCurve")]
-    public class SizeCollisionCurve : CollisionResultCurve
+    [CreateAssetMenu(fileName = "ExponentialCollisionCurve", menuName = 
+        "ScriptableObjects/Collision Curves/ExponentialCollisionCurve")]
+    public class ExponentialCollisionCurve : CollisionResultCurve
     {
         [SerializeField, Tooltip("The steepness of the curve.  Higher numbers will result in harsher punishments" +
             " for colliding with objects that are smaller than you."), Min(2f)]
         private float curveSteepness = 2;
-        [SerializeField, Tooltip("The maximum proportion of the snowball's size that it can lose from a " +
-            "collision, unless it gets instant death.")]
-        private float maxDamageProportion;
         [SerializeField, Tooltip("The maximum positive value this curve can return.")]
         private float maxGain;
         [SerializeField, Tooltip("If true, then the maxGain parameter will be overwritten by the size of " +
@@ -40,16 +37,8 @@ namespace Snowmentum
         public override float Evaluate(float snowballSize, float obstacleSize)
         {
             float gain = useSizeAsMax ? obstacleSize : maxGain;
-            float returnValue = -Mathf.Pow(curveSteepness, -snowballSize + obstacleSize + 
+            return -Mathf.Pow(curveSteepness, -snowballSize + obstacleSize +
                 Mathf.Log(gain, curveSteepness)) + gain;
-            // If the player is taking damage,
-            // and the player is not taking enough damage to be one shot,
-            // then we need to clamp the return value so that it doesnt exceed maxDamageProportion
-            if (returnValue < 0 && Mathf.Abs(returnValue) < obstacleSize)
-            {
-                returnValue = Mathf.Max(returnValue, -obstacleSize * maxDamageProportion);
-            }
-            return returnValue;
         }
     }
 }

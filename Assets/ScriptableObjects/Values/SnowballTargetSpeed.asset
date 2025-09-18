@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8207837ac80cac048914f311209fdea0, type: 3}
-  m_Name: SpeedCollision
+  m_Script: {fileID: 11500000, guid: 69ff660ebc9ad374f8c5448d943dbdf6, type: 3}
+  m_Name: SnowballTargetSpeed
   m_EditorClassIdentifier: 
-  curveSteepness: 2
-  curveScale: 0.5
+  val: 0
