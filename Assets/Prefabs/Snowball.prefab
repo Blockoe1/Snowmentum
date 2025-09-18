@@ -221,14 +221,8 @@ MonoBehaviour:
   snowballSize: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
   affectedValues:
   - value: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
-    effectOnValue: {fileID: 11400000, guid: 9735fbc2c606eed40b259e53c15d607e, type: 2}
-    maxDamageProportion: 0.5
-    applyType: 0
+    resultCurve: {fileID: 11400000, guid: 9735fbc2c606eed40b259e53c15d607e, type: 2}
   - value: {fileID: 11400000, guid: bd0488ec5cd6ee943a8fca43014c66c2, type: 2}
-    effectOnValue: {fileID: 11400000, guid: de808cc2839e25848a8f37f5b8e38a85, type: 2}
-    maxDamageProportion: 0.25
-    applyType: 0
+    resultCurve: {fileID: 11400000, guid: de808cc2839e25848a8f37f5b8e38a85, type: 2}
   - value: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
-    effectOnValue: {fileID: 11400000, guid: cd55795467147a349bc30de09b5cb09b, type: 2}
-    maxDamageProportion: 1
-    applyType: 1
+    resultCurve: {fileID: 11400000, guid: cd55795467147a349bc30de09b5cb09b, type: 2}

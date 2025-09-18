@@ -15,6 +15,7 @@ namespace Snowmentum
         "ScriptableObjects/Collision Curves/Base0ExponentCurve")]
     public class Base0ExponentCurve : CollisionResultCurve
     {
+        [Header("Curve Settings")]
         [SerializeField, Tooltip("The steepness of the curve.  Higher numbers will result in harsher punishments" +
 " for colliding with objects that are smaller than you."), Min(2f)]
         private float curveSteepness = 2;
@@ -33,7 +34,7 @@ namespace Snowmentum
         /// The result of the math, which is the amount the value should be changed.  Can never exceed the obstacle's
         /// size.
         /// </returns>
-        public override float Evaluate(float snowballSize, float obstacleSize)
+        public override float Equasion(float snowballSize, float obstacleSize)
         {
             return -Mathf.Pow(curveSteepness, (-snowballSize + obstacleSize)) * curveScale;
         }

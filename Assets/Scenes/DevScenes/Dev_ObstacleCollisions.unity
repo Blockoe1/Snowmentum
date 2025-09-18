@@ -365,17 +365,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &858393675 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8657666669540303953, guid: 3586529929dfe284a88be892efb227ca, type: 3}
-  m_PrefabInstance: {fileID: 429765165097765220}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cf336ba4bd058c4396612996741d5d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1554472129
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,10 +696,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: scaler
+    - target: {fileID: 2662867659098769364, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5473277444344932723, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: playerInput
       value: 
-      objectReference: {fileID: 858393675}
+      objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce56c202d2a7e2a43b0936ea8eb1b65f, type: 3}
   m_Name: SizeCollisionCurve
   m_EditorClassIdentifier: 
-  curveSteepness: 2
+  applyType: 0
   maxDamageProportion: 0.25
+  curveSteepness: 2
   maxGain: 0
   useSizeAsMax: 1

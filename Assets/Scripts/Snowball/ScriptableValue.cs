@@ -16,6 +16,7 @@ namespace Snowmentum
     {
         [SerializeField] private float val;
 
+
         public event Action<float, float> OnValueChanged;
  
         #region Properties
@@ -25,8 +26,8 @@ namespace Snowmentum
             set
             {
                 float oldVal = val;
+                // Should get to this if both are infinity.
                 val = value;
-                Debug.Log(val);
                 OnValueChanged?.Invoke(val, oldVal);
             }
         }

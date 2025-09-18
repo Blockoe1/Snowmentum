@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: SnowballSpeed
   m_EditorClassIdentifier: 
   val: 0
+  min: -Infinity
+  max: Infinity
