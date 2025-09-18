@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    [CreateAssetMenu(fileName = "ScriptableValue", menuName = "ScriptableObjects/ScriptableValue")]
+    [CreateAssetMenu(fileName = "ScriptableValue", menuName = "ScriptableObjects/ScriptableValues/Default")]
     public class ScriptableValue : ScriptableObject
     {
         [SerializeField] private float val;
@@ -20,7 +20,7 @@ namespace Snowmentum
         public event Action<float, float> OnValueChanged;
  
         #region Properties
-        public float Value
+        public virtual float Value
         {
             get { return val; }
             set
