@@ -11,20 +11,22 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    [CreateAssetMenu(fileName = "ScriptableValue", menuName = "ScriptableObjects/ScriptableValue")]
+    [CreateAssetMenu(fileName = "ScriptableValue", menuName = "ScriptableObjects/ScriptableValues/Default")]
     public class ScriptableValue : ScriptableObject
     {
         [SerializeField] private float val;
 
+
         public event Action<float, float> OnValueChanged;
  
         #region Properties
-        public float Value
+        public virtual float Value
         {
             get { return val; }
             set
             {
                 float oldVal = val;
+                // Should get to this if both are infinity.
                 val = value;
                 OnValueChanged?.Invoke(val, oldVal);
             }

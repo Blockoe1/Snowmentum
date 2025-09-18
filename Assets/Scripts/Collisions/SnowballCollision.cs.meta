@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 23a764d599b321e46804eca9a349582b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - snowballSize: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
+  - effectOnSize: {fileID: 11400000, guid: 9735fbc2c606eed40b259e53c15d607e, type: 2}
+  - snowballSpeed: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
+  - effectOnSpeed: {fileID: 11400000, guid: cd55795467147a349bc30de09b5cb09b, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

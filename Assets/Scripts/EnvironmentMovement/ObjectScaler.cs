@@ -38,6 +38,8 @@ namespace Snowmentum
                 return new Vector2(-5, 0);
             }
         }
+
+        public float Size => obstacleSize;
         #endregion
 
         /// <summary>
@@ -78,8 +80,8 @@ namespace Snowmentum
                 targetPos = finalPosition;
             }
 
-            // Dont allow any scale updating if the snowball is set to a size of 0.
-            if(snowballSize.Value == 0) { return targetPos; }
+            // Dont allow any scale updating if the snowball has a 0 or negative size.
+            if(snowballSize.Value <= 0) { return targetPos; }
 
             float sizeRatio = obstacleSize / snowballSize.Value;
             // Save the size ratio of this iteration so that changes in size can be tracked.
