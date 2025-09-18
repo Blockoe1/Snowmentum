@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
   startingValue: 1
-  increasePerSecond: 1
+  increasePerSecond: 0.5
   useFixedUpdate: 1
   targetValue: {fileID: 11400000, guid: bd0488ec5cd6ee943a8fca43014c66c2, type: 2}
 --- !u!50 &3341841721575561879
@@ -168,7 +168,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 5
 --- !u!58 &1749270682311056532
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a764d599b321e46804eca9a349582b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitImmunity: 1
   snowballSize: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
   affectedValues:
   - value: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
@@ -231,7 +232,3 @@ MonoBehaviour:
     effectOnValue: {fileID: 11400000, guid: cd55795467147a349bc30de09b5cb09b, type: 2}
     maxDamageProportion: 1
     applyType: 1
-  OnDestroyEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  scaler: {fileID: 0}
