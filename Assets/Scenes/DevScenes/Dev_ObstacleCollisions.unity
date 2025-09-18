@@ -711,6 +711,10 @@ PrefabInstance:
       propertyPath: scaler
       value: 
       objectReference: {fileID: 858393675}
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: hitImmunity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
