@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8207837ac80cac048914f311209fdea0, type: 3}
-  m_Name: SpeedCollision
+  m_Name: TargetSpeedCollisionCurve
   m_EditorClassIdentifier: 
   curveSteepness: 2
-  curveScale: 2.5
+  curveScale: 0.5

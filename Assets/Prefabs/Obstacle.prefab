@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8392171218554760631}
   - component: {fileID: 8657666669540303953}
   - component: {fileID: 2339446773185272735}
-  - component: {fileID: 7018451624096164098}
+  - component: {fileID: 3549831470322472451}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -198,7 +198,7 @@ MonoBehaviour:
   speedScale: 1
   moveVector: {x: -0.99904823, y: 0.04361953}
   myRigidbody: {fileID: 3304603884408545833}
---- !u!114 &7018451624096164098
+--- !u!114 &3549831470322472451
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,13 +207,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5150288299065344882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23a764d599b321e46804eca9a349582b, type: 3}
+  m_Script: {fileID: 11500000, guid: b89e720f3f62be04f8728ff34c436b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snowballSize: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
-  effectOnSize: {fileID: 11400000, guid: 9735fbc2c606eed40b259e53c15d607e, type: 2}
-  snowballSpeed: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
-  effectOnSpeed: {fileID: 11400000, guid: cd55795467147a349bc30de09b5cb09b, type: 2}
   OnDestroyEvent:
     m_PersistentCalls:
       m_Calls: []

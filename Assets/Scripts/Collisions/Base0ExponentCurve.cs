@@ -2,7 +2,7 @@
 // File Name : Base0ExponentCurve.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/16/2025
-// Last Modified : 9/16/2025
+// Last Modified : 9/18/2025
 //
 // Brief Description : Exponential collision curve that maxes out at a value of 0 and can scale based on an anchor
 // position.  Used for changes to speed on collision.

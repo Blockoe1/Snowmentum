@@ -2,7 +2,7 @@
 // File Name : ExponentialCollisionCurve.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/16/2025
-// Last Modified : 9/16/2025
+// Last Modified : 9/18/2025
 //
 // Brief Description : Calculates the result of a collision on a given value based on the relative size of the two
 // objects using an exponential function.  Uses the obstacle size as the baseline.  Used to change size on collision.

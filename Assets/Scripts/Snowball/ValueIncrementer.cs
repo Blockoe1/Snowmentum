@@ -13,10 +13,10 @@ namespace Snowmentum
     public class ValueIncrementer : MonoBehaviour
     {
         [SerializeField, Tooltip("The value that should be incremented each update.")] 
-        private ScriptableValue value;
+        protected ScriptableValue value;
         [SerializeField] private float startingValue;
         [SerializeField, Tooltip("The amount the ScriptableValue increases each second.")] 
-        private float increasePerSecond;
+        protected float increasePerSecond;
         [SerializeField] private bool useFixedUpdate;
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Snowmentum
         {
             if (!useFixedUpdate)
             {
-                value.Value += increasePerSecond * Time.deltaTime;
+                ApplyChange(Time.deltaTime);
             }
         }
 
@@ -45,8 +45,17 @@ namespace Snowmentum
         {
             if (useFixedUpdate)
             {
-                value.Value += increasePerSecond * Time.fixedDeltaTime;
+                ApplyChange(Time.fixedDeltaTime);
             }
+        }
+
+        /// <summary>
+        /// Applies the change to the value.
+        /// </summary>
+        /// <param name="time">The time value (ie. Time.deltaTime, Time.fixedDeltaTime) since out last update.</param>
+        protected virtual void ApplyChange(float time)
+        {
+            value.Value += increasePerSecond * time;
         }
     }
 }
