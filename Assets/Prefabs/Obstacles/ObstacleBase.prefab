@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf336ba4bd058c4396612996741d5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snowballSize: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
-  obstacleSize: 5
+  snowballSize: {fileID: 11400000, guid: 758b07166ed0b284982b09dcd718e67c, type: 2}
+  obstacleSize: 2
   scalePerspective: 1
   scaleOnSpawn: 0
 --- !u!114 &2339446773185272735
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2762447730aecdf45953659c21997511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleSpeed: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
+  obstacleSpeed: {fileID: 11400000, guid: 2d0e32cf921bd684e8aa494e7893d59c, type: 2}
   moveAngle: 177.5
   speedScale: 1
   moveVector: {x: -0.99904823, y: 0.04361953}

@@ -13,8 +13,6 @@ namespace Snowmentum
     [RequireComponent(typeof(ObjectMover))]
     public class ObjectScaler : MonoBehaviour, IMovementModifier
     {
-        [SerializeField, Tooltip("The ScriptableValue that holds the current size of the snowball.")]
-        private ScriptableValue snowballSize;
         [SerializeField, Tooltip("The in-game size of this obstacle.  Used to determine how large this obstacle is " +
     "in relation to the snowball.")]
         private float obstacleSize;
@@ -81,9 +79,9 @@ namespace Snowmentum
             }
 
             // Dont allow any scale updating if the snowball has a 0 or negative size.
-            if(snowballSize.Value <= 0) { return targetPos; }
+            if(SnowballSize.Value <= 0) { return targetPos; }
 
-            float sizeRatio = obstacleSize / snowballSize.Value;
+            float sizeRatio = obstacleSize / SnowballSize.Value;
             // Save the size ratio of this iteration so that changes in size can be tracked.
             if (scalePerspective)
             {

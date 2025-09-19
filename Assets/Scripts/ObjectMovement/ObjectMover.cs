@@ -13,7 +13,6 @@ namespace Snowmentum
     [RequireComponent(typeof(Rigidbody2D))]
     public class ObjectMover : MonoBehaviour
     {
-        [SerializeField] private ScriptableValue obstacleSpeed;
         [SerializeField, Tooltip("The angle that the snowball moves at, based on the approximate angle of " +
             "the hillside.  Should be based on 0 degrees being to the right.")]
         private float moveAngle;
@@ -62,7 +61,7 @@ namespace Snowmentum
         {
             // Default movement determined by the speed of the snowball and the speedScale of our settings.
             Vector2 targetPos = myRigidbody.position + 
-                (moveVector * obstacleSpeed.Value * Time.fixedDeltaTime * speedScale);
+                (moveVector * SnowballSpeed.Value * Time.fixedDeltaTime * speedScale);
 
             // Update the target pos based on overrides of movement modifiers, such as scaling with perspective.
             foreach(IMovementModifier modifier in moveModifiers)
