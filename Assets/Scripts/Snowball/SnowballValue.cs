@@ -20,14 +20,6 @@ namespace Snowmentum
         [SerializeField, Tooltip("The speed at which this value's actual value moves towards the target value.")] 
         protected float moveToTargetSpeed;
         [SerializeField] private bool useFixedUpdate;
-        [Header("Collision Curve Settings")]
-        [SerializeField, Tooltip("The maximum proportion of this target value that can be lost from a " +
-            "collision, unless it is reduced to less than 0.  Set to 1 to have no max value."), Range(0f, 1f)]
-        protected float maxDamageProportion;
-
-        #region Properties
-
-        #endregion
 
         /// <summary>
         /// Continually updates the given value over time.
@@ -47,6 +39,12 @@ namespace Snowmentum
                 TimedUpdate(Time.fixedDeltaTime);
             }
         }
+        /// <summary>
+        /// Allows for setting of the TargetValue and Value of this SnwoballValue through a reference to the snowball.
+        /// </summary>
+        /// <param name="value"></param>
+        public abstract float TargetValue_Local { get; set; }
+        public abstract float Value_Local { get; set; }
 
         /// <summary>
         /// Applies changes made to this value over time.
@@ -54,16 +52,13 @@ namespace Snowmentum
         /// <param name="time">The time elapsed since the last update (ie. Time.deltaTime, Time.fixedDeltaTile)</param>
         public virtual void TimedUpdate(float time)
         {
-            TargetValue += increasePerSecond * time;
+            TargetValue_Local += increasePerSecond * time;
             MoveToTarget();
         }
 
         /// <summary>
         /// Moves the current actual value towards the target value.  Called in TimedUpdate
         /// </summary>
-        protected virtual void MoveToTarget()
-        {
-            Value = Mathf.MoveTowards(Value, TargetValue, moveToTargetSpeed);
-        }
+        protected abstract void MoveToTarget();
     }
 }

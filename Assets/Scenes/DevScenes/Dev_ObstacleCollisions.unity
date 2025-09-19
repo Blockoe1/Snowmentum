@@ -396,7 +396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2762447730aecdf45953659c21997511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleSpeed: {fileID: 11400000, guid: 2d0e32cf921bd684e8aa494e7893d59c, type: 2}
   moveAngle: 177.5
   speedScale: 1
   moveVector: {x: -0.99904823, y: 0.04361953}
@@ -599,7 +598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2762447730aecdf45953659c21997511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleSpeed: {fileID: 11400000, guid: 2d0e32cf921bd684e8aa494e7893d59c, type: 2}
   moveAngle: 177.5
   speedScale: 1
   moveVector: {x: -0.99904823, y: 0.04361953}
@@ -696,6 +694,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3341841721575561879, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
