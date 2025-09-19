@@ -489,9 +489,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMovementSensitivity: 5
+  maxDelta: 100
   playerInput: {fileID: 2135231807}
   minY: -4.5
   maxY: 0
+  debugTargetFrameRate: 60
 --- !u!114 &2135231807
 MonoBehaviour:
   m_ObjectHideFlags: 0
