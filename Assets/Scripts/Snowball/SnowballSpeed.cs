@@ -7,6 +7,7 @@
 // Brief Description : From a gameplay standpoint, it controls the speed that the snowball moves down the hill.
 // In actuality, it controls the speed that obstacles move towards the snowball.
 *****************************************************************************/
+using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
 
 namespace Snowmentum
@@ -34,11 +35,11 @@ namespace Snowmentum
     "happens between two objects of the same size will be equal to this."), Min(0.01f)]
         private float knockbackCurveScale = 0.01f;
 
-        public override float Value
+        public override float TargetValue
         {
             set
             {
-                base.Value = Mathf.Max(value, minSpeed);
+                base.TargetValue = Mathf.Max(value, minSpeed);
             }
         }
 

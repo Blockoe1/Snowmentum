@@ -16,7 +16,7 @@ namespace Snowmentum
     {
         [SerializeField, Tooltip("Controls how long the snowball stays immune to collisions after being hit.")] 
         private float hitImmunity;
-        [SerializeField] internal ScriptableValue snowballSize;
+        [SerializeField] internal SnowballSize snowballSize;
         [SerializeField] private ScriptableValue[] affectedValues;
 
         //[Header("Speed")]
@@ -46,6 +46,7 @@ namespace Snowmentum
         /// <param name="collision"></param>
         private void OnCollisionEnter2D(Collision2D collision)
         {
+            Debug.Log(isImmune);
             if (!isImmune && collision.gameObject.TryGetComponent(out ObstacleCollision obstacle))
             {
                 // Save the snowball's current size so that any changes to size dont affect any of the other math.

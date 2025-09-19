@@ -13,7 +13,7 @@ namespace Snowmentum
     [RequireComponent(typeof(Rigidbody2D))]
     public class ObjectMover : MonoBehaviour
     {
-        [SerializeField] private ScriptableValue obstacleSpeed;
+        [SerializeField] private SnowballSpeed obstacleSpeed;
         [SerializeField, Tooltip("The angle that the snowball moves at, based on the approximate angle of " +
             "the hillside.  Should be based on 0 degrees being to the right.")]
         private float moveAngle;
