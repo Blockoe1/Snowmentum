@@ -18,6 +18,9 @@ namespace Snowmentum
         //We can change this during gameplay in order to make it harder to move the snowball as it grows in size
         // And also adjust it as needed to make it feel responsive enough
         [SerializeField] private float baseMovementSensitivity;
+        [SerializeField, Tooltip("The maximum mouseDelta that will be read in one frame.  Done to prevent massive" +
+            " forces from being applied at the start of the game when delta is tracked across a long laggy frame.")]
+        private int maxDelta = 100;
 
         [SerializeField] private PlayerInput playerInput;
         private InputAction mouseMovement;
@@ -31,7 +34,7 @@ namespace Snowmentum
         [SerializeField] private float minY;
         [SerializeField] private float maxY;
 
-        private void Awake()
+        private void Start()
         {
             //set the player input active
             playerInput = GetComponent<PlayerInput>();
@@ -51,6 +54,7 @@ namespace Snowmentum
 
         void FixedUpdate()
         {
+            //Debug.Log(mouseDelta + "And actual value is " + mouseMovement.ReadValue<Vector2>());
             //will keep track of the mouse and move the snowball accordingly each frame
             ApplyMovementForce();
 
@@ -68,12 +72,15 @@ namespace Snowmentum
         public void Handle_SnowballMouseMovement(InputAction.CallbackContext context)
         {
             mouseDelta = context.ReadValue<Vector2>();
-            //Debug.Log(mouseDelta);
+            // Ensure MouseDelta doesnt become an absurdly large number to due long framse (Such as script compilation
+            // at the beginning.)
+            mouseDelta.y = Mathf.Clamp(mouseDelta.y, -maxDelta, maxDelta);
         }
 
         //this function moves the snowball up and down in accordance with the movement of the mouse
         private void ApplyMovementForce()
         {
+            Debug.Log(mouseDelta);
             snowballRigidbody.AddForce(Vector2.up * baseMovementSensitivity * mouseDelta.y);
 
             //Old movement that used transform.translate. Can probably remove but leaving it for now just in case, I guess

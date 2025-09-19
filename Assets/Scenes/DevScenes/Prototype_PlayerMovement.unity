@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f23b975e209500489c5e2ab1d04cd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSensitivity: 5
+  baseMovementSensitivity: 5
   playerInput: {fileID: 2135231807}
   minY: -4.5
   maxY: 0
