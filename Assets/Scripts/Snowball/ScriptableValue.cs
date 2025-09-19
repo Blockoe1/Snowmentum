@@ -25,8 +25,8 @@ namespace Snowmentum
         [SerializeField] private bool useFixedUpdate;
         [Header("Collision Curve Settings")]
         [SerializeField, Tooltip("The maximum proportion of this target value that can be lost from a " +
-"collision, unless it is reduced to less than 0.  Set to 1 to have no max value."), Range(0f, 1f)]
-        internal float maxDamageProportion;
+            "collision, unless it is reduced to less than 0.  Set to 1 to have no max value."), Range(0f, 1f)]
+        protected float maxDamageProportion;
 
 
         public event Action<float, float> OnTargetValueChanged;

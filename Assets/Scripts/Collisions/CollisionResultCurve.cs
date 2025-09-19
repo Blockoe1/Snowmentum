@@ -63,13 +63,7 @@ namespace Snowmentum
             {
                 float result = curve.Equasion(snowballSize, obstacleSize);
 
-                // If the player is taking damage,
-                // and the player is not taking enough damage to be one shot,
-                // then we need to clamp the return value so that it doesnt exceed maxDamageProportion
-                if (result < 0 && Mathf.Abs(result) < damageValue.value.Value)
-                {
-                    result = Mathf.Max(result, -damageValue.value.Value * curve.maxDamageProportion);
-                }
+
                 switch (damageValue.damageResultCurve.applyType)
                 {
                     case ApplyType.Add:

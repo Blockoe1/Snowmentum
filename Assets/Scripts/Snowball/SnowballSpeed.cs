@@ -8,6 +8,7 @@
 // In actuality, it controls the speed that obstacles move towards the snowball.
 *****************************************************************************/
 using UnityEngine;
+using static UnityEditor.Rendering.InspectorCurveEditor;
 
 namespace Snowmentum
 {
@@ -28,6 +29,22 @@ namespace Snowmentum
         public override void OnCollision(float obstacleSize, float snowballSize)
         {
             base.OnCollision(obstacleSize, snowballSize);
+        }
+
+        /// <summary>
+        /// The formula
+        /// -(curveSteepness ^ (-snowballSize + obstacleSize)) * curveScale,
+        /// which is used for determining changes to speed.
+        /// </summary>
+        /// <param name="obstacleSize"></param>
+        /// <param name="snowballSize"></param>
+        /// <param name="curveScale"></param>
+        /// <param name="curveSteepness"></param>
+        /// <returns></returns>
+        private static float SpeedCollisionCurve(float obstacleSize, float snowballSize, float curveScale, 
+            float curveSteepness)
+        {
+            return -Mathf.Pow(curveSteepness, (-snowballSize + obstacleSize)) * curveScale;
         }
     }
 }

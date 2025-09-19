@@ -6,7 +6,9 @@
 //
 // Brief Description : Holds the snowball's current size.
 *****************************************************************************/
+using System.Security.Cryptography;
 using UnityEngine;
+using static Snowmentum.CollisionResultCurve;
 
 namespace Snowmentum
 {
@@ -31,12 +33,31 @@ namespace Snowmentum
         public override void OnCollision(float obstacleSize, float snowballSize)
         {
             float gain = useSizeAsMax ? obstacleSize : maxGain;
-            float result =  -Mathf.Pow(curveSteepness, -snowballSize + obstacleSize +
-                Mathf.Log(gain, curveSteepness)) + gain;
+            // Calculate the change in size.
+            float result = SizeCollisionCurve(obstacleSize, snowballSize, gain, curveSteepness);
+            // Ensures the player only takes a certain amount of damage if they are not one-shot.
+            if (result < 0 && Mathf.Abs(result) < TargetValue)
+            {
+                result = Mathf.Max(result, -TargetValue * maxDamageProportion);
+            }
             TargetValue = result;
         }
 
-        
+        /// <summary>
+        /// The formula
+        /// -curveSteepness ^ (-snowballSize + obstacleSize + logbase[curveSteepness](snowballSize)) + snowballSize
+        /// that is used to calculate the change to snowball size on collision.
+        /// </summary>
+        /// <param name="obstacleSize"></param>
+        /// <param name="snowballSize"></param>
+        /// <param name="gain">The maximum positive value this curve can output.</param>
+        /// <param name="curveSteepness"></param>
+        /// <returns></returns>
+        private static float SizeCollisionCurve(float obstacleSize, float snowballSize, float gain, float curveSteepness)
+        {
+            return -Mathf.Pow(curveSteepness, -snowballSize + obstacleSize +
+                Mathf.Log(gain, curveSteepness)) + gain;
+        }
 
         /// <summary>
         /// Size should lerp towards it's target value so that changes in size arae animated, but very quick.
