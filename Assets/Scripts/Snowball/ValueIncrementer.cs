@@ -13,25 +13,8 @@ namespace Snowmentum
     public class ValueIncrementer : MonoBehaviour
     {
         [SerializeField, Tooltip("The value that should be incremented each update.")] 
-        protected ScriptableValue value;
+        protected SnowballValue value;
 
-        /// <summary>
-        /// Continually updates the given value over time.
-        /// </summary>
-        private void Update()
-        {
-            if (!value.UseFixedUpdate)
-            {
-                value.TimedUpdate(Time.deltaTime);
-            }
-        }
-
-        private void FixedUpdate()
-        {
-            if (value.UseFixedUpdate)
-            {
-                value.TimedUpdate(Time.fixedDeltaTime);
-            }
-        }
+        
     }
 }

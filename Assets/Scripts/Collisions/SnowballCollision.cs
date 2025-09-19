@@ -17,7 +17,7 @@ namespace Snowmentum
         [SerializeField, Tooltip("Controls how long the snowball stays immune to collisions after being hit.")] 
         private float hitImmunity;
         [SerializeField] internal SnowballSize snowballSize;
-        [SerializeField] private ScriptableValue[] affectedValues;
+        [SerializeField] private SnowballValue[] affectedValues;
 
         //[Header("Speed")]
         //[SerializeField] private ScriptableValue snowballSpeed;
@@ -59,7 +59,7 @@ namespace Snowmentum
                 Debug.Log("Collided with " + collision.gameObject.name);
 
                 // Change the player's values based on our result curves defined in the inspector.
-                foreach(ScriptableValue val in  affectedValues)
+                foreach(SnowballValue val in  affectedValues)
                 {
                     val.OnCollision(obstacle.ObstacleSize, snowballSizeVal);
                 }

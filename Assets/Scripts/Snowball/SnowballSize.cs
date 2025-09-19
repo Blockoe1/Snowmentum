@@ -6,12 +6,12 @@
 //
 // Brief Description : Holds the snowball's current size.
 *****************************************************************************/
+using System;
 using UnityEngine;
 
 namespace Snowmentum
 {
-    [CreateAssetMenu(fileName = "SnowballSize", menuName = "ScriptableObjects/ScriptableValues/SnowballSize")]
-    public class SnowballSize : ScriptableValue
+    public class SnowballSize : SnowballValue
     {
         [SerializeField, Tooltip("The steepness of the curve.  Higher numbers will result in harsher punishments" +
     " for colliding with objects that are smaller than you."), Min(1.001f)]
@@ -21,6 +21,43 @@ namespace Snowmentum
         [SerializeField, Tooltip("If true, then the maxGain parameter will be overwritten by the size of " +
             "the obstacle.")]
         private bool useSizeAsMax;
+
+        private static float val;
+        private static float targetVal;
+
+        public static event Action<float, float> OnTargetValueChanged;
+
+        public static float Value
+        {
+            get { return val; }
+            private set
+            {
+                float oldVal = val;
+                // Should get to this if both are infinity.
+                val = value;
+
+            }
+        }
+        public static float TargetValue
+        {
+            get { return targetVal; }
+            private set
+            {
+                float oldVal = targetVal;
+                // Should get to this if both are infinity.
+                targetVal = value;
+                OnTargetValueChanged?.Invoke(targetVal, oldVal);
+            }
+        }
+
+        /// <summary>
+        /// Resets values on awake
+        /// </summary>
+        private void Awake()
+        {
+            TargetValue = startingValue;
+            Value = startingValue;
+        }
 
         /// <summary>
         /// When the snowball gets in a collision, the snowball's size should be decreased.

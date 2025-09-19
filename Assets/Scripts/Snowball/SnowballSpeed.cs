@@ -7,13 +7,12 @@
 // Brief Description : From a gameplay standpoint, it controls the speed that the snowball moves down the hill.
 // In actuality, it controls the speed that obstacles move towards the snowball.
 *****************************************************************************/
-using UnityEditor.Profiling.Memory.Experimental;
+using System;
 using UnityEngine;
 
 namespace Snowmentum
 {
-    [CreateAssetMenu(fileName = "SnowballSpeed", menuName = "ScriptableObjects/ScriptableValues/SnowballSpeed")]
-    public class SnowballSpeed : ScriptableValue
+    public class SnowballSpeed : SnowballValue
     {
         [SerializeField, Tooltip("The steepness of the curve.  Higher numbers will result in harsher punishments" +
             " for colliding with objects that are smaller than you."), Min(1.001f)]
@@ -35,12 +34,43 @@ namespace Snowmentum
     "happens between two objects of the same size will be equal to this."), Min(0.01f)]
         private float knockbackCurveScale = 0.01f;
 
-        public override float TargetValue
+        private static float val;
+        private static float targetVal;
+
+        public static event Action<float, float> OnTargetValueChanged;
+
+        #region Properties
+        public static float Value
         {
-            set
+            get { return val; }
+            private set
             {
-                base.TargetValue = Mathf.Max(value, minSpeed);
+                float oldVal = val;
+                // Should get to this if both are infinity.
+                val = value;
+
             }
+        }
+        public static float TargetValue
+        {
+            get { return targetVal; }
+            private set
+            {
+                float oldVal = targetVal;
+                // Should get to this if both are infinity.
+                targetVal = Mathf.Max(value, minSpeed);
+                OnTargetValueChanged?.Invoke(targetVal, oldVal);
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// Resets values on awake
+        /// </summary>
+        private void Awake()
+        {
+            TargetValue = startingValue;
+            Value = startingValue;
         }
 
         /// <summary>
