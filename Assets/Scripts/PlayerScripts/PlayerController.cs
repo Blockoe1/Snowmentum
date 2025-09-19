@@ -34,6 +34,10 @@ namespace Snowmentum
         //used for Player Movement
         private Rigidbody2D snowballRigidbody;
 
+        //values used for clamping the position of the snowball
+        [SerializeField] private float minY;
+        [SerializeField] private float maxY;
+        private Vector2 currentY;
         private void Start()
         {
             //set the player input active
@@ -51,6 +55,9 @@ namespace Snowmentum
         {
             //will keep track of the mouse and move the snowball accordingly each frame
             MoveSnowball();
+
+            //this should clamp the snowball and prevent it from moving off the screen, but currently the snowball is just teleporting between the two positions
+            transform.position = new Vector3(Mathf.Clamp(transform.position.y, minY, maxY), transform.position.x);
         }
 
         ///  Player Movement
