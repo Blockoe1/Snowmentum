@@ -47,7 +47,7 @@ namespace Snowmentum
 
         private void OnGUI()
         {
-            GUI.TextArea(new Rect(10, 10, 300, 200), TargetValue.ToString());
+            GUI.TextArea(new Rect(10, 10, 300, 200), TargetValue.ToString() + "\n" + Value.ToString());
         }
 
         /// <summary>
