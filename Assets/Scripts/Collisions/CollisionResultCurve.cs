@@ -22,7 +22,8 @@ namespace Snowmentum
         internal enum ApplyType
         {
             Add,
-            ScaledAdd
+            ScaledAdd,
+            Set
         }
         // Represents a value that is damaged by collisions with obstacles
         [System.Serializable]
@@ -30,8 +31,11 @@ namespace Snowmentum
         {
             [SerializeField] internal ScriptableValue value;
             [SerializeField, Tooltip("A ScriptableObject that holds the formula for determining the effect on " +
-                "this value when this obstacle collides with the snowball.")]
-            internal CollisionResultCurve resultCurve;
+                "this value when the snowball collides with an obstacle larger than it.")]
+            internal CollisionResultCurve damageResultCurve;
+            [SerializeField, Tooltip("A ScriptableObject that holds the formula for determining the effect on " +
+                "this value when the snowball collides with an obstacle smaller than it that it destroys.")]
+            internal CollisionResultCurve destroyResultCurve;
         }
         #endregion
 
@@ -50,25 +54,39 @@ namespace Snowmentum
         /// <param name="snowballSize"></param>
         public static void ApplyValueChange(DamagedValue damageValue, float obstacleSize, float snowballSize)
         {
-            float result = damageValue.resultCurve.Equasion(snowballSize, obstacleSize);
+            // If the snowball isn't large enough to destroy the obstacle, we need to use a different collision curve.
+            CollisionResultCurve curve = obstacleSize > snowballSize ? damageValue.damageResultCurve : 
+                damageValue.destroyResultCurve;
 
-            // If the player is taking damage,
-            // and the player is not taking enough damage to be one shot,
-            // then we need to clamp the return value so that it doesnt exceed maxDamageProportion
-            if (result < 0 && Mathf.Abs(result) < obstacleSize)
+            // If our curve is null, then we skip applying any changes.
+            if (curve != null)
             {
-                result = Mathf.Max(result, -obstacleSize * damageValue.resultCurve.maxDamageProportion);
-            }
-            switch (damageValue.resultCurve.applyType)
-            {
-                case ApplyType.Add:
-                    damageValue.value.Value += result;
-                    break;
-                case ApplyType.ScaledAdd:
-                    damageValue.value.Value += (result * damageValue.value.Value);
-                    break;
-                default:
-                    break;
+                float result = curve.Equasion(snowballSize, obstacleSize);
+
+                // If the player is taking damage,
+                // and the player is not taking enough damage to be one shot,
+                // then we need to clamp the return value so that it doesnt exceed maxDamageProportion
+                if (result < 0 && Mathf.Abs(result) < damageValue.value.Value)
+                {
+                    result = Mathf.Max(result, -damageValue.value.Value * curve.maxDamageProportion);
+                }
+                switch (damageValue.damageResultCurve.applyType)
+                {
+                    case ApplyType.Add:
+                        damageValue.value.Value += result;
+                        break;
+                    case ApplyType.ScaledAdd:
+                        damageValue.value.Value += (result * damageValue.value.Value);
+                        break;
+                    case ApplyType.Set:
+                        damageValue.value.Value = result;
+                        break;
+                    default:
+                        break;
+                }
+
+                Debug.Log($"Result {result} was calculated and the value {damageValue.value.Value} was assigned to " +
+                    $"ScriptableValue " + damageValue.value.name);
             }
         }
     }

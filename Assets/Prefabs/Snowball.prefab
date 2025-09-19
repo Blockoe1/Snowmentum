@@ -221,8 +221,11 @@ MonoBehaviour:
   snowballSize: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
   affectedValues:
   - value: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
-    resultCurve: {fileID: 11400000, guid: 9735fbc2c606eed40b259e53c15d607e, type: 2}
+    damageResultCurve: {fileID: 11400000, guid: 9735fbc2c606eed40b259e53c15d607e, type: 2}
+    destroyResultCurve: {fileID: 11400000, guid: 9735fbc2c606eed40b259e53c15d607e, type: 2}
   - value: {fileID: 11400000, guid: 91af76c20720f3146aedaa0d48296324, type: 2}
-    resultCurve: {fileID: 11400000, guid: de808cc2839e25848a8f37f5b8e38a85, type: 2}
+    damageResultCurve: {fileID: 11400000, guid: de808cc2839e25848a8f37f5b8e38a85, type: 2}
+    destroyResultCurve: {fileID: 0}
   - value: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
-    resultCurve: {fileID: 11400000, guid: cd55795467147a349bc30de09b5cb09b, type: 2}
+    damageResultCurve: {fileID: 11400000, guid: 76a4e48f67568c54ea7fd420b8c588aa, type: 2}
+    destroyResultCurve: {fileID: 11400000, guid: cd55795467147a349bc30de09b5cb09b, type: 2}

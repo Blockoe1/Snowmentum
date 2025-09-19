@@ -17,12 +17,16 @@ namespace Snowmentum
     {
         [Header("Curve Settings")]
         [SerializeField, Tooltip("The steepness of the curve.  Higher numbers will result in harsher punishments" +
-" for colliding with objects that are smaller than you."), Min(2f)]
+" for colliding with objects that are smaller than you."), Min(1.001f)]
         private float curveSteepness = 2;
 
         [SerializeField, Tooltip("The scale of this curve.  The negative value that is returned when a collision " +
             "happens between two objects of the same size will be equal to this."), Min(0.01f)]
         private float curveScale = 0.01f;
+
+        [SerializeField, Tooltip("The minimum value evaluated from this curve.  Automatically converted to a " +
+            "negative number, because no values greater than 0 can be output by this curve."), Min(0)]
+        private float minValue;
 
         /// <summary>
         /// Evaluates the values of x and y in the equasion -(curveSteepness ^ (-snowballSize + obstacleSize)) 
@@ -36,7 +40,9 @@ namespace Snowmentum
         /// </returns>
         public override float Equasion(float snowballSize, float obstacleSize)
         {
-            return -Mathf.Pow(curveSteepness, (-snowballSize + obstacleSize)) * curveScale;
+            float result = -Mathf.Pow(curveSteepness, (-snowballSize + obstacleSize)) * curveScale;
+            result = Mathf.Min(result, -minValue);
+            return result;
         }
     }
 }

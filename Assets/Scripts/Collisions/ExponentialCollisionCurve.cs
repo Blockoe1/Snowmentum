@@ -17,7 +17,7 @@ namespace Snowmentum
     {
         [Header("Curve Settings")]
         [SerializeField, Tooltip("The steepness of the curve.  Higher numbers will result in harsher punishments" +
-            " for colliding with objects that are smaller than you."), Min(2f)]
+            " for colliding with objects that are smaller than you."), Min(1.001f)]
         private float curveSteepness = 2;
         [SerializeField, Tooltip("The maximum positive value this curve can return.")]
         private float maxGain;
