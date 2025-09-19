@@ -534,11 +534,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMovementSensitivity: 0.01
-  acceleration: 100
   minY: -4.5
   maxY: 0
-  debug_targetFrameRate: 0
-  playerInput: {fileID: 2135231807}
+  snowballRigidbody: {fileID: 2135231809}
 --- !u!114 &2135231807
 MonoBehaviour:
   m_ObjectHideFlags: 0
