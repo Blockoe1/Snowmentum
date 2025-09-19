@@ -9,6 +9,7 @@
 *****************************************************************************/
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 
 namespace Snowmentum
@@ -31,12 +32,9 @@ namespace Snowmentum
         [SerializeField] private PlayerInput playerInput;
 
         private InputAction mouseMovement;
-        private InputAction mousePos;
-
-        private Vector2 currentMousePos;
-        private Vector2 previousMosuePos;
 
         private Vector2 mouseDelta;
+        private Vector2 targetVelocity;
 
         //used for Player Movement
         private Rigidbody2D snowballRigidbody;
@@ -49,25 +47,21 @@ namespace Snowmentum
             playerInput = GetComponent<PlayerInput>();
             playerInput.currentActionMap.Enable();
             mouseMovement = playerInput.currentActionMap.FindAction("MouseMovement");
-            mousePos = playerInput.currentActionMap.FindAction("MousePos");
-            mouseMovement.started += Handle_SnowballMouseMovement;
-            Debug.Log(mousePos);
+            //mouseMovement.started += Handle_SnowballMouseMovement;
 
             snowballRigidbody = GetComponent<Rigidbody2D>();
+
+            Cursor.lockState = CursorLockMode.Locked;
             
         }
 
-        private void OnDestroy()
-        {
-            mouseMovement.started -= Handle_SnowballMouseMovement;
-        }
+        //private void OnDestroy()
+        //{
+        //    mouseMovement.started -= Handle_SnowballMouseMovement;
+        //}
 
         void FixedUpdate()
         {
-            previousMosuePos = currentMousePos;
-            currentMousePos = mousePos.ReadValue<Vector2>();
-            Debug.Log(currentMousePos);
-            mouseDelta = CalculateMouseDelta(currentMousePos, previousMosuePos);   
             //Debug.Log(mouseDelta + "And actual value is " + mouseMovement.ReadValue<Vector2>());
             //will keep track of the mouse and move the snowball accordingly each frame
             ApplyMovementForce();
@@ -77,23 +71,32 @@ namespace Snowmentum
             ClampY();
         }
         
-        private static Vector2 CalculateMouseDelta(Vector2 current, Vector2 old)
-        {
-            return current - old;
-        }
+        //private static Vector2 CalculateMouseDelta(Vector2 current, Vector2 old)
+        //{
+        //    return current - old;
+        //}
 
-        ///  Player Movement
-        /// 
-        /// 
-        //this function will track the movement of the mouse and trackball
-        //I set it to public so I could use a feature in the inspector to automatically stop the snowball when the mouse stops moving
-        //hopefully this function being public is fine
-        public void Handle_SnowballMouseMovement(InputAction.CallbackContext context)
+        /////  Player Movement
+        ///// 
+        ///// 
+        ////this function will track the movement of the mouse and trackball
+        ////I set it to public so I could use a feature in the inspector to automatically stop the snowball when the mouse stops moving
+        ////hopefully this function being public is fine
+        //public void Handle_SnowballMouseMovement(InputAction.CallbackContext context)
+        //{
+            
+        //    // Ensure MouseDelta doesnt become an absurdly large number to due long framse (Such as script compilation
+        //    // at the beginning.)
+        //    //mouseDelta.y = Mathf.Clamp(mouseDelta.y, -maxDelta, maxDelta);
+        //}
+
+        private void Update()
         {
-            //mouseDelta = context.ReadValue<Vector2>();
-            // Ensure MouseDelta doesnt become an absurdly large number to due long framse (Such as script compilation
-            // at the beginning.)
-            //mouseDelta.y = Mathf.Clamp(mouseDelta.y, -maxDelta, maxDelta);
+            // Need to read input in Update to ensure that we're using the right time value.
+            // Use Time.deltaTime here because mouseDelta records delta since last update.
+            // If our last update was longer ago, we'll need to average out our delta into pixels / second.
+            mouseDelta = mouseMovement.ReadValue<Vector2>() / Time.deltaTime;
+            //targetVelocity = Vector2.up * baseMovementSensitivity * mouseDelta.y;
         }
 
         //this function moves the snowball up and down in accordance with the movement of the mouse
@@ -101,7 +104,6 @@ namespace Snowmentum
         {
             //Debug.Log(mouseDelta);
             snowballRigidbody.AddForce(Vector2.up * baseMovementSensitivity * mouseDelta.y);
-            //snowballRigidbody.linearVelocity = Vector2.up * baseMovementSensitivity * mouseDelta.y;
 
             //Old movement that used transform.translate. Can probably remove but leaving it for now just in case, I guess
             //transform.Translate(Vector3.up * mouseDelta.y * movementSensitivity);

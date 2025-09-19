@@ -533,12 +533,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f23b975e209500489c5e2ab1d04cd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSensitivity: 0.1
-  maxDelta: 100
-  playerInput: {fileID: 2135231807}
+  baseMovementSensitivity: 0.01
+  acceleration: 100
   minY: -4.5
   maxY: 0
-  debug_targetFrameRate: 30
+  debug_targetFrameRate: 0
+  playerInput: {fileID: 2135231807}
 --- !u!114 &2135231807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,6 +656,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2c097c41-6722-4c8a-92dd-90ef2a19e34d
+    m_ActionName: Player/MousePos
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -710,7 +714,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 3
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
