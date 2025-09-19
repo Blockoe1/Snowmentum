@@ -14,7 +14,7 @@ namespace Snowmentum
     public class ObjectScaler : MonoBehaviour, IMovementModifier
     {
         [SerializeField, Tooltip("The ScriptableValue that holds the current size of the snowball.")]
-        private ScriptableValue snowballSize;
+        private SnowballSize snowballSize;
         [SerializeField, Tooltip("The in-game size of this obstacle.  Used to determine how large this obstacle is " +
     "in relation to the snowball.")]
         private float obstacleSize;

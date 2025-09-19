@@ -17,7 +17,7 @@ namespace Snowmentum
         [SerializeField, Tooltip("Controls how long the snowball stays immune to collisions after being hit.")] 
         private float hitImmunity;
         [SerializeField] internal ScriptableValue snowballSize;
-        [SerializeField] private CollisionResultCurve.DamagedValue[] affectedValues;
+        [SerializeField] private ScriptableValue[] affectedValues;
 
         //[Header("Speed")]
         //[SerializeField] private ScriptableValue snowballSpeed;
@@ -30,13 +30,13 @@ namespace Snowmentum
         private void Awake()
         {
             // Subscribe to our size value's OnChagneEvent so that when size is reduced, we can gain immunity.
-            snowballSize.OnValueChanged += OnSizeChanged;
+            snowballSize.OnTargetValueChanged += OnSizeChanged;
         }
 
         private void OnDestroy()
         {
             // Unsubscribe events.
-            snowballSize.OnValueChanged -= OnSizeChanged;
+            snowballSize.OnTargetValueChanged -= OnSizeChanged;
         }
 
         /// <summary>
@@ -58,9 +58,9 @@ namespace Snowmentum
                 Debug.Log("Collided with " + collision.gameObject.name);
 
                 // Change the player's values based on our result curves defined in the inspector.
-                foreach(CollisionResultCurve.DamagedValue val in  affectedValues)
+                foreach(ScriptableValue val in  affectedValues)
                 {
-                    CollisionResultCurve.ApplyValueChange(val, obstacle.ObstacleSize, snowballSizeVal);
+                    val.OnCollision(obstacle.ObstacleSize, snowballSizeVal);
                 }
 
                 if (flagForDestroy)
