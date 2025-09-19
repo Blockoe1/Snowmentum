@@ -2,7 +2,7 @@
 // File Name : TemplateCreator.cs
 // Author : Brandon Koederitz
 // Creation Date : August 26, 2025
-// Last Modified : September 7, 2025
+// Last Modified : September 16, 2025
 //
 // Brief Description : Allows for the creation of custom script templates in the assets window
 *****************************************************************************/
@@ -18,6 +18,7 @@ namespace Templates
         private const string ENUM_PATH = "Assets/Templates/Editor/TemplateFiles/Enum.cs.txt";
         private const string RAWCLASS_PATH = "Assets/Templates/Editor/TemplateFiles/RawC#Class.cs.txt";
         private const string CUSTOMEDITOR_PATH = "Assets/Templates/Editor/TemplateFiles/CustomEditor.cs.txt";
+        private const string INTERFACE_PATH = "Assets/Templates/Editor/TemplateFiles/Interface.cs.txt";
         #endregion
 
         /// <summary>
@@ -51,6 +52,12 @@ namespace Templates
         public static void CreateCustomEditor()
         {
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(CUSTOMEDITOR_PATH, "NewCustomEditor.cs");
+        }
+
+        [MenuItem("Assets/Create/Scripts/Interface")]
+        public static void CreateInterface()
+        {
+            ProjectWindowUtil.CreateScriptAssetFromTemplateFile(INTERFACE_PATH, "NewInterface.cs");
         }
     }
 }

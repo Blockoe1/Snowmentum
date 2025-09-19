@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ff660ebc9ad374f8c5448d943dbdf6, type: 3}
   m_Name: SnowballSpeed
   m_EditorClassIdentifier: 
+  val: 0
+  min: -Infinity
+  max: Infinity
