@@ -45,6 +45,11 @@ namespace Snowmentum
         public override float Value_Local { get => Value; set => Value = value; }
         #endregion
 
+        private void OnGUI()
+        {
+            GUI.TextArea(new Rect(10, 10, 300, 200), TargetValue.ToString());
+        }
+
         /// <summary>
         /// Resets values on awake
         /// </summary>
