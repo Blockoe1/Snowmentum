@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8420961822085175188}
   - component: {fileID: 4449946722729724061}
+  - component: {fileID: 3341841721575561879}
+  - component: {fileID: 1749270682311056532}
   - component: {fileID: 3700530694955938567}
   - component: {fileID: 2857301978595599755}
   - component: {fileID: 7897449529701708144}
-  - component: {fileID: 3341841721575561879}
-  - component: {fileID: 1749270682311056532}
   - component: {fileID: 231841834676547580}
   m_Layer: 0
   m_Name: Snowball
@@ -93,55 +93,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3700530694955938567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9182634060681000022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d8017b6cba120b47b2429cc354aea32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
-  startingValue: 1
-  increasePerSecond: 0.1
-  useFixedUpdate: 1
---- !u!114 &2857301978595599755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9182634060681000022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d8017b6cba120b47b2429cc354aea32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: {fileID: 11400000, guid: 91af76c20720f3146aedaa0d48296324, type: 2}
-  startingValue: 1
-  increasePerSecond: 0.1
-  useFixedUpdate: 1
---- !u!114 &7897449529701708144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9182634060681000022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92abd6a968961a458263a7340fa1104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
-  startingValue: 1
-  increasePerSecond: 0.5
-  useFixedUpdate: 1
-  targetValue: {fileID: 11400000, guid: 91af76c20720f3146aedaa0d48296324, type: 2}
 --- !u!50 &3341841721575561879
 Rigidbody2D:
   serializedVersion: 5
@@ -205,6 +156,55 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &3700530694955938567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182634060681000022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8017b6cba120b47b2429cc354aea32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
+  startingValue: 1
+  increasePerSecond: 0.1
+  useFixedUpdate: 1
+--- !u!114 &2857301978595599755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182634060681000022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8017b6cba120b47b2429cc354aea32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {fileID: 11400000, guid: 91af76c20720f3146aedaa0d48296324, type: 2}
+  startingValue: 1
+  increasePerSecond: 0.1
+  useFixedUpdate: 1
+--- !u!114 &7897449529701708144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182634060681000022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92abd6a968961a458263a7340fa1104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
+  startingValue: 1
+  increasePerSecond: 0.5
+  useFixedUpdate: 1
+  targetValue: {fileID: 11400000, guid: 91af76c20720f3146aedaa0d48296324, type: 2}
 --- !u!114 &231841834676547580
 MonoBehaviour:
   m_ObjectHideFlags: 0
