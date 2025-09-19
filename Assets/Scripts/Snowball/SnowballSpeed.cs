@@ -8,15 +8,31 @@
 // In actuality, it controls the speed that obstacles move towards the snowball.
 *****************************************************************************/
 using UnityEngine;
-using static UnityEditor.Rendering.InspectorCurveEditor;
 
 namespace Snowmentum
 {
-    [CreateAssetMenu(fileName = "SnowballSpeed", menuName = "ScriptableObjects/SnowballSpeed")]
+    [CreateAssetMenu(fileName = "SnowballSpeed", menuName = "ScriptableObjects/ScriptableValues/SnowballSpeed")]
     public class SnowballSpeed : ScriptableValue
     {
+        [SerializeField, Tooltip("The steepness of the curve.  Higher numbers will result in harsher punishments" +
+            " for colliding with objects that are smaller than you."), Min(1.001f)]
+        private float curveSteepness = 2;
+
+        [SerializeField, Tooltip("The scale of this curve.  The negative value that is returned when a collision " +
+            "happens between two objects of the same size will be equal to this."), Min(0.01f)]
+        private float curveScale = 0.01f;
+
         [SerializeField, Tooltip("The minimum target speed that the snowball can be at.")]
         private float minSpeed;
+        [Header("Knockback Settings")]
+        [SerializeField, Tooltip("The knockback applied to the snowball when the obstacle is not destroyed."), Min(0f)] 
+        private float baseDamageKnockback;
+        [SerializeField, Tooltip("The steepness of the curve.  Higher numbers will result in harsher punishments" +
+            " for colliding with objects that are smaller than you."), Min(1.001f)]
+        private float knockbackCurveSteepness = 2;
+        [SerializeField, Tooltip("The scale of this curve.  The negative value that is returned when a collision " +
+    "happens between two objects of the same size will be equal to this."), Min(0.01f)]
+        private float knockbackCurveScale = 0.01f;
 
         public override float Value
         {
@@ -26,9 +42,39 @@ namespace Snowmentum
             }
         }
 
+        /// <summary>
+        /// When the snowball gets in a collision, they should get a kickback of speed and their target speed should
+        /// be reduced.
+        /// </summary>
+        /// <param name="obstacleSize"></param>
+        /// <param name="snowballSize"></param>
         public override void OnCollision(float obstacleSize, float snowballSize)
         {
-            base.OnCollision(obstacleSize, snowballSize);
+            // Target speed reduction.
+            float result = SpeedCollisionCurve(obstacleSize, snowballSize, curveScale, curveSteepness);
+            // Ensures the player only loses up to a certain amount of speed per collision.
+            if (result < 0)
+            {
+                result = Mathf.Max(result, -TargetValue * maxDamageProportion);
+            }
+            TargetValue += result;
+
+            // Speed kickback.
+            if (obstacleSize > snowballSize)
+            {
+                // If the obstacle is larger than the snowball, then a fixed kickback is applied so that the player
+                // always has some room to move around the obstacle.
+                Value = -baseDamageKnockback;
+            }
+            else
+            {
+                // If the snowball was larger, then the obstacle is destroyed and we can apply a smaller kickback
+                // since the obstacle is no longer in the way.
+                result = SpeedCollisionCurve(obstacleSize, snowballSize, knockbackCurveScale, knockbackCurveSteepness);
+                // Scale the effect on the speed based on our current speed.  Done this way so that if a reult of 0
+                // is returned, then no speed is changed, but we can still have an affect on our speed if its high.
+                Value += Value * result;
+            }
         }
 
         /// <summary>

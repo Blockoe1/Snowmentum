@@ -9,9 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ff660ebc9ad374f8c5448d943dbdf6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d02852d69ffadb4fbcc8bafb7deda3d, type: 3}
   m_Name: SnowballSize
   m_EditorClassIdentifier: 
-  val: 0
-  min: -Infinity
-  max: Infinity
+  val: 1
+  targetVal: 1
+  startingValue: 1
+  increasePerSecond: 0.1
+  moveToTargetSpeed: 0.5
+  useFixedUpdate: 1
+  maxDamageProportion: 0.25
+  curveSteepness: 2
+  maxGain: 0
+  useSizeAsMax: 1

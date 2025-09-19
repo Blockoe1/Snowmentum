@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4449946722729724061}
   - component: {fileID: 3700530694955938567}
   - component: {fileID: 2857301978595599755}
-  - component: {fileID: 7897449529701708144}
   - component: {fileID: 3341841721575561879}
   - component: {fileID: 1749270682311056532}
   - component: {fileID: 231841834676547580}
@@ -105,10 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8017b6cba120b47b2429cc354aea32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
-  startingValue: 1
-  increasePerSecond: 0.1
-  useFixedUpdate: 1
+  value: {fileID: 11400000, guid: 758b07166ed0b284982b09dcd718e67c, type: 2}
 --- !u!114 &2857301978595599755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,27 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8017b6cba120b47b2429cc354aea32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: {fileID: 11400000, guid: 91af76c20720f3146aedaa0d48296324, type: 2}
-  startingValue: 1
-  increasePerSecond: 0.1
-  useFixedUpdate: 1
---- !u!114 &7897449529701708144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9182634060681000022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92abd6a968961a458263a7340fa1104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
-  startingValue: 1
-  increasePerSecond: 0.5
-  useFixedUpdate: 1
-  targetValue: {fileID: 11400000, guid: 91af76c20720f3146aedaa0d48296324, type: 2}
+  value: {fileID: 11400000, guid: 2d0e32cf921bd684e8aa494e7893d59c, type: 2}
 --- !u!50 &3341841721575561879
 Rigidbody2D:
   serializedVersion: 5
@@ -218,14 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitImmunity: 1
-  snowballSize: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
+  snowballSize: {fileID: 11400000, guid: 758b07166ed0b284982b09dcd718e67c, type: 2}
   affectedValues:
-  - value: {fileID: 11400000, guid: ff1b9b91476c7ef4e90f24cc81a44e14, type: 2}
-    damageResultCurve: {fileID: 11400000, guid: 9735fbc2c606eed40b259e53c15d607e, type: 2}
-    destroyResultCurve: {fileID: 11400000, guid: 9735fbc2c606eed40b259e53c15d607e, type: 2}
-  - value: {fileID: 11400000, guid: 91af76c20720f3146aedaa0d48296324, type: 2}
-    damageResultCurve: {fileID: 11400000, guid: de808cc2839e25848a8f37f5b8e38a85, type: 2}
-    destroyResultCurve: {fileID: 0}
-  - value: {fileID: 11400000, guid: 6b119b866c01a11459fd7d6a0c14bb8d, type: 2}
-    damageResultCurve: {fileID: 11400000, guid: 76a4e48f67568c54ea7fd420b8c588aa, type: 2}
-    destroyResultCurve: {fileID: 11400000, guid: cd55795467147a349bc30de09b5cb09b, type: 2}
+  - {fileID: 11400000, guid: 758b07166ed0b284982b09dcd718e67c, type: 2}
+  - {fileID: 11400000, guid: 2d0e32cf921bd684e8aa494e7893d59c, type: 2}
