@@ -109,9 +109,9 @@ namespace Snowmentum
                 "collision happens between two objects of the same size will be equal to this."), Min(0.01f)]
             private float curveScale = 0.01f;
             [Header("Knockback Settings")]
-            [SerializeField, Tooltip("The knockback applied to the snowball when the obstacle is not destroyed."), 
-                Min(0f)]
-            private float baseDamageKnockback;
+            [SerializeField, Tooltip("The minimum knockback applied to the snowball when the obstacle is not " +
+                "destroyed."), Min(0f)]
+            private float minDamageKnockback;
             [SerializeField, Tooltip("The steepness of the curve.  Higher numbers will result in harsher punishments" +
                 " for colliding with objects that are smaller than you."), Min(1.001f)]
             private float knockbackCurveSteepness = 2;
@@ -138,21 +138,23 @@ namespace Snowmentum
                 speedSetter.TargetValue_Local += result;
 
                 // Speed kickback.
+                result = SpeedCollisionCurve(obstacleSize, snowballSize, knockbackCurveScale, knockbackCurveSteepness);
                 if (obstacleSize > snowballSize)
                 {
                     // If the obstacle is larger than the snowball, then a fixed kickback is applied so that the player
                     // always has some room to move around the obstacle.
-                    speedSetter.Value_Local = -baseDamageKnockback;
+                    result = Mathf.Min(-minDamageKnockback, speedSetter.Value_Local * result);
                 }
                 else
                 {
                     // If the snowball was larger, then the obstacle is destroyed and we can apply a smaller kickback
                     // since the obstacle is no longer in the way.
-                    result = SpeedCollisionCurve(obstacleSize, snowballSize, knockbackCurveScale, knockbackCurveSteepness);
+                    
                     // Scale the effect on the speed based on our current speed.  Done this way so that if a reult of 0
                     // is returned, then no speed is changed, but we can still have an affect on our speed if its high.
-                    speedSetter.Value_Local += speedSetter.Value_Local * result;
+                    result = speedSetter.Value_Local * result;
                 }
+                speedSetter.Value_Local += result;
             }
 
             /// <summary>
