@@ -21,12 +21,13 @@ namespace Snowmentum
 
         //We can change this during gameplay in order to make it harder to move the snowball as it grows in size
         // And also adjust it as needed to make it feel responsive enough
-        [SerializeField] private float baseMovementSensitivity;
+        [SerializeField, Range(0f, 0.1f)] private float baseMovementSensitivity;
         //[SerializeField, Tooltip("The maximum mouseDelta that will be read in one frame.  Done to prevent massive" +
         //    " forces from being applied at the start of the game when delta is tracked across a long laggy frame.")]
         //private int maxDelta = 100;
 
         [Header("Movement Restrictions")]
+        //[SerializeField] private float maxSpeed;
         [SerializeField] private float minY;
         [SerializeField] private float maxY;
 
@@ -69,6 +70,8 @@ namespace Snowmentum
             //will keep track of the mouse and move the snowball accordingly each frame
             ApplyMovementForce();
 
+            //ClampSpeed(maxSpeed);
+
             //this should clamp the snowball and prevent it from moving off the screen, but currently the snowball is just teleporting between the two positions
             //transform.position = new Vector3(Mathf.Clamp(transform.position.y, minY, maxY), transform.position.x);
             ClampY();
@@ -97,8 +100,26 @@ namespace Snowmentum
         /// </summary>
         private void ClampY()
         {
+            float storeY = snowballRigidbody.position.y;
             float yPos = Mathf.Clamp(snowballRigidbody.position.y, minY, maxY);
             snowballRigidbody.position = new Vector2(snowballRigidbody.position.x, yPos);
+
+            // Check to see if our y position was clamped.  It it was, then we should reset velocity back to 0.
+            if (storeY != yPos)
+            {
+                ClampSpeed(0);
+            }
+        }
+
+        /// <summary>
+        /// Clamps the speed of the snowball to a max value.
+        /// </summary>
+        /// <param name="maxSpeed"></param>
+        private void ClampSpeed(float maxSpeed)
+        {
+            Vector2 velocity = snowballRigidbody.linearVelocity;
+            velocity.y = Mathf.Clamp(velocity.y, -maxSpeed, maxSpeed);
+            snowballRigidbody.linearVelocity = velocity;
         }
 
         //private static Vector2 CalculateMouseDelta(Vector2 current, Vector2 old)
