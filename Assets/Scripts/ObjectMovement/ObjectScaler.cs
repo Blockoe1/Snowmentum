@@ -23,7 +23,6 @@ namespace Snowmentum
     " when it spawns.  This results in obstacles spawning at varied locations based on their size.")]
         private bool scaleOnSpawn;
 
-        private Vector3 baseSize;
         private float oldSize = 1;
 
         #region Properties
@@ -46,8 +45,15 @@ namespace Snowmentum
         private void Awake()
         {
             // Store our base size.
-            baseSize = transform.localScale;
             oldSize = scaleOnSpawn ? 1 : 0;
+        }
+
+        /// <summary>
+        /// Update the scale of the obstacle in the scene.
+        /// </summary>
+        private void OnValidate()
+        {
+            ScaleObstacle(obstacleSize);
         }
 
         /// <summary>
@@ -106,7 +112,7 @@ namespace Snowmentum
         /// <param name="scale">The scale to set for this obstacle.</param>
         private void ScaleObstacle(float scale)
         {
-            transform.localScale = baseSize * scale;
+            transform.localScale = Vector3.one * scale;
         }
     }
 }
