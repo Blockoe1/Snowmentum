@@ -207,8 +207,8 @@ namespace Snowmentum
                 Debug.Log("Collided with " + collision.gameObject.name);
 
                 // Change the player's values based on our result curves defined in the inspector.
-                effectOnSize.OnCollision(obstacle.ObstacleSize, snowballSizeVal, sizeComp);
                 effectOnSpeed.OnCollision(obstacle.ObstacleSize, snowballSizeVal, speedComp);
+                effectOnSize.OnCollision(obstacle.ObstacleSize, snowballSizeVal, sizeComp);
 
 
                 if (flagForDestroy)
