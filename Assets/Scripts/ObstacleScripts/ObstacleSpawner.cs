@@ -12,15 +12,16 @@ namespace Snowmentum
         [SerializeField] private int obstacleSpawnAmount = 1;  //amount of obstacles that will be spawned
         [SerializeField] private float spawnCooldown;  //cooldown on spawning obstacles so it isn't going constantly
 
+        //used to set the y axis area the obstacles can spawn in
         private float minYSpawn;
         private float maxYSpawn;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-        StartCoroutine(SpawnEnemies());
+        StartCoroutine(SpawnObstacles());
         }
 
-        IEnumerator SpawnEnemies()
+        IEnumerator SpawnObstacles()
         {
 
             for (int i = 0; i < obstacleSpawnAmount; i++)
@@ -33,7 +34,7 @@ namespace Snowmentum
                 //Spawn obstacle
                 Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity);
                 yield return new WaitForSeconds(spawnCooldown);
-                StartCoroutine(SpawnEnemies());
+                StartCoroutine(SpawnObstacles());
             }
         }
     }
