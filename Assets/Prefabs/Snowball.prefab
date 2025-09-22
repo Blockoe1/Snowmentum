@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 1
-  increasePerSecond: 0.1
+  increasePerSecond: 0
   moveToTargetSpeed: 0.5
   useFixedUpdate: 1
 --- !u!114 &8165628667471022399
@@ -184,8 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c721557f089564d91a8770540b23a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingValue: 1
-  increasePerSecond: 0.1
+  startingValue: 1.6
+  increasePerSecond: 0.01
   moveToTargetSpeed: 0.2
   useFixedUpdate: 1
   minSpeed: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
     maxDamageProportion: 0.25
     curveSteepness: 2
     curveScale: 0.5
-    minDamageKnockback: 8
+    minDamageKnockback: 3.05
     knockbackCurveSteepness: 2
     knockbackCurveScale: 1
   sizeComp: {fileID: 2681645269302268440}
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f23b975e209500489c5e2ab1d04cd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSensitivity: 0.01
+  baseMovementSensitivity: 0.03
   minY: -3.5
   maxY: 1.35
   snowballRigidbody: {fileID: 3341841721575561879}
