@@ -19,7 +19,7 @@ namespace Snowmentum
         /// <returns></returns>
         public Vector2 MoveUpdate(Vector2 targetPos)
         {
-            
+            throw new System.NotImplementedException();
         }
     }
 }
