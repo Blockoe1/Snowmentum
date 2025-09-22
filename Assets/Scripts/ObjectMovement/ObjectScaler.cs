@@ -51,6 +51,14 @@ namespace Snowmentum
         }
 
         /// <summary>
+        /// Update the scale of the obstacle in the scene.
+        /// </summary>
+        private void OnValidate()
+        {
+            ScaleObstacle(obstacleSize);
+        }
+
+        /// <summary>
         /// Continually update the size of our obstacle based on the size of the snowball.
         /// </summary>
         public Vector2 MoveUpdate(Vector2 targetPos)
