@@ -53,6 +53,8 @@ namespace Snowmentum
             {
                 // Reset speed to 0 so that the screen stops moving 
                 speed.TargetValue_Local = 0;
+                speed.Value_Local = 0;
+                //Debug.Log(SnowballSpeed.Value);
                 OnDeathEvent?.Invoke();
                 Destroy(gameObject);
             }

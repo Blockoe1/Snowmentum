@@ -62,6 +62,7 @@ namespace Snowmentum
             // Default movement determined by the speed of the snowball and the speedScale of our settings.
             Vector2 targetPos = myRigidbody.position + 
                 (moveVector * SnowballSpeed.Value * Time.fixedDeltaTime * speedScale);
+            //Debug.Log(SnowballSpeed.Value);
 
             // Update the target pos based on overrides of movement modifiers, such as scaling with perspective.
             foreach(IMovementModifier modifier in moveModifiers)
