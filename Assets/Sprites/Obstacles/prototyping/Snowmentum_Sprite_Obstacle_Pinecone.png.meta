@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 6a66bbbfa02e9e54a8e52ae612af4ce5
+guid: 23ef3fb519233bf46826112b5f985499
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2018988591146525120
-    second: snowball_placeholder_spritesheet_0
-  - first:
-      213: -7623385430561122494
-    second: snowball_placeholder_spritesheet_1
-  - first:
-      213: -8675034700492594385
-    second: snowball_placeholder_spritesheet_2
-  - first:
-      213: -843516172990178419
-    second: snowball_placeholder_spritesheet_3
+      213: -3730381287153838912
+    second: Snowmentum_Sprite_Obstacle_Pinecone_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: snowball_placeholder_spritesheet_0
+      name: Snowmentum_Sprite_Obstacle_Pinecone_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 97
-        width: 34
-        height: 34
+        x: 0
+        y: 0
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04e152bc29c1bf3e0800000000000000
-      internalID: -2018988591146525120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: snowball_placeholder_spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 77
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2471481675b443690800000000000000
-      internalID: -7623385430561122494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: snowball_placeholder_spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 1
-        width: 98
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f23a3f6f6e51c9780800000000000000
-      internalID: -8675034700492594385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: snowball_placeholder_spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 15
-        width: 66
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d8b9f92828a3b44f0800000000000000
-      internalID: -843516172990178419
+      spriteID: 0c45e66dbf50b3cc0800000000000000
+      internalID: -3730381287153838912
       vertices: []
       indices: 
       edges: []
@@ -200,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      snowball_placeholder_spritesheet_0: -2018988591146525120
-      snowball_placeholder_spritesheet_1: -7623385430561122494
-      snowball_placeholder_spritesheet_2: -8675034700492594385
-      snowball_placeholder_spritesheet_3: -843516172990178419
+      Snowmentum_Sprite_Obstacle_Pinecone_0: -3730381287153838912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
