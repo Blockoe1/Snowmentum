@@ -13,6 +13,6 @@ namespace Snowmentum
 {
     public interface IMovementModifier
     {
-        Vector2 MoveUpdate(Vector2 targetPos);
+        Vector2 MoveUpdate(Vector2 targetPos, Vector2 moveVector);
     }
 }
