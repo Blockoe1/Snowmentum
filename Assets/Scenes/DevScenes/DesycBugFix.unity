@@ -202,6 +202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HillBit2
       objectReference: {fileID: 0}
+    - target: {fileID: 5281419839486337832, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
