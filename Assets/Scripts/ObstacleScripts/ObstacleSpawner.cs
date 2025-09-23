@@ -77,12 +77,18 @@ namespace Snowmentum
             {
                 for (int i = 0; i < obstacleSpawnAmount; i++)
                 {
-                    float randomY = UnityEngine.Random.Range(minYSpawn, maxYSpawn);
                     //Pick an obstacle prefab
                     GameObject obstacleSpawn = GetObstaclePrefab(obstacles);
 
+                    // If no obstacle is valid to be spawned right now, then we should skip spawning.
+                    if (obstacleSpawn == null)
+                    {
+                        continue;
+                    }
                     //Pick a random spawn point
+                    float randomY = UnityEngine.Random.Range(minYSpawn, maxYSpawn);
                     Vector3 SpawnArea = transform.position + (Vector3.up * randomY);
+
                     //Spawn obstacle
                     Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity);
                     
@@ -109,7 +115,7 @@ namespace Snowmentum
             int totalWeight = 0;
             foreach(ObstacleSpawnData obs in  validObstacles)
             {
-                totalWeight += obs.weight;
+                totalWeight += GetObstacleWeight(obs);
             }
 
             // Get a random weight value
@@ -118,7 +124,7 @@ namespace Snowmentum
             // Subtract item weight from random weight until it hits 0.
             for (int i = 0; i < validObstacles.Length; i++)
             {
-                randomWeight -= validObstacles[i].weight;
+                randomWeight -= GetObstacleWeight(validObstacles[i]);
                 if (randomWeight <= 0)
                 {
                     // Before we return our found obstacle, we need to update the weight value of all the
@@ -148,6 +154,15 @@ namespace Snowmentum
         private static bool CheckValidObstacle(ObstacleSpawnData obstacleSpawnData)
         {
             return obstacleSpawnData.Size < SnowballSize.TargetValue;
+        }
+
+        /// <summary>
+        /// Gets the weight of an obstacle, taking into account the size difference between it and the snowball.
+        /// </summary>
+        /// <returns></returns>
+        private static int GetObstacleWeight(ObstacleSpawnData obstacle)
+        {
+            return obstacle.weight - Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue));
         }
     }
 }
