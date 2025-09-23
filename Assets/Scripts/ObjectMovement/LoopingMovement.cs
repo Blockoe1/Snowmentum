@@ -6,15 +6,16 @@
 //
 // Brief Description : Continually loops objects across the screen.
 *****************************************************************************/
+using System;
 using UnityEngine;
 
 namespace Snowmentum
 {
     public class LoopingMovement : MonoBehaviour, IMovementModifier
     {
-        [SerializeField] private float xLimit;
         [SerializeField, Tooltip("How far back the object should go once it exceeds the xLimit")]
         private float loopLength;
+
 
         /// <summary>
         /// If the object's target position would exceed it's xLimit, then we loop it around to the other side of the
@@ -24,9 +25,9 @@ namespace Snowmentum
         /// <returns></returns>
         public Vector2 MoveUpdate(Vector2 targetPos, Vector2 moveVector)
         {
-            if (targetPos.x < xLimit)
+            if (Mathf.Abs(targetPos.x) > loopLength / 2)
             {
-                targetPos = targetPos - (loopLength * moveVector);
+                targetPos = targetPos + ((loopLength) * Math.Sign(targetPos.x) * moveVector);
             }
             return targetPos;
         }

@@ -83,9 +83,9 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
-  m_Size: {x: 12, y: 8}
-  m_AdaptiveModeThreshold: 0.5
+  m_DrawMode: 1
+  m_Size: {x: 6, y: 8}
+  m_AdaptiveModeThreshold: 0
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
@@ -118,8 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2303fe5f7b7794eb6f7de7cd711904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xLimit: -15
-  loopLength: 36
+  loopLength: 24
+  shortenPixels: 4
 --- !u!114 &7779393125507205990
 MonoBehaviour:
   m_ObjectHideFlags: 0
