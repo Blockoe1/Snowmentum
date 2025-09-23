@@ -631,9 +631,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 0.999651
-    height: 1
+    y: 0.11173184
+    width: 0.6699233
+    height: 0.6703911
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -884,6 +884,14 @@ PrefabInstance:
     - target: {fileID: 4667490207908892112, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
       propertyPath: m_Name
       value: Hill
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427417724141731760, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: moveVector.x
+      value: -0.99904823
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427417724141731760, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: moveVector.y
+      value: 0.04361953
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
