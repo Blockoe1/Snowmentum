@@ -14,12 +14,12 @@ namespace Snowmentum
     {
         [SerializeField, Tooltip("The angle that the snowball moves at, based on the approximate angle of " +
             "the hillside.  Should be based on 0 degrees being to the right.")]
-        private float moveAngle;
+        private float moveAngle = 180;
         [SerializeField, Tooltip("How quickly this object should move in comparison to the snowball's speed.  " +
             "Obstacles should have this value set to 1.")]
         private float speedScale = 1;
 
-        [SerializeField, HideInInspector] private Vector2 moveVector;
+        [SerializeField, HideInInspector] private Vector2 moveVector = Vector2.left;
 
         private IMovementModifier[] moveModifiers;
 
