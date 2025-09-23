@@ -153,7 +153,7 @@ namespace Snowmentum
         /// <returns></returns>
         private static bool CheckValidObstacle(ObstacleSpawnData obstacleSpawnData)
         {
-            return obstacleSpawnData.Size < SnowballSize.TargetValue;
+            return obstacleSpawnData.Size < SnowballSize.TargetValue * SnowballSize.OBSTACLE_RANGE_SCALE;
         }
 
         /// <summary>
@@ -162,6 +162,8 @@ namespace Snowmentum
         /// <returns></returns>
         private static int GetObstacleWeight(ObstacleSpawnData obstacle)
         {
+            Debug.Log(Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)));
+            Debug.Log("Obstacle " + obstacle.gameObject.name + " has efffective weight of " + (obstacle.weight - Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue))));
             return obstacle.weight - Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue));
         }
     }
