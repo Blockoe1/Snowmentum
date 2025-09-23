@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name : Obstacle Spawner.cs
+// Author : Jack Fisher
+// Creation Date : 9/22/2025
+// Last Modified : 9/23/2025
+//
+// Brief Description : Continually spawns obstacles.
+*****************************************************************************/
 using System.Collections;
 using UnityEngine;
 
@@ -16,27 +24,36 @@ namespace Snowmentum
         [SerializeField] private float minYSpawn;
         [SerializeField] private float maxYSpawn;
 
+        private bool isSpawning;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-        StartCoroutine(SpawnObstacles());
+            StartCoroutine(SpawnObstacles());
         }
 
         IEnumerator SpawnObstacles()
         {
-
-            for (int i = 0; i < obstacleSpawnAmount; i++)
+            isSpawning = true;
+            while(isSpawning)
             {
-                float randomY = Random.Range(minYSpawn, maxYSpawn);
-                //Pick an obstacle prefab
-                GameObject obstacleSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
-                //Pick a random spawn point
-                Vector3 SpawnArea = new Vector3(5, randomY, 0);
-                //Spawn obstacle
-                Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity);
+                for (int i = 0; i < obstacleSpawnAmount; i++)
+                {
+                    float randomY = Random.Range(minYSpawn, maxYSpawn);
+                    //Pick an obstacle prefab
+                    GameObject obstacleSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
+
+                    //Pick a random spawn point
+                    Vector3 SpawnArea = transform.position + (Vector3.up * randomY);
+                    //Spawn obstacle
+                    Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity);
+                    
+                    //StartCoroutine(SpawnObstacles());
+                }
                 yield return new WaitForSeconds(spawnCooldown);
-                StartCoroutine(SpawnObstacles());
             }
         }
+
+
     }
 }
