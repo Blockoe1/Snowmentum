@@ -15,6 +15,7 @@ namespace Snowmentum
         //used to set the y axis area the obstacles can spawn in
         [SerializeField] private float minYSpawn;
         [SerializeField] private float maxYSpawn;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
