@@ -78,7 +78,7 @@ namespace Snowmentum
         #region Debug
         private void OnGUI()
         {
-            GUI.TextArea(new Rect(10, 170, 150, 100), "Snowball Speed: \n" + TargetValue.ToString() + "\n" + 
+            GUI.TextArea(new Rect(10, 110, 100, 100), "Snowball Speed: \n" + TargetValue.ToString() + "\n" + 
                 Value.ToString());
         }
         #endregion

@@ -513,6 +513,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1070363200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+  m_PrefabInstance: {fileID: 1671779625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1070363201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070363200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e434e9d55db7782488f2c94e48ef2b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freezeRate: 0
+  thawRate: 0
+  OnFreezeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnThawEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1078176627
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,10 +658,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.28020835
+    x: 0
     y: 0
-    width: 0.3805556
-    height: 0.38055554
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -901,7 +926,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1070363201}
   m_SourcePrefab: {fileID: 100100000, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
 --- !u!1 &1997445322
 GameObject:
