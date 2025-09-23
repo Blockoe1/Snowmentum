@@ -50,9 +50,9 @@ namespace Snowmentum
         #endregion
 
         /// <summary>
-        /// Resets values on awake
+        /// Resets values on start (so that things can subscribe to events on awake)
         /// </summary>
-        private void Awake()
+        private void Start()
         {
             // Set the pivot point to the snowball's X position so that obstacles that scale based on perspective
             // scale correctly.
