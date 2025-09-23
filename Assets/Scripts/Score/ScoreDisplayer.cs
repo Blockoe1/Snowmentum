@@ -27,7 +27,6 @@ namespace Snowmentum.Score
         }
         #endregion
 
-
         private void Awake()
         {
             ScoreStatic.OnScoreUpdated += UpdateScoreText;

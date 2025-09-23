@@ -1,0 +1,165 @@
+/*****************************************************************************
+// File Name : SnowballFreezing.cs
+// Author : Brandon Koederitz
+// Creation Date : 9/23/2025
+// Last Modified : 9/23/2025
+//
+// Brief Description : Allows the snowball to freeze over for a limited time, making it invincible.
+*****************************************************************************/
+using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace Snowmentum
+{
+    [RequireComponent(typeof(SpriteRenderer))]
+    public class SnowballFreezing : MonoBehaviour
+    {
+        #region CONSTS
+        private const string WATER_TAG = "Water";
+        private const float FREEZE_THRESHOLD = 1;
+        #endregion
+
+        [SerializeField, Tooltip("The rate per second at which the snowball's freeze meter fills while in water.")] 
+        private float freezeRate;
+        [SerializeField, Tooltip("The rate persecond that the player loses freeze meter while they are frozen.  " +
+            "Should be negative.")] 
+        private float thawRate;
+        [Header("Events")]
+        [SerializeField] private UnityEvent OnFreezeEvent;
+        [SerializeField] private UnityEvent OnThawEvent;
+
+        private static float freezeAmount;
+        public static event Action<float> OnFreezeAmountChanged;
+
+        private bool isFrozen;
+        private bool isInWater;
+
+        #region Properties
+        private bool IsFrozen
+        {
+            get { return isFrozen; }
+            set
+            {
+                // Only allow changes if we are moving to a new state.
+                if (isFrozen != value)
+                {
+                    isFrozen = value;
+                    if (isFrozen)
+                    {
+                        OnFreezeEvent?.Invoke();
+
+                    }
+                    else
+                    {
+                        OnThawEvent?.Invoke();
+                    }
+                }
+            }
+        }
+        public static float FreezeAmount
+        {
+            get { return freezeAmount; }
+            private set 
+            { 
+                freezeAmount = Mathf.Clamp(value, 0, FREEZE_THRESHOLD); 
+                OnFreezeAmountChanged?.Invoke(freezeAmount);
+            }
+        }
+        #endregion
+
+        #region Nested
+        private delegate float RateGetter();
+        private delegate bool StateGetter();
+        #endregion
+
+        #region Getters
+        // Need to make getters instead of properties so that I can pass them as delegates.
+        private float GetFreezeRate() { return freezeRate; }
+        private float GetThawRate() { return freezeRate; }
+        private bool GetIsInWater() { return isInWater; }
+        private bool GetIsFrozen() { return IsFrozen; }
+        #endregion
+
+        #region Freeze Accumulation
+        /// <summary>
+        /// When the snowball enters a trigger marked as "water", they will begin to accumulate freezeAmount;
+        /// </summary>
+        /// <param name="collision"></param>
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag(WATER_TAG))
+            {
+                isInWater = true;
+                // Continually increases the freezeAmount by freezeRate while the snowball is in water.
+                StartCoroutine(FreezeChangeRoutine(GetFreezeRate, GetIsInWater));
+            }
+        }
+
+        /// <summary>
+        /// Stops freezeAmount gain when the snowball exits water.
+        /// </summary>
+        /// <param name="collision"></param>
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag(WATER_TAG))
+            {
+                isInWater = false;
+            }
+        }
+
+        /// <summary>
+        /// Causes the snowball to gain freezeAmount while it's in water
+        /// </summary>
+        /// <param name="rate">The getter for the rate that freezeAmount should change by each second.</param>
+        /// <param name="state">
+        /// The getter for the state that the snowball must be in to have this coroutine continue.
+        /// </param>
+        /// <returns></returns>
+        private IEnumerator FreezeChangeRoutine(RateGetter rate, StateGetter state)
+        {
+            while (state())
+            {
+                FreezeAmount += rate() * Time.deltaTime;
+                UpdateFreezeStatus(FreezeAmount);
+                yield return null;
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// Updates the current state of the snowball between frozen and thawed.
+        /// </summary>
+        /// <param name="freezeAmount">The current freezeAmount of the snowball.</param>
+        private void UpdateFreezeStatus(float freezeAmount)
+        {
+            // Switches the snowball to the frozen state.
+            if (!IsFrozen && freezeAmount >= FREEZE_THRESHOLD)
+            {
+                IsFrozen = true;
+                // Need to decrement our freezeAmount while the snowball is frozen.
+                StartCoroutine(FreezeChangeRoutine(GetThawRate, GetIsFrozen));
+            }
+            // Switches the snowball back to it's normal state.
+            else if (IsFrozen && freezeAmount <= 0)
+            {
+                IsFrozen = false;
+            }
+        }
+
+        ///// <summary>
+        ///// Continually causes the snowball to thaw while it is frozen.
+        ///// </summary>
+        ///// <returns></returns>
+        //private IEnumerator FreezeRoutine()
+        //{
+        //    while (IsFrozen)
+        //    {
+        //        FreezeAmount -= thawRate * Time.deltaTime;
+        //        UpdateFreezeStatus(FreezeAmount);
+        //        yield return null;
+        //    }
+        //}
+    }
+}
