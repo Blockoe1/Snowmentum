@@ -28,7 +28,8 @@ namespace Snowmentum
         //private int maxDelta = 100;
 
         [Header("Movement Restrictions")]
-        //[SerializeField] private float maxSpeed;
+        [SerializeField, Tooltip("The maximum speed the snowball can move at.  Set to 0 for no max speed")] 
+        private float maxSpeed;
         [SerializeField] private float minY;
         [SerializeField] private float maxY;
 
@@ -71,7 +72,11 @@ namespace Snowmentum
             //will keep track of the mouse and move the snowball accordingly each frame
             ApplyMovementForce();
 
-            //ClampSpeed(maxSpeed);
+            // Restrict the snowball's speed if maxSpeed is not set to 0.
+            if (!Mathf.Approximately(maxSpeed, 0))
+            {
+                ClampSpeed(maxSpeed);
+            }
 
             //this should clamp the snowball and prevent it from moving off the screen, but currently the snowball is just teleporting between the two positions
             //transform.position = new Vector3(Mathf.Clamp(transform.position.y, minY, maxY), transform.position.x);
