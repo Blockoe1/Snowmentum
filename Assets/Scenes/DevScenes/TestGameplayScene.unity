@@ -335,9 +335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2762447730aecdf45953659c21997511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAngle: 177.5
+  moveAngle: 180
   speedScale: 1
-  moveVector: {x: -0.99904823, y: 0.04361953}
+  moveVector: {x: -1, y: -0.00000008742278}
   myRigidbody: {fileID: 1045153884}
 --- !u!50 &1045153884
 Rigidbody2D:
@@ -742,8 +742,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 1.0000001
+    height: 0.9995353
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -878,9 +878,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2762447730aecdf45953659c21997511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAngle: 177.5
+  moveAngle: 180
   speedScale: 1
-  moveVector: {x: -0.99904823, y: 0.04361953}
+  moveVector: {x: -1, y: -0.00000008742278}
   myRigidbody: {fileID: 1559834072}
 --- !u!50 &1559834072
 Rigidbody2D:
