@@ -21,6 +21,7 @@ namespace Snowmentum
         [SerializeField] private SpeedUpdater effectOnSpeed;
 
         private bool isImmune;
+        private bool isInvincible;
 
         #region Component References
         [Header("Components")]
@@ -35,6 +36,14 @@ namespace Snowmentum
         {
             sizeComp = GetComponent<SnowballSize>();
             speedComp = GetComponent<SnowballSpeed>();
+        }
+        #endregion
+
+        #region Properties
+        public bool IsInvincible
+        {
+            get { return isInvincible; }
+            set { isInvincible = value; }
         }
         #endregion
 
@@ -194,26 +203,24 @@ namespace Snowmentum
         /// <param name="collision"></param>
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log(isImmune);
+            //Debug.Log(isImmune);
             if (!isImmune && collision.gameObject.TryGetComponent(out ObstacleCollision obstacle))
             {
                 // Save the snowball's current size so that any changes to size dont affect any of the other math.
                 float snowballSizeVal = SnowballSize.Value;
 
-                // Set a bool at the beginning so that no matter the result of the collision on the player's size,
-                // the obstacle will get destroyed if the snowball was larger than it.
-                bool flagForDestroy = snowballSizeVal > obstacle.ObstacleSize;
-
-                Debug.Log("Collided with " + collision.gameObject.name);
+                //Debug.Log("Collided with " + collision.gameObject.name);
 
                 // Change the player's values based on our result curves defined in the inspector.
-                effectOnSpeed.OnCollision(obstacle.ObstacleSize, snowballSizeVal, speedComp);
-                effectOnSize.OnCollision(obstacle.ObstacleSize, snowballSizeVal, sizeComp);
-
-
-                if (flagForDestroy)
+                if (!IsInvincible)
                 {
-                    obstacle.DestroyObstacle();
+                    effectOnSpeed.OnCollision(obstacle.ObstacleSize, snowballSizeVal, speedComp);
+                    effectOnSize.OnCollision(obstacle.ObstacleSize, snowballSizeVal, sizeComp);
+                }
+
+                if (IsInvincible || snowballSizeVal > obstacle.ObstacleSize)
+                {
+                    obstacle.DestroyObstacle(obstacle.ObstacleSize / snowballSizeVal);
                 }
             }
         }

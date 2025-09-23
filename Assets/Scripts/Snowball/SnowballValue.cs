@@ -26,7 +26,7 @@ namespace Snowmentum
         /// </summary>
         private void Update()
         {
-            if (!useFixedUpdate)
+            if (!useFixedUpdate && increasePerSecond > 0)
             {
                 TimedUpdate(Time.deltaTime);
             }
@@ -34,7 +34,7 @@ namespace Snowmentum
 
         private void FixedUpdate()
         {
-            if (useFixedUpdate)
+            if (useFixedUpdate && increasePerSecond > 0)
             {
                 TimedUpdate(Time.fixedDeltaTime);
             }

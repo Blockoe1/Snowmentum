@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8657666669540303953}
   - component: {fileID: 2339446773185272735}
   - component: {fileID: 3549831470322472451}
+  - component: {fileID: 7647677357995392279}
   m_Layer: 0
   m_Name: ObstacleBase
   m_TagString: Untagged
@@ -31,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 5150288299065344882}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.35, y: -1.57, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -177,8 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf336ba4bd058c4396612996741d5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleSize: 2
-  scalePerspective: 1
+  obstacleSize: 1
+  scalePerspective: 0
   scaleOnSpawn: 0
 --- !u!114 &2339446773185272735
 MonoBehaviour:
@@ -192,9 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2762447730aecdf45953659c21997511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAngle: 177.5
+  moveAngle: 180
   speedScale: 1
-  moveVector: {x: -0.99904823, y: 0.04361953}
+  moveVector: {x: -1, y: -0.00000008742278}
   myRigidbody: {fileID: 3304603884408545833}
 --- !u!114 &3549831470322472451
 MonoBehaviour:
@@ -210,5 +211,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnDestroyEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7647677357995392279}
+        m_TargetAssemblyTypeName: Snowmentum.Score.ScoreIncrementer, Assembly-CSharp
+        m_MethodName: AddScoreMultiplied
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   scaler: {fileID: 8657666669540303953}
+--- !u!114 &7647677357995392279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150288299065344882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128549293bd314a488dac3be5da0cec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseScoreIncrease: 0

@@ -2,7 +2,7 @@
 // File Name : SnowballSize.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/19/2025
-// Last Modified : 9/19/2025
+// Last Modified : 9/22/2025
 //
 // Brief Description : Holds the snowball's current size.
 *****************************************************************************/
@@ -17,6 +17,9 @@ namespace Snowmentum
         private static float targetVal;
 
         public static event Action<float, float> OnTargetValueChanged;
+        public static event Action<float, float> OnValueChanged;
+
+        private static float scalePivotX;
 
         #region Properties
         public static float Value
@@ -27,7 +30,7 @@ namespace Snowmentum
                 float oldVal = val;
                 // Should get to this if both are infinity.
                 val = value;
-
+                OnValueChanged?.Invoke(val, oldVal);
             }
         }
         public static float TargetValue
@@ -41,20 +44,20 @@ namespace Snowmentum
                 OnTargetValueChanged?.Invoke(targetVal, oldVal);
             }
         }
+        public static float ScalePivotX => scalePivotX;
         public override float TargetValue_Local { get => TargetValue; set => TargetValue = value; }
         public override float Value_Local { get => Value; set => Value = value; }
         #endregion
 
-        private void OnGUI()
-        {
-            GUI.TextArea(new Rect(10, 10, 300, 200), TargetValue.ToString() + "\n" + Value.ToString());
-        }
-
         /// <summary>
-        /// Resets values on awake
+        /// Resets values on start (so that things can subscribe to events on awake)
         /// </summary>
-        private void Awake()
+        private void Start()
         {
+            // Set the pivot point to the snowball's X position so that obstacles that scale based on perspective
+            // scale correctly.
+            scalePivotX = transform.position.x;
+
             TargetValue = startingValue;
             Value = startingValue;
         }
@@ -74,5 +77,12 @@ namespace Snowmentum
                 Value = Mathf.Lerp(Value, TargetValue, moveToTargetSpeed);
             }
         }
+        #region Debug
+        private void OnGUI()
+        {
+            GUI.TextArea(new Rect(10, 10, 100, 100), "Snowball Size: \n" + TargetValue.ToString() + "\n" + 
+                Value.ToString());
+        }
+        #endregion
     }
 }
