@@ -2,7 +2,7 @@
 // File Name : ObjectMover.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/13/2025
-// Last Modified : 9/16/2025
+// Last Modified : 9/22/2025
 //
 // Brief Description : Moves objects across the screen based on some settings for this type of object.
 *****************************************************************************/
