@@ -67,6 +67,11 @@ namespace Snowmentum
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            // Reset all obstacles to their base weight
+            foreach(var obstacle in obstacles)
+            {
+                ObstacleSpawnData.OnSelected(obstacle);
+            }
             StartCoroutine(SpawnObstacles());
         }
 
@@ -153,7 +158,9 @@ namespace Snowmentum
         /// <returns></returns>
         private static bool CheckValidObstacle(ObstacleSpawnData obstacleSpawnData)
         {
-            return obstacleSpawnData.Size < SnowballSize.TargetValue * SnowballSize.OBSTACLE_RANGE_SCALE;
+            // The obstacle's size must be within double or half of the snowball's size.
+            return obstacleSpawnData.Size < SnowballSize.TargetValue * SnowballSize.OBSTACLE_RANGE_SCALE && 
+                obstacleSpawnData.Size > SnowballSize.TargetValue / SnowballSize.OBSTACLE_RANGE_SCALE;
         }
 
         /// <summary>
@@ -162,9 +169,11 @@ namespace Snowmentum
         /// <returns></returns>
         private static int GetObstacleWeight(ObstacleSpawnData obstacle)
         {
-            Debug.Log(Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)));
-            Debug.Log("Obstacle " + obstacle.gameObject.name + " has efffective weight of " + (obstacle.weight - Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue))));
-            return obstacle.weight - Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue));
+            //Debug.Log(Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)));
+            int effectiveWeight = Mathf.Max(obstacle.weight - 
+                Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)), 1);
+            Debug.Log($"Obstacle {obstacle.gameObject.name} has efffective weight of {effectiveWeight}");
+            return effectiveWeight;
         }
     }
 }
