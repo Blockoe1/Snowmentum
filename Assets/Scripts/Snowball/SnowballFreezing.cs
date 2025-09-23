@@ -24,8 +24,7 @@ namespace Snowmentum
 
         [SerializeField, Tooltip("The rate per second at which the snowball's freeze meter fills while in water.")] 
         private float freezeRate;
-        [SerializeField, Tooltip("The rate persecond that the player loses freeze meter while they are frozen.  " +
-            "Should be negative.")] 
+        [SerializeField, Tooltip("The rate persecond that the player loses freeze meter while they are frozen.")] 
         private float thawRate;
         [Header("Events")]
         [SerializeField] private UnityEvent OnFreezeEvent;
@@ -78,7 +77,7 @@ namespace Snowmentum
         #region Getters
         // Need to make getters instead of properties so that I can pass them as delegates.
         private float GetFreezeRate() { return freezeRate; }
-        private float GetThawRate() { return freezeRate; }
+        private float GetThawRate() { return -thawRate; }
         private bool GetIsInWater() { return isInWater; }
         private bool GetIsFrozen() { return IsFrozen; }
         #endregion
@@ -138,6 +137,7 @@ namespace Snowmentum
             // Switches the snowball to the frozen state.
             if (!IsFrozen && freezeAmount >= FREEZE_THRESHOLD)
             {
+                Debug.Log("Frozen");
                 IsFrozen = true;
                 // Need to decrement our freezeAmount while the snowball is frozen.
                 StartCoroutine(FreezeChangeRoutine(GetThawRate, GetIsFrozen));
