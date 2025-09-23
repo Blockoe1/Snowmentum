@@ -16,6 +16,7 @@ namespace Snowmentum
         [SerializeField, Tooltip("How far back the object should go once it exceeds the xLimit")]
         private float loopLength;
 
+
         /// <summary>
         /// If the object's target position would exceed it's xLimit, then we loop it around to the other side of the
         /// screen.
@@ -26,7 +27,7 @@ namespace Snowmentum
         {
             if (Mathf.Abs(targetPos.x) > loopLength / 2)
             {
-                targetPos = targetPos + (loopLength * Math.Sign(targetPos.x) * moveVector);
+                targetPos = targetPos + ((loopLength) * Math.Sign(targetPos.x) * moveVector);
             }
             return targetPos;
         }

@@ -117,5 +117,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2303fe5f7b7794eb6f7de7cd711904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xLimit: 16
   loopLength: 32
+  shortenPixels: 2
