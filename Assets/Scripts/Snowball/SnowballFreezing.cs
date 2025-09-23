@@ -10,7 +10,6 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace Snowmentum
 {
@@ -22,10 +21,11 @@ namespace Snowmentum
         private const float FREEZE_THRESHOLD = 1;
         #endregion
 
-        [SerializeField, Tooltip("The rate per second at which the snowball's freeze meter fills while in water.")] 
-        private float freezeRate;
-        [SerializeField, Tooltip("The rate persecond that the player loses freeze meter while they are frozen.")] 
-        private float thawRate;
+        [SerializeField, Tooltip("The time the snowball needs to spend in water to freeze over.")] 
+        private float freezeTime;
+        [SerializeField, Tooltip("The base amount of time that the snowball will stay frozen without moving " +
+            "through water.")] 
+        private float frozenTime;
         [Header("Events")]
         [SerializeField] private UnityEvent OnFreezeEvent;
         [SerializeField] private UnityEvent OnThawEvent;
@@ -76,8 +76,8 @@ namespace Snowmentum
 
         #region Getters
         // Need to make getters instead of properties so that I can pass them as delegates.
-        private float GetFreezeRate() { return freezeRate; }
-        private float GetThawRate() { return -thawRate; }
+        private float GetFreezeRate() { return FREEZE_THRESHOLD / freezeTime; }
+        private float GetThawRate() { return -FREEZE_THRESHOLD / frozenTime; }
         private bool GetIsInWater() { return isInWater; }
         private bool GetIsFrozen() { return IsFrozen; }
         #endregion
