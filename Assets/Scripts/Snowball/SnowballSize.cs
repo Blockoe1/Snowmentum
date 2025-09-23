@@ -2,7 +2,7 @@
 // File Name : SnowballSize.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/19/2025
-// Last Modified : 9/19/2025
+// Last Modified : 9/22/2025
 //
 // Brief Description : Holds the snowball's current size.
 *****************************************************************************/
@@ -17,6 +17,7 @@ namespace Snowmentum
         private static float targetVal;
 
         public static event Action<float, float> OnTargetValueChanged;
+        public static event Action<float, float> OnValueChanged;
 
         #region Properties
         public static float Value
@@ -27,7 +28,7 @@ namespace Snowmentum
                 float oldVal = val;
                 // Should get to this if both are infinity.
                 val = value;
-
+                OnValueChanged?.Invoke(val, oldVal);
             }
         }
         public static float TargetValue
