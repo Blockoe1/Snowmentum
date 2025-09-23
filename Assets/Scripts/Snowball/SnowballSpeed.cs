@@ -60,7 +60,7 @@ namespace Snowmentum
         /// <summary>
         /// Resets values on awake
         /// </summary>
-        private void Awake()
+        private void Start()
         {
             TargetValue = startingValue;
             Value = startingValue;

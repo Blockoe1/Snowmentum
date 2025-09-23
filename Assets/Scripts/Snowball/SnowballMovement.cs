@@ -2,7 +2,7 @@
 // File Name : SnowballMovement.cs
 // Author : Jack Fisher
 // Creation Date : September 17th, 2025
-// Last Modified : September 19th, 2025
+// Last Modified : September 23th, 2025
 //
 // Brief Description : As of script creation this script just handles player movement. 
 // We can expand this script to handle more parts of the snowball if needed though. 
@@ -22,12 +22,14 @@ namespace Snowmentum
         //We can change this during gameplay in order to make it harder to move the snowball as it grows in size
         // And also adjust it as needed to make it feel responsive enough
         [SerializeField, Range(0f, 0.1f)] private float baseMovementSensitivity;
+        [SerializeField] private bool scaleWithSnowballSize;
         //[SerializeField, Tooltip("The maximum mouseDelta that will be read in one frame.  Done to prevent massive" +
         //    " forces from being applied at the start of the game when delta is tracked across a long laggy frame.")]
         //private int maxDelta = 100;
 
         [Header("Movement Restrictions")]
-        //[SerializeField] private float maxSpeed;
+        [SerializeField, Tooltip("The maximum speed the snowball can move at.  Set to 0 for no max speed")] 
+        private float maxSpeed;
         [SerializeField] private float minY;
         [SerializeField] private float maxY;
 
@@ -70,7 +72,11 @@ namespace Snowmentum
             //will keep track of the mouse and move the snowball accordingly each frame
             ApplyMovementForce();
 
-            //ClampSpeed(maxSpeed);
+            // Restrict the snowball's speed if maxSpeed is not set to 0.
+            if (!Mathf.Approximately(maxSpeed, 0))
+            {
+                ClampSpeed(maxSpeed);
+            }
 
             //this should clamp the snowball and prevent it from moving off the screen, but currently the snowball is just teleporting between the two positions
             //transform.position = new Vector3(Mathf.Clamp(transform.position.y, minY, maxY), transform.position.x);
@@ -89,7 +95,8 @@ namespace Snowmentum
         private void ApplyMovementForce()
         {
             //Debug.Log(mouseDelta);
-            snowballRigidbody.AddForce(Vector2.up * baseMovementSensitivity * mouseDelta.y);
+            float sizeScale = scaleWithSnowballSize ? SnowballSize.Value : 1f;
+            snowballRigidbody.AddForce((baseMovementSensitivity * mouseDelta.y / sizeScale) * Vector2.up);
 
             //Old movement that used transform.translate. Can probably remove but leaving it for now just in case, I guess
             //transform.Translate(Vector3.up * mouseDelta.y * movementSensitivity);
