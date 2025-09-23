@@ -10,6 +10,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace Snowmentum
 {
@@ -161,5 +162,12 @@ namespace Snowmentum
         //        yield return null;
         //    }
         //}
+
+        #region Debug
+        private void OnGUI()
+        {
+            GUI.TextArea(new Rect(10, 230, 100, 100), "Freeze Amount: " + FreezeAmount.ToString());
+        }
+        #endregion
     }
 }
