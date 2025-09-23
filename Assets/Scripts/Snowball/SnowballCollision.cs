@@ -21,6 +21,7 @@ namespace Snowmentum
         [SerializeField] private SpeedUpdater effectOnSpeed;
 
         private bool isImmune;
+        private bool isInvincible;
 
         #region Component References
         [Header("Components")]
@@ -35,6 +36,14 @@ namespace Snowmentum
         {
             sizeComp = GetComponent<SnowballSize>();
             speedComp = GetComponent<SnowballSpeed>();
+        }
+        #endregion
+
+        #region Properties
+        public bool IsInvincible
+        {
+            get { return isInvincible; }
+            set { isInvincible = value; }
         }
         #endregion
 
@@ -203,11 +212,13 @@ namespace Snowmentum
                 //Debug.Log("Collided with " + collision.gameObject.name);
 
                 // Change the player's values based on our result curves defined in the inspector.
-                effectOnSpeed.OnCollision(obstacle.ObstacleSize, snowballSizeVal, speedComp);
-                effectOnSize.OnCollision(obstacle.ObstacleSize, snowballSizeVal, sizeComp);
+                if (!IsInvincible)
+                {
+                    effectOnSpeed.OnCollision(obstacle.ObstacleSize, snowballSizeVal, speedComp);
+                    effectOnSize.OnCollision(obstacle.ObstacleSize, snowballSizeVal, sizeComp);
+                }
 
-
-                if (snowballSizeVal > obstacle.ObstacleSize)
+                if (IsInvincible || snowballSizeVal > obstacle.ObstacleSize)
                 {
                     obstacle.DestroyObstacle(obstacle.ObstacleSize / snowballSizeVal);
                 }

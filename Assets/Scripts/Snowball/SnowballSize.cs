@@ -49,11 +49,6 @@ namespace Snowmentum
         public override float Value_Local { get => Value; set => Value = value; }
         #endregion
 
-        private void OnGUI()
-        {
-            GUI.TextArea(new Rect(10, 10, 300, 200), TargetValue.ToString() + "\n" + Value.ToString());
-        }
-
         /// <summary>
         /// Resets values on awake
         /// </summary>
@@ -82,5 +77,12 @@ namespace Snowmentum
                 Value = Mathf.Lerp(Value, TargetValue, moveToTargetSpeed);
             }
         }
+        #region Debug
+        private void OnGUI()
+        {
+            GUI.TextArea(new Rect(10, 10, 100, 100), "Snowball Size: \n" + TargetValue.ToString() + "\n" + 
+                Value.ToString());
+        }
+        #endregion
     }
 }
