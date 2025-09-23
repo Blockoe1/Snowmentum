@@ -194,13 +194,13 @@ namespace Snowmentum
         /// <param name="collision"></param>
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log(isImmune);
+            //Debug.Log(isImmune);
             if (!isImmune && collision.gameObject.TryGetComponent(out ObstacleCollision obstacle))
             {
                 // Save the snowball's current size so that any changes to size dont affect any of the other math.
                 float snowballSizeVal = SnowballSize.Value;
 
-                Debug.Log("Collided with " + collision.gameObject.name);
+                //Debug.Log("Collided with " + collision.gameObject.name);
 
                 // Change the player's values based on our result curves defined in the inspector.
                 effectOnSpeed.OnCollision(obstacle.ObstacleSize, snowballSizeVal, speedComp);
