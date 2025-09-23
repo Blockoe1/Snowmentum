@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2762447730aecdf45953659c21997511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAngle: 177.5
+  moveAngle: 180
   speedScale: 1
-  moveVector: {x: -0.99904823, y: 0.04361953}
+  moveVector: {x: -1, y: -0.00000008742278}
   myRigidbody: {fileID: 0}
 --- !u!114 &8542275154454110806
 MonoBehaviour:
