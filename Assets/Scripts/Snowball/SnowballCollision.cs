@@ -200,10 +200,6 @@ namespace Snowmentum
                 // Save the snowball's current size so that any changes to size dont affect any of the other math.
                 float snowballSizeVal = SnowballSize.Value;
 
-                // Set a bool at the beginning so that no matter the result of the collision on the player's size,
-                // the obstacle will get destroyed if the snowball was larger than it.
-                bool flagForDestroy = snowballSizeVal > obstacle.ObstacleSize;
-
                 Debug.Log("Collided with " + collision.gameObject.name);
 
                 // Change the player's values based on our result curves defined in the inspector.
@@ -211,9 +207,9 @@ namespace Snowmentum
                 effectOnSize.OnCollision(obstacle.ObstacleSize, snowballSizeVal, sizeComp);
 
 
-                if (flagForDestroy)
+                if (snowballSizeVal > obstacle.ObstacleSize)
                 {
-                    obstacle.DestroyObstacle();
+                    obstacle.DestroyObstacle(obstacle.ObstacleSize / snowballSizeVal);
                 }
             }
         }
