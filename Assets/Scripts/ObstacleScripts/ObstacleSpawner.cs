@@ -13,8 +13,8 @@ namespace Snowmentum
         [SerializeField] private float spawnCooldown;  //cooldown on spawning obstacles so it isn't going constantly
 
         //used to set the y axis area the obstacles can spawn in
-        private float minYSpawn;
-        private float maxYSpawn;
+        [SerializeField] private float minYSpawn;
+        [SerializeField] private float maxYSpawn;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
