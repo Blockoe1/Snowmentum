@@ -1208,7 +1208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1221756939}
-  - component: {fileID: 1221756938}
+  - component: {fileID: 1221756940}
   m_Layer: 0
   m_Name: ObstacleSpawner
   m_TagString: Untagged
@@ -1216,7 +1216,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1221756938
+--- !u!4 &1221756939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221756937}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1221756940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1228,31 +1243,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4e7d3efa47257489b06ec18a58542a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
-  - {fileID: 5232839141656458808, guid: 18f5d5a279640fb4d9cbd14744fa6467, type: 3}
-  - {fileID: 2352091430795434324, guid: 240f30927727fab42aa9d3990fb737ec, type: 3}
-  - {fileID: 8418678170650150529, guid: 19f30457e3ff5be4bbc4f2467b0cd1b1, type: 3}
-  - {fileID: 8996258967688231476, guid: afc4ccaf12d6c2941b2742e5671bd298, type: 3}
-  - {fileID: 4403860692664731315, guid: da4e7aa06d4f000428e2c3dc30353646, type: 3}
+  obstacles:
+  - obstaclePrefab: {fileID: 8629333829777428763, guid: 18f5d5a279640fb4d9cbd14744fa6467, type: 3}
+    baseWeight: 5
+    addedWeight: 1
+  - obstaclePrefab: {fileID: 2304440776930180727, guid: 240f30927727fab42aa9d3990fb737ec, type: 3}
+    baseWeight: 5
+    addedWeight: 1
+  - obstaclePrefab: {fileID: 162954131110240656, guid: da4e7aa06d4f000428e2c3dc30353646, type: 3}
+    baseWeight: 5
+    addedWeight: 1
+  - obstaclePrefab: {fileID: 4865694926063459607, guid: afc4ccaf12d6c2941b2742e5671bd298, type: 3}
+    baseWeight: 5
+    addedWeight: 1
+  - obstaclePrefab: {fileID: 5443283142740042146, guid: 19f30457e3ff5be4bbc4f2467b0cd1b1, type: 3}
+    baseWeight: 5
+    addedWeight: 1
+  - obstaclePrefab: {fileID: 5212461423268268566, guid: 9d7e41ab76c2f864f8a05b85f3852192, type: 3}
+    baseWeight: 0
+    addedWeight: 2
   obstacleSpawnAmount: 1
   spawnCooldown: 3
-  minYSpawn: -3
+  minYSpawn: -3.5
   maxYSpawn: 1
---- !u!4 &1221756939
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221756937}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1268813478
 GameObject:
   m_ObjectHideFlags: 0

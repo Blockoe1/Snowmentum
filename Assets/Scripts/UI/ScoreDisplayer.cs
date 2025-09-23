@@ -50,7 +50,7 @@ namespace Snowmentum.Score
         private static string ScoreToDigits(int digits, int score, int postfixDigits)
         {
             string scoreString = score.ToString();
-            Debug.Log(scoreString);
+            //Debug.Log(scoreString);
             for (int i = scoreString.Length; i < digits; i ++)
             {
                 scoreString = "0" + scoreString;
@@ -61,7 +61,7 @@ namespace Snowmentum.Score
                 scoreString = scoreString + "0";
             }
 
-            Debug.Log(scoreString);
+            //Debug.Log(scoreString);
             return scoreString;
         }
 
