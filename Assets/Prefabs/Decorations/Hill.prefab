@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2303fe5f7b7794eb6f7de7cd711904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xLimit: -15
+  xLimit: 15
   loopLength: 36
 --- !u!114 &7779393125507205990
 MonoBehaviour:

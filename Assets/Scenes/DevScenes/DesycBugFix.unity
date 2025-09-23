@@ -570,10 +570,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.56276155
+    x: 0
     y: 0
-    width: 0.76429576
-    height: 0.7639405
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -793,7 +793,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: effectOnSpeed.minDamageKnockback
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: increasePerSecond
@@ -858,7 +858,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 162954131110240656, guid: da4e7aa06d4f000428e2c3dc30353646, type: 3}
       propertyPath: obstacleSize
-      value: 1.1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 162954131110240656, guid: da4e7aa06d4f000428e2c3dc30353646, type: 3}
+      propertyPath: scalePerspective
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4403860692664731315, guid: da4e7aa06d4f000428e2c3dc30353646, type: 3}
       propertyPath: m_Name
@@ -866,15 +870,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7326340831703774466, guid: da4e7aa06d4f000428e2c3dc30353646, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7326340831703774466, guid: da4e7aa06d4f000428e2c3dc30353646, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7326340831703774466, guid: da4e7aa06d4f000428e2c3dc30353646, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7326340831703774466, guid: da4e7aa06d4f000428e2c3dc30353646, type: 3}
       propertyPath: m_LocalPosition.x
