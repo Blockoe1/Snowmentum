@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 1
-  increasePerSecond: 0.1
+  increasePerSecond: 0.11
   moveToTargetSpeed: 0.5
   useFixedUpdate: 1
 --- !u!114 &8165628667471022399
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 1.6
-  increasePerSecond: 0.01
+  increasePerSecond: 0.1
   moveToTargetSpeed: 0.2
   useFixedUpdate: 1
   minSpeed: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f23b975e209500489c5e2ab1d04cd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSensitivity: 0.03
+  baseMovementSensitivity: 0.1
   scaleWithSnowballSize: 1
   maxSpeed: 0
   minY: -3.5
