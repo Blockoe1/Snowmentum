@@ -102,8 +102,20 @@ namespace Snowmentum
                     
                     //StartCoroutine(SpawnObstacles());
                 }
-                spawnDelay = scaleWithSpeed ? spawnCooldown / SnowballSpeed.TargetValue : spawnCooldown;
-                yield return new WaitForSeconds(spawnDelay);
+
+                if (scaleWithSpeed)
+                {
+                    float timer = spawnCooldown;
+                    while(timer > 0)
+                    {
+                        timer -= Time.deltaTime * SnowballSpeed.Value; 
+                        yield return null;
+                    }
+                }
+                else
+                {
+                    yield return new WaitForSeconds(spawnCooldown);
+                }                
             }
         }
 
