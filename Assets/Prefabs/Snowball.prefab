@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e434e9d55db7782488f2c94e48ef2b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeTime: 0.7
+  freezeTime: 2.04
   frozenTime: 4
   OnFreezeEvent:
     m_PersistentCalls:
