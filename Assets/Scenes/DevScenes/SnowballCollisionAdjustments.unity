@@ -1862,12 +1862,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: effectOnSize.curveSteepness
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: effectOnSpeed.curveSteepness
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: effectOnSize.maxDamageProportion
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: effectOnSpeed.minDamageKnockback
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: effectOnSpeed.maxDamageProportion
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: effectOnSpeed.knockbackCurveSteepness
@@ -1908,6 +1920,10 @@ PrefabInstance:
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: increasePerSecond
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165628667471022399, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: minSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8165628667471022399, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: increasePerSecond
