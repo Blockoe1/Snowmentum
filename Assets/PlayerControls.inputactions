@@ -64,7 +64,7 @@
                     "name": "Previous",
                     "type": "Button",
                     "id": "2776c80d-3c14-4091-8c56-d04ced07a2b0",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -73,7 +73,7 @@
                     "name": "Next",
                     "type": "Button",
                     "id": "b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -97,10 +97,19 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "MousePos",
-                    "type": "PassThrough",
-                    "id": "2c097c41-6722-4c8a-92dd-90ef2a19e34d",
-                    "expectedControlType": "Vector2",
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "4c64c3df-9039-4575-b333-bd3f85b19136",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "ebc7e743-2a74-4e8e-a180-5e6f94f68135",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -505,12 +514,23 @@
                 },
                 {
                     "name": "",
-                    "id": "790544f0-6f99-44b8-8d03-3880d3004bcf",
-                    "path": "<Mouse>/position",
+                    "id": "8473df7d-f7b3-4702-891c-f52ce90de031",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MousePos",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "97dd41a4-8ad1-4f7e-b568-378b4a4a37a3",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
