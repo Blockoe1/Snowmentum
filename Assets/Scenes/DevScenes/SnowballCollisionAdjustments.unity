@@ -1404,7 +1404,7 @@ MonoBehaviour:
   spawnCooldown: 3
   scaleWithSpeed: 1
   minYSpawn: -3.5
-  maxYSpawn: 1
+  maxYSpawn: 0.5
 --- !u!1 &1268813478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,10 +1919,6 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: startingValue
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: increasePerSecond
       value: 0.02
       objectReference: {fileID: 0}
@@ -1937,6 +1933,10 @@ PrefabInstance:
     - target: {fileID: 8165628667471022399, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: minSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165628667471022399, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: startingValue
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8165628667471022399, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: increasePerSecond

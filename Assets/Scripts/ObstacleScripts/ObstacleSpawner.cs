@@ -188,7 +188,7 @@ namespace Snowmentum
             //Debug.Log(Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)));
             int effectiveWeight = Mathf.Max(obstacle.weight - 
                 Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)), 1);
-            Debug.Log($"Obstacle {obstacle.gameObject.name} has efffective weight of {effectiveWeight}");
+            //Debug.Log($"Obstacle {obstacle.gameObject.name} has efffective weight of {effectiveWeight}");
             return effectiveWeight;
         }
     }

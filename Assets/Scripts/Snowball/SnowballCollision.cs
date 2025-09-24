@@ -212,7 +212,7 @@ namespace Snowmentum
                 // Save the snowball's current size so that any changes to size dont affect any of the other math.
                 float snowballSizeVal = SnowballSize.Value;
 
-                //Debug.Log("Collided with " + collision.gameObject.name);
+                Debug.Log("Collided with " + obstacle.name + " of size " + obstacle.ObstacleSize);
 
                 // Change the player's values based on our result curves defined in the inspector.
                 if (!IsInvincible)
