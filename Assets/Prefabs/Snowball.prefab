@@ -234,7 +234,7 @@ MonoBehaviour:
   scaleWithSnowballSize: 1
   maxSpeed: 30
   minY: -3.5
-  maxY: 1.35
+  maxY: 1
   snowballRigidbody: {fileID: 3341841721575561879}
 --- !u!114 &1048285940683226888
 MonoBehaviour:
