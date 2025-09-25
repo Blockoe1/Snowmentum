@@ -1001,6 +1001,37 @@ Transform:
   - {fileID: 2127320277}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1081323401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1081323402}
+  m_Layer: 0
+  m_Name: Obstacles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1081323402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081323401}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3216442, y: -2.2354803, z: 0.041452285}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1211491848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1228,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4e7d3efa47257489b06ec18a58542a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleParent: {fileID: 1081323402}
+  obstacleSpawnAmount: 1
+  spawnCooldown: 1.5
+  scaleWithSpeed: 1
+  minYSpawn: -4
+  maxYSpawn: 1
   obstacles:
   - obstaclePrefab: {fileID: 8629333829777428763, guid: 18f5d5a279640fb4d9cbd14744fa6467, type: 3}
     baseWeight: 5
@@ -1216,11 +1253,6 @@ MonoBehaviour:
   - obstaclePrefab: {fileID: 5212461423268268566, guid: 9d7e41ab76c2f864f8a05b85f3852192, type: 3}
     baseWeight: 0
     addedWeight: 2
-  obstacleSpawnAmount: 1
-  spawnCooldown: 1.5
-  scaleWithSpeed: 1
-  minYSpawn: -4
-  maxYSpawn: 1
 --- !u!1 &1268813478
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,6 +2756,7 @@ SceneRoots:
   - {fileID: 1997445323}
   - {fileID: 1671779625}
   - {fileID: 1221756939}
+  - {fileID: 1081323402}
   - {fileID: 301321086}
   - {fileID: 2109523610}
   - {fileID: 1078176628}

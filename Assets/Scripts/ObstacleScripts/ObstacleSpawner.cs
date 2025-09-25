@@ -16,8 +16,8 @@ namespace Snowmentum
     
     public class ObstacleSpawner : MonoBehaviour
     {
-        [SerializeField] private ObstacleSpawnData[] obstacles;  //holds the obstacle prefabs
-        
+        [SerializeField] private Transform obstacleParent;
+        [Header("Spawn Parameters")]
         [SerializeField] private int obstacleSpawnAmount = 1;  //amount of obstacles that will be spawned
         [SerializeField] private float spawnCooldown;  //cooldown on spawning obstacles so it isn't going constantly
         [SerializeField] private bool scaleWithSpeed;
@@ -25,6 +25,8 @@ namespace Snowmentum
         //used to set the y axis area the obstacles can spawn in
         [SerializeField] private float minYSpawn;
         [SerializeField] private float maxYSpawn;
+
+        [SerializeField] private ObstacleSpawnData[] obstacles;  //holds the obstacle prefabs
 
         private bool isSpawning;
 
@@ -79,7 +81,6 @@ namespace Snowmentum
         IEnumerator SpawnObstacles()
         {
             isSpawning = true;
-            float spawnDelay;
             GameObject obstacleSpawn;
             while(isSpawning)
             {
@@ -98,7 +99,7 @@ namespace Snowmentum
                     Vector3 SpawnArea = transform.position + (Vector3.up * randomY);
 
                     //Spawn obstacle
-                    Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity);
+                    Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity, obstacleParent);
                     
                     //StartCoroutine(SpawnObstacles());
                 }
