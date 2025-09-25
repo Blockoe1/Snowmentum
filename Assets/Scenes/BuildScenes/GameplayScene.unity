@@ -1219,8 +1219,8 @@ MonoBehaviour:
   obstacleSpawnAmount: 1
   spawnCooldown: 1.5
   scaleWithSpeed: 1
-  minYSpawn: -3.5
-  maxYSpawn: 0.5
+  minYSpawn: -4
+  maxYSpawn: 1
 --- !u!1 &1268813478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,10 +1307,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.28802085
+    x: 0
     y: 0
-    width: 0.36481485
-    height: 0.36481482
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
