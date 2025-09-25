@@ -485,6 +485,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419100785}
   m_CullTransparentMesh: 1
+--- !u!1 &587242861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+  m_PrefabInstance: {fileID: 1671779625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &587242866 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8165628667471022399, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+  m_PrefabInstance: {fileID: 1671779625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587242861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c721557f089564d91a8770540b23a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &587242867 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+  m_PrefabInstance: {fileID: 1671779625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587242861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d02852d69ffadb4fbcc8bafb7deda3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &604476407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1925,12 +1952,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5192cc8f5bda0b44d809d2e91a1c6b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  packingTime: 5
-  throwDelay: 1
-  minThrowForce: 10
   OnMinigameComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 587242861}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1221756937}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  packingTime: 5
+  packingQualityScaler: 10000000
+  OnMinigamePack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 587242867}
+        m_TargetAssemblyTypeName: Snowmentum.SnowballSize, Assembly-CSharp
+        m_MethodName: AddTargetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  throwDelay: 0.5
+  minThrowForce: 500
+  throwSampleTime: 0.1
+  throwStrengthScaler: 10000
+  startingSpeedScaler: 10
+  OnMinigameThrow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 587242866}
+        m_TargetAssemblyTypeName: Snowmentum.SnowballSpeed, Assembly-CSharp
+        m_MethodName: AddTargetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnMultipliedMinigameThrow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 587242866}
+        m_TargetAssemblyTypeName: Snowmentum.SnowballSpeed, Assembly-CSharp
+        m_MethodName: set_Value_Local
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1741576142
 Transform:
   m_ObjectHideFlags: 0

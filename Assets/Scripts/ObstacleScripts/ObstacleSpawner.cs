@@ -79,7 +79,6 @@ namespace Snowmentum
         IEnumerator SpawnObstacles()
         {
             isSpawning = true;
-            float spawnDelay;
             GameObject obstacleSpawn;
             while(isSpawning)
             {

@@ -60,5 +60,14 @@ namespace Snowmentum
         /// Moves the current actual value towards the target value.  Called in TimedUpdate
         /// </summary>
         protected abstract void MoveToTarget();
+
+        /// <summary>
+        /// Adds a certain amount to the TargetValue.  
+        /// </summary>
+        /// <remarks>
+        /// Useful for adding extra size from UnityEvents.
+        /// </remarks>
+        /// <param name="toAdd">The value to add.</param>
+        public abstract void AddTargetValue(float toAdd);
     }
 }

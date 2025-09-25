@@ -60,7 +60,7 @@ namespace Snowmentum
         /// <summary>
         /// Resets values on awake
         /// </summary>
-        private void Start()
+        private void Awake()
         {
             TargetValue = startingValue;
             Value = startingValue;
@@ -73,6 +73,15 @@ namespace Snowmentum
         protected override void MoveToTarget()
         {
             Value = Mathf.MoveTowards(Value, TargetValue, moveToTargetSpeed);
+        }
+
+        /// <summary>
+        /// Adds a certain amount to this value's target value.
+        /// </summary>
+        /// <param name="toAdd"></param>
+        public override void AddTargetValue(float toAdd)
+        {
+            TargetValue += toAdd;
         }
 
         #region Debug

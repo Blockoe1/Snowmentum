@@ -83,13 +83,14 @@ namespace Snowmentum
         /// </summary>
         private void LateUpdate()
         {
-            if (myRigidbody == null)
+            if (myRigidbody == null && moveModifiers != null)
             {
                 Vector2 targetPos = (Vector2)transform.localPosition +
                     (SnowballSpeed.Value * speedScale * Time.deltaTime * moveVector);
 
                 foreach (IMovementModifier modifier in moveModifiers)
                 {
+                    if (modifier == null) { continue; }
                     targetPos = modifier.MoveUpdate(targetPos, moveVector);
                 }
                 transform.localPosition = targetPos;

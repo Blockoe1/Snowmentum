@@ -59,7 +59,7 @@ namespace Snowmentum
         /// <summary>
         /// Resets values on start (so that things can subscribe to events on awake)
         /// </summary>
-        private void Start()
+        private void Awake()
         {
             // Set the pivot point to the snowball's X position so that obstacles that scale based on perspective
             // scale correctly.
@@ -84,6 +84,17 @@ namespace Snowmentum
                 Value = Mathf.Lerp(Value, TargetValue, moveToTargetSpeed);
             }
         }
+
+        /// <summary>
+        /// Adds a certain amount to this value's TargetValue.
+        /// </summary>
+        /// <param name="toAdd"></param>
+        public override void AddTargetValue(float toAdd)
+        {
+            Debug.Log("Target Value Added");
+            TargetValue += toAdd;
+        }
+
         #region Debug
         private void OnGUI()
         {

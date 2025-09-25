@@ -6,7 +6,6 @@
 //
 // Brief Description : Controls the progression of the packing minigame.
 *****************************************************************************/
-using NUnit.Framework.Constraints;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -20,10 +19,25 @@ namespace Snowmentum
         private const string DELTA_ACTION_NAME = "MouseMovement";
         #endregion
 
+        [SerializeField] private UnityEvent OnMinigameComplete;
+
+        [Header("Packing")]
         [SerializeField] private float packingTime;
+        [SerializeField, Tooltip("Packing quality is by default a very large value (Close to 1 million) whith good " +
+            "input.  Divide it by this value to calculate the actual addition to size of the snowball.")] 
+        private float packingQualityScaler = 1000000;
+        [SerializeField] private UnityEvent<float> OnMinigamePack;
+        [Header("Throwing")]
         [SerializeField] private float throwDelay;
         [SerializeField] private float minThrowForce;
-        [SerializeField] private UnityEvent<float, float> OnMinigameComplete;
+        [SerializeField, Range(0f, 1f)] private float throwSampleTime;
+        [SerializeField, Tooltip("Throw Strength is usually a very high value (close to 10 thousand).  " +
+            "Divide it by this value to calculate the actual increase in snowball speed.")]
+        private float throwStrengthScaler = 10000;
+        [SerializeField, Tooltip("Multiplied by the scaled throwStrength to get the starting speed of the snowball")] 
+        private float startingSpeedScaler;
+        [SerializeField] private UnityEvent<float> OnMinigameThrow;
+        [SerializeField] private UnityEvent<float> OnMultipliedMinigameThrow;
 
         private MinigameState minigameState;
         private InputAction deltaAction;
@@ -31,8 +45,8 @@ namespace Snowmentum
         #region States
         private abstract class MinigameState
         {
-            internal abstract IEnumerator OnTimeUpdate(PackingMinigame minigameController);
-            internal abstract void OnMouseInput(PackingMinigame minigameController, Vector2 mouseDelta);
+            internal abstract IEnumerator Timer(PackingMinigame minigameController);
+            internal abstract void MouseUpdate(PackingMinigame minigameController, Vector2 mouseDelta);
         }
 
         private class PackingState : MinigameState
@@ -48,15 +62,17 @@ namespace Snowmentum
                 this.timer = minigameController.packingTime;
                 Debug.Log("Now Packing");
 
-                minigameController.StartCoroutine(OnTimeUpdate(minigameController));
+                minigameController.StartCoroutine(Timer(minigameController));
             }
 
             /// <summary>
             /// When the player inputs with the trackball, track it and progress the minigame
             /// </summary>
             /// <param name="mouseDelta"></param>
-            internal override void OnMouseInput(PackingMinigame minigameController, Vector2 mouseDelta)
+            internal override void MouseUpdate(PackingMinigame minigameController, Vector2 mouseDelta)
             {
+                // Skip any updates where our mouse didnt move.
+                if (mouseDelta == Vector2.zero) { return; }
                 // Increase the quality of the snowball based on how much the mouse delta changed since the
                 // last update.
                 packingQuality += Vector2.Distance(lastDelta, mouseDelta);
@@ -73,7 +89,7 @@ namespace Snowmentum
             /// with the mouse.
             /// </summary>
             /// <param name="deltaTime"></param>
-            internal override IEnumerator OnTimeUpdate(PackingMinigame minigameController)
+            internal override IEnumerator Timer(PackingMinigame minigameController)
             {
                 // Wait until the player has started inputting to actually track anything.
                 while (!hasStarted)
@@ -97,8 +113,12 @@ namespace Snowmentum
             private readonly float requiredThrowForce;
             private readonly float storedPackingQuality;
             private readonly float throwDelay;
+            private float sampleTime;
+
+            private float maxDelta;
 
             private bool canThrow;
+            private bool isSampling;
 
             internal ThrowState(PackingMinigame minigameController,
                 float storedPackingQuality)
@@ -106,9 +126,10 @@ namespace Snowmentum
                 this.requiredThrowForce = minigameController.minThrowForce;
                 this.storedPackingQuality = storedPackingQuality;
                 this.throwDelay = minigameController.throwDelay;
+                this.sampleTime = minigameController.throwSampleTime;
                 Debug.Log("Now Thow");
 
-                minigameController.StartCoroutine(OnTimeUpdate(minigameController));
+                minigameController.StartCoroutine(Timer(minigameController));
             }
 
             /// <summary>
@@ -116,11 +137,30 @@ namespace Snowmentum
             /// </summary>
             /// <param name="minigameController"></param>
             /// <param name="mouseDelta"></param>
-            internal override void OnMouseInput(PackingMinigame minigameController, Vector2 mouseDelta)
+            internal override void MouseUpdate(PackingMinigame minigameController, Vector2 mouseDelta)
             {
-                if (canThrow && mouseDelta.y > requiredThrowForce)
+                // First, check if the trackball is moving in the desired direction.
+                if (canThrow && mouseDelta.x > requiredThrowForce)
                 {
-                    minigameController.CompleteMinigame(storedPackingQuality, mouseDelta.y);
+                    isSampling = true;
+                }
+
+                // Then, sample mouse delta values for a small amount of time to ensure we capture the fastest the 
+                // player moved the ball.
+                if (isSampling)
+                {
+                    // Track only the largest delta value.
+                    if (mouseDelta.x > maxDelta)
+                    {
+                        maxDelta = mouseDelta.x;
+                    }
+
+                    sampleTime -= Time.deltaTime;
+
+                    if (sampleTime <= 0)
+                    {
+                        minigameController.CompleteMinigame(storedPackingQuality, maxDelta);
+                    }
                 }
             }
 
@@ -129,7 +169,7 @@ namespace Snowmentum
             /// </summary>
             /// <param name="minigameController"></param>
             /// <param name="deltaTime"></param>
-            internal override IEnumerator OnTimeUpdate(PackingMinigame minigameController)
+            internal override IEnumerator Timer(PackingMinigame minigameController)
             {
                 canThrow = false;
                 yield return new WaitForSeconds(throwDelay);
@@ -150,7 +190,7 @@ namespace Snowmentum
 
             deltaAction.performed += DeltaAction_Performed;
 
-            Application.targetFrameRate = 30;
+            Application.targetFrameRate = 0;
         }
 
         /// <summary>
@@ -167,7 +207,15 @@ namespace Snowmentum
         /// <param name="obj"></param>
         private void DeltaAction_Performed(InputAction.CallbackContext obj)
         {
-            minigameState.OnMouseInput(this, obj.ReadValue<Vector2>());
+            //minigameState.OnMouseInput(this, obj.ReadValue<Vector2>());
+        }
+
+        /// <summary>
+        /// Track the mouse delta in update and pass the frame independent value to our current state.
+        /// </summary>
+        private void Update()
+        {
+            minigameState.MouseUpdate(this, deltaAction.ReadValue<Vector2>() / Time.deltaTime);
         }
 
         /// <summary>
@@ -192,10 +240,20 @@ namespace Snowmentum
         /// <param name="throwStrength">
         /// Corresponds to the force the player rolled the trackball with during the throw minigame.
         /// </param>
-        private void CompleteMinigame(float packinQuality, float throwStrength)
+        private void CompleteMinigame(float packingQuality, float throwStrength)
         {
-            OnMinigameComplete?.Invoke(packinQuality, throwStrength);
-            Debug.Log($"Packing Quality: {packinQuality}.  Throw Strength: {throwStrength}");
+            // Scale down packingQuality and ThrowStrength to useful values.
+            packingQuality /= packingQualityScaler;
+            throwStrength /= throwStrengthScaler;
+
+
+            OnMinigameComplete?.Invoke();
+            OnMinigamePack?.Invoke(packingQuality);
+            OnMinigameThrow?.Invoke(throwStrength);
+            Debug.Log($"Packing Quality: {packingQuality}.  Throw Strength: {throwStrength}");
+
+            // Use this event to start the snowball moving at a speed that scales based on the throw strength
+            OnMultipliedMinigameThrow?.Invoke(throwStrength * startingSpeedScaler);
 
             // The minigame is no longer relevant, so destroy it.
             Destroy(gameObject);
