@@ -2008,7 +2008,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   throwDelay: 0.5
-  minThrowForce: 500
+  minThrowForce: 7500
   throwSampleTime: 0.1
   throwStrengthScaler: 10000
   startingSpeedScaler: 10
