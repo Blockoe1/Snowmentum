@@ -490,6 +490,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
   m_PrefabInstance: {fileID: 1671779625}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &587242865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+  m_PrefabInstance: {fileID: 1671779625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587242861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a764d599b321e46804eca9a349582b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &587242866 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8165628667471022399, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
@@ -2007,6 +2018,18 @@ MonoBehaviour:
       - m_Target: {fileID: 587242866}
         m_TargetAssemblyTypeName: Snowmentum.SnowballSpeed, Assembly-CSharp
         m_MethodName: AddTargetValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 587242865}
+        m_TargetAssemblyTypeName: Snowmentum.SnowballCollision, Assembly-CSharp
+        m_MethodName: GiveImmunity
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
