@@ -60,7 +60,7 @@ namespace Snowmentum
             internal PackingState(PackingMinigame minigameController)
             {
                 this.timer = minigameController.packingTime;
-                Debug.Log("Now Packing");
+                //Debug.Log("Now Packing");
 
                 minigameController.StartCoroutine(Timer(minigameController));
             }
@@ -127,7 +127,7 @@ namespace Snowmentum
                 this.storedPackingQuality = storedPackingQuality;
                 this.throwDelay = minigameController.throwDelay;
                 this.sampleTime = minigameController.throwSampleTime;
-                Debug.Log("Now Thow");
+                //Debug.Log("Now Thow");
 
                 minigameController.StartCoroutine(Timer(minigameController));
             }
@@ -188,26 +188,7 @@ namespace Snowmentum
 
             deltaAction = InputSystem.actions.FindAction(DELTA_ACTION_NAME);
 
-            deltaAction.performed += DeltaAction_Performed;
-
             Application.targetFrameRate = 0;
-        }
-
-        /// <summary>
-        /// Unsubscribe input events
-        /// </summary>
-        private void OnDestroy()
-        {
-            deltaAction.performed -= DeltaAction_Performed;
-        }
-
-        /// <summary>
-        /// Notifies our current state when the player inputs with the trackball.
-        /// </summary>
-        /// <param name="obj"></param>
-        private void DeltaAction_Performed(InputAction.CallbackContext obj)
-        {
-            //minigameState.OnMouseInput(this, obj.ReadValue<Vector2>());
         }
 
         /// <summary>
@@ -215,7 +196,10 @@ namespace Snowmentum
         /// </summary>
         private void Update()
         {
-            minigameState.MouseUpdate(this, deltaAction.ReadValue<Vector2>() / Time.deltaTime);
+            if (minigameState != null)
+            {
+                minigameState.MouseUpdate(this, deltaAction.ReadValue<Vector2>() / Time.deltaTime);
+            }
         }
 
         /// <summary>
@@ -242,6 +226,10 @@ namespace Snowmentum
         /// </param>
         private void CompleteMinigame(float packingQuality, float throwStrength)
         {
+            // Debug
+            pq = packingQuality;
+            ts = throwStrength;
+
             // Scale down packingQuality and ThrowStrength to useful values.
             packingQuality /= packingQualityScaler;
             throwStrength /= throwStrengthScaler;
@@ -250,13 +238,39 @@ namespace Snowmentum
             OnMinigameComplete?.Invoke();
             OnMinigamePack?.Invoke(packingQuality);
             OnMinigameThrow?.Invoke(throwStrength);
-            Debug.Log($"Packing Quality: {packingQuality}.  Throw Strength: {throwStrength}");
+            //Debug.Log($"Packing Quality: {packingQuality}.  Throw Strength: {throwStrength}");
 
             // Use this event to start the snowball moving at a speed that scales based on the throw strength
             OnMultipliedMinigameThrow?.Invoke(throwStrength * startingSpeedScaler);
 
+            minigameState = null;
+
             // The minigame is no longer relevant, so destroy it.
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
+
+        #region Debug
+        private float pq;
+        private float ts;
+
+        private void OnGUI()
+        {
+            string guiOutput;
+            if (minigameState is PackingState)
+            {
+                guiOutput = "Packing";
+            }
+            else if (minigameState is ThrowState)
+            {
+                guiOutput = "Throwing";
+            }
+            else
+            {
+                guiOutput = $"Packing Quality : {pq}.\nThrow Strength: {ts}.";
+            }
+
+            GUI.TextArea(new Rect(110, 10, 200, 100), guiOutput);
+        }
+        #endregion
     }
 }
