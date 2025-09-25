@@ -20,6 +20,7 @@ namespace Snowmentum
         
         [SerializeField] private int obstacleSpawnAmount = 1;  //amount of obstacles that will be spawned
         [SerializeField] private float spawnCooldown;  //cooldown on spawning obstacles so it isn't going constantly
+        [SerializeField] private bool scaleWithSpeed;
 
         //used to set the y axis area the obstacles can spawn in
         [SerializeField] private float minYSpawn;
@@ -78,12 +79,14 @@ namespace Snowmentum
         IEnumerator SpawnObstacles()
         {
             isSpawning = true;
+            float spawnDelay;
+            GameObject obstacleSpawn;
             while(isSpawning)
             {
                 for (int i = 0; i < obstacleSpawnAmount; i++)
                 {
                     //Pick an obstacle prefab
-                    GameObject obstacleSpawn = GetObstaclePrefab(obstacles);
+                    obstacleSpawn = GetObstaclePrefab(obstacles);
 
                     // If no obstacle is valid to be spawned right now, then we should skip spawning.
                     if (obstacleSpawn == null)
@@ -99,7 +102,20 @@ namespace Snowmentum
                     
                     //StartCoroutine(SpawnObstacles());
                 }
-                yield return new WaitForSeconds(spawnCooldown);
+
+                if (scaleWithSpeed)
+                {
+                    float timer = spawnCooldown;
+                    while(timer > 0)
+                    {
+                        timer -= Time.deltaTime * SnowballSpeed.Value; 
+                        yield return null;
+                    }
+                }
+                else
+                {
+                    yield return new WaitForSeconds(spawnCooldown);
+                }                
             }
         }
 
@@ -172,7 +188,7 @@ namespace Snowmentum
             //Debug.Log(Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)));
             int effectiveWeight = Mathf.Max(obstacle.weight - 
                 Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)), 1);
-            Debug.Log($"Obstacle {obstacle.gameObject.name} has efffective weight of {effectiveWeight}");
+            //Debug.Log($"Obstacle {obstacle.gameObject.name} has efffective weight of {effectiveWeight}");
             return effectiveWeight;
         }
     }
