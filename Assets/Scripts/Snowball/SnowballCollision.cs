@@ -137,8 +137,11 @@ namespace Snowmentum
             /// <param name="snowballSize"></param>
             internal override void OnCollision(float obstacleSize, float snowballSize, SnowballSpeed speedSetter)
             {
-                // Target speed reduction.
-                float result = SpeedCollisionCurve(obstacleSize, snowballSize, curveScale, curveSteepness);
+                // Only change size if the snowball takes damage.
+                if (snowballSize > obstacleSize) { return; }
+                float result;
+                // Target speed reduction.  Only reduced if the snowball is smaller.
+                result = SpeedCollisionCurve(obstacleSize, snowballSize, curveScale, curveSteepness);
                 // Ensures the player only loses up to a certain amount of speed per collision.
                 if (result < 0)
                 {
@@ -209,7 +212,7 @@ namespace Snowmentum
                 // Save the snowball's current size so that any changes to size dont affect any of the other math.
                 float snowballSizeVal = SnowballSize.Value;
 
-                //Debug.Log("Collided with " + collision.gameObject.name);
+                Debug.Log("Collided with " + obstacle.name + " of size " + obstacle.ObstacleSize);
 
                 // Change the player's values based on our result curves defined in the inspector.
                 if (!IsInvincible)
