@@ -25,7 +25,7 @@ namespace Snowmentum
             //I set this float that will be rounded to the nearest integer for the display of the text. 
             //This does mean that the text displays you as 4meters in size when you are at 3.6 meters, for example, but I am hoping that is fine
             sizeForText = SnowballSize.Value;
-            sizeForText = Mathf.Round(sizeForText);
+            sizeForText = Mathf.Round(sizeForText * 100);
             snowballSizeText.text = AddDigits(displayedDigits, sizeForText, postfixDigits);
         }
 
@@ -42,7 +42,7 @@ namespace Snowmentum
             // Add postfix zeros
             for (int i = 0; i < postfixDigits; i++)
             {
-                sizeString = sizeString + "m";
+                sizeString = sizeString + "cm";
             }
 
             return sizeString;
