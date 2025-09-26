@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 7796098}
   - component: {fileID: 7796100}
   - component: {fileID: 7796099}
+  - component: {fileID: 7796101}
   m_Layer: 5
   m_Name: SizeCounter
   m_TagString: Untagged
@@ -255,6 +256,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7796097}
   m_CullTransparentMesh: 1
+--- !u!114 &7796101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d869eb1af55cb341bc893386b435328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snowballSizeText: {fileID: 7796099}
+  displayedDigits: 5
+  postfixDigits: 1
 --- !u!1 &301321085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,6 +2042,7 @@ GameObject:
   - component: {fileID: 1788025631}
   - component: {fileID: 1788025633}
   - component: {fileID: 1788025632}
+  - component: {fileID: 1788025634}
   m_Layer: 5
   m_Name: TimeCounter
   m_TagString: Untagged
@@ -2151,6 +2168,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788025630}
   m_CullTransparentMesh: 1
+--- !u!114 &1788025634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788025630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8f46e10eb0096428bbbb73118207c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 1788025632}
 --- !u!1 &1997445322
 GameObject:
   m_ObjectHideFlags: 0
