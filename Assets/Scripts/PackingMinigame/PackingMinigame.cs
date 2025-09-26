@@ -17,8 +17,10 @@ namespace Snowmentum
     {
         #region CONST
         private const string DELTA_ACTION_NAME = "MouseMovement";
+        private const string PACKING_ANIM_BOOL = "IsPacking";
         #endregion
 
+        [SerializeField] private Animator minigameAnimator;
         [SerializeField] private UnityEvent OnMinigameComplete;
 
         [Header("Packing")]
@@ -72,9 +74,14 @@ namespace Snowmentum
             internal override void MouseUpdate(PackingMinigame minigameController, Vector2 mouseDelta)
             {
                 // Skip any updates where our mouse didnt move.
-                if (mouseDelta == Vector2.zero) { return; }
+                if (mouseDelta == Vector2.zero) 
+                {
+                    minigameController.minigameAnimator.SetBool(PACKING_ANIM_BOOL, false);
+                    return; 
+                }
                 // Increase the quality of the snowball based on how much the mouse delta changed since the
                 // last update.
+                minigameController.minigameAnimator.SetBool(PACKING_ANIM_BOOL, true);
                 packingQuality += Vector2.Distance(lastDelta, mouseDelta);
 
                 lastDelta = mouseDelta;
