@@ -44,11 +44,28 @@ namespace Snowmentum
         private MinigameState minigameState;
         private InputAction deltaAction;
 
+        #region Properties
+        private MinigameState CurrentMinigameState
+        {
+            get { return minigameState; }
+            set
+            {
+                if (minigameState != null)
+                {
+                    minigameState.CleanUp(this);
+                }
+                minigameState = value;
+            }
+        }
+        #endregion
+
         #region States
         private abstract class MinigameState
         {
             internal abstract IEnumerator Timer(PackingMinigame minigameController);
             internal abstract void MouseUpdate(PackingMinigame minigameController, Vector2 mouseDelta);
+
+            internal virtual void CleanUp(PackingMinigame minigameController) { }
         }
 
         private class PackingState : MinigameState
@@ -110,8 +127,17 @@ namespace Snowmentum
                     yield return null;
                 }
                 // Move to the the throw state once our time is up.
-                minigameController.minigameState =
+                minigameController.CurrentMinigameState =
                             new ThrowState(minigameController, packingQuality);
+            }
+
+            /// <summary>
+            /// Reset the packing animation bool when we exit this state.
+            /// </summary>
+            /// <param name="minigameController"></param>
+            internal override void CleanUp(PackingMinigame minigameController)
+            {
+                minigameController.minigameAnimator.SetBool(PACKING_ANIM_BOOL, false);
             }
         }
 
@@ -136,6 +162,9 @@ namespace Snowmentum
                 this.sampleTime = minigameController.throwSampleTime;
                 //Debug.Log("Now Thow");
 
+                // Move to throwing animations when we enter the throw state.
+                minigameController.minigameAnimator.SetTrigger("ReadyThrow");
+
                 minigameController.StartCoroutine(Timer(minigameController));
             }
 
@@ -149,6 +178,8 @@ namespace Snowmentum
                 // First, check if the trackball is moving in the desired direction.
                 if (canThrow && mouseDelta.x > requiredThrowForce)
                 {
+                    // Once we've started sampling, play the throw animation
+                    minigameController.minigameAnimator.SetTrigger("Throw");
                     isSampling = true;
                 }
 
@@ -175,7 +206,6 @@ namespace Snowmentum
             /// Delay detecting a throw for a bit at the beginning of the throw state.
             /// </summary>
             /// <param name="minigameController"></param>
-            /// <param name="deltaTime"></param>
             internal override IEnumerator Timer(PackingMinigame minigameController)
             {
                 canThrow = false;
@@ -190,7 +220,7 @@ namespace Snowmentum
         /// </summary>
         private void Awake()
         {
-            minigameState = new PackingState(this);
+            CurrentMinigameState = new PackingState(this);
             //StartCoroutine(TimeUpdateRoutine());
 
             deltaAction = InputSystem.actions.FindAction(DELTA_ACTION_NAME);
@@ -254,6 +284,7 @@ namespace Snowmentum
 
             // The minigame is no longer relevant, so destroy it.
             //Destroy(gameObject);
+            Destroy(minigameAnimator.gameObject);
         }
 
         #region Debug
