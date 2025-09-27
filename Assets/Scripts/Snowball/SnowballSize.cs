@@ -96,11 +96,11 @@ namespace Snowmentum
         }
 
         #region Debug
-        private void OnGUI()
-        {
-            GUI.TextArea(new Rect(10, 10, 100, 100), "Snowball Size: \n" + TargetValue.ToString() + "\n" + 
-                Value.ToString());
-        }
+        //private void OnGUI()
+        //{
+        //    GUI.TextArea(new Rect(10, 10, 100, 100), "Snowball Size: \n" + TargetValue.ToString() + "\n" + 
+        //        Value.ToString());
+        //}
         #endregion
     }
 }

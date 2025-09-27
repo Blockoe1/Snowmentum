@@ -164,10 +164,10 @@ namespace Snowmentum
         //}
 
         #region Debug
-        private void OnGUI()
-        {
-            GUI.TextArea(new Rect(10, 220, 100, 100), "Freeze Amount: " + FreezeAmount.ToString());
-        }
+        //private void OnGUI()
+        //{
+        //    GUI.TextArea(new Rect(10, 220, 100, 100), "Freeze Amount: " + FreezeAmount.ToString());
+        //}
         #endregion
     }
 }

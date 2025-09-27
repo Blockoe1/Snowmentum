@@ -264,8 +264,8 @@ namespace Snowmentum
         private void CompleteMinigame(float packingQuality, float throwStrength)
         {
             // Debug
-            pq = packingQuality;
-            ts = throwStrength;
+            //pq = packingQuality;
+            //ts = throwStrength;
 
             // Scale down packingQuality and ThrowStrength to useful values.
             packingQuality /= packingQualityScaler;
@@ -283,32 +283,32 @@ namespace Snowmentum
             minigameState = null;
 
             // The minigame is no longer relevant, so destroy it.
-            //Destroy(gameObject);
-            Destroy(minigameAnimator.gameObject);
+            Destroy(gameObject);
+            //Destroy(minigameAnimator.gameObject);
         }
 
         #region Debug
-        private float pq;
-        private float ts;
+        //private float pq;
+        //private float ts;
 
-        private void OnGUI()
-        {
-            string guiOutput;
-            if (minigameState is PackingState)
-            {
-                guiOutput = "Packing";
-            }
-            else if (minigameState is ThrowState)
-            {
-                guiOutput = "Throwing";
-            }
-            else
-            {
-                guiOutput = $"Packing Quality : {pq}.\nThrow Strength: {ts}.";
-            }
+        //private void OnGUI()
+        //{
+        //    string guiOutput;
+        //    if (minigameState is PackingState)
+        //    {
+        //        guiOutput = "Packing";
+        //    }
+        //    else if (minigameState is ThrowState)
+        //    {
+        //        guiOutput = "Throwing";
+        //    }
+        //    else
+        //    {
+        //        guiOutput = $"Packing Quality : {pq}.\nThrow Strength: {ts}.";
+        //    }
 
-            GUI.TextArea(new Rect(110, 10, 200, 100), guiOutput);
-        }
+        //    GUI.TextArea(new Rect(110, 10, 200, 100), guiOutput);
+        //}
         #endregion
     }
 }
