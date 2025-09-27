@@ -82,6 +82,16 @@ namespace Snowmentum
         private bool GetIsFrozen() { return IsFrozen; }
         #endregion
 
+        /// <summary>
+        /// Reset values when the snowball is destroyed.
+        /// </summary>
+        private void OnDestroy()
+        {
+            // Modify the values directly instead of through the property since running events on destroy causes
+            // erorrs
+            freezeAmount = 0;
+        }
+
         #region Freeze Accumulation
         /// <summary>
         /// When the snowball enters a trigger marked as "water", they will begin to accumulate freezeAmount;
