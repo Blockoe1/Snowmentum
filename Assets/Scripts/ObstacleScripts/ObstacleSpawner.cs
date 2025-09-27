@@ -17,6 +17,7 @@ namespace Snowmentum
     public class ObstacleSpawner : MonoBehaviour
     {
         [SerializeField] private Transform obstacleParent;
+        [SerializeField] private bool spawnOnStart = true;
         [Header("Spawn Parameters")]
         [SerializeField] private int obstacleSpawnAmount = 1;  //amount of obstacles that will be spawned
         [SerializeField] private float spawnCooldown;  //cooldown on spawning obstacles so it isn't going constantly
@@ -75,11 +76,24 @@ namespace Snowmentum
             {
                 ObstacleSpawnData.OnSelected(obstacle);
             }
-            StartCoroutine(SpawnObstacles());
+            if (spawnOnStart)
+            {
+                StartCoroutine(SpawnObstacles(0));
+            }
         }
 
-        IEnumerator SpawnObstacles()
+        /// <summary>
+        /// Starts spawning obstacles after an initial delay of some time.
+        /// </summary>
+        /// <param name="initialDelay"></param>
+        public void StartSpawning(float initialDelay)
         {
+            StartCoroutine(SpawnObstacles(initialDelay));
+        }
+
+        IEnumerator SpawnObstacles(float initialDelay)
+        {
+            yield return new WaitForSeconds(initialDelay);
             isSpawning = true;
             GameObject obstacleSpawn;
             while(isSpawning)
