@@ -66,6 +66,17 @@ namespace Snowmentum
             Value = startingValue;
         }
 
+        /// <summary>
+        /// Reset values when the snowball is destroyed.
+        /// </summary>
+        private void OnDestroy()
+        {
+            // Modify the values directly instead of through the property since running events on destroy causes
+            // erorrs
+            targetVal = 0;
+            val = 0;
+        }
+
 
         /// <summary>
         /// Accelerates the snowball towards the target speed.

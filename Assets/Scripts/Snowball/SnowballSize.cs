@@ -70,6 +70,17 @@ namespace Snowmentum
         }
 
         /// <summary>
+        /// Reset values when the snowball is destroyed.
+        /// </summary>
+        private void OnDestroy()
+        {
+            // Modify the values directly instead of through the property since running events on destroy causes
+            // erorrs
+            targetVal = 0;
+            val = 0;
+        }
+
+        /// <summary>
         /// Size should lerp towards it's target value so that changes in size arae animated, but very quick.
         /// </summary>
         protected override void MoveToTarget()
