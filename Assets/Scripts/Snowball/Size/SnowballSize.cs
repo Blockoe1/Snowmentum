@@ -2,14 +2,14 @@
 // File Name : SnowballSize.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/19/2025
-// Last Modified : 9/23/2025
+// Last Modified : 9/29/2025
 //
 // Brief Description : Holds the snowball's current size.
 *****************************************************************************/
 using System;
 using UnityEngine;
 
-namespace Snowmentum
+namespace Snowmentum.Size
 {
     public class SnowballSize : SnowballValue
     {
@@ -19,10 +19,8 @@ namespace Snowmentum
         // we dont get big pixels.
         public const float OBSTACLE_RANGE_SCALE = 2f;
         // The scale that the snowball should be set at for size 1.
-        public static readonly Vector3 REFERENCE_SCALE = new Vector3(0.5f, 0.5f, 0.5f);
+        public static readonly Vector3 REFERENCE_SCALE = new Vector3(1f, 1f, 1f);
         #endregion
-
-        
 
         private static float val;
         private static float targetVal;
@@ -51,6 +49,9 @@ namespace Snowmentum
                 // Should get to this if both are infinity.
                 targetVal = value;
                 OnTargetValueChanged?.Invoke(targetVal, oldVal);
+
+                // Update our size bracket.
+                SizeBracket.UpdateBracket(targetVal);
             }
         }
         public override float TargetValue_Local { get => TargetValue; set => TargetValue = value; }

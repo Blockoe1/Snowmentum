@@ -9,6 +9,7 @@
 *****************************************************************************/
 using UnityEngine;
 using UnityEngine.Events;
+using Snowmentum.Size;
 
 namespace Snowmentum
 {

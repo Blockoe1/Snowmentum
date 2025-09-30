@@ -9,6 +9,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Snowmentum.Size;
 
 namespace Snowmentum
 {

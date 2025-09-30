@@ -182,6 +182,7 @@ MonoBehaviour:
   obstacleSize: 1
   scalePerspective: 1
   scaleOnSpawn: 0
+  debugDisable: 1
 --- !u!114 &2339446773185272735
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -752,6 +752,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HillBit1
       objectReference: {fileID: 0}
+    - target: {fileID: 5281419839486337832, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281419839486337832, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: m_SpriteTileMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1355,7 +1363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleParent: {fileID: 1081323402}
-  spawnOnStart: 1
+  spawnOnStart: 0
   obstacleSpawnAmount: 1
   spawnCooldown: 1.5
   scaleWithSpeed: 1
@@ -1424,6 +1432,7 @@ GameObject:
   - component: {fileID: 1530163286}
   - component: {fileID: 1530163290}
   - component: {fileID: 1530163289}
+  - component: {fileID: 1530163291}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1466,10 +1475,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.27552086
+    x: 0
     y: 0
-    width: 0.37314817
-    height: 0.37314814
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1573,6 +1582,19 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1530163291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530163285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8fa6cccc076284292889fd217b3c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1530163289}
 --- !u!1 &1568548813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,6 +2007,14 @@ PrefabInstance:
     - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: startingValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: increasePerSecond
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2973,7 +3003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &5281419839674568387
 SpriteRenderer:
   m_ObjectHideFlags: 0

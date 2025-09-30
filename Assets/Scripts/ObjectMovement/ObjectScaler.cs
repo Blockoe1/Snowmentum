@@ -8,7 +8,7 @@
 *****************************************************************************/
 using UnityEngine;
 
-namespace Snowmentum
+namespace Snowmentum.Size
 {
     [RequireComponent(typeof(ObjectMover))]
     public class ObjectScaler : MonoBehaviour, IMovementModifier
@@ -22,6 +22,7 @@ namespace Snowmentum
         [SerializeField, Tooltip("When set to true, the object will scale it's position based on it's starting size" +
     " when it spawns.  This results in obstacles spawning at varied locations based on their size.")]
         private bool scaleOnSpawn;
+        [SerializeField] private bool debugDisable;
 
         private float oldSize = 1;
 
@@ -61,6 +62,7 @@ namespace Snowmentum
         /// </summary>
         public Vector2 MoveUpdate(Vector2 targetPos, Vector2 moveVector)
         {
+            if (debugDisable) { return targetPos; }
             // Scales the obstacle around a given pivot point.
             void ScaleAround(Vector2 pivot, float oldScale, float newScale)
             {

@@ -9,6 +9,7 @@
 *****************************************************************************/
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Snowmentum.Size;
 
 
 namespace Snowmentum
