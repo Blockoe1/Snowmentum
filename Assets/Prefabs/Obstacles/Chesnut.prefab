@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.68
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.68
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.68
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8657666669540303953, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: obstacleSize
-      value: 2.68
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 8871070839524519023, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Size.x
@@ -152,6 +152,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.02999995, y: 0.016167738}
-  m_Size: {x: 0.5215345, y: 0.58153516}
+  m_Offset: {x: 0.006, y: 0.015}
+  m_Size: {x: 0.37, y: 0.43}
   m_Direction: 0

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2339446773185272735}
   - component: {fileID: 3549831470322472451}
   - component: {fileID: 7647677357995392279}
+  - component: {fileID: -7800381323003144867}
   m_Layer: 0
   m_Name: ObstacleBase
   m_TagString: Untagged
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleSize: 1
-  scalePerspective: 0
+  scalePerspective: 1
   scaleOnSpawn: 0
 --- !u!114 &2339446773185272735
 MonoBehaviour:
@@ -237,4 +238,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128549293bd314a488dac3be5da0cec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseScoreIncrease: 0
+  baseScoreIncrease: 5
+--- !u!114 &-7800381323003144867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150288299065344882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f7cf535b13cc4488a3bd76724012d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killZone: 16

@@ -20,6 +20,7 @@ namespace Snowmentum
         [SerializeField] private SizeUpdater effectOnSize;
         [SerializeField] private SpeedUpdater effectOnSpeed;
 
+        private Coroutine immunityRoutine;
         private bool isImmune;
         private bool isInvincible;
 
@@ -137,8 +138,11 @@ namespace Snowmentum
             /// <param name="snowballSize"></param>
             internal override void OnCollision(float obstacleSize, float snowballSize, SnowballSpeed speedSetter)
             {
-                // Target speed reduction.
-                float result = SpeedCollisionCurve(obstacleSize, snowballSize, curveScale, curveSteepness);
+                // Only change size if the snowball takes damage.
+                if (snowballSize > obstacleSize) { return; }
+                float result;
+                // Target speed reduction.  Only reduced if the snowball is smaller.
+                result = SpeedCollisionCurve(obstacleSize, snowballSize, curveScale, curveSteepness);
                 // Ensures the player only loses up to a certain amount of speed per collision.
                 if (result < 0)
                 {
@@ -209,7 +213,7 @@ namespace Snowmentum
                 // Save the snowball's current size so that any changes to size dont affect any of the other math.
                 float snowballSizeVal = SnowballSize.Value;
 
-                //Debug.Log("Collided with " + collision.gameObject.name);
+                Debug.Log("Collided with " + obstacle.name + " of size " + obstacle.ObstacleSize);
 
                 // Change the player's values based on our result curves defined in the inspector.
                 if (!IsInvincible)
@@ -237,8 +241,23 @@ namespace Snowmentum
             // If we experienced a negative change in size, then we should gain immunity for a bit.
             if (!isImmune && change < 0)
             {
-                StartCoroutine(ImmunityRoutine(hitImmunity));
+                GiveImmunity(hitImmunity);
             }
+        }
+
+        /// <summary>
+        /// Gives this snowball immunity to collisions.
+        /// </summary>
+        /// <param name="duration">The duration of the immunity to give.</param>
+        public void GiveImmunity(float duration)
+        {
+            if (immunityRoutine != null)
+            {
+                StopCoroutine(immunityRoutine);
+                immunityRoutine = null;
+            }
+
+            immunityRoutine = StartCoroutine(ImmunityRoutine(duration));
         }
 
         /// <summary>
@@ -251,6 +270,7 @@ namespace Snowmentum
             isImmune = true;
             yield return new WaitForSeconds(duration);
             isImmune = false;
+            immunityRoutine = null;
         }
         #endregion
 

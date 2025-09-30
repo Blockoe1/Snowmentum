@@ -60,10 +60,21 @@ namespace Snowmentum
         /// <summary>
         /// Resets values on awake
         /// </summary>
-        private void Start()
+        private void Awake()
         {
             TargetValue = startingValue;
             Value = startingValue;
+        }
+
+        /// <summary>
+        /// Reset values when the snowball is destroyed.
+        /// </summary>
+        private void OnDestroy()
+        {
+            // Modify the values directly instead of through the property since running events on destroy causes
+            // erorrs
+            targetVal = 0;
+            val = 0;
         }
 
 
@@ -75,12 +86,21 @@ namespace Snowmentum
             Value = Mathf.MoveTowards(Value, TargetValue, moveToTargetSpeed);
         }
 
-        #region Debug
-        private void OnGUI()
+        /// <summary>
+        /// Adds a certain amount to this value's target value.
+        /// </summary>
+        /// <param name="toAdd"></param>
+        public override void AddTargetValue(float toAdd)
         {
-            GUI.TextArea(new Rect(10, 110, 100, 100), "Snowball Speed: \n" + TargetValue.ToString() + "\n" + 
-                Value.ToString());
+            TargetValue += toAdd;
         }
+
+        #region Debug
+        //private void OnGUI()
+        //{
+        //    GUI.TextArea(new Rect(10, 110, 100, 100), "Snowball Speed: \n" + TargetValue.ToString() + "\n" + 
+        //        Value.ToString());
+        //}
         #endregion
     }
 }

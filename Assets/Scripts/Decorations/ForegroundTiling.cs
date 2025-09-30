@@ -53,6 +53,7 @@ namespace Snowmentum
         /// <param name="oldSize"></param>
         private void UpdateTiling(float snowballSize, float oldSize)
         {
+            if (snowballSize <= 0) { return; }
             float sizeRatio = REFERENCE_SCALE / snowballSize;
 
             // Update the size of the sprite

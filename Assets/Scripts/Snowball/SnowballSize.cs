@@ -2,7 +2,7 @@
 // File Name : SnowballSize.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/19/2025
-// Last Modified : 9/22/2025
+// Last Modified : 9/23/2025
 //
 // Brief Description : Holds the snowball's current size.
 *****************************************************************************/
@@ -13,6 +13,13 @@ namespace Snowmentum
 {
     public class SnowballSize : SnowballValue
     {
+        #region CONSTS
+        // The highest possible obstacle / snowball size ratio that can be spawned from the spawner.
+        // Used as a baseline when visually scaling obstacles and as an art guideline when creating sprites to ensure
+        // we dont get big pixels.
+        public const float OBSTACLE_RANGE_SCALE = 2f;
+        #endregion
+
         private static float val;
         private static float targetVal;
 
@@ -52,7 +59,7 @@ namespace Snowmentum
         /// <summary>
         /// Resets values on start (so that things can subscribe to events on awake)
         /// </summary>
-        private void Start()
+        private void Awake()
         {
             // Set the pivot point to the snowball's X position so that obstacles that scale based on perspective
             // scale correctly.
@@ -60,6 +67,17 @@ namespace Snowmentum
 
             TargetValue = startingValue;
             Value = startingValue;
+        }
+
+        /// <summary>
+        /// Reset values when the snowball is destroyed.
+        /// </summary>
+        private void OnDestroy()
+        {
+            // Modify the values directly instead of through the property since running events on destroy causes
+            // erorrs
+            targetVal = 0;
+            val = 0;
         }
 
         /// <summary>
@@ -77,12 +95,23 @@ namespace Snowmentum
                 Value = Mathf.Lerp(Value, TargetValue, moveToTargetSpeed);
             }
         }
-        #region Debug
-        private void OnGUI()
+
+        /// <summary>
+        /// Adds a certain amount to this value's TargetValue.
+        /// </summary>
+        /// <param name="toAdd"></param>
+        public override void AddTargetValue(float toAdd)
         {
-            GUI.TextArea(new Rect(10, 10, 100, 100), "Snowball Size: \n" + TargetValue.ToString() + "\n" + 
-                Value.ToString());
+            Debug.Log("Target Value Added");
+            TargetValue += toAdd;
         }
+
+        #region Debug
+        //private void OnGUI()
+        //{
+        //    GUI.TextArea(new Rect(10, 10, 100, 100), "Snowball Size: \n" + TargetValue.ToString() + "\n" + 
+        //        Value.ToString());
+        //}
         #endregion
     }
 }

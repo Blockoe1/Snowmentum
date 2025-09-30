@@ -108,7 +108,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 2
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 1
-  increasePerSecond: 0
+  increasePerSecond: 0.02
   moveToTargetSpeed: 0.5
   useFixedUpdate: 1
 --- !u!114 &8165628667471022399
@@ -186,11 +186,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c721557f089564d91a8770540b23a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingValue: 1.6
-  increasePerSecond: 0.01
+  startingValue: 2
+  increasePerSecond: 0.03
   moveToTargetSpeed: 0.2
   useFixedUpdate: 1
-  minSpeed: 0
+  minSpeed: 1
 --- !u!114 &231841834676547580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,16 +205,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitImmunity: 1
   effectOnSize:
-    maxDamageProportion: 0.25
-    curveSteepness: 2
-    maxGain: 0
-    useSizeAsMax: 1
+    maxDamageProportion: 0.5
+    curveSteepness: 20
+    maxGain: 0.1
+    useSizeAsMax: 0
   effectOnSpeed:
-    maxDamageProportion: 0.25
-    curveSteepness: 2
+    maxDamageProportion: 0.1
+    curveSteepness: 4
     curveScale: 0.5
-    minDamageKnockback: 3.05
-    knockbackCurveSteepness: 2
+    minDamageKnockback: 7
+    knockbackCurveSteepness: 1.5
     knockbackCurveScale: 1
   sizeComp: {fileID: 2681645269302268440}
   speedComp: {fileID: 8165628667471022399}
@@ -230,9 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f23b975e209500489c5e2ab1d04cd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSensitivity: 0.03
+  baseMovementSensitivity: 0.06
+  scaleWithSnowballSize: 1
+  maxSpeed: 30
   minY: -3.5
-  maxY: 1.35
+  maxY: 1
   snowballRigidbody: {fileID: 3341841721575561879}
 --- !u!114 &1048285940683226888
 MonoBehaviour:
@@ -248,7 +250,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnDeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: 
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   speed: {fileID: 8165628667471022399}
 --- !u!114 &6477381704800582678
 MonoBehaviour:
@@ -262,8 +276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e434e9d55db7782488f2c94e48ef2b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeTime: 1
-  frozenTime: 2
+  freezeTime: 2.04
+  frozenTime: 4
   OnFreezeEvent:
     m_PersistentCalls:
       m_Calls:
@@ -279,6 +293,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 4449946722729724061}
+        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 04bced69a1fd4c245bddc1ad03a3da80, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnThawEvent:
     m_PersistentCalls:
       m_Calls:
@@ -289,6 +315,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4449946722729724061}
+        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -1330162409675485457, guid: 97350e29e3133c142a6b9b0dcc18f166, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
