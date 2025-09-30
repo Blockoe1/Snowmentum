@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingValue: 1
   increasePerSecond: 0.02
-  moveToTarget: 0
+  moveToTarget: 7
   useFixedUpdate: 1
 --- !u!114 &8165628667471022399
 MonoBehaviour:

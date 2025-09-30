@@ -84,7 +84,10 @@ namespace Snowmentum
         /// <param name="timeDelta">The time delta of this update.</param>
         protected override void MoveToTarget(float timeDelta)
         {
-            Value = Mathf.MoveTowards(Value, TargetValue, moveToTarget * timeDelta);
+            if (!MathHelpers.ApproximatelyWithin(Value, TargetValue))
+            {
+                Value = Mathf.MoveTowards(Value, TargetValue, moveToTarget * timeDelta);
+            }
         }
 
         /// <summary>

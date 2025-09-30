@@ -39,7 +39,7 @@ namespace Snowmentum.Size
         {
             // Sets the snowball scale based on it's size and our environment size.
             transform.localScale = REFERENCE_SCALE * (SnowballSize.Value / EnvironmentSize.Value);
-            Debug.Log(EnvironmentSize.Value);
+            //Debug.Log(EnvironmentSize.Value);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Snowmentum
         public static event Action<float, float> OnTargetValueChanged;
         public static event Action<float, float> OnValueChanged;
 
-        private static float scalePivotX;
+        private static Vector2 scalePivot;
         private float moveSpeed;
 
         #region Properties
@@ -48,7 +48,7 @@ namespace Snowmentum
             }
         }
 
-        public static float ScalePivotX => scalePivotX;
+        public static Vector2 ScalePivot => scalePivot;
         public override float TargetValue_Local { get => TargetValue; set => TargetValue = value; }
         public override float Value_Local { get => Value; set => Value = value; }
         #endregion
@@ -61,8 +61,7 @@ namespace Snowmentum
             TargetValue = startingValue;
             Value = startingValue;
 
-            // Set the pivot point of the snowball so that obstacles know where to scale based on.
-            scalePivotX = transform.position.x;
+            
 
             SizeBracket.OnBracketChanged += UpdateEnvironmentSize;
         }
@@ -86,7 +85,14 @@ namespace Snowmentum
         /// <param name="timeDelta">The time delta for this update.</param>
         protected override void MoveToTarget(float timeDelta)
         {
-            Value = Mathf.MoveTowards(Value, TargetValue, moveSpeed * timeDelta);
+            if (!MathHelpers.ApproximatelyWithin(Value, TargetValue))
+            {
+                // Set the pivot point of the snowball so that obstacles know where to scale based on.
+                // Set this whenever the value changes so it's up to date when obstacles need it.
+                scalePivot = transform.position;
+
+                Value = Mathf.MoveTowards(Value, TargetValue, moveSpeed * timeDelta);
+            }
         }
 
         /// <summary>
