@@ -82,7 +82,8 @@ namespace Snowmentum.Size
         /// Size should lerp towards it's target value so that changes in size arae animated, but very quick.
         /// EnvironmentSize should move linearly towards its target.
         /// </summary>
-        protected override void MoveToTarget()
+        /// <param name="timeDelta">The time delta for this update.</param>
+        protected override void MoveToTarget(float timeDelta)
         {
             // If our value is close enough to our target value, then we snap it to the value directly
             if (MathHelpers.ApproximatelyWithin(Value, TargetValue))
@@ -91,7 +92,8 @@ namespace Snowmentum.Size
             }
             else
             {
-                Value = Mathf.Lerp(Value, TargetValue, moveToTargetSpeed);
+                // Lerp independent of time.
+                Value = Mathf.Lerp(Value, TargetValue, 1 - Mathf.Pow(0.5f, Time.deltaTime * moveToTarget));
             }
         }
 

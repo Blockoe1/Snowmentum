@@ -81,9 +81,10 @@ namespace Snowmentum
         /// <summary>
         /// Accelerates the snowball towards the target speed.
         /// </summary>
-        protected override void MoveToTarget()
+        /// <param name="timeDelta">The time delta of this update.</param>
+        protected override void MoveToTarget(float timeDelta)
         {
-            Value = Mathf.MoveTowards(Value, TargetValue, moveToTargetSpeed);
+            Value = Mathf.MoveTowards(Value, TargetValue, moveToTarget * timeDelta);
         }
 
         /// <summary>

@@ -21,6 +21,7 @@ namespace Snowmentum
         public static event Action<float, float> OnValueChanged;
 
         private static float scalePivotX;
+        private float moveSpeed;
 
         #region Properties
         public static float Value
@@ -82,9 +83,10 @@ namespace Snowmentum
         /// <summary>
         /// Our environemtn size should move towards our target linearly.
         /// </summary>
-        protected override void MoveToTarget()
+        /// <param name="timeDelta">The time delta for this update.</param>
+        protected override void MoveToTarget(float timeDelta)
         {
-            Value = Mathf.MoveTowards(Value, TargetValue, moveToTargetSpeed);
+            Value = Mathf.MoveTowards(Value, TargetValue, moveSpeed * timeDelta);
         }
 
         /// <summary>
@@ -93,8 +95,13 @@ namespace Snowmentum
         /// <param name="bracket"></param>
         private void UpdateEnvironmentSize(int bracket)
         {
+            float oldTarget = TargetValue;
             // The target value of the environment should always be the minimum size of our current bracket.
             TargetValue = SizeBracket.GetMinSize(bracket);
+
+            // Update our move speed based on our old and new target value so that moveToTarget represents the amount
+            // of transition time.
+            moveSpeed = (TargetValue - oldTarget) / moveToTarget;
         }
     }
 }
