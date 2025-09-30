@@ -32,7 +32,7 @@ namespace Snowmentum
             {
                 // Magic Numbering in a pivot point for the obstacles right now.  Will replace with a dynamic value
                 // that changes based on the player's X position later.
-                return new Vector2(SnowballSize.ScalePivotX, 0);
+                return new Vector2(5, 0);
             }
         }
 

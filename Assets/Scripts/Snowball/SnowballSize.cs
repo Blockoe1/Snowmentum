@@ -18,15 +18,17 @@ namespace Snowmentum
         // Used as a baseline when visually scaling obstacles and as an art guideline when creating sprites to ensure
         // we dont get big pixels.
         public const float OBSTACLE_RANGE_SCALE = 2f;
+        // The scale that the snowball should be set at for size 1.
+        public static readonly Vector3 REFERENCE_SCALE = new Vector3(0.5f, 0.5f, 0.5f);
         #endregion
+
+        
 
         private static float val;
         private static float targetVal;
 
         public static event Action<float, float> OnTargetValueChanged;
         public static event Action<float, float> OnValueChanged;
-
-        private static float scalePivotX;
 
         #region Properties
         public static float Value
@@ -51,7 +53,6 @@ namespace Snowmentum
                 OnTargetValueChanged?.Invoke(targetVal, oldVal);
             }
         }
-        public static float ScalePivotX => scalePivotX;
         public override float TargetValue_Local { get => TargetValue; set => TargetValue = value; }
         public override float Value_Local { get => Value; set => Value = value; }
         #endregion
@@ -61,12 +62,10 @@ namespace Snowmentum
         /// </summary>
         private void Awake()
         {
-            // Set the pivot point to the snowball's X position so that obstacles that scale based on perspective
-            // scale correctly.
-            scalePivotX = transform.position.x;
-
             TargetValue = startingValue;
             Value = startingValue;
+
+            OnValueChanged += UpdateSnowballScale;
         }
 
         /// <summary>
@@ -80,6 +79,7 @@ namespace Snowmentum
             val = 0;
         }
 
+        #region Value Changes
         /// <summary>
         /// Size should lerp towards it's target value so that changes in size arae animated, but very quick.
         /// </summary>
@@ -105,13 +105,16 @@ namespace Snowmentum
             Debug.Log("Target Value Added");
             TargetValue += toAdd;
         }
-
-        #region Debug
-        //private void OnGUI()
-        //{
-        //    GUI.TextArea(new Rect(10, 10, 100, 100), "Snowball Size: \n" + TargetValue.ToString() + "\n" + 
-        //        Value.ToString());
-        //}
         #endregion
+
+        /// <summary>
+        /// Updates the snowball gameObject's actual scale based on the size value of the snowball.
+        /// </summary>
+        /// <param name="size">The current size of the snowball.</param>
+        /// <param name="oldSize">The previous size of the snowball.</param>
+        private void UpdateSnowballScale(float size, float oldSize)
+        {
+            transform.localScale = REFERENCE_SCALE * size;
+        }
     }
 }
