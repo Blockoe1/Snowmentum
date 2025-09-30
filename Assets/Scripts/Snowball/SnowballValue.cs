@@ -26,7 +26,7 @@ namespace Snowmentum
         /// </summary>
         private void Update()
         {
-            if (!useFixedUpdate && increasePerSecond > 0)
+            if (!useFixedUpdate)
             {
                 TimedUpdate(Time.deltaTime);
             }
@@ -34,7 +34,7 @@ namespace Snowmentum
 
         private void FixedUpdate()
         {
-            if (useFixedUpdate && increasePerSecond > 0)
+            if (useFixedUpdate)
             {
                 TimedUpdate(Time.fixedDeltaTime);
             }
@@ -52,7 +52,10 @@ namespace Snowmentum
         /// <param name="time">The time elapsed since the last update (ie. Time.deltaTime, Time.fixedDeltaTile)</param>
         public virtual void TimedUpdate(float time)
         {
-            TargetValue_Local += increasePerSecond * time;
+            if (increasePerSecond > 0)
+            {
+                TargetValue_Local += increasePerSecond * time;
+            }
             MoveToTarget();
         }
 

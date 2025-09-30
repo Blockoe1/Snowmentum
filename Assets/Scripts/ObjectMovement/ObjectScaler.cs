@@ -33,7 +33,7 @@ namespace Snowmentum.Size
             {
                 // Magic Numbering in a pivot point for the obstacles right now.  Will replace with a dynamic value
                 // that changes based on the player's X position later.
-                return new Vector2(SnowballSize.ScalePivotX, 0);
+                return new Vector2(EnvironmentSize.ScalePivotX, 0);
             }
         }
 
@@ -89,7 +89,7 @@ namespace Snowmentum.Size
             // Dont allow any scale updating if the snowball has a 0 or negative size.
             if(SnowballSize.Value <= 0) { return targetPos; }
 
-            float sizeRatio = obstacleSize / SnowballSize.Value;
+            float sizeRatio = obstacleSize / EnvironmentSize.Value;
             // Save the size ratio of this iteration so that changes in size can be tracked.
             if (scalePerspective)
             {

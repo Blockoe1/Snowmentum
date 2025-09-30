@@ -18,45 +18,41 @@ namespace Snowmentum.Size
         // Used as a baseline when visually scaling obstacles and as an art guideline when creating sprites to ensure
         // we dont get big pixels.
         public const float OBSTACLE_RANGE_SCALE = 2f;
-        // The scale that the snowball should be set at for size 1.
-        public static readonly Vector3 REFERENCE_SCALE = new Vector3(1f, 1f, 1f);
         #endregion
 
-        private static float val;
-        private static float targetVal;
+        private static float size;
+        private static float targetSize;
 
         public static event Action<float, float> OnTargetValueChanged;
         public static event Action<float, float> OnValueChanged;
 
-        private static float scalePivotX;
-
         #region Properties
         public static float Value
         {
-            get { return val; }
+            get { return size; }
             private set
             {
-                float oldVal = val;
+                float oldVal = size;
                 // Should get to this if both are infinity.
-                val = value;
-                OnValueChanged?.Invoke(val, oldVal);
+                size = value;
+                OnValueChanged?.Invoke(size, oldVal);
             }
         }
         public static float TargetValue
         {
-            get { return targetVal; }
+            get { return targetSize; }
             private set
             {
-                float oldVal = targetVal;
+                float oldVal = targetSize;
                 // Should get to this if both are infinity.
-                targetVal = value;
-                OnTargetValueChanged?.Invoke(targetVal, oldVal);
+                targetSize = value;
+                OnTargetValueChanged?.Invoke(targetSize, oldVal);
 
                 // Update our size bracket.
-                SizeBracket.UpdateBracket(targetVal);
+                SizeBracket.UpdateBracket(targetSize);
             }
         }
-        public static float ScalePivotX => scalePivotX;
+
         public override float TargetValue_Local { get => TargetValue; set => TargetValue = value; }
         public override float Value_Local { get => Value; set => Value = value; }
         #endregion
@@ -66,13 +62,8 @@ namespace Snowmentum.Size
         /// </summary>
         private void Awake()
         {
-            // Set the pivot point of the snowball so that obstacles know where to scale based on.
-            scalePivotX = transform.position.x;
-
             TargetValue = startingValue;
             Value = startingValue;
-
-            OnValueChanged += UpdateSnowballScale;
         }
 
         /// <summary>
@@ -82,13 +73,14 @@ namespace Snowmentum.Size
         {
             // Modify the values directly instead of through the property since running events on destroy causes
             // erorrs
-            targetVal = 0;
-            val = 0;
+            targetSize = 0;
+            size = 0;
         }
 
         #region Value Changes
         /// <summary>
         /// Size should lerp towards it's target value so that changes in size arae animated, but very quick.
+        /// EnvironmentSize should move linearly towards its target.
         /// </summary>
         protected override void MoveToTarget()
         {
@@ -109,19 +101,9 @@ namespace Snowmentum.Size
         /// <param name="toAdd"></param>
         public override void AddTargetValue(float toAdd)
         {
-            Debug.Log("Target Value Added");
+            //Debug.Log("Target Value Added");
             TargetValue += toAdd;
         }
         #endregion
-
-        /// <summary>
-        /// Updates the snowball gameObject's actual scale based on the size value of the snowball.
-        /// </summary>
-        /// <param name="size">The current size of the snowball.</param>
-        /// <param name="oldSize">The previous size of the snowball.</param>
-        private void UpdateSnowballScale(float size, float oldSize)
-        {
-            transform.localScale = REFERENCE_SCALE * size;
-        }
     }
 }

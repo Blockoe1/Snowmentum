@@ -14,10 +14,8 @@ namespace Snowmentum.Size
     public static class SizeBracket
     {
         #region CONSTS
-        // How much each bracket scales up by.
-        public const float BRACKET_SCALE = 2;
         // The maximum size held by bracket one.
-        public const float BASE_BRACKET_MAX = 4;
+        public const float BRACKET_SCALE = 4;
         #endregion
 
         private static int bracket;
@@ -35,6 +33,7 @@ namespace Snowmentum.Size
             {
                 // Bracket must be at least 1
                 bracket = Mathf.Max(1, value);
+                Debug.Log("Size bracket is now: " + bracket);
                 OnBracketChanged?.Invoke(bracket);
 
                 // Update the size limits of our bracket.
@@ -59,9 +58,19 @@ namespace Snowmentum.Size
         /// </summary>
         /// <param name="bracket">The size bracket to get the max size of.</param>
         /// <returns>The maximum snowball size allowed in that bracket.</returns>
-        private static float GetMaxSize(int bracket)
+        public static float GetMaxSize(int bracket)
         {
-            return BASE_BRACKET_MAX * Mathf.Pow(BRACKET_SCALE, bracket - 2);
+            return Mathf.Pow(BRACKET_SCALE, bracket);
+        }
+
+        /// <summary>
+        /// Calculates the minimum size allowed in a size bracket.
+        /// </summary>
+        /// <param name="bracket">The size bracket to get the max size of.</param>
+        /// <returns>The maximum snowball size allowed in that bracket.</returns>
+        public static float GetMinSize(int bracket)
+        {
+            return GetMaxSize(bracket - 1);
         }
 
         /// <summary>
