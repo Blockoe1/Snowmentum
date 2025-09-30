@@ -28,6 +28,8 @@ namespace Snowmentum.Size
         public static event Action<float, float> OnTargetValueChanged;
         public static event Action<float, float> OnValueChanged;
 
+        private static float scalePivotX;
+
         #region Properties
         public static float Value
         {
@@ -54,6 +56,7 @@ namespace Snowmentum.Size
                 SizeBracket.UpdateBracket(targetVal);
             }
         }
+        public static float ScalePivotX => scalePivotX;
         public override float TargetValue_Local { get => TargetValue; set => TargetValue = value; }
         public override float Value_Local { get => Value; set => Value = value; }
         #endregion
@@ -63,6 +66,9 @@ namespace Snowmentum.Size
         /// </summary>
         private void Awake()
         {
+            // Set the pivot point of the snowball so that obstacles know where to scale based on.
+            scalePivotX = transform.position.x;
+
             TargetValue = startingValue;
             Value = startingValue;
 
