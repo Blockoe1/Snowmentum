@@ -17,6 +17,10 @@ namespace Snowmentum
         [SerializeField] private Obstacle obstacleData;
         [SerializeField] private bool autoUpdate;
 
+#if UNITY_EDITOR
+        [SerializeField, HideInInspector] private Obstacle oldObsData;
+#endif
+
         #region Component References    
         [Header("Components")]
         [SerializeReference] protected SpriteRenderer rend;
@@ -41,8 +45,10 @@ namespace Snowmentum
         public float ObstacleSize => obstacleData.ObstacleSize;
         #endregion
 
+
+#if UNITY_EDITOR
         /// <summary>
-        /// Automatically obstacle values.
+        /// Automatically obstacle data values.
         /// </summary>
         private void OnValidate()
         {
@@ -54,9 +60,16 @@ namespace Snowmentum
                 obstacleData.HitboxDirection = obstacleCollider.direction;
             }
 
-            // Run SetObstacle so other values are updated.
-            SetObstacle(obstacleData);
+            // Update our prefab's components when the obstacle data changes.
+            if (obstacleData != oldObsData)
+            {
+                Debug.Log("Updated");
+                // Run SetObstacle so other values are updated.
+                SetObstacle(obstacleData);
+                oldObsData = obstacleData;
+            }
         }
+#endif
 
         /// <summary>
         /// Sets the obstacle 

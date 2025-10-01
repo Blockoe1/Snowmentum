@@ -120,7 +120,8 @@ namespace Snowmentum
             SpawnBracket spawnBracket;
             while(isSpawning)
             {
-                spawnBracket = brackets[SizeBracket.Bracket];
+                // Get the largest bracket we have obstacles set up to spawn in.
+                spawnBracket = brackets[Mathf.Min(SizeBracket.Bracket, brackets.Length - 1)];
                 for (int i = 0; i < obstacleSpawnAmount; i++)
                 {
                     //Pick an obstacle to spawn
@@ -136,7 +137,8 @@ namespace Snowmentum
                     Vector3 SpawnArea = transform.position + (Vector3.up * randomY);
 
                     //Spawn obstacle
-                    Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity, obstacleParent);
+                    //Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity, obstacleParent);
+
                     
                     //StartCoroutine(SpawnObstacles());
                 }
