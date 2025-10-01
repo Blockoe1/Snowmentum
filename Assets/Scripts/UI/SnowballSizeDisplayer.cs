@@ -9,8 +9,9 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using Snowmentum.Size;
 
-namespace Snowmentum
+namespace Snowmentum.UI
 {
     public class SnowballSizeDisplayer : MonoBehaviour
     {

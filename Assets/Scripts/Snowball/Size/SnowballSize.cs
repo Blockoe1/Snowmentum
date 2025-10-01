@@ -2,14 +2,14 @@
 // File Name : SnowballSize.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/19/2025
-// Last Modified : 9/23/2025
+// Last Modified : 9/29/2025
 //
 // Brief Description : Holds the snowball's current size.
 *****************************************************************************/
 using System;
 using UnityEngine;
 
-namespace Snowmentum
+namespace Snowmentum.Size
 {
     public class SnowballSize : SnowballValue
     {
@@ -20,38 +20,39 @@ namespace Snowmentum
         public const float OBSTACLE_RANGE_SCALE = 2f;
         #endregion
 
-        private static float val;
-        private static float targetVal;
+        private static float size;
+        private static float targetSize;
 
         public static event Action<float, float> OnTargetValueChanged;
         public static event Action<float, float> OnValueChanged;
 
-        private static float scalePivotX;
-
         #region Properties
         public static float Value
         {
-            get { return val; }
+            get { return size; }
             private set
             {
-                float oldVal = val;
+                float oldVal = size;
                 // Should get to this if both are infinity.
-                val = value;
-                OnValueChanged?.Invoke(val, oldVal);
+                size = value;
+                OnValueChanged?.Invoke(size, oldVal);
             }
         }
         public static float TargetValue
         {
-            get { return targetVal; }
+            get { return targetSize; }
             private set
             {
-                float oldVal = targetVal;
+                float oldVal = targetSize;
                 // Should get to this if both are infinity.
-                targetVal = value;
-                OnTargetValueChanged?.Invoke(targetVal, oldVal);
+                targetSize = value;
+                OnTargetValueChanged?.Invoke(targetSize, oldVal);
+
+                // Update our size bracket.
+                SizeBracket.UpdateBracket(targetSize);
             }
         }
-        public static float ScalePivotX => scalePivotX;
+
         public override float TargetValue_Local { get => TargetValue; set => TargetValue = value; }
         public override float Value_Local { get => Value; set => Value = value; }
         #endregion
@@ -61,10 +62,6 @@ namespace Snowmentum
         /// </summary>
         private void Awake()
         {
-            // Set the pivot point to the snowball's X position so that obstacles that scale based on perspective
-            // scale correctly.
-            scalePivotX = transform.position.x;
-
             TargetValue = startingValue;
             Value = startingValue;
         }
@@ -76,14 +73,17 @@ namespace Snowmentum
         {
             // Modify the values directly instead of through the property since running events on destroy causes
             // erorrs
-            targetVal = 0;
-            val = 0;
+            targetSize = 0;
+            size = 0;
         }
 
+        #region Value Changes
         /// <summary>
         /// Size should lerp towards it's target value so that changes in size arae animated, but very quick.
+        /// EnvironmentSize should move linearly towards its target.
         /// </summary>
-        protected override void MoveToTarget()
+        /// <param name="timeDelta">The time delta for this update.</param>
+        protected override void MoveToTarget(float timeDelta)
         {
             // If our value is close enough to our target value, then we snap it to the value directly
             if (MathHelpers.ApproximatelyWithin(Value, TargetValue))
@@ -92,7 +92,8 @@ namespace Snowmentum
             }
             else
             {
-                Value = Mathf.Lerp(Value, TargetValue, moveToTargetSpeed);
+                // Lerp independent of time.
+                Value = Mathf.Lerp(Value, TargetValue, 1 - Mathf.Pow(0.5f, Time.deltaTime * moveToTarget));
             }
         }
 
@@ -102,16 +103,9 @@ namespace Snowmentum
         /// <param name="toAdd"></param>
         public override void AddTargetValue(float toAdd)
         {
-            Debug.Log("Target Value Added");
+            //Debug.Log("Target Value Added");
             TargetValue += toAdd;
         }
-
-        #region Debug
-        //private void OnGUI()
-        //{
-        //    GUI.TextArea(new Rect(10, 10, 100, 100), "Snowball Size: \n" + TargetValue.ToString() + "\n" + 
-        //        Value.ToString());
-        //}
         #endregion
     }
 }
