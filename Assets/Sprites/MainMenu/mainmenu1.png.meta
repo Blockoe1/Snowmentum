@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fab0ba91ddb0c2c4c87b9411cfbaec07
+guid: a1ed4742223f3304cb729c8c77b43276
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8439600648458197911
-    second: 1-1_Pebble_0
+      213: 7991883714686672137
+    second: mainmenu1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1-1_Pebble_0
+      name: mainmenu1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8
-        height: 8
+        width: 480
+        height: 270
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9642e76dce380ea80800000000000000
-      internalID: -8439600648458197911
+      spriteID: 90dd02c45efd8ee60800000000000000
+      internalID: 7991883714686672137
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      1-1_Pebble_0: -8439600648458197911
+      mainmenu1_0: 7991883714686672137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
