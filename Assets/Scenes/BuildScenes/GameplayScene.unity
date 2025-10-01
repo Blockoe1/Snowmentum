@@ -1298,10 +1298,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.275
+    x: 0
     y: 0
-    width: 0.3740741
-    height: 0.37407407
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1717,6 +1717,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  maxSizeGain: 0.5
   packingTime: 5
   packingQualityScaler: 10000000
   OnMinigamePack:
@@ -1734,11 +1735,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  maxSpeedGain: 1
   throwDelay: 0.5
   minThrowForce: 7500
   throwSampleTime: 0.1
   throwStrengthScaler: 10000
-  startingSpeedScaler: 10
+  startingSpeedScaler: 20
   OnMinigameThrow:
     m_PersistentCalls:
       m_Calls:
