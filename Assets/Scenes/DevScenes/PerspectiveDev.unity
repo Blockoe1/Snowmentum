@@ -1185,9 +1185,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.055555556
-    width: 0.33333334
-    height: 0.3333333
+    y: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -2499,6 +2499,10 @@ PrefabInstance:
     - target: {fileID: 3986171665961220281, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
       propertyPath: m_Name
       value: Hill
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308926393679240602, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7803632043478022561, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
       propertyPath: m_LocalPosition.x

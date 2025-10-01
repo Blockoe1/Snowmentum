@@ -8,6 +8,7 @@
 *****************************************************************************/
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 namespace Snowmentum
 {
@@ -16,13 +17,34 @@ namespace Snowmentum
         [SerializeField] TextMeshProUGUI timerText;
         private float elapsedTime;
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Update()
+        private bool isTimer;
+
+        /// <summary>
+        /// Starts the timer.
+        /// </summary>
+        public void StartStopwatch()
         {
-            elapsedTime += Time.deltaTime;
-            int minutes = Mathf.FloorToInt(elapsedTime / 60);
-            int seconds = Mathf.FloorToInt(elapsedTime % 60);
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            if (!isTimer)
+            {
+                isTimer = true;
+                StartCoroutine(TimerRoutine());
+            }
+        }
+
+        /// <summary>
+        /// Continually upticks the timer
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator TimerRoutine()
+        {
+            while(isTimer)
+            {
+                elapsedTime += Time.deltaTime;
+                int minutes = Mathf.FloorToInt(elapsedTime / 60);
+                int seconds = Mathf.FloorToInt(elapsedTime % 60);
+                timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+                yield return null;
+            }
         }
 
     }
