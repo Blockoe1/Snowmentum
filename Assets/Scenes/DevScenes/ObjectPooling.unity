@@ -1073,6 +1073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleParent: {fileID: 1081323402}
+  obstaclePrefab: {fileID: 0}
   spawnOnStart: 1
   obstacleSpawnAmount: 1
   spawnCooldown: 1.5
@@ -1098,6 +1099,7 @@ MonoBehaviour:
   - obstaclePrefab: {fileID: 5212461423268268566, guid: 9d7e41ab76c2f864f8a05b85f3852192, type: 3}
     baseWeight: 0
     addedWeight: 2
+  brackets: []
 --- !u!1 &1268813478
 GameObject:
   m_ObjectHideFlags: 0

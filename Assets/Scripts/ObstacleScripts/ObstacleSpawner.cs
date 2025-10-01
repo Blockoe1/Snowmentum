@@ -10,6 +10,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Snowmentum.Size;
+using System.Collections.Generic;
 
 namespace Snowmentum
 {
@@ -18,6 +19,7 @@ namespace Snowmentum
     public class ObstacleSpawner : MonoBehaviour
     {
         [SerializeField] private Transform obstacleParent;
+        [SerializeField] private ObstacleController obstaclePrefab;
         [SerializeField] private bool spawnOnStart = true;
         [Header("Spawn Parameters")]
         [SerializeField] private int obstacleSpawnAmount = 1;  //amount of obstacles that will be spawned
@@ -29,10 +31,16 @@ namespace Snowmentum
         [SerializeField] private float maxYSpawn;
 
         [SerializeField] private ObstacleSpawnData[] obstacles;  //holds the obstacle prefabs
-
+        [SerializeField] private SpawnBracket[] brackets;
+ 
         private bool isSpawning;
 
         #region Nested
+        [System.Serializable]
+        private class SpawnBracket
+        {
+            [SerializeField] internal ObstacleSpawnData[] spawnData;
+        }
         [System.Serializable]
         private class ObstacleSpawnData
         {
@@ -97,8 +105,10 @@ namespace Snowmentum
             yield return new WaitForSeconds(initialDelay);
             isSpawning = true;
             GameObject obstacleSpawn;
+            SpawnBracket spawnBracket;
             while(isSpawning)
             {
+                //spawnBracket = brackets[SpawnBracket.]
                 for (int i = 0; i < obstacleSpawnAmount; i++)
                 {
                     //Pick an obstacle prefab
