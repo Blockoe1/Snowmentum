@@ -70,12 +70,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8657666669540303953, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: obstacleSize
-      value: 4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8871070839524519023, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -294949627, guid: 424e201fd6688ee4fb1d9b82f0d78b33, type: 3}
+      objectReference: {fileID: 21300000, guid: fab0ba91ddb0c2c4c87b9411cfbaec07, type: 3}
     - target: {fileID: 8871070839524519023, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -128,5 +128,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.08830704, y: -0.2445432}
-  m_Radius: 0.42282885
+  m_Offset: {x: 0.0070792884, y: -0.021364018}
+  m_Radius: 0.15145843
