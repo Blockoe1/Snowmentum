@@ -78,7 +78,7 @@ namespace Snowmentum.Size
             //}
 
             // Dont allow any scale updating if the snowball has a 0 or negative size.
-            if(SnowballSize.Value <= 0) { return targetPos; }
+            if(EnvironmentSize.Value <= 0) { return targetPos; }
 
             float sizeRatio = objectSize / EnvironmentSize.Value;
             // Save the size ratio of this iteration so that changes in size can be tracked.

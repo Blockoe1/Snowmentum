@@ -1184,10 +1184,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.275
     y: 0
-    width: 1
-    height: 1
+    width: 0.3740741
+    height: 0.37407407
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1695,14 +1695,6 @@ PrefabInstance:
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2070582843}
-    - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: increasePerSecond
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -1747,20 +1739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snowball
       objectReference: {fileID: 0}
-    - target: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      insertIndex: 7
-      addedObject: {fileID: 1671779631}
-    - targetCorrespondingSourceObject: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      insertIndex: 8
-      addedObject: {fileID: 1671779630}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
 --- !u!114 &1671779626 stripped
 MonoBehaviour:
@@ -1798,40 +1780,6 @@ MonoBehaviour:
 --- !u!1 &1671779629 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-  m_PrefabInstance: {fileID: 1671779625}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1671779630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671779629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26551764b132bb04b84531422d071eef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snowballRigidbody: {fileID: 1671779636}
---- !u!114 &1671779631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671779629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26c7b7f02618a344ba3a26d4465f12bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingValue: 1
-  increasePerSecond: 0
-  moveToTarget: 3
-  useFixedUpdate: 1
---- !u!50 &1671779636 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 3341841721575561879, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
   m_PrefabInstance: {fileID: 1671779625}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1713764592
@@ -2499,10 +2447,6 @@ PrefabInstance:
     - target: {fileID: 3986171665961220281, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
       propertyPath: m_Name
       value: Hill
-      objectReference: {fileID: 0}
-    - target: {fileID: 5308926393679240602, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
-      propertyPath: m_SortingOrder
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7803632043478022561, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
       propertyPath: m_LocalPosition.x
