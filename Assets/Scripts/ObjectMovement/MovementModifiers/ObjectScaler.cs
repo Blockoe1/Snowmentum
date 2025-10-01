@@ -18,7 +18,10 @@ namespace Snowmentum.Size
         private float objectSize;
         [SerializeField, Tooltip("If true, then the obstacle's position in the hill will automatically be adjusted" +
     " to add to the illusion of the snowball getting bigger.")]
-        private bool scalePerspective;
+        private bool scalePerspectiveX;
+        [SerializeField, Tooltip("If true, then the obstacle's position in the hill will automatically be adjusted" +
+" to add to the illusion of the snowball getting bigger.")]
+        private bool scalePerspectiveY;
         [SerializeField, Tooltip("When set to true, the object will scale it's position based on it's starting size" +
     " when it spawns.  This results in obstacles spawning at varied locations based on their size.")]
         private bool scaleOnSpawn;
@@ -27,7 +30,7 @@ namespace Snowmentum.Size
         private float oldSize = 1;
 
         #region Properties
-        private Vector2 PivotPoint
+        private Vector2 SnowballPivot
         {
             get
             {
@@ -59,7 +62,7 @@ namespace Snowmentum.Size
         /// <summary>
         /// Continually update the size of our obstacle based on the size of the snowball.
         /// </summary>
-        public Vector2 MoveUpdate(Vector2 targetPos, Vector2 moveVector)
+        public Vector2 MoveUpdate(Transform movedObject, Vector2 targetPos, Vector2 moveVector)
         {
             if (debugDisable) { return targetPos; }
             //// Scales the obstacle around a given pivot point.
@@ -90,18 +93,28 @@ namespace Snowmentum.Size
 
             float sizeRatio = objectSize / EnvironmentSize.Value;
             // Save the size ratio of this iteration so that changes in size can be tracked.
-            if (scalePerspective)
+            if (scalePerspectiveX || scalePerspectiveY)
             {
                 // Scale the obstacle's position based on the size ratio so that the perspective scales.  Two obstacles
                 // get closer to each other as they are scaled down.
-                targetPos = CalculataedScaledPosition(PivotPoint, targetPos, oldSize, sizeRatio);
+                targetPos = CalculataedScaledPosition(GetPivotPoint(), targetPos, oldSize, sizeRatio);
             }
             // Scales the object based on the ratio of the obstacle and snowball sizes.
-            ScaleObstacle(sizeRatio);
+            ScaleObject(movedObject, sizeRatio);
 
             // Store the size ratio used this update so that we can reference it next update.
             oldSize = sizeRatio;
             return targetPos;
+        }
+
+        /// <summary>
+        /// Gets the pivot point to use for this object based on if scalePerspectiveX or Y are true.
+        /// </summary>
+        /// <returns></returns>
+        private Vector2 GetPivotPoint()
+        {
+            return new Vector2(scalePerspectiveX ? SnowballPivot.x : 0,
+                scalePerspectiveY ? SnowballPivot.y : 0);
         }
 
         /// <summary>
@@ -134,10 +147,11 @@ namespace Snowmentum.Size
         /// <summary>
         /// Scales this obstacle based on it's base size.
         /// </summary>
+        /// <param name="objToScale">The object to scale</param>
         /// <param name="scale">The scale to set for this obstacle.</param>
-        private void ScaleObstacle(float scale)
+        private void ScaleObject(Transform objToScale, float scale)
         {
-            transform.localScale = Vector3.one * scale;
+            objToScale.localScale = Vector3.one * scale;
         }
     }
 }

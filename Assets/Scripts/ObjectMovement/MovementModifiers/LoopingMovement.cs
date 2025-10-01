@@ -2,7 +2,7 @@
 // File Name : LoopingMovement.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/22/2025
-// Last Modified : 9/22/2025
+// Last Modified : 10/1/2025
 //
 // Brief Description : Continually loops objects across the screen.
 *****************************************************************************/
@@ -23,7 +23,7 @@ namespace Snowmentum
         /// </summary>
         /// <param name="targetPos"></param>
         /// <returns></returns>
-        public Vector2 MoveUpdate(Vector2 targetPos, Vector2 moveVector)
+        public Vector2 MoveUpdate(Transform movedObject, Vector2 targetPos, Vector2 moveVector)
         {
             if (Mathf.Abs(targetPos.x) > loopLength / 2)
             {

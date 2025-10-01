@@ -2,7 +2,7 @@
 // File Name : ObjectMover.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/13/2025
-// Last Modified : 9/30/2025
+// Last Modified : 10/1/2025
 //
 // Brief Description : Moves objects across the screen based on some settings for this type of object.
 *****************************************************************************/
@@ -45,7 +45,7 @@ namespace Snowmentum
                 //Debug.Log(SnowballSpeed.Value);
 
                 // Update the target pos based on overrides of movement modifiers, such as scaling with perspective.
-                QueryModifiers(ref targetPos);
+                QueryModifiers(transform, ref targetPos);
                 myRigidbody.MovePosition(targetPos);
             }
         }
@@ -61,7 +61,7 @@ namespace Snowmentum
                     (SnowballSpeed.Value * speedScale * Time.deltaTime * moveVector);
 
                 // Get modification from our movement modifiers.
-                QueryModifiers(ref targetPos);
+                QueryModifiers(transform, ref targetPos);
                 transform.localPosition = targetPos;
             }
         }

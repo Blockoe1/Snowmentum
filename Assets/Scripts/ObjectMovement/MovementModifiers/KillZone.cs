@@ -20,11 +20,11 @@ namespace Snowmentum
         /// <param name="targetPos"></param>
         /// <param name="moveVector"></param>
         /// <returns></returns>
-        public Vector2 MoveUpdate(Vector2 targetPos, Vector2 moveVector)
+        public Vector2 MoveUpdate(Transform movedObject, Vector2 targetPos, Vector2 moveVector)
         {
             if (Mathf.Abs(targetPos.x) > killZone)
             {
-                Destroy(gameObject);
+                Destroy(movedObject.gameObject);
             }
             return targetPos;
         }

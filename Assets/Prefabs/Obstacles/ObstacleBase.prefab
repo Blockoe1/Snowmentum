@@ -179,8 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf336ba4bd058c4396612996741d5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleSize: 1
-  scalePerspective: 1
+  objectSize: 0
+  scalePerspectiveX: 1
+  scalePerspectiveY: 1
   scaleOnSpawn: 0
   debugDisable: 0
 --- !u!114 &2339446773185272735

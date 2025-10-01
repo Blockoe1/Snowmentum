@@ -35,7 +35,7 @@ namespace Snowmentum
         /// <summary>
         /// Get all components on this object that modify movement so that they can be updated each FixedUpdate.
         /// </summary>
-        private void Awake()
+        protected virtual void Awake()
         {
             moveModifiers = GetComponents<IMovementModifier>();
         }
@@ -44,13 +44,13 @@ namespace Snowmentum
         /// Queries all of our movement modifiers and applies changes to the target position based on them.
         /// </summary>
         /// <param name="targetPos"></param>
-        protected void QueryModifiers(ref Vector2 targetPos)
+        protected void QueryModifiers(Transform modifiyingTransform, ref Vector2 targetPos)
         {
             if (moveModifiers == null) { return; }
             foreach (IMovementModifier modifier in moveModifiers)
             {
                 if (modifier == null) { continue; }
-                targetPos = modifier.MoveUpdate(targetPos, moveVector);
+                targetPos = modifier.MoveUpdate(modifiyingTransform, targetPos, moveVector);
             }
         }
     }
