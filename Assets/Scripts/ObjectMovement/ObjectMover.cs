@@ -2,7 +2,7 @@
 // File Name : ObjectMover.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/13/2025
-// Last Modified : 9/16/2025
+// Last Modified : 9/22/2025
 //
 // Brief Description : Moves objects across the screen based on some settings for this type of object.
 *****************************************************************************/
@@ -10,17 +10,16 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    [RequireComponent(typeof(Rigidbody2D))]
     public class ObjectMover : MonoBehaviour
     {
         [SerializeField, Tooltip("The angle that the snowball moves at, based on the approximate angle of " +
             "the hillside.  Should be based on 0 degrees being to the right.")]
-        private float moveAngle;
+        private float moveAngle = 180;
         [SerializeField, Tooltip("How quickly this object should move in comparison to the snowball's speed.  " +
             "Obstacles should have this value set to 1.")]
         private float speedScale = 1;
 
-        [SerializeField, HideInInspector] private Vector2 moveVector;
+        [SerializeField, HideInInspector] private Vector2 moveVector = Vector2.left;
 
         private IMovementModifier[] moveModifiers;
 
@@ -57,18 +56,45 @@ namespace Snowmentum
         /// <summary>
         /// Continually moves the obstacles along their given move angle.
         /// </summary>
+        /// <remarks>
+        /// Need to use FixedUpdate because yield return WaitForFixedUpdate happens after the internal physics update
+        /// and thus causes wonky behavior.
+        /// </remarks>
         private void FixedUpdate()
         {
-            // Default movement determined by the speed of the snowball and the speedScale of our settings.
-            Vector2 targetPos = myRigidbody.position + 
-                (moveVector * SnowballSpeed.Value * Time.fixedDeltaTime * speedScale);
-
-            // Update the target pos based on overrides of movement modifiers, such as scaling with perspective.
-            foreach(IMovementModifier modifier in moveModifiers)
+            if (myRigidbody != null)
             {
-                targetPos = modifier.MoveUpdate(targetPos);
+                // Default movement determined by the speed of the snowball and the speedScale of our settings.
+                Vector2 targetPos = myRigidbody.position +
+                    (SnowballSpeed.Value * speedScale * Time.fixedDeltaTime * moveVector);
+                //Debug.Log(SnowballSpeed.Value);
+
+                // Update the target pos based on overrides of movement modifiers, such as scaling with perspective.
+                foreach (IMovementModifier modifier in moveModifiers)
+                {
+                    targetPos = modifier.MoveUpdate(targetPos, moveVector);
+                }
+                myRigidbody.MovePosition(targetPos);
             }
-            myRigidbody.MovePosition(targetPos);
+        }
+
+        /// <summary>
+        /// Use the transform of the object to move it if there is no rigidbody attached.
+        /// </summary>
+        private void LateUpdate()
+        {
+            if (myRigidbody == null && moveModifiers != null)
+            {
+                Vector2 targetPos = (Vector2)transform.localPosition +
+                    (SnowballSpeed.Value * speedScale * Time.deltaTime * moveVector);
+
+                foreach (IMovementModifier modifier in moveModifiers)
+                {
+                    if (modifier == null) { continue; }
+                    targetPos = modifier.MoveUpdate(targetPos, moveVector);
+                }
+                transform.localPosition = targetPos;
+            }
         }
     }
 }

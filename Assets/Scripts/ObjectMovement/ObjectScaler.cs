@@ -32,7 +32,7 @@ namespace Snowmentum
             {
                 // Magic Numbering in a pivot point for the obstacles right now.  Will replace with a dynamic value
                 // that changes based on the player's X position later.
-                return new Vector2(-5, 0);
+                return new Vector2(SnowballSize.ScalePivotX, 0);
             }
         }
 
@@ -51,15 +51,15 @@ namespace Snowmentum
         /// <summary>
         /// Update the scale of the obstacle in the scene.
         /// </summary>
-        private void OnValidate()
-        {
-            ScaleObstacle(obstacleSize);
-        }
+        //private void OnValidate()
+        //{
+        //    ScaleObstacle(obstacleSize);
+        //}
 
         /// <summary>
         /// Continually update the size of our obstacle based on the size of the snowball.
         /// </summary>
-        public Vector2 MoveUpdate(Vector2 targetPos)
+        public Vector2 MoveUpdate(Vector2 targetPos, Vector2 moveVector)
         {
             // Scales the obstacle around a given pivot point.
             void ScaleAround(Vector2 pivot, float oldScale, float newScale)

@@ -111,18 +111,18 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 28
-        height: 20
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: de05b6d25f8c37ad0800000000000000
-      internalID: -2705597995764985619
+      spriteID: ed91daac846e38c40b6e59e7b4e7dc66
+      internalID: -294949627
       vertices: []
       indices: 
       edges: []
@@ -132,19 +132,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 2
-        width: 30
-        height: 17
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0534f536308787f60800000000000000
-      internalID: 8032301891362702160
+      spriteID: 14cd059e5fc08e7489a9bf0f77a79107
+      internalID: 1916150071
       vertices: []
       indices: 
       edges: []
@@ -153,20 +153,20 @@ TextureImporter:
       name: rocks_2
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 0
-        width: 33
-        height: 22
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 44032da9c092865e0800000000000000
-      internalID: -1916236507332333500
+      spriteID: 6119521c5cf28f4469f3a9b806dae030
+      internalID: -1303276395
       vertices: []
       indices: 
       edges: []
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      rocks_0: -2705597995764985619
-      rocks_1: 8032301891362702160
-      rocks_2: -1916236507332333500
+      rocks_0: -294949627
+      rocks_1: 1916150071
+      rocks_2: -1303276395
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
