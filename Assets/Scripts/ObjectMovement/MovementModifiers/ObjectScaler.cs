@@ -10,12 +10,12 @@ using UnityEngine;
 
 namespace Snowmentum.Size
 {
-    [RequireComponent(typeof(ObjectMover))]
+    [RequireComponent(typeof(ObjectMoverBase))]
     public class ObjectScaler : MonoBehaviour, IMovementModifier
     {
         [SerializeField, Tooltip("The in-game size of this obstacle.  Used to determine how large this obstacle is " +
     "in relation to the snowball.")]
-        private float obstacleSize;
+        private float objectSize;
         [SerializeField, Tooltip("If true, then the obstacle's position in the hill will automatically be adjusted" +
     " to add to the illusion of the snowball getting bigger.")]
         private bool scalePerspective;
@@ -36,7 +36,7 @@ namespace Snowmentum.Size
             }
         }
 
-        public float Size => obstacleSize;
+        public float Size => objectSize;
         #endregion
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Snowmentum.Size
             // Dont allow any scale updating if the snowball has a 0 or negative size.
             if(SnowballSize.Value <= 0) { return targetPos; }
 
-            float sizeRatio = obstacleSize / EnvironmentSize.Value;
+            float sizeRatio = objectSize / EnvironmentSize.Value;
             // Save the size ratio of this iteration so that changes in size can be tracked.
             if (scalePerspective)
             {
