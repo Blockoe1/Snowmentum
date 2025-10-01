@@ -187,8 +187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 2
-  increasePerSecond: 0.03
-  moveToTargetSpeed: 0.2
+  increasePerSecond: 0.3
+  moveToTargetSpeed: 0.06
   useFixedUpdate: 1
   minSpeed: 1
 --- !u!114 &231841834676547580
