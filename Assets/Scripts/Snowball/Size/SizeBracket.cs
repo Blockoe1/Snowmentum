@@ -48,7 +48,7 @@ namespace Snowmentum.Size
         /// </summary>
         /// <param name="size">The current size of the snowball.</param>
         /// <returns>It's current size bracket.</returns>
-        private static int GetBracket(float size)
+        public static int GetBracket(float size)
         {
             return Mathf.CeilToInt(Mathf.Log(size, BRACKET_SCALE));
         }

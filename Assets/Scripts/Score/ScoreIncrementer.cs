@@ -14,6 +14,14 @@ namespace Snowmentum.Score
     {
         [SerializeField] private int baseScoreIncrease;
 
+        #region Properties
+        public int BaseScore
+        {
+            get { return baseScoreIncrease; }
+            set { baseScoreIncrease = value; }
+        }
+        #endregion
+
         /// <summary>
         /// Increases the players score by a certain amount.
         /// </summary>

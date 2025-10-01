@@ -28,7 +28,11 @@ namespace Snowmentum.Size
 
         #region Properties
 
-        public float Size => objectSize;
+        public float Size
+        {
+            get { return objectSize; }
+            set { objectSize = value; }
+        }
         #endregion
 
         /// <summary>
