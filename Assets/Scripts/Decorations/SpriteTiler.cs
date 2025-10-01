@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    public class HillTiling : MonoBehaviour
+    public class SpriteTiler : MonoBehaviour
     {
         [SerializeField, Tooltip("If set to true, then the object will also be scaled based on the bracket.")] 
         private bool scale;

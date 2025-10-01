@@ -17,29 +17,77 @@ namespace Snowmentum.Size
         public static readonly Vector3 REFERENCE_SCALE = new Vector3(1f, 1f, 1f);
         #endregion
 
+        #region Component References
+        [Header("Components")]
+        [SerializeReference] protected Rigidbody2D snowballRigidbody;
+
+        /// <summary>
+        /// Get components on reset.
+        /// </summary>
+        [ContextMenu("Get Component References")]
+        private void Reset()
+        {
+            snowballRigidbody = GetComponent<Rigidbody2D>();
+        }
+        #endregion
+
         /// <summary>
         /// Subscribe/unsubscribe events.
         /// </summary>
         private void Awake()
         {
-            SnowballSize.OnValueChanged += UpdateSnowballScale;
+            SnowballSize.OnValueChanged += OnSnowballSize;
+            EnvironmentSize.OnValueChanged += OnEnvironmentSize;
         }
         private void OnDestroy()
         {
-            SnowballSize.OnValueChanged -= UpdateSnowballScale;
+            SnowballSize.OnValueChanged -= OnSnowballSize;
+            EnvironmentSize.OnValueChanged -= OnEnvironmentSize;
         }
 
         /// <summary>
-        /// Updates the snowball gameObject's actual scale based on the size value of the snowball and the scale of 
-        /// our environemnt
+        /// Handles changes to the snowball's size.
         /// </summary>
-        /// <param name="unused1">Not used.  Reference SnowballSize.Value directly.</param>
-        /// <param name="unused2">Not Used.  Reference EnvironmentSize.Value directly.</param>
-        private void UpdateSnowballScale(float unused1, float unused2)
+        /// <param name="newSnowballSize">The newsize of the snowball</param>
+        /// <param name="oldSnowballSize">the old size of the snowball</param>
+        private void OnSnowballSize(float newSnowballSize, float oldSnowballSize)
+        {
+            //When the snowball's size changes, just directly update the snowball scale.
+            UpdateSnowballScale();
+        }
+
+        /// <summary>
+        /// Handles changes to the environment's size
+        /// </summary>
+        /// <param name="newEnvSize">The new size of the environment</param>
+        /// <param name="oldEnvSize">The old size of the environment</param>
+        private void OnEnvironmentSize(float newEnvSize, float oldEnvSize)
+        {
+            // calculate a theoretical old and new sizes so we ignore natural growth to the snowball.
+            float oldSize = 1 / oldEnvSize;
+            float newSize = 1 / newEnvSize;
+            SnowballPerspective(oldSize, newSize);
+
+            // Update the snowball's actual scale.
+            UpdateSnowballScale();
+        }
+
+        /// <summary>
+        /// Updates the scale of the snowball based on the size of it and the environment.
+        /// </summary>
+        private void UpdateSnowballScale()
         {
             // Sets the snowball scale based on it's size and our environment size.
             transform.localScale = REFERENCE_SCALE * (SnowballSize.Value / EnvironmentSize.Value);
-            //Debug.Log(EnvironmentSize.Value);
+        }
+
+        /// <summary>
+        /// Moves the snowball based on how it scales to keep perspective.
+        /// </summary>
+        private void SnowballPerspective(float oldScale, float newScale)
+        {
+            snowballRigidbody.MovePosition(SizeHelpers.CalculateScaledPosition(EnvironmentSize.ScalePivot, 
+                snowballRigidbody.position, oldScale, newScale));
         }
     }
 }

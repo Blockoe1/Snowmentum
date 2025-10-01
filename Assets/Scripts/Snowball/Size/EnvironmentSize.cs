@@ -61,7 +61,9 @@ namespace Snowmentum
             TargetValue = startingValue;
             Value = startingValue;
 
-            
+            // Set the pivot point of the snowball so that obstacles know where to scale based on.
+            // Set this whenever the value changes so it's up to date when obstacles need it.
+            scalePivot = new Vector2(transform.position.x, 0);
 
             SizeBracket.OnBracketChanged += UpdateEnvironmentSize;
         }
@@ -87,10 +89,6 @@ namespace Snowmentum
         {
             if (!MathHelpers.ApproximatelyWithin(Value, TargetValue))
             {
-                // Set the pivot point of the snowball so that obstacles know where to scale based on.
-                // Set this whenever the value changes so it's up to date when obstacles need it.
-                scalePivot = transform.position;
-
                 Value = Mathf.MoveTowards(Value, TargetValue, moveSpeed * timeDelta);
             }
         }

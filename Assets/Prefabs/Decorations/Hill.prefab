@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1908138333283717612}
   - component: {fileID: 1863082398446775942}
+  - component: {fileID: 6694020832974436280}
   m_Layer: 0
   m_Name: HillBit1
   m_TagString: Untagged
@@ -87,6 +88,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6694020832974436280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772438337200064735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 0
+  rend: {fileID: 1863082398446775942}
 --- !u!1 &2361302230630734673
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6152144933657381999}
   - component: {fileID: 5308926393679240602}
+  - component: {fileID: 4783705730893348045}
   m_Layer: 0
   m_Name: TearingBad
   m_TagString: Untagged
@@ -174,6 +190,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4783705730893348045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2361302230630734673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 1
+  rend: {fileID: 5308926393679240602}
 --- !u!1 &3986171665961220281
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectSize: 1
-  scalePerspective: 0
+  scalePerspective: 1
   scaleOnSpawn: 0
   debugDisable: 0
 --- !u!1 &4613843077252215240
@@ -255,6 +285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3128652183750387872}
   - component: {fileID: 5405857437657256747}
+  - component: {fileID: 8620182358874821506}
   m_Layer: 0
   m_Name: HillBit2
   m_TagString: Untagged
@@ -332,3 +363,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8620182358874821506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613843077252215240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 0
+  rend: {fileID: 5405857437657256747}
