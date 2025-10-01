@@ -1073,31 +1073,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleParent: {fileID: 1081323402}
+  obstaclePrefab: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
   spawnOnStart: 1
   obstacleSpawnAmount: 1
   spawnCooldown: 1.5
   scaleWithSpeed: 1
   minYSpawn: -4
   maxYSpawn: 1
-  obstacles:
-  - obstaclePrefab: {fileID: 8629333829777428763, guid: 18f5d5a279640fb4d9cbd14744fa6467, type: 3}
-    baseWeight: 5
-    addedWeight: 1
-  - obstaclePrefab: {fileID: 2304440776930180727, guid: 240f30927727fab42aa9d3990fb737ec, type: 3}
-    baseWeight: 5
-    addedWeight: 1
-  - obstaclePrefab: {fileID: 162954131110240656, guid: da4e7aa06d4f000428e2c3dc30353646, type: 3}
-    baseWeight: 0
-    addedWeight: 0
-  - obstaclePrefab: {fileID: 4865694926063459607, guid: afc4ccaf12d6c2941b2742e5671bd298, type: 3}
-    baseWeight: 5
-    addedWeight: 1
-  - obstaclePrefab: {fileID: 5443283142740042146, guid: 19f30457e3ff5be4bbc4f2467b0cd1b1, type: 3}
-    baseWeight: 5
-    addedWeight: 1
-  - obstaclePrefab: {fileID: 5212461423268268566, guid: 9d7e41ab76c2f864f8a05b85f3852192, type: 3}
-    baseWeight: 0
-    addedWeight: 2
+  brackets:
+  - spawnData:
+    - obstacle: {fileID: 11400000, guid: e0ac2bff0c8fd584b8650bd1e5d57346, type: 2}
+      baseWeight: 0
+      addedWeight: 0
 --- !u!1 &1268813478
 GameObject:
   m_ObjectHideFlags: 0

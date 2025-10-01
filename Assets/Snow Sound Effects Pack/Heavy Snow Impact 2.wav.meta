@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 77764c6f96f789940a63f3403d878fbd
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 315049
+  packageName: Snow Sound Effects Pack
+  packageVersion: 1.0
+  assetPath: Assets/Snow Sound Effects Pack/Heavy Snow Impact 2.wav
+  uploadId: 743313

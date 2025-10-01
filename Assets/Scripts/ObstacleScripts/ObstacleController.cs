@@ -15,7 +15,11 @@ namespace Snowmentum
     public class ObstacleController : MonoBehaviour
     {
         [SerializeField] private Obstacle obstacleData;
-        [SerializeField] private bool autoUpdateHitbox;
+        [SerializeField] private bool autoUpdate;
+
+#if UNITY_EDITOR
+        [SerializeField, HideInInspector] private Obstacle oldObsData;
+#endif
 
         #region Component References    
         [Header("Components")]
@@ -41,18 +45,31 @@ namespace Snowmentum
         public float ObstacleSize => obstacleData.ObstacleSize;
         #endregion
 
+
+#if UNITY_EDITOR
         /// <summary>
-        /// Automatically obstacle values.
+        /// Automatically obstacle data values.
         /// </summary>
         private void OnValidate()
         {
             // Automatically updates the hitbox data of the obstacle.
-            if (autoUpdateHitbox && obstacleData != null)
+            if (autoUpdate && obstacleData != null)
             {
                 obstacleData.HitboxOffset = obstacleCollider.offset;
                 obstacleData.HitboxSize = obstacleCollider.size;
+                obstacleData.HitboxDirection = obstacleCollider.direction;
+            }
+
+            // Update our prefab's components when the obstacle data changes.
+            if (obstacleData != oldObsData)
+            {
+                Debug.Log("Updated");
+                // Run SetObstacle so other values are updated.
+                SetObstacle(obstacleData);
+                oldObsData = obstacleData;
             }
         }
+#endif
 
         /// <summary>
         /// Sets the obstacle 
@@ -64,11 +81,21 @@ namespace Snowmentum
             this.obstacleData = obstacleData;
 
             // Update hte component on this GameObject when obstacle data changes/
+            UpdateObstacleComponents(obstacleData);
+            obstacleCollider.offset = obstacleData.HitboxOffset;
+            obstacleCollider.size = obstacleData.HitboxSize;
+            obstacleCollider.direction = obstacleData.HitboxDirection;
+        }
+
+        /// <summary>
+        /// Updates all of the non-hitbox components of this obstacle.
+        /// </summary>
+        /// <param name="obstacleData"></param>
+        public void UpdateObstacleComponents(Obstacle obstacleData)
+        {
             rend.sprite = obstacleData.ObstacleSprite;
             score.BaseScore = obstacleData.BaseScore;
             scaler.Size = obstacleData.BaseSize;
-            obstacleCollider.offset = obstacleData.HitboxOffset;
-            obstacleCollider.size = obstacleData.HitboxSize;
         }
     }
 }
