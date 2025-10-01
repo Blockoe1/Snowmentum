@@ -15,7 +15,7 @@ namespace Snowmentum
     public class ObstacleController : MonoBehaviour
     {
         [SerializeField] private Obstacle obstacleData;
-        [SerializeField] private bool autoUpdateHitbox;
+        [SerializeField] private bool autoUpdate;
 
         #region Component References    
         [Header("Components")]
@@ -47,11 +47,15 @@ namespace Snowmentum
         private void OnValidate()
         {
             // Automatically updates the hitbox data of the obstacle.
-            if (autoUpdateHitbox && obstacleData != null)
+            if (autoUpdate && obstacleData != null)
             {
                 obstacleData.HitboxOffset = obstacleCollider.offset;
                 obstacleData.HitboxSize = obstacleCollider.size;
+                obstacleData.HitboxDirection = obstacleCollider.direction;
             }
+
+            // Run SetObstacle so other values are updated.
+            SetObstacle(obstacleData);
         }
 
         /// <summary>
@@ -64,11 +68,21 @@ namespace Snowmentum
             this.obstacleData = obstacleData;
 
             // Update hte component on this GameObject when obstacle data changes/
+            UpdateObstacleComponents(obstacleData);
+            obstacleCollider.offset = obstacleData.HitboxOffset;
+            obstacleCollider.size = obstacleData.HitboxSize;
+            obstacleCollider.direction = obstacleData.HitboxDirection;
+        }
+
+        /// <summary>
+        /// Updates all of the non-hitbox components of this obstacle.
+        /// </summary>
+        /// <param name="obstacleData"></param>
+        public void UpdateObstacleComponents(Obstacle obstacleData)
+        {
             rend.sprite = obstacleData.ObstacleSprite;
             score.BaseScore = obstacleData.BaseScore;
             scaler.Size = obstacleData.BaseSize;
-            obstacleCollider.offset = obstacleData.HitboxOffset;
-            obstacleCollider.size = obstacleData.HitboxSize;
         }
     }
 }

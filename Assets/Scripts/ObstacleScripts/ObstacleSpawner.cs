@@ -30,7 +30,7 @@ namespace Snowmentum
         [SerializeField] private float minYSpawn;
         [SerializeField] private float maxYSpawn;
 
-        [SerializeField] private ObstacleSpawnData[] obstacles;  //holds the obstacle prefabs
+        //[SerializeField] private ObstacleSpawnData[] obstacles;  //holds the obstacle prefabs
         [SerializeField] private SpawnBracket[] brackets;
  
         private bool isSpawning;
@@ -40,19 +40,31 @@ namespace Snowmentum
         private class SpawnBracket
         {
             [SerializeField] internal ObstacleSpawnData[] spawnData;
+
+            /// <summary>
+            /// Run OnSelected for all spawn data objects in this bracket so they start with the correct weight.
+            /// </summary>
+            internal void Initialize()
+            {
+                // Reset all obstacles to their base weight
+                foreach (var obstacle in spawnData)
+                {
+                    ObstacleSpawnData.OnSelected(obstacle);
+                }
+            }
         }
         [System.Serializable]
         private class ObstacleSpawnData
         {
-            [SerializeField] private ObjectScaler obstaclePrefab;
+            [SerializeField] private Obstacle obstacle;
             [SerializeField] private int baseWeight;
             [SerializeField] private int addedWeight;
 
             internal int weight;
 
             #region Properties
-            internal GameObject gameObject => obstaclePrefab.gameObject;
-            internal float Size => obstaclePrefab.Size;
+            internal Obstacle Obs => obstacle;
+            internal float Size => obstacle.ObstacleSize;
             #endregion
 
             #region Weight Updaters
@@ -80,10 +92,10 @@ namespace Snowmentum
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            // Reset all obstacles to their base weight
-            foreach(var obstacle in obstacles)
+            // Initialize all of our brackets with their starting weight.
+            foreach(var bracket in brackets)
             {
-                ObstacleSpawnData.OnSelected(obstacle);
+                bracket.Initialize();
             }
             if (spawnOnStart)
             {
@@ -104,15 +116,15 @@ namespace Snowmentum
         {
             yield return new WaitForSeconds(initialDelay);
             isSpawning = true;
-            GameObject obstacleSpawn;
+            Obstacle obstacleSpawn;
             SpawnBracket spawnBracket;
             while(isSpawning)
             {
-                //spawnBracket = brackets[SpawnBracket.]
+                spawnBracket = brackets[SizeBracket.Bracket];
                 for (int i = 0; i < obstacleSpawnAmount; i++)
                 {
-                    //Pick an obstacle prefab
-                    obstacleSpawn = GetObstaclePrefab(obstacles);
+                    //Pick an obstacle to spawn
+                    obstacleSpawn = GetObstacleData(spawnBracket.spawnData);
 
                     // If no obstacle is valid to be spawned right now, then we should skip spawning.
                     if (obstacleSpawn == null)
@@ -150,10 +162,11 @@ namespace Snowmentum
         /// </summary>
         /// <param name="spawnData">The list of obstacles to pick from.</param>
         /// <returns></returns>
-        private static GameObject GetObstaclePrefab(ObstacleSpawnData[] spawnData)
+        private static Obstacle GetObstacleData(ObstacleSpawnData[] spawnData)
         {
             // Find the valid obstacles that can be spawned.
-            ObstacleSpawnData[] validObstacles = Array.FindAll(spawnData, CheckValidObstacle);
+            //ObstacleSpawnData[] validObstacles = Array.FindAll(spawnData, CheckValidObstacle);
+            ObstacleSpawnData[] validObstacles = spawnData;
 
             // Return null if there are no valid obstacles to spawn at the moment.
             if (validObstacles.Length == 0) { return null; }
@@ -183,7 +196,7 @@ namespace Snowmentum
 
                     ObstacleSpawnData.OnSelected(validObstacles[i]);
 
-                    return validObstacles[i].gameObject;
+                    return validObstacles[i].Obs;
                 }
 
                 ObstacleSpawnData.OnNotSelected(validObstacles[i]);
@@ -198,12 +211,12 @@ namespace Snowmentum
         /// </summary>
         /// <param name="obstacleSpawnData"></param>
         /// <returns></returns>
-        private static bool CheckValidObstacle(ObstacleSpawnData obstacleSpawnData)
-        {
-            // The obstacle's size must be within double or half of the snowball's size.
-            return obstacleSpawnData.Size < SnowballSize.TargetValue * SnowballSize.OBSTACLE_RANGE_SCALE && 
-                obstacleSpawnData.Size > SnowballSize.TargetValue / SnowballSize.OBSTACLE_RANGE_SCALE;
-        }
+        //private static bool CheckValidObstacle(ObstacleSpawnData obstacleSpawnData)
+        //{
+        //    // The obstacle's size must be within double or half of the snowball's size.
+        //    return obstacleSpawnData.Size < SnowballSize.TargetValue * SnowballSize.OBSTACLE_RANGE_SCALE && 
+        //        obstacleSpawnData.Size > SnowballSize.TargetValue / SnowballSize.OBSTACLE_RANGE_SCALE;
+        //}
 
         /// <summary>
         /// Gets the weight of an obstacle, taking into account the size difference between it and the snowball.
@@ -212,10 +225,11 @@ namespace Snowmentum
         private static int GetObstacleWeight(ObstacleSpawnData obstacle)
         {
             //Debug.Log(Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)));
-            int effectiveWeight = Mathf.Max(obstacle.weight - 
-                Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)), 1);
+            //int effectiveWeight = Mathf.Max(obstacle.weight - 
+            //    Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)), 1);
             //Debug.Log($"Obstacle {obstacle.gameObject.name} has efffective weight of {effectiveWeight}");
-            return effectiveWeight;
+            return Mathf.Max(obstacle.weight -
+                Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)), 1);
         }
     }
 }

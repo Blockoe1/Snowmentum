@@ -19,6 +19,7 @@ namespace Snowmentum
         [SerializeField] private int baseScore;
 
         [Header("Hitbox")]
+        [SerializeField] private CapsuleDirection2D capsuleDirection;
         [SerializeField] private Vector2 offset;
         [SerializeField] private Vector2 size;
 
@@ -37,6 +38,11 @@ namespace Snowmentum
         {
             get { return size; }
             set { size = value; }
+        }
+        public CapsuleDirection2D HitboxDirection
+        {
+            get { return capsuleDirection; }
+            set { capsuleDirection = value; }
         }
         // The base size fot his obstacle that is used for scaling.
         public float BaseSize
