@@ -30,6 +30,7 @@ namespace Snowmentum
 
             // Calculates the vector pointing from the pivot point to the current position.
             Vector2 pivotToCurrent = currentPos - pivot;
+            //Debug.Log(pivotToCurrent);
             // Calculates the change in scale between the old and new scales.  Used to determine how much to scale
             // the position by.
             float scaleFactor = newScale / oldScale;

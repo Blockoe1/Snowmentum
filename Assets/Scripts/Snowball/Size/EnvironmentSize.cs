@@ -58,18 +58,28 @@ namespace Snowmentum
         /// </summary>
         private void Awake()
         {
-            TargetValue = startingValue;
-            Value = startingValue;
-
             // Set the pivot point of the snowball so that obstacles know where to scale based on.
             // Set this whenever the value changes so it's up to date when obstacles need it.
             scalePivot = new Vector2(transform.position.x, 0);
 
             SizeBracket.OnBracketChanged += UpdateEnvironmentSize;
         }
+
+        /// <summary>
+        /// Need to use start here (boo) so that the values are set after things have subscribed to events.
+        /// </summary>
+        private void Start()
+        {
+            TargetValue = startingValue;
+            Value = startingValue;
+        }
         private void OnDestroy()
         {
             SizeBracket.OnBracketChanged -= UpdateEnvironmentSize;
+
+            // Reset values
+            targetVal = 0;
+            val = 0;
         }
 
         /// <summary>

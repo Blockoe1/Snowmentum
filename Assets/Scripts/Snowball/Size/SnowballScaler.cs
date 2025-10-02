@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Snowmentum.Size
 {
-    public class SnowbalScaler : MonoBehaviour
+    public class SnowballScaler : MonoBehaviour
     {
         #region CONSTS
         // The scale that the snowball should be set at for size 1.
@@ -77,6 +77,8 @@ namespace Snowmentum.Size
         /// </summary>
         private void UpdateSnowballScale()
         {
+            // Prevent /0 error.
+            if (SnowballSize.Value == 0 || EnvironmentSize.Value == 0) { return; }
             // Sets the snowball scale based on it's size and our environment size.
             transform.localScale = REFERENCE_SCALE * (SnowballSize.Value / EnvironmentSize.Value);
         }
@@ -86,8 +88,16 @@ namespace Snowmentum.Size
         /// </summary>
         private void SnowballPerspective(float oldScale, float newScale)
         {
-            snowballRigidbody.MovePosition(SizeHelpers.CalculateScaledPosition(EnvironmentSize.ScalePivot, 
-                snowballRigidbody.position, oldScale, newScale));
+            //Debug.Log($"OldScale: {oldScale}.  NewScale: {newScale}.");
+            //Debug.Log(SizeHelpers.CalculateScaledPosition(EnvironmentSize.ScalePivot,
+            //    snowballRigidbody.position, oldScale, newScale));
+            //Debug.Log("Current Position " + snowballRigidbody.position);
+            //Debug.Log("New Position" + SizeHelpers.CalculateScaledPosition(EnvironmentSize.ScalePivot,
+            //    snowballRigidbody.position, oldScale, newScale));
+
+            // MovePosition refuses to work, so I've switched it over to .position instead.
+            snowballRigidbody.position = SizeHelpers.CalculateScaledPosition(EnvironmentSize.ScalePivot, 
+                snowballRigidbody.position, oldScale, newScale);
         }
     }
 }
