@@ -271,23 +271,6 @@ MonoBehaviour:
   snowballSizeText: {fileID: 7796099}
   displayedDigits: 5
   postfixDigits: 1
---- !u!1 &119189609 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4613843077252215240, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
-  m_PrefabInstance: {fileID: 202237789}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &119189613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 119189609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1d658d48c203d248966764b103ea217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &202237789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296,21 +279,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1908138333283717612, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 3128652183750387872, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.35
-      objectReference: {fileID: 0}
     - target: {fileID: 3986171665961220281, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
       propertyPath: m_Name
       value: Hill
-      objectReference: {fileID: 0}
-    - target: {fileID: 6152144933657381999, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 7803632043478022561, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -355,34 +326,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2361302230630734673, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 257793930}
-    - targetCorrespondingSourceObject: {fileID: 772438337200064735, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1488186813}
-    - targetCorrespondingSourceObject: {fileID: 4613843077252215240, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 119189613}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
---- !u!1 &257793926 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2361302230630734673, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
-  m_PrefabInstance: {fileID: 202237789}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &257793930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257793926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1d658d48c203d248966764b103ea217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &301321085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,23 +1189,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1488186809 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 772438337200064735, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
-  m_PrefabInstance: {fileID: 202237789}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1488186813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488186809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1d658d48c203d248966764b103ea217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1530163285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,10 +1244,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.28020835
     y: 0
-    width: 1
-    height: 1
+    width: 0.36388892
+    height: 0.3638889
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
