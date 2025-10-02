@@ -32,7 +32,9 @@ namespace Snowmentum
 
         //[SerializeField] private ObstacleSpawnData[] obstacles;  //holds the obstacle prefabs
         [SerializeField] private SpawnBracket[] brackets;
- 
+
+        private static Queue<ObstacleController> inactiveObstacles = new();
+
         private bool isSpawning;
 
         #region Nested
@@ -116,8 +118,9 @@ namespace Snowmentum
         {
             yield return new WaitForSeconds(initialDelay);
             isSpawning = true;
-            Obstacle obstacleSpawn;
+            Obstacle obstacleData;
             SpawnBracket spawnBracket;
+            ObstacleController spawnedController;
             while(isSpawning)
             {
                 // Get the largest bracket we have obstacles set up to spawn in.
@@ -125,19 +128,22 @@ namespace Snowmentum
                 for (int i = 0; i < obstacleSpawnAmount; i++)
                 {
                     //Pick an obstacle to spawn
-                    obstacleSpawn = GetObstacleData(spawnBracket.spawnData);
+                    obstacleData = GetObstacleData(spawnBracket.spawnData);
 
                     // If no obstacle is valid to be spawned right now, then we should skip spawning.
-                    if (obstacleSpawn == null)
+                    if (obstacleData == null)
                     {
                         continue;
                     }
                     //Pick a random spawn point
                     float randomY = UnityEngine.Random.Range(minYSpawn, maxYSpawn);
-                    Vector3 SpawnArea = transform.position + (Vector3.up * randomY);
+                    Vector3 spawnArea = transform.position + (Vector3.up * randomY);
 
-                    //Spawn obstacle
+                    //Spawn obstacle and set it up with it's data
                     //Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity, obstacleParent);
+                    spawnedController = GetObstacleController();
+                    spawnedController.transform.position = spawnArea;
+                    spawnedController.SetObstacle(obstacleData);
 
                     
                     //StartCoroutine(SpawnObstacles());
@@ -233,5 +239,29 @@ namespace Snowmentum
             return Mathf.Max(obstacle.weight -
                 Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)), 1);
         }
+
+        #region Object Pooling
+        /// <summary>
+        /// Gets an obstacle GameObject to use for an obstacle to be spawned.
+        /// </summary>
+        /// <returns>The found obstacle</returns>
+        private ObstacleController GetObstacleController()
+        {
+            ObstacleController toGet = inactiveObstacles.Count > 0 ? inactiveObstacles.Dequeue() : 
+                Instantiate(obstaclePrefab, obstacleParent);
+            toGet.gameObject.SetActive(true);
+            return toGet;
+        }
+
+        /// <summary>
+        /// Returns an obstacle to be re-used.
+        /// </summary>
+        /// <param name="obstacle">The obstacle to be returned.</param>
+        public static void ReturnObstacle(ObstacleController obstacle)
+        {
+            obstacle.gameObject.SetActive(false);
+            inactiveObstacles.Enqueue(obstacle);
+        }
+        #endregion
     }
 }

@@ -97,5 +97,13 @@ namespace Snowmentum
             score.BaseScore = obstacleData.BaseScore;
             scaler.Size = obstacleData.BaseSize;
         }
+
+        /// <summary>
+        /// Return this obstacle to the obstacle spawner's pool.
+        /// </summary>
+        public void ReturnObstacle()
+        {
+            ObstacleSpawner.ReturnObstacle(this);
+        }
     }
 }

@@ -172,7 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleData: {fileID: 0}
-  autoUpdateHitbox: 0
+  autoUpdate: 0
+  oldObsData: {fileID: 0}
   rend: {fileID: 8871070839524519023}
   obstacleCollider: {fileID: 7567752226576047106}
   score: {fileID: 7647677357995392279}
@@ -236,6 +237,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2002559263234210752}
+        m_TargetAssemblyTypeName: Snowmentum.ObstacleController, Assembly-CSharp
+        m_MethodName: ReturnObstacle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   scaler: {fileID: 8657666669540303953}
 --- !u!114 &7647677357995392279
 MonoBehaviour:
@@ -263,3 +276,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killZone: 16
+  OnEnterKillzone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2002559263234210752}
+        m_TargetAssemblyTypeName: Snowmentum.ObstacleController, Assembly-CSharp
+        m_MethodName: ReturnObstacle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

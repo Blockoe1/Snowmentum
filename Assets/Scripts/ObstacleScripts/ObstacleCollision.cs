@@ -47,7 +47,7 @@ namespace Snowmentum
         public void DestroyObstacle(float sizeRatio)
         {
             OnDestroyEvent?.Invoke(sizeRatio);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

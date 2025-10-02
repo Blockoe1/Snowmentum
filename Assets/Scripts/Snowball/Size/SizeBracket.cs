@@ -50,7 +50,7 @@ namespace Snowmentum.Size
         /// <returns>It's current size bracket.</returns>
         public static int GetBracket(float size)
         {
-            return Mathf.CeilToInt(Mathf.Log(size, BRACKET_SCALE));
+            return Mathf.Max(Mathf.CeilToInt(Mathf.Log(size, BRACKET_SCALE)), 1);
         }
 
         /// <summary>
