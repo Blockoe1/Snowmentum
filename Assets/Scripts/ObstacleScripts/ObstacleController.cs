@@ -15,7 +15,6 @@ namespace Snowmentum
     public class ObstacleController : MonoBehaviour
     {
         [SerializeField] private Obstacle obstacleData;
-        [SerializeField] private bool autoUpdate;
 
 #if UNITY_EDITOR
         [SerializeField, HideInInspector] private Obstacle oldObsData;
@@ -52,13 +51,14 @@ namespace Snowmentum
         /// </summary>
         private void OnValidate()
         {
-            // Automatically updates the hitbox data of the obstacle.
-            if (autoUpdate && obstacleData != null)
-            {
-                obstacleData.HitboxOffset = obstacleCollider.offset;
-                obstacleData.HitboxSize = obstacleCollider.size;
-                obstacleData.HitboxDirection = obstacleCollider.direction;
-            }
+            //// Automatically updates the hitbox data of the obstacle.
+            //if (autoUpdate && obstacleData != null)
+            //{
+            //    obstacleData.IsTrigger = obstacleCollider.isTrigger;
+            //    obstacleData.HitboxOffset = obstacleCollider.offset;
+            //    obstacleData.HitboxSize = obstacleCollider.size;
+            //    obstacleData.HitboxDirection = obstacleCollider.direction;
+            //}
 
             // Update our prefab's components when the obstacle data changes.
             if (obstacleData != oldObsData)
@@ -72,6 +72,21 @@ namespace Snowmentum
 #endif
 
         /// <summary>
+        /// Updates the data object that controls this obstacle.
+        /// </summary>
+        [ContextMenu("Update Obstacle Data")]
+        private void UpdateData()
+        {
+            if (obstacleData != null)
+            {
+                obstacleData.IsTrigger = obstacleCollider.isTrigger;
+                obstacleData.HitboxOffset = obstacleCollider.offset;
+                obstacleData.HitboxSize = obstacleCollider.size;
+                obstacleData.HitboxDirection = obstacleCollider.direction;
+            }
+        }
+
+        /// <summary>
         /// Sets the obstacle 
         /// </summary>
         /// <param name="obstacleData">The obstacle ScriptableObject that this obstacle should be based on.</param>
@@ -82,6 +97,7 @@ namespace Snowmentum
 
             // Update hte component on this GameObject when obstacle data changes/
             UpdateObstacleComponents(obstacleData);
+            obstacleCollider.isTrigger = obstacleData.IsTrigger;
             obstacleCollider.offset = obstacleData.HitboxOffset;
             obstacleCollider.size = obstacleData.HitboxSize;
             obstacleCollider.direction = obstacleData.HitboxDirection;
@@ -93,6 +109,7 @@ namespace Snowmentum
         /// <param name="obstacleData"></param>
         public void UpdateObstacleComponents(Obstacle obstacleData)
         {
+            gameObject.tag = obstacleData.Tag;
             rend.sprite = obstacleData.ObstacleSprite;
             score.BaseScore = obstacleData.BaseScore;
             scaler.Size = obstacleData.BaseSize;

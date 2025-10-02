@@ -1088,6 +1088,9 @@ MonoBehaviour:
     - obstacle: {fileID: 11400000, guid: c8822fff18f21d0478c3e85ca91d2dcc, type: 2}
       baseWeight: 5
       addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: d6a8c63542b5978438af60c09133b95f, type: 2}
+      baseWeight: 0
+      addedWeight: 2
 --- !u!1 &1268813478
 GameObject:
   m_ObjectHideFlags: 0

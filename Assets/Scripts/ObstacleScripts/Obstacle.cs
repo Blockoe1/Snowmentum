@@ -17,11 +17,13 @@ namespace Snowmentum
         [SerializeField] private float obstacleSize;
         [SerializeField] private Sprite obstacleSprite;
         [SerializeField] private int baseScore;
+        [SerializeField] private string tag = "Untagged";
 
         [Header("Hitbox")]
+        [SerializeField] private bool isTrigger;
         [SerializeField] private CapsuleDirection2D capsuleDirection;
         [SerializeField] private Vector2 offset;
-        [SerializeField] private Vector2 size;
+        [SerializeField] private Vector2 size = Vector2.one;
 
         [SerializeField, HideInInspector] private float baseSize;
 
@@ -29,6 +31,12 @@ namespace Snowmentum
         public float ObstacleSize => obstacleSize;
         public Sprite ObstacleSprite => obstacleSprite;
         public int BaseScore => baseScore;
+        public string Tag => tag;
+        public bool IsTrigger
+        {
+            get { return isTrigger; }
+            set { isTrigger = value; }
+        }
         public Vector2 HitboxOffset
         {
             get { return offset; }

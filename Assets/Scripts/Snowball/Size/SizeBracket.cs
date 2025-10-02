@@ -7,6 +7,7 @@
 // Brief Description : Controls the current size bracket that gameplay is in.
 *****************************************************************************/
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Snowmentum.Size
@@ -39,6 +40,7 @@ namespace Snowmentum.Size
                 // Update the size limits of our bracket.
                 sizeMin = GetMaxSize(bracket - 1);
                 sizeMax = GetMaxSize(bracket);
+                
             }
         }
         #endregion
