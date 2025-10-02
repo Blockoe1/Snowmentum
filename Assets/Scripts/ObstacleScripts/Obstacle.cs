@@ -28,10 +28,30 @@ namespace Snowmentum
         [SerializeField, HideInInspector] private float baseSize;
 
         #region Properties
-        public float ObstacleSize => obstacleSize;
-        public Sprite ObstacleSprite => obstacleSprite;
-        public int BaseScore => baseScore;
-        public string Tag => tag;
+        public float ObstacleSize
+        {
+            get { return obstacleSize; }
+            set 
+            {
+                obstacleSize = value;
+                baseSize = SizeBracket.GetMinSize(SizeBracket.GetBracket(obstacleSize));
+            }
+        }
+        public Sprite ObstacleSprite
+        {
+            get { return obstacleSprite; }
+            set { obstacleSprite = value; }
+        }
+        public int BaseScore
+        {
+            get { return baseScore; }
+            set { baseScore = value; }
+        }
+        public string Tag
+        {
+            get { return tag; }
+            set { tag = value; }
+        }
         public bool IsTrigger
         {
             get { return isTrigger; }
@@ -68,7 +88,7 @@ namespace Snowmentum
         private void OnValidate()
         {
             // Update base size 
-            baseSize = SizeBracket.GetMinSize(SizeBracket.GetBracket(obstacleSize));
+            baseSize = BaseSize;
         }
     }
 }

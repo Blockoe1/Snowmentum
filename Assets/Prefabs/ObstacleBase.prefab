@@ -172,7 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleData: {fileID: 0}
-  autoUpdate: 0
   oldObsData: {fileID: 0}
   rend: {fileID: 8871070839524519023}
   obstacleCollider: {fileID: 7567752226576047106}
@@ -249,7 +248,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  scaler: {fileID: 8657666669540303953}
+  obstacle: {fileID: 2002559263234210752}
 --- !u!114 &7647677357995392279
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@
 *****************************************************************************/
 using Snowmentum.Score;
 using Snowmentum.Size;
+using System;
 using UnityEngine;
 
 namespace Snowmentum
@@ -72,21 +73,6 @@ namespace Snowmentum
 #endif
 
         /// <summary>
-        /// Updates the data object that controls this obstacle.
-        /// </summary>
-        [ContextMenu("Update Obstacle Data")]
-        private void UpdateData()
-        {
-            if (obstacleData != null)
-            {
-                obstacleData.IsTrigger = obstacleCollider.isTrigger;
-                obstacleData.HitboxOffset = obstacleCollider.offset;
-                obstacleData.HitboxSize = obstacleCollider.size;
-                obstacleData.HitboxDirection = obstacleCollider.direction;
-            }
-        }
-
-        /// <summary>
         /// Sets the obstacle 
         /// </summary>
         /// <param name="obstacleData">The obstacle ScriptableObject that this obstacle should be based on.</param>
@@ -95,25 +81,50 @@ namespace Snowmentum
             if (obstacleData == null) { return; }
             this.obstacleData = obstacleData;
 
-            // Update hte component on this GameObject when obstacle data changes/
-            UpdateObstacleComponents(obstacleData);
+            ReadObstacleData();
+        }
+
+        #region ObstacleData Manipulation
+        /// <summary>
+        /// Updates the data object that controls this obstacle.
+        /// </summary>
+        [ContextMenu("Write Obstacle Data")]
+        private void WriteObstacleData()
+        {
+            if (obstacleData == null) { return; }
+
+            // Update the misc data of the obstacle.
+            obstacleData.Tag = gameObject.tag;
+            obstacleData.ObstacleSprite = rend.sprite;
+            obstacleData.BaseScore = score.BaseScore;
+
+            // Update the collision data of the obstacle.
+            obstacleData.IsTrigger = obstacleCollider.isTrigger;
+            obstacleData.HitboxOffset = obstacleCollider.offset;
+            obstacleData.HitboxSize = obstacleCollider.size;
+            obstacleData.HitboxDirection = obstacleCollider.direction;
+        }
+
+        /// <summary>
+        /// Reads the data from this object's obstacleData and updates the components on this GameObject.
+        /// </summary>
+        private void ReadObstacleData()
+        {
+            if (obstacleData == null) { return; }
+
+            // Update the component on this GameObject when obstacle data changes.
+            gameObject.tag = obstacleData.Tag;
+            rend.sprite = obstacleData.ObstacleSprite;
+            score.BaseScore = obstacleData.BaseScore;
+            scaler.Size = obstacleData.BaseSize;
+
+            // Collider Updates
             obstacleCollider.isTrigger = obstacleData.IsTrigger;
             obstacleCollider.offset = obstacleData.HitboxOffset;
             obstacleCollider.size = obstacleData.HitboxSize;
             obstacleCollider.direction = obstacleData.HitboxDirection;
         }
-
-        /// <summary>
-        /// Updates all of the non-hitbox components of this obstacle.
-        /// </summary>
-        /// <param name="obstacleData"></param>
-        public void UpdateObstacleComponents(Obstacle obstacleData)
-        {
-            gameObject.tag = obstacleData.Tag;
-            rend.sprite = obstacleData.ObstacleSprite;
-            score.BaseScore = obstacleData.BaseScore;
-            scaler.Size = obstacleData.BaseSize;
-        }
+        #endregion
 
         /// <summary>
         /// Return this obstacle to the obstacle spawner's pool.

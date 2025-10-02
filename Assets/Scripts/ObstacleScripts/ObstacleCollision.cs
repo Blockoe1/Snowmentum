@@ -14,7 +14,7 @@ using Snowmentum.Size;
 namespace Snowmentum
 {
     [RequireComponent(typeof(Collider2D))]
-    [RequireComponent(typeof(ObjectScaler))]
+    [RequireComponent(typeof(ObstacleController))]
     public class ObstacleCollision : MonoBehaviour
     {
         [Header("Events")]
@@ -22,7 +22,7 @@ namespace Snowmentum
 
         #region Component References
         [Header("Components")]
-        [SerializeReference] protected ObjectScaler scaler;
+        [SerializeReference] protected ObstacleController obstacle;
 
         /// <summary>
         /// Get components on reset.
@@ -30,12 +30,12 @@ namespace Snowmentum
         [ContextMenu("Get Component References")]
         private void Reset()
         {
-            scaler = GetComponent<ObjectScaler>();
+            obstacle = GetComponent<ObstacleController>();
         }
         #endregion
 
         #region Properties
-        public float ObstacleSize => scaler.Size;
+        public float ObstacleSize => obstacle.ObstacleSize;
         #endregion
 
         /// <summary>
