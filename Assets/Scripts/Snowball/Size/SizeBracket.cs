@@ -7,6 +7,7 @@
 // Brief Description : Controls the current size bracket that gameplay is in.
 *****************************************************************************/
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Snowmentum.Size
@@ -39,6 +40,7 @@ namespace Snowmentum.Size
                 // Update the size limits of our bracket.
                 sizeMin = GetMaxSize(bracket - 1);
                 sizeMax = GetMaxSize(bracket);
+                
             }
         }
         #endregion
@@ -48,9 +50,9 @@ namespace Snowmentum.Size
         /// </summary>
         /// <param name="size">The current size of the snowball.</param>
         /// <returns>It's current size bracket.</returns>
-        private static int GetBracket(float size)
+        public static int GetBracket(float size)
         {
-            return Mathf.CeilToInt(Mathf.Log(size, BRACKET_SCALE));
+            return Mathf.Max(Mathf.CeilToInt(Mathf.Log(size, BRACKET_SCALE)), 1);
         }
 
         /// <summary>

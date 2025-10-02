@@ -7,12 +7,14 @@
 // Brief Description : Destroys a moving object when it goes outside of a given bounds.
 *****************************************************************************/
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Snowmentum
 {
     public class KillZone : MonoBehaviour, IMovementModifier
     {
         [SerializeField] private float killZone;
+        [SerializeField] private UnityEvent OnEnterKillzone;
 
         /// <summary>
         /// If the object is beyond the kill zone, then mark it for destruction.
@@ -24,7 +26,8 @@ namespace Snowmentum
         {
             if (Mathf.Abs(targetPos.x) > killZone)
             {
-                Destroy(movedObject.gameObject);
+                OnEnterKillzone?.Invoke();
+                //Destroy(movedObject.gameObject);
             }
             return targetPos;
         }

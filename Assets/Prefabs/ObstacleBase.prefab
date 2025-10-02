@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2290287356925112515}
   - component: {fileID: 8871070839524519023}
   - component: {fileID: 3304603884408545833}
-  - component: {fileID: 8392171218554760631}
+  - component: {fileID: 7567752226576047106}
+  - component: {fileID: 2002559263234210752}
   - component: {fileID: 8657666669540303953}
   - component: {fileID: 2339446773185272735}
   - component: {fileID: 3549831470322472451}
@@ -121,8 +122,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &8392171218554760631
-BoxCollider2D:
+--- !u!70 &7567752226576047106
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -156,17 +157,26 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Direction: 0
+--- !u!114 &2002559263234210752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150288299065344882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace173693066bbd4db7544e62a5c022a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleData: {fileID: 0}
+  oldObsData: {fileID: 0}
+  rend: {fileID: 8871070839524519023}
+  obstacleCollider: {fileID: 7567752226576047106}
+  score: {fileID: 7647677357995392279}
+  scaler: {fileID: 8657666669540303953}
 --- !u!114 &8657666669540303953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf336ba4bd058c4396612996741d5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectSize: 0
+  objectSize: 1
   scalePerspective: 1
   scaleOnSpawn: 0
   debugDisable: 0
@@ -226,7 +236,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  scaler: {fileID: 8657666669540303953}
+      - m_Target: {fileID: 2002559263234210752}
+        m_TargetAssemblyTypeName: Snowmentum.ObstacleController, Assembly-CSharp
+        m_MethodName: ReturnObstacle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  obstacle: {fileID: 2002559263234210752}
 --- !u!114 &7647677357995392279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,3 +275,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killZone: 16
+  OnEnterKillzone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2002559263234210752}
+        m_TargetAssemblyTypeName: Snowmentum.ObstacleController, Assembly-CSharp
+        m_MethodName: ReturnObstacle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
