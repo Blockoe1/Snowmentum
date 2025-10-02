@@ -21,7 +21,7 @@ namespace Snowmentum
 
         [Header("Hitbox")]
         [SerializeField] private bool isTrigger;
-        [SerializeField] private CapsuleDirection2D capsuleDirection;
+        [SerializeField] private CapsuleDirection2D capsuleDirection; 
         [SerializeField] private Vector2 offset;
         [SerializeField] private Vector2 size = Vector2.one;
 
@@ -88,7 +88,7 @@ namespace Snowmentum
         private void OnValidate()
         {
             // Update base size 
-            baseSize = BaseSize;
+            ObstacleSize = obstacleSize;
         }
     }
 }
