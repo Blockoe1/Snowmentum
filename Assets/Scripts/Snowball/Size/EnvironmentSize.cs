@@ -60,7 +60,7 @@ namespace Snowmentum
         {
             // Set the pivot point of the snowball so that obstacles know where to scale based on.
             // Set this whenever the value changes so it's up to date when obstacles need it.
-            scalePivot = new Vector2(transform.position.x, 0);
+            scalePivot = new Vector2(transform.position.x, HillAligner.HORIZON_LINE);
 
             SizeBracket.OnBracketChanged += UpdateEnvironmentSize;
         }
