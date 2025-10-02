@@ -58,9 +58,9 @@ namespace Snowmentum
         #endregion
 
         /// <summary>
-        /// Resets values on awake
+        /// Resets values on start (boo) so that other scripts can subscribe in awake.
         /// </summary>
-        private void Awake()
+        private void Start()
         {
             TargetValue = startingValue;
             Value = startingValue;

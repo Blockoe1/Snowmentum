@@ -227,7 +227,8 @@ namespace Snowmentum
 
             deltaAction = InputSystem.actions.FindAction(DELTA_ACTION_NAME);
 
-            Application.targetFrameRate = 0;
+            // Locks the cursor so it's invisible on screen.
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         /// <summary>

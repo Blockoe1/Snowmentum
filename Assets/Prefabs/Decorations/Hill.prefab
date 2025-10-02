@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1908138333283717612}
   - component: {fileID: 1863082398446775942}
   - component: {fileID: 6694020832974436280}
+  - component: {fileID: 1249726107616950423}
   m_Layer: 0
   m_Name: HillBit1
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 772438337200064735}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: 1.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,6 +103,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scale: 0
   rend: {fileID: 1863082398446775942}
+--- !u!114 &1249726107616950423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772438337200064735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d658d48c203d248966764b103ea217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2361302230630734673
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,6 +126,7 @@ GameObject:
   - component: {fileID: 6152144933657381999}
   - component: {fileID: 5308926393679240602}
   - component: {fileID: 4783705730893348045}
+  - component: {fileID: 1933867660492043633}
   m_Layer: 0
   m_Name: TearingBad
   m_TagString: Untagged
@@ -129,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 2361302230630734673}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -204,6 +218,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scale: 1
   rend: {fileID: 5308926393679240602}
+--- !u!114 &1933867660492043633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2361302230630734673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d658d48c203d248966764b103ea217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3986171665961220281
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +312,7 @@ GameObject:
   - component: {fileID: 3128652183750387872}
   - component: {fileID: 5405857437657256747}
   - component: {fileID: 8620182358874821506}
+  - component: {fileID: 3325458938079611392}
   m_Layer: 0
   m_Name: HillBit2
   m_TagString: Untagged
@@ -302,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 4613843077252215240}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18, y: 0, z: 0}
+  m_LocalPosition: {x: 18, y: 1.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -377,3 +404,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scale: 0
   rend: {fileID: 5405857437657256747}
+--- !u!114 &3325458938079611392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613843077252215240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d658d48c203d248966764b103ea217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
