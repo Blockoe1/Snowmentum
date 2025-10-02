@@ -23,7 +23,7 @@ namespace Snowmentum
         [SerializeField] private Vector2 offset;
         [SerializeField] private Vector2 size;
 
-        [SerializeField] private float baseSize;
+        [SerializeField, HideInInspector] private float baseSize;
 
         #region Properties
         public float ObstacleSize => obstacleSize;
