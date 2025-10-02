@@ -17,6 +17,8 @@ namespace Snowmentum
     {
         [SerializeField] private Obstacle obstacleData;
 
+        private ObstacleReturnFunction obstacleReturnFunction;
+
 #if UNITY_EDITOR
         [SerializeField, HideInInspector] private Obstacle oldObsData;
 #endif
@@ -42,6 +44,10 @@ namespace Snowmentum
         #endregion
 
         #region Properties
+        public ObstacleReturnFunction ReturnFunction
+        {
+            set { obstacleReturnFunction = value; }
+        }
         public float ObstacleSize => obstacleData.ObstacleSize;
         #endregion
 
@@ -131,7 +137,7 @@ namespace Snowmentum
         /// </summary>
         public void ReturnObstacle()
         {
-            ObstacleSpawner.ReturnObstacle(this);
+            obstacleReturnFunction(this);
         }
     }
 }
