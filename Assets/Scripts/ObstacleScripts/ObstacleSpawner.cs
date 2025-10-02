@@ -15,7 +15,7 @@ using System.Collections.Generic;
 namespace Snowmentum
 {
 
-    
+    public delegate void ObstacleReturnFunction(ObstacleController toReturn);
     public class ObstacleSpawner : MonoBehaviour
     {
         [SerializeField] private Transform obstacleParent;
@@ -33,7 +33,7 @@ namespace Snowmentum
         //[SerializeField] private ObstacleSpawnData[] obstacles;  //holds the obstacle prefabs
         [SerializeField] private SpawnBracket[] brackets;
 
-        private static Queue<ObstacleController> inactiveObstacles = new();
+        private Queue<ObstacleController> inactiveObstacles = new();
 
         private bool isSpawning;
 
@@ -144,6 +144,7 @@ namespace Snowmentum
                     spawnedController = GetObstacleController();
                     spawnedController.transform.position = spawnArea;
                     spawnedController.SetObstacle(obstacleData);
+                    spawnedController.ReturnFunction = ReturnObstacle;
 
                     
                     //StartCoroutine(SpawnObstacles());
@@ -257,7 +258,7 @@ namespace Snowmentum
         /// Returns an obstacle to be re-used.
         /// </summary>
         /// <param name="obstacle">The obstacle to be returned.</param>
-        public static void ReturnObstacle(ObstacleController obstacle)
+        public void ReturnObstacle(ObstacleController obstacle)
         {
             obstacle.gameObject.SetActive(false);
             inactiveObstacles.Enqueue(obstacle);
