@@ -17,7 +17,7 @@ MonoBehaviour:
   baseScore: 3
   tag: Untagged
   isTrigger: 0
-  capsuleDirection: 0
-  offset: {x: 0, y: 0}
-  size: {x: 1, y: 1}
+  capsuleDirection: 1
+  offset: {x: -0.05, y: 0.1}
+  size: {x: 1.5, y: 0.175}
   baseSize: 1
