@@ -1403,7 +1403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -67.6}
+  m_AnchoredPosition: {x: 0, y: -68}
   m_SizeDelta: {x: 1391.2, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1151076357
@@ -1949,10 +1949,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.29791668
     y: 0
-    width: 1
-    height: 1
+    width: 0.600926
+    height: 0.6009259
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
