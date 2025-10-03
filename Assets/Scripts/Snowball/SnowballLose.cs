@@ -41,6 +41,7 @@ namespace Snowmentum
         private void OnDestroy()
         {
             SnowballSize.OnTargetValueChanged -= OnValueChanged;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         /// <summary>
