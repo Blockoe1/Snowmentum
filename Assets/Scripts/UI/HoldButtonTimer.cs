@@ -7,6 +7,7 @@
 // Brief Description : Script that activates the on click event of buttons after the mouse is held over the buttons for a set amount of time. 
 Useful since the trackball cannot click on buttons. 
 *****************************************************************************/
+using Snowmentum;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -25,6 +26,7 @@ public class HoldButtonTimer : MonoBehaviour, IPointerEnterHandler, IPointerExit
         if (isPointerOver)
         {
             currentHoldTime += Time.deltaTime;
+            HoldProgress.UpdateProgressFill(currentHoldTime, requiredHoldTime);
             if (currentHoldTime >= requiredHoldTime)
             {
                 //activates the on click event of the button, which will be different depending on what each button does
@@ -41,12 +43,14 @@ public class HoldButtonTimer : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void OnPointerEnter(PointerEventData eventData)
     {
         isPointerOver = true;
+        HoldProgress.SetProgressVisibility(true);
         currentHoldTime = 0f;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         isPointerOver = false;
+        HoldProgress.SetProgressVisibility(false);
         currentHoldTime = 0f; 
     }
 }
