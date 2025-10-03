@@ -14,7 +14,7 @@ namespace Snowmentum
     public class TitleScript : MonoBehaviour
     {
         
-        private void PlayGame()
+        public void PlayGame()
         {
             //We can make the title scene 0 in the build and the gameplay scene 1
             SceneManager.LoadScene(1);
