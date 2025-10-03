@@ -341,6 +341,7 @@ GameObject:
   - component: {fileID: 889258197}
   - component: {fileID: 889258199}
   - component: {fileID: 889258198}
+  - component: {fileID: 889258200}
   m_Layer: 5
   m_Name: HoverCursor
   m_TagString: Untagged
@@ -406,6 +407,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889258196}
   m_CullTransparentMesh: 1
+--- !u!114 &889258200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889258196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f277f3fabd2fb44b3a536c144b32e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressImage: {fileID: 0}
+  processTime: 0
 --- !u!1 &921313694
 GameObject:
   m_ObjectHideFlags: 0
