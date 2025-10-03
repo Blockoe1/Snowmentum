@@ -95,6 +95,7 @@ namespace Snowmentum
         }
 
         #region ObstacleData Manipulation
+#if UNITY_EDITOR
         /// <summary>
         /// Updates the data object that controls this obstacle.
         /// </summary>
@@ -118,6 +119,7 @@ namespace Snowmentum
             EditorUtility.SetDirty(obstacleData);
             AssetDatabase.SaveAssetIfDirty(obstacleData);
         }
+#endif
 
         /// <summary>
         /// Reads the data from this object's obstacleData and updates the components on this GameObject.
