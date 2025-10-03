@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6f56f36f45693a54d9452ff6e5b73d32
+guid: 0db05c47aac89a84c86a74f19c291cb7
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -38,6 +38,24 @@ TextureImporter:
   - first:
       213: -2435938058380472218
     second: player_snowball_spritesheet_11
+  - first:
+      213: -8392073908224162470
+    second: player_snowball_spritesheet_12
+  - first:
+      213: 7789263742189794600
+    second: player_snowball_spritesheet_13
+  - first:
+      213: -7777288460306618407
+    second: player_snowball_spritesheet_14
+  - first:
+      213: -2164157616036760761
+    second: player_snowball_spritesheet_15
+  - first:
+      213: 5313408210324553497
+    second: player_snowball_spritesheet_16
+  - first:
+      213: 6529393510205365121
+    second: player_snowball_spritesheet_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -137,7 +155,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 349
+        y: 253
         width: 34
         height: 35
       alignment: 0
@@ -159,7 +177,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 36
-        y: 349
+        y: 253
         width: 36
         height: 35
       alignment: 0
@@ -181,7 +199,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 74
-        y: 350
+        y: 254
         width: 36
         height: 34
       alignment: 0
@@ -203,7 +221,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 349
+        y: 253
         width: 36
         height: 35
       alignment: 0
@@ -225,7 +243,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 150
-        y: 349
+        y: 253
         width: 36
         height: 35
       alignment: 0
@@ -247,7 +265,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 188
-        y: 350
+        y: 254
         width: 36
         height: 34
       alignment: 0
@@ -269,7 +287,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 277
+        y: 181
         width: 67
         height: 70
       alignment: 0
@@ -291,7 +309,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 69
-        y: 279
+        y: 183
         width: 69
         height: 68
       alignment: 0
@@ -313,7 +331,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 140
-        y: 279
+        y: 183
         width: 68
         height: 68
       alignment: 0
@@ -335,7 +353,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 210
-        y: 279
+        y: 183
         width: 68
         height: 68
       alignment: 0
@@ -357,7 +375,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 280
-        y: 279
+        y: 183
         width: 69
         height: 68
       alignment: 0
@@ -379,7 +397,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 351
-        y: 279
+        y: 183
         width: 68
         height: 68
       alignment: 0
@@ -392,6 +410,138 @@ TextureImporter:
       bones: []
       spriteID: 6609067fd3fc13ed0800000000000000
       internalID: -2435938058380472218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_snowball_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 132
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a55897b5e3d598b80800000000000000
+      internalID: -8392073908224162470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_snowball_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 29
+        width: 134
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8257d0faa16091c60800000000000000
+      internalID: 7789263742189794600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_snowball_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 28
+        width: 135
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d7eda7e955811490800000000000000
+      internalID: -7777288460306618407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_snowball_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 29
+        width: 134
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7433c2a4d1e57f1e0800000000000000
+      internalID: -2164157616036760761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_snowball_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 27
+        width: 134
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ff90b9d940db940800000000000000
+      internalID: 5313408210324553497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_snowball_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 31
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b1886adc01d9a50800000000000000
+      internalID: 6529393510205365121
       vertices: []
       indices: 
       edges: []
@@ -414,6 +564,12 @@ TextureImporter:
       player_snowball_spritesheet_1: -3551590314480919574
       player_snowball_spritesheet_10: 4265786736661062954
       player_snowball_spritesheet_11: -2435938058380472218
+      player_snowball_spritesheet_12: -8392073908224162470
+      player_snowball_spritesheet_13: 7789263742189794600
+      player_snowball_spritesheet_14: -7777288460306618407
+      player_snowball_spritesheet_15: -2164157616036760761
+      player_snowball_spritesheet_16: 5313408210324553497
+      player_snowball_spritesheet_17: 6529393510205365121
       player_snowball_spritesheet_2: -4205386384984551824
       player_snowball_spritesheet_3: -8747471035866381432
       player_snowball_spritesheet_4: -2274889818637385465
