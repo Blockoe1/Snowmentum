@@ -11,6 +11,10 @@ using Snowmentum.Size;
 using System;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace Snowmentum
 {
     public class ObstacleController : MonoBehaviour
@@ -91,6 +95,7 @@ namespace Snowmentum
         }
 
         #region ObstacleData Manipulation
+#if UNITY_EDITOR
         /// <summary>
         /// Updates the data object that controls this obstacle.
         /// </summary>
@@ -109,7 +114,12 @@ namespace Snowmentum
             obstacleData.HitboxOffset = obstacleCollider.offset;
             obstacleData.HitboxSize = obstacleCollider.size;
             obstacleData.HitboxDirection = obstacleCollider.direction;
+
+            // Save changes to the asset.
+            EditorUtility.SetDirty(obstacleData);
+            AssetDatabase.SaveAssetIfDirty(obstacleData);
         }
+#endif
 
         /// <summary>
         /// Reads the data from this object's obstacleData and updates the components on this GameObject.
