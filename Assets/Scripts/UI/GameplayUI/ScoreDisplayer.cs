@@ -31,6 +31,8 @@ namespace Snowmentum.Score
 
         private void Awake()
         {
+            // Reset score whenever the game begins.
+            ScoreStatic.Score = 0;
             ScoreStatic.OnScoreUpdated += UpdateScoreText;
         }
         private void OnDestroy()

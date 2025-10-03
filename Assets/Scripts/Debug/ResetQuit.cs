@@ -27,8 +27,6 @@ namespace Snowmentum
 
         private void Restart(InputAction.CallbackContext obj)
         {
-            // Reset score on restart temporarily until we get a proper scene movement system in.
-            ScoreStatic.Score = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
