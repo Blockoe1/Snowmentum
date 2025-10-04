@@ -110,16 +110,16 @@ namespace Snowmentum.Score
                 // Set highScores to a default array.
                 highScores = new HighScore[HIGH_SCORE_COUNT]
                 {
-                    new HighScore("TST", 1000 ),
-                    new HighScore("TST", 900 ),
-                    new HighScore("TST", 800 ),
-                    new HighScore("TST", 700 ),
-                    new HighScore("TST", 600 ),
-                    new HighScore("TST", 500 ),
-                    new HighScore("TST", 400 ),
-                    new HighScore("TST", 300 ),
-                    new HighScore("TST", 200 ),
-                    new HighScore("TST", 100 )
+                    HighScore.Default,
+                    HighScore.Default,
+                    HighScore.Default,
+                    HighScore.Default,
+                    HighScore.Default,
+                    HighScore.Default,
+                    HighScore.Default,
+                    HighScore.Default,
+                    HighScore.Default,
+                    HighScore.Default
                 };
 
                 Debug.Log("Failed to load high scores from " + filePath);

@@ -21,8 +21,6 @@ namespace Snowmentum.Score
 
             // Load the high scores when the game begins.
             ScoreStatic.LoadHighScores();
-
-            //ScoreStatic.AddHighScore("TSB", 750);
         }
 
         /// <summary>

@@ -32,9 +32,6 @@ namespace Snowmentum
             {
                 UpdateScores();
             }
-
-            // Debug Line
-            ScoreStatic.SaveHighScores();
         }
 
         /// <summary>
