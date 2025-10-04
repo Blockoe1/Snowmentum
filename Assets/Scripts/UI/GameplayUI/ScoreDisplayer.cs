@@ -13,8 +13,6 @@ namespace Snowmentum.Score
 {
     public class ScoreDisplayer : MonoBehaviour
     {
-        [SerializeField] private int displayedDigits = 5;
-        [SerializeField] private int postfixDigits = 1;
         #region Component References
         [Header("Components")]
         [SerializeReference] private TMP_Text textComponent;
