@@ -6,13 +6,14 @@
 //
 // Brief Description : Controls the loading and management of scores during gameplay
 *****************************************************************************/
-using Snowmentum.Score;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace Snowmentum
+namespace Snowmentum.Score
 {
     public class ScoreManager : MonoBehaviour
     {
+        [SerializeField] private UnityEvent OnHighScore;
         private void Awake()
         {
             // Reset score whenever the game begins.
@@ -20,6 +21,19 @@ namespace Snowmentum
 
             // Load the high scores when the game begins.
             ScoreStatic.LoadHighScores();
+
+            //ScoreStatic.AddHighScore("TSB", 750);
+        }
+
+        /// <summary>
+        /// Performs a check to see if the player has beat a high score and then do some actions if they have.
+        /// </summary>
+        public void CheckHighScore()
+        {
+            if (ScoreStatic.CheckHighScore())
+            {
+                OnHighScore?.Invoke();
+            }
         }
     }
 }

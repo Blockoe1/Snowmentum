@@ -7,6 +7,7 @@
 // Brief Description : Script for holding the player's current score.
 *****************************************************************************/
 using System;
+using System.IO;
 using UnityEngine;
 
 namespace Snowmentum.Score
@@ -17,6 +18,7 @@ namespace Snowmentum.Score
         private const int HIGH_SCORE_COUNT = 10;
         private const int SCORE_DISPLAY_DIGITS = 5;
         private const int SCORE_POSTFIX_DIGITS = 1;
+        private const string FILE_NAME = "snow.ball";
         #endregion
 
         private static int score;
@@ -29,6 +31,8 @@ namespace Snowmentum.Score
         //{
         //    get { return highScores; } 
         //}
+        private static string FilePath => Path.Combine(Application.persistentDataPath, FILE_NAME);
+        public static int HighScoreCount => highScores == null ? 0 : highScores.Length;
         public static int Score
         {
             get
@@ -39,6 +43,86 @@ namespace Snowmentum.Score
             {
                 score = value;
                 OnScoreUpdated?.Invoke(score);
+            }
+        }
+        #endregion
+
+        #region Save/Load
+        /// <summary>
+        /// Saves all of the current high scores to a file on the arcade machine.
+        /// </summary>
+        public static void SaveHighScores()
+        {
+            string filePath = FilePath;
+            // Open a new file stream to the file where we will save the high scores.
+            using (FileStream stream = new FileStream(filePath, FileMode.Create))
+            {
+                // Create a BinaryWriter that can then write the high scores to the file.
+                using (BinaryWriter writer = new BinaryWriter(stream))
+                {
+                    // Loop through all the high scores and save them to the file.
+                    for (int i = 0; i < highScores.Length; i++)
+                    {
+                        writer.Write(highScores[i].initials);
+                        writer.Write(highScores[i].value);
+                    }
+
+                    Debug.Log("High Scores saved to file " + filePath);
+
+                    writer.Close();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Loads all high scores from the machine.
+        /// </summary>
+        /// <remarks>
+        /// Overwrites any current high scores.
+        /// </remarks>
+        public static void LoadHighScores()
+        {
+            string filePath = FilePath;
+            // Check if the file exists.
+            if (File.Exists(filePath))
+            {
+                // Create a FileStream to the file that has all of the high scores saved.
+                using (FileStream stream = new FileStream(filePath, FileMode.Open))
+                {
+                    // Create a BinaryReader to read the contents of the saved high score file.
+                    using (BinaryReader reader = new BinaryReader(stream))
+                    {
+                        // Load data from the file for each high score that is set to be stored.
+                        highScores = new HighScore[HIGH_SCORE_COUNT];
+                        for(int i = 0; i < HIGH_SCORE_COUNT; i++)
+                        {
+                            highScores[i] = new HighScore(reader.ReadString(), reader.ReadInt32());
+                        }
+
+                        Debug.Log("Loaded high scores from file at " + filePath);
+
+                        reader.Close();
+                    }
+                }
+            }
+            else
+            {
+                // Set highScores to a default array.
+                highScores = new HighScore[HIGH_SCORE_COUNT]
+                {
+                    new HighScore("TST", 1000 ),
+                    new HighScore("TST", 900 ),
+                    new HighScore("TST", 800 ),
+                    new HighScore("TST", 700 ),
+                    new HighScore("TST", 600 ),
+                    new HighScore("TST", 500 ),
+                    new HighScore("TST", 400 ),
+                    new HighScore("TST", 300 ),
+                    new HighScore("TST", 200 ),
+                    new HighScore("TST", 100 )
+                };
+
+                Debug.Log("Failed to load high scores from " + filePath);
             }
         }
         #endregion
@@ -68,37 +152,6 @@ namespace Snowmentum.Score
         }
 
         /// <summary>
-        /// Saves all of the current high scores to a file on the arcade machine.
-        /// </summary>
-        public static void SaveHighScores()
-        {
-            // Not Implemented
-        }
-
-        /// <summary>
-        /// Loads all high scores from the machine.
-        /// </summary>
-        /// <remarks>
-        /// Overwrites any current high scores.
-        /// </remarks>
-        public static void LoadHighScores()
-        {
-            highScores = new HighScore[HIGH_SCORE_COUNT]
-            {
-                new HighScore("TST", 1000 ),
-                new HighScore("TST", 900 ),
-                new HighScore("TST", 800 ),
-                new HighScore("TST", 700 ),
-                new HighScore("TST", 600 ),
-                new HighScore("TST", 500 ),
-                new HighScore("TST", 400 ),
-                new HighScore("TST", 300 ),
-                new HighScore("TST", 200 ),
-                new HighScore("TST", 100 )
-            };
-        }
-
-        /// <summary>
         /// Checks if a given score beats one of the existing high scores.
         /// </summary>
         /// <returns>True if the score beats a high score.</returns>
@@ -106,6 +159,11 @@ namespace Snowmentum.Score
         {
             // We only need to check if the high score is higher than the lowest high score.
             return score > highScores[^1].value;
+        }
+        public static bool CheckHighScore()
+        {
+            // We only need to check if the high score is higher than the lowest high score.
+            return CheckHighScore(Score);
         }
 
         /// <summary>
@@ -128,6 +186,7 @@ namespace Snowmentum.Score
                     // to be assigned in the next iteration of the loop.
                     // The last high score is lost.
                     (highScores[i], prevScore) = (prevScore, highScores[i]);
+                    Debug.Log(prevScore.value);
                 }
                 else
                 {

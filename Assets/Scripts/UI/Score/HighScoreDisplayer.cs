@@ -16,27 +16,20 @@ namespace Snowmentum.UI
     {
         [SerializeField] private TMP_Text initialsText;
         [SerializeField] private TMP_Text scoreText;
-        [SerializeField] private int highScoreIndex;
-
-
-        private void Awake()
-        {
-            // Load the default high score on awake
-            LoadHighScore();
-        }
+        //[SerializeField] private int highScoreIndex;
 
         /// <summary>
         /// Loads a given high score and displays it.
         /// </summary>
         /// <param name="hs"></param>
-        private void LoadHighScore(HighScore hs)
+        public void LoadHighScore(HighScore hs)
         {
             initialsText.text = hs.initials;
-            scoreText.text =ScoreStatic.FormatScore(hs.value);
+            scoreText.text = ScoreStatic.FormatScore(hs.value);
         }
-        public void LoadHighScore()
-        {
-            LoadHighScore(ScoreStatic.GetHighScore(highScoreIndex));
-        }
+        //public void LoadHighScore()
+        //{
+        //    LoadHighScore(ScoreStatic.GetHighScore(highScoreIndex));
+        //}
     }
 }
