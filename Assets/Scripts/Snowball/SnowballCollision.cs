@@ -280,6 +280,7 @@ namespace Snowmentum
                 if (blinkTimer <= 0)
                 {
                     flashRenderer.enabled = !flashRenderer.enabled;
+                    blinkTimer = flashDelay;
                 }
 
                 timer -= Time.deltaTime;

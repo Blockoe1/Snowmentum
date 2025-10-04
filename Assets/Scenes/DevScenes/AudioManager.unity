@@ -2541,7 +2541,7 @@ MonoBehaviour:
   minThrowForce: 7500
   throwSampleTime: 0.1
   throwStrengthScaler: 10000
-  startingSpeedScaler: 20
+  startingSpeedScaler: 15
   OnMinigameThrow:
     m_PersistentCalls:
       m_Calls:
@@ -2622,7 +2622,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: flashDelay
-      value: 0.75
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: flashRenderer
@@ -2635,6 +2635,10 @@ PrefabInstance:
     - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165628667471022399, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: moveToTarget
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.x
