@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    public class CharSelector : MonoBehaviour
+    public class CharSelector : ScoreInputComponent
     {
         [SerializeField] private string validCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         [SerializeField] private TMP_Text charDisplayText;
@@ -42,21 +42,21 @@ namespace Snowmentum
         #endregion
 
         /// <summary>
-        /// Scrolls the currently selected char by a given amount.
-        /// </summary>
-        /// <param name="scrollAmount"></param>
-        public void Scroll(int scrollAmount)
-        {
-            CharIndex += scrollAmount;
-        }
-
-        /// <summary>
         /// Reads the selected character
         /// </summary>
         /// <returns></returns>
         public char ReadChar()
         {
             return validCharacters[CharIndex];
+        }
+
+        /// <summary>
+        /// Scroll the currently selected char by a given amount when the player inputs vertically on the trackball.
+        /// </summary>
+        /// <param name="inputAmount"></param>
+        public override void OnVerticalInput(int inputAmount)
+        {
+            CharIndex += inputAmount;
         }
     }
 }

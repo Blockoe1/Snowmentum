@@ -10,43 +10,56 @@ using UnityEngine;
 using System;
 using System.Collections;
 using Snowmentum.Score;
+using System.Linq;
 
 namespace Snowmentum.UI
 {
     public class ScoreInputMenu : MonoBehaviour
     {
-        [SerializeField] private CharSelector[] initialSelectors;
+        [SerializeReference] private ScoreInputComponent[] components;
         [SerializeField] private RectTransform selectionIndicator;
-        [SerializeField] private ScoreConfirm scoreConfirm;
         [SerializeField, Tooltip("The minimum delta value that players have to exceed to confirm they want to " +
             "change the current selection.")] 
         private float inputThreshold = 7500;
         [SerializeField, Tooltip("The amount of delay that should be waited between each time we detect input.")] 
         private float inputDelay;
 
-        private int selectedSelectorIndex;
+        private int selectedIndex;
         private bool pauseInput;
 
         #region Properties
         private int SelectedSelectorIndex
         {
-            get { return selectedSelectorIndex; }
+            get { return selectedIndex; }
             set
             {
-                selectedSelectorIndex = value;
+                // Deselect our previously selected component.
+                if (selectedIndex > 0 && selectedIndex < components.Length && components[selectedIndex] != null)
+                {
+                    components[selectedIndex].OnDeselect();
+                }
+
+                selectedIndex = value;
 
                 // Loop the char index around if is beyond the bounds of our valid characters.
-                if (selectedSelectorIndex < 0)
+                if (selectedIndex < 0)
                 {
-                    selectedSelectorIndex = initialSelectors.Length - 1;
+                    selectedIndex = components.Length - 1;
                 }
-                else if (selectedSelectorIndex >= initialSelectors.Length)
+                else if (selectedIndex >= components.Length)
                 {
-                    selectedSelectorIndex = 0;
+                    selectedIndex = 0;
+                }
+
+                // Select our current component
+                // Deselect our previously selected component.
+                if (components[selectedIndex] != null)
+                {
+                    components[selectedIndex].OnSelect();
                 }
 
                 // Update any visuals here.
-                selectionIndicator.transform.position = initialSelectors[selectedSelectorIndex].transform.position;
+                selectionIndicator.transform.position = components[selectedIndex].transform.position;
             }
         }
         #endregion
@@ -82,7 +95,7 @@ namespace Snowmentum.UI
             else if (Mathf.Abs(delta.y) > inputThreshold)
             {
                 // Vertical inputs should increment/decrement the char selector.
-                initialSelectors[selectedSelectorIndex].Scroll(Math.Sign(delta.y));
+                components[selectedIndex].OnVerticalInput(Math.Sign(delta.y));
 
                 StartCoroutine(InputDelay(inputDelay));
             }
@@ -107,9 +120,12 @@ namespace Snowmentum.UI
         private string GetInitials()
         {
             string output = "";
-            foreach (var selector in initialSelectors)
+            foreach (ScoreInputComponent component in components)
             {
-                output += selector.ReadChar();
+                if (component is CharSelector charSelector)
+                {
+                    output += charSelector.ReadChar();
+                }
             }
             return output;
         }
