@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a973efe60aa768a449e7dedfac9ff4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  validCharacters: .ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  validCharacters: ABCDEFGHIJKLMNOPQRSTUVWXYZ
   charTexts:
   - {fileID: 3831743066630922482}
   - {fileID: 6767403812466522083}
