@@ -499,6 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7943c3a602d9cc747af6761f4acba995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedTextColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  rankText: {fileID: 793467904140179513}
   initialsText: {fileID: 8978277539520976755}
   scoreText: {fileID: 4505993285720969275}
-  placementText: {fileID: 793467904140179513}

@@ -159,7 +159,11 @@ namespace Snowmentum.Score
         /// <param name="initials">The initials to save with the high score.</param>
         /// <param name="score">The value of the high score.</param>
         /// <returns>The index that the high score was added at.</returns>
-        public static int AddHighScore(string initials, int score)
+        public static int AddHighScore()
+        {
+            return AddHighScore(Score);
+        }
+        public static int AddHighScore(int score)
         {
             // Loop through each high score to find the one that this score will replace
             HighScore prevScore = new HighScore();
@@ -184,7 +188,7 @@ namespace Snowmentum.Score
                     {
                         hsIndex = i;
                         prevScore = highScores[i];
-                        highScores[i] = new HighScore(initials, score);
+                        highScores[i] = new HighScore(score);
                         hasAddedScore = true;
                     }
                 }

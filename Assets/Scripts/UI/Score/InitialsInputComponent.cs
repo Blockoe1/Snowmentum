@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    public class ScoreInputComponent : MonoBehaviour
+    public class InitialsInputComponent : MonoBehaviour
     {
         /// <summary>
         /// Called when this component is selected.

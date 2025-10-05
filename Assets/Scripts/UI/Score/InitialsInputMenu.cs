@@ -11,20 +11,22 @@ using System;
 using System.Collections;
 using Snowmentum.Score;
 using System.Linq;
+using UnityEngine.Events;
 
 namespace Snowmentum.UI
 {
-    public class ScoreInputMenu : MonoBehaviour
+    public class InitialsInputMenu : MonoBehaviour
     {
-        [SerializeReference] private ScoreInputComponent[] components;
+        [SerializeReference] private InitialsInputComponent[] components;
         [SerializeField] private RectTransform selectionIndicator;
         [SerializeField, Tooltip("The minimum delta value that players have to exceed to confirm they want to " +
             "change the current selection.")] 
         private float inputThreshold = 7500;
         [SerializeField, Tooltip("The amount of delay that should be waited between each time we detect input.")] 
         private float inputDelay;
+        [SerializeField] private UnityEvent OnSubmitInitials;
 
-        private HighScore setHighScore;
+        private HighScore targetHS;
         private int selectedIndex;
         private bool pauseInput;
 
@@ -68,16 +70,25 @@ namespace Snowmentum.UI
         /// <summary>
         /// Subscribe/Unsubscribe input functions.
         /// </summary>
-        private void Awake()
+        private void OnEnable()
         {
             InputManager.OnDeltaUpdate += HandleMouseInput;
 
             // Properly sort the array on awake.
             components = components.OrderBy(item => item.transform.position.x).ToArray();
         }
-        private void OnDestroy()
+        private void OnDisable()
         {
             InputManager.OnDeltaUpdate -= HandleMouseInput;
+        }
+
+        /// <summary>
+        /// Loads a high score to modify the initials of.
+        /// </summary>
+        public void LoadHighScore(HighScore toLoad)
+        {
+            targetHS = toLoad;
+            gameObject.SetActive(true);
         }
 
         /// <summary>
@@ -105,7 +116,10 @@ namespace Snowmentum.UI
                 StartCoroutine(InputDelay(inputDelay));
 
                 // Update our current high score object that we're modifying with the new initials
-                setHighScore.initials = GetInitials();
+                if (targetHS != null)
+                {
+                    targetHS.initials = GetInitials();
+                }
             }
         }
 
@@ -128,7 +142,7 @@ namespace Snowmentum.UI
         private string GetInitials()
         {
             string output = "";
-            foreach (ScoreInputComponent component in components)
+            foreach (InitialsInputComponent component in components)
             {
                 if (component is CharSelector charSelector)
                 {
@@ -146,6 +160,7 @@ namespace Snowmentum.UI
             //ScoreStatic.AddHighScore(GetInitials(), ScoreStatic.Score);
 
             ScoreStatic.SaveHighScores();
+            gameObject.SetActive(false);
         }
 
         #region Debug

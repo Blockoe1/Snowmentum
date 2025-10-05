@@ -50,6 +50,12 @@ namespace Snowmentum.Score
             _value = 0;
         }
 
+        public HighScore(int value)
+        {
+            this.initials = DEFAULT_INITIALS;
+            this._value = value;
+        }
+
         public HighScore(string initials, int value)
         {
             this.initials = initials;

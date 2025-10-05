@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    public class CharSelector : ScoreInputComponent
+    public class CharSelector : InitialsInputComponent
     {
         [SerializeField] private string validCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         [SerializeField] private TMP_Text charDisplayText;

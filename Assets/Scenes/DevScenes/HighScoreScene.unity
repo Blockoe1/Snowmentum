@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc26a1d74e864941adae19517c34da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayMenu: {fileID: 1641888983}
+  initialsInputMenu: {fileID: 1724351738}
   OnHighScore:
     m_PersistentCalls:
       m_Calls: []
@@ -458,6 +460,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7121508237372936662, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
   m_PrefabInstance: {fileID: 7441764058678431067}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1724351738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 463187033949074014, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
+  m_PrefabInstance: {fileID: 7441764058678431067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c505c6471019b4a85ee3f53d84f699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1755203216
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +637,10 @@ PrefabInstance:
     - target: {fileID: 6110389547036698009, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
       propertyPath: m_Name
       value: InitialsInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110389547036698009, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7121508237372936662, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
       propertyPath: m_Pivot.x

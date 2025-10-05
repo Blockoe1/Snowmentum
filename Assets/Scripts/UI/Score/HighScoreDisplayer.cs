@@ -14,12 +14,19 @@ namespace Snowmentum.UI
 {
     public class HighScoreDisplayer : MonoBehaviour
     {
+        [SerializeField] private Color selectedTextColor = Color.yellow;
+        [SerializeField] private TMP_Text rankText;
         [SerializeField] private TMP_Text initialsText;
         [SerializeField] private TMP_Text scoreText;
-        [SerializeField] private TMP_Text placementText;
         //[SerializeField] private int highScoreIndex;
 
         private HighScore loadedHighScore;
+        private Color baseColor;
+
+        private void Awake()
+        {
+            baseColor = rankText.color;
+        }
 
         private void OnDestroy()
         {
@@ -47,12 +54,32 @@ namespace Snowmentum.UI
             {
                 initialsText.text = hs.initials;
                 scoreText.text = ScoreStatic.FormatScore(hs.value);
-                placementText.text = index + ":";
+                rankText.text = index + ":";
 
                 loadedHighScore.OnInitialsChanged += SetInitials;
 
             }
         }
+
+        /// <summary>
+        /// Toggles if this high score is being modified by entering initials.
+        /// </summary>
+        /// <param name="isSelected">Whether this displayer is selected or not.</param>
+        public void SetSelected(bool isSelected)
+        {
+            if (isSelected)
+            {
+                rankText.color = selectedTextColor;
+                initialsText.color = selectedTextColor;
+                scoreText.color = selectedTextColor;
+            }
+            else
+            {
+                rankText.color = baseColor;
+                initialsText.color = baseColor;
+                scoreText.color = baseColor;
+            }
+        }    
 
         /// <summary>
         /// Whenever the high score this displayer is showing has it's initials changed, then we should update our

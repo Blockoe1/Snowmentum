@@ -4,8 +4,9 @@
 // Creation Date : 10/3/2025
 // Last Modified : 10/3/2025
 //
-// Brief Description : Controls the loading and management of scores during gameplay
+// Brief Description : Controls the loading and management of scores during gameplay.
 *****************************************************************************/
+using Snowmentum.UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,25 +14,31 @@ namespace Snowmentum.Score
 {
     public class ScoreManager : MonoBehaviour
     {
-        [SerializeField] private UnityEvent OnHighScore;
+        [SerializeField] private HighScoreMenu displayMenu;
+        [SerializeField] private InitialsInputMenu initialsInputMenu;
         private void Awake()
         {
-            // Reset score whenever the game begins.
-            ScoreStatic.Score = 0;
-
-            // Load the high scores when the game begins.
+            // Load the high scores whenwe enter this screen.
             ScoreStatic.LoadHighScores();
         }
 
         /// <summary>
-        /// Performs a check to see if the player has beat a high score and then do some actions if they have.
+        /// Saves the current high score
         /// </summary>
-        public void CheckHighScore()
+        [ContextMenu("Test HS Saving")]
+        public void SaveNewHighScore()
         {
-            if (ScoreStatic.CheckHighScore())
-            {
-                OnHighScore?.Invoke();
-            }
+            // Add a new high score to the score static.
+            int hsIndex = ScoreStatic.AddHighScore();
+
+            // Update the high score displays for the high score displayer.
+            displayMenu.DisplayHighScores();
+
+            // Set a given dispalyer as selected.
+            displayMenu.SetSelected(hsIndex, true);
+
+            // Start the initials input.
+            initialsInputMenu.LoadHighScore(ScoreStatic.GetHighScore(hsIndex));
         }
     }
 }

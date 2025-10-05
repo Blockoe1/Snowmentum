@@ -71,5 +71,18 @@ namespace Snowmentum
                 displays[i].LoadHighScore(ScoreStatic.GetHighScore(i), i + 1);
             }
         }
+
+        /// <summary>
+        /// Toggles the selected status of one of the high score displayers.
+        /// </summary>
+        /// <param name="index">The index of the high score displayer to set the selected status of.</param>
+        /// <param name="isSelected">Whether the displayer is selected or not.</param>
+        public void SetSelected(int index, bool isSelected)
+        {
+            if (index >= 0 && index < displays.Length)
+            {
+                displays[index].SetSelected(isSelected);
+            }
+        }
     }
 }

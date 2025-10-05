@@ -13,12 +13,12 @@ using UnityEngine.UI;
 
 namespace Snowmentum
 {
-    public class ScoreConfirm : ScoreInputComponent
+    public class ScoreConfirm : InitialsInputComponent
     {
         [SerializeField] private Image fillImage;
         [SerializeField] private float confirmTime;
 
-        private ScoreInputMenu parentMenu;
+        private InitialsInputMenu parentMenu;
         private Coroutine selectedCoroutine;
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace Snowmentum
         /// </summary>
         private void Awake()
         {
-            parentMenu = GetComponentInParent<ScoreInputMenu>();
+            parentMenu = GetComponentInParent<InitialsInputMenu>();
         }
 
         /// <summary>
