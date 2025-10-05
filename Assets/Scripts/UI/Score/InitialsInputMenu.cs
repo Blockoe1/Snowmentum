@@ -42,17 +42,17 @@ namespace Snowmentum.UI
                     components[selectedIndex].OnDeselect();
                 }
 
-                selectedIndex = value;
+                selectedIndex = Mathf.Clamp(value, 0, components.Length - 1);
 
                 // Loop the char index around if is beyond the bounds of our valid characters.
-                if (selectedIndex < 0)
-                {
-                    selectedIndex = components.Length - 1;
-                }
-                else if (selectedIndex >= components.Length)
-                {
-                    selectedIndex = 0;
-                }
+                //if (selectedIndex < 0)
+                //{
+                //    selectedIndex = components.Length - 1;
+                //}
+                //else if (selectedIndex >= components.Length)
+                //{
+                //    selectedIndex = 0;
+                //}
 
                 // Select our current component
                 // Deselect our previously selected component.
