@@ -135,20 +135,7 @@ namespace Snowmentum.Score
         /// <returns></returns>
         public static string FormatScore(int score)
         {
-            string scoreString = score.ToString();
-            //Debug.Log(scoreString);
-            for (int i = scoreString.Length; i < SCORE_DISPLAY_DIGITS; i++)
-            {
-                scoreString = "0" + scoreString;
-            }
-            // Add Postfix digits.
-            for (int i = 0; i < SCORE_POSTFIX_DIGITS; i++)
-            {
-                scoreString = scoreString + "0";
-            }
-
-            //Debug.Log(scoreString);
-            return scoreString;
+            return UIHelpers.ArcadeFormat(score, SCORE_DISPLAY_DIGITS, SCORE_POSTFIX_DIGITS);
         }
 
         /// <summary>
@@ -171,12 +158,13 @@ namespace Snowmentum.Score
         /// </summary>
         /// <param name="initials">The initials to save with the high score.</param>
         /// <param name="score">The value of the high score.</param>
-        public static void AddHighScore(string initials, int score)
+        /// <returns>The index that the high score was added at.</returns>
+        public static int AddHighScore(string initials, int score)
         {
-
             // Loop through each high score to find the one that this score will replace
             HighScore prevScore = new HighScore();
             bool hasAddedScore = false;
+            int hsIndex = -1;
             // Start from the lowest high score.
             for(int i = 0; i < highScores.Length; i++)
             {
@@ -194,12 +182,14 @@ namespace Snowmentum.Score
                     // insert the score.
                     if (score > highScores[i].value)
                     {
+                        hsIndex = i;
                         prevScore = highScores[i];
                         highScores[i] = new HighScore(initials, score);
                         hasAddedScore = true;
                     }
                 }
             }
+            return hsIndex;
         }
 
         /// <summary>

@@ -24,11 +24,12 @@ namespace Snowmentum.UI
         [SerializeField, Tooltip("The amount of delay that should be waited between each time we detect input.")] 
         private float inputDelay;
 
+        private HighScore setHighScore;
         private int selectedIndex;
         private bool pauseInput;
 
         #region Properties
-        private int SelectedSelectorIndex
+        private int SelectedIndex
         {
             get { return selectedIndex; }
             set
@@ -70,6 +71,9 @@ namespace Snowmentum.UI
         private void Awake()
         {
             InputManager.OnDeltaUpdate += HandleMouseInput;
+
+            // Properly sort the array on awake.
+            components = components.OrderBy(item => item.transform.position.x).ToArray();
         }
         private void OnDestroy()
         {
@@ -88,9 +92,10 @@ namespace Snowmentum.UI
             if (Mathf.Abs(delta.x) > inputThreshold)
             {
                 // Horizontal inputs should switch which char selector is selected.
-                SelectedSelectorIndex += Math.Sign(delta.x);
+                SelectedIndex += Math.Sign(delta.x);
 
                 StartCoroutine(InputDelay(inputDelay));
+                Debug.Log(SelectedIndex);
             }
             else if (Mathf.Abs(delta.y) > inputThreshold)
             {
@@ -98,6 +103,9 @@ namespace Snowmentum.UI
                 components[selectedIndex].OnVerticalInput(Math.Sign(delta.y));
 
                 StartCoroutine(InputDelay(inputDelay));
+
+                // Update our current high score object that we're modifying with the new initials
+                setHighScore.initials = GetInitials();
             }
         }
 
@@ -135,7 +143,9 @@ namespace Snowmentum.UI
         /// </summary>
         public void SaveHighScore()
         {
-            ScoreStatic.AddHighScore(GetInitials(), ScoreStatic.Score);
+            //ScoreStatic.AddHighScore(GetInitials(), ScoreStatic.Score);
+
+            ScoreStatic.SaveHighScores();
         }
 
         #region Debug

@@ -8,6 +8,7 @@
 *****************************************************************************/
 using Snowmentum.Score;
 using Snowmentum.UI;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Snowmentum
@@ -17,6 +18,14 @@ namespace Snowmentum
         [SerializeField] private HighScoreDisplayer displayerPrefab;
 
         private HighScoreDisplayer[] displays;
+
+        /// <summary>
+        /// Whenever this object is enabled, re-update our high scores.
+        /// </summary>
+        private void OnEnable()
+        {
+            DisplayHighScores();
+        }
 
         /// <summary>
         /// Shows this menu and displays all the high scores.
@@ -47,7 +56,7 @@ namespace Snowmentum
             for (int i = 0; i < ScoreStatic.HighScoreCount; i++)
             {
                 current = Instantiate(displayerPrefab, transform);
-                current.LoadHighScore(ScoreStatic.GetHighScore(i));
+                current.LoadHighScore(ScoreStatic.GetHighScore(i), i + 1);
                 displays[i] = current;
             }
         }
@@ -55,11 +64,11 @@ namespace Snowmentum
         /// <summary>
         /// Updates the score shown on each pre-existing display.
         /// </summary>
-        public void UpdateScores()
+        private void UpdateScores()
         {
             for(int i = 0; i < displays.Length && i < ScoreStatic.HighScoreCount; i++)
             {
-                displays[i].LoadHighScore(ScoreStatic.GetHighScore(i));
+                displays[i].LoadHighScore(ScoreStatic.GetHighScore(i), i + 1);
             }
         }
     }
