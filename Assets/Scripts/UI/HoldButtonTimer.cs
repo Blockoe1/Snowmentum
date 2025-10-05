@@ -1,5 +1,5 @@
 /*****************************************************************************
-// File Name : TimerDisplayer.cs
+// File Name : HoldButtonTimer.cs
 // Author : Jack Fisher
 // Creation Date : October 3, 2025
 // Last Modified : October 3, 2025
