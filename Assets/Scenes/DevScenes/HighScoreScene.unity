@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 171051906}
   - component: {fileID: 171051905}
+  - component: {fileID: 171051907}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -150,9 +151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayMenu: {fileID: 1641888983}
   initialsInputMenu: {fileID: 1724351738}
-  OnHighScore:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &171051906
 Transform:
   m_ObjectHideFlags: 0
@@ -168,6 +166,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &171051907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171051904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a438d9cfa6a4a7d41a5e9cc1fc95a114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreManager: {fileID: 171051905}
+  scoreToTest: 500
 --- !u!1 &356860466
 GameObject:
   m_ObjectHideFlags: 0
