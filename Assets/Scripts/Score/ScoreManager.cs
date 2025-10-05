@@ -28,17 +28,20 @@ namespace Snowmentum.Score
         [ContextMenu("Test HS Saving")]
         public void SaveNewHighScore()
         {
-            // Add a new high score to the score static.
-            int hsIndex = ScoreStatic.AddHighScore();
+            if (ScoreStatic.CheckHighScore())
+            {
+                // Add a new high score to the score static.
+                int hsIndex = ScoreStatic.AddHighScore();
 
-            // Update the high score displays for the high score displayer.
-            displayMenu.DisplayHighScores();
+                // Update the high score displays for the high score displayer.
+                displayMenu.DisplayHighScores();
 
-            // Set a given dispalyer as selected.
-            displayMenu.SetSelected(hsIndex, true);
+                // Set a given dispalyer as selected.
+                displayMenu.SetSelected(hsIndex, true);
 
-            // Start the initials input.
-            initialsInputMenu.LoadHighScore(ScoreStatic.GetHighScore(hsIndex));
+                // Start the initials input.
+                initialsInputMenu.LoadHighScore(ScoreStatic.GetHighScore(hsIndex));
+            }
         }
     }
 }
