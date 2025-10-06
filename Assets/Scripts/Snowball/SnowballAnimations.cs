@@ -74,14 +74,13 @@ namespace Snowmentum
         }
 
         /// <summary>
-        /// Updates the animator
+        /// Updates the animator's speed so that the snowball animation speeds up as the snowball speeds up.
         /// </summary>
-        /// <param name="arg1"></param>
-        /// <param name="arg2"></param>
-        /// <exception cref="System.NotImplementedException"></exception>
-        private void SnowballSpeed_OnValueChanged(float arg1, float arg2)
+        /// <param name="snowballSpeed"></param>
+        /// <param name="oldSpeed"></param>
+        private void SnowballSpeed_OnValueChanged(float snowballSpeed, float oldSpeed)
         {
-            
+            anim.speed = baseAnimationSpeed * snowballSpeed;
         }
     }
 }
