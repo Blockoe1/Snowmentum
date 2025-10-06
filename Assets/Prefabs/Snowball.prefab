@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitImmunity: 1
+  flashDelay: 0
   effectOnSize:
     maxDamageProportion: 0.5
     curveSteepness: 20
@@ -220,6 +221,7 @@ MonoBehaviour:
     knockbackCurveScale: 1
   sizeComp: {fileID: 2681645269302268440}
   speedComp: {fileID: 8165628667471022399}
+  flashRenderer: {fileID: 4449946722729724061}
 --- !u!114 &1225979867564382840
 MonoBehaviour:
   m_ObjectHideFlags: 0
