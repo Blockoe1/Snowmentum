@@ -16,6 +16,7 @@ MonoBehaviour:
   obstacleSprite: {fileID: 21300000, guid: a31f4db35dce94543acbb2698f2ae096, type: 3}
   baseScore: 2
   tag: Untagged
+  destroySound: Obstacle Destruction
   isTrigger: 0
   capsuleDirection: 0
   offset: {x: 0.1, y: -0.03}
