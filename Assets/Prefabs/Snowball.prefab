@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingValue: 2
   increasePerSecond: 0.03
-  moveToTarget: 7
+  moveToTarget: 5
   useFixedUpdate: 1
   minSpeed: 1
 --- !u!114 &231841834676547580
@@ -294,6 +294,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Snowball Destruction
           m_BoolArgument: 1
         m_CallState: 2
   speed: {fileID: 8165628667471022399}
