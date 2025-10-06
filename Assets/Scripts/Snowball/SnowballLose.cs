@@ -9,6 +9,7 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using Snowmentum.Size;
 
 namespace Snowmentum
 {
@@ -40,6 +41,7 @@ namespace Snowmentum
         private void OnDestroy()
         {
             SnowballSize.OnTargetValueChanged -= OnValueChanged;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         /// <summary>

@@ -7,6 +7,7 @@
 // Brief Description : Controls a value accessible to all objects by reference to this ScriptableObject.
 *****************************************************************************/
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Snowmentum
@@ -18,7 +19,7 @@ namespace Snowmentum
         [SerializeField, Tooltip("The amount the target value increases each second.")]
         protected float increasePerSecond;
         [SerializeField, Tooltip("The speed at which this value's actual value moves towards the target value.")] 
-        protected float moveToTargetSpeed;
+        protected float moveToTarget;
         [SerializeField] private bool useFixedUpdate;
 
         /// <summary>
@@ -26,7 +27,7 @@ namespace Snowmentum
         /// </summary>
         private void Update()
         {
-            if (!useFixedUpdate && increasePerSecond > 0)
+            if (!useFixedUpdate)
             {
                 TimedUpdate(Time.deltaTime);
             }
@@ -34,7 +35,7 @@ namespace Snowmentum
 
         private void FixedUpdate()
         {
-            if (useFixedUpdate && increasePerSecond > 0)
+            if (useFixedUpdate)
             {
                 TimedUpdate(Time.fixedDeltaTime);
             }
@@ -49,17 +50,20 @@ namespace Snowmentum
         /// <summary>
         /// Applies changes made to this value over time.
         /// </summary>
-        /// <param name="time">The time elapsed since the last update (ie. Time.deltaTime, Time.fixedDeltaTile)</param>
-        public virtual void TimedUpdate(float time)
+        /// <param name="timeDelta">The time elapsed since the last update (ie. Time.deltaTime, Time.fixedDeltaTile)</param>
+        public virtual void TimedUpdate(float timeDelta)
         {
-            TargetValue_Local += increasePerSecond * time;
-            MoveToTarget();
+            if (increasePerSecond > 0)
+            {
+                TargetValue_Local += increasePerSecond * timeDelta;
+            }
+            MoveToTarget(timeDelta);
         }
 
         /// <summary>
-        /// Moves the current actual value towards the target value.  Called in TimedUpdate
+        /// Moves the actual value towards the target.  Should be called by an event that happens when TargetValue changes.
         /// </summary>
-        protected abstract void MoveToTarget();
+        protected abstract void MoveToTarget(float timeDelta);
 
         /// <summary>
         /// Adds a certain amount to the TargetValue.  

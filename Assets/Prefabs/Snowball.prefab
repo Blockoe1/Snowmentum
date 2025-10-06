@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2681645269302268440}
   - component: {fileID: 8165628667471022399}
   - component: {fileID: 231841834676547580}
+  - component: {fileID: 1225979867564382840}
+  - component: {fileID: 5246366932903730779}
   - component: {fileID: 3017659872710321336}
   - component: {fileID: 1048285940683226888}
   - component: {fileID: 6477381704800582678}
@@ -24,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8420961822085175188
 Transform:
   m_ObjectHideFlags: 0
@@ -108,7 +110,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0.47
+  m_LinearDamping: 2.09
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -172,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingValue: 1
   increasePerSecond: 0.02
-  moveToTargetSpeed: 0.5
+  moveToTarget: 7
   useFixedUpdate: 1
 --- !u!114 &8165628667471022399
 MonoBehaviour:
@@ -188,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingValue: 2
   increasePerSecond: 0.03
-  moveToTargetSpeed: 0.2
+  moveToTarget: 7
   useFixedUpdate: 1
   minSpeed: 1
 --- !u!114 &231841834676547580
@@ -204,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitImmunity: 1
+  flashDelay: 0
   effectOnSize:
     maxDamageProportion: 0.5
     curveSteepness: 20
@@ -218,6 +221,36 @@ MonoBehaviour:
     knockbackCurveScale: 1
   sizeComp: {fileID: 2681645269302268440}
   speedComp: {fileID: 8165628667471022399}
+  flashRenderer: {fileID: 4449946722729724061}
+--- !u!114 &1225979867564382840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182634060681000022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c7b7f02618a344ba3a26d4465f12bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingValue: 1
+  increasePerSecond: 0
+  moveToTarget: 3
+  useFixedUpdate: 1
+--- !u!114 &5246366932903730779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182634060681000022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26551764b132bb04b84531422d071eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snowballRigidbody: {fileID: 3341841721575561879}
 --- !u!114 &3017659872710321336
 MonoBehaviour:
   m_ObjectHideFlags: 0

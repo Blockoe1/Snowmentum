@@ -8,6 +8,7 @@
 *****************************************************************************/
 using System.Collections;
 using UnityEngine;
+using Snowmentum.Size;
 
 namespace Snowmentum
 {
@@ -16,6 +17,7 @@ namespace Snowmentum
     {
         [SerializeField, Tooltip("Controls how long the snowball stays immune to collisions after being hit.")] 
         private float hitImmunity;
+        [SerializeField] private float flashDelay;
 
         [SerializeField] private SizeUpdater effectOnSize;
         [SerializeField] private SpeedUpdater effectOnSpeed;
@@ -28,6 +30,7 @@ namespace Snowmentum
         [Header("Components")]
         [SerializeReference] protected SnowballSize sizeComp;
         [SerializeReference] protected SnowballSpeed speedComp;
+        [SerializeReference] private SpriteRenderer flashRenderer;
 
         /// <summary>
         /// Get components on reset.
@@ -37,6 +40,7 @@ namespace Snowmentum
         {
             sizeComp = GetComponent<SnowballSize>();
             speedComp = GetComponent<SnowballSpeed>();
+            flashRenderer = GetComponent<SpriteRenderer>();
         }
         #endregion
 
@@ -268,7 +272,23 @@ namespace Snowmentum
         private IEnumerator ImmunityRoutine(float duration)
         {
             isImmune = true;
-            yield return new WaitForSeconds(duration);
+            float timer = duration;
+            float blinkTimer = flashDelay;
+            while (timer > 0)
+            {
+                // Toggle the snowball's sprite renderer so it blinks.
+                if (blinkTimer <= 0)
+                {
+                    flashRenderer.enabled = !flashRenderer.enabled;
+                    blinkTimer = flashDelay;
+                }
+
+                timer -= Time.deltaTime;
+                blinkTimer -= Time.deltaTime;
+                yield return null;
+            }
+            //yield return new WaitForSeconds(duration);
+            flashRenderer.enabled = true;
             isImmune = false;
             immunityRoutine = null;
         }

@@ -9,16 +9,13 @@
 *****************************************************************************/
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Snowmentum.Size;
 
 
 namespace Snowmentum
 {
     public class SnowballMovement : MonoBehaviour
     {
-        #region CONSTS
-        private const string DELTA_ACTION_NAME = "MouseMovement";
-        #endregion
-
         //We can change this during gameplay in order to make it harder to move the snowball as it grows in size
         // And also adjust it as needed to make it feel responsive enough
         [SerializeField, Range(0f, 0.1f)] private float baseMovementSensitivity;
@@ -32,10 +29,6 @@ namespace Snowmentum
         private float maxSpeed;
         [SerializeField] private float minY;
         [SerializeField] private float maxY;
-
-        private InputAction mouseDeltaAction;
-
-        private Vector2 mouseDelta;
 
         #region Component References
         [Header("Components")]
@@ -59,9 +52,6 @@ namespace Snowmentum
             //mouseMovement = playerInput.currentActionMap.FindAction("MouseMovement");
             //mouseMovement.started += Handle_SnowballMouseMovement;
 
-            // Using the new GlobalInputActions allows for input detection without a PlayerInput.
-            mouseDeltaAction = InputSystem.actions.FindAction(DELTA_ACTION_NAME);
-
             // Locks the cursor so it's invisible on screen.
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -83,20 +73,12 @@ namespace Snowmentum
             ClampY();
         }
 
-        private void Update()
-        {
-            // Use Time.deltaTime here to average the delta into pixels / second.
-            // Without this we get framerate dependence
-            mouseDelta = mouseDeltaAction.ReadValue<Vector2>() / Time.deltaTime;
-            //targetVelocity = Vector2.up * baseMovementSensitivity * mouseDelta.y;
-        }
-
         //this function moves the snowball up and down in accordance with the movement of the mouse
         private void ApplyMovementForce()
         {
             //Debug.Log(mouseDelta);
             float sizeScale = scaleWithSnowballSize ? SnowballSize.Value : 1f;
-            snowballRigidbody.AddForce((baseMovementSensitivity * mouseDelta.y / sizeScale) * Vector2.up);
+            snowballRigidbody.AddForce((baseMovementSensitivity * InputManager.MouseDelta.y / sizeScale) * Vector2.up);
 
             //Old movement that used transform.translate. Can probably remove but leaving it for now just in case, I guess
             //transform.Translate(Vector3.up * mouseDelta.y * movementSensitivity);
