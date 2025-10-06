@@ -18,6 +18,7 @@ namespace Snowmentum
         [SerializeField] private Sprite obstacleSprite;
         [SerializeField] private int baseScore;
         [SerializeField] private string tag = "Untagged";
+        [SerializeField] private string destroySound;
 
         [Header("Hitbox")]
         [SerializeField] private bool isTrigger;
@@ -51,6 +52,11 @@ namespace Snowmentum
         {
             get { return tag; }
             set { tag = value; }
+        }
+        public string DestroySound
+        {
+            get { return destroySound; }
+            set { destroySound = value; }
         }
         public bool IsTrigger
         {
