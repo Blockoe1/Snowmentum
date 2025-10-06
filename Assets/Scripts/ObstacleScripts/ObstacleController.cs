@@ -33,6 +33,7 @@ namespace Snowmentum
         [SerializeField] private CapsuleCollider2D obstacleCollider;
         [SerializeField] private ScoreIncrementer score;
         [SerializeField] private ObjectScaler scaler;
+        [SerializeField] private AudioRelay relay;
 
         /// <summary>
         /// Get components on reset.
@@ -44,6 +45,7 @@ namespace Snowmentum
             obstacleCollider = GetComponent<CapsuleCollider2D>();
             score = GetComponent<ScoreIncrementer>();
             scaler = GetComponent<ObjectScaler>();
+            relay = GetComponent<AudioRelay>();
         }
         #endregion
 
@@ -106,14 +108,27 @@ namespace Snowmentum
 
             // Update the misc data of the obstacle.
             obstacleData.Tag = gameObject.tag;
-            obstacleData.ObstacleSprite = rend.sprite;
-            obstacleData.BaseScore = score.BaseScore;
+            if (rend != null)
+            {
+                obstacleData.ObstacleSprite = rend.sprite;
+            }
+            if (score != null)
+            {
+                obstacleData.BaseScore = score.BaseScore;
+            }
+            if (relay != null)
+            {
+                obstacleData.DestroySound = relay.SoundName;
+            }
 
             // Update the collision data of the obstacle.
-            obstacleData.IsTrigger = obstacleCollider.isTrigger;
-            obstacleData.HitboxOffset = obstacleCollider.offset;
-            obstacleData.HitboxSize = obstacleCollider.size;
-            obstacleData.HitboxDirection = obstacleCollider.direction;
+            if (obstacleCollider != null)
+            {
+                obstacleData.IsTrigger = obstacleCollider.isTrigger;
+                obstacleData.HitboxOffset = obstacleCollider.offset;
+                obstacleData.HitboxSize = obstacleCollider.size;
+                obstacleData.HitboxDirection = obstacleCollider.direction;
+            }
 
             // Save changes to the asset.
             EditorUtility.SetDirty(obstacleData);
@@ -130,15 +145,31 @@ namespace Snowmentum
 
             // Update the component on this GameObject when obstacle data changes.
             gameObject.tag = obstacleData.Tag;
-            rend.sprite = obstacleData.ObstacleSprite;
-            score.BaseScore = obstacleData.BaseScore;
-            scaler.Size = obstacleData.BaseSize;
+            if (rend != null)
+            {
+                rend.sprite = obstacleData.ObstacleSprite;
+            }
+            if (score != null)
+            {
+                score.BaseScore = obstacleData.BaseScore;
+            }
+            if ( scaler != null)
+            {
+                scaler.Size = obstacleData.BaseSize;
+            }
+            if (relay != null)
+            {
+                relay.SoundName = obstacleData.DestroySound;
+            }
 
             // Collider Updates
-            obstacleCollider.isTrigger = obstacleData.IsTrigger;
-            obstacleCollider.offset = obstacleData.HitboxOffset;
-            obstacleCollider.size = obstacleData.HitboxSize;
-            obstacleCollider.direction = obstacleData.HitboxDirection;
+            if (obstacleCollider != null)
+            {
+                obstacleCollider.isTrigger = obstacleData.IsTrigger;
+                obstacleCollider.offset = obstacleData.HitboxOffset;
+                obstacleCollider.size = obstacleData.HitboxSize;
+                obstacleCollider.direction = obstacleData.HitboxDirection;
+            }
         }
         #endregion
 
