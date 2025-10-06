@@ -16,7 +16,6 @@ namespace Snowmentum
     public class PackingMinigame : MonoBehaviour
     {
         #region CONST
-        private const string DELTA_ACTION_NAME = "MouseMovement";
         private const string PACKING_ANIM_BOOL = "IsPacking";
         #endregion
 
@@ -44,7 +43,6 @@ namespace Snowmentum
         [SerializeField] private UnityEvent<float> OnMultipliedMinigameThrow;
 
         private MinigameState minigameState;
-        private InputAction deltaAction;
 
         #region Properties
         private MinigameState CurrentMinigameState
@@ -225,22 +223,42 @@ namespace Snowmentum
             CurrentMinigameState = new PackingState(this);
             //StartCoroutine(TimeUpdateRoutine());
 
-            deltaAction = InputSystem.actions.FindAction(DELTA_ACTION_NAME);
-
             // Locks the cursor so it's invisible on screen.
             Cursor.lockState = CursorLockMode.Locked;
+
+            // Subscribe to InputManager functions so that we can update states when the player inputs.
+            InputManager.OnDeltaUpdate += UpdateMouseDelta;
+        }
+        /// <summary>
+        /// Unsubscribe events.
+        /// </summary>
+        private void OnDestroy()
+        {
+            InputManager.OnDeltaUpdate -= UpdateMouseDelta;
+        }
+
+        /// <summary>
+        /// Updates the current minigame state when the mouse delta changes.
+        /// </summary>
+        /// <param name="mouseDelta">The delta of the mouse for this frame.</param>
+        private void UpdateMouseDelta(Vector2 mouseDelta)
+        {
+            if (minigameState != null)
+            {
+                minigameState.MouseUpdate(this, mouseDelta);
+            }
         }
 
         /// <summary>
         /// Track the mouse delta in update and pass the frame independent value to our current state.
         /// </summary>
-        private void Update()
-        {
-            if (minigameState != null)
-            {
-                minigameState.MouseUpdate(this, deltaAction.ReadValue<Vector2>() / Time.deltaTime);
-            }
-        }
+        //private void Update()
+        //{
+        //    if (minigameState != null)
+        //    {
+        //        minigameState.MouseUpdate(this, deltaAction.ReadValue<Vector2>() / Time.deltaTime);
+        //    }
+        //}
 
         /// <summary>
         /// Continually calls time update on the current minigame state.
@@ -291,29 +309,5 @@ namespace Snowmentum
             Destroy(gameObject);
             //Destroy(minigameAnimator.gameObject);
         }
-
-        #region Debug
-        //private float pq;
-        //private float ts;
-
-        //private void OnGUI()
-        //{
-        //    string guiOutput;
-        //    if (minigameState is PackingState)
-        //    {
-        //        guiOutput = "Packing";
-        //    }
-        //    else if (minigameState is ThrowState)
-        //    {
-        //        guiOutput = "Throwing";
-        //    }
-        //    else
-        //    {
-        //        guiOutput = $"Packing Quality : {pq}.\nThrow Strength: {ts}.";
-        //    }
-
-        //    GUI.TextArea(new Rect(110, 10, 200, 100), guiOutput);
-        //}
-        #endregion
     }
 }

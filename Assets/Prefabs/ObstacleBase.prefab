@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3549831470322472451}
   - component: {fileID: 7647677357995392279}
   - component: {fileID: -7800381323003144867}
+  - component: {fileID: 5866592910555483468}
   m_Layer: 0
   m_Name: ObstacleBase
   m_TagString: Untagged
@@ -177,6 +178,7 @@ MonoBehaviour:
   obstacleCollider: {fileID: 7567752226576047106}
   score: {fileID: 7647677357995392279}
   scaler: {fileID: 8657666669540303953}
+  relay: {fileID: 5866592910555483468}
 --- !u!114 &8657666669540303953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,3 +292,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5866592910555483468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150288299065344882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c429e63662fa26a4d86e16eb4557fcf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: 
