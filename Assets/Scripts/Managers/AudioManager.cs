@@ -16,6 +16,8 @@ namespace Snowmentum
     {
         [SerializeField] private Sound[] sounds;
 
+
+
         #region Nested
         [System.Serializable]
         private class Sound
@@ -34,6 +36,13 @@ namespace Snowmentum
         private void Awake()
         {
             SetupSounds();
+
+            AudioRelay.RelayPlayEvent += Play;
+        }
+
+        private void OnDestroy()
+        {
+            AudioRelay.RelayPlayEvent -= Play;
         }
 
         /// <summary>
