@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitImmunity: 1
-  flashDelay: 0
+  flashDelay: 0.1
   effectOnSize:
     maxDamageProportion: 0.5
     curveSteepness: 20
