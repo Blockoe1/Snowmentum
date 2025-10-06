@@ -1494,19 +1494,19 @@ MonoBehaviour:
     pitch: 1
     loop: 0
   - name: Obstacle Destruction
-    audioClip: {fileID: 8300000, guid: fbabfe2dad6428b44afe5f5e9ba6318b, type: 3}
+    audioClip: {fileID: 8300000, guid: 33bc3162d35801646bedd827b0c2e6c3, type: 3}
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
     pitch: 1
     loop: 0
   - name: Thawing
-    audioClip: {fileID: 8300000, guid: fbabfe2dad6428b44afe5f5e9ba6318b, type: 3}
+    audioClip: {fileID: 8300000, guid: b5acfd8836ebccf4d8abaa060fa6ca58, type: 3}
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
     pitch: 1
     loop: 1
   - name: Freezing Over
-    audioClip: {fileID: 8300000, guid: fbabfe2dad6428b44afe5f5e9ba6318b, type: 3}
+    audioClip: {fileID: 8300000, guid: 15738e71089db2a4b9a4b8565f8ffb54, type: 3}
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
     pitch: 1
