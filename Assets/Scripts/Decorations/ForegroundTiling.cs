@@ -7,8 +7,9 @@
 // Brief Description : Scales the foreground so it appears to get smaller the greater the snowball's size value is.
 *****************************************************************************/
 using UnityEngine;
+using Snowmentum.Size;
 
-namespace Snowmentum
+namespace Snowmentum.Decoration
 {
     public class ForegroundTiling : MonoBehaviour
     {
