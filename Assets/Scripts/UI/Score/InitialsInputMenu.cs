@@ -160,6 +160,7 @@ namespace Snowmentum.UI
             //ScoreStatic.AddHighScore(GetInitials(), ScoreStatic.Score);
 
             ScoreStatic.SaveHighScores();
+            OnSubmitInitials?.Invoke();
             gameObject.SetActive(false);
         }
 

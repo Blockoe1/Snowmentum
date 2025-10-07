@@ -15,6 +15,7 @@ namespace Snowmentum
     {
         #region CONSTS
         private const string ANIM_SIZE_NAME = "Size";
+        private const string ANIM_FROZEN_NAME = "IsFrozen";
         #endregion
 
         [SerializeField] private float baseAnimationSpeed = 1f;
@@ -22,6 +23,7 @@ namespace Snowmentum
         #region Component References
         [Header("Components")]
         [SerializeReference] protected Animator anim;
+        [SerializeReference] protected SpriteRenderer rend;
 
         /// <summary>
         /// Get components on reset.
@@ -30,6 +32,7 @@ namespace Snowmentum
         private void Reset()
         {
             anim = GetComponent<Animator>();
+            rend = GetComponent<SpriteRenderer>();
         }
         #endregion
 
@@ -74,14 +77,28 @@ namespace Snowmentum
         }
 
         /// <summary>
-        /// Updates the animator
+        /// Updates the animator's speed so that the snowball animation speeds up as the snowball speeds up.
         /// </summary>
-        /// <param name="arg1"></param>
-        /// <param name="arg2"></param>
-        /// <exception cref="System.NotImplementedException"></exception>
-        private void SnowballSpeed_OnValueChanged(float arg1, float arg2)
+        /// <param name="snowballSpeed"></param>
+        /// <param name="oldSpeed"></param>
+        private void SnowballSpeed_OnValueChanged(float snowballSpeed, float oldSpeed)
         {
-            
+            //Debug.Log(baseAnimationSpeed * snowballSpeed);
+            float animSpeed = baseAnimationSpeed * snowballSpeed;
+
+            // Reverse the sprite renderer when animSpeed is negative so that the ball rolls backwards.
+            rend.flipX = animSpeed > 0 ? false : true;
+
+            anim.speed = Mathf.Abs(baseAnimationSpeed * snowballSpeed);
+        }
+
+        /// <summary>
+        /// Toggles the snowball's frozen animation.
+        /// </summary>
+        /// <param name="isFrozen">If the snowball is frozen or not.</param>
+        public void SetFrozen(bool isFrozen)
+        {
+            anim.SetBool(ANIM_FROZEN_NAME, isFrozen);
         }
     }
 }
