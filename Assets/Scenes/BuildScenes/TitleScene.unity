@@ -978,10 +978,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1275013634}
     m_Modifications:
-    - target: {fileID: 3245829546664423632, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1129834602, guid: 0db05c47aac89a84c86a74f19c291cb7, type: 3}
     - target: {fileID: 3276029210065965217, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
       propertyPath: m_Name
       value: HoldIndicator
