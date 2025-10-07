@@ -32,7 +32,7 @@ namespace Snowmentum
                 float oldVal = val;
                 // Should get to this if both are infinity.
                 val = value;
-                OnTargetValueChanged?.Invoke(val, oldVal);
+                OnValueChanged?.Invoke(val, oldVal);
             }
         }
         public static float TargetValue
