@@ -38,6 +38,9 @@ namespace Snowmentum.Size
         {
             SnowballSize.OnValueChanged += OnSnowballSize;
             EnvironmentSize.OnValueChanged += OnEnvironmentSize;
+
+            // Sets the snowball to the reference scale so that it doesnt flash large on screen.
+            transform.localScale = REFERENCE_SCALE;
         }
         private void OnDestroy()
         {
