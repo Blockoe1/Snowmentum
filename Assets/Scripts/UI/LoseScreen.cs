@@ -6,6 +6,7 @@
 //
 // Brief Description : Controls button functions for the lose screen.
 *****************************************************************************/
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,21 +14,42 @@ namespace Snowmentum.UI
 {
     public class LoseScreen : MonoBehaviour
     {
+
         /// <summary>
         /// Restarts the game
         /// </summary>
-        public void Restart()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        //public void Restart()
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //}
 
         /// <summary>
         /// Returns the player to the main menu.
         /// </summary>
-        public void ReturnToMainMenu()
+        //public void ReturnToMainMenu()
+        //{
+        //    // Main Menu should be 0 in build settings.
+        //    SceneManager.LoadScene(0);
+        //}
+
+        IEnumerator ScreenDuration()
         {
-            // Main Menu should be 0 in build settings.
-            SceneManager.LoadScene(0);
+            //Screen duration is 5 seconds
+            yield return new WaitForSeconds(5f);
+            TransitionToScene("HighScoreScene");
+        }
+
+        /// <summary>
+        /// Sends player to HighScoreScene after 5 seconds
+        /// </summary>
+        public void TransitionToScene(string targetScene)
+        {
+            SceneManager.LoadScene(targetScene);
+        }
+
+        public void StartScreenDelay()
+        {
+            StartCoroutine(ScreenDuration());
         }
     }
 }
