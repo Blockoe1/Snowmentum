@@ -49,5 +49,17 @@ namespace Snowmentum
             OnDeltaUpdate?.Invoke(mouseDelta);
         }
 
+        #region Debug
+        private float highestDeltaX;
+        private void OnGUI()
+        {
+            if (InputManager.MouseDelta.x > highestDeltaX)
+            {
+                highestDeltaX = InputManager.MouseDelta.x;
+            }
+            GUI.TextArea(new Rect(10, 10, 100, 100), "Current Delta: " + InputManager.MouseDelta + "\nHighest Delta: " + highestDeltaX);
+        }
+        #endregion
+
     }
 }
