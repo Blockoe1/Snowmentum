@@ -1511,6 +1511,12 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - name: Snow Packing
+    audioClip: {fileID: 8300000, guid: 2365e29588d674f439153560029bd18e, type: 3}
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
 --- !u!4 &1025461993
 Transform:
   m_ObjectHideFlags: 0
