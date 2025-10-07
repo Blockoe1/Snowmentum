@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 5726502725735742471}
   - component: {fileID: 7804401391353868711}
   - component: {fileID: 4880275567121914993}
+  - component: {fileID: 2665110652182175276}
   m_Layer: 0
   m_Name: ErinHands
   m_TagString: Untagged
@@ -273,3 +274,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2665110652182175276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4869938650486738228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c429e63662fa26a4d86e16eb4557fcf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: 
