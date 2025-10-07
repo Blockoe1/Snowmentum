@@ -2362,8 +2362,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 0
+    height: 0
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -2919,7 +2919,7 @@ MonoBehaviour:
         m_CallState: 2
   maxSizeGain: 0.5
   packingTime: 5
-  packingQualityScaler: 10000000
+  packingQualityScaler: 1000000
   OnMinigamePack:
     m_PersistentCalls:
       m_Calls:
@@ -2937,9 +2937,9 @@ MonoBehaviour:
         m_CallState: 2
   maxSpeedGain: 1
   throwDelay: 0.5
-  minThrowForce: 7500
+  minThrowForce: 2500
   throwSampleTime: 0.1
-  throwStrengthScaler: 10000
+  throwStrengthScaler: 5000
   startingSpeedScaler: 15
   OnMinigameThrow:
     m_PersistentCalls:
