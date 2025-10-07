@@ -14,7 +14,7 @@ namespace Snowmentum.Size
     {
         #region CONSTS
         // The scale that the snowball should be set at for size 1.
-        public static readonly Vector3 REFERENCE_SCALE = new Vector3(0.5f, 0.5f, 0.5f);
+        public static readonly Vector3 REFERENCE_SCALE = new Vector3(0.125f, 0.125f, 0.125f);
         #endregion
 
         #region Component References
