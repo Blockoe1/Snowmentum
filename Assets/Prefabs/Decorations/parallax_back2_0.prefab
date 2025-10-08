@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 391476617505035635}
   - component: {fileID: 2344326999627121600}
   - component: {fileID: 3590292361650664805}
-  - component: {fileID: 5780597099826679129}
-  - component: {fileID: -8870501188666062636}
   m_Layer: 0
   m_Name: parallax_back2_0
   m_TagString: Untagged
@@ -107,35 +105,3 @@ MonoBehaviour:
   moveVector: {x: -1, y: -0.00000008742278}
   sprites: []
   xLimit: 0
---- !u!114 &5780597099826679129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8210266415533358233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37f9393345925f24a814b53722900410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pools: []
---- !u!114 &-8870501188666062636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8210266415533358233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ba68ce2486639946b1bb349fb9f69cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnTags:
-  - Hill
-  - Tree
-  - House
-  minDelay: 2
-  maxDelay: 5
-  spawnPoint: {fileID: 0}
