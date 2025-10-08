@@ -1,10 +1,10 @@
 /*****************************************************************************
 // File Name : DebugUI.cs
-// Author :
-// Creation Date : 
-// Last Modified : 
+// Author : Zaden
+// Creation Date : ???
+// Last Modified : ???
 //
-// Brief Description : 
+// Brief Description : Shows debug info, was implemented back in August but has not been used since.
 *****************************************************************************/
 using UnityEngine;
 

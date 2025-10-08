@@ -246,8 +246,8 @@ MonoBehaviour:
     backgroundPrefab: {fileID: 1818890073001360834, guid: 548ed3dadc5ad004bb37f042676379df, type: 3}
     size: 1
   - tag: Tree
-    backgroundPrefab: {fileID: 1818890073001360834, guid: 548ed3dadc5ad004bb37f042676379df, type: 3}
-    size: 1
+    backgroundPrefab: {fileID: 4061781790043898086, guid: b7d5fee0b9acbb0418f967887d99f6ed, type: 3}
+    size: 5
   - tag: House
     backgroundPrefab: {fileID: 1818890073001360834, guid: 548ed3dadc5ad004bb37f042676379df, type: 3}
     size: 1
@@ -267,8 +267,8 @@ MonoBehaviour:
   - Hill
   - Tree
   - House
-  minDelay: 1
-  maxDelay: 5
+  minDelay: 0.5
+  maxDelay: 3
   spawnPoint: {fileID: 1211091212}
 --- !u!4 &1211091212
 Transform:
