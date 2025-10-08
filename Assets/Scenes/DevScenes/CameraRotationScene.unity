@@ -1195,8 +1195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfdbd548f1f3fc945920c6511d3527f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayedDigits: 5
-  postfixDigits: 1
   textComponent: {fileID: 1211491851}
 --- !u!114 &1211491851
 MonoBehaviour:
@@ -1439,7 +1437,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.9998731
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

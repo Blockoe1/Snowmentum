@@ -30,17 +30,23 @@ namespace Snowmentum
         private bool isRotating;
 
         private float snowballSpeed;
-        private float maxRotateAngle = 8f;
+        private float rotationSpeed = 1.3f;
+        private float maxZRotation = 8f;
+        private float minZRotation;
+        private Quaternion targetRotation;
+
         void Start()
         {
             previousSpeed = SnowballSpeed.Value;
+            targetRotation = transform.rotation;
         }
 
         // Update is called once per frame
         void Update()
         {
+            //If there is a better way to check when the minigame ends that doesn't happen every frame forever that would be good but it works for now
             //check if snowball is active. basically checks for when the packing minigame ends and snowball becomes active
-            if (snowballGameObject.activeSelf)
+            if (snowballGameObject.activeInHierarchy)
             {
                 StartCoroutine(BeginRotation());
             }
@@ -50,17 +56,19 @@ namespace Snowmentum
             //Clamp the camera from rotating beyond a certain point
             Vector3 currentEulerAngles = transform.eulerAngles;
             float zAngle = currentEulerAngles.z;
-            zAngle = Mathf.Clamp(zAngle, 0, maxRotateAngle);
+            zAngle = Mathf.Clamp(zAngle, 0, maxZRotation);
             transform.eulerAngles = new Vector3(currentEulerAngles.x, currentEulerAngles.y, zAngle);
 
         }
 
         IEnumerator BeginRotation()
-        { 
+        {
+            
             yield return new WaitForSeconds(postMinigameDelay);
             isRotating = true;
         }
 
+        //I might end up not using this lol. 
         private void FixedUpdate()
         {
             //tracks the change in SnowballSpeed
@@ -82,7 +90,11 @@ namespace Snowmentum
         {
             if (isRotating)
             {
-                transform.Rotate(0, 0, deltaValue);
+                // Calculate the target Quaternion based on Euler angles
+                targetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, maxZRotation);
+
+                // Smoothly interpolate towards the target rotation
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
             }
         }
     }
