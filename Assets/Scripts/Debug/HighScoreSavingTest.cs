@@ -13,7 +13,7 @@ namespace Snowmentum
 {
     public class HighScoreSavingTest : MonoBehaviour
     {
-        [SerializeField] private ScoreManager scoreManager;
+        [SerializeField] private ScoreSaver scoreManager;
         [SerializeField] private int scoreToTest;
 
 

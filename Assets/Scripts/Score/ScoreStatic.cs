@@ -27,12 +27,23 @@ namespace Snowmentum.Score
         private static HighScore[] highScores;
 
         #region Properties
+        private static HighScore[] HighScores
+        {
+            get
+            {
+                if (highScores == null)
+                {
+                    LoadHighScores();
+                }
+                return highScores;
+            }
+        }
         //public static HighScore[] HighScores 
         //{
         //    get { return highScores; } 
         //}
         private static string FilePath => Path.Combine(Application.persistentDataPath, FILE_NAME);
-        public static int HighScoreCount => highScores == null ? 0 : highScores.Length;
+        public static int HighScoreCount => HighScores == null ? 0 : HighScores.Length;
         public static int Score
         {
             get
@@ -61,10 +72,10 @@ namespace Snowmentum.Score
                 using (BinaryWriter writer = new BinaryWriter(stream))
                 {
                     // Loop through all the high scores and save them to the file.
-                    for (int i = 0; i < highScores.Length; i++)
+                    for (int i = 0; i < HighScores.Length; i++)
                     {
-                        writer.Write(highScores[i].initials);
-                        writer.Write(highScores[i].value);
+                        writer.Write(HighScores[i].initials);
+                        writer.Write(HighScores[i].value);
                     }
 
                     Debug.Log("High Scores saved to file " + filePath);
@@ -145,7 +156,7 @@ namespace Snowmentum.Score
         public static bool CheckHighScore(int score)
         {
             // We only need to check if the high score is higher than the lowest high score.
-            return score > highScores[^1].value;
+            return score > HighScores[^1].value;
         }
         public static bool CheckHighScore()
         {
@@ -170,25 +181,25 @@ namespace Snowmentum.Score
             bool hasAddedScore = false;
             int hsIndex = -1;
             // Start from the lowest high score.
-            for(int i = 0; i < highScores.Length; i++)
+            for(int i = 0; i < HighScores.Length; i++)
             {
                 if (hasAddedScore)
                 {
                     // Inserts our previous high score to this high score, then sets this high score as the previous
                     // to be assigned in the next iteration of the loop.
                     // The last high score is lost.
-                    (highScores[i], prevScore) = (prevScore, highScores[i]);
+                    (HighScores[i], prevScore) = (prevScore, HighScores[i]);
                     Debug.Log(prevScore.value);
                 }
                 else
                 {
                     // If we havent already added the score to the array, then check if this is where we should
                     // insert the score.
-                    if (score > highScores[i].value)
+                    if (score > HighScores[i].value)
                     {
                         hsIndex = i;
-                        prevScore = highScores[i];
-                        highScores[i] = new HighScore(score);
+                        prevScore = HighScores[i];
+                        HighScores[i] = new HighScore(score);
                         hasAddedScore = true;
                     }
                 }
@@ -203,9 +214,9 @@ namespace Snowmentum.Score
         /// <returns></returns>
         public static HighScore GetHighScore(int index)
         {
-            if (index < highScores.Length)
+            if (index < HighScores.Length)
             {
-                return highScores[index];
+                return HighScores[index];
             }
             return HighScore.Default;
         }
