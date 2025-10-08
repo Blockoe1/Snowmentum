@@ -128,8 +128,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 171051906}
-  - component: {fileID: 171051905}
   - component: {fileID: 171051907}
+  - component: {fileID: 171051908}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -137,20 +137,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &171051905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171051904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc26a1d74e864941adae19517c34da8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayMenu: {fileID: 1641888983}
-  initialsInputMenu: {fileID: 1724351738}
 --- !u!4 &171051906
 Transform:
   m_ObjectHideFlags: 0
@@ -178,8 +164,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a438d9cfa6a4a7d41a5e9cc1fc95a114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreManager: {fileID: 171051905}
+  scoreManager: {fileID: 171051908}
   scoreToTest: 500
+--- !u!114 &171051908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171051904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67cd1103e8ab5244db8f31417fc28e26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayMenu: {fileID: 1641888983}
+  initialsInputMenu: {fileID: 1724351738}
 --- !u!1 &356860466
 GameObject:
   m_ObjectHideFlags: 0
