@@ -14,7 +14,7 @@ namespace Snowmentum
     public class HillAligner : MonoBehaviour
     {
         #region CONSTS
-        public const float HORIZON_LINE = 1.35f;
+        public const float HORIZON_LINE = 1.375f;
         #endregion
 
         /// <summary>

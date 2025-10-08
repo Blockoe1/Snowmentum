@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/BuildScenes/GameplayScene.unity
     guid: 8709ce0fe77a3744ea3e4b43f1c33a75
   - enabled: 1
-    path: Assets/Scenes/BuildScenes/Meter2VariantScene.unity
-    guid: df9f962426291b941b50600f8513f474
+    path: Assets/Scenes/BuildScenes/HighScoreScene.unity
+    guid: 8d1bc21c2d3e642409c207b7b58bbd31
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
