@@ -1384,13 +1384,13 @@ MonoBehaviour:
     pitch: 1
     loop: 0
   - name: Obstacle Destruction
-    audioClip: {fileID: 8300000, guid: 33bc3162d35801646bedd827b0c2e6c3, type: 3}
+    audioClip: {fileID: 8300000, guid: 587b96989afd3cf4cb97b8eaf63c38c9, type: 3}
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
     pitch: 1
     loop: 0
   - name: Thawing
-    audioClip: {fileID: 8300000, guid: b5acfd8836ebccf4d8abaa060fa6ca58, type: 3}
+    audioClip: {fileID: 8300000, guid: b960631ec531d4e4c9426b36b4044eb3, type: 3}
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
     pitch: 1
@@ -1984,7 +1984,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.9990001
+    height: 0.99966645
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
