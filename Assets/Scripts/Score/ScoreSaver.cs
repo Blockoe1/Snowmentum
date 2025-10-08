@@ -12,14 +12,20 @@ using UnityEngine.Events;
 
 namespace Snowmentum.Score
 {
-    public class ScoreManager : MonoBehaviour
+    public class ScoreSaver : MonoBehaviour
     {
         [SerializeField] private HighScoreMenu displayMenu;
         [SerializeField] private InitialsInputMenu initialsInputMenu;
         private void Awake()
         {
             // Load the high scores when we enter this screen.
-            ScoreStatic.LoadHighScores();
+            //ScoreStatic.LoadHighScores();
+
+            // If the player's score is a high score, then save that high score.
+            if (ScoreStatic.CheckHighScore())
+            {
+                SaveNewHighScore();
+            }
         }
 
         /// <summary>
