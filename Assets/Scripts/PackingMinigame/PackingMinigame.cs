@@ -203,7 +203,7 @@ namespace Snowmentum
             }
 
             /// <summary>
-            /// Delay detecting a throw for a bit at the beginning of the throw state.
+            /// postMinigameDelay detecting a throw for a bit at the beginning of the throw state.
             /// </summary>
             /// <param name="minigameController"></param>
             internal override IEnumerator Timer(PackingMinigame minigameController)
