@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8953022884924050335}
   - component: {fileID: 1084381846681888873}
   - component: {fileID: 6076390005718359586}
+  - component: {fileID: 906689116428719761}
   m_Layer: 0
   m_Name: parallax_trees4_0
   m_TagString: Untagged
@@ -105,3 +106,16 @@ MonoBehaviour:
   moveVector: {x: -1, y: -0.00000008742278}
   sprites: []
   xLimit: 0
+--- !u!114 &906689116428719761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4222273776481108681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f9393345925f24a814b53722900410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools: []
