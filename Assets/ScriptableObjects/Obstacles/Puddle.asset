@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Puddle
   m_EditorClassIdentifier: 
   obstacleSize: 1
-  obstacleSprite: {fileID: 21300000, guid: 4a25ac008d65bee4c832116ef4bd61c7, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 6b791ba0ee1f2274dacbd097e9ad1e78, type: 3}
   baseScore: 1
   tag: Water
+  destroySound: 
   isTrigger: 1
   capsuleDirection: 0
   offset: {x: -0.025, y: 0}
