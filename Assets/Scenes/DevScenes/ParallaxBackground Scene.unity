@@ -1335,7 +1335,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4564103805281677093, guid: d68f337aa83f82c4fa1d13fa7249395a, type: 3}
+    - {fileID: 6211999676280807749, guid: d68f337aa83f82c4fa1d13fa7249395a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1892,6 +1894,74 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredHoldTime: 1
   usedButton: {fileID: 1459211511}
+--- !u!1 &1481588137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1481588138}
+  - component: {fileID: 1481588140}
+  - component: {fileID: 1481588139}
+  m_Layer: 0
+  m_Name: BackgroundSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1481588138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481588137}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.10567, y: -3.0937338, z: 0.023779213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1481588139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481588137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f9393345925f24a814b53722900410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: 
+    backgroundPrefab: {fileID: 0}
+    size: 0
+--- !u!114 &1481588140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481588137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba68ce2486639946b1bb349fb9f69cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTags:
+  - Hill
+  - Tree
+  - House
+  minDelay: 2
+  maxDelay: 5
+  spawnPoint: {fileID: 0}
 --- !u!1 &1530163285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1947,10 +2017,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.615991
-    y: 0
-    width: 1.1211212
-    height: 1.1207472
+    x: 0
+    y: 0.120080054
+    width: 0.72072077
+    height: 0.7204803
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -3245,7 +3315,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1621636984702193859, guid: 5b243517a3381a44d991cf1b73980742, type: 3}
+    - {fileID: 2396190881411060725, guid: 5b243517a3381a44d991cf1b73980742, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3302,7 +3374,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: parallax_trees2_0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4506077414574045196, guid: 96651f4d35c774d47ba1ce1f765520bd, type: 3}
+    - {fileID: -6511069974713675180, guid: 96651f4d35c774d47ba1ce1f765520bd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3359,7 +3433,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: parallax_trees1_0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8285152975681950392, guid: efdf55620d5e16542847ba3c06dc2bae, type: 3}
+    - {fileID: 7971678644992196485, guid: efdf55620d5e16542847ba3c06dc2bae, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3416,7 +3492,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 906689116428719761, guid: 20aee67b38b3e9744b1dfd9df7b0b3bc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3562,7 +3639,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: parallax_trees3_0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2809471802199024457, guid: cc8c70e684a6e02409666d5b0f06845b, type: 3}
+    - {fileID: 6516319093110919336, guid: cc8c70e684a6e02409666d5b0f06845b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3619,7 +3698,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: parallax_back2_0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8870501188666062636, guid: 876e8d5125e75c046a831d17ef482a4f, type: 3}
+    - {fileID: 5780597099826679129, guid: 876e8d5125e75c046a831d17ef482a4f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3676,7 +3757,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5357724629756687647, guid: ee302d53e51bcbe47b88bb39161bdbf8, type: 3}
+    - {fileID: -3414087938520374988, guid: ee302d53e51bcbe47b88bb39161bdbf8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3769,3 +3852,4 @@ SceneRoots:
   - {fileID: 1273061819792582915}
   - {fileID: 3850935056171825942}
   - {fileID: 2560889616955297743}
+  - {fileID: 1481588138}
