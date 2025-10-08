@@ -638,7 +638,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e4334f4c4d19b554fbd19aac51542a37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: afc3c55b67f7169409583b62822fcb1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1906,7 +1906,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.9995231
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -2072,7 +2072,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 67be0084bcda317419122055719b2c15, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d046494331b41e64b80ab2c88ca5ceb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
