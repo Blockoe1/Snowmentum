@@ -18,7 +18,7 @@ namespace Snowmentum.Score
         [SerializeField] private InitialsInputMenu initialsInputMenu;
         private void Awake()
         {
-            // Load the high scores whenwe enter this screen.
+            // Load the high scores when we enter this screen.
             ScoreStatic.LoadHighScores();
         }
 
