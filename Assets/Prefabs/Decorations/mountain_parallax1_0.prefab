@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 5916932772762606410}
   - component: {fileID: 7957910608319120793}
   - component: {fileID: 2905633056798266389}
-  - component: {fileID: -3414087938520374988}
-  - component: {fileID: -5357724629756687647}
   m_Layer: 0
   m_Name: mountain_parallax1_0
   m_TagString: Untagged
@@ -107,35 +105,3 @@ MonoBehaviour:
   moveVector: {x: -1, y: -0.00000008742278}
   sprites: []
   xLimit: 0
---- !u!114 &-3414087938520374988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3113859985961338058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37f9393345925f24a814b53722900410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pools: []
---- !u!114 &-5357724629756687647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3113859985961338058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ba68ce2486639946b1bb349fb9f69cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnTags:
-  - Hill
-  - Tree
-  - House
-  minDelay: 2
-  maxDelay: 5
-  spawnPoint: {fileID: 0}
