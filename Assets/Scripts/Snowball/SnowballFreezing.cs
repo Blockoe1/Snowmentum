@@ -33,11 +33,12 @@ namespace Snowmentum
         private static float freezeAmount;
         public static event Action<float> OnFreezeAmountChanged;
 
-        private bool isFrozen;
+        private static bool isFrozen;
         private bool isInWater;
 
         #region Properties
-        private bool IsFrozen
+        public static bool IsFrozen => isFrozen;
+        private bool IsFrozen_Internal
         {
             get { return isFrozen; }
             set
@@ -79,7 +80,7 @@ namespace Snowmentum
         private float GetFreezeRate() { return FREEZE_THRESHOLD / freezeTime; }
         private float GetThawRate() { return -FREEZE_THRESHOLD / frozenTime; }
         private bool GetIsInWater() { return isInWater; }
-        private bool GetIsFrozen() { return IsFrozen; }
+        private bool GetIsFrozen() { return IsFrozen_Internal; }
         #endregion
 
         /// <summary>
@@ -145,17 +146,17 @@ namespace Snowmentum
         private void UpdateFreezeStatus(float freezeAmount)
         {
             // Switches the snowball to the frozen state.
-            if (!IsFrozen && freezeAmount >= FREEZE_THRESHOLD)
+            if (!IsFrozen_Internal && freezeAmount >= FREEZE_THRESHOLD)
             {
                 Debug.Log("Frozen");
-                IsFrozen = true;
+                IsFrozen_Internal = true;
                 // Need to decrement our freezeAmount while the snowball is frozen.
                 StartCoroutine(FreezeChangeRoutine(GetThawRate, GetIsFrozen));
             }
             // Switches the snowball back to it's normal state.
-            else if (IsFrozen && freezeAmount <= 0)
+            else if (IsFrozen_Internal && freezeAmount <= 0)
             {
-                IsFrozen = false;
+                IsFrozen_Internal = false;
             }
         }
 

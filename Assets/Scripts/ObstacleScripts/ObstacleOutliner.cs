@@ -59,7 +59,7 @@ namespace Snowmentum
         {
             Color col;
             // Update the color based on the size difference between this obstacle and the snowball.
-            if (SnowballSize.Value > controller.ObstacleSize)
+            if (SnowballSize.Value > controller.ObstacleSize || SnowballFreezing.IsFrozen)
             {
                 col = destroyableColor;
             }

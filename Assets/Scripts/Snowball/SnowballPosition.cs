@@ -14,7 +14,6 @@ namespace Snowmentum
 {
     public class SnowballPosition : MonoBehaviour
     {
-        [SerializeField] private float requiredPosChange;
         public static event Action<Vector2> OnPositionChanged;
         private Vector2 lastPosition;
 
@@ -34,12 +33,8 @@ namespace Snowmentum
         {
             while (true)
             {
-                // Only call the position change function if our position changed more than a minimum amount.
-                if (Vector2.Distance(lastPosition, transform.position) > requiredPosChange)
-                {
-                    OnPositionChanged?.Invoke(transform.position);
-                    lastPosition = transform.position;
-                }
+                OnPositionChanged?.Invoke(transform.position);
+                lastPosition = transform.position;
                 // Should run on update because this is purely visual.
                 yield return null;
             }
