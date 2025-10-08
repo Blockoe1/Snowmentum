@@ -10,9 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4663205968768900548}
   - component: {fileID: 6207644007088575086}
-  - component: {fileID: 5089009665189897209}
-  - component: {fileID: 7971678644992196485}
-  - component: {fileID: 8285152975681950392}
   m_Layer: 0
   m_Name: parallax_trees1_0
   m_TagString: Untagged
@@ -90,52 +87,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5089009665189897209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8458386950169116297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26fb84c209ca444ab9ee7dc2bda91c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveAngle: 180
-  speedScale: 1
-  moveVector: {x: -1, y: -0.00000008742278}
-  sprites: []
-  xLimit: 0
---- !u!114 &7971678644992196485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8458386950169116297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37f9393345925f24a814b53722900410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pools: []
---- !u!114 &8285152975681950392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8458386950169116297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ba68ce2486639946b1bb349fb9f69cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnTags:
-  - Hill
-  - Tree
-  - House
-  minDelay: 2
-  maxDelay: 5
-  spawnPoint: {fileID: 0}
