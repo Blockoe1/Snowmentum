@@ -17,6 +17,7 @@ MonoBehaviour:
   baseScore: 1
   tag: Untagged
   destroySound: Obstacle Destruction
+  showOutline: 1
   isTrigger: 0
   capsuleDirection: 1
   offset: {x: 0, y: 0.05}

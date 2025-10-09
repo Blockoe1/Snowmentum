@@ -180,6 +180,7 @@ MonoBehaviour:
   score: {fileID: 7647677357995392279}
   scaler: {fileID: 8657666669540303953}
   relay: {fileID: 5866592910555483468}
+  outliner: {fileID: 7416643200133424707}
 --- !u!114 &8657666669540303953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,5 +335,6 @@ MonoBehaviour:
   destroyableColor: {r: 0, g: 1, b: 0, a: 1}
   maxAlpha: 0.65
   maxDistance: 7
+  showOutline: 0
   rend: {fileID: 8871070839524519023}
   controller: {fileID: 2002559263234210752}

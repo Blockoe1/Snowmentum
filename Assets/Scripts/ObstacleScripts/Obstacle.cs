@@ -19,6 +19,7 @@ namespace Snowmentum
         [SerializeField] private int baseScore;
         [SerializeField] private string tag = "Untagged";
         [SerializeField] private string destroySound;
+        [SerializeField] private bool showOutline;
 
         [Header("Hitbox")]
         [SerializeField] private bool isTrigger;
@@ -62,6 +63,11 @@ namespace Snowmentum
         {
             get { return isTrigger; }
             set { isTrigger = value; }
+        }
+        public bool ShowOutline
+        { 
+            get { return showOutline; }
+            set { showOutline = value; }
         }
         public Vector2 HitboxOffset
         {

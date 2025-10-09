@@ -18,8 +18,17 @@ namespace Snowmentum
         [SerializeField] private float minDelay = 2f;
         [SerializeField] private float maxDelay = 5f;
         [SerializeField] private Transform spawnPoint;
+        [SerializeField] private bool spawnOnStart;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
+        {
+            if (spawnOnStart)
+            {
+                StartSpawning();
+            }
+        }
+
+        public void StartSpawning()
         {
             StartCoroutine(SpawnLoop());
         }

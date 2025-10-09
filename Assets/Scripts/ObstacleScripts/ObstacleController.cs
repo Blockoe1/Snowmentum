@@ -124,7 +124,7 @@ namespace Snowmentum
             }
             if (outliner != null)
             {
-                outliner.ShowOutline = false;
+                obstacleData.ShowOutline = outliner.ShowOutline;
             }
 
             // Update the collision data of the obstacle.
@@ -166,6 +166,10 @@ namespace Snowmentum
             if (relay != null)
             {
                 relay.SoundName = obstacleData.DestroySound;
+            }
+            if (outliner != null)
+            {
+                outliner.ShowOutline = obstacleData.ShowOutline;
             }
 
             // Collider Updates
