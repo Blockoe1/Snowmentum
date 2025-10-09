@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleSize: 1.2
   obstacleSprite: {fileID: 21300000, guid: 7ec80bbd1f4a7814496714e2dc76527f, type: 3}
+  orderInLayer: 0
   baseScore: 1
   tag: Untagged
   destroySound: Obstacle Destruction
@@ -22,4 +23,13 @@ MonoBehaviour:
   capsuleDirection: 1
   offset: {x: 0, y: 0.05}
   size: {x: 0.5, y: 0.15}
+  particleSpriteSheet:
+  - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  particleNumber: 10
+  emissionRadius: 0.1
   baseSize: 1
