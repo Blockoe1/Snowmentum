@@ -1839,7 +1839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &755299604
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -2053,7 +2053,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 7
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2495,7 +2495,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2754,7 +2754,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3022,10 +3022,10 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   RotationModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -3078,7 +3078,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -3131,9 +3131,9 @@ ParticleSystem:
         m_RotationOrder: 4
     curve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.7853982
-      minScalar: 0.7853982
+      minMaxState: 3
+      scalar: 6.283185
+      minScalar: -6.283185
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3184,7 +3184,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -3209,17 +3209,17 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
+        atime1: 52428
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
+        m_ColorSpace: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -3372,12 +3372,9 @@ ParticleSystem:
     rowMode: 1
     sprites:
     - sprite: {fileID: 4274168817455861013, guid: e81eb72b652660741aec6ba72395814f, type: 3}
-    - sprite: {fileID: -7007422976267034995, guid: e81eb72b652660741aec6ba72395814f, type: 3}
     - sprite: {fileID: 2754538052508425609, guid: e81eb72b652660741aec6ba72395814f, type: 3}
     - sprite: {fileID: 3442339824918604127, guid: e81eb72b652660741aec6ba72395814f, type: 3}
-    - sprite: {fileID: -726186048769395261, guid: e81eb72b652660741aec6ba72395814f, type: 3}
     - sprite: {fileID: -610712082451791876, guid: e81eb72b652660741aec6ba72395814f, type: 3}
-    - sprite: {fileID: 944431344, guid: e81eb72b652660741aec6ba72395814f, type: 3}
     - sprite: {fileID: 1754723931, guid: e81eb72b652660741aec6ba72395814f, type: 3}
     flipU: 0
     flipV: 0
@@ -4304,7 +4301,7 @@ ParticleSystem:
       m_Bits: 4294967295
     influenceList: []
   ClampVelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -4525,7 +4522,7 @@ ParticleSystem:
     drag:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4576,7 +4573,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
@@ -4737,7 +4734,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 0.5
+    frequency: 0.25
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
@@ -9628,6 +9625,7 @@ SceneRoots:
   - {fileID: 3203276922753608534}
   - {fileID: 1849660020}
   - {fileID: 301321086}
+  - {fileID: 755299606}
   - {fileID: 1067117514}
   - {fileID: 202237789}
   - {fileID: 525478601}
@@ -9636,4 +9634,3 @@ SceneRoots:
   - {fileID: 1885218429}
   - {fileID: 673107434}
   - {fileID: 1916049832}
-  - {fileID: 755299606}
