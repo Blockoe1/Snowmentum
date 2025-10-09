@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6324640763543149319}
   - component: {fileID: 8681952790730721862}
   - component: {fileID: 4248085145192388693}
-  - component: {fileID: 1027319063246810841}
   m_Layer: 0
   m_Name: SnowballDestroyParticles
   m_TagString: Untagged
@@ -171,7 +170,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 8
+      scalar: 6
       minScalar: 3
       maxCurve:
         serializedVersion: 2
@@ -289,7 +288,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.0625
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -753,7 +752,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.25
+      value: 0.5
       mode: 0
       spread: 0
       speed:
@@ -982,7 +981,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 75
+        scalar: 100
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1437,15 +1436,15 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     mode: 1
     timeMode: 0
     fps: 30
     frameOverTime:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 3
       scalar: 0.9999
-      minScalar: 0.9999
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1556,7 +1555,12 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 0}
+    - sprite: {fileID: -889968081, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+    - sprite: {fileID: -732115837, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+    - sprite: {fileID: -156959124, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+    - sprite: {fileID: 1789747204, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+    - sprite: {fileID: -494359493, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+    - sprite: {fileID: -1804804186, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -1617,7 +1621,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4903,33 +4907,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &1027319063246810841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617922519777167504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e79ad799376a5fd4ba2316d741bd115b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnParticleStoppedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Snowmentum.ObstacleController, Assembly-CSharp
-        m_MethodName: ReturnObstacle
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &843672684653286062
 GameObject:
   m_ObjectHideFlags: 0
