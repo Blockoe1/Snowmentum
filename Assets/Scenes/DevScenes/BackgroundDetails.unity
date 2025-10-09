@@ -506,6 +506,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hill
       objectReference: {fileID: 0}
+    - target: {fileID: 4783705730893348045, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: scaleX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783705730893348045, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: scaleY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847504462555030424, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: scalePerspectiveX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847504462555030424, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: scalePerspectiveY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694020832974436280, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: scaleX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694020832974436280, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: scaleY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7803632043478022561, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -546,6 +570,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8620182358874821506, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: scaleX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620182358874821506, guid: 56c307b2f902d9546845ec1df2e52abe, type: 3}
+      propertyPath: scaleY
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -573,6 +605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 0
   scale: 0
   rend: {fileID: 253588423}
 --- !u!1 &301321085
@@ -628,6 +662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 0
   scale: 0
   rend: {fileID: 328297241}
 --- !u!1 &354572365 stripped
@@ -648,7 +684,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectSize: 1
-  scalePerspective: 1
+  scalePerspectiveX: 1
+  scalePerspectiveY: 0
   scaleOnSpawn: 0
   debugDisable: 0
 --- !u!1 &399322392
@@ -1364,6 +1401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 0
   scale: 0
   rend: {fileID: 695155891}
 --- !u!1001 &705562485
@@ -1748,7 +1787,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectSize: 1
-  scalePerspective: 1
+  scalePerspectiveX: 1
+  scalePerspectiveY: 1
   scaleOnSpawn: 0
   debugDisable: 0
 --- !u!1 &882925487
@@ -2077,7 +2117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2706706550953764355, guid: d68f337aa83f82c4fa1d13fa7249395a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.96875
+      value: -4.25
       objectReference: {fileID: 0}
     - target: {fileID: 4414967488215970472, guid: d68f337aa83f82c4fa1d13fa7249395a, type: 3}
       propertyPath: m_LocalScale.y
@@ -2085,7 +2125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4414967488215970472, guid: d68f337aa83f82c4fa1d13fa7249395a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.96875
+      value: -4.25
       objectReference: {fileID: 0}
     - target: {fileID: 6016420644823015878, guid: d68f337aa83f82c4fa1d13fa7249395a, type: 3}
       propertyPath: m_Name
@@ -2385,6 +2425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 0
   scale: 0
   rend: {fileID: 1247610060}
 --- !u!1 &1268813478
@@ -2954,6 +2996,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 0
   scale: 0
   rend: {fileID: 1548236489}
 --- !u!1 &1568548813
@@ -4093,7 +4137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectSize: 1
-  scalePerspective: 1
+  scalePerspectiveX: 1
+  scalePerspectiveY: 1
   scaleOnSpawn: 0
   debugDisable: 0
 --- !u!1 &2022791953
@@ -4197,6 +4242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 0
   scale: 0
   rend: {fileID: 2058656753}
 --- !u!1001 &3203276922753608534

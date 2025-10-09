@@ -14,6 +14,10 @@ namespace Snowmentum
 {
     public class EnvironmentSize : SnowballValue
     {
+        #region CONSTS
+        public const float HORIZON_LINE = 1.375f;
+        #endregion
+
         private static float val;
         private static float targetVal;
 
@@ -63,7 +67,7 @@ namespace Snowmentum
 
             // Set the pivot point of the snowball so that obstacles know where to scale based on.
             // Set this whenever the value changes so it's up to date when obstacles need it.
-            scalePivot = new Vector2(transform.position.x, HillAligner.HORIZON_LINE);
+            scalePivot = new Vector2(transform.position.x, HORIZON_LINE);
 
             SizeBracket.OnBracketChanged += UpdateEnvironmentSize;
         }

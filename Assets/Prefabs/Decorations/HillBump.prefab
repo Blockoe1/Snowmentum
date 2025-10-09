@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectSize: 1
-  scalePerspective: 1
+  scalePerspectiveX: 1
+  scalePerspectiveY: 1
   scaleOnSpawn: 0
   debugDisable: 0
