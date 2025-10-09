@@ -30,11 +30,12 @@ namespace Snowmentum
         #region Component References    
         [Header("Components")]
         [SerializeReference] protected SpriteRenderer rend;
-        [SerializeField] private CapsuleCollider2D obstacleCollider;
-        [SerializeField] private ScoreIncrementer score;
-        [SerializeField] private ObjectScaler scaler;
-        [SerializeField] private AudioRelay relay;
-        [SerializeField] private ObstacleOutliner outliner;
+        [SerializeReference] private CapsuleCollider2D obstacleCollider;
+        [SerializeReference] private ScoreIncrementer score;
+        [SerializeReference] private ObjectScaler scaler;
+        [SerializeReference] private AudioRelay relay;
+        [SerializeReference] private ObstacleOutliner outliner;
+        [SerializeReference] private ParticleSystem particles;
 
         /// <summary>
         /// Get components on reset.
@@ -48,6 +49,7 @@ namespace Snowmentum
             scaler = GetComponent<ObjectScaler>();
             relay = GetComponent<AudioRelay>();
             outliner = GetComponent<ObstacleOutliner>();
+            particles = GetComponentInChildren<ParticleSystem>();
         }
         #endregion
 
@@ -155,6 +157,29 @@ namespace Snowmentum
                 obstacleData.HitboxDirection = obstacleCollider.direction;
             }
 
+
+            // Particles
+            if (particles != null)
+            {
+                var animModule = particles.textureSheetAnimation;
+                Sprite[] spriteSheet = new Sprite[animModule.spriteCount];
+                // Update the sprite sheet for the particles.
+                for (int i = 0; i < animModule.spriteCount; i++)
+                {
+                    spriteSheet[i] = animModule.GetSprite(i);
+                }
+                obstacleData.SpriteSheet = spriteSheet;
+
+                // Update the emission shape.
+                var shapeModule = particles.shape;
+                obstacleData.EmissionRadius = shapeModule.radius;
+
+                // Update the number of particles emitted by the burst.
+                var emissionModue = particles.emission;
+                var burst = emissionModue.GetBurst(0);
+                obstacleData.ParticleNumber = (int)burst.count.constant;
+            }
+
             // Save changes to the asset.
             EditorUtility.SetDirty(obstacleData);
             AssetDatabase.SaveAssetIfDirty(obstacleData);
@@ -199,6 +224,27 @@ namespace Snowmentum
                 obstacleCollider.offset = obstacleData.HitboxOffset;
                 obstacleCollider.size = obstacleData.HitboxSize;
                 obstacleCollider.direction = obstacleData.HitboxDirection;
+            }
+
+            // Particles
+            if (particles != null)
+            {
+                var animModule = particles.textureSheetAnimation;
+                // Update the sprite sheet for the particles.
+                for(int i = 0; i < obstacleData.SpriteSheet.Length; i++)
+                {
+                    animModule.SetSprite(i, obstacleData.SpriteSheet[i]);
+                }
+
+                // Update the emission shape.
+                var shapeModule = particles.shape;
+                shapeModule.radius = obstacleData.EmissionRadius;
+
+                // Update the number of particles emitted by the burst.
+                var emissionModue = particles.emission;
+                var burst = emissionModue.GetBurst(0);
+                burst.count = obstacleData.ParticleNumber;
+                emissionModue.SetBurst(0, burst);
             }
         }
         #endregion
