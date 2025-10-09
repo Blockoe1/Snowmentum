@@ -9,6 +9,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Snowmentum.Score;
 
 namespace Snowmentum.UI
 {
@@ -36,7 +37,15 @@ namespace Snowmentum.UI
         {
             //Screen duration is 5 seconds
             yield return new WaitForSeconds(5f);
-            TransitionToScene("HighScoreScene");
+            ScoreStatic.CheckHighScore();
+            if (ScoreStatic.CheckHighScore())
+            {
+                TransitionToScene("HighScoreScene");
+            }
+            else
+            {
+                TransitionToScene("TitleScene");
+            }
         }
 
         /// <summary>
