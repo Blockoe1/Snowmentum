@@ -225,8 +225,11 @@ MonoBehaviour:
   - {fileID: 9193476860006111434}
   - {fileID: 8400536729506993508}
   selectionIndicator: {fileID: 3277741786420177978}
-  inputThreshold: 7000
+  inputThreshold: 4000
   inputDelay: 0.25
+  OnSubmitInitials:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8681514020490624697
 GameObject:
   m_ObjectHideFlags: 0
