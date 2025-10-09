@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 1048285940683226888}
   - component: {fileID: 6477381704800582678}
   - component: {fileID: 8135800488676584112}
+  - component: {fileID: 5849079277256418136}
   - component: {fileID: 5449543673334093616}
   m_Layer: 0
   m_Name: Snowball
@@ -394,6 +395,18 @@ MonoBehaviour:
   baseAnimationSpeed: 0.2
   anim: {fileID: 5449543673334093616}
   rend: {fileID: 4449946722729724061}
+--- !u!114 &5849079277256418136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182634060681000022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66920acc48a88f458624aa58e3adc8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &5449543673334093616
 Animator:
   serializedVersion: 7
