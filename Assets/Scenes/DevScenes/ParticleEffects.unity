@@ -8362,6 +8362,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1671779642}
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Snowmentum.SnowParticleSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -8376,7 +8400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8428,7 +8452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: Snowmentum.ParticleSpawner, Assembly-CSharp
+      value: Snowmentum.SnowParticleSpawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
@@ -8588,7 +8612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cfb9a48dd4dadc48911042f1c158069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleToSpawn: {fileID: 617922519777167504, guid: 7c2e2e8b35d1f684b88ce74eab27c244, type: 3}
+  particleToSpawn: {fileID: 8681952790730721862, guid: 7c2e2e8b35d1f684b88ce74eab27c244, type: 3}
+  particlesPerSize: 10
 --- !u!1 &1713764592
 GameObject:
   m_ObjectHideFlags: 0
@@ -8965,143 +8990,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1788025632}
---- !u!1001 &1849115157
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 135438964893402186, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 36ac8feed49d85c49b94f8804d007a92, type: 3}
-    - target: {fileID: 135438964893402186, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_Size.x
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_Size.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_Direction
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1619223663971898413, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1619223663971898413, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: UVModule.sprites.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1619223663971898413, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: UVModule.sprites.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: -1806765887, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
-    - target: {fileID: 1619223663971898413, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: UVModule.sprites.Array.data[1].sprite
-      value: 
-      objectReference: {fileID: -733742154, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
-    - target: {fileID: 1619223663971898413, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: UVModule.sprites.Array.data[2].sprite
-      value: 
-      objectReference: {fileID: 1583657736, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
-    - target: {fileID: 1619223663971898413, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: UVModule.sprites.Array.data[3].sprite
-      value: 
-      objectReference: {fileID: 1905565203, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
-    - target: {fileID: 1619223663971898413, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: UVModule.sprites.Array.data[4].sprite
-      value: 
-      objectReference: {fileID: -1133877238, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
-    - target: {fileID: 1619223663971898413, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: UVModule.sprites.Array.data[5].sprite
-      value: 
-      objectReference: {fileID: 15126433, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
-    - target: {fileID: 1619223663971898413, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4432682242002430807, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_Name
-      value: DevObstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4432682242002430807, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 7005340295946998757, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: oldObsData
-      value: 
-      objectReference: {fileID: 11400000, guid: de6339ec7ff617141aee6a497d74c093, type: 2}
-    - target: {fileID: 7005340295946998757, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: obstacleData
-      value: 
-      objectReference: {fileID: 11400000, guid: de6339ec7ff617141aee6a497d74c093, type: 2}
-    - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.646557
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.3811169
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
 --- !u!1 &1849660018
 GameObject:
   m_ObjectHideFlags: 0
@@ -9771,4 +9659,3 @@ SceneRoots:
   - {fileID: 1885218429}
   - {fileID: 673107434}
   - {fileID: 1916049832}
-  - {fileID: 1849115157}

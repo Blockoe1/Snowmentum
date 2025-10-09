@@ -9,6 +9,7 @@
 using System.Collections;
 using UnityEngine;
 using Snowmentum.Size;
+using UnityEngine.Events;
 
 namespace Snowmentum
 {
@@ -21,6 +22,9 @@ namespace Snowmentum
 
         [SerializeField] private SizeUpdater effectOnSize;
         [SerializeField] private SpeedUpdater effectOnSpeed;
+
+        [Header("Events")]
+        [SerializeField] private UnityEvent<float> OnTakeDamage;
 
         private Coroutine immunityRoutine;
         private bool isImmune;
@@ -245,6 +249,7 @@ namespace Snowmentum
             // If we experienced a negative change in size, then we should gain immunity for a bit.
             if (!isImmune && change < 0)
             {
+                OnTakeDamage?.Invoke(Mathf.Abs(change));
                 GiveImmunity(hitImmunity);
             }
         }

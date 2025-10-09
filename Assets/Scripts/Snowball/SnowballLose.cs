@@ -15,7 +15,7 @@ namespace Snowmentum
 {
     public class SnowballLose : MonoBehaviour
     {
-        [SerializeField] private UnityEvent OnDeathEvent;
+        [SerializeField] private UnityEvent<float> OnDeathEvent;
 
 
         #region Component References
@@ -57,7 +57,7 @@ namespace Snowmentum
                 speed.TargetValue_Local = 0;
                 speed.Value_Local = 0;
                 //Debug.Log(SnowballSpeed.Value);
-                OnDeathEvent?.Invoke();
+                OnDeathEvent?.Invoke(oldValue);
                 Destroy(gameObject);
             }
         }

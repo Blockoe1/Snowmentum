@@ -233,7 +233,14 @@ namespace Snowmentum
                 // Update the sprite sheet for the particles.
                 for(int i = 0; i < obstacleData.SpriteSheet.Length; i++)
                 {
-                    animModule.SetSprite(i, obstacleData.SpriteSheet[i]);
+                    if (i >= animModule.spriteCount)
+                    {
+                        animModule.AddSprite(obstacleData.SpriteSheet[i]);
+                    }
+                    else
+                    {
+                        animModule.SetSprite(i, obstacleData.SpriteSheet[i]);
+                    }
                 }
 
                 // Update the emission shape.
