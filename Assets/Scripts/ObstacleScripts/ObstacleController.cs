@@ -94,8 +94,26 @@ namespace Snowmentum
         {
             if (obstacleData == null) { return; }
             this.obstacleData = obstacleData;
+            // Alway toggle the obstacle on when new data is set.
+            ToggleObstacle(true);
 
             ReadObstacleData();
+        }
+
+        /// <summary>
+        /// Tobbles this obstacle's sprite and collision.
+        /// </summary>
+        /// <param name="isEnabled"></param>
+        public void ToggleObstacle(bool isEnabled)
+        {
+            if (rend != null)
+            {
+                rend.enabled = isEnabled;
+            }
+            if (obstacleCollider != null)
+            {
+                obstacleCollider.enabled = isEnabled;
+            }
         }
 
         #region ObstacleData Manipulation
