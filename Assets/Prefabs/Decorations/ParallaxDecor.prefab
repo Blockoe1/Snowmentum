@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 692810113821395525}
   - component: {fileID: 101221143855118308}
   - component: {fileID: 4288033454855145281}
+  - component: {fileID: -2056623145326186249}
+  - component: {fileID: 6610569103308770938}
   m_Layer: 0
   m_Name: ParallaxDecor
   m_TagString: Untagged
@@ -106,6 +108,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dc7967e9346517d43881e3142d93d0f9, type: 3}
   - {fileID: 21300000, guid: e663cd68042a53a4993feea803456f92, type: 3}
   - {fileID: 21300000, guid: b42bd0ee6dbff8d41afc9c5aa5e7eea8, type: 3}
+  - {fileID: 21300000, guid: a3ed7f560f6a0a24fbce18f640d02684, type: 3}
+  - {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
 --- !u!114 &4288033454855145281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,3 +122,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12d1c0923cc22b4da68b3aa9fea7040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2056623145326186249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061781790043898086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2762447730aecdf45953659c21997511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveAngle: 180
+  speedScale: 1
+  moveVector: {x: -1, y: -0.00000008742278}
+  myRigidbody: {fileID: 0}
+--- !u!114 &6610569103308770938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061781790043898086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf336ba4bd058c4396612996741d5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectSize: 0
+  scalePerspective: 0
+  scaleOnSpawn: 0
+  debugDisable: 0
