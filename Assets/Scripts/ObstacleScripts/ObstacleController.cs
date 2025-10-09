@@ -34,6 +34,7 @@ namespace Snowmentum
         [SerializeField] private ScoreIncrementer score;
         [SerializeField] private ObjectScaler scaler;
         [SerializeField] private AudioRelay relay;
+        [SerializeField] private ObstacleOutliner outliner;
 
         /// <summary>
         /// Get components on reset.
@@ -46,6 +47,7 @@ namespace Snowmentum
             score = GetComponent<ScoreIncrementer>();
             scaler = GetComponent<ObjectScaler>();
             relay = GetComponent<AudioRelay>();
+            outliner = GetComponent<ObstacleOutliner>();
         }
         #endregion
 
@@ -119,6 +121,10 @@ namespace Snowmentum
             if (relay != null)
             {
                 obstacleData.DestroySound = relay.SoundName;
+            }
+            if (outliner != null)
+            {
+                outliner.ShowOutline = false;
             }
 
             // Update the collision data of the obstacle.

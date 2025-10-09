@@ -19,6 +19,7 @@ namespace Snowmentum
     public class BackgroundObjectsPooler : MonoBehaviour
 
     {
+        [SerializeField] private Transform poolParent;
         public List<Pool> pools;
         public Dictionary<string, Queue<GameObject>> poolDictionary;
 
@@ -43,7 +44,7 @@ namespace Snowmentum
 
                 for (int i = 0; i < pool.size; i++)
                 {
-                    GameObject obj = Instantiate(pool.backgroundPrefab);
+                    GameObject obj = Instantiate(pool.backgroundPrefab, poolParent);
                     obj.SetActive(false);
                     objectPool.Enqueue(obj);
 

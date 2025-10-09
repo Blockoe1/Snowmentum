@@ -22,6 +22,7 @@ namespace Snowmentum
         private float maxAlpha;
         [SerializeField, Tooltip("The maximum distance away that the outline will be visible at.")] 
         private float maxDistance;
+        [SerializeField] private bool showOutline;
 
         #region Component References
         [Header("Components")]
@@ -39,12 +40,22 @@ namespace Snowmentum
         }
         #endregion
 
+        #region Properties
+        public bool ShowOutline
+        {
+            get { return showOutline; }
+            set { showOutline = value; }
+        }
+        #endregion
+
         /// <summary>
         /// Subscribe/unsubscribe to functions.
         /// </summary>
         private void Awake()
         {
             SnowballPosition.OnPositionChanged += UpdateOutline;
+            // Set the outline to completely transparent on awake.
+            rend.material.color = Color.clear;
         }
         private void OnDestroy()
         {
@@ -57,6 +68,8 @@ namespace Snowmentum
         /// <param name="snowballPos">The position of the snwoball.</param>
         private void UpdateOutline(Vector2 snowballPos)
         {
+            // If ShowOutline is disabled, then we should never update our outline.
+            if (!showOutline) { return; }
             Color col;
             // Update the color based on the size difference between this obstacle and the snowball.
             if (SnowballSize.Value > controller.ObstacleSize || SnowballFreezing.IsFrozen)
