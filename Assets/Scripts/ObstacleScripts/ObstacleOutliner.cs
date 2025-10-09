@@ -44,7 +44,23 @@ namespace Snowmentum
         public bool ShowOutline
         {
             get { return showOutline; }
-            set { showOutline = value; }
+            set 
+            {
+                // Prevents redundant assignment.
+                if (value == showOutline) { return; }
+                showOutline = value; 
+
+                // Disable the outline if ShowOutline is set to false.
+                if (showOutline)
+                {
+                    SnowballPosition.OnPositionChanged += UpdateOutline;
+                }
+                else
+                {
+                    SnowballPosition.OnPositionChanged -= UpdateOutline;
+                    rend.material.color = Color.clear;
+                }
+            }
         }
         #endregion
 
@@ -53,9 +69,15 @@ namespace Snowmentum
         /// </summary>
         private void Awake()
         {
-            SnowballPosition.OnPositionChanged += UpdateOutline;
-            // Set the outline to completely transparent on awake.
-            rend.material.color = Color.clear;
+            if (showOutline)
+            {
+                SnowballPosition.OnPositionChanged += UpdateOutline;
+            }
+            else
+            {
+                // Set the outline to completely transparent on awake.
+                rend.material.color = Color.clear;
+            }
         }
         private void OnDestroy()
         {

@@ -113,6 +113,7 @@ namespace Snowmentum
             if (rend != null)
             {
                 obstacleData.ObstacleSprite = rend.sprite;
+                obstacleData.OrderInLayer = rend.sortingOrder;
             }
             if (score != null)
             {
@@ -154,6 +155,7 @@ namespace Snowmentum
             if (rend != null)
             {
                 rend.sprite = obstacleData.ObstacleSprite;
+                rend.sortingOrder = obstacleData.OrderInLayer;
             }
             if (score != null)
             {

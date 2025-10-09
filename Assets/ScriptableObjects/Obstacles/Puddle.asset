@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleSize: 1
   obstacleSprite: {fileID: 21300000, guid: 6b791ba0ee1f2274dacbd097e9ad1e78, type: 3}
+  orderInLayer: -1
   baseScore: 1
   tag: Water
   destroySound: 
+  showOutline: 0
   isTrigger: 1
   capsuleDirection: 0
   offset: {x: -0.025, y: -0.85}

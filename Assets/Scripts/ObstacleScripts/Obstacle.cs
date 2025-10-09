@@ -16,6 +16,7 @@ namespace Snowmentum
     {
         [SerializeField] private float obstacleSize;
         [SerializeField] private Sprite obstacleSprite;
+        [SerializeField] private int orderInLayer;
         [SerializeField] private int baseScore;
         [SerializeField] private string tag = "Untagged";
         [SerializeField] private string destroySound;
@@ -43,6 +44,11 @@ namespace Snowmentum
         {
             get { return obstacleSprite; }
             set { obstacleSprite = value; }
+        }
+        public int OrderInLayer
+        {
+            get { return orderInLayer; }
+            set { orderInLayer = value; }
         }
         public int BaseScore
         {
