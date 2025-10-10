@@ -7,13 +7,13 @@
 // Brief Description : Allows the snowball to spawn particles when it dies.
 *****************************************************************************/
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
 namespace Snowmentum
 {
     public class SnowParticleSpawner : MonoBehaviour
     {
         [SerializeField] private ParticleSystem particleToSpawn;
+        [SerializeField] private int baseParticles = 3;
         [SerializeField, Tooltip("The number of particles that correspond to one unit of size.")] 
         private int particlesPerSize;
 
@@ -24,11 +24,13 @@ namespace Snowmentum
         {
             ParticleSystem particles = Instantiate(particleToSpawn, transform.position, Quaternion.identity);
 
+            Debug.Log("Spawning particle with " +  particleNum + " particles.");
+
             // Adjust the number of particles the particle system will spawn.
             // Update the number of particles emitted by the burst.
             var emissionModue = particles.emission;
             var burst = emissionModue.GetBurst(0);
-            burst.count = particleNum;
+            burst.count = particleNum + baseParticles;
             emissionModue.SetBurst(0, burst);
 
             particles.Play();
@@ -40,6 +42,8 @@ namespace Snowmentum
         /// </summary>
         public void SpawnParticles(float size)
         {
+
+            Debug.Log("Spawn particles with size " + size);
             // Calculate the number of particles to spawn based on snowball size;
             // Scale based on environment size.
             SpawnParticles((int)(particlesPerSize * size / EnvironmentSize.Value));

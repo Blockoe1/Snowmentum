@@ -221,7 +221,7 @@ namespace Snowmentum
                 // Save the snowball's current size so that any changes to size dont affect any of the other math.
                 float snowballSizeVal = SnowballSize.Value;
 
-                Debug.Log("Collided with " + obstacle.name + " of size " + obstacle.ObstacleSize);
+                //Debug.Log("Collided with " + obstacle.name + " of size " + obstacle.ObstacleSize);
 
                 // Change the player's values based on our result curves defined in the inspector.
                 if (!IsInvincible)
@@ -249,7 +249,8 @@ namespace Snowmentum
             // If we experienced a negative change in size, then we should gain immunity for a bit.
             if (!isImmune && change < 0)
             {
-                OnTakeDamage?.Invoke(Mathf.Abs(change));
+                // Only allow for broadcasts of damage that the snowball can actually take.
+                OnTakeDamage?.Invoke(Mathf.Min(Mathf.Abs(change), old));
                 GiveImmunity(hitImmunity);
             }
         }
