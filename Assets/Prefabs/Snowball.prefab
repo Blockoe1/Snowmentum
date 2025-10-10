@@ -23,13 +23,14 @@ GameObject:
   - component: {fileID: 8135800488676584112}
   - component: {fileID: 5849079277256418136}
   - component: {fileID: 5449543673334093616}
+  - component: {fileID: 2568770032438607038}
   m_Layer: 0
   m_Name: Snowball
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8420961822085175188
 Transform:
   m_ObjectHideFlags: 0
@@ -222,6 +223,33 @@ MonoBehaviour:
     minDamageKnockback: 7
     knockbackCurveSteepness: 1.5
     knockbackCurveScale: 1
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2568770032438607038}
+        m_TargetAssemblyTypeName: Snowmentum.SnowParticleSpawner, Assembly-CSharp
+        m_MethodName: SpawnParticles
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Snowball Destruction
+          m_BoolArgument: 0
+        m_CallState: 2
   sizeComp: {fileID: 2681645269302268440}
   speedComp: {fileID: 8165628667471022399}
   flashRenderer: {fileID: 4449946722729724061}
@@ -289,7 +317,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -300,9 +328,9 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 5
+        m_TargetAssemblyTypeName: Snowmentum.UI.LoseScreen, Assembly-CSharp
+        m_MethodName: StartScreenDelay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -429,3 +457,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2568770032438607038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182634060681000022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfb9a48dd4dadc48911042f1c158069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleToSpawn: {fileID: 8681952790730721862, guid: 7c2e2e8b35d1f684b88ce74eab27c244, type: 3}
+  baseParticles: 3
+  particlesPerSize: 30

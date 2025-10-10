@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 1
   scale: 0
   rend: {fileID: 1863082398446775942}
 --- !u!114 &1249726107616950423
@@ -216,6 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 1
   scale: 1
   rend: {fileID: 5308926393679240602}
 --- !u!114 &1933867660492043633
@@ -298,7 +302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectSize: 1
-  scalePerspective: 1
+  scalePerspectiveX: 1
+  scalePerspectiveY: 1
   scaleOnSpawn: 0
   debugDisable: 0
 --- !u!1 &4613843077252215240
@@ -402,6 +407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 1
   scale: 0
   rend: {fileID: 5405857437657256747}
 --- !u!114 &3325458938079611392
