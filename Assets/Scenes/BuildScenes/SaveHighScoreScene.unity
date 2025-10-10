@@ -486,9 +486,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.055555556
+    width: 0.33333334
+    height: 0.3333333
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -828,6 +828,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1755203220}
     m_Modifications:
+    - target: {fileID: 463187033949074014, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
+      propertyPath: inputThreshold
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 463187033949074014, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
       propertyPath: OnSubmitInitials.m_PersistentCalls.m_Calls.Array.size
       value: 1
