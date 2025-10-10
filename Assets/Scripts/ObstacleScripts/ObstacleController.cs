@@ -229,17 +229,20 @@ namespace Snowmentum
             // Particles
             if (particles != null)
             {
-                var animModule = particles.textureSheetAnimation;
-                // Update the sprite sheet for the particles.
-                for(int i = 0; i < obstacleData.SpriteSheet.Length; i++)
+                if (obstacleData.SpriteSheet != null)
                 {
-                    if (i >= animModule.spriteCount)
+                    var animModule = particles.textureSheetAnimation;
+                    // Update the sprite sheet for the particles.
+                    for (int i = 0; i < obstacleData.SpriteSheet.Length; i++)
                     {
-                        animModule.AddSprite(obstacleData.SpriteSheet[i]);
-                    }
-                    else
-                    {
-                        animModule.SetSprite(i, obstacleData.SpriteSheet[i]);
+                        if (i >= animModule.spriteCount)
+                        {
+                            animModule.AddSprite(obstacleData.SpriteSheet[i]);
+                        }
+                        else
+                        {
+                            animModule.SetSprite(i, obstacleData.SpriteSheet[i]);
+                        }
                     }
                 }
 
