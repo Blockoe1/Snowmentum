@@ -8,6 +8,7 @@
 *****************************************************************************/
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Snowmentum.Size
 {
@@ -20,11 +21,31 @@ namespace Snowmentum.Size
         public const float OBSTACLE_RANGE_SCALE = 2f;
         #endregion
 
+        [Header("Events")]
+        [SerializeField] private UnityEvent<float> OnDeathEvent;
+
         private static float size;
         private static float targetSize;
 
         public static event Action<float, float> OnTargetValueChanged;
         public static event Action<float, float> OnValueChanged;
+
+        // Not using event here since there should theoretically only be 1 snowball.
+        private static Action<float> Internal_OnDeathEvent;
+
+        #region Component References
+        [Header("Components")]
+        [SerializeReference] protected SnowballSpeed speed;
+
+        /// <summary>
+        /// Get components on reset.
+        /// </summary>
+        [ContextMenu("Get Component References")]
+        private void Reset()
+        {
+            speed = GetComponent<SnowballSpeed>();
+        }
+        #endregion
 
         #region Properties
         public static float Value
@@ -48,8 +69,17 @@ namespace Snowmentum.Size
                 targetSize = value;
                 OnTargetValueChanged?.Invoke(targetSize, oldVal);
 
-                // Update our size bracket.
-                SizeBracket.UpdateBracket(targetSize);
+                // Check if the snowball was destroyed
+                if (value <= 0)
+                {
+                    // Ntify the snowball object that it died.
+                    Internal_OnDeathEvent?.Invoke(oldVal);
+                }
+                else
+                {
+                    // Dont update size bracket if the snowball was destroyed so that we dont get visual bugs.
+                    SizeBracket.UpdateBracket(targetSize);
+                }
             }
         }
 
@@ -64,6 +94,8 @@ namespace Snowmentum.Size
         {
             TargetValue = startingValue;
             Value = startingValue;
+
+            Internal_OnDeathEvent = OnSnowballDeath;
         }
 
         /// <summary>
@@ -107,5 +139,21 @@ namespace Snowmentum.Size
             TargetValue += toAdd;
         }
         #endregion
+
+        /// <summary>
+        /// Called when the snowball's size hits 0.
+        /// </summary>
+        /// <param name="oldValue"></param>
+        private void OnSnowballDeath(float oldValue)
+        {
+            // Unlock the cursor on snowball death.
+            Cursor.lockState = CursorLockMode.None;
+
+            // Reset speed to 0 so that the screen stops moving 
+            speed.TargetValue_Local = 0;
+            speed.Value_Local = 0;
+            OnDeathEvent?.Invoke(oldValue);
+            Destroy(gameObject);
+        }
     }
 }

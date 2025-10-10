@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
-  m_Name: Twig
+  m_Name: DebugDeathStick
   m_EditorClassIdentifier: 
-  obstacleSize: 1.2
-  obstacleSprite: {fileID: 21300000, guid: 7ec80bbd1f4a7814496714e2dc76527f, type: 3}
+  obstacleSize: 16
+  obstacleSprite: {fileID: 21300000, guid: f3ed3c9c67930d54ebee0eadd1d8b68d, type: 3}
   orderInLayer: 0
-  baseScore: 1
+  baseScore: 0
   tag: Untagged
   destroySound: Obstacle Destruction
   showOutline: 1
   isTrigger: 0
   capsuleDirection: 1
-  offset: {x: 0, y: 0.05}
-  size: {x: 0.5, y: 0.15}
+  offset: {x: -0.05, y: 0.1}
+  size: {x: 1.5, y: 0.175}
   particleSpriteSheet:
   - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
@@ -30,6 +30,6 @@ MonoBehaviour:
   - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  particleNumber: 10
-  emissionRadius: 0.1
-  baseSize: 1
+  particleNumber: 50
+  emissionRadius: 0.25
+  baseSize: 4

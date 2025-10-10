@@ -15,7 +15,9 @@ namespace Snowmentum
 {
     public class SnowballLose : MonoBehaviour
     {
-        [SerializeField] private UnityEvent OnDeathEvent;
+        [SerializeField] private UnityEvent<float> OnDeathEvent;
+
+        private static bool diedThisFrame;
 
 
         #region Component References
@@ -32,6 +34,10 @@ namespace Snowmentum
         }
         #endregion
 
+        #region Properties
+        public bool DiedThisFrame => diedThisFrame;
+        #endregion
+
 
         private void Awake()
         {
@@ -42,6 +48,10 @@ namespace Snowmentum
         {
             SnowballSize.OnTargetValueChanged -= OnValueChanged;
             Cursor.lockState = CursorLockMode.None;
+
+            // Take advantage of the fact that destroyed objects are not destroyed until the end of frame
+            // to reset diedThisFrame when the object is actually destroyed.
+            diedThisFrame = false;
         }
 
         /// <summary>
@@ -57,7 +67,8 @@ namespace Snowmentum
                 speed.TargetValue_Local = 0;
                 speed.Value_Local = 0;
                 //Debug.Log(SnowballSpeed.Value);
-                OnDeathEvent?.Invoke();
+                diedThisFrame = true;
+                OnDeathEvent?.Invoke(oldValue);
                 Destroy(gameObject);
             }
         }

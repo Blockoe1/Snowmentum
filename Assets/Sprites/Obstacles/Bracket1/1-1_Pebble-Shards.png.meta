@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7a968931b98f2aa4f98df5ca2c32ca3a
+guid: 6816d243b12370e47b0e34a4b76dc92c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2475628771915476527
-    second: mountain_parallax1_0
+      213: 8763737532579652040
+    second: 1-1_Pebble-Shards_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
-  spriteBorder: {x: 0, y: 139, z: 0, w: 149}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -100,23 +100,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mountain_parallax1_0
+      name: 1-1_Pebble-Shards_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 138
-        width: 512
-        height: 132
+        x: 7
+        y: 3
+        width: 3
+        height: 4
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1d1dd369fbcc4add0800000000000000
-      internalID: -2475628771915476527
+      spriteID: f6abcbe1a8a7d4541bb2620cad2d249d
+      internalID: -1591989874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-1_Pebble-Shards_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 3
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd1cdf746a0ad440a40eeee01095f82
+      internalID: -406349086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-1_Pebble-Shards_2
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 7
+        width: 5
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbad99b3f5e761444afb45f39ebbae8f
+      internalID: -1987503855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-1_Pebble-Shards_3
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 6
+        width: 3
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94387009a92c0e644aed166b36fdb2a7
+      internalID: 900659448
       vertices: []
       indices: 
       edges: []
@@ -126,7 +192,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +201,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      mountain_parallax1_0: -2475628771915476527
+      1-1_Pebble-Shards_0: -1591989874
+      1-1_Pebble-Shards_1: -406349086
+      1-1_Pebble-Shards_2: -1987503855
+      1-1_Pebble-Shards_3: 900659448
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

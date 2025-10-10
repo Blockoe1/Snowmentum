@@ -14,6 +14,8 @@ namespace Snowmentum
 {
     public class SpriteTiler : MonoBehaviour
     {
+        [SerializeField] private bool scaleX;
+        [SerializeField] private bool scaleY;
         [SerializeField, Tooltip("If set to true, then the object will also be scaled based on the bracket.")] 
         private bool scale;
         private Vector2 baseSize;
@@ -58,8 +60,14 @@ namespace Snowmentum
 
             // Update the size of the sprite renderer.
             Vector2 size = rend.size;
-            size.x = baseSize.x * minSize;
-            size.y = baseSize.y * minSize;
+            if (scaleX)
+            {
+                size.x = baseSize.x * minSize;
+            }
+            if (scaleY)
+            {
+                size.y = baseSize.y * minSize;
+            }
             rend.size = size;
 
             // Update the scale of the transform.

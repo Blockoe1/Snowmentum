@@ -30,10 +30,12 @@ namespace Snowmentum
         #region Component References    
         [Header("Components")]
         [SerializeReference] protected SpriteRenderer rend;
-        [SerializeField] private CapsuleCollider2D obstacleCollider;
-        [SerializeField] private ScoreIncrementer score;
-        [SerializeField] private ObjectScaler scaler;
-        [SerializeField] private AudioRelay relay;
+        [SerializeReference] private CapsuleCollider2D obstacleCollider;
+        [SerializeReference] private ScoreIncrementer score;
+        [SerializeReference] private ObjectScaler scaler;
+        [SerializeReference] private AudioRelay relay;
+        [SerializeReference] private ObstacleOutliner outliner;
+        [SerializeReference] private ParticleSystem particles;
 
         /// <summary>
         /// Get components on reset.
@@ -46,6 +48,8 @@ namespace Snowmentum
             score = GetComponent<ScoreIncrementer>();
             scaler = GetComponent<ObjectScaler>();
             relay = GetComponent<AudioRelay>();
+            outliner = GetComponent<ObstacleOutliner>();
+            particles = GetComponentInChildren<ParticleSystem>();
         }
         #endregion
 
@@ -92,8 +96,26 @@ namespace Snowmentum
         {
             if (obstacleData == null) { return; }
             this.obstacleData = obstacleData;
+            // Alway toggle the obstacle on when new data is set.
+            ToggleObstacle(true);
 
             ReadObstacleData();
+        }
+
+        /// <summary>
+        /// Tobbles this obstacle's sprite and collision.
+        /// </summary>
+        /// <param name="isEnabled"></param>
+        public void ToggleObstacle(bool isEnabled)
+        {
+            if (rend != null)
+            {
+                rend.enabled = isEnabled;
+            }
+            if (obstacleCollider != null)
+            {
+                obstacleCollider.enabled = isEnabled;
+            }
         }
 
         #region ObstacleData Manipulation
@@ -111,6 +133,7 @@ namespace Snowmentum
             if (rend != null)
             {
                 obstacleData.ObstacleSprite = rend.sprite;
+                obstacleData.OrderInLayer = rend.sortingOrder;
             }
             if (score != null)
             {
@@ -120,6 +143,10 @@ namespace Snowmentum
             {
                 obstacleData.DestroySound = relay.SoundName;
             }
+            if (outliner != null)
+            {
+                obstacleData.ShowOutline = outliner.ShowOutline;
+            }
 
             // Update the collision data of the obstacle.
             if (obstacleCollider != null)
@@ -128,6 +155,29 @@ namespace Snowmentum
                 obstacleData.HitboxOffset = obstacleCollider.offset;
                 obstacleData.HitboxSize = obstacleCollider.size;
                 obstacleData.HitboxDirection = obstacleCollider.direction;
+            }
+
+
+            // Particles
+            if (particles != null)
+            {
+                var animModule = particles.textureSheetAnimation;
+                Sprite[] spriteSheet = new Sprite[animModule.spriteCount];
+                // Update the sprite sheet for the particles.
+                for (int i = 0; i < animModule.spriteCount; i++)
+                {
+                    spriteSheet[i] = animModule.GetSprite(i);
+                }
+                obstacleData.SpriteSheet = spriteSheet;
+
+                // Update the emission shape.
+                var shapeModule = particles.shape;
+                obstacleData.EmissionRadius = shapeModule.radius;
+
+                // Update the number of particles emitted by the burst.
+                var emissionModue = particles.emission;
+                var burst = emissionModue.GetBurst(0);
+                obstacleData.ParticleNumber = (int)burst.count.constant;
             }
 
             // Save changes to the asset.
@@ -148,6 +198,7 @@ namespace Snowmentum
             if (rend != null)
             {
                 rend.sprite = obstacleData.ObstacleSprite;
+                rend.sortingOrder = obstacleData.OrderInLayer;
             }
             if (score != null)
             {
@@ -161,6 +212,10 @@ namespace Snowmentum
             {
                 relay.SoundName = obstacleData.DestroySound;
             }
+            if (outliner != null)
+            {
+                outliner.ShowOutline = obstacleData.ShowOutline;
+            }
 
             // Collider Updates
             if (obstacleCollider != null)
@@ -169,6 +224,37 @@ namespace Snowmentum
                 obstacleCollider.offset = obstacleData.HitboxOffset;
                 obstacleCollider.size = obstacleData.HitboxSize;
                 obstacleCollider.direction = obstacleData.HitboxDirection;
+            }
+
+            // Particles
+            if (particles != null)
+            {
+                if (obstacleData.SpriteSheet != null)
+                {
+                    var animModule = particles.textureSheetAnimation;
+                    // Update the sprite sheet for the particles.
+                    for (int i = 0; i < obstacleData.SpriteSheet.Length; i++)
+                    {
+                        if (i >= animModule.spriteCount)
+                        {
+                            animModule.AddSprite(obstacleData.SpriteSheet[i]);
+                        }
+                        else
+                        {
+                            animModule.SetSprite(i, obstacleData.SpriteSheet[i]);
+                        }
+                    }
+                }
+
+                // Update the emission shape.
+                var shapeModule = particles.shape;
+                shapeModule.radius = obstacleData.EmissionRadius;
+
+                // Update the number of particles emitted by the burst.
+                var emissionModue = particles.emission;
+                var burst = emissionModue.GetBurst(0);
+                burst.count = obstacleData.ParticleNumber;
+                emissionModue.SetBurst(0, burst);
             }
         }
         #endregion

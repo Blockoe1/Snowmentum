@@ -124,7 +124,8 @@ namespace Snowmentum
             while(isSpawning)
             {
                 // Get the largest bracket we have obstacles set up to spawn in.
-                spawnBracket = brackets[Mathf.Min(SizeBracket.Bracket, brackets.Length - 1)];
+                // Decrement bracket by 1 so that it's an index.
+                spawnBracket = brackets[Mathf.Min(SizeBracket.Bracket - 1, brackets.Length - 1)];
                 for (int i = 0; i < obstacleSpawnAmount; i++)
                 {
                     //Pick an obstacle to spawn
