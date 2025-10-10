@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 1225979867564382840}
   - component: {fileID: 5246366932903730779}
   - component: {fileID: 3017659872710321336}
-  - component: {fileID: 1048285940683226888}
   - component: {fileID: 6477381704800582678}
   - component: {fileID: 8135800488676584112}
   - component: {fileID: 5849079277256418136}
@@ -180,6 +179,10 @@ MonoBehaviour:
   increasePerSecond: 0.02
   moveToTarget: 7
   useFixedUpdate: 1
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  speed: {fileID: 8165628667471022399}
 --- !u!114 &8165628667471022399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,46 +303,6 @@ MonoBehaviour:
   minY: -3.5
   maxY: 1
   snowballRigidbody: {fileID: 3341841721575561879}
---- !u!114 &1048285940683226888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9182634060681000022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a514ab054b7fe5448aa886bd82d022e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnDeathEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Snowmentum.UI.LoseScreen, Assembly-CSharp
-        m_MethodName: StartScreenDelay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Snowball Destruction
-          m_BoolArgument: 1
-        m_CallState: 2
-  speed: {fileID: 8165628667471022399}
 --- !u!114 &6477381704800582678
 MonoBehaviour:
   m_ObjectHideFlags: 0
