@@ -14,9 +14,11 @@ namespace Snowmentum
     [CreateAssetMenu(fileName = "Obstacle", menuName = "ScriptableObjects/Obstacle")]
     public class Obstacle : ScriptableObject
     {
-        [SerializeField] private float obstacleSize;
-        [SerializeField] private Sprite obstacleSprite;
-        [SerializeField] private int orderInLayer;
+        [SerializeField, Tooltip("The size required for the snowball to destroy this obstacle.  Does not affect " +
+            "obstacle scale.")] 
+        private float obstacleSize;
+        [SerializeField, Tooltip("The sprite of the obstacle.")] private Sprite obstacleSprite;
+        [SerializeField, Tooltip("The order that this sprite displays compated to ")] private int orderInLayer;
         [SerializeField] private int baseScore;
         [SerializeField] private string tag = "Untagged";
         [SerializeField] private string destroySound;
