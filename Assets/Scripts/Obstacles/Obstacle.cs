@@ -18,22 +18,37 @@ namespace Snowmentum
             "obstacle scale.")] 
         private float obstacleSize;
         [SerializeField, Tooltip("The sprite of the obstacle.")] private Sprite obstacleSprite;
-        [SerializeField, Tooltip("The order that this sprite displays compated to ")] private int orderInLayer;
-        [SerializeField] private int baseScore;
-        [SerializeField] private string tag = "Untagged";
-        [SerializeField] private string destroySound;
-        [SerializeField] private bool showOutline;
+        [SerializeField, Tooltip("Obstacle renderer's order within the obstacle sorting later.")] 
+        private int orderInLayer;
+        [SerializeField, Tooltip("The base amount of score the player gains when this obstacle is destroyed by a " +
+            "snowball of similar size")] 
+        private int baseScore;
+        [SerializeField, Tooltip("The sound to play when this obstacle is destroyed.")]
+        private string destroySound;
+        [SerializeField, Tooltip("Whether this obstacle should show an outline as the snowball gets close or not.")]
+        private bool showOutline;
+        [SerializeField, Tooltip("The tag of the obstacle game object.  Only used for specific special cases where " +
+            "a custom identifier is needed, such as puddles.")] 
+        private string tag = "Untagged";
 
         [Header("Hitbox")]
-        [SerializeField] private bool isTrigger;
-        [SerializeField] private CapsuleDirection2D capsuleDirection; 
-        [SerializeField] private Vector2 offset;
-        [SerializeField] private Vector2 size = Vector2.one;
+        [SerializeField, Tooltip("Whether the obstacle's collider behaves as a trigger or not.")] 
+        private bool isTrigger;
+        [SerializeField, Tooltip("The direction of the obstacle's capsule collider.")] 
+        private CapsuleDirection2D capsuleDirection; 
+        [SerializeField, Tooltip("The offset of the obstacle's collider.")] 
+        private Vector2 offset;
+        [SerializeField, Tooltip("The size of the obstacle's collider.")] 
+        private Vector2 size = Vector2.one;
 
         [Header("Particles")]
-        [SerializeField] private Sprite[] particleSpriteSheet;
-        [SerializeField] private int particleNumber;
-        [SerializeField] private float emissionRadius;
+        [SerializeField, Tooltip("The sprites used by this obstacle's destruction particles.")]
+        private Sprite[] particleSpriteSheet;
+        [SerializeField, Tooltip("The number of particles to spawn when the obstacle is destroyed.")] 
+        private int particleNumber;
+        [SerializeField, Tooltip("The size of the circle that particles spawn from when the obstacle is destroyed.  " +
+            "Should approximately correspond to the size of the sprite.")] 
+        private float emissionRadius;
 
         [SerializeField, HideInInspector] private float baseSize;
 
