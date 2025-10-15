@@ -20,14 +20,16 @@ namespace Snowmentum
 
         #region Nested
         [System.Serializable]
-        private class Sound
+        public class Sound
         {
             [SerializeField] internal string name;
-            [SerializeField] internal AudioClip audioClip;
+            [SerializeField, HideIf("randomizedClip")] internal AudioClip audioClip;
+            [SerializeField] internal AudioClip[] audioClips;
             [SerializeField] internal AudioMixerGroup mixerGroup;
             [SerializeField, Range(0f, 1f)] internal float volume = 1f;
             [SerializeField, Range(-3f, 3f)] internal float pitch = 1f;
             [SerializeField] internal bool loop;
+            [SerializeField] private bool randomizedClip;
 
             internal AudioSource source;
         }
