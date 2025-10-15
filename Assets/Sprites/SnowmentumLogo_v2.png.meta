@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 67be0084bcda317419122055719b2c15
+guid: 88dfd370475669b4cb3892fd6f116665
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4369572136041557648
-    second: title_0
+      213: -4014720254304633763
+    second: SnowmentumLogo_v2_0
   - first:
-      213: 3918735734063839423
-    second: title_1
+      213: 4100304402869822450
+    second: SnowmentumLogo_v2_1
   - first:
-      213: 8126443836680682420
-    second: title_2
+      213: 3413000450910440682
+    second: SnowmentumLogo_v2_2
   - first:
-      213: -1799187036485144362
-    second: title_3
+      213: 802500917153640969
+    second: SnowmentumLogo_v2_3
   - first:
-      213: 6959973565247811803
-    second: title_4
+      213: 3934895302639830051
+    second: SnowmentumLogo_v2_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
