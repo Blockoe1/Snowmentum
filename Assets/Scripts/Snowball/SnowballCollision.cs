@@ -26,6 +26,7 @@ namespace Snowmentum
         private bool isImmune;
         private bool isInvincible;
 
+        
         #region Component References
         [Header("Components")]
         [SerializeReference] protected SnowballSize sizeComp;

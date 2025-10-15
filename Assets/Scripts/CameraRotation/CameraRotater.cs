@@ -6,6 +6,7 @@
 //
 // Brief Description : Rotates the camera and background objects to help the illusion of the snowball speeding up.
 *****************************************************************************/
+using Snowmentum.Size;
 using System.Collections;
 using UnityEngine;
 
@@ -31,32 +32,62 @@ namespace Snowmentum
 
         private float snowballSpeed;
         private float rotationSpeed = 1.3f;
-        private float maxZRotation = 8f;
-        private float minZRotation;
+
+        //this value will change during gameplay, but it is the maximum amount the camera will rotate
+        private float ZRotationTarget;
+
+        //used for setting the rotation back to 0 when the snowball collides with an obstacle
+        private float minZRotation = 0f;
+
         private Quaternion targetRotation;
 
+        float snowballSize = SnowballSize.Value;
+
+        
         void Start()
         {
             previousSpeed = SnowballSpeed.Value;
             targetRotation = transform.rotation;
+
+            
         }
 
         // Update is called once per frame
         void Update()
         {
+            
             //If there is a better way to check when the minigame ends that doesn't happen every frame forever that would be good but it works for now
             //check if snowball is active. basically checks for when the packing minigame ends and snowball becomes active
             if (snowballGameObject.activeInHierarchy)
             {
                 StartCoroutine(BeginRotation());
             }
+
+
+
+            #region DetermineMaximumRotationAngle
+            snowballSize = SnowballSize.Value;
             
             
+            //camera angle changes to become more drastic as snowball becomes larger or speeds up
+            //we could change this to use snowballspeed but I am worried I will mess that up so I will use size for now
+            if (isRotating)
+            {
+                if (snowballSize > 2.5)
+                    ZRotationTarget = 8.0f;
+                else if (snowballSize > 2)
+                    ZRotationTarget = 6.0f;
+                else if (snowballSize > 1.5)
+                    ZRotationTarget = 4.0f;
+                else if (snowballSize > 1)
+                    ZRotationTarget = 2.0f;
+            }
+            #endregion
 
             //Clamp the camera from rotating beyond a certain point
             Vector3 currentEulerAngles = transform.eulerAngles;
             float zAngle = currentEulerAngles.z;
-            zAngle = Mathf.Clamp(zAngle, 0, maxZRotation);
+            zAngle = Mathf.Clamp(zAngle, 0, ZRotationTarget);
             transform.eulerAngles = new Vector3(currentEulerAngles.x, currentEulerAngles.y, zAngle);
 
         }
@@ -86,12 +117,13 @@ namespace Snowmentum
 
         }
 
+
         void RotateCamera()
         {
             if (isRotating)
             {
                 // Calculate the target Quaternion based on Euler angles
-                targetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, maxZRotation);
+                targetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, ZRotationTarget);
 
                 // Smoothly interpolate towards the target rotation
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
