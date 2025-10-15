@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 0522670672fff194e9a48ff11e028a8f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1656113427657392047
+    second: player_frozensnowball_spritesheet Scaled_0
+  - first:
+      213: -5726072202931837384
+    second: player_frozensnowball_spritesheet Scaled_1
+  - first:
+      213: 6961968488408135743
+    second: player_frozensnowball_spritesheet Scaled_2
+  - first:
+      213: -4729988915839940177
+    second: player_frozensnowball_spritesheet Scaled_3
+  - first:
+      213: 4647859166194290421
+    second: player_frozensnowball_spritesheet Scaled_4
+  - first:
+      213: -1620749842934594802
+    second: player_frozensnowball_spritesheet Scaled_5
+  - first:
+      213: -8157375794618925297
+    second: player_frozensnowball_spritesheet Scaled_6
+  - first:
+      213: 5039682160709752080
+    second: player_frozensnowball_spritesheet Scaled_7
+  - first:
+      213: 2755518205154719273
+    second: player_frozensnowball_spritesheet Scaled_8
+  - first:
+      213: 6473109815188969749
+    second: player_frozensnowball_spritesheet Scaled_9
+  - first:
+      213: -68814912642983508
+    second: player_frozensnowball_spritesheet Scaled_10
+  - first:
+      213: 1172894896038124108
+    second: player_frozensnowball_spritesheet Scaled_11
+  - first:
+      213: 1972029507109240281
+    second: player_frozensnowball_spritesheet Scaled_12
+  - first:
+      213: -8826907551675212867
+    second: player_frozensnowball_spritesheet Scaled_13
+  - first:
+      213: 6820119419896972220
+    second: player_frozensnowball_spritesheet Scaled_14
+  - first:
+      213: -779921912240409491
+    second: player_frozensnowball_spritesheet Scaled_15
+  - first:
+      213: 6928413002109718085
+    second: player_frozensnowball_spritesheet Scaled_16
+  - first:
+      213: -9076741611843419249
+    second: player_frozensnowball_spritesheet Scaled_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 349
+        width: 132
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 718e72706018008429ee7eb2b78b0b23
+      internalID: -940610588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_1
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 349
+        width: 136
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641bf863734b9c44daadde74c15e6b77
+      internalID: 1511914932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 353
+        width: 136
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be203eb5a801ec418c20049a8ae4605
+      internalID: -1786626015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_3
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 349
+        width: 136
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5101d4ac9fcded14bab4a059381c39f3
+      internalID: -1510916220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_4
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 349
+        width: 136
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87a741fe194cf24297ab6038f7b1c7b
+      internalID: 1015487997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_5
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 353
+        width: 136
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e42597be4f38be48b43c4dbaa865e9f
+      internalID: -215509501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_6
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 152
+        width: 136
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebb4b17617743e48ad8df124f5fdff9
+      internalID: 1374076130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_7
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 156
+        width: 138
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cb58cb67349094e94c4497ee043acc
+      internalID: -731600254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_8
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 156
+        width: 136
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3de2e02365cb1e4a96addad6c5af969
+      internalID: 1587516228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_9
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 156
+        width: 136
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff55946be072f4b43a7835d181a14f99
+      internalID: 283542058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_10
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 156
+        width: 138
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed1dd9b9c3deb9843a8a87deeaf9d4ff
+      internalID: 1220871795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_11
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 156
+        width: 136
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfd802cc0fb1924c863219ffa7ece15
+      internalID: -1877065325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_12
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 10
+        width: 133
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71aa67d1c3a0ccc47ab1124fd4c68c37
+      internalID: -1675543727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_13
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 11
+        width: 134
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563d9e012507ad94c852cf492a5199e1
+      internalID: -1555969347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_14
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 10
+        width: 135
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63f009425aaa60499ad672cb3dcc035
+      internalID: 848270136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_15
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 11
+        width: 134
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45710ddc89bf8834da764866e712f1b6
+      internalID: 2082680179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_16
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 9
+        width: 134
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e338697b4513fcf4db52cf99e0ebabb7
+      internalID: -693814907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_frozensnowball_spritesheet Scaled_17
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 13
+        width: 131
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6910e06541edf945bf6714327bb5973
+      internalID: -2090310686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      player_frozensnowball_spritesheet Scaled_0: -940610588
+      player_frozensnowball_spritesheet Scaled_1: 1511914932
+      player_frozensnowball_spritesheet Scaled_10: 1220871795
+      player_frozensnowball_spritesheet Scaled_11: -1877065325
+      player_frozensnowball_spritesheet Scaled_12: -1675543727
+      player_frozensnowball_spritesheet Scaled_13: -1555969347
+      player_frozensnowball_spritesheet Scaled_14: 848270136
+      player_frozensnowball_spritesheet Scaled_15: 2082680179
+      player_frozensnowball_spritesheet Scaled_16: -693814907
+      player_frozensnowball_spritesheet Scaled_17: -2090310686
+      player_frozensnowball_spritesheet Scaled_2: -1786626015
+      player_frozensnowball_spritesheet Scaled_3: -1510916220
+      player_frozensnowball_spritesheet Scaled_4: 1015487997
+      player_frozensnowball_spritesheet Scaled_5: -215509501
+      player_frozensnowball_spritesheet Scaled_6: 1374076130
+      player_frozensnowball_spritesheet Scaled_7: -731600254
+      player_frozensnowball_spritesheet Scaled_8: 1587516228
+      player_frozensnowball_spritesheet Scaled_9: 283542058
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

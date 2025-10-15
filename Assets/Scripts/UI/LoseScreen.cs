@@ -15,6 +15,10 @@ namespace Snowmentum.UI
 {
     public class LoseScreen : MonoBehaviour
     {
+        #region CONSTS
+        private const string HIGH_SCORE_SCENE_NAME = "SaveHighScoreScene";
+        private const string TITLE_SCREEN_NAME = "TitleScene";
+        #endregion
 
         /// <summary>
         /// Restarts the game
@@ -40,11 +44,11 @@ namespace Snowmentum.UI
             ScoreStatic.CheckHighScore();
             if (ScoreStatic.CheckHighScore())
             {
-                TransitionToScene("HighScoreScene");
+                TransitionToScene(HIGH_SCORE_SCENE_NAME);
             }
             else
             {
-                TransitionToScene("TitleScene");
+                TransitionToScene(TITLE_SCREEN_NAME);
             }
         }
 

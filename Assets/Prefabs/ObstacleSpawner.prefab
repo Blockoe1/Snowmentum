@@ -72,3 +72,7 @@ MonoBehaviour:
     - obstacle: {fileID: 11400000, guid: ec09f765d73579746a84eb03cbb047f6, type: 2}
       baseWeight: 3
       addedWeight: 1
+  - spawnData:
+    - obstacle: {fileID: 11400000, guid: 8a00bb3a771ec6d4a87612cb470462d9, type: 2}
+      baseWeight: 1
+      addedWeight: 1

@@ -13,16 +13,12 @@ namespace Snowmentum
 
     public class HillAligner : MonoBehaviour
     {
-        #region CONSTS
-        public const float HORIZON_LINE = 1.375f;
-        #endregion
-
         /// <summary>
         /// Align the hill with the horizon line on awake.
         /// </summary>
         private void Awake()
         {
-            transform.position =  new Vector3(transform.position.x, HORIZON_LINE, transform.position.z);
+            transform.position =  new Vector3(transform.position.x, EnvironmentSize.HORIZON_LINE, transform.position.z);
         }
     }
 }
