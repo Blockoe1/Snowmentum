@@ -15,23 +15,39 @@ namespace Snowmentum
     public class AudioManager : MonoBehaviour
     {
         [SerializeField] private Sound[] sounds;
-
-
+        [SerializeField] private RandomizedSound[] randomizedSounds;
 
         #region Nested
         [System.Serializable]
-        public class Sound
+        private abstract class SoundBase
         {
             [SerializeField] internal string name;
-            [SerializeField, HideIf("randomizedClip")] internal AudioClip audioClip;
-            [SerializeField] internal AudioClip[] audioClips;
             [SerializeField] internal AudioMixerGroup mixerGroup;
             [SerializeField, Range(0f, 1f)] internal float volume = 1f;
             [SerializeField, Range(-3f, 3f)] internal float pitch = 1f;
             [SerializeField] internal bool loop;
-            [SerializeField] private bool randomizedClip;
+            [SerializeField] internal bool randomizedClip;
 
             internal AudioSource source;
+
+            internal abstract void Play();
+
+            internal void Stop()
+            {
+                source.Stop();
+            }
+        }
+
+        // Plays 1 singular sound.
+        private class Sound :SoundBase
+        {
+            [SerializeField] internal AudioClip audioClip;
+        }
+
+        // Plays a random sound from an array of sounds.
+        private class RandomizedSound : SoundBase
+        {
+            [SerializeField] internal AudioClip[] audioClips;
         }
         #endregion
 
@@ -50,13 +66,12 @@ namespace Snowmentum
         /// <summary>
         /// Sets up all of the sounds on this audio manager with an audio source.
         /// </summary>
-        private void SetupSounds()
+        private void SetupSounds(SoundBase[] sounds)
         {
             foreach (var sound in sounds)
             {
                 sound.source = gameObject.AddComponent<AudioSource>();
 
-                sound.source.clip = sound.audioClip;
                 sound.source.outputAudioMixerGroup = sound.mixerGroup;
                 sound.source.volume = sound.volume;
                 sound.source.pitch = sound.pitch;
@@ -71,10 +86,10 @@ namespace Snowmentum
         /// <param name="soundName">The sound to play.</param>
         public void Play(string soundName)
         {
-            Sound toPlay = Array.Find(sounds, item => item.name == soundName);
+            SoundBase toPlay = Array.Find(sounds, item => item.name == soundName);
             if (toPlay != null)
             {
-                toPlay.source.Play();
+                toPlay.Play();
             }
         }
 
@@ -84,10 +99,10 @@ namespace Snowmentum
         /// <param name="soundName">The sound to stop.</param>
         public void Stop(string soundName)
         {
-            Sound toPlay = Array.Find(sounds, item => item.name == soundName);
+            SoundBase toPlay = Array.Find(sounds, item => item.name == soundName);
             if (toPlay != null)
             {
-                toPlay.source.Stop();
+                toPlay.Stop();
             }
         }
 
