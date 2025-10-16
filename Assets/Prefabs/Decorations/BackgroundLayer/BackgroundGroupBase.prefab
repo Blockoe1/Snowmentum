@@ -262,9 +262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveAngle: 180
   speedScale: 1
-  moveVector: {x: -1, y: -0.00000008742278}
   objects:
   - {fileID: 1667215268504281920}
   - {fileID: 2889484508010053483}
-  xLimit: -16
-  xPull: 0.5
+  xLimit: -8
+  moveVector: {x: -1, y: -0.00000008742278}

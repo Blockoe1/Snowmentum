@@ -15,17 +15,33 @@ using UnityEngine.Events;
 
 namespace Snowmentum
 {
-    public class GroupScroller : ObjectMoverBase
+    public class GroupScroller : MonoBehaviour
     {
+
+        [SerializeField, Tooltip("The angle that the snowball moves at, based on the approximate angle of " +
+"the hillside.  Should be based on 0 degrees being to the right.")]
+        private float moveAngle = 180;
+        [SerializeField, Tooltip("How quickly this object should move in comparison to the snowball's speed.  " +
+            "Obstacles should have this value set to 1.")]
+        protected float speedScale = 1;
         [SerializeField] private List<GroupScrolledObject> objects;
         [SerializeField] private float xLimit;
-        [SerializeField, Tooltip("The x position where the front object has torn from the left side of the screen " +
-            "and a new front object should be pulled.")] 
-        private float xPull;
+        //[SerializeField, Tooltip("The x position where the front object has torn from the left side of the screen " +
+        //    "and a new front object should be pulled.")] 
+        //private float xPull;
 
-        protected override void Awake()
+        [SerializeField, HideInInspector] protected Vector2 moveVector = Vector2.left;
+
+        /// <summary>
+        /// When the value of MoveAngle is changed, we should update our value of MoveVector automatically.
+        /// </summary>
+        private void OnValidate()
         {
-            base.Awake();
+            moveVector = MathHelpers.DegAngleToUnitVector(moveAngle);
+        }
+
+        private void Awake()
+        {
             // Order our objects by X position, from left to right
             objects = objects.OrderBy(item => item.transform.localPosition.x).ToList();
         }
@@ -47,10 +63,11 @@ namespace Snowmentum
                         (SnowballSpeed.Value * speedScale * Time.deltaTime * moveVector);
 
                     // Get modification from our movement modifiers.
-                    QueryModifiers(objects[i].transform, ref targetPos);
+                    objects[i].QueryModifiers(ref targetPos, moveVector);
 
-                    // Loops the leading object if it exceeds the xLimit
-                    if (targetPos.x < xLimit)
+                    // If the right edge of the leading object is beyond the limit of the screen, it should loop to
+                    // the back
+                    if (GetEdge(objects[i], Vector3.right, targetPos).x < xLimit)
                     {
                         GroupScrolledObject obj = objects[i];
                         obj.CallObjectLooped();
@@ -62,7 +79,9 @@ namespace Snowmentum
                         i--;
                         continue;
                     }
-                    else if (targetPos.x > xPull)
+                    // If the left edge of the leading object leaves distance between it and the limit of the screen,
+                    // we need to pull the last object to loop in front.
+                    else if (GetEdge(objects[i], Vector2.left, targetPos).x > xLimit)
                     {
                         // Pulls the last object in our array and loops it in front of the current leading object.
                         GroupScrolledObject obj = objects[objects.Count - 1];
@@ -85,7 +104,7 @@ namespace Snowmentum
                     targetPos = Vector2.zero;
 
                     // Get modification from our movement modifiers.
-                    QueryModifiers(objects[i].transform, ref targetPos);
+                    objects[i].QueryModifiers(ref targetPos, moveVector);
 
                     targetPos = GetRelativePosition(objects[i - 1], objects[i], Vector3.right);
                 }
@@ -95,12 +114,27 @@ namespace Snowmentum
         }
 
         /// <summary>
+        /// Gets the left or right edge of a given GroupScrolledObject.
+        /// </summary>
+        /// <param name="obj">The object to get the edge of.</param>
+        /// <param name="direction">The direction of the edge to get.</param>
+        /// <returns>The position of the edge in local space.</returns>
+        private static Vector2 GetEdge(GroupScrolledObject obj, Vector3 direction)
+        {
+            return GetEdge(obj, direction, obj.transform.localPosition);
+        }
+        private static Vector2 GetEdge(GroupScrolledObject obj, Vector3 direction, Vector3 targetPosition)
+        {
+            return targetPosition + (obj.Width / 2) * direction;
+        }
+
+        /// <summary>
         /// Gets this object's position such that it lines up with the end of a preceeding object.
         /// </summary>
         /// <param name="preceedingObj">The object that this object should be positioned behind.</param>
         /// <param name="thisObj">The object to move.</param>
         /// <returns>The position this object should be at.</returns>
-        private Vector2 GetRelativePosition(GroupScrolledObject preceedingObj, GroupScrolledObject thisObj, Vector3 direction)
+        private static Vector2 GetRelativePosition(GroupScrolledObject preceedingObj, GroupScrolledObject thisObj, Vector3 direction)
         {
             return preceedingObj.transform.localPosition +
                 ((preceedingObj.Width + thisObj.Width) / 2) * direction;

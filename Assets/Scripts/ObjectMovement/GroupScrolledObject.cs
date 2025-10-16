@@ -11,7 +11,7 @@ using UnityEngine.Events;
 
 namespace Snowmentum
 {
-    public class GroupScrolledObject : MonoBehaviour
+    public class GroupScrolledObject : MoveModifierController
     {
         [SerializeField] private UnityEvent OnObjectLooped;
 

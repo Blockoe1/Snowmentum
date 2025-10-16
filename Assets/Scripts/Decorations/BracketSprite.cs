@@ -8,14 +8,16 @@
 *****************************************************************************/
 using Snowmentum.Size;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Snowmentum
 {
     public class BracketSprite : MonoBehaviour
     {
         [SerializeField] private Sprite[] bracketSprites;
+        [SerializeField] private UnityEvent<int> OnNewSprite;
 
-        private int currentBracket;
+        private int currentIndex;
         #region Component References    
         [Header("Components")]
         [SerializeReference] protected SpriteRenderer rend;
@@ -35,13 +37,21 @@ namespace Snowmentum
         /// </summary>
         public void UpdateSprite()
         {
-            // Only update sprites if we're in a new bracket.
-            if (SizeBracket.Bracket != currentBracket)
+           
+            int index = Mathf.Clamp(SizeBracket.Bracket - 1, 0, bracketSprites.Length - 1);
+            // Back up the index to find the first non-null sprite.  That is the sprite for this current bracket.
+            while (bracketSprites[index] == null && index > 0)
             {
-                currentBracket = SizeBracket.Bracket;
-                int index = Mathf.Clamp(SizeBracket.Bracket - 1, 0, bracketSprites.Length - 1);
+                index--;
+            }
+            // Only update sprites if we're getting a new sprite index.
+            if (index != currentIndex)
+            {
+                currentIndex = index;
                 rend.sprite = bracketSprites[index];
                 Debug.Log("Updated Sprite");
+                // Broadcast out that a new sprite is being used, but convert it back to it's relevant bracket.
+                OnNewSprite?.Invoke(currentIndex + 1);
             }
             //// Subtract 1 to convert the bracket to an index.
             //if (hasTransitioned)

@@ -16,8 +16,6 @@ namespace Snowmentum
     {
         [SerializeField] private bool scaleX;
         [SerializeField] private bool scaleY;
-        [SerializeField, Tooltip("If set to true, then the object will also be scaled based on the bracket.")] 
-        private bool scaleTransform;
         [SerializeField, Tooltip("The base bracket that this background should be scaled based on.")] 
         private int baseBracket = 1;
         private Vector2 baseSize;
@@ -34,6 +32,19 @@ namespace Snowmentum
         private void Reset()
         {
             rend = GetComponent<SpriteRenderer>();
+        }
+        #endregion
+
+        #region Properties
+        public int BaseBracket
+        {
+            get { return baseBracket; }
+            set 
+            { 
+                baseBracket = value;
+                // Need to immediately update the tiling of the object when baseBracket changes.
+                UpdateTiling(SizeBracket.Bracket);
+            }
         }
         #endregion
 
@@ -71,21 +82,6 @@ namespace Snowmentum
                 size.y = baseSize.y * minSize;
             }
             rend.size = size;
-
-            // Update the scale of the transform.
-            if (scaleTransform)
-            {
-                transform.localScale = baseScale / minSize;
-            }
-        }
-
-        /// <summary>
-        /// Increases/decreases the baseBracket of this object.
-        /// </summary>
-        /// <param name="toAdd"></param>
-        public void ChangeBracket(int toAdd)
-        {
-            baseBracket += toAdd;
         }
     }
 }

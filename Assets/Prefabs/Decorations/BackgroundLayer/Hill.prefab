@@ -106,7 +106,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleX: 1
   scaleY: 1
-  scaleTransform: 0
   baseBracket: 1
   rend: {fileID: 4998465776450226358}
 --- !u!114 &3742536362452046030
@@ -247,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: xLimit
-      value: -20
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[0]'

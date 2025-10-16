@@ -331,6 +331,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3614291449804588202, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: scalePerspectiveY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Name
       value: Foreground
@@ -360,9 +364,21 @@ PrefabInstance:
       value: -223718351
       objectReference: {fileID: 0}
     - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: bracketSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[0]'
       value: 
       objectReference: {fileID: -1313201672078734433, guid: 1101e97559582ba4da61bb043b3f4480, type: 3}
+    - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: 'bracketSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: -1313201672078734433, guid: 1101e97559582ba4da61bb043b3f4480, type: 3}
+    - target: {fileID: 5497890167342106892, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: scalePerspectiveY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5870643922241915581, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Size.y
       value: 1
@@ -388,7 +404,15 @@ PrefabInstance:
       value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: bracketSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: -1313201672078734433, guid: 1101e97559582ba4da61bb043b3f4480, type: 3}
+    - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: 'bracketSprites.Array.data[1]'
       value: 
       objectReference: {fileID: -1313201672078734433, guid: 1101e97559582ba4da61bb043b3f4480, type: 3}
     - target: {fileID: 8194909462447893873, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
@@ -609,7 +633,15 @@ PrefabInstance:
       value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: bracketSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: a3ed7f560f6a0a24fbce18f640d02684, type: 3}
+    - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: 'bracketSprites.Array.data[1]'
       value: 
       objectReference: {fileID: 21300000, guid: a3ed7f560f6a0a24fbce18f640d02684, type: 3}
     - target: {fileID: 5870643922241915581, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
@@ -625,7 +657,15 @@ PrefabInstance:
       value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: bracketSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: a3ed7f560f6a0a24fbce18f640d02684, type: 3}
+    - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: 'bracketSprites.Array.data[1]'
       value: 
       objectReference: {fileID: 21300000, guid: a3ed7f560f6a0a24fbce18f640d02684, type: 3}
     - target: {fileID: 8194909462447893873, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
@@ -1799,10 +1839,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: bracketSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: 'bracketSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
     - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: speedScale
       value: 0.65
       objectReference: {fileID: 0}
+    - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: bracketSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: 'bracketSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3869,6 +3925,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 491536408977977333, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
+      propertyPath: bracketSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 491536408977977333, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
+      propertyPath: 'bracketSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 8575fb82af3fbbc4db2946012778c9bc, type: 3}
     - target: {fileID: 936929191277657786, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
       propertyPath: scaleY
       value: 1
@@ -3877,6 +3941,14 @@ PrefabInstance:
       propertyPath: scaleTransform
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3043017047969908420, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
+      propertyPath: bracketSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043017047969908420, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
+      propertyPath: 'bracketSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 8575fb82af3fbbc4db2946012778c9bc, type: 3}
     - target: {fileID: 4600210639209031017, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
       propertyPath: scaleY
       value: 1
