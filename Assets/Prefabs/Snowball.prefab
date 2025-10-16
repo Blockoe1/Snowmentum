@@ -321,24 +321,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freezeTime: 2.04
   frozenTime: 4
+  warningThreshold: 0.25
+  flashDelay: 0.15
   OnFreezeEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 231841834676547580}
         m_TargetAssemblyTypeName: Snowmentum.SnowballCollision, Assembly-CSharp
         m_MethodName: set_IsInvincible
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 8135800488676584112}
-        m_TargetAssemblyTypeName: Snowmentum.SnowballAnimations, Assembly-CSharp
-        m_MethodName: SetFrozen
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -363,10 +353,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnToggleVisualsEvent:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 8135800488676584112}
         m_TargetAssemblyTypeName: Snowmentum.SnowballAnimations, Assembly-CSharp
         m_MethodName: SetFrozen
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -375,6 +368,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnEnterWaterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitWaterEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8135800488676584112
 MonoBehaviour:
   m_ObjectHideFlags: 0
