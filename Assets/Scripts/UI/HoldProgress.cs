@@ -9,6 +9,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -21,6 +22,9 @@ namespace Snowmentum
         #endregion
 
         [SerializeField] private Image fillImage;
+        [Header("Events")]
+        [SerializeField] private UnityEvent OnBecomeVisible;
+        [SerializeField] private UnityEvent OnBecomeInvisible;
 
         private InputAction mousePosAction;
         private static event Action<bool> setVisibleEvent;
@@ -66,6 +70,11 @@ namespace Snowmentum
             if (isVisible)
             {
                 StartCoroutine(ToCursorRoutine());
+                OnBecomeVisible?.Invoke();
+            }
+            else
+            {
+                OnBecomeInvisible?.Invoke();
             }
         }
 
