@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 5849079277256418136}
   - component: {fileID: 5449543673334093616}
   - component: {fileID: 2568770032438607038}
+  - component: {fileID: 3125016369631847124}
   m_Layer: 0
   m_Name: Snowball
   m_TagString: Player
@@ -65,6 +66,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -86,6 +89,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -416551729
   m_SortingLayer: 1
   m_SortingOrder: 0
@@ -241,8 +245,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 3125016369631847124}
+        m_TargetAssemblyTypeName: Snowmentum.AudioRelay, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 5
         m_Arguments:
@@ -435,3 +439,16 @@ MonoBehaviour:
   particleToSpawn: {fileID: 8681952790730721862, guid: 7c2e2e8b35d1f684b88ce74eab27c244, type: 3}
   baseParticles: 3
   particlesPerSize: 30
+--- !u!114 &3125016369631847124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182634060681000022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c429e63662fa26a4d86e16eb4557fcf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.AudioRelay
+  soundName: 
