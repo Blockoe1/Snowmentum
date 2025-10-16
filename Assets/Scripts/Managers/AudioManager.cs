@@ -17,6 +17,8 @@ namespace Snowmentum
         [SerializeField] private Sound[] sounds;
         [SerializeField] private RandomizedSound[] randomizedSounds;
 
+        private static bool amExists;
+
         #region Nested
         [System.Serializable]
         private abstract class SoundBase
@@ -75,12 +77,27 @@ namespace Snowmentum
 
         private void Awake()
         {
+
+            // If an AudioManager already exists, then we should destroy this AudioManager and prevent any setup.
+            if (amExists)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            else
+            {
+                // Make the AudioManager DontDestroyOnLoad so that sounds can persist across scenes.
+                DontDestroyOnLoad(gameObject);
+                amExists = true;
+            }
+
             SetupSounds(sounds);
             SetupSounds(randomizedSounds);
 
             AudioRelay.RelayPlayEvent = Play;
             AudioRelay.RelayStopEvent = Stop;
             AudioRelay.RelayStopAllEvent = StopAll;
+                
         }
 
         private void OnDestroy()
@@ -88,6 +105,7 @@ namespace Snowmentum
             AudioRelay.RelayPlayEvent = null;
             AudioRelay.RelayStopEvent = null;
             AudioRelay.RelayStopAllEvent = null;
+            amExists = false;
         }
 
         /// <summary>
