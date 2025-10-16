@@ -1310,6 +1310,94 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &586305771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 586305773}
+  - component: {fileID: 586305772}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &586305772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586305771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e91c7e5eb0c9b49a756a7620554394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Test
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    audioClip: {fileID: 8300000, guid: 528ea311f0fed9a4ebe11c6aebf06654, type: 3}
+  - name: Snowroll
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    audioClip: {fileID: 8300000, guid: 1f737d51eb9bbe941a1f70b982fcde4f, type: 3}
+  - name: Snowball Destruction
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: fbabfe2dad6428b44afe5f5e9ba6318b, type: 3}
+  - name: Obstacle Destruction
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 587b96989afd3cf4cb97b8eaf63c38c9, type: 3}
+  - name: Thawing
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: b960631ec531d4e4c9426b36b4044eb3, type: 3}
+  - name: Freezing Over
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 15738e71089db2a4b9a4b8565f8ffb54, type: 3}
+  - name: Snow Packing
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 2365e29588d674f439153560029bd18e, type: 3}
+  randomizedSounds: []
+--- !u!4 &586305773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586305771}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &589401477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2814,7 +2902,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.9990001
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -3464,6 +3552,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1671779631}
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -3658,6 +3750,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
   m_PrefabInstance: {fileID: 1671779625}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1671779631 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3125016369631847124, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+  m_PrefabInstance: {fileID: 1671779625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671779629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c429e63662fa26a4d86e16eb4557fcf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.AudioRelay
 --- !u!1 &1713764592
 GameObject:
   m_ObjectHideFlags: 0
@@ -4513,3 +4616,4 @@ SceneRoots:
   - {fileID: 1535420266}
   - {fileID: 1287089184}
   - {fileID: 800908754}
+  - {fileID: 586305773}
