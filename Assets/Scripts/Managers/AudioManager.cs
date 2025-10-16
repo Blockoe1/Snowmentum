@@ -39,21 +39,45 @@ namespace Snowmentum
         }
 
         // Plays 1 singular sound.
+        [System.Serializable]
         private class Sound :SoundBase
         {
+            [Header("Clip")]
             [SerializeField] internal AudioClip audioClip;
+
+            /// <summary>
+            /// Plays the set audio clip of this sound.
+            /// </summary>
+            internal override void Play()
+            {
+                source.clip = audioClip;
+                source.Play();
+            }
         }
 
         // Plays a random sound from an array of sounds.
+        [System.Serializable]
         private class RandomizedSound : SoundBase
         {
+            [Header("Clip")]
             [SerializeField] internal AudioClip[] audioClips;
+
+            /// <summary>
+            /// Gets a random audio clip from the array and plays it.
+            /// </summary>
+            internal override void Play()
+            {
+                AudioClip clip = audioClips[UnityEngine.Random.Range(0, audioClips.Length - 1)];
+                source.clip = clip;
+                source.Play();
+            }
         }
         #endregion
 
         private void Awake()
         {
-            SetupSounds();
+            SetupSounds(sounds);
+            SetupSounds(randomizedSounds);
 
             AudioRelay.RelayPlayEvent += Play;
         }
@@ -94,15 +118,37 @@ namespace Snowmentum
         }
 
         /// <summary>
+        /// Plays a given randomized sound.
+        /// </summary>
+        /// <param name="soundName">The sound to play.</param>
+        public void PlayRandom(string soundName)
+        {
+            SoundBase toPlay = Array.Find(randomizedSounds, item => item.name == soundName);
+            if (toPlay != null)
+            {
+                toPlay.Play();
+            }
+        }
+
+        /// <summary>
         /// Stops a given sound.
         /// </summary>
         /// <param name="soundName">The sound to stop.</param>
         public void Stop(string soundName)
         {
-            SoundBase toPlay = Array.Find(sounds, item => item.name == soundName);
-            if (toPlay != null)
+            // Check both normal and randomized sounds.
+            SoundBase toStop = Array.Find(sounds, item => item.name == soundName);
+            if (toStop != null)
             {
-                toPlay.Stop();
+                toStop.Stop();
+                return;
+            }
+
+            toStop = Array.Find(randomizedSounds, item => item.name == soundName);
+            if (toStop != null)
+            {
+                toStop.Stop();
+                return;
             }
         }
 
