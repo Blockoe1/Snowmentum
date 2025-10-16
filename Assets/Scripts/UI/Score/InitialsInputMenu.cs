@@ -24,6 +24,7 @@ namespace Snowmentum.UI
         private float inputThreshold = 7500;
         [SerializeField, Tooltip("The amount of delay that should be waited between each time we detect input.")] 
         private float inputDelay;
+        [SerializeField] private UnityEvent OnScroll;
         [SerializeField] private UnityEvent OnSubmitInitials;
 
         private HighScore targetHS;
@@ -112,6 +113,8 @@ namespace Snowmentum.UI
                 // Horizontal inputs should switch which char selector is selected.
                 SelectedIndex += Math.Sign(totalDelta.x);
 
+                OnScroll?.Invoke();
+
                 StartCoroutine(InputDelay(inputDelay));
 
                 // Reset delta on input.
@@ -121,6 +124,8 @@ namespace Snowmentum.UI
             {
                 // Vertical inputs should increment/decrement the char selector.
                 components[selectedIndex].OnVerticalInput(Math.Sign(delta.y));
+
+                OnScroll?.Invoke();
 
                 StartCoroutine(InputDelay(inputDelay));
 
