@@ -50,9 +50,9 @@ MonoBehaviour:
   moveAngle: 180
   speedScale: 0.5
   moveVector: {x: -1, y: -0.00000008742278}
-  sprites:
-  - {fileID: 6123046992018041511}
-  - {fileID: 6304729057012445204}
+  objects:
+  - {fileID: 3286015082058224979}
+  - {fileID: 3063067763622277252}
   xLimit: -16
 --- !u!1 &2145651819405586371
 GameObject:
@@ -64,6 +64,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4414967488215970472}
   - component: {fileID: 6123046992018041511}
+  - component: {fileID: 3286015082058224979}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -106,6 +107,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -127,6 +130,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1590732877
   m_SortingLayer: -1
   m_SortingOrder: -10
@@ -141,6 +145,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3286015082058224979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145651819405586371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ad8fe69cb5ce04894bc0965c156820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.GroupScrolledObject
+  OnObjectLooped:
+    m_PersistentCalls:
+      m_Calls: []
+  rend: {fileID: 6123046992018041511}
 --- !u!1 &6016420644823015878
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2706706550953764355}
   - component: {fileID: 6304729057012445204}
+  - component: {fileID: 3063067763622277252}
   m_Layer: 0
   m_Name: Background (1)
   m_TagString: Untagged
@@ -193,6 +214,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -214,6 +237,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1590732877
   m_SortingLayer: -1
   m_SortingOrder: -10
@@ -228,6 +252,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3063067763622277252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6016420644823015878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ad8fe69cb5ce04894bc0965c156820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.GroupScrolledObject
+  OnObjectLooped:
+    m_PersistentCalls:
+      m_Calls: []
+  rend: {fileID: 6304729057012445204}
 --- !u!1 &6750851404240317497
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +320,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -301,6 +343,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1590732877
   m_SortingLayer: -1
   m_SortingOrder: -11

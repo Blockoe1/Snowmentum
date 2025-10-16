@@ -78,5 +78,14 @@ namespace Snowmentum
                 transform.localScale = baseScale / minSize;
             }
         }
+
+        /// <summary>
+        /// Increases/decreases the baseBracket of this object.
+        /// </summary>
+        /// <param name="toAdd"></param>
+        public void ChangeBracket(int toAdd)
+        {
+            baseBracket += toAdd;
+        }
     }
 }

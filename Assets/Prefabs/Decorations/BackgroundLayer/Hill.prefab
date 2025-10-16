@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1863082398446775942}
   - component: {fileID: 6694020832974436280}
   - component: {fileID: 1249726107616950423}
+  - component: {fileID: 7326179435258427539}
   m_Layer: 0
   m_Name: HillBit1
   m_TagString: Untagged
@@ -54,6 +55,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -75,6 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1590732877
   m_SortingLayer: -1
   m_SortingOrder: 10
@@ -103,7 +107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleX: 1
   scaleY: 1
-  scale: 0
+  scaleTransform: 0
+  baseBracket: 1
   rend: {fileID: 1863082398446775942}
 --- !u!114 &1249726107616950423
 MonoBehaviour:
@@ -117,6 +122,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d658d48c203d248966764b103ea217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7326179435258427539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772438337200064735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ad8fe69cb5ce04894bc0965c156820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.GroupScrolledObject
+  OnObjectLooped:
+    m_PersistentCalls:
+      m_Calls: []
+  rend: {fileID: 1863082398446775942}
 --- !u!1 &2361302230630734673
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +192,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -192,6 +215,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1590732877
   m_SortingLayer: -1
   m_SortingOrder: 9
@@ -220,7 +244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleX: 1
   scaleY: 1
-  scale: 1
+  scaleTransform: 0
+  baseBracket: 1
   rend: {fileID: 5308926393679240602}
 --- !u!114 &1933867660492043633
 MonoBehaviour:
@@ -285,9 +310,9 @@ MonoBehaviour:
   moveAngle: 180
   speedScale: 1
   moveVector: {x: -1, y: -0.00000008742278}
-  sprites:
-  - {fileID: 1863082398446775942}
-  - {fileID: 5405857437657256747}
+  objects:
+  - {fileID: 7326179435258427539}
+  - {fileID: 3380151336640366625}
   xLimit: -20
 --- !u!114 &4847504462555030424
 MonoBehaviour:
@@ -318,6 +343,7 @@ GameObject:
   - component: {fileID: 5405857437657256747}
   - component: {fileID: 8620182358874821506}
   - component: {fileID: 3325458938079611392}
+  - component: {fileID: 3380151336640366625}
   m_Layer: 0
   m_Name: HillBit2
   m_TagString: Untagged
@@ -360,6 +386,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -381,6 +409,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1590732877
   m_SortingLayer: -1
   m_SortingOrder: 10
@@ -409,7 +438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleX: 1
   scaleY: 1
-  scale: 0
+  scaleTransform: 0
+  baseBracket: 1
   rend: {fileID: 5405857437657256747}
 --- !u!114 &3325458938079611392
 MonoBehaviour:
@@ -423,3 +453,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d658d48c203d248966764b103ea217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3380151336640366625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4613843077252215240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45ad8fe69cb5ce04894bc0965c156820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.GroupScrolledObject
+  OnObjectLooped:
+    m_PersistentCalls:
+      m_Calls: []
+  rend: {fileID: 5405857437657256747}

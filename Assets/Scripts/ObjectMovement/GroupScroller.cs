@@ -17,14 +17,14 @@ namespace Snowmentum
 {
     public class GroupScroller : ObjectMoverBase
     {
-        [SerializeField] private List<SpriteRenderer> sprites;
+        [SerializeField] private List<GroupScrolledObject> objects;
         [SerializeField] private float xLimit;
 
         protected override void Awake()
         {
             base.Awake();
             // Order our objects by X position, from left to right
-            sprites = sprites.OrderBy(item => item.transform.localPosition.x).ToList();
+            objects = objects.OrderBy(item => item.transform.localPosition.x).ToList();
         }
 
         /// <summary>
@@ -32,28 +32,29 @@ namespace Snowmentum
         /// </summary>
         private void LateUpdate()
         {
-            for (int i = 0; i < sprites.Count; i++)
+            for (int i = 0; i < objects.Count; i++)
             {
 
-                if (sprites[i] == null) { continue; }
+                if (objects[i] == null) { continue; }
                 Vector2 targetPos;
                 if (i == 0)
                 {
                     // Move the leading object up normally.
-                    targetPos = (Vector2)sprites[i].transform.localPosition +
+                    targetPos = (Vector2)objects[i].transform.localPosition +
                         (SnowballSpeed.Value * speedScale * Time.deltaTime * moveVector);
 
                     // Get modification from our movement modifiers.
-                    QueryModifiers(sprites[i].transform, ref targetPos);
+                    QueryModifiers(objects[i].transform, ref targetPos);
 
                     // Loops the leading object if it exceeds the xLimit
                     if (targetPos.x < xLimit)
                     {
-                        SpriteRenderer spr = sprites[i];
+                        GroupScrolledObject obj = objects[i];
+                        obj.CallObjectLooped();
                         //targetPos = targetPos + ((loopLength) * Math.Sign(targetPos.x) * moveVector);
                         // Moves this object to the end of the objects list.
-                        sprites.RemoveAt(i);
-                        sprites.Add(spr);
+                        objects.RemoveAt(i);
+                        objects.Add(obj);
                         // Decrement i if we loop an object so we dont skip any objects.
                         i--;
                         continue;
@@ -65,35 +66,35 @@ namespace Snowmentum
                     targetPos = Vector2.zero;
 
                     // Get modification from our movement modifiers.
-                    QueryModifiers(sprites[i].transform, ref targetPos);
+                    QueryModifiers(objects[i].transform, ref targetPos);
 
-                    targetPos = GetPreceedingPosition(sprites[i - 1], sprites[i]);
+                    targetPos = GetPreceedingPosition(objects[i - 1], objects[i]);
                 }
 
-                sprites[i].transform.localPosition = targetPos;
+                objects[i].transform.localPosition = targetPos;
             }
         }
 
         /// <summary>
         /// Gets this object's position such that it lines up with the end of a preceeding object.
         /// </summary>
-        /// <param name="preceedingSprite">The object that this object should be positioned behind.</param>
-        /// <param name="thisSprite">The object to move.</param>
+        /// <param name="preceedingObj">The object that this object should be positioned behind.</param>
+        /// <param name="thisObj">The object to move.</param>
         /// <returns>The position this object should be at.</returns>
-        private Vector2 GetPreceedingPosition(SpriteRenderer preceedingSprite, SpriteRenderer thisSprite)
+        private Vector2 GetPreceedingPosition(GroupScrolledObject preceedingObj, GroupScrolledObject thisObj)
         {
-            return preceedingSprite.transform.localPosition +
-                ((GetObjectWidth(preceedingSprite) + GetObjectWidth(thisSprite)) / 2) * Vector3.right;
+            return preceedingObj.transform.localPosition +
+                ((preceedingObj.Width + thisObj.Width) / 2) * Vector3.right;
         }
 
-        /// <summary>
-        /// Gets the width of a moved sprite based on the sprite's width and the object's scale.
-        /// </summary>
-        /// <param name="sprite">The sprite to get the width of.</param>
-        /// <returns>The width of the sprite.</returns>
-        private float GetObjectWidth(SpriteRenderer sprite)
-        {
-            return sprite.size.x * sprite.transform.localScale.x;
-        }
+        ///// <summary>
+        ///// Gets the width of a moved sprite based on the sprite's width and the object's scale.
+        ///// </summary>
+        ///// <param name="sprite">The sprite to get the width of.</param>
+        ///// <returns>The width of the sprite.</returns>
+        //private float GetObjectWidth(SpriteRenderer sprite)
+        //{
+        //    return sprite.size.x * sprite.transform.localScale.x;
+        //}
     }
 }
