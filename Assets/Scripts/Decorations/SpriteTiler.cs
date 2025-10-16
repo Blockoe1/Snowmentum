@@ -17,7 +17,9 @@ namespace Snowmentum
         [SerializeField] private bool scaleX;
         [SerializeField] private bool scaleY;
         [SerializeField, Tooltip("If set to true, then the object will also be scaled based on the bracket.")] 
-        private bool scale;
+        private bool scaleTransform;
+        [SerializeField, Tooltip("The base bracket that this background should be scaled based on.")] 
+        private int baseBracket = 1;
         private Vector2 baseSize;
         private Vector3 baseScale;
 
@@ -56,7 +58,7 @@ namespace Snowmentum
         private void UpdateTiling(int bracket)
         {
             // The width and height of this sprite renderer should be set to the min size of the bracket.
-            float minSize = SizeBracket.GetMinSize(bracket);
+            float minSize = SizeBracket.GetMinSize(bracket - (baseBracket - 1));
 
             // Update the size of the sprite renderer.
             Vector2 size = rend.size;
@@ -71,7 +73,7 @@ namespace Snowmentum
             rend.size = size;
 
             // Update the scale of the transform.
-            if (scale)
+            if (scaleTransform)
             {
                 transform.localScale = baseScale / minSize;
             }
