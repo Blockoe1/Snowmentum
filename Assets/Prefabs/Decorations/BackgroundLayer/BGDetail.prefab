@@ -200,6 +200,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9127174723714643231, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3833454929022926759}
     - targetCorrespondingSourceObject: {fileID: 8547768223595833983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4647503536203185848}
@@ -238,7 +241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleX: 1
   scaleY: 0
-  scaleTransform: 0
   baseBracket: 1
   rend: {fileID: 5870643922241915581}
 --- !u!114 &7441472796543878854
@@ -255,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.BracketSprite
   bracketSprites:
   - {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+  transitionSprites: []
   OnNewSprite:
     m_PersistentCalls:
       m_Calls:
@@ -283,6 +286,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   rend: {fileID: 5870643922241915581}
+  transitioner: {fileID: 3833454929022926759}
 --- !u!114 &5497890167342106892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,7 +303,6 @@ MonoBehaviour:
   scalePerspectiveX: 1
   scalePerspectiveY: 1
   scaleOnSpawn: 0
-  debugDisable: 0
 --- !u!1 &3767570842865473107 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8547768223595833983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
@@ -319,7 +322,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleX: 1
   scaleY: 0
-  scaleTransform: 0
   baseBracket: 1
   rend: {fileID: 5448865305363378137}
 --- !u!114 &5453245859179458551
@@ -336,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.BracketSprite
   bracketSprites:
   - {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+  transitionSprites: []
   OnNewSprite:
     m_PersistentCalls:
       m_Calls:
@@ -364,6 +367,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   rend: {fileID: 5448865305363378137}
+  transitioner: {fileID: 3833454929022926759}
 --- !u!114 &3614291449804588202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +384,23 @@ MonoBehaviour:
   scalePerspectiveX: 1
   scalePerspectiveY: 1
   scaleOnSpawn: 0
-  debugDisable: 0
+--- !u!1 &4358606327849666867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9127174723714643231, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+  m_PrefabInstance: {fileID: 4816279092352564268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3833454929022926759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358606327849666867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dfb2276c7556fb45a163f182191da99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.BracketSpriteTransitioner
 --- !u!212 &5448865305363378137 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}

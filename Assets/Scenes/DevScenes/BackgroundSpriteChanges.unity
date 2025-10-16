@@ -375,6 +375,18 @@ PrefabInstance:
       propertyPath: 'bracketSprites.Array.data[1]'
       value: 
       objectReference: {fileID: -1313201672078734433, guid: 1101e97559582ba4da61bb043b3f4480, type: 3}
+    - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: transitionSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: 'transitionSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: 'transitionSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
     - target: {fileID: 5497890167342106892, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: scalePerspectiveY
       value: 0
@@ -415,6 +427,18 @@ PrefabInstance:
       propertyPath: 'bracketSprites.Array.data[1]'
       value: 
       objectReference: {fileID: -1313201672078734433, guid: 1101e97559582ba4da61bb043b3f4480, type: 3}
+    - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: transitionSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: 'transitionSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: 'transitionSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
     - target: {fileID: 8194909462447893873, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[0]'
       value: 
