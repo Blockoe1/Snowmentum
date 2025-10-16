@@ -26,7 +26,6 @@ namespace Snowmentum
             [SerializeField, Range(0f, 1f)] internal float volume = 1f;
             [SerializeField, Range(-3f, 3f)] internal float pitch = 1f;
             [SerializeField] internal bool loop;
-            [SerializeField] internal bool randomizedClip;
 
             internal AudioSource source;
 
