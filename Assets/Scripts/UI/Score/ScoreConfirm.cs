@@ -9,6 +9,7 @@
 using Snowmentum.UI;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Snowmentum
@@ -17,6 +18,10 @@ namespace Snowmentum
     {
         [SerializeField] private Image fillImage;
         [SerializeField] private float confirmTime;
+
+        [Header("Events")]
+        [SerializeField] private UnityEvent OnSelected;
+        [SerializeField] private UnityEvent OnDeselected;
 
         private InitialsInputMenu parentMenu;
         private Coroutine selectedCoroutine;
@@ -41,6 +46,8 @@ namespace Snowmentum
                 selectedCoroutine = null;
             }
             selectedCoroutine = StartCoroutine(SubmitRoutine(confirmTime));
+
+            OnSelected?.Invoke();
         }
 
         /// <summary>
@@ -55,6 +62,8 @@ namespace Snowmentum
             }
 
             fillImage.fillAmount = 0;
+
+            OnDeselected?.Invoke();
         }
 
         /// <summary>

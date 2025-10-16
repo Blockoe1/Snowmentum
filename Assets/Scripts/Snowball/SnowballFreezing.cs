@@ -29,6 +29,8 @@ namespace Snowmentum
         [Header("Events")]
         [SerializeField] private UnityEvent OnFreezeEvent;
         [SerializeField] private UnityEvent OnThawEvent;
+        [SerializeField] private UnityEvent OnEnterWaterEvent;
+        [SerializeField] private UnityEvent OnExitWaterEvent;
 
         private static float freezeAmount;
         public static event Action<float> OnFreezeAmountChanged;
@@ -103,6 +105,7 @@ namespace Snowmentum
             if (collision.CompareTag(WATER_TAG))
             {
                 isInWater = true;
+                OnEnterWaterEvent?.Invoke();
                 // Continually increases the freezeAmount by freezeRate while the snowball is in water.
                 StartCoroutine(FreezeChangeRoutine(GetFreezeRate, GetIsInWater));
             }
@@ -116,6 +119,7 @@ namespace Snowmentum
         {
             if (collision.CompareTag(WATER_TAG))
             {
+                OnExitWaterEvent?.Invoke();
                 isInWater = false;
             }
         }
