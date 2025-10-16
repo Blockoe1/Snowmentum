@@ -1,10 +1,10 @@
 /*****************************************************************************
 // File Name : BracketSpriite.cs
-// Author :
-// Creation Date : 
-// Last Modified : 
+// Author : Brandon Koederitz
+// Creation Date : 10/16/2025
+// Last Modified : 10/16/2025
 //
-// Brief Description : 
+// Brief Description : Updates the sprite on this object's sprite renderer based on the current bracket.
 *****************************************************************************/
 using Snowmentum.Size;
 using UnityEngine;
@@ -38,7 +38,7 @@ namespace Snowmentum
         /// </summary>
         /// <param name="bracket"></param>
         /// <returns></returns>
-        protected int GetSpriteIndex(int bracket)
+        protected virtual int GetSpriteIndex(int bracket)
         {
             int index = Mathf.Clamp(bracket - 1, 0, bracketSprites.Length - 1);
             // Back up the index to find the first non-null sprite.  That is the sprite for this current bracket.
