@@ -78,12 +78,16 @@ namespace Snowmentum
             SetupSounds(sounds);
             SetupSounds(randomizedSounds);
 
-            AudioRelay.RelayPlayEvent += Play;
+            AudioRelay.RelayPlayEvent = Play;
+            AudioRelay.RelayStopEvent = Stop;
+            AudioRelay.RelayStopAllEvent = StopAll;
         }
 
         private void OnDestroy()
         {
-            AudioRelay.RelayPlayEvent -= Play;
+            AudioRelay.RelayPlayEvent = null;
+            AudioRelay.RelayStopEvent = null;
+            AudioRelay.RelayStopAllEvent = null;
         }
 
         /// <summary>
