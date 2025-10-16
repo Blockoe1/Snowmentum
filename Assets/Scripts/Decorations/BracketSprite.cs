@@ -14,10 +14,8 @@ namespace Snowmentum
     public class BracketSprite : MonoBehaviour
     {
         [SerializeField] private Sprite[] bracketSprites;
-        [SerializeField] private Sprite[] transitionSprites;
 
-        private static bool hasTransitioned = true;
-
+        private int currentBracket;
         #region Component References    
         [Header("Components")]
         [SerializeReference] protected SpriteRenderer rend;
@@ -37,16 +35,24 @@ namespace Snowmentum
         /// </summary>
         public void UpdateSprite()
         {
-            // Subtract 1 to convert the bracket to an index.
-            if (hasTransitioned)
+            // Only update sprites if we're in a new bracket.
+            if (SizeBracket.Bracket != currentBracket)
             {
-                rend.sprite = bracketSprites[SizeBracket.Bracket - 1];
+                currentBracket = SizeBracket.Bracket;
+                int index = Mathf.Clamp(SizeBracket.Bracket - 1, 0, bracketSprites.Length - 1);
+                rend.sprite = bracketSprites[index];
+                Debug.Log("Updated Sprite");
             }
-            else
-            {
-                rend.sprite = transitionSprites[SizeBracket.Bracket - 1];
-                hasTransitioned = true;
-            }
+            //// Subtract 1 to convert the bracket to an index.
+            //if (hasTransitioned)
+            //{
+                
+            //}
+            //else
+            //{
+            //    rend.sprite = transitionSprites[SizeBracket.Bracket - 1];
+            //    hasTransitioned = true;
+            //}
         }
     }
 }

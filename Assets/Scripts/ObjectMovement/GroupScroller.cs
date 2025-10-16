@@ -68,7 +68,19 @@ namespace Snowmentum
                     // Get modification from our movement modifiers.
                     QueryModifiers(objects[i].transform, ref targetPos);
 
-                    targetPos = GetPreceedingPosition(objects[i - 1], objects[i]);
+                    targetPos = GetRelativePosition(objects[i - 1], objects[i], Vector3.right);
+
+                    //// If this is the last object in the group, we need to check if it reversed too far
+                    //if (i == objects.Count - 1 && targetPos.x > -xLimit)
+                    //{
+                    //    // The object should set it's target position to the left of the front object.
+                    //    targetPos = GetRelativePosition(objects[0], objects[i], Vector3.left);
+
+                    //    GroupScrolledObject obj = objects[i];
+                    //    obj.CallObjectLooped();
+                    //    objects.RemoveAt(i);
+                    //    objects.Insert(0, obj);
+                    //}
                 }
 
                 objects[i].transform.localPosition = targetPos;
@@ -81,10 +93,10 @@ namespace Snowmentum
         /// <param name="preceedingObj">The object that this object should be positioned behind.</param>
         /// <param name="thisObj">The object to move.</param>
         /// <returns>The position this object should be at.</returns>
-        private Vector2 GetPreceedingPosition(GroupScrolledObject preceedingObj, GroupScrolledObject thisObj)
+        private Vector2 GetRelativePosition(GroupScrolledObject preceedingObj, GroupScrolledObject thisObj, Vector3 direction)
         {
             return preceedingObj.transform.localPosition +
-                ((preceedingObj.Width + thisObj.Width) / 2) * Vector3.right;
+                ((preceedingObj.Width + thisObj.Width) / 2) * direction;
         }
 
         ///// <summary>
