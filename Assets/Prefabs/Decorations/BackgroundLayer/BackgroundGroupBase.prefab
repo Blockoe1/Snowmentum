@@ -267,3 +267,4 @@ MonoBehaviour:
   - {fileID: 1667215268504281920}
   - {fileID: 2889484508010053483}
   xLimit: -16
+  xPull: 0.5

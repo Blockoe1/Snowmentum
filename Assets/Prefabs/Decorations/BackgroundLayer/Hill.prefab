@@ -242,6 +242,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: xPull
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: xLimit
       value: -20
       objectReference: {fileID: 0}

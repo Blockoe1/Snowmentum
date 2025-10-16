@@ -19,6 +19,9 @@ namespace Snowmentum
     {
         [SerializeField] private List<GroupScrolledObject> objects;
         [SerializeField] private float xLimit;
+        [SerializeField, Tooltip("The x position where the front object has torn from the left side of the screen " +
+            "and a new front object should be pulled.")] 
+        private float xPull;
 
         protected override void Awake()
         {
@@ -59,6 +62,22 @@ namespace Snowmentum
                         i--;
                         continue;
                     }
+                    else if (targetPos.x > xPull)
+                    {
+                        // Pulls the last object in our array and loops it in front of the current leading object.
+                        GroupScrolledObject obj = objects[objects.Count - 1];
+
+                        // Need to make sure we immediatley snap the new leading object.
+                        obj.transform.localPosition = GetRelativePosition(obj, objects[i], Vector3.left);
+
+                        obj.CallObjectLooped();
+                        objects.RemoveAt(objects.Count - 1);
+                        objects.Insert(0, obj);
+
+                        // Decrement i if we loop an object so we dont skip any objects.
+                        i--;
+                        continue;
+                    }
                 }
                 else
                 {
@@ -69,18 +88,6 @@ namespace Snowmentum
                     QueryModifiers(objects[i].transform, ref targetPos);
 
                     targetPos = GetRelativePosition(objects[i - 1], objects[i], Vector3.right);
-
-                    //// If this is the last object in the group, we need to check if it reversed too far
-                    //if (i == objects.Count - 1 && targetPos.x > -xLimit)
-                    //{
-                    //    // The object should set it's target position to the left of the front object.
-                    //    targetPos = GetRelativePosition(objects[0], objects[i], Vector3.left);
-
-                    //    GroupScrolledObject obj = objects[i];
-                    //    obj.CallObjectLooped();
-                    //    objects.RemoveAt(i);
-                    //    objects.Insert(0, obj);
-                    //}
                 }
 
                 objects[i].transform.localPosition = targetPos;
