@@ -13,18 +13,14 @@ using UnityEngine.Events;
 
 namespace Snowmentum
 {
-    public class BracketSprite : MonoBehaviour
+    public class TransitionedBracketSprite : BracketSprite
     {
-        [SerializeField] private Sprite[] bracketSprites;
+        [Header("Transition Settings")]
         [SerializeField] private Sprite[] transitionSprites;
-        [SerializeField] private UnityEvent<int> OnNewSprite;
 
-        private int currentIndex;
         private bool usedInTransition;
 
         #region Component References    
-        [Header("Components")]
-        [SerializeReference] protected SpriteRenderer rend;
         [SerializeReference] protected BracketSpriteTransitioner transitioner;
 
         /// <summary>
@@ -33,7 +29,6 @@ namespace Snowmentum
         [ContextMenu("Get Component References")]
         private void Reset()
         {
-            rend = GetComponent<SpriteRenderer>();
             transitioner = GetComponentInParent<BracketSpriteTransitioner>();
         }
         #endregion
@@ -41,14 +36,9 @@ namespace Snowmentum
         /// <summary>
         /// Updates the sprite to reflect the current bracket.
         /// </summary>
-        public void UpdateSprite()
+        public override void UpdateSprite()
         {
-            int index = Mathf.Clamp(SizeBracket.Bracket - 1, 0, bracketSprites.Length - 1);
-            // Back up the index to find the first non-null sprite.  That is the sprite for this current bracket.
-            while (bracketSprites[index] == null && index > 0)
-            {
-                index--;
-            }
+            int index = GetSpriteIndex(SizeBracket.Bracket);
 
             // Only update sprites if we're getting a new sprite index or we were used for transitioning last
             // update.
@@ -70,7 +60,7 @@ namespace Snowmentum
                     if (CollectionHelpers.IndexInRange(transitionSprites, transitionSpriteIndex) && 
                         transitionSprites[transitionSpriteIndex] != null)
                     {
-                        rend.sprite = transitionSprites[transitionSpriteIndex];
+                        SetSprite(transitionSprites[transitionSpriteIndex], transitionSpriteIndex);
 
                         // Flip the sprite renderer on X if we're making a transition to a lower bracket.
                         rend.flipX = transitionDirection;
@@ -81,25 +71,10 @@ namespace Snowmentum
                 else
                 {
                     rend.flipX = false;
-                    rend.sprite = bracketSprites[index];
+                    SetSprite(bracketSprites[index], index);
                     usedInTransition = false;
                 }
-
-                currentIndex = index;
-                Debug.Log("Updated Sprite");
-                // Broadcast out that a new sprite is being used, but convert it back to it's relevant bracket.
-                OnNewSprite?.Invoke(currentIndex + 1);  
             }
-            //// Subtract 1 to convert the bracket to an index.
-            //if (hasTransitioned)
-            //{
-                
-            //}
-            //else
-            //{
-            //    rend.sprite = transitionSprites[SizeBracket.Bracket - 1];
-            //    hasTransitioned = true;
-            //}
         }
     }
 }
