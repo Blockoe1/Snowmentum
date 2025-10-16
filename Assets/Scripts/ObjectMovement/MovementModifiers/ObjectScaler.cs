@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Snowmentum.Size
 {
-    [RequireComponent(typeof(ObjectMoverBase))]
+    [RequireComponent(typeof(MoveModifierController))]
     public class ObjectScaler : MonoBehaviour, IMovementModifier
     {
         [SerializeField, Tooltip("The in-game size of this obstacle.  Used to determine how large this obstacle is " +
@@ -25,7 +25,6 @@ namespace Snowmentum.Size
         [SerializeField, Tooltip("When set to true, the object will scale it's position based on it's starting size" +
     " when it spawns.  This results in obstacles spawning at varied locations based on their size.")]
         private bool scaleOnSpawn;
-        [SerializeField] private bool debugDisable;
 
         private float oldSize = 1;
 
@@ -60,7 +59,6 @@ namespace Snowmentum.Size
         /// </summary>
         public Vector2 MoveUpdate(Transform movedObject, Vector2 targetPos, Vector2 moveVector)
         {
-            if (debugDisable) { return targetPos; }
             //// Scales the obstacle around a given pivot point.
             //void ScaleAround(Vector2 pivot, float oldScale, float newScale)
             //{
@@ -115,6 +113,14 @@ namespace Snowmentum.Size
         private void ScaleObject(Transform objToScale, float scale)
         {
             objToScale.localScale = Vector3.one * scale;
+        }
+
+        /// <summary>
+        /// Sets this object's size to the minimum size of a given bracket.
+        /// </summary>
+        public void SetToMinSize(int bracket)
+        {
+            Size = SizeBracket.GetMinSize(bracket);
         }
     }
 }

@@ -95,6 +95,7 @@ namespace Snowmentum
             SetupSounds(randomizedSounds);
 
             AudioRelay.RelayPlayEvent = Play;
+            AudioRelay.RelayPlayRandomizedEvent = PlayRandom;
             AudioRelay.RelayStopEvent = Stop;
             AudioRelay.RelayStopAllEvent = StopAll;
                 
@@ -109,6 +110,7 @@ namespace Snowmentum
             {
                 instance = null;
                 AudioRelay.RelayPlayEvent = null;
+                AudioRelay.RelayPlayRandomizedEvent = null;
                 AudioRelay.RelayStopEvent = null;
                 AudioRelay.RelayStopAllEvent = null;
             }
