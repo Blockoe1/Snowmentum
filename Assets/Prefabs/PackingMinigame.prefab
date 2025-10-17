@@ -127,11 +127,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  maxSpeedGain: 1
+  maxSpeedGain: 1.5
   throwDelay: 0.5
-  minThrowForce: 2500
+  minThrowForce: 10000
   throwSampleTime: 0.1
-  throwStrengthScaler: 5000
+  throwStrengthScaler: 300000
   startingSpeedScaler: 15
   OnMinigameThrow:
     m_PersistentCalls:
@@ -241,6 +241,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -262,6 +264,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -223718351
   m_SortingLayer: 2
   m_SortingOrder: 1

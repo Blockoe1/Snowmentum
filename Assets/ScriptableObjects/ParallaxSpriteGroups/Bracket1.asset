@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7330efa141743204d9fd5955f7e3dc28, type: 3}
+  m_Name: Bracket1
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.SpriteGroup
+  sprites:
+  - {fileID: 21300000, guid: 9f829c16a9df9c74a8986c56c8dbf9f4, type: 3}
+  - {fileID: 21300000, guid: dc7967e9346517d43881e3142d93d0f9, type: 3}
+  - {fileID: 21300000, guid: e663cd68042a53a4993feea803456f92, type: 3}
+  - {fileID: 21300000, guid: b42bd0ee6dbff8d41afc9c5aa5e7eea8, type: 3}

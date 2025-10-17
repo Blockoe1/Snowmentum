@@ -24,9 +24,11 @@ namespace Snowmentum.UI
         private float inputThreshold = 7500;
         [SerializeField, Tooltip("The amount of delay that should be waited between each time we detect input.")] 
         private float inputDelay;
+        [SerializeField] private UnityEvent OnScroll;
         [SerializeField] private UnityEvent OnSubmitInitials;
 
         private HighScore targetHS;
+        private Vector2 totalDelta;
         private int selectedIndex;
         private bool pauseInput;
 
@@ -89,6 +91,9 @@ namespace Snowmentum.UI
         {
             targetHS = toLoad;
             gameObject.SetActive(true);
+
+            // Reset total delta when we start modifying a high score.
+            totalDelta = Vector2.zero;
         }
 
         /// <summary>
@@ -99,19 +104,28 @@ namespace Snowmentum.UI
         private void HandleMouseInput(Vector2 delta)
         {
             if (pauseInput) { return; }
+            // Increasee our stored total delta value by the delta of this frame.
+            totalDelta += delta;
+
             // Checks if the player sufficiently moves the trackball.
-            if (Mathf.Abs(delta.x) > inputThreshold)
+            if (Mathf.Abs(totalDelta.x) > inputThreshold)
             {
                 // Horizontal inputs should switch which char selector is selected.
-                SelectedIndex += Math.Sign(delta.x);
+                SelectedIndex += Math.Sign(totalDelta.x);
+
+                OnScroll?.Invoke();
 
                 StartCoroutine(InputDelay(inputDelay));
-                Debug.Log(SelectedIndex);
+
+                // Reset delta on input.
+                totalDelta = Vector2.zero;
             }
-            else if (Mathf.Abs(delta.y) > inputThreshold)
+            else if (Mathf.Abs(totalDelta.y) > inputThreshold)
             {
                 // Vertical inputs should increment/decrement the char selector.
                 components[selectedIndex].OnVerticalInput(Math.Sign(delta.y));
+
+                OnScroll?.Invoke();
 
                 StartCoroutine(InputDelay(inputDelay));
 
@@ -120,6 +134,9 @@ namespace Snowmentum.UI
                 {
                     targetHS.initials = GetInitials();
                 }
+
+                // Reset delta on input.
+                totalDelta = Vector2.zero;
             }
         }
 

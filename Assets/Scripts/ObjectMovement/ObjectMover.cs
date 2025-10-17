@@ -11,8 +11,17 @@ using UnityEngine;
 
 namespace Snowmentum
 {
-    public class ObjectMover : ObjectMoverBase
+    public class ObjectMover : MoveModifierController
     {
+
+        [SerializeField, Tooltip("The angle that the snowball moves at, based on the approximate angle of " +
+"the hillside.  Should be based on 0 degrees being to the right.")]
+        private float moveAngle = 180;
+        [SerializeField, Tooltip("How quickly this object should move in comparison to the snowball's speed.  " +
+            "Obstacles should have this value set to 1.")]
+        protected float speedScale = 1;
+
+        [SerializeField, HideInInspector] protected Vector2 moveVector = Vector2.left;
 
         #region Component References
         [Header("Components")]
@@ -27,6 +36,14 @@ namespace Snowmentum
             myRigidbody = GetComponent<Rigidbody2D>();
         }
         #endregion
+
+        /// <summary>
+        /// When the value of MoveAngle is changed, we should update our value of MoveVector automatically.
+        /// </summary>
+        private void OnValidate()
+        {
+            moveVector = MathHelpers.DegAngleToUnitVector(moveAngle);
+        }
 
         /// <summary>
         /// Continually moves the obstacles along their given move angle.
@@ -45,7 +62,7 @@ namespace Snowmentum
                 //Debug.Log(SnowballSpeed.Value);
 
                 // Update the target pos based on overrides of movement modifiers, such as scaling with perspective.
-                QueryModifiers(transform, ref targetPos);
+                QueryModifiers(ref targetPos, moveVector);
                 myRigidbody.MovePosition(targetPos);
             }
         }
@@ -61,7 +78,7 @@ namespace Snowmentum
                     (SnowballSpeed.Value * speedScale * Time.deltaTime * moveVector);
 
                 // Get modification from our movement modifiers.
-                QueryModifiers(transform, ref targetPos);
+                QueryModifiers(ref targetPos, moveVector);
                 transform.localPosition = targetPos;
             }
         }
