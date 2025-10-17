@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Test
+  - name: Snow Ambience
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
     pitch: 1
@@ -1387,20 +1387,6 @@ MonoBehaviour:
     loop: 0
     audioClip: {fileID: 8300000, guid: 31d7a898fbd7def42bd4705ce5fb5658, type: 3}
   randomizedSounds:
-  - name: Snowfall
-    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 1
-    audioClips:
-    - {fileID: 8300000, guid: 528ea311f0fed9a4ebe11c6aebf06654, type: 3}
-  - name: Snowroll
-    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 1
-    audioClips:
-    - {fileID: 8300000, guid: 1f737d51eb9bbe941a1f70b982fcde4f, type: 3}
   - name: Snowball Destruction
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
@@ -1410,14 +1396,6 @@ MonoBehaviour:
     - {fileID: 8300000, guid: fbabfe2dad6428b44afe5f5e9ba6318b, type: 3}
     - {fileID: 8300000, guid: 77764c6f96f789940a63f3403d878fbd, type: 3}
     - {fileID: 8300000, guid: a9cad9ff54c14fe4ebaa80c91518c2c3, type: 3}
-  - name: Obstacle Destruction
-    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 0
-    audioClips:
-    - {fileID: 8300000, guid: 587b96989afd3cf4cb97b8eaf63c38c9, type: 3}
-    - {fileID: 8300000, guid: 0191bd75c9f07854dab04cc9e6576432, type: 3}
   - name: Snow Packing
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
