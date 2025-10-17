@@ -1380,6 +1380,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     audioClip: {fileID: 8300000, guid: 2365e29588d674f439153560029bd18e, type: 3}
+  - name: Throwing
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 31d7a898fbd7def42bd4705ce5fb5658, type: 3}
   randomizedSounds:
   - name: Snowfall
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
