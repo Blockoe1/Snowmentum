@@ -16,6 +16,7 @@ namespace Snowmentum
         [SerializeField] private string soundName;
 
         public static Action<string> RelayPlayEvent;
+        public static Action<string> RelayPlayRandomizedEvent;
         public static Action<string> RelayStopEvent;
         public static Action RelayStopAllEvent;
 
@@ -37,6 +38,18 @@ namespace Snowmentum
         public void Play(string soundName)
         {
             RelayPlayEvent?.Invoke(soundName);
+        }
+
+        /// <summary>
+        /// Plays a randomized sound on the audio manager via an event.
+        /// </summary>
+        public void PlayRandomized()
+        {
+            PlayRandomized(soundName);
+        }
+        public void PlayRandomized(string soundName)
+        {
+            RelayPlayRandomizedEvent?.Invoke(soundName);
         }
 
         /// <summary>
