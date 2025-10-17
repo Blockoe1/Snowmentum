@@ -226,9 +226,6 @@ namespace Snowmentum
             CurrentMinigameState = new PackingState(this);
             //StartCoroutine(TimeUpdateRoutine());
 
-            // Locks the cursor so it's invisible on screen.
-            Cursor.lockState = CursorLockMode.Locked;
-
             // Subscribe to InputManager functions so that we can update states when the player inputs.
             InputManager.OnDeltaUpdate += UpdateMouseDelta;
         }
