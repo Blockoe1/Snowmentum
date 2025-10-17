@@ -1412,18 +1412,15 @@ MonoBehaviour:
     audioClips:
     - {fileID: 8300000, guid: 587b96989afd3cf4cb97b8eaf63c38c9, type: 3}
     - {fileID: 8300000, guid: 0191bd75c9f07854dab04cc9e6576432, type: 3}
-  - name: 
-    mixerGroup: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Snow Packing
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
     loop: 0
-    audioClips: []
-  - name: 
-    mixerGroup: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
-    audioClips: []
+    audioClips:
+    - {fileID: 8300000, guid: 3fc7d423e7841a5469d6bf4dcbce6779, type: 3}
+    - {fileID: 8300000, guid: 2365e29588d674f439153560029bd18e, type: 3}
+    - {fileID: 8300000, guid: 1f2b6327d1c1b30438b70a6fa7531a93, type: 3}
 --- !u!4 &586305773
 Transform:
   m_ObjectHideFlags: 0
