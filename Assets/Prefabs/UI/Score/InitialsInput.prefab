@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -694507502243691609, guid: 0db05c47aac89a84c86a74f19c291cb7, type: 3}
+  m_Sprite: {fileID: 1129834602, guid: 0db05c47aac89a84c86a74f19c291cb7, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -694507502243691609, guid: 0db05c47aac89a84c86a74f19c291cb7, type: 3}
+  m_Sprite: {fileID: 1129834602, guid: 0db05c47aac89a84c86a74f19c291cb7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -176,13 +176,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7121508237372936662}
   - component: {fileID: 463187033949074014}
+  - component: {fileID: 8163477611130827435}
   m_Layer: 5
   m_Name: InitialsInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7121508237372936662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -225,11 +226,35 @@ MonoBehaviour:
   - {fileID: 9193476860006111434}
   - {fileID: 8400536729506993508}
   selectionIndicator: {fileID: 3277741786420177978}
-  inputThreshold: 4000
+  inputThreshold: 15000
   inputDelay: 0.25
   OnSubmitInitials:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8163477611130827435}
+        m_TargetAssemblyTypeName: Snowmentum.SceneTransitionTemp, Assembly-CSharp
+        m_MethodName: TransitionToScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TitleScene
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8163477611130827435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6110389547036698009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d4b0154df0a7e4a9722fb601e08dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8681514020490624697
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -100
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -492,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 100
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_AnchoredPosition.y

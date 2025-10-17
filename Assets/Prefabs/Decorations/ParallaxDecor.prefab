@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6835241376691633189}
   - component: {fileID: 692810113821395525}
-  - component: {fileID: 101221143855118308}
   - component: {fileID: -2056623145326186249}
   - component: {fileID: 6610569103308770938}
+  - component: {fileID: -3380308936898230814}
+  - component: {fileID: 7280929830583889497}
   m_Layer: 0
   m_Name: ParallaxDecor
   m_TagString: Untagged
@@ -55,6 +56,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -76,6 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1590732877
   m_SortingLayer: -1
   m_SortingOrder: 8
@@ -90,23 +94,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &101221143855118308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4061781790043898086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ece225e5c8a2f44a121cd7fbe59441, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: 9f829c16a9df9c74a8986c56c8dbf9f4, type: 3}
-  - {fileID: 21300000, guid: dc7967e9346517d43881e3142d93d0f9, type: 3}
-  - {fileID: 21300000, guid: e663cd68042a53a4993feea803456f92, type: 3}
-  - {fileID: 21300000, guid: b42bd0ee6dbff8d41afc9c5aa5e7eea8, type: 3}
 --- !u!114 &-2056623145326186249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,4 +126,39 @@ MonoBehaviour:
   scalePerspectiveX: 1
   scalePerspectiveY: 1
   scaleOnSpawn: 0
-  debugDisable: 0
+--- !u!114 &-3380308936898230814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061781790043898086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f7cf535b13cc4488a3bd76724012d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.KillZone
+  killZone: 16
+  OnEnterKillzone:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7280929830583889497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061781790043898086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8936261b43fbfdd4d98990c07adeb535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.RandomizedBracketSprite
+  bracketSprites: []
+  OnNewSprite:
+    m_PersistentCalls:
+      m_Calls: []
+  rend: {fileID: 692810113821395525}
+  updateOnEnable: 1
+  spriteGroups:
+  - {fileID: 11400000, guid: dd9ce7b4f0a1f8447a6cc3b8ed6da84b, type: 2}

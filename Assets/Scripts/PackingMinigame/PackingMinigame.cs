@@ -148,7 +148,7 @@ namespace Snowmentum
             private readonly float throwDelay;
             private float sampleTime;
 
-            private float maxDelta;
+            private float totalThrowForce;
 
             private bool canThrow;
             private bool isSampling;
@@ -176,28 +176,31 @@ namespace Snowmentum
             internal override void MouseUpdate(PackingMinigame minigameController, Vector2 mouseDelta)
             {
                 // First, check if the trackball is moving in the desired direction.
-                if (canThrow && mouseDelta.x > requiredThrowForce)
+                if (canThrow)
                 {
-                    // Once we've started sampling, play the throw animation
-                    minigameController.minigameAnimator.SetTrigger("Throw");
-                    isSampling = true;
+                    // Only count rightwards input.
+                    if (mouseDelta.x > 0)
+                    {
+                        totalThrowForce += mouseDelta.x;
+                    }
+
+                    if (totalThrowForce > requiredThrowForce && !isSampling)
+                    {
+                        // Once we've started sampling, play the throw animation
+                        minigameController.minigameAnimator.SetTrigger("Throw");
+                        isSampling = true;
+                    }
                 }
 
                 // Then, sample mouse delta values for a small amount of time to ensure we capture the fastest the 
                 // player moved the ball.
                 if (isSampling)
                 {
-                    // Track only the largest delta value.
-                    if (mouseDelta.x > maxDelta)
-                    {
-                        maxDelta = mouseDelta.x;
-                    }
-
                     sampleTime -= Time.deltaTime;
 
                     if (sampleTime <= 0)
                     {
-                        minigameController.CompleteMinigame(storedPackingQuality, maxDelta);
+                        minigameController.CompleteMinigame(storedPackingQuality, totalThrowForce);
                     }
                 }
             }
@@ -222,9 +225,6 @@ namespace Snowmentum
         {
             CurrentMinigameState = new PackingState(this);
             //StartCoroutine(TimeUpdateRoutine());
-
-            // Locks the cursor so it's invisible on screen.
-            Cursor.lockState = CursorLockMode.Locked;
 
             // Subscribe to InputManager functions so that we can update states when the player inputs.
             InputManager.OnDeltaUpdate += UpdateMouseDelta;

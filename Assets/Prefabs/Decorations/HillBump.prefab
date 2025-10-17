@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4971898740713322450}
   - component: {fileID: 7335685118181281662}
   - component: {fileID: 885653970877275300}
+  - component: {fileID: 7769416937371324742}
   m_Layer: 0
   m_Name: HillBump
   m_TagString: Untagged
@@ -54,6 +55,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -75,6 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1590732877
   m_SortingLayer: -1
   m_SortingOrder: 11
@@ -121,4 +125,33 @@ MonoBehaviour:
   scalePerspectiveX: 1
   scalePerspectiveY: 1
   scaleOnSpawn: 0
-  debugDisable: 0
+--- !u!114 &7769416937371324742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486731636429037883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef357b6d7321194e8a02f43ed83d38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.BracketSprite
+  bracketSprites:
+  - {fileID: 21300000, guid: f81258c6f200936429027ed1e3b55dff, type: 3}
+  OnNewSprite:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 885653970877275300}
+        m_TargetAssemblyTypeName: Snowmentum.Size.ObjectScaler, Assembly-CSharp
+        m_MethodName: SetToMinSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rend: {fileID: 4971898740713322450}

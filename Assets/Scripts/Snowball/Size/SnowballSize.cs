@@ -146,9 +146,6 @@ namespace Snowmentum.Size
         /// <param name="oldValue"></param>
         private void OnSnowballDeath(float oldValue)
         {
-            // Unlock the cursor on snowball death.
-            Cursor.lockState = CursorLockMode.None;
-
             // Reset speed to 0 so that the screen stops moving 
             speed.TargetValue_Local = 0;
             speed.Value_Local = 0;

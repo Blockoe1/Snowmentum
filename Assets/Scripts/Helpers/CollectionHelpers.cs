@@ -70,4 +70,16 @@ public static class CollectionHelpers
         }
         return didLoop;
     }
+
+    /// <summary>
+    /// Checks if a given index is insid ethe bounds of a collection.
+    /// </summary>
+    /// <typeparam name="T">The type of the collection.</typeparam>
+    /// <param name="collection">The collection to check the index of.</param>
+    /// <param name="index">The index to check.</param>
+    /// <returns>True if the index is within the bounds of the collection.</returns>
+    public static bool IndexInRange<T>(IEnumerable<T> collection, int index)
+    {
+        return index >= 0 && index < collection.Count();
+    }
 }

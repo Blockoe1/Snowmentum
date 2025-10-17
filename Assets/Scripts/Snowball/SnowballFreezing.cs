@@ -26,15 +26,21 @@ namespace Snowmentum
         [SerializeField, Tooltip("The base amount of time that the snowball will stay frozen without moving " +
             "through water.")] 
         private float frozenTime;
+        [SerializeField, Range(0, FREEZE_THRESHOLD)] private float warningThreshold = 0.25f;
+        [SerializeField] private float flashDelay = 0.1f; 
         [Header("Events")]
         [SerializeField] private UnityEvent OnFreezeEvent;
         [SerializeField] private UnityEvent OnThawEvent;
+        [SerializeField] private UnityEvent<bool> OnToggleVisualsEvent;
+        [SerializeField] private UnityEvent OnEnterWaterEvent;
+        [SerializeField] private UnityEvent OnExitWaterEvent;
 
         private static float freezeAmount;
         public static event Action<float> OnFreezeAmountChanged;
 
         private static bool isFrozen;
         private bool isInWater;
+        private bool showingVisuals;
 
         #region Properties
         public static bool IsFrozen => isFrozen;
@@ -50,13 +56,25 @@ namespace Snowmentum
                     if (isFrozen)
                     {
                         OnFreezeEvent?.Invoke();
-
+                        // Make sure to enable/disable visuals when isFrozen changes.
+                        ShowingVisuals = true;
                     }
                     else
                     {
                         OnThawEvent?.Invoke();
+                        ShowingVisuals = false;
                     }
                 }
+            }
+        }
+
+        private bool ShowingVisuals
+        {
+            get { return showingVisuals; }
+            set
+            {
+                showingVisuals = value;
+                OnToggleVisualsEvent?.Invoke(value);
             }
         }
         public static float FreezeAmount
@@ -79,8 +97,6 @@ namespace Snowmentum
         // Need to make getters instead of properties so that I can pass them as delegates.
         private float GetFreezeRate() { return FREEZE_THRESHOLD / freezeTime; }
         private float GetThawRate() { return -FREEZE_THRESHOLD / frozenTime; }
-        private bool GetIsInWater() { return isInWater; }
-        private bool GetIsFrozen() { return IsFrozen_Internal; }
         #endregion
 
         /// <summary>
@@ -103,8 +119,9 @@ namespace Snowmentum
             if (collision.CompareTag(WATER_TAG))
             {
                 isInWater = true;
+                OnEnterWaterEvent?.Invoke();
                 // Continually increases the freezeAmount by freezeRate while the snowball is in water.
-                StartCoroutine(FreezeChangeRoutine(GetFreezeRate, GetIsInWater));
+                StartCoroutine(FreezeChangeRoutine());
             }
         }
 
@@ -116,6 +133,7 @@ namespace Snowmentum
         {
             if (collision.CompareTag(WATER_TAG))
             {
+                OnExitWaterEvent?.Invoke();
                 isInWater = false;
             }
         }
@@ -123,16 +141,12 @@ namespace Snowmentum
         /// <summary>
         /// Causes the snowball to gain freezeAmount while it's in water
         /// </summary>
-        /// <param name="rate">The getter for the rate that freezeAmount should change by each second.</param>
-        /// <param name="state">
-        /// The getter for the state that the snowball must be in to have this coroutine continue.
-        /// </param>
         /// <returns></returns>
-        private IEnumerator FreezeChangeRoutine(RateGetter rate, StateGetter state)
+        private IEnumerator FreezeChangeRoutine()
         {
-            while (state())
+            while (isInWater)
             {
-                FreezeAmount += rate() * Time.deltaTime;
+                FreezeAmount += GetFreezeRate() * Time.deltaTime;
                 UpdateFreezeStatus(FreezeAmount);
                 yield return null;
             }
@@ -148,15 +162,47 @@ namespace Snowmentum
             // Switches the snowball to the frozen state.
             if (!IsFrozen_Internal && freezeAmount >= FREEZE_THRESHOLD)
             {
-                Debug.Log("Frozen");
+                //Debug.Log("Frozen");
                 IsFrozen_Internal = true;
                 // Need to decrement our freezeAmount while the snowball is frozen.
-                StartCoroutine(FreezeChangeRoutine(GetThawRate, GetIsFrozen));
+                StartCoroutine(WhileFrozenRoutine());
             }
             // Switches the snowball back to it's normal state.
             else if (IsFrozen_Internal && freezeAmount <= 0)
             {
                 IsFrozen_Internal = false;
+            }
+        }
+
+        /// <summary>
+        /// Causes the snowball to gain freezeAmount while it's in water
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator WhileFrozenRoutine()
+        {
+            float flashTimer = 0;
+            while (isFrozen)
+            {
+                FreezeAmount += GetThawRate() * Time.deltaTime;
+                UpdateFreezeStatus(FreezeAmount);
+
+                // If our freeze amount is too low, then we do timed blinks of the frozen snowball sprite.
+                if (FreezeAmount < warningThreshold)
+                {
+                    flashTimer -= Time.deltaTime;
+                    if (flashTimer < 0)
+                    {
+                        ShowingVisuals = !ShowingVisuals;
+                        flashTimer = flashDelay;
+                    }
+                }
+                // If we go above our threshold, we need to make sure we reset visuals.
+                else if (!ShowingVisuals)
+                {
+                    ShowingVisuals = true;
+                }
+
+                yield return null;
             }
         }
 
