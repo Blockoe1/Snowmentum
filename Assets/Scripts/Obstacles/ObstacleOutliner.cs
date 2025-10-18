@@ -18,11 +18,15 @@ namespace Snowmentum
     {
         [SerializeField] private Color deadlyColor = Color.red;
         [SerializeField] private Color destroyableColor = Color.green;
-        [SerializeField, Tooltip("The maximum alpha value that the outline can have.")] 
+        [SerializeField, Tooltip("The maximum alpha value that the outline can have."), Range(0, 1)] 
         private float maxOutlineAlpha;
+        [SerializeField, Tooltip("The maximum amount the object's sprite gets tinted."), Range(0, 1)]
+        private float maxTintValue;
         [SerializeField, Tooltip("The maximum distance away that the outline will be visible at.")] 
         private float maxDistance;
         [SerializeField] private bool showOutline;
+
+        private Color baseColor;
 
         #region Component References
         [Header("Components")]
@@ -58,7 +62,7 @@ namespace Snowmentum
                 else
                 {
                     SnowballPosition.OnPositionChanged -= UpdateOutline;
-                    rend.material.color = Color.clear;
+                    ResetColor();
                 }
             }
         }
@@ -69,14 +73,14 @@ namespace Snowmentum
         /// </summary>
         private void Awake()
         {
+            baseColor = rend.color;
             if (showOutline)
             {
                 SnowballPosition.OnPositionChanged += UpdateOutline;
             }
             else
             {
-                // Set the outline to completely transparent on awake.
-                rend.material.color = Color.clear;
+                ResetColor();
             }
         }
         private void OnDestroy()
@@ -112,9 +116,21 @@ namespace Snowmentum
             // Lerp between the max alpha and 0.  maxAlpha should be reached at distance 0.
             float alpha  = Mathf.Lerp(maxOutlineAlpha, 0, normalizedDistance);
 
-            col.a = alpha;
+            // Tint the object's sprite
+            float tintStrength = Mathf.Lerp(maxTintValue, 0, normalizedDistance);
+            Color tintColor = Color.Lerp(baseColor, col, tintStrength);
 
+            // Apply the color changes.
+            rend.color = tintColor;
+            col.a = alpha;
             rend.material.color = col;
+        }
+
+        private void ResetColor()
+        {
+            // Set the outline to completely transparent on awake.
+            rend.material.color = Color.clear;
+            rend.color = baseColor;
         }
     }
 }

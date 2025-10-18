@@ -5318,6 +5318,7 @@ MonoBehaviour:
   deadlyColor: {r: 1, g: 0, b: 0, a: 1}
   destroyableColor: {r: 0, g: 1, b: 0, a: 1}
   maxOutlineAlpha: 0.65
+  maxTintValue: 0.35
   maxDistance: 7
   showOutline: 0
   rend: {fileID: 8871070839524519023}
