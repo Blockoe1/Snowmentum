@@ -6,8 +6,10 @@
 //
 // Brief Description : Allows the player to select a given char for their initials by scrolling the trackball.
 *****************************************************************************/
+using NUnit.Framework;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -20,17 +22,38 @@ namespace Snowmentum
         private const float LERP_SNAP_LEEWAY = 0.001f;
         #endregion
 
-        [SerializeField] private string validCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         [SerializeField] private TMP_Text[] charTexts;
         [SerializeField, Tooltip("Determines how each text element at each position looks when scrolling.")] 
         private TextVizData[] displaySettings; // This should not be changed at runtime.
         [SerializeField] private float lerpSpeed;
 
+        private string validCharacters;
         private int selectedTextIndex;
         private int charIndex;
         private Coroutine moveRoutine;
 
         #region Properties
+        public string ValidCharacters
+        {
+            get { return validCharacters; }
+            set 
+            {
+                char selectedChar = validCharacters == null ? 'A' : validCharacters[charIndex];
+
+                validCharacters = value; 
+
+                // Update our char index to still select the same character.
+                int newIndex = validCharacters.IndexOf(selectedChar);
+                if (newIndex >= 0)
+                {
+                    CharIndex = newIndex;
+                }
+
+                // If the character we had selected is no longer valid (this shouldnt happen), then dont 
+                // change our index, have it snap to whatever new character and refresh the display.
+                RefreshDisplay();
+            }
+        }
         private int CharIndex
         {
             get { return charIndex; }
@@ -39,14 +62,15 @@ namespace Snowmentum
                 charIndex = value;
 
                 // Loop the char index around if is beyond the bounds of our valid characters.
-                if (charIndex < 0)
-                {
-                    charIndex = validCharacters.Length - 1;
-                }
-                else if (charIndex >= validCharacters.Length)
-                {
-                    charIndex = 0;
-                }
+                //if (charIndex < 0)
+                //{
+                //    charIndex = ValidCharacters.Length - 1;
+                //}
+                //else if (charIndex >= ValidCharacters.Length)
+                //{
+                //    charIndex = 0;
+                //}
+                CollectionHelpers.LoopIndex(ValidCharacters, ref charIndex);
 
                 //charDisplayTexts.text = validCharacters[charIndex].ToString();
             }
@@ -72,12 +96,6 @@ namespace Snowmentum
         private void Awake()
         {
             selectedTextIndex = Array.FindIndex(displaySettings, item => item.isSelectedChar);
-
-            // Set all text displays to their starting char.
-            for (int i = 0; i < charTexts.Length; i++)
-            {
-                UpdateChar(charTexts[i], i);
-            }
         }
 
         /// <summary>
@@ -86,7 +104,7 @@ namespace Snowmentum
         /// <returns></returns>
         public char ReadChar()
         {
-            return validCharacters[CharIndex];
+            return ValidCharacters[CharIndex];
         }
 
         /// <summary>
@@ -141,9 +159,20 @@ namespace Snowmentum
         /// <param name="textIndex">The index of the text component.</param>
         private void UpdateChar(TMP_Text updateText, int textIndex)
         {
-            int index = charIndex + (textIndex - selectedTextIndex);
-            CollectionHelpers.LoopIndex(validCharacters, ref index);
-            updateText.text = validCharacters[index].ToString();
+            int index = CharIndex + (textIndex - selectedTextIndex);
+            CollectionHelpers.LoopIndex(ValidCharacters, ref index);
+            updateText.text = ValidCharacters[index].ToString();
+        }
+
+        /// <summary>
+        /// Refreshes the chars displayed by all text components.
+        /// </summary>
+        public void RefreshDisplay()
+        {
+            for(int i = 0; i < charTexts.Length;i++)
+            {
+                UpdateChar(charTexts[i], i);
+            }
         }
 
         /// <summary>

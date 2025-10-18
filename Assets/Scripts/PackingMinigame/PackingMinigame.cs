@@ -20,7 +20,6 @@ namespace Snowmentum
         #endregion
 
         [SerializeField] private Animator minigameAnimator;
-        [SerializeField] private UnityEvent OnMinigameComplete;
 
         [Header("Packing")]
         [SerializeField] private float maxSizeGain;
@@ -28,7 +27,6 @@ namespace Snowmentum
         [SerializeField, Tooltip("Packing quality is by default a very large value (Close to 1 million) whith good " +
             "input.  Divide it by this value to calculate the actual addition to size of the snowball.")] 
         private float packingQualityScaler = 1000000;
-        [SerializeField] private UnityEvent<float> OnMinigamePack;
         [Header("Throwing")]
         [SerializeField] private float maxSpeedGain;
         [SerializeField] private float throwDelay;
@@ -39,6 +37,11 @@ namespace Snowmentum
         private float throwStrengthScaler = 10000;
         [SerializeField, Tooltip("Multiplied by the scaled throwStrength to get the starting speed of the snowball")] 
         private float startingSpeedScaler;
+
+        [Header("Events")]
+        [SerializeField] private UnityEvent OnMinigameTransition;
+        [SerializeField] private UnityEvent OnMinigameComplete;
+        [SerializeField] private UnityEvent<float> OnMinigamePack;
         [SerializeField] private UnityEvent<float> OnMinigameThrow;
         [SerializeField] private UnityEvent<float> OnMultipliedMinigameThrow;
 
@@ -55,6 +58,7 @@ namespace Snowmentum
                     minigameState.CleanUp(this);
                 }
                 minigameState = value;
+                OnMinigameTransition?.Invoke();
             }
         }
         #endregion

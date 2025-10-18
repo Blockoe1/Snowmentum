@@ -189,7 +189,7 @@ namespace Snowmentum.Score
                     // to be assigned in the next iteration of the loop.
                     // The last high score is lost.
                     (HighScores[i], prevScore) = (prevScore, HighScores[i]);
-                    Debug.Log(prevScore.value);
+                    //Debug.Log(prevScore.value);
                 }
                 else
                 {
