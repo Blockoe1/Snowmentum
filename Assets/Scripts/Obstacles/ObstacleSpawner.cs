@@ -25,7 +25,10 @@ namespace Snowmentum
         [SerializeField] private int obstacleSpawnAmount = 1;  //amount of obstacles that will be spawned
         [SerializeField] private float spawnCooldown;  //cooldown on spawning obstacles so it isn't going constantly
         [SerializeField] private bool scaleWithSpeed;
-
+        [SerializeField, Tooltip("Controls how much spawned obstacles skew towards being close in size to " +
+            "the snowball.")] 
+        private float sizeBonusWeight;
+ 
         //used to set the y axis area the obstacles can spawn in
         [SerializeField] private float minYSpawn;
         [SerializeField] private float maxYSpawn;
@@ -129,7 +132,7 @@ namespace Snowmentum
                 for (int i = 0; i < obstacleSpawnAmount; i++)
                 {
                     //Pick an obstacle to spawn
-                    obstacleData = GetObstacleData(spawnBracket.spawnData);
+                    obstacleData = GetObstacleData(spawnBracket.spawnData, sizeBonusWeight);
 
                     // If no obstacle is valid to be spawned right now, then we should skip spawning.
                     if (obstacleData == null)
@@ -172,7 +175,7 @@ namespace Snowmentum
         /// </summary>
         /// <param name="spawnData">The list of obstacles to pick from.</param>
         /// <returns></returns>
-        private static Obstacle GetObstacleData(ObstacleSpawnData[] spawnData)
+        private static Obstacle GetObstacleData(ObstacleSpawnData[] spawnData, float sizeBonusWeight)
         {
             // Find the valid obstacles that can be spawned.
             //ObstacleSpawnData[] validObstacles = Array.FindAll(spawnData, CheckValidObstacle);
@@ -185,7 +188,7 @@ namespace Snowmentum
             int totalWeight = 0;
             foreach(ObstacleSpawnData obs in  validObstacles)
             {
-                totalWeight += GetObstacleWeight(obs);
+                totalWeight += GetObstacleWeight(obs, sizeBonusWeight);
             }
 
             // Get a random weight value
@@ -194,7 +197,7 @@ namespace Snowmentum
             // Subtract item weight from random weight until it hits 0.
             for (int i = 0; i < validObstacles.Length; i++)
             {
-                randomWeight -= GetObstacleWeight(validObstacles[i]);
+                randomWeight -= GetObstacleWeight(validObstacles[i], sizeBonusWeight);
                 if (randomWeight <= 0)
                 {
                     // Before we return our found obstacle, we need to update the weight value of all the
@@ -232,14 +235,13 @@ namespace Snowmentum
         /// Gets the weight of an obstacle, taking into account the size difference between it and the snowball.
         /// </summary>
         /// <returns></returns>
-        private static int GetObstacleWeight(ObstacleSpawnData obstacle)
+        private static int GetObstacleWeight(ObstacleSpawnData obstacle, float sizeBonusWeight)
         {
-            //Debug.Log(Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)));
-            //int effectiveWeight = Mathf.Max(obstacle.weight - 
-            //    Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)), 1);
-            //Debug.Log($"Obstacle {obstacle.gameObject.name} has efffective weight of {effectiveWeight}");
-            return Mathf.Max(obstacle.weight -
-                Mathf.RoundToInt(Mathf.Abs(obstacle.Size - SnowballSize.TargetValue)), 1);
+            // Calculate the bonus weight this obstacle gets by being close in size to the snowball.
+            // Uses the formula sizeBonusWeight - |(obstacleSize - snowballSize) / environmentSize|
+            // Divide by environmentSize so that we scale the bonus weight based on the size bracket.
+            int bonusWeight = Mathf.RoundToInt(sizeBonusWeight - Mathf.Abs((obstacle.Size - SnowballSize.TargetValue) / EnvironmentSize.Value));
+            return Mathf.Max(obstacle.weight + bonusWeight, 1);
         }
 
         #region Object Pooling
