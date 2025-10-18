@@ -244,9 +244,9 @@ namespace Snowmentum.UI
             // Apply each ban to the respective valid characters string by removing the banned character.
             foreach(var ban in bans)
             {
-                Debug.Log($"Found censored combo of char {ban.character} at index {ban.charIndex}");
+                //Debug.Log($"Found censored combo of char {ban.character} at index {ban.charIndex}");
                 validCharsArray[ban.charIndex] = validCharsArray[ban.charIndex].Replace(ban.character.ToString(), "");
-                Debug.Log(validCharsArray[ban.charIndex]);
+                //Debug.Log(validCharsArray[ban.charIndex]);
             }
 
             // Update the char selectors.
