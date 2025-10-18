@@ -1386,6 +1386,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     audioClip: {fileID: 8300000, guid: 31d7a898fbd7def42bd4705ce5fb5658, type: 3}
+  - name: Snow Freezing
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 5d39a8f07d09ec1498b7c4d344c074e8, type: 3}
   randomizedSounds:
   - name: Snowball Destruction
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
@@ -4497,9 +4503,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1671779628}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1671779631}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameThrow.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4512,6 +4530,10 @@ PrefabInstance:
       propertyPath: OnMinigameThrow.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1221756940}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4533,6 +4555,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 800908753}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayRandomized
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: StartSpawning
       objectReference: {fileID: 0}
@@ -4544,6 +4570,14 @@ PrefabInstance:
       propertyPath: OnMultipliedMinigameThrow.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1671779627}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Snowmentum.AudioRelay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
