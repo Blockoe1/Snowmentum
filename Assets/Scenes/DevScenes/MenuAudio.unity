@@ -794,6 +794,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1481790555}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1049041318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,6 +1279,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1481790555}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button Click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1294243992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,6 +1437,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1481790555}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Button Click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1353811468
@@ -1589,6 +1625,154 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385769983}
   m_CullTransparentMesh: 1
+--- !u!1 &1481790554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1481790556}
+  - component: {fileID: 1481790555}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1481790555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481790554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e91c7e5eb0c9b49a756a7620554394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Snow Ambience
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 0.75
+    pitch: 1
+    loop: 1
+    audioClip: {fileID: 8300000, guid: 528ea311f0fed9a4ebe11c6aebf06654, type: 3}
+  - name: Snowroll
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    audioClip: {fileID: 8300000, guid: 1f737d51eb9bbe941a1f70b982fcde4f, type: 3}
+  - name: Snowball Destruction
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: fbabfe2dad6428b44afe5f5e9ba6318b, type: 3}
+  - name: Obstacle Destruction
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 587b96989afd3cf4cb97b8eaf63c38c9, type: 3}
+  - name: Thawing
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: b960631ec531d4e4c9426b36b4044eb3, type: 3}
+  - name: Freezing Over
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 15738e71089db2a4b9a4b8565f8ffb54, type: 3}
+  - name: Snow Packing
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 2365e29588d674f439153560029bd18e, type: 3}
+  - name: Throwing
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 31d7a898fbd7def42bd4705ce5fb5658, type: 3}
+  - name: Snow Freezing
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 5d39a8f07d09ec1498b7c4d344c074e8, type: 3}
+  - name: Score Scrolling
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 307d84975c8c7f543842e311e1a709dc, type: 3}
+  - name: Score Submit
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: ddd16025d5ef32249bf91ac485f99fd8, type: 3}
+  - name: Mouse Hover
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 44766caa059435f4fb71af84b2bea7e4, type: 3}
+  - name: No Hover
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 951b96d96188f9640b12fa2d7fade185, type: 3}
+  - name: Button Click
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 0d54653003bc3524ab6b64cac060bd52, type: 3}
+  randomizedSounds:
+  - name: Snowball Destruction
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClips:
+    - {fileID: 8300000, guid: fbabfe2dad6428b44afe5f5e9ba6318b, type: 3}
+    - {fileID: 8300000, guid: 77764c6f96f789940a63f3403d878fbd, type: 3}
+    - {fileID: 8300000, guid: a9cad9ff54c14fe4ebaa80c91518c2c3, type: 3}
+  - name: Snow Packing
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClips:
+    - {fileID: 8300000, guid: 3fc7d423e7841a5469d6bf4dcbce6779, type: 3}
+    - {fileID: 8300000, guid: 2365e29588d674f439153560029bd18e, type: 3}
+    - {fileID: 8300000, guid: 1f2b6327d1c1b30438b70a6fa7531a93, type: 3}
+--- !u!4 &1481790556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481790554}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532499901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,6 +2371,70 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1275013634}
     m_Modifications:
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeVisible.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeInvisible.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeVisible.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeInvisible.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeVisible.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481790555}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeInvisible.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481790555}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeVisible.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeVisible.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeInvisible.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeInvisible.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeVisible.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Snowmentum.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeInvisible.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Snowmentum.AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeVisible.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Mouse Hover
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeInvisible.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: No Hover
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeVisible.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463735994067615558, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
+      propertyPath: OnBecomeInvisible.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3276029210065965217, guid: d5776afb5db76c04ba1c13f084c397a1, type: 3}
       propertyPath: m_Name
       value: HoldIndicator
@@ -2288,3 +2536,4 @@ SceneRoots:
   - {fileID: 2020301238}
   - {fileID: 921313696}
   - {fileID: 2130863318}
+  - {fileID: 1481790556}
