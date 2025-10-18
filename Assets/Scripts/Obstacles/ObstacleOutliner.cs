@@ -19,7 +19,7 @@ namespace Snowmentum
         [SerializeField] private Color deadlyColor = Color.red;
         [SerializeField] private Color destroyableColor = Color.green;
         [SerializeField, Tooltip("The maximum alpha value that the outline can have.")] 
-        private float maxAlpha;
+        private float maxOutlineAlpha;
         [SerializeField, Tooltip("The maximum distance away that the outline will be visible at.")] 
         private float maxDistance;
         [SerializeField] private bool showOutline;
@@ -110,7 +110,7 @@ namespace Snowmentum
             // alpha values.
             float normalizedDistance = distance / maxDistance;
             // Lerp between the max alpha and 0.  maxAlpha should be reached at distance 0.
-            float alpha  = Mathf.Lerp(maxAlpha, 0, normalizedDistance);
+            float alpha  = Mathf.Lerp(maxOutlineAlpha, 0, normalizedDistance);
 
             col.a = alpha;
 
