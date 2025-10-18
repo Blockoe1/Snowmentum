@@ -1340,7 +1340,7 @@ MonoBehaviour:
   sounds:
   - name: Snow Ambience
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 1
+    volume: 0.75
     pitch: 1
     loop: 1
     audioClip: {fileID: 8300000, guid: 528ea311f0fed9a4ebe11c6aebf06654, type: 3}
@@ -2212,31 +2212,31 @@ MonoBehaviour:
   OnStartEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 586305772}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Snow Ambience
           m_BoolArgument: 0
         m_CallState: 2
   OnDestroyEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 586305772}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Snow Ambience
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &840931099
@@ -3875,7 +3875,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1671779644}
   m_SourcePrefab: {fileID: 100100000, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
 --- !u!114 &1671779626 stripped
 MonoBehaviour:
@@ -3926,6 +3929,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c429e63662fa26a4d86e16eb4557fcf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.AudioRelay
+--- !u!114 &1671779644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671779629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eaff610343d8de4d836637d1323adb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.MessageEvents
+  OnStartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 586305772}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Snowroll
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDestroyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 586305772}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Snowroll
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1713764592
 GameObject:
   m_ObjectHideFlags: 0
