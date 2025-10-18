@@ -21,8 +21,10 @@ namespace Snowmentum.UI
         #endregion
 
         [SerializeField] private ControlsDirection direction;
+        [SerializeField] private ControlsDirection[] controlSequence;
 
         private Vector2Int previousDirection;
+        private int currentSequenceIndex;
 
         #region Component References
         [Header("Components")]
@@ -42,7 +44,22 @@ namespace Snowmentum.UI
         public ControlsDirection Direction
         {
             get { return direction; }
-            set { direction = value; }
+            set 
+            {
+                direction = value;
+
+                // Hide this object if we have no direction.
+                if (direction == ControlsDirection.None)
+                {
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    gameObject.SetActive(true);
+                    // Update the animator's direction.
+                    SetRandomDirection();
+                }
+            }
         }
         #endregion
 
@@ -54,6 +71,25 @@ namespace Snowmentum.UI
             SetRandomDirection();
         }
 
+        /// <summary>
+        /// Advances to the next controls to display in a sequence.
+        /// </summary>
+        public void AdvanceSequence()
+        {
+            // Prevent redundant code if we've already reached the end of the sequence.
+            if (currentSequenceIndex >= controlSequence.Length) { return; }
+
+            currentSequenceIndex++;
+            // Set direction to none if we've reached the end of the sequence.
+            if (currentSequenceIndex >= controlSequence.Length)
+            {
+                Direction = ControlsDirection.None;
+            }
+            else
+            {
+                Direction = controlSequence[currentSequenceIndex];
+            }
+        }
 
         /// <summary>
         /// Sets the value of this enum based on an integer value
@@ -70,19 +106,7 @@ namespace Snowmentum.UI
         public void SetDirection(int value)
         {
             value = Mathf.Clamp(value, 0, MAX_DIRECTION_INT);
-            this.direction = (ControlsDirection)value;
-
-            // Hide this object if we have no direction.
-            if (direction == ControlsDirection.None)
-            {
-                gameObject.SetActive(false);
-            }
-            else
-            {
-                gameObject.SetActive(true);
-                // Update the animator's direction.
-                SetRandomDirection();
-            }
+            Direction = (ControlsDirection)value;
         }
 
         /// <summary>
@@ -116,19 +140,19 @@ namespace Snowmentum.UI
             List<Vector2Int> outputList = new List<Vector2Int>();
             // Manually check and add each direction flag.
             // Exclude the previously used direction.
-            if (direction.HasFlag(ControlsDirection.Left) && previousDirection != Vector2Int.left)
+            if (Direction.HasFlag(ControlsDirection.Left) && previousDirection != Vector2Int.left)
             {
                 outputList.Add(Vector2Int.left);
             }
-            if (direction.HasFlag(ControlsDirection.Right) && previousDirection != Vector2Int.right)
+            if (Direction.HasFlag(ControlsDirection.Right) && previousDirection != Vector2Int.right)
             {
                 outputList.Add(Vector2Int.right);
             }
-            if (direction.HasFlag(ControlsDirection.Up) && previousDirection != Vector2Int.up)
+            if (Direction.HasFlag(ControlsDirection.Up) && previousDirection != Vector2Int.up)
             {
                 outputList.Add(Vector2Int.up);
             }
-            if (direction.HasFlag(ControlsDirection.Down) && previousDirection != Vector2Int.down)
+            if (Direction.HasFlag(ControlsDirection.Down) && previousDirection != Vector2Int.down)
             {
                 outputList.Add(Vector2Int.down);
             }

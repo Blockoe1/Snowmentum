@@ -58,7 +58,6 @@ namespace Snowmentum
                     minigameState.CleanUp(this);
                 }
                 minigameState = value;
-                OnMinigameTransition?.Invoke();
             }
         }
         #endregion
