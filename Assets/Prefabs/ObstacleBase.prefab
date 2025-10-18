@@ -5197,6 +5197,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89e720f3f62be04f8728ff34c436b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDealDamageEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7416643200133424707}
+        m_TargetAssemblyTypeName: Snowmentum.ObstacleOutliner, Assembly-CSharp
+        m_MethodName: BlinkOutline
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDestroyEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5318,8 +5333,9 @@ MonoBehaviour:
   deadlyColor: {r: 1, g: 0, b: 0, a: 1}
   destroyableColor: {r: 0, g: 1, b: 0, a: 1}
   maxOutlineAlpha: 0.65
-  maxTintValue: 0.35
+  maxTintValue: 0.25
   maxDistance: 7
+  outlineBlinkDelay: 0.1
   showOutline: 0
   rend: {fileID: 8871070839524519023}
   controller: {fileID: 2002559263234210752}

@@ -24,9 +24,11 @@ namespace Snowmentum
         private float maxTintValue;
         [SerializeField, Tooltip("The maximum distance away that the outline will be visible at.")] 
         private float maxDistance;
+        [SerializeField] private float outlineBlinkDelay = 0.1f;
         [SerializeField] private bool showOutline;
 
         private Color baseColor;
+        private bool isBlink;
 
         #region Component References
         [Header("Components")]
@@ -89,6 +91,23 @@ namespace Snowmentum
         }
 
         /// <summary>
+        /// Gets the correct outline color based on the size of the snowball compared to the obstacle.
+        /// </summary>
+        /// <returns></returns>
+        private Color GetOutlineColor()
+        {
+            // Update the color based on the size difference between this obstacle and the snowball.
+            if (SnowballSize.Value > controller.ObstacleSize || SnowballFreezing.IsFrozen)
+            {
+                return destroyableColor;
+            }
+            else
+            {
+                return deadlyColor;
+            }
+        }
+
+        /// <summary>
         /// Updates the outline based on this object's distance from the snowball.
         /// </summary>
         /// <param name="snowballPos">The position of the snwoball.</param>
@@ -96,18 +115,6 @@ namespace Snowmentum
         {
             // If ShowOutline is disabled, then we should never update our outline.
             if (!showOutline) { return; }
-            Color col;
-            // Update the color based on the size difference between this obstacle and the snowball.
-            if (SnowballSize.Value > controller.ObstacleSize || SnowballFreezing.IsFrozen)
-            {
-                col = destroyableColor;
-            }
-            else
-            {
-                col = deadlyColor;
-            }
-
-
             // Update the alpha value based on the distance from the snowball and obstacle.
             float distance = Vector2.Distance(snowballPos, transform.position);
             // Calculate the normalized distance value based on the max distance that is used to LERP between the
@@ -118,19 +125,54 @@ namespace Snowmentum
 
             // Tint the object's sprite
             float tintStrength = Mathf.Lerp(maxTintValue, 0, normalizedDistance);
-            Color tintColor = Color.Lerp(baseColor, col, tintStrength);
+            Color tintColor = Color.Lerp(baseColor, GetOutlineColor(), tintStrength);
 
             // Apply the color changes.
             rend.color = tintColor;
+            SetOutlineAlpha(alpha);
+        }
+
+        /// <summary>
+        /// Sets the current alpha and color of the outline.
+        /// </summary>
+        /// <param name="alpha"></param>
+        private void SetOutlineAlpha(float alpha)
+        {
+            Color col = GetOutlineColor();
             col.a = alpha;
             rend.material.color = col;
         }
 
+        /// <summary>
+        /// Resets this obstacle's colors back to 0.
+        /// </summary>
         private void ResetColor()
         {
             // Set the outline to completely transparent on awake.
             rend.material.color = Color.clear;
             rend.color = baseColor;
+        }
+
+        /// <summary>
+        /// Causes the outline to blink and then show in full, overriding any changes caused by distance.
+        /// </summary>
+        public void BlinkOutline(int blinkAmount)
+        {
+            StartCoroutine(BlinkRoutine(blinkAmount));
+        }
+
+        private IEnumerator BlinkRoutine(int blinkAmount)
+        {
+            for (int i = 0; i < blinkAmount; i++)
+            {
+                // Temporarily disable the outline and set it manually.
+                ShowOutline = false;
+                SetOutlineAlpha(1);
+                yield return new WaitForSeconds(outlineBlinkDelay);
+
+                ShowOutline = true;
+                yield return new WaitForSeconds(outlineBlinkDelay);
+            }
         }
     }
 }
