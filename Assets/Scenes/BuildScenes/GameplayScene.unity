@@ -2454,10 +2454,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.28125
     y: 0
-    width: 1
-    height: 1
+    width: 0.36388892
+    height: 0.3638889
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -4048,6 +4048,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1573731197}
     m_Modifications:
+    - target: {fileID: 1734080887349671593, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
+      propertyPath: controlSequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734080887349671593, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
+      propertyPath: 'controlSequence.Array.data[0]'
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734080887349671593, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
+      propertyPath: 'controlSequence.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734080887349671593, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
+      propertyPath: 'controlSequence.Array.data[2]'
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3933707384310104437, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
       propertyPath: m_Name
       value: ControlsTutorial
@@ -4077,14 +4093,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7661030963004039391, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 216
-      objectReference: {fileID: 0}
-    - target: {fileID: 7661030963004039391, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 216
-      objectReference: {fileID: 0}
-    - target: {fileID: 7661030963004039391, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -4111,14 +4119,6 @@ PrefabInstance:
     - target: {fileID: 7661030963004039391, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7661030963004039391, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 7661030963004039391, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 7661030963004039391, guid: d6f989ef56a19cb4d88bedfbe1203a49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4250,6 +4250,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameTransition.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4269,6 +4273,10 @@ PrefabInstance:
       propertyPath: OnMinigameThrow.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1221756940}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4290,13 +4298,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 800908753}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 2090663217}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameTransition.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameTransition.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2090663217}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: StartSpawning
@@ -4306,17 +4322,29 @@ PrefabInstance:
       value: StartSpawning
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: AdvanceSequence
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameTransition.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameTransition.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetDirection
+      value: AdvanceSequence
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMultipliedMinigameThrow.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1671779627}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: Snowmentum.UI.ControlsUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameTransition.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Snowmentum.UI.ControlsUI, Assembly-CSharp
@@ -4324,6 +4352,14 @@ PrefabInstance:
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameTransition.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_StringArgument
+      value: Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameTransition.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

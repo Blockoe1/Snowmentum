@@ -39,8 +39,8 @@ namespace Snowmentum
         private float startingSpeedScaler;
 
         [Header("Events")]
-        [SerializeField] private UnityEvent OnMinigameComplete;
         [SerializeField] private UnityEvent OnMinigameTransition;
+        [SerializeField] private UnityEvent OnMinigameComplete;
         [SerializeField] private UnityEvent<float> OnMinigamePack;
         [SerializeField] private UnityEvent<float> OnMinigameThrow;
         [SerializeField] private UnityEvent<float> OnMultipliedMinigameThrow;
@@ -58,6 +58,7 @@ namespace Snowmentum
                     minigameState.CleanUp(this);
                 }
                 minigameState = value;
+                OnMinigameTransition?.Invoke();
             }
         }
         #endregion

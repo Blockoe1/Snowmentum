@@ -22,8 +22,9 @@ namespace Snowmentum.UI
 
         [SerializeField] private ControlsDirection direction;
         [SerializeField] private ControlsDirection[] controlSequence;
+        [SerializeField] private bool startSequenceOnAwake;
 
-        private Vector2Int previousDirection;
+        private Vector2Int previousDirection = Vector2Int.left;
         private int currentSequenceIndex;
 
         #region Component References
@@ -68,6 +69,14 @@ namespace Snowmentum.UI
         /// </summary>
         private void Awake()
         {
+            if (startSequenceOnAwake)
+            {
+                AdvanceSequence();
+            }
+            else if (direction == ControlsDirection.None)
+            {
+                gameObject.SetActive(false);
+            }
             SetRandomDirection();
         }
 
@@ -77,17 +86,17 @@ namespace Snowmentum.UI
         public void AdvanceSequence()
         {
             // Prevent redundant code if we've already reached the end of the sequence.
-            if (currentSequenceIndex >= controlSequence.Length) { return; }
+            if (currentSequenceIndex > controlSequence.Length) { return; }
 
             currentSequenceIndex++;
             // Set direction to none if we've reached the end of the sequence.
-            if (currentSequenceIndex >= controlSequence.Length)
+            if (currentSequenceIndex - 1 >= controlSequence.Length)
             {
                 Direction = ControlsDirection.None;
             }
             else
             {
-                Direction = controlSequence[currentSequenceIndex];
+                Direction = controlSequence[currentSequenceIndex - 1];
             }
         }
 
