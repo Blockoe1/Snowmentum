@@ -109,22 +109,25 @@ namespace Snowmentum
             isRotating = true;
         }
 
-        //I might end up not using this lol. 
+        //This function tracks change in snowball speed. I ended up not using it.
+        //I will comment it out but keep it in case it becomes needed. 
         private void FixedUpdate()
         {
-            Debug.Log($"Snowball Speed is {SnowballSpeed.Value}");
+            RotateCamera();
+
+            //Debug.Log($"Snowball Speed is {SnowballSpeed.Value}");
             //tracks the change in SnowballSpeed
             //deltavalue is the change in snowballspeed
-            if(previousSpeed != SnowballSpeed.Value)
+            //if(previousSpeed != SnowballSpeed.Value)
             {
-                float deltavalue = SnowballSpeed.Value - previousSpeed;
+                //float deltavalue = SnowballSpeed.Value - previousSpeed;
 
                 //Debug.Log($"Speed changed by {deltavalue}");
-                deltavalue = deltaValue;
-                RotateCamera();
+                //deltavalue = deltaValue;
+                
                 
             }
-            previousSpeed = SnowballSpeed.Value;
+            //previousSpeed = SnowballSpeed.Value;
 
         }
 
