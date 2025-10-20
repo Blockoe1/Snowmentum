@@ -69,18 +69,28 @@ namespace Snowmentum
             snowballSize = SnowballSize.Value;
             
             
-            //camera angle changes to become more drastic as snowball becomes larger or speeds up
-            //we could change this to use snowballspeed but I am worried I will mess that up so I will use size for now
-            if (isRotating)
+            //camera angle changes to become more drastic as snowball speeds up
+            //rotates back towards zero if snowball collides and slows down
+            
+
+            switch (SnowballSpeed.Value)
             {
-                if (snowballSize > 2.5)
-                    ZRotationTarget = 8.0f;
-                else if (snowballSize > 2)
-                    ZRotationTarget = 6.0f;
-                else if (snowballSize > 1.5)
-                    ZRotationTarget = 4.0f;
-                else if (snowballSize > 1)
-                    ZRotationTarget = 2.0f;
+                case > 5f:
+                    ZRotationTarget = 8f;
+                    break;
+
+                case > 4f:
+                    ZRotationTarget = 5f;
+                    break;
+
+                case > 3f:
+                    ZRotationTarget = 3f;
+                    break;
+
+                case < 1f:
+                    ZRotationTarget = 0f;
+                    break;
+
             }
             #endregion
 
@@ -102,13 +112,14 @@ namespace Snowmentum
         //I might end up not using this lol. 
         private void FixedUpdate()
         {
+            Debug.Log($"Snowball Speed is {SnowballSpeed.Value}");
             //tracks the change in SnowballSpeed
             //deltavalue is the change in snowballspeed
             if(previousSpeed != SnowballSpeed.Value)
             {
                 float deltavalue = SnowballSpeed.Value - previousSpeed;
 
-                Debug.Log($"Speed changed by {deltavalue}");
+                //Debug.Log($"Speed changed by {deltavalue}");
                 deltavalue = deltaValue;
                 RotateCamera();
                 
