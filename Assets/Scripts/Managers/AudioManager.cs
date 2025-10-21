@@ -144,6 +144,11 @@ namespace Snowmentum
             {
                 toPlay.Play();
             }
+            else
+            {
+                Debug.LogWarning("There is no sound effect with the name " + soundName + 
+                    " registered in the AudioManager.");
+            }
         }
 
         /// <summary>
@@ -156,6 +161,11 @@ namespace Snowmentum
             if (toPlay != null)
             {
                 toPlay.Play();
+            }
+            else
+            {
+                Debug.LogWarning("There is no sound effect with the name " + soundName + 
+                    " registered in the AudioManager.");
             }
         }
 

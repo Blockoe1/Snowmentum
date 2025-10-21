@@ -488,10 +488,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.28125
     y: 0
-    width: 1
-    height: 1
+    width: 0.36388892
+    height: 0.3638889
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -945,33 +945,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 1755203220}
     m_Modifications:
     - target: {fileID: 463187033949074014, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: OnScroll.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 463187033949074014, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: OnScroll.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 463187033949074014, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: OnScroll.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: OnScroll.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1898385448}
-    - target: {fileID: 463187033949074014, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: OnScroll.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 463187033949074014, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: OnScroll.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AdvanceSequence
-      objectReference: {fileID: 0}
-    - target: {fileID: 463187033949074014, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: OnScroll.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Snowmentum.UI.ControlsUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 463187033949074014, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: OnScroll.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6110389547036698009, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
       propertyPath: m_Name
       value: InitialsInput
