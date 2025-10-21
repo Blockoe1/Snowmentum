@@ -132,7 +132,7 @@ namespace Snowmentum.UI
             // Get a random valid direction.
             Vector2Int dir = directions[Random.Range(0, directions.Length)];
             previousDirection = dir;
-            Debug.Log(previousDirection);
+            //Debug.Log(previousDirection);
 
             anim.SetInteger(ANIM_HORIZONTAL_NAME, dir.x);
             anim.SetInteger(ANIM_VERTICAL_NAME, dir.y);
