@@ -109,7 +109,8 @@ namespace Snowmentum.UI
     CollectionHelpers.FilterToChildList<CharSelector, InitialsInputComponent>(components).ToArray();
             foreach(CharSelector charSelector in charSelectors)
             {
-                charSelector.ValidCharacters = validCharacters;
+
+                charSelector.Initialize(validCharacters);
                 //charSelector.RefreshDisplay();
             }
         }

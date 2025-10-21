@@ -18,7 +18,7 @@ namespace Snowmentum
     {
         //We can change this during gameplay in order to make it harder to move the snowball as it grows in size
         // And also adjust it as needed to make it feel responsive enough
-        [SerializeField, Range(0f, 0.1f)] private float baseMovementSensitivity;
+        [SerializeField] private float baseMovementSensitivity;
         [SerializeField] private bool scaleWithSnowballSize;
         //[SerializeField, Tooltip("The maximum mouseDelta that will be read in one frame.  Done to prevent massive" +
         //    " forces from being applied at the start of the game when delta is tracked across a long laggy frame.")]

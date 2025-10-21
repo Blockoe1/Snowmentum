@@ -47,6 +47,16 @@ namespace Snowmentum.Size
         }
 
         /// <summary>
+        /// Prevent wierd scaling by resetting our old size to what our size should currently be so that
+        /// disabling the object doesnt break things.
+        /// </summary>
+        private void OnEnable()
+        {
+            // Added this in for the background decorations.  If obstacles break, this is the first place to look.
+            oldSize = objectSize / EnvironmentSize.Value;
+        }
+
+        /// <summary>
         /// Update the scale of the obstacle in the scene.
         /// </summary>
         //private void OnValidate()

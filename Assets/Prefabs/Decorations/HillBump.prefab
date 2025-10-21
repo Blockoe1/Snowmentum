@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7335685118181281662}
   - component: {fileID: 885653970877275300}
   - component: {fileID: 7769416937371324742}
+  - component: {fileID: 4356687501512478614}
+  - component: {fileID: 828768819907879804}
   m_Layer: 0
   m_Name: HillBump
   m_TagString: Untagged
@@ -155,3 +157,44 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   rend: {fileID: 4971898740713322450}
+--- !u!114 &4356687501512478614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486731636429037883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760a00444457e124281b7a98f2cf6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.PoolReturner
+  poolTag: HillBumps
+--- !u!114 &828768819907879804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486731636429037883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f7cf535b13cc4488a3bd76724012d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.KillZone
+  killZone: 16
+  OnEnterKillzone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4356687501512478614}
+        m_TargetAssemblyTypeName: Snowmentum.PoolReturner, Assembly-CSharp
+        m_MethodName: Return
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
