@@ -90,12 +90,13 @@ namespace Snowmentum
         #endregion
 
         /// <summary>
-        /// Set up all text character displays  with the correct character based on the character that is selected
-        /// by default.
+        /// Sets up this char selector when it's called by the input menu's awake.
         /// </summary>
-        private void Awake()
+        /// <param name="validCharacters"></param>
+        public void Initialize(string validCharacters)
         {
             selectedTextIndex = Array.FindIndex(displaySettings, item => item.isSelectedChar);
+            ValidCharacters = validCharacters;
         }
 
         /// <summary>
@@ -159,9 +160,9 @@ namespace Snowmentum
         /// <param name="textIndex">The index of the text component.</param>
         private void UpdateChar(TMP_Text updateText, int textIndex)
         {
-            Debug.Log(validCharacters);
             int index = CharIndex + (textIndex - selectedTextIndex);
             CollectionHelpers.LoopIndex(ValidCharacters, ref index);
+            Debug.Log(index);
             updateText.text = ValidCharacters[index].ToString();
         }
 
