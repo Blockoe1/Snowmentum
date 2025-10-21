@@ -1340,7 +1340,7 @@ MonoBehaviour:
   sounds:
   - name: Snow Ambience
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 1
+    volume: 0.75
     pitch: 1
     loop: 1
     audioClip: {fileID: 8300000, guid: 528ea311f0fed9a4ebe11c6aebf06654, type: 3}
@@ -2212,31 +2212,31 @@ MonoBehaviour:
   OnStartEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 586305772}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Snow Ambience
           m_BoolArgument: 0
         m_CallState: 2
   OnDestroyEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 586305772}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Snow Ambience
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &840931099
@@ -3640,82 +3640,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 1671779631}
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Snowmentum.AudioManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: Snowmentum.AudioManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
-      value: Snowball Destruction
-      objectReference: {fileID: 0}
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnTakeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 900215123}
-    - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 900215127}
-    - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StartScreenDelay
-      objectReference: {fileID: 0}
-    - target: {fileID: 1048285940683226888, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Snowmentum.UI.LoseScreen, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3724,58 +3648,6 @@ PrefabInstance:
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 900215127}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StartScreenDelay
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Snowmentum.UI.LoseScreen, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnExitWaterEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnEnterWaterEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnExitWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnEnterWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnExitWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3784,46 +3656,14 @@ PrefabInstance:
       propertyPath: OnEnterWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 586305772}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnExitWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnEnterWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnExitWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Stop
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnEnterWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnExitWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Snowmentum.AudioManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnEnterWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Snowmentum.AudioManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnExitWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Snow Freezing
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnEnterWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Snow Freezing
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnExitWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnEnterWaterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
+    - target: {fileID: 7229168034952676644, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnStartEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 586305772}
+    - target: {fileID: 7229168034952676644, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 586305772}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -3867,10 +3707,6 @@ PrefabInstance:
     - target: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_Name
       value: Snowball
-      objectReference: {fileID: 0}
-    - target: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4641,22 +4477,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigameThrow.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMultipliedMinigameThrow.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1671779628}
@@ -4676,14 +4496,6 @@ PrefabInstance:
       propertyPath: OnMinigameThrow.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1221756940}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigameThrow.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 1221756940}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4705,30 +4517,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 800908753}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayRandomized
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigameThrow.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigameThrow.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: StartSpawning
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: StartSpawning
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: StartSpawning
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMultipliedMinigameThrow.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMultipliedMinigameThrow.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1671779627}
@@ -4736,42 +4524,6 @@ PrefabInstance:
       propertyPath: OnMultipliedMinigameThrow.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1671779631}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMultipliedMinigameThrow.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMultipliedMinigameThrow.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Snowmentum.AudioRelay, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigameThrow.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: Snowmentum.ObstacleSpawner, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMultipliedMinigameThrow.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Snowmentum.AudioRelay, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMultipliedMinigameThrow.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Throwing
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigamePack.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMinigameThrow.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
-      propertyPath: OnMultipliedMinigameThrow.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
