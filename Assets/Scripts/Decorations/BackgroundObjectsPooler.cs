@@ -62,12 +62,32 @@ namespace Snowmentum
             }
 
             GameObject obj = poolDictionary[tag].Dequeue();
-            obj.SetActive(true);
-            obj.transform.position = position;
-            obj.transform.rotation = rotation;
-            poolDictionary[tag].Enqueue(obj);
+            if (obj != null)
+            {
+                obj.SetActive(true);
+                obj.transform.position = position;
+                obj.transform.rotation = rotation;
+            }
+            //poolDictionary[tag].Enqueue(obj);
 
             return obj;
+        }
+
+        /// <summary>
+        /// Returns a spawned object to an object pool.
+        /// </summary>
+        /// <param name="obj">The object to return.</param>
+        /// <param name="tag">The tag of the pool to return the object to.</param>
+        public void ReturnToPool(GameObject obj, string tag)
+        {
+            if (!poolDictionary.ContainsKey(tag))
+            {
+                Debug.LogWarning($"Pool with tag {tag} doesn’t exist.");
+                return;
+            }
+
+            obj.SetActive(false);
+            poolDictionary[tag].Enqueue(obj);
         }
         [System.Serializable]
         public class Pool
