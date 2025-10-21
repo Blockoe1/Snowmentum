@@ -32,6 +32,14 @@ namespace Snowmentum
         }
 
         /// <summary>
+        /// Stops the timer.
+        /// </summary>
+        public void StopStopwatch()
+        {
+            isTimer = false;
+        }
+
+        /// <summary>
         /// Continually upticks the timer
         /// </summary>
         /// <returns></returns>
