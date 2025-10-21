@@ -159,6 +159,7 @@ namespace Snowmentum
         /// <param name="textIndex">The index of the text component.</param>
         private void UpdateChar(TMP_Text updateText, int textIndex)
         {
+            Debug.Log(validCharacters);
             int index = CharIndex + (textIndex - selectedTextIndex);
             CollectionHelpers.LoopIndex(ValidCharacters, ref index);
             updateText.text = ValidCharacters[index].ToString();

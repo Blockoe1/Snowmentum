@@ -110,7 +110,7 @@ namespace Snowmentum.UI
             foreach(CharSelector charSelector in charSelectors)
             {
                 charSelector.ValidCharacters = validCharacters;
-                charSelector.RefreshDisplay();
+                //charSelector.RefreshDisplay();
             }
         }
 

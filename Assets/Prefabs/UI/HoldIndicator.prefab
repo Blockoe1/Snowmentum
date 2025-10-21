@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3424483704001094785}
   - component: {fileID: 3245829546664423632}
   - component: {fileID: 1463735994067615558}
+  - component: {fileID: 7991373621508403791}
   m_Layer: 5
   m_Name: HoldIndicator
   m_TagString: Untagged
@@ -90,6 +91,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillImage: {fileID: 6605938496313043582}
+  OnBecomeVisible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7991373621508403791}
+        m_TargetAssemblyTypeName: Snowmentum.AudioRelay, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Mouse Hover
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnBecomeInvisible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7991373621508403791}
+        m_TargetAssemblyTypeName: Snowmentum.AudioRelay, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: No Hover
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7991373621508403791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3276029210065965217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c429e63662fa26a4d86e16eb4557fcf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.AudioRelay
+  soundName: 
 --- !u!1 &5955683247533837359
 GameObject:
   m_ObjectHideFlags: 0
