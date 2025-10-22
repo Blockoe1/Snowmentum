@@ -20,12 +20,12 @@ public static class CollectionHelpers
     /// <typeparam name="E"> The type of this list. </typeparam>
     /// <param name="inputList"> This list to filter child classes for. </param>
     /// <returns> A list of child classes from the passed in list. </returns>
-    public static List<T> FilterToChildList<T, E>(List<E> inputList) where T : E
+    public static List<T> FilterToChildList<T, E>(IEnumerable<E> inputList) where T : E
     {
         List<T> outputList = new List<T>();
-        for (int i = 0; i < inputList.Count; i++)
+        foreach(E e in inputList)
         {
-            if (inputList[i] is T item)
+            if (e is T item)
             {
                 outputList.Add(item);
             }
@@ -69,5 +69,17 @@ public static class CollectionHelpers
             index += collection.Count();
         }
         return didLoop;
+    }
+
+    /// <summary>
+    /// Checks if a given index is insid ethe bounds of a collection.
+    /// </summary>
+    /// <typeparam name="T">The type of the collection.</typeparam>
+    /// <param name="collection">The collection to check the index of.</param>
+    /// <param name="index">The index to check.</param>
+    /// <returns>True if the index is within the bounds of the collection.</returns>
+    public static bool IndexInRange<T>(IEnumerable<T> collection, int index)
+    {
+        return index >= 0 && index < collection.Count();
     }
 }

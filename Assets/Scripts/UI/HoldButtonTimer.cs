@@ -31,6 +31,8 @@ public class HoldButtonTimer : MonoBehaviour, IPointerEnterHandler, IPointerExit
             {
                 //activates the on click event of the button, which will be different depending on what each button does
                     usedButton.onClick.Invoke();
+                // Remove the indicator.
+                OnPointerExit(null);
                 
                 // Reset the timer to prevent repeated activation and things breaking
                 currentHoldTime = 0f;

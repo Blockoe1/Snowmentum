@@ -14,11 +14,37 @@ namespace Snowmentum
 {
     public class TitleScript : MonoBehaviour
     {
-        
+        [SerializeField] private GameObject mainMenu;
+        [SerializeField] private GameObject scoresDisplay;
+
+        private void Start()
+        {
+            scoresDisplay.SetActive(false);
+            mainMenu.SetActive(true);
+        }
+
         public void PlayGame()
         {
             //We can make the title scene 0 in the build and the gameplay scene 1
             SceneManager.LoadScene(1);
+        }
+
+        /// <summary>
+        /// Displays the high scores.
+        /// </summary>
+        public void ShowScores()
+        {
+            mainMenu.SetActive(false);
+            scoresDisplay.SetActive(true);
+        }
+
+        /// <summary>
+        /// Goes back to the main menu.
+        /// </summary>
+        public void GoBack()
+        {
+            scoresDisplay.SetActive(false);
+            mainMenu.SetActive(true);
         }
 
         /// <summary>

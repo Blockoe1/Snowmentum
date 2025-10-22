@@ -20,7 +20,6 @@ namespace Snowmentum
         #endregion
 
         [SerializeField] private Animator minigameAnimator;
-        [SerializeField] private UnityEvent OnMinigameComplete;
 
         [Header("Packing")]
         [SerializeField] private float maxSizeGain;
@@ -28,7 +27,6 @@ namespace Snowmentum
         [SerializeField, Tooltip("Packing quality is by default a very large value (Close to 1 million) whith good " +
             "input.  Divide it by this value to calculate the actual addition to size of the snowball.")] 
         private float packingQualityScaler = 1000000;
-        [SerializeField] private UnityEvent<float> OnMinigamePack;
         [Header("Throwing")]
         [SerializeField] private float maxSpeedGain;
         [SerializeField] private float throwDelay;
@@ -39,6 +37,11 @@ namespace Snowmentum
         private float throwStrengthScaler = 10000;
         [SerializeField, Tooltip("Multiplied by the scaled throwStrength to get the starting speed of the snowball")] 
         private float startingSpeedScaler;
+
+        [Header("Events")]
+        [SerializeField] private UnityEvent OnMinigameTransition;
+        [SerializeField] private UnityEvent OnMinigameComplete;
+        [SerializeField] private UnityEvent<float> OnMinigamePack;
         [SerializeField] private UnityEvent<float> OnMinigameThrow;
         [SerializeField] private UnityEvent<float> OnMultipliedMinigameThrow;
 
@@ -55,6 +58,7 @@ namespace Snowmentum
                     minigameState.CleanUp(this);
                 }
                 minigameState = value;
+                OnMinigameTransition?.Invoke();
             }
         }
         #endregion
@@ -148,7 +152,7 @@ namespace Snowmentum
             private readonly float throwDelay;
             private float sampleTime;
 
-            private float maxDelta;
+            private float totalThrowForce;
 
             private bool canThrow;
             private bool isSampling;
@@ -176,28 +180,31 @@ namespace Snowmentum
             internal override void MouseUpdate(PackingMinigame minigameController, Vector2 mouseDelta)
             {
                 // First, check if the trackball is moving in the desired direction.
-                if (canThrow && mouseDelta.x > requiredThrowForce)
+                if (canThrow)
                 {
-                    // Once we've started sampling, play the throw animation
-                    minigameController.minigameAnimator.SetTrigger("Throw");
-                    isSampling = true;
+                    // Only count rightwards input.
+                    if (mouseDelta.x > 0)
+                    {
+                        totalThrowForce += mouseDelta.x;
+                    }
+
+                    if (totalThrowForce > requiredThrowForce && !isSampling)
+                    {
+                        // Once we've started sampling, play the throw animation
+                        minigameController.minigameAnimator.SetTrigger("Throw");
+                        isSampling = true;
+                    }
                 }
 
                 // Then, sample mouse delta values for a small amount of time to ensure we capture the fastest the 
                 // player moved the ball.
                 if (isSampling)
                 {
-                    // Track only the largest delta value.
-                    if (mouseDelta.x > maxDelta)
-                    {
-                        maxDelta = mouseDelta.x;
-                    }
-
                     sampleTime -= Time.deltaTime;
 
                     if (sampleTime <= 0)
                     {
-                        minigameController.CompleteMinigame(storedPackingQuality, maxDelta);
+                        minigameController.CompleteMinigame(storedPackingQuality, totalThrowForce);
                     }
                 }
             }
@@ -222,9 +229,6 @@ namespace Snowmentum
         {
             CurrentMinigameState = new PackingState(this);
             //StartCoroutine(TimeUpdateRoutine());
-
-            // Locks the cursor so it's invisible on screen.
-            Cursor.lockState = CursorLockMode.Locked;
 
             // Subscribe to InputManager functions so that we can update states when the player inputs.
             InputManager.OnDeltaUpdate += UpdateMouseDelta;

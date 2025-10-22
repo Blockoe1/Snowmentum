@@ -14,8 +14,10 @@ namespace Snowmentum
 {
     public class SpriteTiler : MonoBehaviour
     {
-        [SerializeField, Tooltip("If set to true, then the object will also be scaled based on the bracket.")] 
-        private bool scale;
+        [SerializeField] private bool scaleX;
+        [SerializeField] private bool scaleY;
+        [SerializeField, Tooltip("The base bracket that this background should be scaled based on.")] 
+        private int baseBracket = 1;
         private Vector2 baseSize;
         private Vector3 baseScale;
 
@@ -30,6 +32,19 @@ namespace Snowmentum
         private void Reset()
         {
             rend = GetComponent<SpriteRenderer>();
+        }
+        #endregion
+
+        #region Properties
+        public int BaseBracket
+        {
+            get { return baseBracket; }
+            set 
+            { 
+                baseBracket = value;
+                // Need to immediately update the tiling of the object when baseBracket changes.
+                UpdateTiling(SizeBracket.Bracket);
+            }
         }
         #endregion
 
@@ -54,19 +69,19 @@ namespace Snowmentum
         private void UpdateTiling(int bracket)
         {
             // The width and height of this sprite renderer should be set to the min size of the bracket.
-            float minSize = SizeBracket.GetMinSize(bracket);
+            float minSize = SizeBracket.GetMinSize(bracket - (baseBracket - 1));
 
             // Update the size of the sprite renderer.
             Vector2 size = rend.size;
-            size.x = baseSize.x * minSize;
-            size.y = baseSize.y * minSize;
-            rend.size = size;
-
-            // Update the scale of the transform.
-            if (scale)
+            if (scaleX)
             {
-                transform.localScale = baseScale / minSize;
+                size.x = baseSize.x * minSize;
             }
+            if (scaleY)
+            {
+                size.y = baseSize.y * minSize;
+            }
+            rend.size = size;
         }
     }
 }
