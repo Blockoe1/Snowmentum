@@ -166,6 +166,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillImage: {fileID: 6490610244757104747}
   confirmTime: 1
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 766292497696511938}
+        m_TargetAssemblyTypeName: Snowmentum.AudioRelay, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Score Submit
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeselected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6110389547036698009
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +195,7 @@ GameObject:
   - component: {fileID: 7121508237372936662}
   - component: {fileID: 463187033949074014}
   - component: {fileID: 8163477611130827435}
+  - component: {fileID: 766292497696511938}
   m_Layer: 5
   m_Name: InitialsInput
   m_TagString: Untagged
@@ -225,9 +244,38 @@ MonoBehaviour:
   - {fileID: 1143058335969125488}
   - {fileID: 9193476860006111434}
   - {fileID: 8400536729506993508}
+  validCharacters: ABCDEFGHIJKLMNOPQRSTUVWXYZ
   selectionIndicator: {fileID: 3277741786420177978}
   inputThreshold: 15000
   inputDelay: 0.25
+  censoredInitials: []
+  OnScroll:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 766292497696511938}
+        m_TargetAssemblyTypeName: Snowmentum.AudioRelay, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Score Scrolling
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Snowmentum.UI.ControlsUI, Assembly-CSharp
+        m_MethodName: AdvanceSequence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Score Scrolling
+          m_BoolArgument: 0
+        m_CallState: 2
   OnSubmitInitials:
     m_PersistentCalls:
       m_Calls:
@@ -243,6 +291,18 @@ MonoBehaviour:
           m_StringArgument: TitleScene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 766292497696511938}
+        m_TargetAssemblyTypeName: Snowmentum.AudioRelay, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Score Submit
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8163477611130827435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +315,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d4b0154df0a7e4a9722fb601e08dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &766292497696511938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6110389547036698009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c429e63662fa26a4d86e16eb4557fcf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.AudioRelay
+  soundName: 
 --- !u!1 &8681514020490624697
 GameObject:
   m_ObjectHideFlags: 0

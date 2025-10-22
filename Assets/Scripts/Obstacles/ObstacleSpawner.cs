@@ -22,9 +22,13 @@ namespace Snowmentum
         [SerializeField] private ObstacleController obstaclePrefab;
         [SerializeField] private bool spawnOnStart = true;
         [Header("Spawn Parameters")]
-        [SerializeField] private int obstacleSpawnAmount = 1;  //amount of obstacles that will be spawned
-        [SerializeField] private float spawnCooldown;  //cooldown on spawning obstacles so it isn't going constantly
-        [SerializeField] private bool scaleWithSpeed;
+        [SerializeField, Tooltip("The number of obstacles that spawn after the cooldown.")] 
+        private int obstacleSpawnAmount = 1;  //amount of obstacles that will be spawned
+        [SerializeField, Tooltip("The amount of time to wait between spawning obstacles.")]
+        private float spawnCooldown;  //cooldown on spawning obstacles so it isn't going constantly
+        [SerializeField, Tooltip("If set to true, the rate obstacles spawn at will be adjusted based on the " +
+            "current speed of the snowball")]
+        private bool scaleWithSpeed;
         [SerializeField, Tooltip("Controls how much spawned obstacles skew towards being close in size to " +
             "the snowball.")] 
         private float sizeBonusWeight;

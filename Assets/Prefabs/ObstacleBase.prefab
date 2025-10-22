@@ -5084,7 +5084,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 805f54d98b0a27b4b8d396e404acd11d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5168,7 +5168,7 @@ MonoBehaviour:
   objectSize: 1
   scalePerspectiveX: 1
   scalePerspectiveY: 1
-  scaleOnSpawn: 0
+  scaleOnSpawn: 1
 --- !u!114 &2339446773185272735
 MonoBehaviour:
   m_ObjectHideFlags: 0

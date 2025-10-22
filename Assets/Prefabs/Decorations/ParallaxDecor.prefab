@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6610569103308770938}
   - component: {fileID: -3380308936898230814}
   - component: {fileID: 7280929830583889497}
+  - component: {fileID: 624908072712080318}
   m_Layer: 0
   m_Name: ParallaxDecor
   m_TagString: Untagged
@@ -141,7 +142,19 @@ MonoBehaviour:
   killZone: 16
   OnEnterKillzone:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 624908072712080318}
+        m_TargetAssemblyTypeName: Snowmentum.PoolReturner, Assembly-CSharp
+        m_MethodName: Return
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7280929830583889497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +175,16 @@ MonoBehaviour:
   updateOnEnable: 1
   spriteGroups:
   - {fileID: 11400000, guid: dd9ce7b4f0a1f8447a6cc3b8ed6da84b, type: 2}
+--- !u!114 &624908072712080318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061781790043898086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760a00444457e124281b7a98f2cf6400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.PoolReturner
+  poolTag: ParallaxObjects
