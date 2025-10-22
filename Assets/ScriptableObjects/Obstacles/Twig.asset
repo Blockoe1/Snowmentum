@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: Twig
   m_EditorClassIdentifier: 
-  obstacleSize: 1.8
+  obstacleSize: 1.68
   obstacleSprite: {fileID: 21300000, guid: 7ec80bbd1f4a7814496714e2dc76527f, type: 3}
   orderInLayer: 0
   baseScore: 1
