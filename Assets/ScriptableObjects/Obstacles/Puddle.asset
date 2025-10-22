@@ -16,11 +16,18 @@ MonoBehaviour:
   obstacleSprite: {fileID: 21300000, guid: 6b791ba0ee1f2274dacbd097e9ad1e78, type: 3}
   orderInLayer: -1
   baseScore: 1
-  tag: Water
   destroySound: 
   showOutline: 0
+  tag: Water
   isTrigger: 1
   capsuleDirection: 0
-  offset: {x: -0.025, y: -0.85}
-  size: {x: 1.35, y: 1.75}
+  offset: {x: -0.104527, y: -0.7702482}
+  size: {x: 2.147067, y: 2.147067}
+  particleSpriteSheet:
+  - {fileID: -1591989874, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: -1987503855, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  particleNumber: 0
+  emissionRadius: 0.0001
   baseSize: 1
