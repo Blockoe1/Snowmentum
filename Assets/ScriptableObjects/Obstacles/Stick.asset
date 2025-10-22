@@ -19,7 +19,7 @@ MonoBehaviour:
   destroySound: Obstacle Destruction
   showOutline: 1
   tag: Untagged
-  isTrigger: 0
+  hasCollision: 1
   capsuleDirection: 1
   offset: {x: -0.05, y: 0.1}
   size: {x: 1.5, y: 0.175}
