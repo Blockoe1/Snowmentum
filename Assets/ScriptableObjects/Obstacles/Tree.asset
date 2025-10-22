@@ -16,10 +16,10 @@ MonoBehaviour:
   obstacleSprite: {fileID: -5028273842082255259, guid: fb813830536a311478609fa576305b7f, type: 3}
   orderInLayer: 1
   baseScore: 6
-  tag: Untagged
   destroySound: 
   showOutline: 0
-  isTrigger: 0
+  tag: Untagged
+  hasCollision: 1
   capsuleDirection: 0
   offset: {x: 0.25528765, y: 0.047596216}
   size: {x: 1.7355738, y: 3.9163346}

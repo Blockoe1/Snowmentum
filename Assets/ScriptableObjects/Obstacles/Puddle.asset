@@ -19,7 +19,7 @@ MonoBehaviour:
   destroySound: 
   showOutline: 0
   tag: Water
-  isTrigger: 1
+  hasCollision: 0
   capsuleDirection: 0
   offset: {x: -0.104527, y: -0.7702482}
   size: {x: 2.147067, y: 2.147067}

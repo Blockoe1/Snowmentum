@@ -16,14 +16,14 @@ MonoBehaviour:
   obstacleSprite: {fileID: 0}
   orderInLayer: 0
   baseScore: 0
-  tag: Untagged
   destroySound: 
   showOutline: 0
-  isTrigger: 0
+  tag: Untagged
+  hasCollision: 1
   capsuleDirection: 0
   offset: {x: 0, y: 0}
   size: {x: 1, y: 1}
   particleSpriteSheet: []
   particleNumber: 0
   emissionRadius: 0
-  baseSize: 0
+  baseSize: 1

@@ -213,10 +213,11 @@ namespace Snowmentum
         /// destroyed or not.
         /// </summary>
         /// <param name="collision"></param>
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             //Debug.Log(isImmune);
-            if (!isImmune && collision.gameObject.TryGetComponent(out ObstacleCollision obstacle))
+            if (!isImmune && collision.gameObject.TryGetComponent(out ObstacleCollision obstacle) && 
+                obstacle.HasCollision)
             {
                 // Save the snowball's current size so that any changes to size dont affect any of the other math.
                 float snowballSizeVal = SnowballSize.Value;

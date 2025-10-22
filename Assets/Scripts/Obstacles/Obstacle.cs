@@ -32,8 +32,8 @@ namespace Snowmentum
         private string tag = "Untagged";
 
         [Header("Hitbox")]
-        [SerializeField, Tooltip("Whether the obstacle's collider behaves as a trigger or not.")] 
-        private bool isTrigger;
+        [SerializeField, Tooltip("Whether the obstacle has normal collision with the snowball.")] 
+        private bool hasCollision = true;
         [SerializeField, Tooltip("The direction of the obstacle's capsule collider.")] 
         private CapsuleDirection2D capsuleDirection; 
         [SerializeField, Tooltip("The offset of the obstacle's collider.")] 
@@ -87,10 +87,10 @@ namespace Snowmentum
             get { return destroySound; }
             set { destroySound = value; }
         }
-        public bool IsTrigger
+        public bool HasCollision
         {
-            get { return isTrigger; }
-            set { isTrigger = value; }
+            get { return hasCollision; }
+            set { hasCollision = value; }
         }
         public bool ShowOutline
         { 

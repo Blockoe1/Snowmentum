@@ -35,6 +35,7 @@ namespace Snowmentum
         #endregion
 
         #region Properties
+        public bool HasCollision => obstacle != null ? obstacle.HasCollision : false;
         public float ObstacleSize => obstacle.ObstacleSize;
         #endregion
 
