@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Snowmentum.Size
 {
-    [RequireComponent(typeof(ObjectMoverBase))]
+    [RequireComponent(typeof(MoveModifierController))]
     public class ObjectScaler : MonoBehaviour, IMovementModifier
     {
         [SerializeField, Tooltip("The in-game size of this obstacle.  Used to determine how large this obstacle is " +
@@ -18,11 +18,13 @@ namespace Snowmentum.Size
         private float objectSize;
         [SerializeField, Tooltip("If true, then the obstacle's position in the hill will automatically be adjusted" +
     " to add to the illusion of the snowball getting bigger.")]
-        private bool scalePerspective;
+        private bool scalePerspectiveX;
+        [SerializeField, Tooltip("If true, then the obstacle's position in the hill will automatically be adjusted" +
+    " to add to the illusion of the snowball getting bigger.")]
+        private bool scalePerspectiveY;
         [SerializeField, Tooltip("When set to true, the object will scale it's position based on it's starting size" +
     " when it spawns.  This results in obstacles spawning at varied locations based on their size.")]
         private bool scaleOnSpawn;
-        [SerializeField] private bool debugDisable;
 
         private float oldSize = 1;
 
@@ -45,6 +47,16 @@ namespace Snowmentum.Size
         }
 
         /// <summary>
+        /// Prevent wierd scaling by resetting our old size to what our size should currently be so that
+        /// disabling the object doesnt break things.
+        /// </summary>
+        private void OnEnable()
+        {
+            // Added this in for the background decorations.  If obstacles break, this is the first place to look.
+            oldSize = objectSize / EnvironmentSize.Value;
+        }
+
+        /// <summary>
         /// Update the scale of the obstacle in the scene.
         /// </summary>
         //private void OnValidate()
@@ -57,7 +69,6 @@ namespace Snowmentum.Size
         /// </summary>
         public Vector2 MoveUpdate(Transform movedObject, Vector2 targetPos, Vector2 moveVector)
         {
-            if (debugDisable) { return targetPos; }
             //// Scales the obstacle around a given pivot point.
             //void ScaleAround(Vector2 pivot, float oldScale, float newScale)
             //{
@@ -86,11 +97,14 @@ namespace Snowmentum.Size
 
             float sizeRatio = objectSize / EnvironmentSize.Value;
             // Save the size ratio of this iteration so that changes in size can be tracked.
-            if (scalePerspective)
+            if (scalePerspectiveX || scalePerspectiveY)
             {
+                Vector2 pivotPoint = Vector2.zero;
+                pivotPoint.x = scalePerspectiveX ? EnvironmentSize.ScalePivot.x : targetPos.x;
+                pivotPoint.y = scalePerspectiveY ? EnvironmentSize.ScalePivot.y : targetPos.y;
                 // Scale the obstacle's position based on the size ratio so that the perspective scales.  Two obstacles
                 // get closer to each other as they are scaled down.
-                targetPos = SizeHelpers.CalculateScaledPosition(EnvironmentSize.ScalePivot, targetPos, oldSize, 
+                targetPos = SizeHelpers.CalculateScaledPosition(pivotPoint, targetPos, oldSize, 
                     sizeRatio);
             }
             // Scales the object based on the ratio of the obstacle and snowball sizes.
@@ -109,6 +123,14 @@ namespace Snowmentum.Size
         private void ScaleObject(Transform objToScale, float scale)
         {
             objToScale.localScale = Vector3.one * scale;
+        }
+
+        /// <summary>
+        /// Sets this object's size to the minimum size of a given bracket.
+        /// </summary>
+        public void SetToMinSize(int bracket)
+        {
+            Size = SizeBracket.GetMinSize(bracket);
         }
     }
 }

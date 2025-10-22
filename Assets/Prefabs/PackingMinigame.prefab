@@ -46,6 +46,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameAnimator: {fileID: 4880275567121914993}
+  maxSizeGain: 0.5
+  packingTime: 5
+  packingQualityScaler: 1000000
+  maxSpeedGain: 1.5
+  throwDelay: 0.5
+  minThrowForce: 10000
+  throwSampleTime: 0.1
+  throwStrengthScaler: 300000
+  startingSpeedScaler: 15
+  OnMinigameTransition:
+    m_PersistentCalls:
+      m_Calls: []
   OnMinigameComplete:
     m_PersistentCalls:
       m_Calls:
@@ -86,9 +98,9 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 5
+        m_TargetAssemblyTypeName: Snowmentum.BackgroundObjectSpawner, Assembly-CSharp
+        m_MethodName: StartSpawning
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -97,9 +109,18 @@ MonoBehaviour:
           m_StringArgument: Test
           m_BoolArgument: 1
         m_CallState: 2
-  maxSizeGain: 0.5
-  packingTime: 5
-  packingQualityScaler: 1000000
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Snowmentum.BackgroundObjectSpawner, Assembly-CSharp
+        m_MethodName: StartSpawning
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Test
+          m_BoolArgument: 1
+        m_CallState: 2
   OnMinigamePack:
     m_PersistentCalls:
       m_Calls:
@@ -115,12 +136,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  maxSpeedGain: 1
-  throwDelay: 0.5
-  minThrowForce: 2500
-  throwSampleTime: 0.1
-  throwStrengthScaler: 5000
-  startingSpeedScaler: 15
+      - m_Target: {fileID: 2665110652182175276}
+        m_TargetAssemblyTypeName: Snowmentum.AudioRelay, Assembly-CSharp
+        m_MethodName: PlayRandomized
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnMinigameThrow:
     m_PersistentCalls:
       m_Calls:
@@ -173,6 +200,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2665110652182175276}
+        m_TargetAssemblyTypeName: Snowmentum.AudioRelay, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Throwing
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &4869938650486738228
@@ -229,6 +268,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -250,9 +291,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: -223718351
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ea8b0c744bfe47043abd86f489bec0e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

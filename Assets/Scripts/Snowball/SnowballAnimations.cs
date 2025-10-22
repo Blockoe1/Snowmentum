@@ -15,7 +15,7 @@ namespace Snowmentum
     {
         #region CONSTS
         private const string ANIM_SIZE_NAME = "Size";
-        private const string ANIM_FROZEN_NAME = "IsFrozen";
+        private const string FROZEN_LAYER_NAME = "Frozen";
         #endregion
 
         [SerializeField] private float baseAnimationSpeed = 1f;
@@ -98,7 +98,8 @@ namespace Snowmentum
         /// <param name="isFrozen">If the snowball is frozen or not.</param>
         public void SetFrozen(bool isFrozen)
         {
-            anim.SetBool(ANIM_FROZEN_NAME, isFrozen);
+            //anim.SetBool(FROZEN_LAYER_NAME, isFrozen);
+            anim.SetLayerWeight(anim.GetLayerIndex(FROZEN_LAYER_NAME), isFrozen ? 1 : 0);
         }
     }
 }

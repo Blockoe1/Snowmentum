@@ -9,6 +9,7 @@
 using System.Collections;
 using UnityEngine;
 using Snowmentum.Size;
+using UnityEngine.Events;
 
 namespace Snowmentum
 {
@@ -21,6 +22,9 @@ namespace Snowmentum
 
         [SerializeField] private SizeUpdater effectOnSize;
         [SerializeField] private SpeedUpdater effectOnSpeed;
+
+        [Header("Events")]
+        [SerializeField] private UnityEvent<float> OnTakeDamage;
 
         private Coroutine immunityRoutine;
         private bool isImmune;
@@ -218,7 +222,7 @@ namespace Snowmentum
                 // Save the snowball's current size so that any changes to size dont affect any of the other math.
                 float snowballSizeVal = SnowballSize.Value;
 
-                Debug.Log("Collided with " + obstacle.name + " of size " + obstacle.ObstacleSize);
+                //Debug.Log("Collided with " + obstacle.name + " of size " + obstacle.ObstacleSize);
 
                 // Change the player's values based on our result curves defined in the inspector.
                 if (!IsInvincible)
@@ -246,6 +250,8 @@ namespace Snowmentum
             // If we experienced a negative change in size, then we should gain immunity for a bit.
             if (!isImmune && change < 0)
             {
+                // Only allow for broadcasts of damage that the snowball can actually take.
+                OnTakeDamage?.Invoke(Mathf.Min(Mathf.Abs(change), old));
                 GiveImmunity(hitImmunity);
             }
         }

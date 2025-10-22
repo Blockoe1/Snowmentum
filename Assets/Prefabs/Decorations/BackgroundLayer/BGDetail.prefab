@@ -1,0 +1,413 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4816279092352564268
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+    - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_SortingOrder
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+    - target: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_SortingOrder
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5453245859179458551}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4647503536203185848}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeBracket
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Snowmentum.BracketSprite, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Snowmentum.SpriteTiler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667215268504281920, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7441472796543878854}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7441472796543878854}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Snowmentum.BracketSprite, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Snowmentum.BracketSprite, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889484508010053483, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: OnObjectLooped.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705608094498230621, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: 'bracketSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+    - target: {fileID: 4735429520752626872, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: 'bracketSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+    - target: {fileID: 5683145398054593323, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405125026267278839, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405125026267278839, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405125026267278839, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405125026267278839, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405125026267278839, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405125026267278839, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405125026267278839, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405125026267278839, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405125026267278839, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405125026267278839, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771020861534784597, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127174723714643231, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_Name
+      value: BGDetail
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9127174723714643231, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3833454929022926759}
+    - targetCorrespondingSourceObject: {fileID: 8547768223595833983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4647503536203185848}
+    - targetCorrespondingSourceObject: {fileID: 8547768223595833983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5453245859179458551}
+    - targetCorrespondingSourceObject: {fileID: 8547768223595833983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3614291449804588202}
+    - targetCorrespondingSourceObject: {fileID: 6825359505764552983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8262030267402265963}
+    - targetCorrespondingSourceObject: {fileID: 6825359505764552983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7441472796543878854}
+    - targetCorrespondingSourceObject: {fileID: 6825359505764552983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5497890167342106892}
+  m_SourcePrefab: {fileID: 100100000, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+--- !u!1 &2048662978663689531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6825359505764552983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+  m_PrefabInstance: {fileID: 4816279092352564268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8262030267402265963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048662978663689531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 0
+  baseBracket: 1
+  rend: {fileID: 5870643922241915581}
+--- !u!114 &7441472796543878854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048662978663689531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ebb20f4aafa5bc4894ba682b2b8a712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.BracketSprite
+  bracketSprites:
+  - {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+  transitionSprites: []
+  OnNewSprite:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8262030267402265963}
+        m_TargetAssemblyTypeName: Snowmentum.SpriteTiler, Assembly-CSharp
+        m_MethodName: set_BaseBracket
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5497890167342106892}
+        m_TargetAssemblyTypeName: Snowmentum.Size.ObjectScaler, Assembly-CSharp
+        m_MethodName: SetToMinSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rend: {fileID: 5870643922241915581}
+  transitioner: {fileID: 3833454929022926759}
+--- !u!114 &5497890167342106892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048662978663689531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf336ba4bd058c4396612996741d5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectSize: 1
+  scalePerspectiveX: 1
+  scalePerspectiveY: 1
+  scaleOnSpawn: 0
+--- !u!1 &3767570842865473107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8547768223595833983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+  m_PrefabInstance: {fileID: 4816279092352564268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4647503536203185848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3767570842865473107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cf05c8cf68ddd47bb8a875f9698ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleX: 1
+  scaleY: 0
+  baseBracket: 1
+  rend: {fileID: 5448865305363378137}
+--- !u!114 &5453245859179458551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3767570842865473107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ebb20f4aafa5bc4894ba682b2b8a712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.BracketSprite
+  bracketSprites:
+  - {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+  transitionSprites: []
+  OnNewSprite:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4647503536203185848}
+        m_TargetAssemblyTypeName: Snowmentum.SpriteTiler, Assembly-CSharp
+        m_MethodName: set_BaseBracket
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3614291449804588202}
+        m_TargetAssemblyTypeName: Snowmentum.Size.ObjectScaler, Assembly-CSharp
+        m_MethodName: SetToMinSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rend: {fileID: 5448865305363378137}
+  transitioner: {fileID: 3833454929022926759}
+--- !u!114 &3614291449804588202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3767570842865473107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf336ba4bd058c4396612996741d5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectSize: 1
+  scalePerspectiveX: 1
+  scalePerspectiveY: 1
+  scaleOnSpawn: 0
+--- !u!1 &4358606327849666867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9127174723714643231, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+  m_PrefabInstance: {fileID: 4816279092352564268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3833454929022926759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358606327849666867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dfb2276c7556fb45a163f182191da99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.BracketSpriteTransitioner
+--- !u!212 &5448865305363378137 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+  m_PrefabInstance: {fileID: 4816279092352564268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5870643922241915581 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+  m_PrefabInstance: {fileID: 4816279092352564268}
+  m_PrefabAsset: {fileID: 0}
