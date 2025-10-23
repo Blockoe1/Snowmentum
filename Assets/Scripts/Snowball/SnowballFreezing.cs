@@ -27,7 +27,7 @@ namespace Snowmentum
             "through water.")] 
         private float frozenTime;
         [SerializeField, Range(0, FREEZE_THRESHOLD)] private float warningThreshold = 0.25f;
-        [SerializeField] private float flashDelay = 0.1f; 
+        [SerializeField] private float flashDelay = 0.1f;
         [Header("Events")]
         [SerializeField] private UnityEvent OnFreezeEvent;
         [SerializeField] private UnityEvent OnThawEvent;
