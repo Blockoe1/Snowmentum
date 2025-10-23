@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 463187033949074014}
   - component: {fileID: 8163477611130827435}
   - component: {fileID: 766292497696511938}
+  - component: {fileID: 6884604255006804891}
   m_Layer: 5
   m_Name: InitialsInput
   m_TagString: Untagged
@@ -328,6 +329,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.AudioRelay
   soundName: 
+--- !u!114 &6884604255006804891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6110389547036698009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ae3ddfe0694e34f94499c0ff25cb78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.UI.InitialsArcadeInput
+  inputMenu: {fileID: 463187033949074014}
 --- !u!1 &8681514020490624697
 GameObject:
   m_ObjectHideFlags: 0

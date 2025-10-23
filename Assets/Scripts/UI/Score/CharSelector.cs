@@ -162,7 +162,7 @@ namespace Snowmentum
         {
             int index = CharIndex + (textIndex - selectedTextIndex);
             CollectionHelpers.LoopIndex(ValidCharacters, ref index);
-            Debug.Log(index);
+            //Debug.Log(index);
             updateText.text = ValidCharacters[index].ToString();
         }
 
