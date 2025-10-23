@@ -15,7 +15,6 @@ namespace Snowmentum
     public class SnowballPosition : MonoBehaviour
     {
         public static event Action<Vector2> OnPositionChanged;
-        private Vector2 lastPosition;
 
         /// <summary>
         /// Start the coroutine.
@@ -34,7 +33,6 @@ namespace Snowmentum
             while (true)
             {
                 OnPositionChanged?.Invoke(transform.position);
-                lastPosition = transform.position;
                 // Should run on update because this is purely visual.
                 yield return null;
             }

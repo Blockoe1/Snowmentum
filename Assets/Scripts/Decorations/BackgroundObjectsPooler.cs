@@ -61,16 +61,22 @@ namespace Snowmentum
                 return null;
             }
 
-            GameObject obj = poolDictionary[tag].Dequeue();
-            if (obj != null)
+            // Check if there is an object in the queue to take from.
+            if (poolDictionary[tag].Count > 0)
             {
-                obj.SetActive(true);
-                obj.transform.position = position;
-                obj.transform.rotation = rotation;
-            }
-            //poolDictionary[tag].Enqueue(obj);
+                GameObject obj = poolDictionary[tag].Dequeue();
+                if (obj != null)
+                {
+                    obj.SetActive(true);
+                    obj.transform.position = position;
+                    obj.transform.rotation = rotation;
+                }
+                //poolDictionary[tag].Enqueue(obj);
 
-            return obj;
+                return obj;
+            }
+            
+            return null;
         }
 
         /// <summary>

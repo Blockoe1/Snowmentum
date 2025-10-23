@@ -18,6 +18,7 @@ namespace Snowmentum
     public class ObstacleCollision : MonoBehaviour
     {
         [Header("Events")]
+        [SerializeField] private UnityEvent<float> OnDealDamageEvent;
         [SerializeField] private UnityEvent<float> OnDestroyEvent;
 
         #region Component References
@@ -49,6 +50,17 @@ namespace Snowmentum
         {
             OnDestroyEvent?.Invoke(sizeRatio);
             //Destroy(gameObject);
+        }
+
+        /// <summary>
+        /// Call an event when this obstacle deals damage to the snowball.
+        /// </summary>
+        /// <param name="sizeRatio">
+        /// The ratio obstacleSize / snowballSize.  Used by the OnDamageEvent to scale results based on said ratio.
+        /// </param>
+        public void OnDealDamage(float sizeRatio)
+        {
+            OnDealDamageEvent?.Invoke(sizeRatio);
         }
     }
 }
