@@ -134,17 +134,6 @@ namespace Snowmentum.UI
         /// <param name="delta"></param>
         private void HandleMouseInput(Vector2 delta)
         {
-            // Controls actions that should happen no matter what gets input.
-            void OnInput()
-            {
-                OnScroll?.Invoke();
-
-                StartCoroutine(InputDelay(inputDelay));
-
-                // Reset delta on input.
-                totalDelta = Vector2.zero;
-            }
-
             if (pauseInput) { return; }
             // Increasee our stored total delta value by the delta of this frame.
             totalDelta += delta;
@@ -152,15 +141,37 @@ namespace Snowmentum.UI
             // Checks if the player sufficiently moves the trackball.
             if (Mathf.Abs(totalDelta.x) > inputThreshold)
             {
-                // Horizontal inputs should switch which char selector is selected.
-                SelectedIndex += Math.Sign(totalDelta.x);
+                HandleInput(new Vector2Int(Math.Sign(totalDelta.x), 0));
 
                 OnInput();
             }
             else if (Mathf.Abs(totalDelta.y) > inputThreshold)
             {
+                HandleInput(new Vector2Int(0, Math.Sign(delta.y)));
+                
+
+                OnInput();
+            }
+        }
+
+        /// <summary>
+        /// Handles directional input.
+        /// </summary>
+        /// <param name="inputDirection"></param>
+        public void HandleInput(Vector2Int inputDirection)
+        {
+            if (pauseInput) { return; }
+            if (Mathf.Abs(inputDirection.x) > 0)
+            {
+                // Horizontal inputs should switch which char selector is selected.
+                SelectedIndex += inputDirection.x;
+
+                OnInput();
+            }
+            else if (Mathf.Abs(inputDirection.y) > 0)
+            {
                 // Vertical inputs should increment/decrement the char selector.
-                components[selectedIndex].OnVerticalInput(Math.Sign(delta.y));
+                components[selectedIndex].OnVerticalInput(inputDirection.y);
 
                 // Check for possible censored initial combinations, and disable any relevant characters.
                 CheckCensoredInitials();
@@ -173,6 +184,19 @@ namespace Snowmentum.UI
 
                 OnInput();
             }
+        }
+
+        /// <summary>
+        /// Handles events that should happen when any kind of input occurs.
+        /// </summary>
+        private void OnInput()
+        {
+            OnScroll?.Invoke();
+
+            StartCoroutine(InputDelay(inputDelay));
+
+            // Reset delta on input.
+            totalDelta = Vector2.zero;
         }
 
         /// <summary>
