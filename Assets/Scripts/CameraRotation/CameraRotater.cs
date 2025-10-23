@@ -42,7 +42,7 @@ namespace Snowmentum
         private float ZRotationTarget;
 
         //used for setting the rotation back to 0 when the snowball collides with an obstacle
-        private float minZRotation = 0f;
+        //private float minZRotation = 0f;
 
         private Quaternion targetRotation;
 
