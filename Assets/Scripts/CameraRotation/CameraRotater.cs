@@ -100,11 +100,11 @@ namespace Snowmentum
             }
             #endregion
 
-            //Clamp the camera from rotating beyond a certain point
-            Vector3 currentEulerAngles = transform.eulerAngles;
-            float zAngle = currentEulerAngles.z;
-            zAngle = Mathf.Clamp(zAngle, 0, ZRotationTarget);
-            transform.eulerAngles = new Vector3(currentEulerAngles.x, currentEulerAngles.y, zAngle);
+            ////Clamp the camera from rotating beyond a certain point
+            //Vector3 currentEulerAngles = transform.eulerAngles;
+            //float zAngle = currentEulerAngles.z;
+            //zAngle = Mathf.Clamp(zAngle, 0, ZRotationTarget);
+            //transform.eulerAngles = new Vector3(currentEulerAngles.x, currentEulerAngles.y, zAngle);
 
         }
 
