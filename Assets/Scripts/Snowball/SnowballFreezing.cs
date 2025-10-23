@@ -116,7 +116,7 @@ namespace Snowmentum
         /// <param name="collision"></param>
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag(WATER_TAG))
+            if (collision.CompareTag(WATER_TAG) && !isInWater)
             {
                 isInWater = true;
                 OnEnterWaterEvent?.Invoke();

@@ -19,7 +19,7 @@ namespace Snowmentum
         /// </summary>
         public void Return()
         {
-            Debug.Log("Returned");
+            //Debug.Log("Returned");
             BackgroundObjectsPooler.Instance.ReturnToPool(gameObject, poolTag);
         }
     }
