@@ -236,6 +236,10 @@ namespace Snowmentum
                 {
                     obstacle.DestroyObstacle(obstacle.ObstacleSize / snowballSizeVal);
                 }
+                else
+                {
+                    obstacle.OnDealDamage(obstacle.ObstacleSize / snowballSizeVal);
+                }
             }
         }
 

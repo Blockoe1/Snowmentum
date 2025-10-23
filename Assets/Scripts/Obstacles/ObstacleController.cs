@@ -265,7 +265,15 @@ namespace Snowmentum
         /// </summary>
         public void ReturnObstacle()
         {
-            obstacleReturnFunction(this);
+            if (obstacleReturnFunction != null)
+            {
+                obstacleReturnFunction(this);
+            }
+            // If no return function is specified, the object is simply destroyed.
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
