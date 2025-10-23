@@ -200,4 +200,17 @@ public static class MathHelpers
         float angle = VectorToDegAngle(cartesianCoordinates);
         return new Vector2(cartesianCoordinates.magnitude, angle);
     }
+
+    /// <summary>
+    /// Rounds a vector2 to a Vector2Int
+    /// </summary>
+    /// <remarks>
+    /// Does not accurately keep the vector's direction.  Do not use for direction vectors.
+    /// </remarks>
+    /// <param name="vector">The vector to round</param>
+    /// <returns>The vector with it's components rounded to an int.</returns>
+    public static Vector2Int RoundVectorToInt(Vector2 vector)
+    {
+        return new Vector2Int(Mathf.RoundToInt(vector.x), Mathf.RoundToInt(vector.y));
+    }
 }
