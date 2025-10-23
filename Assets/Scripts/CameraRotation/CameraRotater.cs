@@ -14,11 +14,16 @@ namespace Snowmentum
 {
     public class CameraRotater : MonoBehaviour
     {
-        [SerializeField] GameObject sceneCamera;
-        [SerializeField] GameObject backgroundLayer1;
-        [SerializeField] GameObject backgroundLayer2;
-        [SerializeField] GameObject snowballGameObject;
-        [SerializeField] Rigidbody2D snowballRigidbody;
+        //[SerializeField] GameObject sceneCamera;
+        [SerializeField] private Transform[] rotatedObjects;
+        [SerializeField, Tooltip("The theoretical max speed that the snowball can reach.")] 
+        private float maxSpeed;
+        [SerializeField, Tooltip("The max rotation that the camera can have.")] 
+        private float maxRotation;
+        //[SerializeField] GameObject backgroundLayer1;
+        //[SerializeField] GameObject backgroundLayer2;
+        //[SerializeField] GameObject snowballGameObject;
+        //[SerializeField] Rigidbody2D snowballRigidbody;
 
         //used to track change in snowballSpeed
         public float previousSpeed;
@@ -41,12 +46,12 @@ namespace Snowmentum
 
         private Quaternion targetRotation;
 
-        float snowballSize = SnowballSize.Value;
+        float snowballSize = SnowballSize.TargetValue;
 
         
         void Start()
         {
-            previousSpeed = SnowballSpeed.Value;
+            previousSpeed = SnowballSpeed.TargetValue;
             targetRotation = transform.rotation;
 
             
@@ -58,36 +63,37 @@ namespace Snowmentum
             
             //If there is a better way to check when the minigame ends that doesn't happen every frame forever that would be good but it works for now
             //check if snowball is active. basically checks for when the packing minigame ends and snowball becomes active
-            if (snowballGameObject.activeInHierarchy)
-            {
-                StartCoroutine(BeginRotation());
-            }
+            // This has the problem of running this coroutine very frame, which causes performance issues.
+            //if (snowballGameObject.activeInHierarchy)
+            //{
+            //    StartCoroutine(BeginRotation());
+            //}
 
 
 
             #region DetermineMaximumRotationAngle
-            snowballSize = SnowballSize.Value;
+            snowballSize = SnowballSize.TargetValue;
             
             
             //camera angle changes to become more drastic as snowball speeds up
             //rotates back towards zero if snowball collides and slows down
             
 
-            switch (SnowballSpeed.Value)
+            switch (SnowballSpeed.TargetValue)
             {
+                case > 15f:
+                    ZRotationTarget = maxRotation;
+                    break;
+
+                case > 10f:
+                    ZRotationTarget = maxRotation * 2 /3;
+                    break;
+
                 case > 5f:
-                    ZRotationTarget = 8f;
+                    ZRotationTarget = maxRotation / 3;
                     break;
 
-                case > 4f:
-                    ZRotationTarget = 5f;
-                    break;
-
-                case > 3f:
-                    ZRotationTarget = 3f;
-                    break;
-
-                case < 1f:
+                default:
                     ZRotationTarget = 0f;
                     break;
 
@@ -102,7 +108,12 @@ namespace Snowmentum
 
         }
 
-        IEnumerator BeginRotation()
+        public void BeginRotation()
+        {
+            StartCoroutine(BeginRotationRoutine());
+        }
+
+        IEnumerator BeginRotationRoutine()
         {
             
             yield return new WaitForSeconds(postMinigameDelay);
@@ -140,7 +151,12 @@ namespace Snowmentum
                 targetRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, ZRotationTarget);
 
                 // Smoothly interpolate towards the target rotation
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+                Quaternion rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+
+                foreach(Transform t in rotatedObjects)
+                {
+                    t.rotation = rotation;
+                }
             }
         }
     }

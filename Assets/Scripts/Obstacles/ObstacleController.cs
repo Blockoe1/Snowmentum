@@ -8,8 +8,8 @@
 *****************************************************************************/
 using Snowmentum.Score;
 using Snowmentum.Size;
-using System;
 using UnityEngine;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -59,6 +59,7 @@ namespace Snowmentum
             set { obstacleReturnFunction = value; }
         }
         public float ObstacleSize => obstacleData.ObstacleSize;
+        public bool HasCollision => obstacleData == null ? false : obstacleData.HasCollision;
         #endregion
 
 
@@ -151,7 +152,7 @@ namespace Snowmentum
             // Update the collision data of the obstacle.
             if (obstacleCollider != null)
             {
-                obstacleData.IsTrigger = obstacleCollider.isTrigger;
+                obstacleData.HasCollision = !obstacleCollider.isTrigger;
                 obstacleData.HitboxOffset = obstacleCollider.offset;
                 obstacleData.HitboxSize = obstacleCollider.size;
                 obstacleData.HitboxDirection = obstacleCollider.direction;
@@ -220,7 +221,7 @@ namespace Snowmentum
             // Collider Updates
             if (obstacleCollider != null)
             {
-                obstacleCollider.isTrigger = obstacleData.IsTrigger;
+                obstacleCollider.isTrigger = !obstacleData.HasCollision;
                 obstacleCollider.offset = obstacleData.HitboxOffset;
                 obstacleCollider.size = obstacleData.HitboxSize;
                 obstacleCollider.direction = obstacleData.HitboxDirection;
