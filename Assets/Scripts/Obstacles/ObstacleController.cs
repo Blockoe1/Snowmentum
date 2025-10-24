@@ -20,6 +20,7 @@ namespace Snowmentum
     public class ObstacleController : MonoBehaviour
     {
         [SerializeField] private Obstacle obstacleData;
+        [SerializeField] private bool autoUpdateObstacleData = true;
 
         private ObstacleReturnFunction obstacleReturnFunction;
 
@@ -79,7 +80,7 @@ namespace Snowmentum
             //}
 
             // Update our prefab's components when the obstacle data changes.
-            if (obstacleData != oldObsData)
+            if (autoUpdateObstacleData && obstacleData != oldObsData)
             {
                 Debug.Log("Updated");
                 // Run SetObstacle so other values are updated.

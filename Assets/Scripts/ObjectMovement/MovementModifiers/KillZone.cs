@@ -14,6 +14,8 @@ namespace Snowmentum
     public class KillZone : MonoBehaviour, IMovementModifier
     {
         [SerializeField] private float killZone;
+        [SerializeField] private bool checkNegative = true;
+        [SerializeField] private bool checkPositive = true;
         [SerializeField] private UnityEvent OnEnterKillzone;
 
         /// <summary>
@@ -24,7 +26,8 @@ namespace Snowmentum
         /// <returns></returns>
         public Vector2 MoveUpdate(Transform movedObject, Vector2 targetPos, Vector2 moveVector)
         {
-            if (Mathf.Abs(targetPos.x) > killZone)
+            // Check for exceeding the positive and negative kill zones separately.
+            if ((checkPositive && targetPos.x > killZone) || (checkNegative && targetPos.x < -killZone))
             {
                 OnEnterKillzone?.Invoke();
                 //Destroy(movedObject.gameObject);
