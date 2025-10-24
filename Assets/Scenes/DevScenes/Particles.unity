@@ -2529,7 +2529,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.25
+      scalar: 0.125
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7682,7 +7682,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.25
+      scalar: 0.125
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -12680,10 +12680,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.56485355
+    x: 0
     y: 0
-    width: 0.73082286
-    height: 0.73048323
+    width: 1
+    height: 0.9995353
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -13330,23 +13330,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1788025634}
     - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnThawEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 1575453706}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnThawEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 1078906540}
-    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: OnFreezeEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
       objectReference: {fileID: 1575453706}
+    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnThawEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1078906540}
     - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnFreezeEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 1078906540}
+      objectReference: {fileID: 1575453706}
     - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnFreezeEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1078906540}
+    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnFreezeEvent.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
       objectReference: {fileID: 1256668276}
     - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
@@ -13359,7 +13359,7 @@ PrefabInstance:
       objectReference: {fileID: 1789824256}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14101,7 +14101,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.25
+      scalar: 0.125
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14684,7 +14684,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 50
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2

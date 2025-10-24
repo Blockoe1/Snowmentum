@@ -44,8 +44,8 @@ namespace Snowmentum
         }
         public void StopParticles()
         {
-            SnowballSize.OnValueChanged += UpdateRadius;
-            SnowballSpeed.OnValueChanged += UpdateSpeed;
+            SnowballSize.OnValueChanged -= UpdateRadius;
+            SnowballSpeed.OnValueChanged -= UpdateSpeed;
 
             particles.Stop();
         }
@@ -57,10 +57,12 @@ namespace Snowmentum
         /// <param name="newSpeed"></param>
         private void UpdateSpeed(float newSpeed, float oldSpeed)
         {
+            //Debug.Log("Updating Speed" + newSpeed);
             // Updates the speed of the particles based on the snowball's speed.
             var velocityModule = particles.velocityOverLifetime;
             var linear = velocityModule.x;
-            linear.constant = newSpeed * speedScale;
+            linear.constant = newSpeed * -speedScale;
+            velocityModule.x = linear;
         }
 
         /// <summary>
