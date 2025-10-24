@@ -21,8 +21,8 @@ MonoBehaviour:
   tag: Water
   hasCollision: 0
   capsuleDirection: 0
-  offset: {x: 0.031787753, y: -2.8494225}
-  size: {x: 2.6398828, y: 8.007864}
+  offset: {x: 0, y: -3}
+  size: {x: 2.65, y: 8}
   particleSpriteSheet:
   - {fileID: -1591989874, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   - {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
