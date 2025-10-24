@@ -2582,9 +2582,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 0.99966645
+    y: 0.120080054
+    width: 0.72072077
+    height: 0.7204803
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -3219,14 +3219,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: effectOnSpeed.curveSteepness
-      value: 1.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: effectOnSpeed.minDamageKnockback
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3239,14 +3231,6 @@ PrefabInstance:
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1788025634}
-    - target: {fileID: 3017659872710321336, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: maxSpeed
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8165628667471022399, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: increasePerSecond
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
