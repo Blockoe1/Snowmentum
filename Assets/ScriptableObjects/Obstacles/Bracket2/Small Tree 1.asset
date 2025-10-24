@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: Small Tree 1
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 0
+  obstacleSize: 9
   obstacleSprite: {fileID: -5028273842082255259, guid: fb813830536a311478609fa576305b7f, type: 3}
   orderInLayer: 0
-  baseScore: 5
+  baseScore: 7
   destroySound: 
   showOutline: 0
   tag: Untagged
@@ -30,4 +30,4 @@ MonoBehaviour:
   - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   particleNumber: 0
   emissionRadius: 0.0001
-  baseSize: 1
+  baseSize: 4
