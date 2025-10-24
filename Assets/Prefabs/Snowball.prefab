@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 3.5
-  increasePerSecond: 0.03
+  increasePerSecond: 0.1
   moveToTarget: 5
   useFixedUpdate: 1
   minSpeed: 1
@@ -294,9 +294,9 @@ MonoBehaviour:
     useSizeAsMax: 0
   effectOnSpeed:
     maxDamageProportion: 0.1
-    curveSteepness: 4
+    curveSteepness: 1.001
     curveScale: 0.5
-    minDamageKnockback: 7
+    minDamageKnockback: 8
     knockbackCurveSteepness: 1.5
     knockbackCurveScale: 1
   OnTakeDamage:
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMovementSensitivity: 0.05
   scaleWithSnowballSize: 1
-  maxSpeed: 30
+  maxSpeed: 35
   minY: -3.5
   maxY: 1
   snowballRigidbody: {fileID: 3341841721575561879}
