@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Small Tree 2
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 0
-  obstacleSprite: {fileID: 0}
+  obstacleSprite: {fileID: -6670217317206070699, guid: 4256ee8a901b92a459f9f7bcc4c1097a, type: 3}
   orderInLayer: 0
   baseScore: 0
   destroySound: 
@@ -21,9 +21,13 @@ MonoBehaviour:
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 0
-  offset: {x: 0, y: 0}
-  size: {x: 1, y: 1}
-  particleSpriteSheet: []
+  offset: {x: 0.3700068, y: 0.027784586}
+  size: {x: 1.4461246, y: 3.630844}
+  particleSpriteSheet:
+  - {fileID: -1591989874, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: -1987503855, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   particleNumber: 0
-  emissionRadius: 0
-  baseSize: 0
+  emissionRadius: 0.0001
+  baseSize: 1

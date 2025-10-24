@@ -30,4 +30,4 @@ MonoBehaviour:
   - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   particleNumber: 0
   emissionRadius: 0.0001
-  baseSize: 0
+  baseSize: 1
