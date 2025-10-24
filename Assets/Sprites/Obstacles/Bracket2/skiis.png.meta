@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b09151d67cff72f49a1b0861594a7a1c
+guid: 72906286539af45479cc0ecfc9ddbf95
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4705939190405961822
-    second: snowman_man2_0
+      213: -6502239407868926079
+    second: skiis_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: snowman_man2_0
+      name: skiis_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 5
         y: 0
-        width: 49
-        height: 80
+        width: 50
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2a7634d4d3521beb0800000000000000
-      internalID: -4705939190405961822
+      spriteID: 1872d6975b763c5a0800000000000000
+      internalID: -6502239407868926079
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      snowman_man2_0: -4705939190405961822
+      skiis_0: -6502239407868926079
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
