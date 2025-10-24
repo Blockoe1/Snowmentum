@@ -6,10 +6,9 @@
 //
 // Brief Description : Detects when the player loses all of their size and ends the game.
 *****************************************************************************/
-using UnityEditor;
+using Snowmentum.Size;
 using UnityEngine;
 using UnityEngine.Events;
-using Snowmentum.Size;
 
 namespace Snowmentum
 {
