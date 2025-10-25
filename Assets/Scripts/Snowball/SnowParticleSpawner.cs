@@ -24,7 +24,7 @@ namespace Snowmentum
         {
             ParticleSystem particles = Instantiate(particleToSpawn, transform.position, Quaternion.identity);
 
-            Debug.Log("Spawning particle with " +  particleNum + " particles.");
+            //Debug.Log("Spawning particle with " +  particleNum + " particles.");
 
             // Adjust the number of particles the particle system will spawn.
             // Update the number of particles emitted by the burst.
@@ -43,7 +43,7 @@ namespace Snowmentum
         public void SpawnParticles(float size)
         {
 
-            Debug.Log("Spawn particles with size " + size);
+            //Debug.Log("Spawn particles with size " + size);
             // Calculate the number of particles to spawn based on snowball size;
             // Scale based on environment size.
             SpawnParticles((int)(particlesPerSize * size / EnvironmentSize.Value));
