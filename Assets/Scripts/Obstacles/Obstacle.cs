@@ -16,7 +16,7 @@ namespace Snowmentum
     {
         [SerializeField, Tooltip("The size required for the snowball to destroy this obstacle.  Does not affect " +
             "obstacle scale.")] 
-        private float obstacleSize;
+        protected float obstacleSize;
         [SerializeField, Tooltip("The sprite of the obstacle.")] private Sprite obstacleSprite;
         [SerializeField, Tooltip("Obstacle renderer's order within the obstacle sorting later.")] 
         private int orderInLayer;
@@ -24,9 +24,9 @@ namespace Snowmentum
             "snowball of similar size")] 
         private int baseScore;
         [SerializeField, Tooltip("The sound to play when this obstacle is destroyed.")]
-        private string destroySound;
+        private string destroySound = "Obstacle Destruction";
         [SerializeField, Tooltip("Whether this obstacle should show an outline as the snowball gets close or not.")]
-        private bool showOutline;
+        private bool showOutline = true;
         [SerializeField, Tooltip("The tag of the obstacle game object.  Only used for specific special cases where " +
             "a custom identifier is needed, such as puddles.")] 
         private string tag = "Untagged";
@@ -50,7 +50,7 @@ namespace Snowmentum
             "Should approximately correspond to the size of the sprite.")] 
         private float emissionRadius;
 
-        [SerializeField, HideInInspector] private float baseSize;
+        [SerializeField, HideInInspector] protected float baseSize;
 
         #region Properties
         public float ObstacleSize
