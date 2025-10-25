@@ -21,7 +21,7 @@ namespace Snowmentum
     {
         [SerializeField] private Obstacle obstacleData;
 
-        [SerializeField, Space(20)] private bool autoUpdateObstacleData = true;
+        [SerializeField] private bool autoUpdateObstacleData = true;
 
         private ObstacleReturnFunction obstacleReturnFunction;
 
