@@ -31,12 +31,12 @@ namespace Snowmentum
 
         #region Component References    
         [Header("Components")]
-        [SerializeReference] protected SpriteRenderer rend;
-        [SerializeReference] private CapsuleCollider2D obstacleCollider;
-        [SerializeReference] private ScoreIncrementer score;
-        [SerializeReference] private ObjectScaler scaler;
-        [SerializeReference] private AudioRelay relay;
-        [SerializeReference] private ObstacleOutliner outliner;
+        [SerializeReference, ReadOnly] protected SpriteRenderer rend;
+        [SerializeReference, ReadOnly] private CapsuleCollider2D obstacleCollider;
+        [SerializeReference, ReadOnly] private ScoreIncrementer score;
+        [SerializeReference, ReadOnly] private ObjectScaler scaler;
+        [SerializeReference, ReadOnly] private AudioRelay relay;
+        [SerializeReference, ReadOnly] private ObstacleOutliner outliner;
         [SerializeReference] private ParticleSystem particles;
 
         /// <summary>
