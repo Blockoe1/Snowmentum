@@ -19,9 +19,9 @@ namespace Snowmentum
 {
     public class ObstacleController : MonoBehaviour
     {
-        [SerializeField] private Obstacle obstacleData;
+        [SerializeField, ShowNestedEditor] private Obstacle obstacleData;
 
-        [SerializeField] private bool autoUpdateObstacleData = true;
+        [SerializeField, Space(20)] private bool autoUpdateObstacleData = true;
 
         private ObstacleReturnFunction obstacleReturnFunction;
 
@@ -55,6 +55,7 @@ namespace Snowmentum
         #endregion
 
         #region Properties
+        public bool AutoUpdateObstacleData => autoUpdateObstacleData;
         public Obstacle ObstacleData => obstacleData;
         public ObstacleReturnFunction ReturnFunction
         {
@@ -128,7 +129,7 @@ namespace Snowmentum
         /// Updates the data object that controls this obstacle.
         /// </summary>
         [ContextMenu("Write Obstacle Data")]
-        private void WriteObstacleData()
+        public void WriteObstacleData()
         {
             if (obstacleData == null) { return; }
 
@@ -184,7 +185,7 @@ namespace Snowmentum
                 obstacleData.ParticleNumber = (int)burst.count.constant;
             }
 
-            SaveObstacleData();
+            //SaveObstacleData();
         }
 
         /// <summary>
@@ -205,7 +206,7 @@ namespace Snowmentum
         /// Reads the data from this object's obstacleData and updates the components on this GameObject.
         /// </summary>
         [ContextMenu("Read Obstacle Data")]
-        private void ReadObstacleData()
+        public void ReadObstacleData()
         {
             if (obstacleData == null) { return; }
 
