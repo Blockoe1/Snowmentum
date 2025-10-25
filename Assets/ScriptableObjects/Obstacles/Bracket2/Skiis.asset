@@ -10,24 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
-  m_Name: Rocks
+  m_Name: Skiis
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 6
-  obstacleSprite: {fileID: -294949627, guid: 424e201fd6688ee4fb1d9b82f0d78b33, type: 3}
+  obstacleSize: 10
+  obstacleSprite: {fileID: 21300000, guid: 72906286539af45479cc0ecfc9ddbf95, type: 3}
   orderInLayer: 0
-  baseScore: 5
+  baseScore: 8
   destroySound: Obstacle Destruction
   showOutline: 1
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 0
-  offset: {x: -0.1, y: -0.22}
+  offset: {x: 0, y: 0}
   size: {x: 1, y: 1}
-  particleSpriteSheet:
-  - {fileID: -1591989874, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
-  - {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
-  - {fileID: -1987503855, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
-  - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  particleSpriteSheet: []
   particleNumber: 0
-  emissionRadius: 0.0001
+  emissionRadius: 0
   baseSize: 4
