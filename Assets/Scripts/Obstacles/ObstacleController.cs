@@ -30,7 +30,6 @@ namespace Snowmentum
 #endif
 
         #region Component References    
-        [Header("Components")]
         [SerializeReference, ReadOnly] protected SpriteRenderer rend;
         [SerializeReference, ReadOnly] private CapsuleCollider2D obstacleCollider;
         [SerializeReference, ReadOnly] private ScoreIncrementer score;
@@ -184,9 +183,20 @@ namespace Snowmentum
                 obstacleData.ParticleNumber = (int)burst.count.constant;
             }
 
-            // Save changes to the asset.
-            EditorUtility.SetDirty(obstacleData);
-            AssetDatabase.SaveAssetIfDirty(obstacleData);
+            SaveObstacleData();
+        }
+
+        /// <summary>
+        /// Saves any changes to the ObstacleData asset.
+        /// </summary>
+        private void SaveObstacleData()
+        {
+            if (obstacleData != null)
+            {
+                // Save changes to the asset.
+                EditorUtility.SetDirty(obstacleData);
+                AssetDatabase.SaveAssetIfDirty(obstacleData);
+            }
         }
 #endif
 
