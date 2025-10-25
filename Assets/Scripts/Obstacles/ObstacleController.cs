@@ -19,7 +19,7 @@ namespace Snowmentum
 {
     public class ObstacleController : MonoBehaviour
     {
-        [SerializeField, ShowNestedEditor] private Obstacle obstacleData;
+        [SerializeField] private Obstacle obstacleData;
 
         [SerializeField, Space(20)] private bool autoUpdateObstacleData = true;
 
