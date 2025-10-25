@@ -55,6 +55,7 @@ namespace Snowmentum
         #endregion
 
         #region Properties
+        public Obstacle ObstacleData => obstacleData;
         public ObstacleReturnFunction ReturnFunction
         {
             set { obstacleReturnFunction = value; }

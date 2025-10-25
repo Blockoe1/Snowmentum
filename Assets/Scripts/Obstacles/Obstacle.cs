@@ -24,9 +24,9 @@ namespace Snowmentum
             "snowball of similar size")] 
         private int baseScore;
         [SerializeField, Tooltip("The sound to play when this obstacle is destroyed.")]
-        private string destroySound;
+        private string destroySound = "Obstacle Destruction";
         [SerializeField, Tooltip("Whether this obstacle should show an outline as the snowball gets close or not.")]
-        private bool showOutline;
+        private bool showOutline = true;
         [SerializeField, Tooltip("The tag of the obstacle game object.  Only used for specific special cases where " +
             "a custom identifier is needed, such as puddles.")] 
         private string tag = "Untagged";
