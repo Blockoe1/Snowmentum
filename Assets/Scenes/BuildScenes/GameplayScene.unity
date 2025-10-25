@@ -12691,10 +12691,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.56589955
     y: 0
-    width: 1
-    height: 0.9995353
+    width: 0.72896326
+    height: 0.7286245
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -18676,7 +18676,7 @@ PrefabInstance:
       objectReference: {fileID: -1313201672078734433, guid: 1101e97559582ba4da61bb043b3f4480, type: 3}
     - target: {fileID: 867025323309408007, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.25
+      value: -4.25
       objectReference: {fileID: 0}
     - target: {fileID: 2599304497202500059, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18720,7 +18720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2958559411733196921, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.25
+      value: -4.25
       objectReference: {fileID: 0}
     - target: {fileID: 3614291449804588202, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: scalePerspectiveY
@@ -18736,7 +18736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5448865305363378137, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Size.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5448865305363378137, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Sprite
@@ -18784,7 +18784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5870643922241915581, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Size.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5870643922241915581, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Sprite
@@ -19545,6 +19545,26 @@ PrefabInstance:
       propertyPath: obstacleParent
       value: 
       objectReference: {fileID: 1081323402}
+    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
+      propertyPath: brackets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
+      propertyPath: infiniteBracket.spawnData.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
+      propertyPath: infiniteBracket.spawnData.Array.data[0].obstacle
+      value: 
+      objectReference: {fileID: 11400000, guid: a270d54c501b2d645a4db4d6e42f626e, type: 2}
+    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
+      propertyPath: infiniteBracket.spawnData.Array.data[0].baseWeight
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
+      propertyPath: infiniteBracket.spawnData.Array.data[0].addedWeight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
