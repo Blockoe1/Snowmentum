@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Snowman 1
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 45
-  obstacleSprite: {fileID: 2910820740307544535, guid: 69479791380198e46978df5f6b7906ab, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 69479791380198e46978df5f6b7906ab, type: 3}
   orderInLayer: 0
   baseScore: 14
-  destroySound: 
-  showOutline: 0
+  destroySound: Obstacle Destruction
+  showOutline: 1
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 0
