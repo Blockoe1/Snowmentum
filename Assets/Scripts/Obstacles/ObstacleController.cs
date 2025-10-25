@@ -203,6 +203,7 @@ namespace Snowmentum
         /// <summary>
         /// Reads the data from this object's obstacleData and updates the components on this GameObject.
         /// </summary>
+        [ContextMenu("Read Obstacle Data")]
         private void ReadObstacleData()
         {
             if (obstacleData == null) { return; }
