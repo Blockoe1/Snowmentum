@@ -64,6 +64,10 @@ namespace Snowmentum.Size
         {
             return Mathf.Pow(BRACKET_SCALE, bracket);
         }
+        public static float GetMaxSize()
+        {
+            return GetMaxSize(bracket);
+        }
 
         /// <summary>
         /// Calculates the minimum size allowed in a size bracket.
@@ -73,6 +77,10 @@ namespace Snowmentum.Size
         public static float GetMinSize(int bracket)
         {
             return GetMaxSize(bracket - 1);
+        }
+        public static float GetMinSize()
+        {
+            return GetMinSize(bracket);
         }
 
         /// <summary>

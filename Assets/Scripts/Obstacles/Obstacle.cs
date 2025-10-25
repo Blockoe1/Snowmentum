@@ -16,7 +16,7 @@ namespace Snowmentum
     {
         [SerializeField, Tooltip("The size required for the snowball to destroy this obstacle.  Does not affect " +
             "obstacle scale.")] 
-        private float obstacleSize;
+        protected float obstacleSize;
         [SerializeField, Tooltip("The sprite of the obstacle.")] private Sprite obstacleSprite;
         [SerializeField, Tooltip("Obstacle renderer's order within the obstacle sorting later.")] 
         private int orderInLayer;
@@ -50,7 +50,7 @@ namespace Snowmentum
             "Should approximately correspond to the size of the sprite.")] 
         private float emissionRadius;
 
-        [SerializeField, HideInInspector] private float baseSize;
+        [SerializeField, HideInInspector] protected float baseSize;
 
         #region Properties
         public float ObstacleSize

@@ -34,7 +34,7 @@ namespace Snowmentum
         [SerializeReference] protected SpriteRenderer rend;
         [SerializeReference] private CapsuleCollider2D obstacleCollider;
         [SerializeReference] private ScoreIncrementer score;
-        [SerializeReference] private ObjectScaler scaler;
+        [SerializeReference] protected ObjectScaler scaler;
         [SerializeReference] private AudioRelay relay;
         [SerializeReference] private ObstacleOutliner outliner;
         [SerializeReference] private ParticleSystem particles;
@@ -61,7 +61,7 @@ namespace Snowmentum
         {
             set { obstacleReturnFunction = value; }
         }
-        public float ObstacleSize => obstacleData.ObstacleSize;
+        public virtual float ObstacleSize => obstacleData.ObstacleSize;
         public bool HasCollision => obstacleData == null ? false : obstacleData.HasCollision;
         #endregion
 
@@ -96,10 +96,11 @@ namespace Snowmentum
         /// Sets the obstacle 
         /// </summary>
         /// <param name="obstacleData">The obstacle ScriptableObject that this obstacle should be based on.</param>
-        public void SetObstacle(Obstacle obstacleData)
+        public virtual void SetObstacle(Obstacle obstacleData)
         {
             if (obstacleData == null) { return; }
             this.obstacleData = obstacleData;
+
             // Alway toggle the obstacle on when new data is set.
             ToggleObstacle(true);
 
