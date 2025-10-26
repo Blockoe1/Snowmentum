@@ -109,7 +109,7 @@ namespace Snowmentum
             // Update the component data based on the obstacle data.
             if (controller.AutoUpdateObstacleData)
             {
-                Debug.Log("Obstacle GO automatically Updated");
+                //Debug.Log("Obstacle GO automatically Updated");
                 // Run SetObstacle so other values are updated.
                 controller.ReadObstacleData();
             }

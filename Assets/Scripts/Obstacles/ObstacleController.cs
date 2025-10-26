@@ -269,38 +269,107 @@ namespace Snowmentum
                 return origin;
             }
 
-            //Debug.Log(EqualityComparer<float>.Default.Equals(obstacleData.BaseScore, 1));
-
+            #region GameObject
             //gameObject.tag = obstacleData.Tag;
             gameObject.tag = ProcessAssignment(gameObject.tag, obstacleData.Tag);
+#if UNITY_EDITOR
+            // Each component needs to be set dirty individually for changes to be properly saved.
+            if (isDirty)
+            {
+                EditorUtility.SetDirty(gameObject);
+                isDirty = false;
+            }
+#endif
+            #endregion
+
+            #region Sprite
             if (rend != null)
             {
                 rend.sprite = ProcessAssignment(rend.sprite, obstacleData.ObstacleSprite);
                 rend.sortingOrder = ProcessAssignment(rend.sortingOrder, obstacleData.OrderInLayer);
                 //rend.sprite = obstacleData.ObstacleSprite;
                 //rend.sortingOrder = obstacleData.OrderInLayer;
+
+#if UNITY_EDITOR
+                // Each component needs to be set dirty individually for changes to be properly saved.
+                if (isDirty)
+                {
+                    EditorUtility.SetDirty(rend);
+                    isDirty = false;
+                }
+#endif
             }
+            #endregion
+
+            #region Score
             if (score != null)
             {
                 score.BaseScore = ProcessAssignment(score.BaseScore, obstacleData.BaseScore);
                 //score.BaseScore = obstacleData.BaseScore;
+
+#if UNITY_EDITOR
+                // Each component needs to be set dirty individually for changes to be properly saved.
+                if (isDirty)
+                {
+                    EditorUtility.SetDirty(score);
+                    isDirty = false;
+                }
+#endif
             }
+            #endregion
+
+            #region Scaler
             if ( scaler != null)
             {
                 scaler.Size = ProcessAssignment(scaler.Size, obstacleData.BaseSize);
                 //scaler.Size = obstacleData.BaseSize;
+
+#if UNITY_EDITOR
+                // Each component needs to be set dirty individually for changes to be properly saved.
+                if (isDirty)
+                {
+                    EditorUtility.SetDirty(scaler);
+                    isDirty = false;
+                }
+#endif
             }
+            #endregion
+
+            #region Relay
             if (relay != null)
             {
                 relay.SoundName = ProcessAssignment(relay.SoundName, obstacleData.DestroySound);
                 //relay.SoundName = obstacleData.DestroySound;
+
+#if UNITY_EDITOR
+                // Each component needs to be set dirty individually for changes to be properly saved.
+                if (isDirty)
+                {
+                    EditorUtility.SetDirty(relay);
+                    isDirty = false;
+                }
+#endif
             }
+            #endregion
+
+            #region Outline
             if (outliner != null)
             {
                 outliner.ShowOutline = ProcessAssignment(outliner.ShowOutline, obstacleData.ShowOutline);
                 //outliner.ShowOutline = obstacleData.ShowOutline;
-            }
 
+#if UNITY_EDITOR
+                // Each component needs to be set dirty individually for changes to be properly saved.
+                if (isDirty)
+                {
+                    EditorUtility.SetDirty(outliner);
+                    isDirty = false;
+                }
+#endif
+            }
+            #endregion
+
+            #region Collider
             // Collider Updates
             if (obstacleCollider != null)
             {
@@ -312,8 +381,19 @@ namespace Snowmentum
                 //obstacleCollider.offset = obstacleData.HitboxOffset;
                 //obstacleCollider.size = obstacleData.HitboxSize;
                 //obstacleCollider.direction = obstacleData.HitboxDirection;
-            }
 
+#if UNITY_EDITOR
+                // Each component needs to be set dirty individually for changes to be properly saved.
+                if (isDirty)
+                {
+                    EditorUtility.SetDirty(obstacleCollider);
+                    isDirty = false;
+                }
+#endif
+            }
+            #endregion
+
+            #region Particles
             // Particles
             if (particles != null)
             {
@@ -353,18 +433,28 @@ namespace Snowmentum
                 burst.count = ProcessAssignment((int)burst.count.constant, obstacleData.ParticleNumber);
                 //burst.count = obstacleData.ParticleNumber;
                 emissionModue.SetBurst(0, burst);
-            }
 
 #if UNITY_EDITOR
-            // If one of our relevant values was changed, we need to mark the game object as dirty if the game is
-            // not playing.
-            //Debug.Log(isDirty);
-            if (!EditorApplication.isPlaying && isDirty)
-            {
-                Debug.Log("Game object dirty");
-                EditorUtility.SetDirty(gameObject);
-            }
+                // Each component needs to be set dirty individually for changes to be properly saved.
+                if (isDirty)
+                {
+                    EditorUtility.SetDirty(particles);
+                    isDirty = false;
+                }
 #endif
+            }
+            #endregion
+
+//#if UNITY_EDITOR
+//            // If one of our relevant values was changed, we need to mark the game object as dirty if the game is
+//            // not playing.
+//            //Debug.Log(isDirty);
+//            if (!EditorApplication.isPlaying && isDirty)
+//            {
+//                Debug.Log("Game object dirty");
+//                EditorUtility.SetDirty(gameObject);
+//            }
+//#endif
         }
         #endregion
 
