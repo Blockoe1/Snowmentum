@@ -6,6 +6,7 @@
 //
 // Brief Description : Draws the nested editor within the base object's editor.
 *****************************************************************************/
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -19,10 +20,12 @@ namespace Snowmentum
         {
             //base.OnGUI(position, property, label);
             ShowNestedEditor esoAtb = (ShowNestedEditor)attribute;
-            Object obj = property.objectReferenceValue;
+            UnityEngine.Object obj = property.objectReferenceValue;
             EditorGUI.PropertyField(position, property, label);
 
-            if (obj != null)
+            // Dont draw the nested editor of the serializedObject and our property object are the same type or
+            // inherit from each other, since that will cause an infinite loop.
+            if (obj != null && !IsClassOrSubclass(obj.GetType(), property.serializedObject.targetObject.GetType()))
             {
                 // Create the editor for the given object.  Returns null if it cant.
                 Editor objEditor = Editor.CreateEditor(obj);
@@ -37,6 +40,17 @@ namespace Snowmentum
                     EditorGUI.indentLevel--;
                 }
             }
+        }
+
+        /// <summary>
+        /// Checks if two types are the same or if they are subclasses of each other.
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <returns></returns>
+        private static bool IsClassOrSubclass(Type t1, Type t2)
+        {
+            return t1 == t2 || t1.IsSubclassOf(t2) || t2.IsSubclassOf(t1);
         }
     }
 }

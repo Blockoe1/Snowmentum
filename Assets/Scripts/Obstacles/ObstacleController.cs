@@ -9,6 +9,12 @@
 using Snowmentum.Score;
 using Snowmentum.Size;
 using UnityEngine;
+using System;
+using System.Collections.Generic;
+using static UnityEngine.UI.Image;
+
+
+
 
 
 #if UNITY_EDITOR
@@ -133,33 +139,56 @@ namespace Snowmentum
         {
             if (obstacleData == null) { return; }
 
+            bool isDirty = false;
+
+            // Update the component on this GameObject when obstacle data changes.
+            T ProcessAssignment<T>(T target, T origin)
+            {
+                if (!isDirty && !EqualityComparer<T>.Default.Equals(origin, target))
+                {
+                    //Debug.Log(origin + " doesnt equal " + target);
+                    isDirty = true;
+                }
+                return origin;
+            }
+
             // Update the misc data of the obstacle.
-            obstacleData.Tag = gameObject.tag;
+            //obstacleData.Tag = gameObject.tag;
+            obstacleData.Tag = ProcessAssignment(obstacleData.Tag, gameObject.tag);
             if (rend != null)
             {
-                obstacleData.ObstacleSprite = rend.sprite;
-                obstacleData.OrderInLayer = rend.sortingOrder;
+                obstacleData.ObstacleSprite = ProcessAssignment(obstacleData.ObstacleSprite, rend.sprite);
+                obstacleData.OrderInLayer = ProcessAssignment(obstacleData.OrderInLayer, rend.sortingOrder);
+                //obstacleData.ObstacleSprite = rend.sprite;
+                //obstacleData.OrderInLayer = rend.sortingOrder;
             }
             if (score != null)
             {
-                obstacleData.BaseScore = score.BaseScore;
+                obstacleData.BaseScore = ProcessAssignment(obstacleData.BaseScore, score.BaseScore);
+                //obstacleData.BaseScore = score.BaseScore;
             }
             if (relay != null)
             {
-                obstacleData.DestroySound = relay.SoundName;
+                obstacleData.DestroySound = ProcessAssignment(obstacleData.DestroySound, relay.SoundName);
+                //obstacleData.DestroySound = relay.SoundName;
             }
             if (outliner != null)
             {
-                obstacleData.ShowOutline = outliner.ShowOutline;
+                obstacleData.ShowOutline = ProcessAssignment(obstacleData.ShowOutline, outliner.ShowOutline);
+                //obstacleData.ShowOutline = outliner.ShowOutline;
             }
 
             // Update the collision data of the obstacle.
             if (obstacleCollider != null)
             {
-                obstacleData.HasCollision = !obstacleCollider.isTrigger;
-                obstacleData.HitboxOffset = obstacleCollider.offset;
-                obstacleData.HitboxSize = obstacleCollider.size;
-                obstacleData.HitboxDirection = obstacleCollider.direction;
+                obstacleData.HasCollision = ProcessAssignment(obstacleData.HasCollision, !obstacleCollider.isTrigger);
+                obstacleData.HitboxOffset = ProcessAssignment(obstacleData.HitboxOffset, obstacleCollider.offset);
+                obstacleData.HitboxSize = ProcessAssignment(obstacleData.HitboxSize, obstacleCollider.size);
+                obstacleData.HitboxDirection = ProcessAssignment(obstacleData.HitboxDirection, obstacleCollider.direction);
+                //obstacleData.HasCollision = !obstacleCollider.isTrigger;
+                //obstacleData.HitboxOffset = obstacleCollider.offset;
+                //obstacleData.HitboxSize = obstacleCollider.size;
+                //obstacleData.HitboxDirection = obstacleCollider.direction;
             }
 
 
@@ -167,25 +196,37 @@ namespace Snowmentum
             if (particles != null)
             {
                 var animModule = particles.textureSheetAnimation;
+                // Copies the current sprite sheet data to the sprite sheet array.
                 Sprite[] spriteSheet = new Sprite[animModule.spriteCount];
+                obstacleData.SpriteSheet.CopyTo(spriteSheet, 0);
                 // Update the sprite sheet for the particles.
                 for (int i = 0; i < animModule.spriteCount; i++)
                 {
-                    spriteSheet[i] = animModule.GetSprite(i);
+                    //Debug.Log(spriteSheet[i]);
+                    spriteSheet[i] = ProcessAssignment(spriteSheet[i], animModule.GetSprite(i));
+                    //spriteSheet[i] = animModule.GetSprite(i);
                 }
                 obstacleData.SpriteSheet = spriteSheet;
 
                 // Update the emission shape.
                 var shapeModule = particles.shape;
-                obstacleData.EmissionRadius = shapeModule.radius;
+                obstacleData.EmissionRadius = ProcessAssignment(obstacleData.EmissionRadius, shapeModule.radius);
+                //obstacleData.EmissionRadius = shapeModule.radius;
 
                 // Update the number of particles emitted by the burst.
                 var emissionModue = particles.emission;
                 var burst = emissionModue.GetBurst(0);
-                obstacleData.ParticleNumber = (int)burst.count.constant;
+                //obstacleData.ParticleNumber = (int)burst.count.constant;
+                obstacleData.ParticleNumber = ProcessAssignment(obstacleData.ParticleNumber, (int)burst.count.constant);
             }
 
             //SaveObstacleData();
+            // Set our obstacle data as dirty if we've modified this game object.
+            if (isDirty)
+            {
+                Debug.Log("Obstacle data dirty");
+                EditorUtility.SetDirty(obstacleData);
+            }
         }
 
         /// <summary>
@@ -210,37 +251,67 @@ namespace Snowmentum
         {
             if (obstacleData == null) { return; }
 
+#if UNITY_EDITOR
+            // Only care about IsDirty if we're modifying the object in the editor.
+            bool isDirty = false;
+#endif
+
             // Update the component on this GameObject when obstacle data changes.
-            gameObject.tag = obstacleData.Tag;
+            T ProcessAssignment<T>(T target, T origin)
+            {
+#if UNITY_EDITOR
+                if (!isDirty && !EqualityComparer<T>.Default.Equals(origin, target))
+                {
+                    //Debug.Log(origin + " doesnt equal " + target);
+                    isDirty = true;
+                }
+#endif
+                return origin;
+            }
+
+            //Debug.Log(EqualityComparer<float>.Default.Equals(obstacleData.BaseScore, 1));
+
+            //gameObject.tag = obstacleData.Tag;
+            gameObject.tag = ProcessAssignment(gameObject.tag, obstacleData.Tag);
             if (rend != null)
             {
-                rend.sprite = obstacleData.ObstacleSprite;
-                rend.sortingOrder = obstacleData.OrderInLayer;
+                rend.sprite = ProcessAssignment(rend.sprite, obstacleData.ObstacleSprite);
+                rend.sortingOrder = ProcessAssignment(rend.sortingOrder, obstacleData.OrderInLayer);
+                //rend.sprite = obstacleData.ObstacleSprite;
+                //rend.sortingOrder = obstacleData.OrderInLayer;
             }
             if (score != null)
             {
-                score.BaseScore = obstacleData.BaseScore;
+                score.BaseScore = ProcessAssignment(score.BaseScore, obstacleData.BaseScore);
+                //score.BaseScore = obstacleData.BaseScore;
             }
             if ( scaler != null)
             {
-                scaler.Size = obstacleData.BaseSize;
+                scaler.Size = ProcessAssignment(scaler.Size, obstacleData.BaseSize);
+                //scaler.Size = obstacleData.BaseSize;
             }
             if (relay != null)
             {
-                relay.SoundName = obstacleData.DestroySound;
+                relay.SoundName = ProcessAssignment(relay.SoundName, obstacleData.DestroySound);
+                //relay.SoundName = obstacleData.DestroySound;
             }
             if (outliner != null)
             {
-                outliner.ShowOutline = obstacleData.ShowOutline;
+                outliner.ShowOutline = ProcessAssignment(outliner.ShowOutline, obstacleData.ShowOutline);
+                //outliner.ShowOutline = obstacleData.ShowOutline;
             }
 
             // Collider Updates
             if (obstacleCollider != null)
             {
-                obstacleCollider.isTrigger = !obstacleData.HasCollision;
-                obstacleCollider.offset = obstacleData.HitboxOffset;
-                obstacleCollider.size = obstacleData.HitboxSize;
-                obstacleCollider.direction = obstacleData.HitboxDirection;
+                obstacleCollider.isTrigger = ProcessAssignment(obstacleCollider.isTrigger, !obstacleData.HasCollision);
+                obstacleCollider.offset = ProcessAssignment(obstacleCollider.offset, obstacleData.HitboxOffset);
+                obstacleCollider.size = ProcessAssignment(obstacleCollider.size, obstacleData.HitboxSize);
+                obstacleCollider.direction = ProcessAssignment(obstacleCollider.direction, obstacleData.HitboxDirection);
+                //obstacleCollider.isTrigger = !obstacleData.HasCollision;
+                //obstacleCollider.offset = obstacleData.HitboxOffset;
+                //obstacleCollider.size = obstacleData.HitboxSize;
+                //obstacleCollider.direction = obstacleData.HitboxDirection;
             }
 
             // Particles
@@ -254,25 +325,46 @@ namespace Snowmentum
                     {
                         if (i >= animModule.spriteCount)
                         {
+                            //Debug.Log("Added sprite");
                             animModule.AddSprite(obstacleData.SpriteSheet[i]);
+                            // Set dirty flag manually.  If we need to add a sprite, then we're dirty.
+                            isDirty |= true;
                         }
                         else
                         {
-                            animModule.SetSprite(i, obstacleData.SpriteSheet[i]);
+                            // Check for if the sprites are different manually.
+                            if (animModule.GetSprite(i) != obstacleData.SpriteSheet[i])
+                            {
+                                animModule.SetSprite(i, obstacleData.SpriteSheet[i]);
+                                isDirty |= true;
+                            }
                         }
                     }
                 }
 
                 // Update the emission shape.
                 var shapeModule = particles.shape;
-                shapeModule.radius = obstacleData.EmissionRadius;
+                //shapeModule.radius = obstacleData.EmissionRadius;
+                shapeModule.radius = ProcessAssignment(shapeModule.radius, obstacleData.EmissionRadius);
 
                 // Update the number of particles emitted by the burst.
                 var emissionModue = particles.emission;
                 var burst = emissionModue.GetBurst(0);
-                burst.count = obstacleData.ParticleNumber;
+                burst.count = ProcessAssignment((int)burst.count.constant, obstacleData.ParticleNumber);
+                //burst.count = obstacleData.ParticleNumber;
                 emissionModue.SetBurst(0, burst);
             }
+
+#if UNITY_EDITOR
+            // If one of our relevant values was changed, we need to mark the game object as dirty if the game is
+            // not playing.
+            //Debug.Log(isDirty);
+            if (!EditorApplication.isPlaying && isDirty)
+            {
+                Debug.Log("Game object dirty");
+                EditorUtility.SetDirty(gameObject);
+            }
+#endif
         }
         #endregion
 
