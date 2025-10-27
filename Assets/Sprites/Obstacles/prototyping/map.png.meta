@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e29c579b91e839f4285d1ac546779b1e
+guid: 438d56813abdca247bc4a7a4c259f830
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6502239407868926079
-    second: skiis_0
+      213: 4804446361586417100
+    second: map_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skiis_0
+      name: map_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 0
         y: 0
-        width: 50
-        height: 61
+        width: 96
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1872d6975b763c5a0800000000000000
-      internalID: -6502239407868926079
+      spriteID: ccdb6c4c282dca240800000000000000
+      internalID: 4804446361586417100
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      skiis_0: -6502239407868926079
+      map_0: 4804446361586417100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
