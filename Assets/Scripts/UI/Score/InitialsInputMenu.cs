@@ -143,14 +143,14 @@ namespace Snowmentum.UI
             {
                 HandleInput(new Vector2Int(Math.Sign(totalDelta.x), 0));
 
-                OnInput();
+                //OnInput();
             }
             else if (Mathf.Abs(totalDelta.y) > inputThreshold)
             {
                 HandleInput(new Vector2Int(0, Math.Sign(delta.y)));
                 
 
-                OnInput();
+                //OnInput();
             }
         }
 
