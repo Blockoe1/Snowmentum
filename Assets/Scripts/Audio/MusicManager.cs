@@ -35,9 +35,9 @@ namespace Snowmentum
             private const double LOOP_PRELOAD_TIME = 1;
             #endregion
 
-            [SerializeField] private bool useIntro = true;
-            [SerializeField] private AudioClip introTrack;
+            [Header("Tracks")]
             [SerializeField] private AudioClip loopTrack;
+            [SerializeField] private AudioClip introTrack;
 
             internal float Volume => volume;
             // Gets the volume of the audio sources.  Should be the same for the normal and loop sources.
@@ -45,7 +45,7 @@ namespace Snowmentum
             //internal AudioSource Source => isLoop ? loopSource : source;
 
             // Need to make a second audioSource for the loop track.
-            private AudioSource loopSource;
+            private AudioSource introSource;
 
             /// <summary>
             /// When this track is set up, add an additional audio source that we set as our loop source.
@@ -54,12 +54,15 @@ namespace Snowmentum
             protected override void Setup(AudioSource source)
             {
                 base.Setup(source);
-                source.clip = introTrack;
-                source.loop = false;
+                source.clip = loopTrack;
 
-                loopSource = source.AddComponent<AudioSource>();
-                base.Setup(loopSource);
-                loopSource.clip = loopTrack;
+                if (introTrack != null)
+                {
+                    introSource = source.AddComponent<AudioSource>();
+                    base.Setup(introSource);
+                    introSource.clip = introTrack;
+                    introSource.loop = false;
+                }
             }
 
             /// <summary>
@@ -69,7 +72,10 @@ namespace Snowmentum
             internal void SetSourceVolume(float volume)
             {
                 source.volume = volume;
-                loopSource.volume = volume;
+                if (introSource != null)
+                {
+                    introSource.volume = volume;
+                }
             }
 
             /// <summary>
@@ -77,17 +83,21 @@ namespace Snowmentum
             /// </summary>
             public override void Play()
             {
-                source.Play();
-
-                if (useIntro)
+                if (introSource != null)
                 {
+                    introSource.Play();
                     // Use doubles for more precision.
                     // Calculate the precise time to start the looping track.
                     double introDuraction = (double)introTrack.samples / introTrack.frequency;
                     double playTime = AudioSettings.dspTime + introDuraction;
 
                     //instance.StartCoroutine(ToLoopRoutine(loopSource, playTime));
-                    loopSource.PlayScheduled(playTime);
+                    source.PlayScheduled(playTime);
+                }
+                else
+                {
+                    // Directly play the loop source if we aren't using the intro.
+                    source.Play();
                 }
             }
 
@@ -97,7 +107,10 @@ namespace Snowmentum
             public override void Stop()
             {
                 base.Stop();
-                loopSource.Stop();
+                if (introSource != null)
+                {
+                    introSource.Stop();
+                }
             }
 
             /// <summary>
@@ -240,8 +253,8 @@ namespace Snowmentum
         {
             if (overrideTrack != null)
             {
-                // Resume the main clip by setting volume to it's base.
-                currentTrack.SetSourceVolume(currentTrack.SourceVolume / overwrittenMultiplier);
+                    currentTrack.SetSourceVolume(overwrittenMultiplier == 0 ? currentTrack.Volume : 
+                        currentTrack.SourceVolume / overwrittenMultiplier);
 
                 // Stop the override track.
                 overrideTrack.Stop();
