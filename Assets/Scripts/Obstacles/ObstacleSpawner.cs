@@ -11,6 +11,7 @@ using System.Collections;
 using UnityEngine;
 using Snowmentum.Size;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 
 namespace Snowmentum
 {
@@ -37,6 +38,12 @@ namespace Snowmentum
         [SerializeField] private float minYSpawn;
         [SerializeField] private float maxYSpawn;
 
+        //this will make the obstacles spawn a set distance apart to stop walls of obstacles forming
+        [SerializeField] private float minimumYDistance = 2f;
+
+        //check for last Y spawn also needed to make sure obstacles are a certain distance apart. Set to infinity so first spawn is always valid. 
+        private float lastYSpawn = Mathf.Infinity;
+
         //[SerializeField] private ObstacleSpawnData[] obstacles;  //holds the obstacle prefabs
         [Header("Brackets")]
         [SerializeField] private SpawnBracket[] brackets;
@@ -45,6 +52,8 @@ namespace Snowmentum
         private Queue<ObstacleController> inactiveObstacles = new();
 
         private bool isSpawning;
+
+        
 
         #region Nested
         [System.Serializable]
@@ -149,8 +158,22 @@ namespace Snowmentum
                     {
                         continue;
                     }
-                    //Pick a random spawn point
+
+                    //Repeatedly pick certain spawnpoints until one is the minimumYdistance away from the previous spawn
                     float randomY = UnityEngine.Random.Range(minYSpawn, maxYSpawn);
+
+                    //I am realizing that this system doesn't work super well with negative numbers
+                    //it shouldn't be game breaking but is worth fixing probably
+                    while (Mathf.Abs(randomY - lastYSpawn) < minimumYDistance)
+                    {
+                        randomY = UnityEngine.Random.Range(minYSpawn, maxYSpawn);
+                        
+                    }
+                    
+                    lastYSpawn = randomY;
+
+                    
+                    
                     Vector3 spawnArea = transform.position + (Vector3.up * randomY);
 
                     //Spawn obstacle and set it up with it's data
@@ -179,6 +202,7 @@ namespace Snowmentum
                 }                
             }
         }
+
 
         /// <summary>
         /// Gets a random obstacle from a list to spawn.  Uses weighted randomness.
