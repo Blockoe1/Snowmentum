@@ -64,7 +64,7 @@ namespace Snowmentum
             {
                 //Debug.Log("Obstacle GO automatically Updated");
                 // Run SetObstacle so other values are updated.
-                controller.WriteObstacleData();
+                controller.Editor_WriteObstacleData();
 
             }
 
@@ -111,7 +111,7 @@ namespace Snowmentum
             {
                 //Debug.Log("Obstacle GO automatically Updated");
                 // Run SetObstacle so other values are updated.
-                controller.ReadObstacleData();
+                controller.Editor_ReadObstacleData();
             }
         }
     }

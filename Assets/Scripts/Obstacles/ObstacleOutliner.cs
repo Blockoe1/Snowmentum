@@ -10,6 +10,7 @@ using Snowmentum.Size;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace Snowmentum
 {
@@ -52,20 +53,7 @@ namespace Snowmentum
             get { return showOutline; }
             set 
             {
-                // Prevents redundant assignment.
-                if (value == showOutline) { return; }
                 showOutline = value; 
-
-                // Disable the outline if ShowOutline is set to false.
-                if (showOutline)
-                {
-                    SnowballPosition.OnPositionChanged += UpdateOutline;
-                }
-                else
-                {
-                    SnowballPosition.OnPositionChanged -= UpdateOutline;
-                    ResetColor();
-                }
             }
         }
         #endregion
@@ -76,7 +64,15 @@ namespace Snowmentum
         private void Awake()
         {
             baseColor = rend.color;
-            if (showOutline)
+
+        }
+
+        /// <summary>
+        /// When this object is enabled/disabled, make sure to set up it's subscriptions or reset the outline.
+        /// </summary>
+        private void OnEnable()
+        {
+            if (ShowOutline)
             {
                 SnowballPosition.OnPositionChanged += UpdateOutline;
             }
@@ -85,9 +81,30 @@ namespace Snowmentum
                 ResetColor();
             }
         }
-        private void OnDestroy()
+        private void OnDisable()
         {
             SnowballPosition.OnPositionChanged -= UpdateOutline;
+        }
+
+        /// <summary>
+        /// Toggles this outline.
+        /// </summary>
+        /// <param name="toggle"></param>
+        public void ToggleOutline(bool toggle)
+        {
+            // Prevents redundant assignment.
+            if (toggle == ShowOutline) { return; }
+            ShowOutline = toggle;
+            // Disable the outline if ShowOutline is set to false.
+            if (ShowOutline)
+            {
+                SnowballPosition.OnPositionChanged += UpdateOutline;
+            }
+            else
+            {
+                SnowballPosition.OnPositionChanged -= UpdateOutline;
+                ResetColor();
+            }
         }
 
         /// <summary>
@@ -166,11 +183,11 @@ namespace Snowmentum
             for (int i = 0; i < blinkAmount; i++)
             {
                 // Temporarily disable the outline and set it manually.
-                ShowOutline = false;
+                ToggleOutline(false);
                 SetOutlineAlpha(1);
                 yield return new WaitForSeconds(outlineBlinkDelay);
 
-                ShowOutline = true;
+                ToggleOutline(true);
                 yield return new WaitForSeconds(outlineBlinkDelay);
             }
         }

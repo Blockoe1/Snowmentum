@@ -71,33 +71,6 @@ namespace Snowmentum
         public bool HasCollision => obstacleData == null ? false : obstacleData.HasCollision;
         #endregion
 
-
-#if UNITY_EDITOR
-        /// <summary>
-        /// Automatically obstacle data values.
-        /// </summary>
-        private void OnValidate()
-        {
-            //// Automatically updates the hitbox data of the obstacle.
-            //if (autoUpdate && obstacleData != null)
-            //{
-            //    obstacleData.IsTrigger = obstacleCollider.isTrigger;
-            //    obstacleData.HitboxOffset = obstacleCollider.offset;
-            //    obstacleData.HitboxSize = obstacleCollider.size;
-            //    obstacleData.HitboxDirection = obstacleCollider.direction;
-            //}
-
-            // Update our prefab's components when the obstacle data changes.
-            if (autoUpdateObstacleData && obstacleData != oldObsData)
-            {
-                Debug.Log("Updated");
-                // Run SetObstacle so other values are updated.
-                SetObstacle(obstacleData);
-                oldObsData = obstacleData;
-            }
-        }
-#endif
-
         /// <summary>
         /// Sets the obstacle 
         /// </summary>
@@ -107,7 +80,7 @@ namespace Snowmentum
             if (obstacleData == null) { return; }
             this.obstacleData = obstacleData;
 
-            // Alway toggle the obstacle on when new data is set.
+            // Always toggle the obstacle on when new data is set.
             ToggleObstacle(true);
 
             ReadObstacleData();
@@ -129,13 +102,38 @@ namespace Snowmentum
             }
         }
 
-        #region ObstacleData Manipulation
+        #region Editor Only
 #if UNITY_EDITOR
+        /// <summary>
+        /// Automatically obstacle data values.
+        /// </summary>
+        private void OnValidate()
+        {
+            //// Automatically updates the hitbox data of the obstacle.
+            //if (autoUpdate && obstacleData != null)
+            //{
+            //    obstacleData.IsTrigger = obstacleCollider.isTrigger;
+            //    obstacleData.HitboxOffset = obstacleCollider.offset;
+            //    obstacleData.HitboxSize = obstacleCollider.size;
+            //    obstacleData.HitboxDirection = obstacleCollider.direction;
+            //}
+
+            // Update our prefab's components when the obstacle data changes.
+            if (autoUpdateObstacleData && obstacleData != null && obstacleData != oldObsData)
+            {
+                Debug.Log("Updated");
+                // Run SetObstacle so other values are updated.
+                //SetObstacle(obstacleData);
+                Editor_ReadObstacleData();
+                oldObsData = obstacleData;
+            }
+        }
+
         /// <summary>
         /// Updates the data object that controls this obstacle.
         /// </summary>
         [ContextMenu("Write Obstacle Data")]
-        public void WriteObstacleData()
+        public void Editor_WriteObstacleData()
         {
             if (obstacleData == null) { return; }
 
@@ -241,45 +239,38 @@ namespace Snowmentum
                 AssetDatabase.SaveAssetIfDirty(obstacleData);
             }
         }
-#endif
 
         /// <summary>
         /// Reads the data from this object's obstacleData and updates the components on this GameObject.
         /// </summary>
         [ContextMenu("Read Obstacle Data")]
-        public void ReadObstacleData()
+        public void Editor_ReadObstacleData()
         {
             if (obstacleData == null) { return; }
 
-#if UNITY_EDITOR
             // Only care about IsDirty if we're modifying the object in the editor.
             bool isDirty = false;
-#endif
 
             // Update the component on this GameObject when obstacle data changes.
             T ProcessAssignment<T>(T target, T origin)
             {
-#if UNITY_EDITOR
                 if (!isDirty && !EqualityComparer<T>.Default.Equals(origin, target))
                 {
                     //Debug.Log(origin + " doesnt equal " + target);
                     isDirty = true;
                 }
-#endif
                 return origin;
             }
 
             #region GameObject
             //gameObject.tag = obstacleData.Tag;
             gameObject.tag = ProcessAssignment(gameObject.tag, obstacleData.Tag);
-#if UNITY_EDITOR
             // Each component needs to be set dirty individually for changes to be properly saved.
             if (isDirty)
             {
                 EditorUtility.SetDirty(gameObject);
                 isDirty = false;
             }
-#endif
             #endregion
 
             #region Sprite
@@ -290,14 +281,12 @@ namespace Snowmentum
                 //rend.sprite = obstacleData.ObstacleSprite;
                 //rend.sortingOrder = obstacleData.OrderInLayer;
 
-#if UNITY_EDITOR
                 // Each component needs to be set dirty individually for changes to be properly saved.
                 if (isDirty)
                 {
                     EditorUtility.SetDirty(rend);
                     isDirty = false;
                 }
-#endif
             }
             #endregion
 
@@ -307,14 +296,12 @@ namespace Snowmentum
                 score.BaseScore = ProcessAssignment(score.BaseScore, obstacleData.BaseScore);
                 //score.BaseScore = obstacleData.BaseScore;
 
-#if UNITY_EDITOR
                 // Each component needs to be set dirty individually for changes to be properly saved.
                 if (isDirty)
                 {
                     EditorUtility.SetDirty(score);
                     isDirty = false;
                 }
-#endif
             }
             #endregion
 
@@ -324,14 +311,12 @@ namespace Snowmentum
                 scaler.Size = ProcessAssignment(scaler.Size, obstacleData.BaseSize);
                 //scaler.Size = obstacleData.BaseSize;
 
-#if UNITY_EDITOR
                 // Each component needs to be set dirty individually for changes to be properly saved.
                 if (isDirty)
                 {
                     EditorUtility.SetDirty(scaler);
                     isDirty = false;
                 }
-#endif
             }
             #endregion
 
@@ -341,14 +326,12 @@ namespace Snowmentum
                 relay.SoundName = ProcessAssignment(relay.SoundName, obstacleData.DestroySound);
                 //relay.SoundName = obstacleData.DestroySound;
 
-#if UNITY_EDITOR
                 // Each component needs to be set dirty individually for changes to be properly saved.
                 if (isDirty)
                 {
                     EditorUtility.SetDirty(relay);
                     isDirty = false;
                 }
-#endif
             }
             #endregion
 
@@ -358,14 +341,12 @@ namespace Snowmentum
                 outliner.ShowOutline = ProcessAssignment(outliner.ShowOutline, obstacleData.ShowOutline);
                 //outliner.ShowOutline = obstacleData.ShowOutline;
 
-#if UNITY_EDITOR
                 // Each component needs to be set dirty individually for changes to be properly saved.
                 if (isDirty)
                 {
                     EditorUtility.SetDirty(outliner);
                     isDirty = false;
                 }
-#endif
             }
             #endregion
 
@@ -382,14 +363,12 @@ namespace Snowmentum
                 //obstacleCollider.size = obstacleData.HitboxSize;
                 //obstacleCollider.direction = obstacleData.HitboxDirection;
 
-#if UNITY_EDITOR
                 // Each component needs to be set dirty individually for changes to be properly saved.
                 if (isDirty)
                 {
                     EditorUtility.SetDirty(obstacleCollider);
                     isDirty = false;
                 }
-#endif
             }
             #endregion
 
@@ -434,29 +413,91 @@ namespace Snowmentum
                 //burst.count = obstacleData.ParticleNumber;
                 emissionModue.SetBurst(0, burst);
 
-#if UNITY_EDITOR
                 // Each component needs to be set dirty individually for changes to be properly saved.
                 if (isDirty)
                 {
                     EditorUtility.SetDirty(particles);
                     isDirty = false;
                 }
-#endif
             }
             #endregion
-
-//#if UNITY_EDITOR
-//            // If one of our relevant values was changed, we need to mark the game object as dirty if the game is
-//            // not playing.
-//            //Debug.Log(isDirty);
-//            if (!EditorApplication.isPlaying && isDirty)
-//            {
-//                Debug.Log("Game object dirty");
-//                EditorUtility.SetDirty(gameObject);
-//            }
-//#endif
         }
-        #endregion
+#endif
+#endregion
+
+        /// <summary>
+        /// Reads the data from this object's obstacleData and updates the components on this GameObject.
+        /// </summary>
+        private void ReadObstacleData()
+        {
+            if (obstacleData == null) { return; }
+
+            // Update the component on this GameObject when obstacle data changes.
+            gameObject.tag = obstacleData.Tag;
+            if (rend != null)
+            {
+                rend.sprite = obstacleData.ObstacleSprite;
+                rend.sortingOrder = obstacleData.OrderInLayer;
+            }
+            if (score != null)
+            {
+                score.BaseScore = obstacleData.BaseScore;
+            }
+            if (scaler != null)
+            {
+                scaler.Size = obstacleData.BaseSize;
+            }
+            if (relay != null)
+            {
+                relay.SoundName = obstacleData.DestroySound;
+            }
+            if (outliner != null)
+            {
+                //outliner.ShowOutline = obstacleData.ShowOutline;
+                // run ToggleOutline so that we update the material at runtime.
+                outliner.ToggleOutline(obstacleData.ShowOutline);
+            }
+
+            // Collider Updates
+            if (obstacleCollider != null)
+            {
+                obstacleCollider.isTrigger = !obstacleData.HasCollision;
+                obstacleCollider.offset = obstacleData.HitboxOffset;
+                obstacleCollider.size = obstacleData.HitboxSize;
+                obstacleCollider.direction = obstacleData.HitboxDirection;
+            }
+
+            // Particles
+            if (particles != null)
+            {
+                if (obstacleData.SpriteSheet != null)
+                {
+                    var animModule = particles.textureSheetAnimation;
+                    // Update the sprite sheet for the particles.
+                    for (int i = 0; i < obstacleData.SpriteSheet.Length; i++)
+                    {
+                        if (i >= animModule.spriteCount)
+                        {
+                            animModule.AddSprite(obstacleData.SpriteSheet[i]);
+                        }
+                        else
+                        {
+                            animModule.SetSprite(i, obstacleData.SpriteSheet[i]);
+                        }
+                    }
+                }
+
+                // Update the emission shape.
+                var shapeModule = particles.shape;
+                shapeModule.radius = obstacleData.EmissionRadius;
+
+                // Update the number of particles emitted by the burst.
+                var emissionModue = particles.emission;
+                var burst = emissionModue.GetBurst(0);
+                burst.count = obstacleData.ParticleNumber;
+                emissionModue.SetBurst(0, burst);
+            }
+        }
 
         /// <summary>
         /// Return this obstacle to the obstacle spawner's pool.
