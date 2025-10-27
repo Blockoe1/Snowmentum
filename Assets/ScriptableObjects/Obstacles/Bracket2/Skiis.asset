@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skiis
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 10
-  obstacleSprite: {fileID: 21300000, guid: 72906286539af45479cc0ecfc9ddbf95, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: e29c579b91e839f4285d1ac546779b1e, type: 3}
   orderInLayer: 0
   baseScore: 8
   destroySound: Obstacle Destruction
@@ -21,9 +21,13 @@ MonoBehaviour:
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 0
-  offset: {x: 0, y: 0}
-  size: {x: 1, y: 1}
-  particleSpriteSheet: []
+  offset: {x: 0.023493528, y: -0.0033560991}
+  size: {x: 1.5302806, y: 2.1209733}
+  particleSpriteSheet:
+  - {fileID: -1591989874, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: -1987503855, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   particleNumber: 0
-  emissionRadius: 0
+  emissionRadius: 0.0001
   baseSize: 4
