@@ -38,11 +38,12 @@ namespace Snowmentum
             [SerializeField] private AudioClip loopTrack;
 
             internal float Volume => volume;
-            internal AudioSource Source => isLoop ? loopSource : source;
+            // Gets the volume of the audio sources.  Should be the same for the normal and loop sources.
+            internal float SourceVolume => source.volume;
+            //internal AudioSource Source => isLoop ? loopSource : source;
 
             // Need to make a second audioSource for the loop track.
             private AudioSource loopSource;
-            private bool isLoop = false;
 
             /// <summary>
             /// When this track is set up, add an additional audio source that we set as our loop source.
@@ -55,6 +56,16 @@ namespace Snowmentum
                 loopSource = source.AddComponent<AudioSource>();
                 loopSource.clip = loopTrack;
                 base.Setup(loopSource);
+            }
+
+            /// <summary>
+            /// Sets the volume of this track's audio sources.
+            /// </summary>
+            /// <param name="volume"></param>
+            internal void SetSourceVolume(float volume)
+            {
+                source.volume = volume;
+                loopSource.volume = volume;
             }
 
             /// <summary>
@@ -78,18 +89,11 @@ namespace Snowmentum
             private IEnumerator ToLoopRoutine(AudioSource source, AudioClip loopTrack, double playTime)
             {
                 // Wait until we've reached the right time to queue up our loop clip.
-                while (AudioSettings.dspTime > playTime -  LOOP_PRELOAD_TIME)
+                while (AudioSettings.dspTime > playTime - LOOP_PRELOAD_TIME)
                 {
                     yield return null;
                 }
                 source.PlayScheduled(playTime);
-                // Wait until we've actually reached play time.
-                while (AudioSettings.dspTime > playTime)
-                {
-                    yield return null;
-                }
-                // Toggle this source to the loop state.
-                isLoop = true;
             }
         }
         #endregion
@@ -144,7 +148,7 @@ namespace Snowmentum
 
                 newTrack.Play();
                 // Reset the track's source volume so it fades in.
-                newTrack.Source.volume = 0;
+                newTrack.SetSourceVolume(0);
                 // Fade the track to it's new volume.
                 StartCoroutine(FadeTrack(newTrack, transitionTime, newTrack.Volume));
 
@@ -159,7 +163,8 @@ namespace Snowmentum
         private void ResetTrack(MusicTrack track)
         {
             track.Stop();
-            track.Source.volume = track.Volume;
+            track.SetSourceVolume(track.Volume);
+            //track.Source.volume = track.Volume;
         }
 
         /// <summary>
@@ -173,12 +178,12 @@ namespace Snowmentum
         private IEnumerator FadeTrack(MusicTrack track, float duration, float targetVolume, TrackFadeCallback callback = null)
         {
             float timer = duration;
-            float startingVolume = track.Source.volume;
+            float startingVolume = track.SourceVolume;
             float normalizedProgress;
             while (timer > 0)
             {
                 normalizedProgress = 1 - (timer / duration);
-                track.Source.volume = Mathf.Lerp(startingVolume, targetVolume, normalizedProgress);
+                track.SetSourceVolume(Mathf.Lerp(startingVolume, targetVolume, normalizedProgress));
 
                 // Should not scale with timeScale.
                 timer -= Time.unscaledDeltaTime;
