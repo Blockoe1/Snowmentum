@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Tree
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 64
-  obstacleSprite: {fileID: -5028273842082255259, guid: fb813830536a311478609fa576305b7f, type: 3}
+  obstacleSprite: {fileID: -4287974275325013017, guid: 56dc0be1fcc281a449b18c0856476b3f, type: 3}
   orderInLayer: 1
-  baseScore: 6
+  baseScore: 20
   destroySound: Obstacle Destruction
   showOutline: 1
   tag: Untagged
