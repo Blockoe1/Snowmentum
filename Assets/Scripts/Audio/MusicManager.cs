@@ -53,9 +53,11 @@ namespace Snowmentum
             {
                 base.Setup(source);
                 source.clip = introTrack;
+                source.loop = false;
+
                 loopSource = source.AddComponent<AudioSource>();
-                loopSource.clip = loopTrack;
                 base.Setup(loopSource);
+                loopSource.clip = loopTrack;
             }
 
             /// <summary>
@@ -75,18 +77,28 @@ namespace Snowmentum
             {
                 // Use doubles for more precision.
                 // Calculate the precise time to start the looping track.
-                double introDuraction = introTrack.samples / introTrack.frequency;
+                double introDuraction = (double)introTrack.samples / introTrack.frequency;
                 double playTime = AudioSettings.dspTime + introDuraction;
 
                 source.Play();
-                instance.StartCoroutine(ToLoopRoutine(source, loopTrack, playTime));
+                //instance.StartCoroutine(ToLoopRoutine(loopSource, playTime));
+                loopSource.PlayScheduled(playTime);
+            }
+
+            /// <summary>
+            /// Stop both sources.
+            /// </summary>
+            public override void Stop()
+            {
+                base.Stop();
+                loopSource.Stop();
             }
 
             /// <summary>
             /// Coroutine run on the audio source that swaps the track to the loop track once the intro track finishes.
             /// </summary>
             /// <returns></returns>
-            private IEnumerator ToLoopRoutine(AudioSource source, AudioClip loopTrack, double playTime)
+            private IEnumerator ToLoopRoutine(AudioSource source, double playTime)
             {
                 // Wait until we've reached the right time to queue up our loop clip.
                 while (AudioSettings.dspTime > playTime - LOOP_PRELOAD_TIME)

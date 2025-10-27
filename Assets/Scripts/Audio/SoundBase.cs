@@ -29,7 +29,7 @@ namespace Snowmentum
 
         public abstract void Play();
 
-        public void Stop()
+        public virtual void Stop()
         {
             source.Stop();
         }
