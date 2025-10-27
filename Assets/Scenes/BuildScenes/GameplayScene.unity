@@ -12691,10 +12691,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.56589955
+    x: 0.55286026
     y: 0
-    width: 0.72896326
-    height: 0.7286245
+    width: 0.7569395
+    height: 0.7567567
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -13527,6 +13527,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
   m_PrefabInstance: {fileID: 1671779625}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1671779630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4745236545671037846, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+  m_PrefabInstance: {fileID: 1671779625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671779629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7c904ae1545804ca16da5031b25ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.MusicRelay
 --- !u!1 &1732967078
 GameObject:
   m_ObjectHideFlags: 0
@@ -19282,7 +19293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameTransition.m_PersistentCalls.m_Calls.Array.size
@@ -19351,7 +19362,7 @@ PrefabInstance:
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
-      objectReference: {fileID: 1530163291}
+      objectReference: {fileID: 1671779630}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameTransition.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -19394,7 +19405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
-      value: BeginRotation
+      value: SetTrack
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameTransition.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -19426,7 +19437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
-      value: Snowmentum.CameraRotater, Assembly-CSharp
+      value: Snowmentum.MusicRelay, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4638828411970113930, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_BoolArgument
