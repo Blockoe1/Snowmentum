@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tree
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 64
-  obstacleSprite: {fileID: -4287974275325013017, guid: 56dc0be1fcc281a449b18c0856476b3f, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 56dc0be1fcc281a449b18c0856476b3f, type: 3}
   orderInLayer: 1
   baseScore: 20
   destroySound: Obstacle Destruction
@@ -21,8 +21,8 @@ MonoBehaviour:
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 0
-  offset: {x: 0.25528765, y: 0.047596216}
-  size: {x: 1.7355738, y: 3.9163346}
+  offset: {x: 0.1663022, y: -0.051276684}
+  size: {x: 1.448842, y: 2.186057}
   particleSpriteSheet:
   - {fileID: -1591989874, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   - {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
