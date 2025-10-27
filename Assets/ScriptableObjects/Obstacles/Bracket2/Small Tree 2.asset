@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: Small Tree 2
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 9
-  obstacleSprite: {fileID: -6670217317206070699, guid: 4256ee8a901b92a459f9f7bcc4c1097a, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 4256ee8a901b92a459f9f7bcc4c1097a, type: 3}
   orderInLayer: 0
   baseScore: 7
-  destroySound: 
-  showOutline: 0
+  destroySound: Obstacle Destruction
+  showOutline: 1
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 0
   offset: {x: 0.3700068, y: 0.027784586}
   size: {x: 1.4461246, y: 3.630844}
   particleSpriteSheet:
-  - {fileID: -1591989874, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
-  - {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
-  - {fileID: -1987503855, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
-  - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
-  particleNumber: 0
-  emissionRadius: 0.0001
+  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
+  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
+  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
+  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
+  particleNumber: 30
+  emissionRadius: 0.1
   baseSize: 4

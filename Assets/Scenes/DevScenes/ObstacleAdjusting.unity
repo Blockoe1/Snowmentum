@@ -6559,8 +6559,20 @@ PrefabInstance:
       value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: moveAngle
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: speedScale
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: moveVector.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: moveVector.y
+      value: -0.00000008742278
       objectReference: {fileID: 0}
     - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: bracketSprites.Array.size
@@ -7419,8 +7431,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
