@@ -6,6 +6,9 @@
 //
 // Brief Description : 
 *****************************************************************************/
+using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Timeline;
@@ -14,32 +17,80 @@ namespace Snowmentum
 {
     public class MusicManager : MonoBehaviour
     {
+        [SerializeField] private float transitionTime;
+        [SerializeField] private MusicTrack[] musicTracks;
+
+        private MusicTrack currentTrack;
+        private MusicTrack overrideTrack;
+
         private static MusicManager instance;
 
-        #region Component References
-        [Header("Components")]
-        [SerializeReference] protected AudioSource musicSource;
-
-        /// <summary>
-        /// Get components on reset.
-        /// </summary>
-        [ContextMenu("Get Component References")]
-        private void Reset()
-        {
-            musicSource = GetComponent<AudioSource>();
-        }
-        #endregion
-
         #region Nested
+        private delegate void TrackFadeCallback(MusicTrack track);
         [System.Serializable]
-        private class MusicTrack
+        private class MusicTrack : SoundBase
         {
-            [SerializeField] internal string name;
-            [SerializeField] internal AudioTrack track;
-            [SerializeField, Range(0f, 1f)] internal float volume = 1f;
-            [SerializeField, Range(-3f, 3f)] internal float pitch = 1f;
+            #region CONSTS
+            private const double LOOP_PRELOAD_TIME = 1;
+            #endregion
 
-            internal AudioSource source;
+            [SerializeField] private AudioClip introTrack;
+            [SerializeField] private AudioClip loopTrack;
+
+            internal float Volume => volume;
+            internal AudioSource Source => isLoop ? loopSource : source;
+
+            // Need to make a second audioSource for the loop track.
+            private AudioSource loopSource;
+            private bool isLoop = false;
+
+            /// <summary>
+            /// When this track is set up, add an additional audio source that we set as our loop source.
+            /// </summary>
+            /// <param name="source"></param>
+            protected override void Setup(AudioSource source)
+            {
+                base.Setup(source);
+                source.clip = introTrack;
+                loopSource = source.AddComponent<AudioSource>();
+                loopSource.clip = loopTrack;
+                base.Setup(loopSource);
+            }
+
+            /// <summary>
+            /// Start playing with the intro track, then transition to the loop track once the intro finishes.
+            /// </summary>
+            public override void Play()
+            {
+                // Use doubles for more precision.
+                // Calculate the precise time to start the looping track.
+                double introDuraction = introTrack.samples / introTrack.frequency;
+                double playTime = AudioSettings.dspTime + introDuraction;
+
+                source.Play();
+                instance.StartCoroutine(ToLoopRoutine(source, loopTrack, playTime));
+            }
+
+            /// <summary>
+            /// Coroutine run on the audio source that swaps the track to the loop track once the intro track finishes.
+            /// </summary>
+            /// <returns></returns>
+            private IEnumerator ToLoopRoutine(AudioSource source, AudioClip loopTrack, double playTime)
+            {
+                // Wait until we've reached the right time to queue up our loop clip.
+                while (AudioSettings.dspTime > playTime -  LOOP_PRELOAD_TIME)
+                {
+                    yield return null;
+                }
+                source.PlayScheduled(playTime);
+                // Wait until we've actually reached play time.
+                while (AudioSettings.dspTime > playTime)
+                {
+                    yield return null;
+                }
+                // Toggle this source to the loop state.
+                isLoop = true;
+            }
         }
         #endregion
 
@@ -55,12 +106,15 @@ namespace Snowmentum
             }
             else
             {
+                DontDestroyOnLoad(gameObject);
                 instance = this;
             }
 
             MusicRelay.RelaySetTrackEvent = SetTrack;
             MusicRelay.RelayPlayOverrideTrackEvent = StartOverrideTrack;
             MusicRelay.RelayStopOverrideTrackEvent = StopOverrideTrack;
+
+            SoundBase.SetupSounds(musicTracks, gameObject);
         }
         private void OnDestroy()
         {
@@ -72,14 +126,68 @@ namespace Snowmentum
             }
         }
 
+        #region Base Track Transitions
         /// <summary>
         /// Sets the current main track and transitions to it.
         /// </summary>
         /// <param name="trackName"></param>
         private void SetTrack(string trackName)
         {
+            MusicTrack newTrack = Array.Find(musicTracks, itme => itme.Name == trackName);
+            if (newTrack != null && newTrack != currentTrack)
+            {
+                // Transition to the new track.
+                if (currentTrack != null)
+                {
+                    StartCoroutine(FadeTrack(currentTrack, transitionTime, 0, ResetTrack));
+                }
 
+                newTrack.Play();
+                // Reset the track's source volume so it fades in.
+                newTrack.Source.volume = 0;
+                // Fade the track to it's new volume.
+                StartCoroutine(FadeTrack(newTrack, transitionTime, newTrack.Volume));
+
+                currentTrack = newTrack;
+            }
         }
+
+        /// <summary>
+        /// Stops a music track and resets it's volume back to the default.
+        /// </summary>
+        /// <param name="track"></param>
+        private void ResetTrack(MusicTrack track)
+        {
+            track.Stop();
+            track.Source.volume = track.Volume;
+        }
+
+        /// <summary>
+        /// Fades a given music track in or out.
+        /// </summary>
+        /// <param name="track"></param>
+        /// <param name="duration"></param>
+        /// <param name="targetVolume"></param>
+        /// <param name="callback"></param>
+        /// <returns></returns>
+        private IEnumerator FadeTrack(MusicTrack track, float duration, float targetVolume, TrackFadeCallback callback = null)
+        {
+            float timer = duration;
+            float startingVolume = track.Source.volume;
+            float normalizedProgress;
+            while (timer > 0)
+            {
+                normalizedProgress = 1 - (timer / duration);
+                track.Source.volume = Mathf.Lerp(startingVolume, targetVolume, normalizedProgress);
+
+                // Should not scale with timeScale.
+                timer -= Time.unscaledDeltaTime;
+                yield return null;
+            }
+            // Call a callback so we can run some code when the fade finishes.
+            callback?.Invoke(track);
+        }
+        #endregion
 
         /// <summary>
         /// Plays an override track in place of the main track.
