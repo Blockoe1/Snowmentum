@@ -65,33 +65,6 @@ namespace Snowmentum
         public bool HasCollision => obstacleData == null ? false : obstacleData.HasCollision;
         #endregion
 
-
-#if UNITY_EDITOR
-        /// <summary>
-        /// Automatically obstacle data values.
-        /// </summary>
-        private void OnValidate()
-        {
-            //// Automatically updates the hitbox data of the obstacle.
-            //if (autoUpdate && obstacleData != null)
-            //{
-            //    obstacleData.IsTrigger = obstacleCollider.isTrigger;
-            //    obstacleData.HitboxOffset = obstacleCollider.offset;
-            //    obstacleData.HitboxSize = obstacleCollider.size;
-            //    obstacleData.HitboxDirection = obstacleCollider.direction;
-            //}
-
-            // Update our prefab's components when the obstacle data changes.
-            if (autoUpdateObstacleData && obstacleData != oldObsData)
-            {
-                Debug.Log("Updated");
-                // Run SetObstacle so other values are updated.
-                SetObstacle(obstacleData);
-                oldObsData = obstacleData;
-            }
-        }
-#endif
-
         /// <summary>
         /// Sets the obstacle 
         /// </summary>
@@ -123,13 +96,126 @@ namespace Snowmentum
             }
         }
 
-        #region ObstacleData Manipulation
+        /// <summary>
+        /// Reads the data from this object's obstacleData and updates the components on this GameObject.
+        /// </summary>
+        private void ReadObstacleData()
+        {
+            if (obstacleData == null) { return; }
+
+            // Update the component on this GameObject when obstacle data changes.
+            gameObject.tag = obstacleData.Tag;
+            if (rend != null)
+            {
+                rend.sprite = obstacleData.ObstacleSprite;
+                rend.sortingOrder = obstacleData.OrderInLayer;
+            }
+            if (score != null)
+            {
+                score.BaseScore = obstacleData.BaseScore;
+            }
+            if (scaler != null)
+            {
+                scaler.Size = obstacleData.BaseSize;
+            }
+            if (relay != null)
+            {
+                relay.SoundName = obstacleData.DestroySound;
+            }
+            if (outliner != null)
+            {
+                outliner.ToggleOutline(obstacleData.ShowOutline);
+            }
+
+            // Collider Updates
+            if (obstacleCollider != null)
+            {
+                obstacleCollider.isTrigger = !obstacleData.HasCollision;
+                obstacleCollider.offset = obstacleData.HitboxOffset;
+                obstacleCollider.size = obstacleData.HitboxSize;
+                obstacleCollider.direction = obstacleData.HitboxDirection;
+            }
+
+            // Particles
+            if (particles != null)
+            {
+                if (obstacleData.SpriteSheet != null)
+                {
+                    var animModule = particles.textureSheetAnimation;
+                    // Update the sprite sheet for the particles.
+                    for (int i = 0; i < obstacleData.SpriteSheet.Length; i++)
+                    {
+                        if (i >= animModule.spriteCount)
+                        {
+                            animModule.AddSprite(obstacleData.SpriteSheet[i]);
+                        }
+                        else
+                        {
+                            animModule.SetSprite(i, obstacleData.SpriteSheet[i]);
+                        }
+                    }
+                }
+
+                // Update the emission shape.
+                var shapeModule = particles.shape;
+                shapeModule.radius = obstacleData.EmissionRadius;
+
+                // Update the number of particles emitted by the burst.
+                var emissionModue = particles.emission;
+                var burst = emissionModue.GetBurst(0);
+                burst.count = obstacleData.ParticleNumber;
+                emissionModue.SetBurst(0, burst);
+            }
+        }
+
+        /// <summary>
+        /// Return this obstacle to the obstacle spawner's pool.
+        /// </summary>
+        public void ReturnObstacle()
+        {
+            if (obstacleReturnFunction != null)
+            {
+                obstacleReturnFunction(this);
+            }
+            // If no return function is specified, the object is simply destroyed.
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        #region Editor Only
 #if UNITY_EDITOR
+        /// <summary>
+        /// Automatically obstacle data values.
+        /// </summary>
+        private void OnValidate()
+        {
+            //// Automatically updates the hitbox data of the obstacle.
+            //if (autoUpdate && obstacleData != null)
+            //{
+            //    obstacleData.IsTrigger = obstacleCollider.isTrigger;
+            //    obstacleData.HitboxOffset = obstacleCollider.offset;
+            //    obstacleData.HitboxSize = obstacleCollider.size;
+            //    obstacleData.HitboxDirection = obstacleCollider.direction;
+            //}
+
+            // Update our prefab's components when the obstacle data changes.
+            if (autoUpdateObstacleData && obstacleData != oldObsData)
+            {
+                Debug.Log("Updated");
+                // Run SetObstacle so other values are updated.
+                //SetObstacle(obstacleData);
+                Editor_ReadObstacleData();
+                oldObsData = obstacleData;
+            }
+        }
+
         /// <summary>
         /// Updates the data object that controls this obstacle.
         /// </summary>
         [ContextMenu("Write Obstacle Data")]
-        private void WriteObstacleData()
+        private void Editor_WriteObstacleData()
         {
             if (obstacleData == null) { return; }
 
@@ -189,12 +275,11 @@ namespace Snowmentum
             EditorUtility.SetDirty(obstacleData);
             AssetDatabase.SaveAssetIfDirty(obstacleData);
         }
-#endif
 
         /// <summary>
         /// Reads the data from this object's obstacleData and updates the components on this GameObject.
         /// </summary>
-        private void ReadObstacleData()
+        private void Editor_ReadObstacleData()
         {
             if (obstacleData == null) { return; }
 
@@ -209,7 +294,7 @@ namespace Snowmentum
             {
                 score.BaseScore = obstacleData.BaseScore;
             }
-            if ( scaler != null)
+            if (scaler != null)
             {
                 scaler.Size = obstacleData.BaseSize;
             }
@@ -262,22 +347,7 @@ namespace Snowmentum
                 emissionModue.SetBurst(0, burst);
             }
         }
+#endif
         #endregion
-
-        /// <summary>
-        /// Return this obstacle to the obstacle spawner's pool.
-        /// </summary>
-        public void ReturnObstacle()
-        {
-            if (obstacleReturnFunction != null)
-            {
-                obstacleReturnFunction(this);
-            }
-            // If no return function is specified, the object is simply destroyed.
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
     }
 }

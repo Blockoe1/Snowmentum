@@ -52,20 +52,7 @@ namespace Snowmentum
             get { return showOutline; }
             set 
             {
-                // Prevents redundant assignment.
-                if (value == showOutline) { return; }
-                showOutline = value; 
-
-                // Disable the outline if ShowOutline is set to false.
-                if (showOutline)
-                {
-                    SnowballPosition.OnPositionChanged += UpdateOutline;
-                }
-                else
-                {
-                    SnowballPosition.OnPositionChanged -= UpdateOutline;
-                    ResetColor();
-                }
+                showOutline = value;
             }
         }
         #endregion
@@ -88,6 +75,28 @@ namespace Snowmentum
         private void OnDestroy()
         {
             SnowballPosition.OnPositionChanged -= UpdateOutline;
+        }
+
+        /// <summary>
+        /// Toggles the outline with any required event subscriptions and updates.
+        /// </summary>
+        /// <param name="value"></param>
+        public void ToggleOutline(bool value)
+        {
+            // Prevents redundant assignment.
+            if (value == showOutline) { return; }
+            showOutline = value;
+
+            // Disable the outline if ShowOutline is set to false.
+            if (showOutline)
+            {
+                SnowballPosition.OnPositionChanged += UpdateOutline;
+            }
+            else
+            {
+                SnowballPosition.OnPositionChanged -= UpdateOutline;
+                ResetColor();
+            }
         }
 
         /// <summary>
@@ -166,11 +175,11 @@ namespace Snowmentum
             for (int i = 0; i < blinkAmount; i++)
             {
                 // Temporarily disable the outline and set it manually.
-                ShowOutline = false;
+                ToggleOutline(false);
                 SetOutlineAlpha(1);
                 yield return new WaitForSeconds(outlineBlinkDelay);
 
-                ShowOutline = true;
+                ToggleOutline(true);
                 yield return new WaitForSeconds(outlineBlinkDelay);
             }
         }
