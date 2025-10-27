@@ -221,6 +221,9 @@ namespace Snowmentum
             MusicTrack overrideTrack = Array.Find(musicTracks, item => item.Name == trackName);
             if (overrideTrack != null)
             {
+                // Stop any current override tracks.
+                StopOverrideTrack();
+
                 // Disable the current track by setting volume to 0.
                 currentTrack.SetSourceVolume(currentTrack.SourceVolume * overwrittenMultiplier);
 
@@ -235,12 +238,15 @@ namespace Snowmentum
         /// </summary>
         private void StopOverrideTrack()
         {
-            // Resume the main clip by setting volume to it's base.
-            currentTrack.SetSourceVolume(currentTrack.SourceVolume * overwrittenMultiplier);
+            if (overrideTrack != null)
+            {
+                // Resume the main clip by setting volume to it's base.
+                currentTrack.SetSourceVolume(currentTrack.SourceVolume / overwrittenMultiplier);
 
-            // Stop the override track.
-            overrideTrack.Stop();
-            overrideTrack = null;
+                // Stop the override track.
+                overrideTrack.Stop();
+                overrideTrack = null;
+            }
         }
     }
 }
