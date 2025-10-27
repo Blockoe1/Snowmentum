@@ -47,7 +47,7 @@ MonoBehaviour:
   obstacleParent: {fileID: 0}
   obstaclePrefab: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
   spawnOnStart: 0
-  obstacleSpawnAmount: 1
+  obstacleSpawnAmount: 2
   spawnCooldown: 4
   scaleWithSpeed: 1
   sizeBonusWeight: 10
@@ -74,6 +74,48 @@ MonoBehaviour:
       baseWeight: 3
       addedWeight: 1
   - spawnData:
-    - obstacle: {fileID: 11400000, guid: 8a00bb3a771ec6d4a87612cb470462d9, type: 2}
-      baseWeight: 1
+    - obstacle: {fileID: 11400000, guid: 898918ed32e1b7f4e8c80b545867073b, type: 2}
+      baseWeight: 5
       addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: ec7c11f8572073e4689f8eb5066b24b9, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: 59348b3d256f78940b17609ba2b4f0f5, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: 16d4bc3f078c8d84f8d1ec922be99a27, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: 99725482bfac5de4a9fd1a31b375435e, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: c911b56a100e52441b61e85680a55c11, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: 1eb5e92277d696f4db7e5868d1c1bb7c, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+  - spawnData:
+    - obstacle: {fileID: 11400000, guid: 35d1e1d3f8184784987c0ac0ec659f25, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: 894523796d27b2246b8fea8e935615fa, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: d02f335282495e34a852c038bf860bd2, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: 0992a6edde714cf478babab2478b7f41, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: ed26b628efba32e47b45aad25e39a505, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: fb3397e3655799c4fbf9d3ff9e5c2b39, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+  infiniteBracket:
+    spawnData: []

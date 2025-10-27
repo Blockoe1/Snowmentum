@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
-  m_Name: Tree
+  m_Name: Campfire
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 64
-  obstacleSprite: {fileID: 21300000, guid: 56dc0be1fcc281a449b18c0856476b3f, type: 3}
-  orderInLayer: 1
-  baseScore: 20
+  obstacleSize: 12
+  obstacleSprite: {fileID: 21300000, guid: b6b853281d6487d4cb92b27f4f143a81, type: 3}
+  orderInLayer: 0
+  baseScore: 11
   destroySound: Obstacle Destruction
   showOutline: 1
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 0
-  offset: {x: 0.1663022, y: -0.051276684}
-  size: {x: 1.448842, y: 2.186057}
+  offset: {x: -0.025429249, y: -0.005449116}
+  size: {x: 0.73117733, y: 0.7711377}
   particleSpriteSheet:
   - {fileID: -1591989874, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   - {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
@@ -30,4 +30,4 @@ MonoBehaviour:
   - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   particleNumber: 0
   emissionRadius: 0.0001
-  baseSize: 16
+  baseSize: 4
