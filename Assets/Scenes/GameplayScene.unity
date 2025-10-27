@@ -12683,7 +12683,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.9995353
+    height: 0.9998731
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -19588,6 +19588,10 @@ PrefabInstance:
     - target: {fileID: 3479750891367725736, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
+      propertyPath: spawnCooldown
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
       propertyPath: obstacleParent
