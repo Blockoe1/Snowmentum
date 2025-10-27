@@ -21,41 +21,26 @@ namespace Snowmentum
 
         #region Nested
         [System.Serializable]
-        private abstract class SoundBase
-        {
-            [SerializeField] internal string name;
-            [SerializeField] internal AudioMixerGroup mixerGroup;
-            [SerializeField, Range(0f, 1f)] internal float volume = 1f;
-            [SerializeField, Range(-3f, 3f)] internal float pitch = 1f;
-            [SerializeField] internal bool loop;
-
-            internal AudioSource source;
-
-            internal abstract void Play();
-
-            internal void Stop()
-            {
-                source.Stop();
-            }
-        }
-
-        // Plays 1 singular sound.
-        [System.Serializable]
-        private class Sound :SoundBase
+        public class Sound : SoundBase
         {
             [Header("Clip")]
-            [SerializeField] internal AudioClip audioClip;
+            [SerializeField] protected AudioClip audioClip;
+
+            protected override void Setup(AudioSource source)
+            {
+                base.Setup(source);
+                source.clip = audioClip;
+            }
 
             /// <summary>
             /// Plays the set audio clip of this sound.
             /// </summary>
-            internal override void Play()
+            public override void Play()
             {
-                source.clip = audioClip;
+                //source.clip = audioClip;
                 source.Play();
             }
         }
-
         // Plays a random sound from an array of sounds.
         [System.Serializable]
         private class RandomizedSound : SoundBase
@@ -66,7 +51,7 @@ namespace Snowmentum
             /// <summary>
             /// Gets a random audio clip from the array and plays it.
             /// </summary>
-            internal override void Play()
+            public override void Play()
             {
                 AudioClip clip = audioClips[UnityEngine.Random.Range(0, audioClips.Length - 1)];
                 source.clip = clip;
@@ -91,8 +76,8 @@ namespace Snowmentum
                 instance = this;
             }
 
-            SetupSounds(sounds);
-            SetupSounds(randomizedSounds);
+            SoundBase.SetupSounds(sounds, gameObject);
+            SoundBase.SetupSounds(randomizedSounds, gameObject);
 
             AudioRelay.RelayPlayEvent = Play;
             AudioRelay.RelayPlayRandomizedEvent = PlayRandom;
@@ -117,29 +102,12 @@ namespace Snowmentum
         }
 
         /// <summary>
-        /// Sets up all of the sounds on this audio manager with an audio source.
-        /// </summary>
-        private void SetupSounds(SoundBase[] sounds)
-        {
-            foreach (var sound in sounds)
-            {
-                sound.source = gameObject.AddComponent<AudioSource>();
-
-                sound.source.outputAudioMixerGroup = sound.mixerGroup;
-                sound.source.volume = sound.volume;
-                sound.source.pitch = sound.pitch;
-                sound.source.loop = sound.loop;
-                sound.source.playOnAwake = false;
-            }
-        }
-
-        /// <summary>
         /// Plays a given sound.
         /// </summary>
         /// <param name="soundName">The sound to play.</param>
         public void Play(string soundName)
         {
-            SoundBase toPlay = Array.Find(sounds, item => item.name == soundName);
+            SoundBase toPlay = Array.Find(sounds, item => item.Name == soundName);
             if (toPlay != null)
             {
                 toPlay.Play();
@@ -157,7 +125,7 @@ namespace Snowmentum
         /// <param name="soundName">The sound to play.</param>
         public void PlayRandom(string soundName)
         {
-            SoundBase toPlay = Array.Find(randomizedSounds, item => item.name == soundName);
+            SoundBase toPlay = Array.Find(randomizedSounds, item => item.Name == soundName);
             if (toPlay != null)
             {
                 toPlay.Play();
@@ -176,14 +144,14 @@ namespace Snowmentum
         public void Stop(string soundName)
         {
             // Check both normal and randomized sounds.
-            SoundBase toStop = Array.Find(sounds, item => item.name == soundName);
+            SoundBase toStop = Array.Find(sounds, item => item.Name == soundName);
             if (toStop != null)
             {
                 toStop.Stop();
                 return;
             }
 
-            toStop = Array.Find(randomizedSounds, item => item.name == soundName);
+            toStop = Array.Find(randomizedSounds, item => item.Name == soundName);
             if (toStop != null)
             {
                 toStop.Stop();
@@ -198,7 +166,7 @@ namespace Snowmentum
         {
             foreach(var sound in sounds)
             {
-                sound.source.Stop();
+                sound.Stop();
             }
         }
     }
