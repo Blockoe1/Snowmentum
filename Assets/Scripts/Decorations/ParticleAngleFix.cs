@@ -25,7 +25,7 @@ namespace Snowmentum
         {
             float lerpValue = Mathf.InverseLerp(minY, maxY, transform.position.y);
             float angle = Mathf.Lerp(maxAngle, minAngle, lerpValue);
-            Debug.Log(angle);
+            //Debug.Log(angle);
             collisionPlane.eulerAngles = new Vector3(angle, 0, 0);
         }
     }

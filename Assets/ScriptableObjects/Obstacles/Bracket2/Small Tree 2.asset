@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
+  m_Name: Small Tree 2
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
+  obstacleSize: 9
+  obstacleSprite: {fileID: 21300000, guid: 4256ee8a901b92a459f9f7bcc4c1097a, type: 3}
+  orderInLayer: 0
+  baseScore: 7
+  destroySound: Obstacle Destruction
+  showOutline: 1
+  tag: Untagged
+  hasCollision: 1
+  capsuleDirection: 0
+  offset: {x: 0.3700068, y: 0.027784586}
+  size: {x: 1.4461246, y: 3.630844}
+  particleSpriteSheet:
+  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
+  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
+  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
+  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
+  particleNumber: 30
+  emissionRadius: 0.1
+  baseSize: 4

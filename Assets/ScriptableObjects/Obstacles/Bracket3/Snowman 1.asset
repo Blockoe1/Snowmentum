@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
+  m_Name: Snowman 1
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
+  obstacleSize: 45
+  obstacleSprite: {fileID: 21300000, guid: 69479791380198e46978df5f6b7906ab, type: 3}
+  orderInLayer: 0
+  baseScore: 14
+  destroySound: Obstacle Destruction
+  showOutline: 1
+  tag: Untagged
+  hasCollision: 1
+  capsuleDirection: 0
+  offset: {x: 0.09, y: 0.022358894}
+  size: {x: 1.1043415, y: 2.7067313}
+  particleSpriteSheet:
+  - {fileID: -1591989874, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: -1987503855, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  particleNumber: 0
+  emissionRadius: 0.0001
+  baseSize: 16

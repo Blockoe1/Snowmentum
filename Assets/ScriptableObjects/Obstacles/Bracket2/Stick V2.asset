@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: Stick V2
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 0
-  obstacleSprite: {fileID: 0}
+  obstacleSize: 5
+  obstacleSprite: {fileID: 21300000, guid: 0dd2e083cb1342544a0a84b97c384c27, type: 3}
   orderInLayer: 0
-  baseScore: 0
-  destroySound: 
-  showOutline: 0
+  baseScore: 4
+  destroySound: Obstacle Destruction
+  showOutline: 1
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 0
@@ -26,4 +26,4 @@ MonoBehaviour:
   particleSpriteSheet: []
   particleNumber: 0
   emissionRadius: 0
-  baseSize: 1
+  baseSize: 4

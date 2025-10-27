@@ -39,7 +39,7 @@ namespace Snowmentum.UI
         private void Awake()
         {
             navigateAction = InputSystem.actions.FindAction("Navigate");
-            Debug.Log(navigateAction);
+            //Debug.Log(navigateAction);
 
             navigateAction.started += NavigateAction_started;
             navigateAction.canceled += NavigateAction_canceled;

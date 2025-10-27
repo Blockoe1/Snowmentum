@@ -38,7 +38,9 @@ namespace Snowmentum
         [SerializeField] private float maxYSpawn;
 
         //[SerializeField] private ObstacleSpawnData[] obstacles;  //holds the obstacle prefabs
+        [Header("Brackets")]
         [SerializeField] private SpawnBracket[] brackets;
+        [SerializeField] private SpawnBracket infiniteBracket;
 
         private Queue<ObstacleController> inactiveObstacles = new();
 
@@ -132,7 +134,11 @@ namespace Snowmentum
             {
                 // Get the largest bracket we have obstacles set up to spawn in.
                 // Decrement bracket by 1 so that it's an index.
-                spawnBracket = brackets[Mathf.Min(SizeBracket.Bracket - 1, brackets.Length - 1)];
+                //spawnBracket = brackets[Mathf.Min(SizeBracket.Bracket - 1, brackets.Length - 1)];
+
+                // If our current bracket exceeds the brackets we've set, use the infinite bracket.
+                spawnBracket = SizeBracket.Bracket > brackets.Length ? 
+                    infiniteBracket : brackets[SizeBracket.Bracket - 1];
                 for (int i = 0; i < obstacleSpawnAmount; i++)
                 {
                     //Pick an obstacle to spawn
