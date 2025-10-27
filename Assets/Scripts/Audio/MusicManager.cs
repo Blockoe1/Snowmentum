@@ -18,6 +18,7 @@ namespace Snowmentum
     public class MusicManager : MonoBehaviour
     {
         [SerializeField] private float transitionTime;
+        [SerializeField, Range(0f, 1f)] private float overwrittenMultiplier;
         [SerializeField] private MusicTrack[] musicTracks;
 
         private MusicTrack currentTrack;
@@ -34,6 +35,7 @@ namespace Snowmentum
             private const double LOOP_PRELOAD_TIME = 1;
             #endregion
 
+            [SerializeField] private bool useIntro = true;
             [SerializeField] private AudioClip introTrack;
             [SerializeField] private AudioClip loopTrack;
 
@@ -75,14 +77,18 @@ namespace Snowmentum
             /// </summary>
             public override void Play()
             {
-                // Use doubles for more precision.
-                // Calculate the precise time to start the looping track.
-                double introDuraction = (double)introTrack.samples / introTrack.frequency;
-                double playTime = AudioSettings.dspTime + introDuraction;
-
                 source.Play();
-                //instance.StartCoroutine(ToLoopRoutine(loopSource, playTime));
-                loopSource.PlayScheduled(playTime);
+
+                if (useIntro)
+                {
+                    // Use doubles for more precision.
+                    // Calculate the precise time to start the looping track.
+                    double introDuraction = (double)introTrack.samples / introTrack.frequency;
+                    double playTime = AudioSettings.dspTime + introDuraction;
+
+                    //instance.StartCoroutine(ToLoopRoutine(loopSource, playTime));
+                    loopSource.PlayScheduled(playTime);
+                }
             }
 
             /// <summary>
@@ -98,15 +104,15 @@ namespace Snowmentum
             /// Coroutine run on the audio source that swaps the track to the loop track once the intro track finishes.
             /// </summary>
             /// <returns></returns>
-            private IEnumerator ToLoopRoutine(AudioSource source, double playTime)
-            {
-                // Wait until we've reached the right time to queue up our loop clip.
-                while (AudioSettings.dspTime > playTime - LOOP_PRELOAD_TIME)
-                {
-                    yield return null;
-                }
-                source.PlayScheduled(playTime);
-            }
+            //private IEnumerator ToLoopRoutine(AudioSource source, double playTime)
+            //{
+            //    // Wait until we've reached the right time to queue up our loop clip.
+            //    while (AudioSettings.dspTime > playTime - LOOP_PRELOAD_TIME)
+            //    {
+            //        yield return null;
+            //    }
+            //    source.PlayScheduled(playTime);
+            //}
         }
         #endregion
 
@@ -212,7 +218,16 @@ namespace Snowmentum
         /// <param name="trackName"></param>
         private void StartOverrideTrack(string trackName)
         {
+            MusicTrack overrideTrack = Array.Find(musicTracks, item => item.Name == trackName);
+            if (overrideTrack != null)
+            {
+                // Disable the current track by setting volume to 0.
+                currentTrack.SetSourceVolume(currentTrack.SourceVolume * overwrittenMultiplier);
 
+                // Play the override track.
+                this.overrideTrack = overrideTrack;
+                overrideTrack.Play();
+            }
         }
 
         /// <summary>
@@ -220,7 +235,12 @@ namespace Snowmentum
         /// </summary>
         private void StopOverrideTrack()
         {
+            // Resume the main clip by setting volume to it's base.
+            currentTrack.SetSourceVolume(currentTrack.SourceVolume * overwrittenMultiplier);
 
+            // Stop the override track.
+            overrideTrack.Stop();
+            overrideTrack = null;
         }
     }
 }
