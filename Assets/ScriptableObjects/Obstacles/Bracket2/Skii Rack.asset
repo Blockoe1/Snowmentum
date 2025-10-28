@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
-  m_Name: Snowboard
+  m_Name: Skii Rack
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 12
-  obstacleSprite: {fileID: 6779385974865440300, guid: 83952e0f0b842744198f3387f28f0e5c, type: 3}
+  obstacleSize: 16
+  obstacleSprite: {fileID: 21300000, guid: cb341f35c6389df429031bc1cfc6b0b3, type: 3}
   orderInLayer: 0
-  baseScore: 9
+  baseScore: 13
   destroySound: Obstacle Destruction
   showOutline: 1
   tag: Untagged
   hasCollision: 1
-  capsuleDirection: 1
-  offset: {x: 0.03329873, y: -0.04}
-  size: {x: 2.1171296, y: 0.47693455}
+  capsuleDirection: 0
+  offset: {x: -0.25564575, y: 0.038122535}
+  size: {x: 0.98206043, y: 2.5562975}
   particleSpriteSheet:
-  - {fileID: -1133877238, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
-  - {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
-  - {fileID: -1987503855, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
-  - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   particleNumber: 0
   emissionRadius: 0.0001
   baseSize: 4
