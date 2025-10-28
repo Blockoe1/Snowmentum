@@ -99,6 +99,12 @@ MonoBehaviour:
     - obstacle: {fileID: 11400000, guid: 1eb5e92277d696f4db7e5868d1c1bb7c, type: 2}
       baseWeight: 5
       addedWeight: 2
+    - obstacle: {fileID: 11400000, guid: bd67023797275ff47bf03af559c18122, type: 2}
+      baseWeight: 5
+      addedWeight: 2
+    - obstacle: {fileID: 11400000, guid: bd67023797275ff47bf03af559c18122, type: 2}
+      baseWeight: 5
+      addedWeight: 2
   - spawnData:
     - obstacle: {fileID: 11400000, guid: 35d1e1d3f8184784987c0ac0ec659f25, type: 2}
       baseWeight: 5
@@ -116,6 +122,9 @@ MonoBehaviour:
       baseWeight: 5
       addedWeight: 3
     - obstacle: {fileID: 11400000, guid: fb3397e3655799c4fbf9d3ff9e5c2b39, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
       baseWeight: 5
       addedWeight: 1
     - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
