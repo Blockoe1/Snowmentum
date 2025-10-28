@@ -600,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: bracketSprites.Array.size
@@ -1016,6 +1016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hill
       objectReference: {fileID: 0}
+    - target: {fileID: 8143487420188363057, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1409,6 +1413,10 @@ PrefabInstance:
     - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Name
       value: BGHills
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5448865305363378137, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Sprite
@@ -12052,6 +12060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 9186816869802753585, guid: 4acfb0ca5e7295942946e85c1b8fcf18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12644,9 +12656,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 231841834676547580, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568770032438607038, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: startingValue
-      value: 3.5
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -12660,6 +12680,26 @@ PrefabInstance:
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1788025634}
+    - target: {fileID: 3017659872710321336, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125016369631847124, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745236545671037846, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849079277256418136, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnThawEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
       value: 6
@@ -12759,6 +12799,10 @@ PrefabInstance:
     - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnFreezeEvent.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
       value: UnityEngine.ParticleSystem, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135800488676584112, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17928,6 +17972,10 @@ PrefabInstance:
     - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Name
       value: Foreground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4598951314198420690, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: scalePerspectiveY
