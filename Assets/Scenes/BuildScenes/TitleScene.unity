@@ -1353,7 +1353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1922762963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1837,7 +1837,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1.0002414
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -1972,6 +1972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.MusicManager
   transitionTime: 1
+  overrideFadeTime: 0.5
   overwrittenMultiplier: 0
   musicTracks:
   - name: Level
