@@ -88,6 +88,8 @@ namespace Snowmentum.UI
             // Prevent redundant code if we've already reached the end of the sequence.
             if (currentSequenceIndex > controlSequence.Length) { return; }
 
+            //Debug.Log("Sequence Advanced");
+
             currentSequenceIndex++;
             // Set direction to none if we've reached the end of the sequence.
             if (currentSequenceIndex - 1 >= controlSequence.Length)
