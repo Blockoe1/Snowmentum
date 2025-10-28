@@ -12195,10 +12195,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.55286026
     y: 0
-    width: 1.0002414
-    height: 1
+    width: 0.7569395
+    height: 0.7567567
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -18792,26 +18792,6 @@ PrefabInstance:
       propertyPath: obstacleParent
       value: 
       objectReference: {fileID: 1081323402}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: brackets.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.data[0].obstacle
-      value: 
-      objectReference: {fileID: 11400000, guid: a270d54c501b2d645a4db4d6e42f626e, type: 2}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.data[0].baseWeight
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.data[0].addedWeight
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
