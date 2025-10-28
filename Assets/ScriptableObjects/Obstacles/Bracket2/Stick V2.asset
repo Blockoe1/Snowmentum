@@ -24,10 +24,10 @@ MonoBehaviour:
   offset: {x: 0.01663041, y: -0.036577888}
   size: {x: 2.5318353, y: 0.67508453}
   particleSpriteSheet:
-  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
-  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
-  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
-  - {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
-  particleNumber: 0
-  emissionRadius: 0.0001
+  - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  particleNumber: 15
+  emissionRadius: 0.06
   baseSize: 4
