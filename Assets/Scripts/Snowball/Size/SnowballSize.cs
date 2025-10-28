@@ -152,5 +152,13 @@ namespace Snowmentum.Size
             OnDeathEvent?.Invoke(oldValue);
             Destroy(gameObject);
         }
+
+        #region Debug
+        [ContextMenu("Half Size")]
+        public void HelfSize()
+        {
+            TargetValue_Local = TargetValue / 2;
+        }
+        #endregion
     }
 }

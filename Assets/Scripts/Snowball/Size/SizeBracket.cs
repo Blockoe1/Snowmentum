@@ -35,12 +35,11 @@ namespace Snowmentum.Size
                 // Bracket must be at least 1
                 bracket = Mathf.Max(1, value);
                 Debug.Log("Size bracket is now: " + bracket);
-                OnBracketChanged?.Invoke(bracket);
-
                 // Update the size limits of our bracket.
                 sizeMin = GetMaxSize(bracket - 1);
                 sizeMax = GetMaxSize(bracket);
-                
+
+                OnBracketChanged?.Invoke(bracket);   
             }
         }
         #endregion
