@@ -39,6 +39,9 @@ namespace Snowmentum
                     objEditor.OnInspectorGUI();
                     EditorGUI.indentLevel--;
                 }
+
+                // Destroy the created editor once we're done with it to prevent errors.
+                UnityEngine.Object.DestroyImmediate(objEditor);
             }
         }
 
