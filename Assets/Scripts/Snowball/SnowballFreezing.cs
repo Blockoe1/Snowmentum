@@ -39,7 +39,7 @@ namespace Snowmentum
         public static event Action<float> OnFreezeAmountChanged;
 
         private static bool isFrozen;
-        private bool isInWater;
+        private byte waterNumber;
         private bool showingVisuals;
 
         #region Properties
@@ -116,12 +116,17 @@ namespace Snowmentum
         /// <param name="collision"></param>
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag(WATER_TAG) && !isInWater)
+            if (collision.CompareTag(WATER_TAG))
             {
-                isInWater = true;
-                OnEnterWaterEvent?.Invoke();
-                // Continually increases the freezeAmount by freezeRate while the snowball is in water.
-                StartCoroutine(FreezeChangeRoutine());
+                //isInWater = true;
+                waterNumber++;
+                // If this is the first puddle we've entered, need to start code that triggers on entering water.
+                if (waterNumber == 1)
+                {
+                    OnEnterWaterEvent?.Invoke();
+                    // Continually increases the freezeAmount by freezeRate while the snowball is in water.
+                    StartCoroutine(FreezeChangeRoutine());
+                }
             }
         }
 
@@ -133,8 +138,11 @@ namespace Snowmentum
         {
             if (collision.CompareTag(WATER_TAG))
             {
-                OnExitWaterEvent?.Invoke();
-                isInWater = false;
+                waterNumber--;
+                if (waterNumber <= 0)
+                {
+                    OnExitWaterEvent?.Invoke();
+                }
             }
         }
 
@@ -144,7 +152,7 @@ namespace Snowmentum
         /// <returns></returns>
         private IEnumerator FreezeChangeRoutine()
         {
-            while (isInWater)
+            while (waterNumber > 0)
             {
                 FreezeAmount += GetFreezeRate() * Time.deltaTime;
                 UpdateFreezeStatus(FreezeAmount);
