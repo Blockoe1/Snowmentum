@@ -24,7 +24,7 @@ MonoBehaviour:
   offset: {x: 0.03329873, y: -0.04}
   size: {x: 2.1171296, y: 0.47693455}
   particleSpriteSheet:
-  - {fileID: -1591989874, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+  - {fileID: -1133877238, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
   - {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   - {fileID: -1987503855, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
