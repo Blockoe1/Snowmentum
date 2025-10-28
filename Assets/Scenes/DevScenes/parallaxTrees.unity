@@ -1530,7 +1530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: bracketSprites.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[0]'
@@ -1539,7 +1539,7 @@ PrefabInstance:
     - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: a3ed7f560f6a0a24fbce18f640d02684, type: 3}
+      objectReference: {fileID: 21300000, guid: e06bc00f80ba12c49a233a4a0fdab321, type: 3}
     - target: {fileID: 5870643922241915581, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1554,7 +1554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: bracketSprites.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[0]'
@@ -1563,7 +1563,7 @@ PrefabInstance:
     - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 21300000, guid: a3ed7f560f6a0a24fbce18f640d02684, type: 3}
+      objectReference: {fileID: 21300000, guid: e06bc00f80ba12c49a233a4a0fdab321, type: 3}
     - target: {fileID: 8194909462447893873, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[0]'
       value: 
@@ -6695,6 +6695,10 @@ PrefabInstance:
     - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Name
       value: ForegroundTrees
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4598951314198420690, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: scalePerspectiveY
@@ -12374,7 +12378,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.9998794
+    width: 1.0002414
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -12873,6 +12877,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: startingValue
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -18176,7 +18184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: bracketSprites.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[0]'
@@ -18185,7 +18193,7 @@ PrefabInstance:
     - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[1]'
       value: 
-      objectReference: {fileID: -1313201672078734433, guid: 1101e97559582ba4da61bb043b3f4480, type: 3}
+      objectReference: {fileID: 21300000, guid: 1821dcd0d88732641b0df53a32eb7464, type: 3}
     - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: transitionSprites.Array.size
       value: 0
@@ -18228,7 +18236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: bracketSprites.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[0]'
@@ -18237,7 +18245,7 @@ PrefabInstance:
     - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: 'bracketSprites.Array.data[1]'
       value: 
-      objectReference: {fileID: -1313201672078734433, guid: 1101e97559582ba4da61bb043b3f4480, type: 3}
+      objectReference: {fileID: 21300000, guid: 1821dcd0d88732641b0df53a32eb7464, type: 3}
     - target: {fileID: 7441472796543878854, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: transitionSprites.Array.size
       value: 0
@@ -18310,6 +18318,10 @@ PrefabInstance:
     - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Name
       value: BGTrees
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5448865305363378137, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Sprite

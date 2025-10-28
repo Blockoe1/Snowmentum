@@ -1353,7 +1353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1922762963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1369,7 +1369,7 @@ MonoBehaviour:
   sounds:
   - name: Snow Ambience
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 0.75
+    volume: 0.25
     pitch: 1
     loop: 1
     audioClip: {fileID: 8300000, guid: 528ea311f0fed9a4ebe11c6aebf06654, type: 3}
@@ -1835,10 +1835,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.55286026
+    x: 0
     y: 0
-    width: 0.7569395
-    height: 0.7567567
+    width: 1.0002414
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1972,7 +1972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.MusicManager
   transitionTime: 1
-  overwrittenMultiplier: 0.5
+  overwrittenMultiplier: 0
   musicTracks:
   - name: Level
     mixerGroup: {fileID: 6511246275216553017, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
@@ -1981,6 +1981,13 @@ MonoBehaviour:
     loop: 1
     loopTrack: {fileID: 8300000, guid: e5bd0299298d08445a6ecaa4c60bfd19, type: 3}
     introTrack: {fileID: 8300000, guid: 607db3a6640b11a4cbc23f95f553b4b7, type: 3}
+  - name: Frozen
+    mixerGroup: {fileID: 6511246275216553017, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    loopTrack: {fileID: 8300000, guid: cb7c67a1d1b01344894429849d59f43c, type: 3}
+    introTrack: {fileID: 0}
 --- !u!4 &2049783301
 Transform:
   m_ObjectHideFlags: 0
