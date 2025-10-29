@@ -29,5 +29,5 @@ MonoBehaviour:
   - {fileID: 6565946959744718937, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
   - {fileID: 616663781894880802, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
   particleNumber: 13
-  emissionRadius: 0.0001
+  emissionRadius: 0.1
   baseSize: 16
