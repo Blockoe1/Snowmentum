@@ -9,6 +9,7 @@
 *****************************************************************************/
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Snowmentum
@@ -55,69 +56,98 @@ namespace Snowmentum
 
                 if (objects[i] == null) { continue; }
                 Vector2 targetPos;
+                GroupScrolledObject currentObj = objects[i];
                 if (i == 0)
                 {
+
+
                     // Move the leading object up normally.
-                    targetPos = (Vector2)objects[i].transform.localPosition +
-                        (SnowballSpeed.Value * speedScale * Time.deltaTime * moveVector);
+                    targetPos = CalculateTargetPos(currentObj);
 
                     // Get modification from our movement modifiers.
-                    objects[i].QueryModifiers(ref targetPos, moveVector);
+                    currentObj.QueryModifiers(ref targetPos, moveVector);
 
                     // This causes a crash when the player goes down a size bracket.
 
                     // If the right edge of the leading object is beyond the limit of the screen, it should loop to
                     // the back
-                    if (GetEdge(objects[i], Vector3.right, targetPos).x < xLimit)
+                    if (GetEdge(currentObj, Vector3.right, targetPos).x < xLimit)
                     {
+
                         // Before we attempt to loop, need to check if our next leader would be valid.
-
-                        GroupScrolledObject obj = objects[i];
-                        obj.CallObjectLooped();
-                        //targetPos = targetPos + ((loopLength) * Math.Sign(targetPos.x) * moveVector);
-                        // Moves this object to the end of the objects list.
-                        objects.RemoveAt(i);
-                        objects.Add(obj);
-
-                        Debug.Log("Push");
-                        loopCount++;
-                        if (loopCount == 100)
+                        if (objects.Count > 1 && CheckValidFirst(objects[i + 1], CalculateTargetPos(objects[i + 1])))
                         {
-                            Debug.LogError("Send to back Loop Limit Hit for object " + name);
-                            enabled = false;
-                            break;
+                            currentObj.CallObjectLooped();
+                            //targetPos = targetPos + ((loopLength) * Math.Sign(targetPos.x) * moveVector);
+                            // Moves this object to the end of the objects list.
+                            objects.RemoveAt(i);
+                            objects.Add(currentObj);
+
+                            Debug.Log("Push");
+                            loopCount++;
+                            if (loopCount == 100)
+                            {
+                                Debug.LogError("Send to back Loop Limit Hit for object " + name);
+                                enabled = false;
+                                break;
+                            }
+
+                            // Decrement i if we loop an object so we dont skip any objects.
+                            i--;
+                            continue;
+                        }
+                        // If the next segment is not valid, then we just move this segment back
+                        else
+                        {
+                            // Moves the object back by moving it to the right.
+                            targetPos = GetRelativePosition(currentObj, currentObj, Vector2.right);
+
+                            // Decrement i if we loop an object so we dont skip any objects.
+                            i--;
                         }
 
-                        // Decrement i if we loop an object so we dont skip any objects.
-                        i--;
-                        continue;
+                        
                     }
                     // If the left edge of the leading object leaves distance between it and the limit of the screen,
                     // we need to pull the last object to loop in front.
                     else if (GetEdge(objects[i], Vector2.left, targetPos).x > xLimit)
                     {
-                        // Pulls the last object in our array and loops it in front of the current leading object.
-                        GroupScrolledObject obj = objects[objects.Count - 1];
-                        
-                        // Need to make sure we immediatley snap the new leading object.
-                        obj.transform.localPosition = GetRelativePosition(obj, objects[i], Vector3.left);
-
-                        obj.CallObjectLooped();
-                        objects.RemoveAt(objects.Count - 1);
-                        objects.Insert(0, obj);
-
-                        Debug.Log("Pull");
-                        loopCount++;
-                        if (loopCount == 100)
+                        // Check if pulling an object from the end is valid/
+                        if (objects.Count > 1 && CheckValidFirst(objects[^1], 
+                            GetRelativePosition(currentObj, targetPos, objects[^1], Vector2.left)))
                         {
-                            Debug.LogError("Pull Loop Limit Hit for object " + name);
-                            enabled = false;
-                            break;
-                        }
+                            // Pulls the last object in our array and loops it in front of the current leading object.
+                            GroupScrolledObject toPullObj = objects[^1];
 
-                        // Decrement i if we loop an object so we dont skip any objects.
-                        i--;
-                        continue;
+                            // Need to make sure we immediatley snap the new leading object.
+                            toPullObj.transform.localPosition = GetRelativePosition(toPullObj, currentObj, Vector3.left);
+
+                            toPullObj.CallObjectLooped();
+                            objects.RemoveAt(objects.Count - 1);
+                            objects.Insert(0, toPullObj);
+
+                            Debug.Log("Pull");
+                            loopCount++;
+                            if (loopCount == 100)
+                            {
+                                Debug.LogError("Pull Loop Limit Hit for object " + name);
+                                enabled = false;
+                                break;
+                            }
+
+                            // Decrement i if we loop an object so we dont skip any objects.
+                            i--;
+                            continue;
+                        }
+                        // If pulling an object in front isnt valid, then we move this object one space forward.
+                        else
+                        {
+                            // Moves the object foward by moving it to the left.
+                            targetPos = GetRelativePosition(objects[i], objects[i], Vector2.left);
+
+                            // Decrement i if we loop an object so we dont skip any objects.
+                            i--;
+                        }
                     }
                 }
                 else
@@ -126,13 +156,23 @@ namespace Snowmentum
                     targetPos = Vector2.zero;
 
                     // Get modification from our movement modifiers.
-                    objects[i].QueryModifiers(ref targetPos, moveVector);
+                    currentObj.QueryModifiers(ref targetPos, moveVector);
 
-                    targetPos = GetRelativePosition(objects[i - 1], objects[i], Vector3.right);
+                    targetPos = GetRelativePosition(objects[i - 1], currentObj, Vector3.right);
                 }
 
-                objects[i].transform.localPosition = targetPos;
+                currentObj.transform.localPosition = targetPos;
             }
+        }
+
+        /// <summary>
+        /// Calculates the target position of an obstacle being moved.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        private Vector2 CalculateTargetPos(GroupScrolledObject obj)
+        {
+            return (Vector2)obj.transform.localPosition + (SnowballSpeed.Value * speedScale * Time.deltaTime * moveVector);
         }
 
         /// <summary>
@@ -174,10 +214,15 @@ namespace Snowmentum
         /// <param name="preceedingObj">The object that this object should be positioned behind.</param>
         /// <param name="thisObj">The object to move.</param>
         /// <returns>The position this object should be at.</returns>
+        private static Vector2 GetRelativePosition(GroupScrolledObject preceedingObj, Vector3 preceedingPosition, GroupScrolledObject thisObj, Vector3 direction)
+        {
+            return preceedingPosition +
+                ((preceedingObj.Width + thisObj.Width) / 2) * direction;
+        }
+
         private static Vector2 GetRelativePosition(GroupScrolledObject preceedingObj, GroupScrolledObject thisObj, Vector3 direction)
         {
-            return preceedingObj.transform.localPosition +
-                ((preceedingObj.Width + thisObj.Width) / 2) * direction;
+            return GetRelativePosition(preceedingObj, preceedingObj.transform.localPosition, thisObj, direction);
         }
 
         ///// <summary>
