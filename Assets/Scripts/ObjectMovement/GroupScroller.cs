@@ -8,10 +8,8 @@
 // objects are scrolling left.
 *****************************************************************************/
 using System.Collections.Generic;
-using UnityEngine;
-using System;
 using System.Linq;
-using UnityEngine.Events;
+using UnityEngine;
 
 namespace Snowmentum
 {
@@ -51,6 +49,7 @@ namespace Snowmentum
         /// </summary>
         private void LateUpdate()
         {
+            int loopCount = 0;
             for (int i = 0; i < objects.Count; i++)
             {
 
@@ -65,6 +64,8 @@ namespace Snowmentum
                     // Get modification from our movement modifiers.
                     objects[i].QueryModifiers(ref targetPos, moveVector);
 
+                    // This causes a crash when the player goes down a size bracket.
+
                     // If the right edge of the leading object is beyond the limit of the screen, it should loop to
                     // the back
                     if (GetEdge(objects[i], Vector3.right, targetPos).x < xLimit)
@@ -75,6 +76,17 @@ namespace Snowmentum
                         // Moves this object to the end of the objects list.
                         objects.RemoveAt(i);
                         objects.Add(obj);
+
+                        Debug.Log("Push");
+                        loopCount++;
+                        if (loopCount == 100)
+                        {
+                            Debug.LogError("Send to back Loop Limit Hit for object " + name);
+                            enabled = false;
+                            break;
+                        }
+
+
                         // Decrement i if we loop an object so we dont skip any objects.
                         i--;
                         continue;
@@ -85,13 +97,22 @@ namespace Snowmentum
                     {
                         // Pulls the last object in our array and loops it in front of the current leading object.
                         GroupScrolledObject obj = objects[objects.Count - 1];
-
+                        
                         // Need to make sure we immediatley snap the new leading object.
                         obj.transform.localPosition = GetRelativePosition(obj, objects[i], Vector3.left);
 
                         obj.CallObjectLooped();
                         objects.RemoveAt(objects.Count - 1);
                         objects.Insert(0, obj);
+
+                        Debug.Log("Pull");
+                        loopCount++;
+                        if (loopCount == 100)
+                        {
+                            Debug.LogError("Pull Loop Limit Hit for object " + name);
+                            enabled = false;
+                            break;
+                        }
 
                         // Decrement i if we loop an object so we dont skip any objects.
                         i--;

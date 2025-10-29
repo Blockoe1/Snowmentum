@@ -600,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5453245859179458551, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: bracketSprites.Array.size
@@ -610,6 +610,10 @@ PrefabInstance:
       propertyPath: 'bracketSprites.Array.data[1]'
       value: 
       objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+    - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: speedScale
       value: 0.65
@@ -956,6 +960,10 @@ PrefabInstance:
       propertyPath: scaleTransform
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1459302117299919342, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3043017047969908420, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
       propertyPath: bracketSprites.Array.size
       value: 1
@@ -971,6 +979,14 @@ PrefabInstance:
     - target: {fileID: 4600210639209031017, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
       propertyPath: scaleTransform
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841674401546857785, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697819571106276668, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7596743944354648537, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1018,7 +1034,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8143487420188363057, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734311795714610769, guid: eebbec999df22be4d933d16c5398f94c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1416,7 +1436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5448865305363378137, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_Sprite
@@ -1445,6 +1465,10 @@ PrefabInstance:
     - target: {fileID: 5870643922241915581, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_SortingOrder
       value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: speedScale
@@ -12016,6 +12040,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1890703041254600430, guid: 4acfb0ca5e7295942946e85c1b8fcf18, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7426530014713341657, guid: 4acfb0ca5e7295942946e85c1b8fcf18, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12062,7 +12090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9186816869802753585, guid: 4acfb0ca5e7295942946e85c1b8fcf18, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12158,7 +12186,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1.0002414
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -17975,7 +18003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4358606327849666867, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4598951314198420690, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: scalePerspectiveY
@@ -18048,6 +18076,10 @@ PrefabInstance:
     - target: {fileID: 5870643922241915581, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: m_SortingLayerID
       value: -223718351
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6431105626283989484, guid: 32abcc6d2133908448850c373ef7a652, type: 3}
       propertyPath: speedScale

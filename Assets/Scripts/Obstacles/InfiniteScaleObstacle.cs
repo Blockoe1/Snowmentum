@@ -39,7 +39,7 @@ namespace Snowmentum
         private void RandomizeSize(int bracket)
         {
             obstacleSize = Random.Range(SizeBracket.GetMinSize(bracket), SizeBracket.GetMaxSize(bracket));
-            Debug.Log(obstacleSize);
+            //Debug.Log(obstacleSize);
 
             // Set obstacleSize to base size directly so that the obstacle scales up despite it's sprite.
             // Infinite scale obstacles need sprites that are the max resolution (64 x 64) and have 4x the base PPU
