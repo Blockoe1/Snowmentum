@@ -36,7 +36,7 @@ namespace Snowmentum
         /// consistent size.
         /// </remarks>
         /// <param name="bracket"></param>
-        private void RandomizeSize(int bracket)
+        private void RandomizeSize(int bracket, int oldBracket)
         {
             obstacleSize = Random.Range(SizeBracket.GetMinSize(bracket), SizeBracket.GetMaxSize(bracket));
             //Debug.Log(obstacleSize);

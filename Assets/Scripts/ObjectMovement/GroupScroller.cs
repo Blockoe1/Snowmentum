@@ -70,6 +70,8 @@ namespace Snowmentum
                     // the back
                     if (GetEdge(objects[i], Vector3.right, targetPos).x < xLimit)
                     {
+                        // Before we attempt to loop, need to check if our next leader would be valid.
+
                         GroupScrolledObject obj = objects[i];
                         obj.CallObjectLooped();
                         //targetPos = targetPos + ((loopLength) * Math.Sign(targetPos.x) * moveVector);
@@ -85,7 +87,6 @@ namespace Snowmentum
                             enabled = false;
                             break;
                         }
-
 
                         // Decrement i if we loop an object so we dont skip any objects.
                         i--;
@@ -132,6 +133,24 @@ namespace Snowmentum
 
                 objects[i].transform.localPosition = targetPos;
             }
+        }
+
+        /// <summary>
+        /// Checks if a given object's bounds is within the xLimit.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        private bool CheckValidFirst(GroupScrolledObject obj, Vector3 pos)
+        {
+            return GetEdge(obj, Vector3.right, pos).x < xLimit && GetEdge(obj, Vector2.left, pos).x > xLimit;
+        }
+
+        /// <summary>
+        /// Trims the empty space out of the group and pulls it back together.
+        /// </summary>
+        public void TrimGroup()
+        {
+
         }
 
         /// <summary>
