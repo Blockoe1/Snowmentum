@@ -53,11 +53,12 @@ MonoBehaviour:
   sizeBonusWeight: 10
   minYSpawn: -4
   maxYSpawn: 1
+  minimumYDistance: 2
   brackets:
   - spawnData:
     - obstacle: {fileID: 11400000, guid: e0ac2bff0c8fd584b8650bd1e5d57346, type: 2}
-      baseWeight: 5
-      addedWeight: 1
+      baseWeight: 7
+      addedWeight: 3
     - obstacle: {fileID: 11400000, guid: c8822fff18f21d0478c3e85ca91d2dcc, type: 2}
       baseWeight: 5
       addedWeight: 1
@@ -65,24 +66,24 @@ MonoBehaviour:
       baseWeight: 0
       addedWeight: 2
     - obstacle: {fileID: 11400000, guid: de6339ec7ff617141aee6a497d74c093, type: 2}
-      baseWeight: 4
-      addedWeight: 1
+      baseWeight: 3
+      addedWeight: 3
     - obstacle: {fileID: 11400000, guid: 63d51bcc8bbff094eabef003f1dc02f5, type: 2}
       baseWeight: 4
       addedWeight: 1
     - obstacle: {fileID: 11400000, guid: ec09f765d73579746a84eb03cbb047f6, type: 2}
-      baseWeight: 3
-      addedWeight: 1
+      baseWeight: 5
+      addedWeight: 2
   - spawnData:
     - obstacle: {fileID: 11400000, guid: 898918ed32e1b7f4e8c80b545867073b, type: 2}
       baseWeight: 5
-      addedWeight: 1
+      addedWeight: 3
     - obstacle: {fileID: 11400000, guid: ec7c11f8572073e4689f8eb5066b24b9, type: 2}
       baseWeight: 5
-      addedWeight: 1
+      addedWeight: 2
     - obstacle: {fileID: 11400000, guid: 59348b3d256f78940b17609ba2b4f0f5, type: 2}
       baseWeight: 5
-      addedWeight: 1
+      addedWeight: 2
     - obstacle: {fileID: 11400000, guid: 16d4bc3f078c8d84f8d1ec922be99a27, type: 2}
       baseWeight: 5
       addedWeight: 1
@@ -92,9 +93,18 @@ MonoBehaviour:
     - obstacle: {fileID: 11400000, guid: c911b56a100e52441b61e85680a55c11, type: 2}
       baseWeight: 5
       addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: 4b8c68ae31efb814ea00585c9095dc00, type: 2}
+      baseWeight: 8
+      addedWeight: 4
     - obstacle: {fileID: 11400000, guid: 1eb5e92277d696f4db7e5868d1c1bb7c, type: 2}
       baseWeight: 5
-      addedWeight: 1
+      addedWeight: 2
+    - obstacle: {fileID: 11400000, guid: bd67023797275ff47bf03af559c18122, type: 2}
+      baseWeight: 5
+      addedWeight: 2
+    - obstacle: {fileID: 11400000, guid: bd67023797275ff47bf03af559c18122, type: 2}
+      baseWeight: 5
+      addedWeight: 2
   - spawnData:
     - obstacle: {fileID: 11400000, guid: 35d1e1d3f8184784987c0ac0ec659f25, type: 2}
       baseWeight: 5
@@ -104,18 +114,24 @@ MonoBehaviour:
       addedWeight: 1
     - obstacle: {fileID: 11400000, guid: d02f335282495e34a852c038bf860bd2, type: 2}
       baseWeight: 5
-      addedWeight: 1
+      addedWeight: 2
     - obstacle: {fileID: 11400000, guid: 0992a6edde714cf478babab2478b7f41, type: 2}
       baseWeight: 5
-      addedWeight: 1
+      addedWeight: 2
     - obstacle: {fileID: 11400000, guid: ed26b628efba32e47b45aad25e39a505, type: 2}
       baseWeight: 5
-      addedWeight: 1
+      addedWeight: 3
     - obstacle: {fileID: 11400000, guid: fb3397e3655799c4fbf9d3ff9e5c2b39, type: 2}
       baseWeight: 5
       addedWeight: 1
     - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
       baseWeight: 5
       addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
+      baseWeight: 5
+      addedWeight: 1
   infiniteBracket:
-    spawnData: []
+    spawnData:
+    - obstacle: {fileID: 11400000, guid: a270d54c501b2d645a4db4d6e42f626e, type: 2}
+      baseWeight: 5
+      addedWeight: 1
