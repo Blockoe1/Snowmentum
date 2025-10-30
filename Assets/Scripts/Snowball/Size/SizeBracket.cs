@@ -21,7 +21,7 @@ namespace Snowmentum.Size
 
         private static int bracket;
 
-        public static event Action<int> OnBracketChanged;
+        public static event Action<int, int> OnBracketChanged;
 
         private static float sizeMin;
         private static float sizeMax;
@@ -32,15 +32,15 @@ namespace Snowmentum.Size
             get { return bracket; }
             set
             {
+                int oldBracket = bracket;
                 // Bracket must be at least 1
                 bracket = Mathf.Max(1, value);
                 Debug.Log("Size bracket is now: " + bracket);
-                OnBracketChanged?.Invoke(bracket);
-
                 // Update the size limits of our bracket.
                 sizeMin = GetMaxSize(bracket - 1);
                 sizeMax = GetMaxSize(bracket);
-                
+
+                OnBracketChanged?.Invoke(bracket, oldBracket);   
             }
         }
         #endregion

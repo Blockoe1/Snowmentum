@@ -53,7 +53,7 @@ namespace Snowmentum
             //mouseMovement.started += Handle_SnowballMouseMovement;
 
             // Locks the cursor so it's invisible on screen.
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
         }
 
         void FixedUpdate()

@@ -52,7 +52,7 @@ namespace Snowmentum.Size
         /// Updates the size of the camera based on our snowball's current bracket so that is zooms out.
         /// </summary>
         /// <param name="sizeBracket">The current size bracket of the snowball.</param>
-        private void OnBracketChanged(int sizeBracket)
+        private void OnBracketChanged(int sizeBracket, int oldBracket)
         {
             Debug.Log("Bracket Changed");
             //cam.orthographicSize = refSize * sizeBracket;
