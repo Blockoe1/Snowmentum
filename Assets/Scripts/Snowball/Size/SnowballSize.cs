@@ -157,7 +157,7 @@ namespace Snowmentum.Size
         [ContextMenu("Half Size")]
         public void HelfSize()
         {
-            TargetValue_Local = TargetValue / 2;
+            TargetValue_Local -= 0.5f;
         }
         #endregion
     }

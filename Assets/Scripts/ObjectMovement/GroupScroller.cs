@@ -172,7 +172,9 @@ namespace Snowmentum
         /// <returns></returns>
         private Vector2 CalculateTargetPos(GroupScrolledObject obj)
         {
-            return (Vector2)obj.transform.localPosition + (SnowballSpeed.Value * speedScale * Time.deltaTime * moveVector);
+            Vector2 targetPos = (Vector2)obj.transform.localPosition + (SnowballSpeed.Value * speedScale * Time.deltaTime * moveVector);
+            //obj.QueryModifiers(ref targetPos, moveVector);
+            return targetPos;
         }
 
         /// <summary>
