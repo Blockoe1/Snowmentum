@@ -51,7 +51,7 @@ MonoBehaviour:
   spawnCooldown: 4
   scaleWithSpeed: 1
   sizeBonusWeight: 10
-  minYSpawn: -4
+  minYSpawn: -3
   maxYSpawn: 1
   minimumYDistance: 2
   brackets:
