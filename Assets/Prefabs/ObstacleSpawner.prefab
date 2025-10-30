@@ -132,6 +132,12 @@ MonoBehaviour:
       addedWeight: 1
   infiniteBracket:
     spawnData:
-    - obstacle: {fileID: 11400000, guid: a270d54c501b2d645a4db4d6e42f626e, type: 2}
+    - obstacle: {fileID: 11400000, guid: 15d69278c2ad5c54ea15f76459a9ffdc, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: 8f2f2588a76fbfb42beb764841970c15, type: 2}
+      baseWeight: 5
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: 93ec0cd21cbfde045b80d27b3eb14da5, type: 2}
       baseWeight: 5
       addedWeight: 1
