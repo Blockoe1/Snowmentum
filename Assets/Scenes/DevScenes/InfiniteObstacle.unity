@@ -12085,10 +12085,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.5544193
     y: 0
-    width: 0.99926955
-    height: 1
+    width: 0.751887
+    height: 0.75243664
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -18684,38 +18684,6 @@ PrefabInstance:
     - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
       propertyPath: brackets.Array.size
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.data[0].obstacle
-      value: 
-      objectReference: {fileID: 11400000, guid: 15d69278c2ad5c54ea15f76459a9ffdc, type: 2}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.data[1].obstacle
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f2f2588a76fbfb42beb764841970c15, type: 2}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.data[2].obstacle
-      value: 
-      objectReference: {fileID: 11400000, guid: 93ec0cd21cbfde045b80d27b3eb14da5, type: 2}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.data[1].baseWeight
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.data[2].baseWeight
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.data[1].addedWeight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: infiniteBracket.spawnData.Array.data[2].addedWeight
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
