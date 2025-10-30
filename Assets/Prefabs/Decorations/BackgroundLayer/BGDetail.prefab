@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_Size.x
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
@@ -19,6 +23,10 @@ PrefabInstance:
     - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_SortingOrder
       value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_Size.x
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_Sprite
@@ -145,6 +153,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
     - target: {fileID: 5683145398054593323, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683145398054593323, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -187,6 +199,14 @@ PrefabInstance:
     - target: {fileID: 7405125026267278839, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771020861534784597, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771020861534784597, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 7771020861534784597, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_LocalPosition.y
@@ -257,7 +277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.BracketSprite
   bracketSprites:
   - {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
-  transitionSprites: []
   OnNewSprite:
     m_PersistentCalls:
       m_Calls:
@@ -286,6 +305,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   rend: {fileID: 5870643922241915581}
+  transitionSprites: []
   transitioner: {fileID: 3833454929022926759}
 --- !u!114 &5497890167342106892
 MonoBehaviour:
@@ -338,7 +358,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.BracketSprite
   bracketSprites:
   - {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
-  transitionSprites: []
   OnNewSprite:
     m_PersistentCalls:
       m_Calls:
@@ -367,6 +386,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   rend: {fileID: 5448865305363378137}
+  transitionSprites: []
   transitioner: {fileID: 3833454929022926759}
 --- !u!114 &3614291449804588202
 MonoBehaviour:
