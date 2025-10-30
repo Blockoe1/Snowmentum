@@ -43,7 +43,7 @@ namespace Snowmentum
             { 
                 baseBracket = value;
                 // Need to immediately update the tiling of the object when baseBracket changes.
-                UpdateTiling(SizeBracket.Bracket);
+                UpdateTilingOnBracket(SizeBracket.Bracket, 0);
             }
         }
         #endregion
@@ -53,19 +53,37 @@ namespace Snowmentum
         /// </summary>
         private void Awake()
         {
-            SizeBracket.OnBracketChanged += UpdateTiling;
+            SizeBracket.OnBracketChanged += UpdateTilingOnBracket;
+            EnvironmentSize.OnValueTransitionFinish += UpdateTilingFinishTransition;
             baseSize = rend.size;
             baseScale = transform.localScale;
         }
         private void OnDestroy()
         {
-            SizeBracket.OnBracketChanged -= UpdateTiling;
+            SizeBracket.OnBracketChanged -= UpdateTilingOnBracket;
+            EnvironmentSize.OnValueTransitionFinish -= UpdateTilingFinishTransition;
         }
 
         /// <summary>
         /// Updates the width of this sprite when the bracket changes.
         /// </summary>
         /// <param name="bracket"></param>
+        private void UpdateTilingOnBracket(int bracket, int oldBracket)
+        {
+            // Only udpate the tiling when we reach a new bracket if we went up a bracket.
+            if (oldBracket > bracket ) { return; }
+            UpdateTiling(bracket);
+        }
+
+        /// <summary>
+        /// Update the tiling when we finish transitioning our environment size.
+        /// </summary>
+        private void UpdateTilingFinishTransition()
+        {
+            Debug.Log("Transition finished.");
+            UpdateTiling(SizeBracket.Bracket);
+        }
+
         private void UpdateTiling(int bracket)
         {
             // The width and height of this sprite renderer should be set to the min size of the bracket.

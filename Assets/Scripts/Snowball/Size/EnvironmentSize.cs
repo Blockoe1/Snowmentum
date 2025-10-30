@@ -23,6 +23,7 @@ namespace Snowmentum
 
         public static event Action<float, float> OnTargetValueChanged;
         public static event Action<float, float> OnValueChanged;
+        public static event Action OnValueTransitionFinish;
 
         private static Vector2 scalePivot;
         private float moveSpeed;
@@ -99,6 +100,10 @@ namespace Snowmentum
             if (!MathHelpers.ApproximatelyWithin(Value, TargetValue))
             {
                 Value = Mathf.MoveTowards(Value, TargetValue, moveSpeed * timeDelta);
+                if(MathHelpers.ApproximatelyWithin(Value, TargetValue))
+                {
+                    OnValueTransitionFinish?.Invoke();
+                }
             }
         }
 
@@ -106,7 +111,7 @@ namespace Snowmentum
         /// Updates the current size of the environment based on the minimum size of the current bracket.
         /// </summary>
         /// <param name="bracket"></param>
-        private void UpdateEnvironmentSize(int bracket)
+        private void UpdateEnvironmentSize(int bracket, int oldBracket)
         {
             float oldTarget = TargetValue;
             // The target value of the environment should always be the minimum size of our current bracket.
@@ -114,7 +119,8 @@ namespace Snowmentum
 
             // Update our move speed based on our old and new target value so that moveToTarget represents the amount
             // of transition time.
-            moveSpeed = (TargetValue - oldTarget) / moveToTarget;
+            moveSpeed = Mathf.Abs(TargetValue - oldTarget) / moveToTarget;
+            Debug.Log(moveSpeed);
         }
     }
 }

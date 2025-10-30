@@ -46,7 +46,7 @@ namespace Snowmentum
         private void OnDestroy()
         {
             SnowballSize.OnTargetValueChanged -= OnValueChanged;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.lockState = CursorLockMode.None;
 
             // Take advantage of the fact that destroyed objects are not destroyed until the end of frame
             // to reset diedThisFrame when the object is actually destroyed.

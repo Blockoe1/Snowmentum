@@ -18,6 +18,7 @@ namespace Snowmentum
     public class MusicManager : MonoBehaviour
     {
         [SerializeField] private float transitionTime;
+        [SerializeField] private float overrideFadeTime; 
         [SerializeField, Range(0f, 1f)] private float overwrittenMultiplier;
         [SerializeField] private MusicTrack[] musicTracks;
 
@@ -238,11 +239,14 @@ namespace Snowmentum
                 StopOverrideTrack();
 
                 // Disable the current track by setting volume to 0.
-                currentTrack.SetSourceVolume(currentTrack.SourceVolume * overwrittenMultiplier);
+                //currentTrack.SetSourceVolume(currentTrack.SourceVolume * overwrittenMultiplier);
+                StartCoroutine(FadeTrack(currentTrack, overrideFadeTime, currentTrack.SourceVolume * overwrittenMultiplier));
 
                 // Play the override track.
                 this.overrideTrack = overrideTrack;
                 overrideTrack.Play();
+                overrideTrack.SetSourceVolume(0);
+                StartCoroutine(FadeTrack(overrideTrack, overrideFadeTime, overrideTrack.Volume));
             }
         }
 
@@ -253,11 +257,13 @@ namespace Snowmentum
         {
             if (overrideTrack != null)
             {
-                    currentTrack.SetSourceVolume(overwrittenMultiplier == 0 ? currentTrack.Volume : 
-                        currentTrack.SourceVolume / overwrittenMultiplier);
+                float currentVolume = overwrittenMultiplier == 0 ? currentTrack.Volume :
+                        currentTrack.SourceVolume / overwrittenMultiplier;
+                StartCoroutine(FadeTrack(currentTrack, overrideFadeTime, currentVolume));
 
                 // Stop the override track.
-                overrideTrack.Stop();
+                //overrideTrack.Stop();
+                StartCoroutine(FadeTrack(overrideTrack, overrideFadeTime, 0, ResetTrack));
                 overrideTrack = null;
             }
         }
