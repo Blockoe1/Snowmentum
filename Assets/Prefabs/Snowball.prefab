@@ -300,7 +300,7 @@ MonoBehaviour:
     curveScale: 0.5
     minDamageKnockback: 8
     knockbackCurveSteepness: 2
-    knockbackCurveScale: 1.5
+    knockbackCurveScale: 1
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
