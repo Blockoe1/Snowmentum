@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleSize: 1
   obstacleSprite: {fileID: 21300000, guid: 6b791ba0ee1f2274dacbd097e9ad1e78, type: 3}
-  orderInLayer: -1
+  orderInLayer: -2
   baseScore: 1
   destroySound: 
   showOutline: 0
