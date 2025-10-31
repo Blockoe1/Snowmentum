@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 176933944}
   - component: {fileID: 176933943}
   - component: {fileID: 176933942}
+  - component: {fileID: 176933945}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -211,6 +212,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &176933945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176933941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1001 &1142288678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,18 +267,30 @@ PrefabInstance:
     - target: {fileID: 135438964893402186, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fab0ba91ddb0c2c4c87b9411cfbaec07, type: 3}
+      objectReference: {fileID: 21300000, guid: 28a2bbd333b50b748807a48d486305e1, type: 3}
+    - target: {fileID: 135438964893402186, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Size.x
-      value: 0.25
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Size.y
-      value: 0.15
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Direction
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4432682242002430807, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Name
@@ -242,11 +299,15 @@ PrefabInstance:
     - target: {fileID: 7005340295946998757, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: oldObsData
       value: 
-      objectReference: {fileID: 11400000, guid: e0ac2bff0c8fd584b8650bd1e5d57346, type: 2}
+      objectReference: {fileID: 11400000, guid: 83c89cd3ff7fce54ab0493b667c44374, type: 2}
     - target: {fileID: 7005340295946998757, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: obstacleData
       value: 
-      objectReference: {fileID: 11400000, guid: e0ac2bff0c8fd584b8650bd1e5d57346, type: 2}
+      objectReference: {fileID: 11400000, guid: 83c89cd3ff7fce54ab0493b667c44374, type: 2}
+    - target: {fileID: 7005340295946998757, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
+      propertyPath: autoUpdateObstacleData
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.3071537
@@ -289,7 +350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 0.1
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.size
@@ -298,30 +359,30 @@ PrefabInstance:
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
-      objectReference: {fileID: -669536997, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: -889968081, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[1].sprite
       value: 
-      objectReference: {fileID: -1630238224, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: -156959124, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[2].sprite
       value: 
-      objectReference: {fileID: -41123417, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: -732115837, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[3].sprite
       value: 
-      objectReference: {fileID: 1458914380, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: 1789747204, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[4].sprite
       value: 
-      objectReference: {fileID: 1473342118, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: -494359493, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[5].sprite
       value: 
-      objectReference: {fileID: -595689659, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: -1804804186, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

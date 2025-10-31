@@ -22,8 +22,14 @@ MonoBehaviour:
   hasCollision: 1
   capsuleDirection: 0
   offset: {x: 0, y: 0}
-  size: {x: 1, y: 1}
-  particleSpriteSheet: []
-  particleNumber: 0
-  emissionRadius: 0
+  size: {x: 0.12, y: 0.45}
+  particleSpriteSheet:
+  - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  particleNumber: 10
+  emissionRadius: 0.1
   baseSize: 16

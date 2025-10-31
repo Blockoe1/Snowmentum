@@ -15,15 +15,21 @@ MonoBehaviour:
   obstacleSize: 36
   obstacleSprite: {fileID: 21300000, guid: 292a2cb59b22d4342afdbff746d41faf, type: 3}
   orderInLayer: 0
-  baseScore: 13
-  destroySound: Obstacle Destruction
-  showOutline: 1
+  baseScore: 5
+  destroySound: 
+  showOutline: 0
   tag: Untagged
   hasCollision: 1
-  capsuleDirection: 0
-  offset: {x: 0, y: 0}
-  size: {x: 1, y: 1}
-  particleSpriteSheet: []
-  particleNumber: 0
-  emissionRadius: 0
+  capsuleDirection: 1
+  offset: {x: -0.015, y: -0.18}
+  size: {x: 0.9, y: 0.5}
+  particleSpriteSheet:
+  - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  particleNumber: 30
+  emissionRadius: 0.25
   baseSize: 16
