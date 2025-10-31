@@ -39,7 +39,7 @@ namespace Snowmentum
         /// Resets hasTransitioned when the bracket changes.
         /// </summary>
         /// <param name="bracket"></param>
-        private void ResetHasTransitioned(int bracket)
+        private void ResetHasTransitioned(int bracket, int oldBracket)
         {
             hasTransitioned = false;
         }
