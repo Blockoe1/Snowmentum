@@ -21,13 +21,15 @@ MonoBehaviour:
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 0
-  offset: {x: -0.010027647, y: -0.0075207055}
-  size: {x: 0.6089215, y: 0.6841294}
+  offset: {x: 0, y: 0}
+  size: {x: 0.12, y: 0.45}
   particleSpriteSheet:
-  - {fileID: -889968081, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
-  - {fileID: -156959124, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
-  - {fileID: -732115837, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
-  - {fileID: 1789747204, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
-  particleNumber: 0
-  emissionRadius: 0.0001
+  - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  particleNumber: 10
+  emissionRadius: 0.1
   baseSize: 16
