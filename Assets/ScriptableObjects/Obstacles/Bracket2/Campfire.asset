@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: Campfire
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 12
+  obstacleSize: 5
   obstacleSprite: {fileID: 21300000, guid: b6b853281d6487d4cb92b27f4f143a81, type: 3}
   orderInLayer: 0
   baseScore: 11
@@ -20,14 +20,16 @@ MonoBehaviour:
   showOutline: 1
   tag: Untagged
   hasCollision: 1
-  capsuleDirection: 0
-  offset: {x: -0.025429249, y: -0.005449116}
-  size: {x: 0.73117733, y: 0.7711377}
+  capsuleDirection: 1
+  offset: {x: 0, y: -0.11}
+  size: {x: 0.5, y: 0.35}
   particleSpriteSheet:
-  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  particleNumber: 5
+  particleNumber: 10
   emissionRadius: 0.25
   baseSize: 4

@@ -20,14 +20,16 @@ MonoBehaviour:
   showOutline: 1
   tag: Untagged
   hasCollision: 1
-  capsuleDirection: 0
-  offset: {x: -0.25564575, y: 0.038122535}
-  size: {x: 0.98206043, y: 2.5562975}
+  capsuleDirection: 1
+  offset: {x: -0.1, y: -0.65}
+  size: {x: 1.15, y: 1}
   particleSpriteSheet:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  particleNumber: 0
-  emissionRadius: 0.0001
+  - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  particleNumber: 50
+  emissionRadius: 0.5
   baseSize: 4
