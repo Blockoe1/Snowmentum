@@ -43,7 +43,7 @@ namespace Snowmentum.UI
             // Add postfix zeros
             for (int i = 0; i < postfixDigits; i++)
             {
-                sizeString = sizeString + "cm";
+                sizeString = sizeString + "mm";
             }
 
             return sizeString;

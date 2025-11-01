@@ -395,11 +395,11 @@ PrefabInstance:
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[4].sprite
       value: 
-      objectReference: {fileID: 1473342118, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: -494359493, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[5].sprite
       value: 
-      objectReference: {fileID: -595689659, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: -1804804186, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 0
