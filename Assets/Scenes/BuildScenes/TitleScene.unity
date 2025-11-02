@@ -981,7 +981,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458868761}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: fc5bd957deb19df4c8b0c8029e4a3753, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: fe19591f40082a448a8190af717e25ea, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1917,10 +1917,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.55286026
     y: 0
-    width: 0.99926955
-    height: 1
+    width: 0.7569395
+    height: 0.7567567
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
