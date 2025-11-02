@@ -267,30 +267,30 @@ PrefabInstance:
     - target: {fileID: 135438964893402186, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 28a2bbd333b50b748807a48d486305e1, type: 3}
+      objectReference: {fileID: 21300000, guid: 69479791380198e46978df5f6b7906ab, type: 3}
     - target: {fileID: 135438964893402186, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Size.x
-      value: 0.12
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Size.y
-      value: 0.45
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Offset.y
-      value: 0
+      value: -1.15
       objectReference: {fileID: 0}
     - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Direction
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4432682242002430807, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Name
@@ -299,11 +299,11 @@ PrefabInstance:
     - target: {fileID: 7005340295946998757, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: oldObsData
       value: 
-      objectReference: {fileID: 11400000, guid: 83c89cd3ff7fce54ab0493b667c44374, type: 2}
+      objectReference: {fileID: 11400000, guid: d02f335282495e34a852c038bf860bd2, type: 2}
     - target: {fileID: 7005340295946998757, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: obstacleData
       value: 
-      objectReference: {fileID: 11400000, guid: 83c89cd3ff7fce54ab0493b667c44374, type: 2}
+      objectReference: {fileID: 11400000, guid: d02f335282495e34a852c038bf860bd2, type: 2}
     - target: {fileID: 7005340295946998757, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: autoUpdateObstacleData
       value: 1
@@ -350,7 +350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 0.0001
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.size
@@ -375,14 +375,14 @@ PrefabInstance:
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[4].sprite
       value: 
-      objectReference: {fileID: -494359493, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+      objectReference: {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[5].sprite
       value: 
-      objectReference: {fileID: -1804804186, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+      objectReference: {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
