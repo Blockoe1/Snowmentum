@@ -267,7 +267,7 @@ PrefabInstance:
     - target: {fileID: 135438964893402186, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 69479791380198e46978df5f6b7906ab, type: 3}
+      objectReference: {fileID: 21300000, guid: b09151d67cff72f49a1b0861594a7a1c, type: 3}
     - target: {fileID: 135438964893402186, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -303,10 +303,10 @@ PrefabInstance:
     - target: {fileID: 7005340295946998757, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: obstacleData
       value: 
-      objectReference: {fileID: 11400000, guid: d02f335282495e34a852c038bf860bd2, type: 2}
+      objectReference: {fileID: 11400000, guid: 0992a6edde714cf478babab2478b7f41, type: 2}
     - target: {fileID: 7005340295946998757, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: autoUpdateObstacleData
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_LocalPosition.x
