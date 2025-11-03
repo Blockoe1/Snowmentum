@@ -6,12 +6,10 @@
 //
 // Brief Description : Continually spawns obstacles.
 *****************************************************************************/
-using System;
-using System.Collections;
-using UnityEngine;
 using Snowmentum.Size;
+using System.Collections;
 using System.Collections.Generic;
-using Unity.Collections.LowLevel.Unsafe;
+using UnityEngine;
 
 namespace Snowmentum
 {
