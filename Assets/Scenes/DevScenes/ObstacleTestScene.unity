@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_Direction
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1439881282416030759, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_IsTrigger
@@ -326,7 +326,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: d6a8c63542b5978438af60c09133b95f, type: 2}
     - target: {fileID: 7005340295946998757, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: autoUpdateObstacleData
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7292962630364190950, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -370,7 +370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 0.0001
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.size
@@ -395,14 +395,14 @@ PrefabInstance:
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[4].sprite
       value: 
-      objectReference: {fileID: -494359493, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+      objectReference: {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: UVModule.sprites.Array.data[5].sprite
       value: 
-      objectReference: {fileID: -1804804186, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+      objectReference: {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
     - target: {fileID: 8678211763055668925, guid: 93cf0d575780a7f4bbb18b7c796e0adc, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
