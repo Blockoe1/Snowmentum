@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734e950c317c80c459b6e80d28e6f05e, type: 3}
+  m_Name: 3_Bracket
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleBracket
+  spawnData:
+  - obstacle: {fileID: 11400000, guid: 35d1e1d3f8184784987c0ac0ec659f25, type: 2}
+    baseWeight: 10
+    addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: 5ce128060e717b8448d60b3c3e511c7d, type: 2}
+    baseWeight: 5
+    addedWeight: 3
+  - obstacle: {fileID: 11400000, guid: 894523796d27b2246b8fea8e935615fa, type: 2}
+    baseWeight: 10
+    addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: d7e3fbeb9b9673f458027c8177233dfe, type: 2}
+    baseWeight: 10
+    addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: d02f335282495e34a852c038bf860bd2, type: 2}
+    baseWeight: 10
+    addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: 0992a6edde714cf478babab2478b7f41, type: 2}
+    baseWeight: 10
+    addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: ed26b628efba32e47b45aad25e39a505, type: 2}
+    baseWeight: 10
+    addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: fb3397e3655799c4fbf9d3ff9e5c2b39, type: 2}
+    baseWeight: 10
+    addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
+    baseWeight: 10
+    addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: c911b56a100e52441b61e85680a55c11, type: 2}
+    baseWeight: 10
+    addedWeight: 1

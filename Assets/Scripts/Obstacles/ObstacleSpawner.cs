@@ -6,12 +6,10 @@
 //
 // Brief Description : Continually spawns obstacles.
 *****************************************************************************/
-using System;
-using System.Collections;
-using UnityEngine;
 using Snowmentum.Size;
+using System.Collections;
 using System.Collections.Generic;
-using Unity.Collections.LowLevel.Unsafe;
+using UnityEngine;
 
 namespace Snowmentum
 {
@@ -46,77 +44,80 @@ namespace Snowmentum
 
         //[SerializeField] private ObstacleSpawnData[] obstacles;  //holds the obstacle prefabs
         [Header("Brackets")]
-        [SerializeField] private SpawnBracket[] brackets;
-        [SerializeField] private SpawnBracket infiniteBracket;
+        //[SerializeField] private SpawnBracket[] brackets;
+        //[SerializeField] private SpawnBracket infiniteBracket;
+        [SerializeField] private ObstacleBracket[] brackets;
+        [SerializeField] private ObstacleBracket infiniteBracket;
 
-        private Queue<ObstacleController> inactiveObstacles = new();
+
+        private readonly Queue<ObstacleController> inactiveObstacles = new();
 
         private bool isSpawning;
 
         
 
-        #region Nested
-        [System.Serializable]
-        private class SpawnBracket
-        {
-            [SerializeField] internal ObstacleSpawnData[] spawnData;
+        //#region Nested
+        //[System.Serializable]
+        //private class SpawnBracket
+        //{
+        //    [SerializeField] internal ObstacleSpawnData[] spawnData;
 
-            /// <summary>
-            /// Run OnSelected for all spawn data objects in this bracket so they start with the correct weight.
-            /// </summary>
-            internal void Initialize()
-            {
-                // Reset all obstacles to their base weight
-                foreach (var obstacle in spawnData)
-                {
-                    ObstacleSpawnData.OnSelected(obstacle);
-                }
-            }
-        }
-        [System.Serializable]
-        private class ObstacleSpawnData
-        {
-            [SerializeField] private Obstacle obstacle;
-            [SerializeField] private int baseWeight;
-            [SerializeField] private int addedWeight;
+        //    /// <summary>
+        //    /// Run OnSelected for all spawn data objects in this bracket so they start with the correct weight.
+        //    /// </summary>
+        //    internal void Initialize()
+        //    {
+        //        // Reset all obstacles to their base weight
+        //        foreach (var obstacle in spawnData)
+        //        {
+        //            ObstacleSpawnData.OnSelected(obstacle);
+        //        }
+        //    }
+        //}
+        //[System.Serializable]
+        //private class ObstacleSpawnData
+        //{
+        //    [SerializeField] private Obstacle obstacle;
+        //    [SerializeField] private int baseWeight;
+        //    [SerializeField] private int addedWeight;
 
-            internal int weight;
+        //    internal int weight;
 
-            #region Properties
-            internal Obstacle Obs => obstacle;
-            internal float Size => obstacle.ObstacleSize;
-            #endregion
+        //    #region Properties
+        //    internal Obstacle Obs => obstacle;
+        //    internal float Size => obstacle.ObstacleSize;
+        //    #endregion
 
-            #region Weight Updaters
-            /// <summary>
-            /// Increments the spawn data's weight when it isnt selected.
-            /// </summary>
-            /// <param name="data"></param>
-            internal static void OnNotSelected(ObstacleSpawnData data)
-            {
-                data.weight += data.addedWeight;
-            }
+        //    #region Weight Updaters
+        //    /// <summary>
+        //    /// Increments the spawn data's weight when it isnt selected.
+        //    /// </summary>
+        //    /// <param name="data"></param>
+        //    internal static void OnNotSelected(ObstacleSpawnData data)
+        //    {
+        //        data.weight += data.addedWeight;
+        //    }
 
-            /// <summary>
-            /// Resets the spawn data's weight back to the default when it is selected.
-            /// </summary>
-            /// <param name="data"></param>
-            internal static void OnSelected(ObstacleSpawnData data)
-            {
-                data.weight = data.baseWeight;
-            }
-            #endregion
-        }
-        #endregion
+        //    /// <summary>
+        //    /// Resets the spawn data's weight back to the default when it is selected.
+        //    /// </summary>
+        //    /// <param name="data"></param>
+        //    internal static void OnSelected(ObstacleSpawnData data)
+        //    {
+        //        data.weight = data.baseWeight;
+        //    }
+        //    #endregion
+        //}
+        //#endregion
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            // Initialize all of our brackets with their starting weight.
-            foreach(var bracket in brackets)
-            {
-                bracket.Initialize();
-            }
+            //// Initialize all of our brackets with their starting weight.
+            //foreach(var bracket in brackets)
+            //{
+            //    bracket.Initialize();
+            //}
             if (spawnOnStart)
             {
                 StartCoroutine(SpawnObstacles(0));
@@ -137,7 +138,7 @@ namespace Snowmentum
             yield return new WaitForSeconds(initialDelay);
             isSpawning = true;
             Obstacle obstacleData;
-            SpawnBracket spawnBracket;
+            ObstacleBracket spawnBracket;
             ObstacleController spawnedController;
             while(isSpawning)
             {
@@ -151,7 +152,7 @@ namespace Snowmentum
                 for (int i = 0; i < obstacleSpawnAmount; i++)
                 {
                     //Pick an obstacle to spawn
-                    obstacleData = GetObstacleData(spawnBracket.spawnData, sizeBonusWeight);
+                    obstacleData = GetObstacleData(spawnBracket.SpawnData, sizeBonusWeight);
 
                     // If no obstacle is valid to be spawned right now, then we should skip spawning.
                     if (obstacleData == null)
@@ -238,15 +239,15 @@ namespace Snowmentum
                     // non-selected obstacles.
                     for(int j = i + 1; j < validObstacles.Length; j++)
                     {
-                        ObstacleSpawnData.OnNotSelected(validObstacles[j]);
+                        validObstacles[j].OnNotSelected();
                     }
 
-                    ObstacleSpawnData.OnSelected(validObstacles[i]);
+                    validObstacles[i].OnSelected();
 
                     return validObstacles[i].Obs;
                 }
 
-                ObstacleSpawnData.OnNotSelected(validObstacles[i]);
+                validObstacles[i].OnNotSelected();
             }
 
             // If all else fails, return null.
@@ -275,7 +276,7 @@ namespace Snowmentum
             // Uses the formula sizeBonusWeight - |(obstacleSize - snowballSize) / environmentSize|
             // Divide by environmentSize so that we scale the bonus weight based on the size bracket.
             int bonusWeight = Mathf.RoundToInt(sizeBonusWeight - Mathf.Abs((obstacle.Size - SnowballSize.TargetValue) / EnvironmentSize.Value));
-            return Mathf.Max(obstacle.weight + bonusWeight, 1);
+            return Mathf.Max(obstacle.Weight + bonusWeight, 1);
         }
 
         #region Object Pooling
