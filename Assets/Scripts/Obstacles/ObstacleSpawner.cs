@@ -50,7 +50,7 @@ namespace Snowmentum
         [SerializeField] private ObstacleBracket infiniteBracket;
 
 
-        private Queue<ObstacleController> inactiveObstacles = new();
+        private readonly Queue<ObstacleController> inactiveObstacles = new();
 
         private bool isSpawning;
 
