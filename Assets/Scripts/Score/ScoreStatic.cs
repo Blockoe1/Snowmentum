@@ -18,7 +18,7 @@ namespace Snowmentum.Score
         private const int HIGH_SCORE_COUNT = 10;
         private const int SCORE_DISPLAY_DIGITS = 5;
         private const int SCORE_POSTFIX_DIGITS = 1;
-        private const string FILE_NAME = "snow.ball";
+        private const string FILE_NAME = "sm_leaderboard.json";
         #endregion
 
         private static int score;
@@ -58,6 +58,19 @@ namespace Snowmentum.Score
         }
         #endregion
 
+        #region Nested
+        // Wrapper class for high score data when saved as JSON.
+        private class HighScoreData
+        {
+            internal HighScore[] scores;
+
+            internal HighScoreData(HighScore[] scores)
+            {
+                this.scores = scores;
+            }
+        }
+        #endregion
+
         #region Save/Load
         /// <summary>
         /// Saves all of the current high scores to a file on the arcade machine.
@@ -65,24 +78,40 @@ namespace Snowmentum.Score
         public static void SaveHighScores()
         {
             string filePath = FilePath;
-            // Open a new file stream to the file where we will save the high scores.
-            using (FileStream stream = new FileStream(filePath, FileMode.Create))
+
+            // Convert the high scores to JSON data.
+            var jsonData = JsonUtility.ToJson(new HighScoreData(highScores));
+
+            // Create a new save file if none exists.
+            if (!File.Exists(filePath))
             {
-                // Create a BinaryWriter that can then write the high scores to the file.
-                using (BinaryWriter writer = new BinaryWriter(stream))
-                {
-                    // Loop through all the high scores and save them to the file.
-                    for (int i = 0; i < HighScores.Length; i++)
-                    {
-                        writer.Write(HighScores[i].initials);
-                        writer.Write(HighScores[i].value);
-                    }
-
-                    Debug.Log("High Scores saved to file " + filePath);
-
-                    writer.Close();
-                }
+                File.Create(filePath);
             }
+
+            // Write all the json data to the file.
+            File.WriteAllText(filePath, jsonData);
+
+            // Old binary save code
+            //// Open a new file stream to the file where we will save the high scores.
+            //using (FileStream stream = new FileStream(filePath, FileMode.Create))
+            //{
+            //    // Create a BinaryWriter that can then write the high scores to the file.
+            //    using (BinaryWriter writer = new BinaryWriter(stream))
+            //    {
+            //        // Loop through all the high scores and save them to the file.
+            //        for (int i = 0; i < HighScores.Length; i++)
+            //        {
+            //            writer.Write(HighScores[i].initials);
+            //            writer.Write(HighScores[i].value);
+            //        }
+
+            //        Debug.Log("High Scores saved to file " + filePath);
+
+            //        writer.Close();
+            //    }
+            //}
+
+
         }
 
         /// <summary>
@@ -94,27 +123,13 @@ namespace Snowmentum.Score
         public static void LoadHighScores()
         {
             string filePath = FilePath;
-            // Check if the file exists.
+
             if (File.Exists(filePath))
             {
-                // Create a FileStream to the file that has all of the high scores saved.
-                using (FileStream stream = new FileStream(filePath, FileMode.Open))
-                {
-                    // Create a BinaryReader to read the contents of the saved high score file.
-                    using (BinaryReader reader = new BinaryReader(stream))
-                    {
-                        // Load data from the file for each high score that is set to be stored.
-                        highScores = new HighScore[HIGH_SCORE_COUNT];
-                        for(int i = 0; i < HIGH_SCORE_COUNT; i++)
-                        {
-                            highScores[i] = new HighScore(reader.ReadString(), reader.ReadInt32());
-                        }
-
-                        Debug.Log("Loaded high scores from file at " + filePath);
-
-                        reader.Close();
-                    }
-                }
+                // Read the text from the JSON file.
+                string readData = File.ReadAllText(filePath);
+                // Convert the JSON text to high score information.
+                highScores = JsonUtility.FromJson<HighScoreData>(readData).scores;
             }
             else
             {
@@ -135,6 +150,31 @@ namespace Snowmentum.Score
 
                 Debug.Log("Failed to load high scores from " + filePath);
             }
+
+            // Old binary code
+            //// Check if the file exists.
+            //if (File.Exists(filePath))
+            //{
+            //    // Create a FileStream to the file that has all of the high scores saved.
+            //    using (FileStream stream = new FileStream(filePath, FileMode.Open))
+            //    {
+            //        // Create a BinaryReader to read the contents of the saved high score file.
+            //        using (BinaryReader reader = new BinaryReader(stream))
+            //        {
+            //            // Load data from the file for each high score that is set to be stored.
+            //            highScores = new HighScore[HIGH_SCORE_COUNT];
+            //            for(int i = 0; i < HIGH_SCORE_COUNT; i++)
+            //            {
+            //                highScores[i] = new HighScore(reader.ReadString(), reader.ReadInt32());
+            //            }
+
+            //            Debug.Log("Loaded high scores from file at " + filePath);
+
+            //            reader.Close();
+            //        }
+            //    }
+
+            //}
         }
         #endregion
 
