@@ -15,6 +15,10 @@ namespace Snowmentum
     {
         [SerializeField] private ObstacleSpawnData[] spawnData;
 
+        #region Properties
+        public ObstacleSpawnData[] SpawnData => spawnData;
+        #endregion
+
         /// <summary>
         /// Run OnSelected for all spawn data objects in this bracket so they start with the correct weight.
         /// </summary>
