@@ -10,6 +10,7 @@ using Snowmentum.Size;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace Snowmentum
 {
@@ -52,7 +53,7 @@ namespace Snowmentum
             get { return showOutline; }
             set 
             {
-                showOutline = value;
+                showOutline = value; 
             }
         }
         #endregion
@@ -63,7 +64,15 @@ namespace Snowmentum
         private void Awake()
         {
             baseColor = rend.color;
-            if (showOutline)
+
+        }
+
+        /// <summary>
+        /// When this object is enabled/disabled, make sure to set up it's subscriptions or reset the outline.
+        /// </summary>
+        private void OnEnable()
+        {
+            if (ShowOutline)
             {
                 SnowballPosition.OnPositionChanged += UpdateOutline;
             }
@@ -72,23 +81,22 @@ namespace Snowmentum
                 ResetColor();
             }
         }
-        private void OnDestroy()
+        private void OnDisable()
         {
             SnowballPosition.OnPositionChanged -= UpdateOutline;
         }
 
         /// <summary>
-        /// Toggles the outline with any required event subscriptions and updates.
+        /// Toggles this outline.
         /// </summary>
-        /// <param name="value"></param>
-        public void ToggleOutline(bool value)
+        /// <param name="toggle"></param>
+        public void ToggleOutline(bool toggle)
         {
             // Prevents redundant assignment.
-            if (value == showOutline) { return; }
-            showOutline = value;
-
+            if (toggle == ShowOutline) { return; }
+            ShowOutline = toggle;
             // Disable the outline if ShowOutline is set to false.
-            if (showOutline)
+            if (ShowOutline)
             {
                 SnowballPosition.OnPositionChanged += UpdateOutline;
             }

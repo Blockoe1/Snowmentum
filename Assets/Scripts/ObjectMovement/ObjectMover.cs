@@ -25,7 +25,7 @@ namespace Snowmentum
 
         #region Component References
         [Header("Components")]
-        [SerializeReference] protected Rigidbody2D myRigidbody;
+        [SerializeReference, ReadOnly] protected Rigidbody2D myRigidbody;
 
         /// <summary>
         /// Get components on reset.
