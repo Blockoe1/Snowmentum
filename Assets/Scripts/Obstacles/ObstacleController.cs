@@ -30,6 +30,7 @@ namespace Snowmentum
         [SerializeField, Space(20)] private bool autoUpdateObstacleData = true;
 
         private ObstacleReturnFunction obstacleReturnFunction;
+        private float obstacleSize;
 
 #if UNITY_EDITOR
         [SerializeField, HideInInspector] private Obstacle oldObsData;
@@ -67,7 +68,7 @@ namespace Snowmentum
         {
             set { obstacleReturnFunction = value; }
         }
-        public virtual float ObstacleSize => obstacleData.ObstacleSize;
+        public virtual float ObstacleSize => obstacleSize;
         public bool HasCollision => obstacleData == null ? false : obstacleData.HasCollision;
         #endregion
 
@@ -108,6 +109,9 @@ namespace Snowmentum
         private void ReadObstacleData()
         {
             if (obstacleData == null) { return; }
+
+            // Native variables.
+            obstacleSize = obstacleData.ObstacleSize;
 
             // Update the component on this GameObject when obstacle data changes.
             gameObject.tag = obstacleData.Tag;
