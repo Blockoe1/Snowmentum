@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
+  m_Name: Snowboard
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
+  obstacleSize: 12
+  obstacleSprite: {fileID: 6779385974865440300, guid: 83952e0f0b842744198f3387f28f0e5c, type: 3}
+  orderInLayer: 0
+  baseScore: 9
+  destroySound: Obstacle Destruction
+  showOutline: 1
+  tag: Untagged
+  hasCollision: 1
+  capsuleDirection: 1
+  offset: {x: 0, y: -0.05}
+  size: {x: 1.8, y: 0.2}
+  particleSpriteSheet:
+  - {fileID: -889968081, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  - {fileID: -732115837, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  - {fileID: -156959124, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  - {fileID: 1789747204, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  - {fileID: -494359493, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  - {fileID: -1804804186, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  particleNumber: 25
+  emissionRadius: 0.2
+  baseSize: 4
