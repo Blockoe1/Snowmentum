@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: checkPositive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7800381323003144867, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: x.checkPositive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7800381323003144867, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: y.checkNegative
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.0001
