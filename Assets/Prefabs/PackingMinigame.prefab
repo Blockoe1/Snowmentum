@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigameAnimator: {fileID: 4880275567121914993}
   maxSizeGain: 0.5
-  packingTime: 5
+  packingTime: 3
   packingQualityScaler: 765000
   maxSpeedGain: 1.5
   throwDelay: 0.5
@@ -57,7 +57,19 @@ MonoBehaviour:
   startingSpeedScaler: 15
   OnMinigameTransition:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Snowmentum.UI.ControlsUI, Assembly-CSharp
+        m_MethodName: AdvanceSequence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnMinigameComplete:
     m_PersistentCalls:
       m_Calls:
@@ -83,6 +95,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Test
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
@@ -121,6 +145,18 @@ MonoBehaviour:
           m_StringArgument: Test
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Snowmentum.UI.ControlsUI, Assembly-CSharp
+        m_MethodName: AdvanceSequence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Test
+          m_BoolArgument: 1
+        m_CallState: 2
   OnMinigamePack:
     m_PersistentCalls:
       m_Calls:
@@ -128,18 +164,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Snowmentum.Size.SnowballSize, Assembly-CSharp
         m_MethodName: AddTargetValue
         m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2665110652182175276}
-        m_TargetAssemblyTypeName: Snowmentum.AudioRelay, Assembly-CSharp
-        m_MethodName: PlayRandomized
-        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
