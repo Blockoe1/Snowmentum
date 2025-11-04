@@ -60,11 +60,12 @@ namespace Snowmentum.Score
 
         #region Nested
         // Wrapper class for high score data when saved as JSON.
-        private class HighScoreData
+        [System.Serializable]
+        public class HighScoreData
         {
-            internal HighScore[] scores;
+            [SerializeField] internal HighScore[] scores;
 
-            internal HighScoreData(HighScore[] scores)
+            public HighScoreData(HighScore[] scores)
             {
                 this.scores = scores;
             }
@@ -80,13 +81,18 @@ namespace Snowmentum.Score
             string filePath = FilePath;
 
             // Convert the high scores to JSON data.
-            var jsonData = JsonUtility.ToJson(new HighScoreData(highScores));
+            var jsonData = JsonUtility.ToJson(new HighScoreData(highScores), true);
 
+            Debug.Log(jsonData);
+
+            // Dont need to create a file since WriteAllText auto creates one if none exists.
             // Create a new save file if none exists.
-            if (!File.Exists(filePath))
-            {
-                File.Create(filePath);
-            }
+            //if (!File.Exists(filePath))
+            //{
+            //    FileStream createdStream = File.Create(filePath);
+            //    // Create opens
+            //    createdStream.Close();
+            //}
 
             // Write all the json data to the file.
             File.WriteAllText(filePath, jsonData);
@@ -124,14 +130,7 @@ namespace Snowmentum.Score
         {
             string filePath = FilePath;
 
-            if (File.Exists(filePath))
-            {
-                // Read the text from the JSON file.
-                string readData = File.ReadAllText(filePath);
-                // Convert the JSON text to high score information.
-                highScores = JsonUtility.FromJson<HighScoreData>(readData).scores;
-            }
-            else
+            static void SetDefaultScores()
             {
                 // Set highScores to a default array.
                 highScores = new HighScore[HIGH_SCORE_COUNT]
@@ -147,8 +146,29 @@ namespace Snowmentum.Score
                     HighScore.Default,
                     HighScore.Default
                 };
+            }
 
-                Debug.Log("Failed to load high scores from " + filePath);
+            if (File.Exists(filePath))
+            {
+                // Read the text from the JSON file.
+                string readData = File.ReadAllText(filePath);
+                // Convert the JSON text to high score information.
+
+                HighScoreData data = JsonUtility.FromJson<HighScoreData>(readData);
+                if (data != null && data.scores != null)
+                {
+                    highScores = data.scores;
+                }
+                else
+                {
+                    SetDefaultScores();
+                    Debug.Log("Failed to load high scores from " + filePath + ".  No JSON data was detected.");
+                }
+            }
+            else
+            {
+                SetDefaultScores();
+                Debug.Log("Failed to load high scores from " + filePath + ".  No file exists at the specified path.");
             }
 
             // Old binary code
@@ -177,6 +197,7 @@ namespace Snowmentum.Score
             //}
         }
         #endregion
+
 
         /// <summary>
         /// Converts an iteger score into a string with zeros appended to the beginning to fill a certain 

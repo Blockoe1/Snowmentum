@@ -8,17 +8,19 @@
 *****************************************************************************/
 using System;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace Snowmentum.Score
 {
+    [System.Serializable]
     public class HighScore
     {
         #region Consts
         private const string DEFAULT_INITIALS = "AAA";
         #endregion
 
-        private string _initials;
-        private readonly int _value;
+        [SerializeField] private string _initials;
+        [SerializeField] private int _value;
 
         public event Action<string> OnInitialsChanged;
 
@@ -44,17 +46,9 @@ namespace Snowmentum.Score
         }
         #endregion
 
-        public HighScore()
-        {
-            initials = DEFAULT_INITIALS;
-            _value = 0;
-        }
+        public HighScore() : this(DEFAULT_INITIALS, 0) { }
 
-        public HighScore(int value)
-        {
-            this.initials = DEFAULT_INITIALS;
-            this._value = value;
-        }
+        public HighScore(int value) : this(DEFAULT_INITIALS, value) { }
 
         public HighScore(string initials, int value)
         {
