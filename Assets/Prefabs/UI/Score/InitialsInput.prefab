@@ -247,7 +247,7 @@ MonoBehaviour:
   - {fileID: 8400536729506993508}
   validCharacters: ABCDEFGHIJKLMNOPQRSTUVWXYZ
   selectionIndicator: {fileID: 3277741786420177978}
-  inputThreshold: 15000
+  inputThreshold: 7500
   inputDelay: 0.25
   censoredInitials: []
   OnScroll:

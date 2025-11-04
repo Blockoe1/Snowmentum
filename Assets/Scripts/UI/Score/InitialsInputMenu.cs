@@ -6,15 +6,13 @@
 //
 // Brief Description : Controls players inputting their high score to be saved on the machine.
 *****************************************************************************/
-using UnityEngine;
+using Snowmentum.Score;
 using System;
 using System.Collections;
-using Snowmentum.Score;
-using System.Linq;
-using UnityEngine.Events;
-using NUnit.Framework;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.Events;
 
 namespace Snowmentum.UI
 {
