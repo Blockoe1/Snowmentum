@@ -297,9 +297,9 @@ MonoBehaviour:
     gainCurveSteepness: 8
     maxSizeGain: 0.15
   effectOnSpeed:
-    maxDamageProportion: 0.1
+    maxDamageProportion: 0.05
     curveSteepness: 1.5
-    curveScale: 0.5
+    curveScale: 0.3
     minDamageKnockback: 8
     knockbackCurveSteepness: 2
     knockbackCurveScale: 1
