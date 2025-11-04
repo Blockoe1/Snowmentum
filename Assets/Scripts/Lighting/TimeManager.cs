@@ -30,7 +30,7 @@ namespace Snowmentum
 
         private IEnumerator TimeRoutine()
         {
-
+            throw new System.NotImplementedException();
         }
     }
 }
