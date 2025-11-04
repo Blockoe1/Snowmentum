@@ -300,12 +300,12 @@ namespace Snowmentum
             {
                 var animModule = particles.textureSheetAnimation;
                 // Copies the current sprite sheet data to the sprite sheet array.
-                Sprite[] spriteSheet = new Sprite[animModule.spriteCount];
-                if (obstacleData.SpriteSize != null)
+                if (obstacleData.SpriteSheet != null)
                 {
+                    Sprite[] spriteSheet = new Sprite[Mathf.Max(obstacleData.SpriteSheet.Length, animModule.spriteCount)];
                     obstacleData.SpriteSheet.CopyTo(spriteSheet, 0);
                     // Update the sprite sheet for the particles.
-                    for (int i = 0; i < animModule.spriteCount; i++)
+                    for (int i = 0; i < spriteSheet.Length; i++)
                     {
                         //Debug.Log(spriteSheet[i]);
                         spriteSheet[i] = ProcessAssignment(spriteSheet[i], animModule.GetSprite(i));
@@ -495,6 +495,7 @@ namespace Snowmentum
                     // Update the sprite sheet for the particles.
                     for (int i = 0; i < obstacleData.SpriteSheet.Length; i++)
                     {
+                        if (obstacleData.SpriteSheet[i] == null) { continue; }
                         if (i >= animModule.spriteCount)
                         {
                             //Debug.Log("Added sprite");

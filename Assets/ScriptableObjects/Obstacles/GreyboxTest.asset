@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: GreyboxTest
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 0
-  obstacleSprite: {fileID: 0}
+  obstacleSize: 1
+  obstacleSprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   orderInLayer: 0
   baseScore: 0
   destroySound: Obstacle Destruction
@@ -23,8 +23,12 @@ MonoBehaviour:
   capsuleDirection: 0
   offset: {x: 0, y: 0}
   size: {x: 1, y: 1}
-  particleSpriteSheet: []
-  particleNumber: 0
-  emissionRadius: 0
-  spriteSize: {x: 1, y: 1}
-  baseSize: 0
+  particleSpriteSheet:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  particleNumber: 50
+  emissionRadius: 0.25
+  spriteSize: {x: 2.66, y: 1.62}
+  baseSize: 1
