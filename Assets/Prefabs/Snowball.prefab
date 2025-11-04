@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 3.5
-  increasePerSecond: 0.1
+  increasePerSecond: 0.075
   moveToTarget: 5
   useFixedUpdate: 1
   minSpeed: 1
@@ -296,10 +296,10 @@ MonoBehaviour:
     useSizeAsMax: 0
   effectOnSpeed:
     maxDamageProportion: 0.1
-    curveSteepness: 1.001
+    curveSteepness: 1.5
     curveScale: 0.5
     minDamageKnockback: 8
-    knockbackCurveSteepness: 1.5
+    knockbackCurveSteepness: 2
     knockbackCurveScale: 1
   OnTakeDamage:
     m_PersistentCalls:
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freezeTime: 2.04
-  frozenTime: 4
+  frozenTime: 5
   warningThreshold: 0.25
   flashDelay: 0.15
   OnFreezeEvent:

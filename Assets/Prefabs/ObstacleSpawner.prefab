@@ -102,55 +102,50 @@ MonoBehaviour:
     - obstacle: {fileID: 11400000, guid: bd67023797275ff47bf03af559c18122, type: 2}
       baseWeight: 8
       addedWeight: 2
-    - obstacle: {fileID: 11400000, guid: 63d51bcc8bbff094eabef003f1dc02f5, type: 2}
-      baseWeight: 4
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: de6339ec7ff617141aee6a497d74c093, type: 2}
-      baseWeight: 4
-      addedWeight: 3
-    - obstacle: {fileID: 11400000, guid: e0ac2bff0c8fd584b8650bd1e5d57346, type: 2}
-      baseWeight: 4
-      addedWeight: 3
     - obstacle: {fileID: 11400000, guid: 7963b423ca323ab4e9248c1244bf5358, type: 2}
       baseWeight: 4
       addedWeight: 1
   - spawnData:
     - obstacle: {fileID: 11400000, guid: 35d1e1d3f8184784987c0ac0ec659f25, type: 2}
-      baseWeight: 16
+      baseWeight: 10
       addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: 5ce128060e717b8448d60b3c3e511c7d, type: 2}
+      baseWeight: 5
+      addedWeight: 2
     - obstacle: {fileID: 11400000, guid: 894523796d27b2246b8fea8e935615fa, type: 2}
-      baseWeight: 52
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: d02f335282495e34a852c038bf860bd2, type: 2}
-      baseWeight: 5
-      addedWeight: 2
-    - obstacle: {fileID: 11400000, guid: 0992a6edde714cf478babab2478b7f41, type: 2}
-      baseWeight: 5
-      addedWeight: 2
-    - obstacle: {fileID: 11400000, guid: ed26b628efba32e47b45aad25e39a505, type: 2}
-      baseWeight: 20
-      addedWeight: 3
-    - obstacle: {fileID: 11400000, guid: fb3397e3655799c4fbf9d3ff9e5c2b39, type: 2}
-      baseWeight: 36
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
-      baseWeight: 64
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 99725482bfac5de4a9fd1a31b375435e, type: 2}
-      baseWeight: 16
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 16d4bc3f078c8d84f8d1ec922be99a27, type: 2}
-      baseWeight: 16
+      baseWeight: 10
       addedWeight: 1
     - obstacle: {fileID: 11400000, guid: d7e3fbeb9b9673f458027c8177233dfe, type: 2}
-      baseWeight: 16
+      baseWeight: 10
       addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 898918ed32e1b7f4e8c80b545867073b, type: 2}
-      baseWeight: 16
+    - obstacle: {fileID: 11400000, guid: d02f335282495e34a852c038bf860bd2, type: 2}
+      baseWeight: 10
       addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 1eb5e92277d696f4db7e5868d1c1bb7c, type: 2}
-      baseWeight: 16
-      addedWeight: 2
+    - obstacle: {fileID: 11400000, guid: 0992a6edde714cf478babab2478b7f41, type: 2}
+      baseWeight: 10
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: ed26b628efba32e47b45aad25e39a505, type: 2}
+      baseWeight: 10
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: fb3397e3655799c4fbf9d3ff9e5c2b39, type: 2}
+      baseWeight: 10
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
+      baseWeight: 10
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: 78865d770f1d6cf478eb76785020b389, type: 2}
+      baseWeight: 20
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: c911b56a100e52441b61e85680a55c11, type: 2}
+      baseWeight: 20
+      addedWeight: 1
+  - spawnData:
+    - obstacle: {fileID: 11400000, guid: 894523796d27b2246b8fea8e935615fa, type: 2}
+      baseWeight: 7
+      addedWeight: 1
+    - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
+      baseWeight: 7
+      addedWeight: 1
     - obstacle: {fileID: 11400000, guid: 55f47ad838fbe5b4b82f51987a015d6e, type: 2}
       baseWeight: 5
       addedWeight: 1
@@ -160,54 +155,14 @@ MonoBehaviour:
     - obstacle: {fileID: 11400000, guid: 6436f5d7d4ee1154e947cc95fbdada67, type: 2}
       baseWeight: 5
       addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 55f47ad838fbe5b4b82f51987a015d6e, type: 2}
+    - obstacle: {fileID: 11400000, guid: c6bc4c1f720873240af28d16538c03c1, type: 2}
       baseWeight: 5
       addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 55f47ad838fbe5b4b82f51987a015d6e, type: 2}
+    - obstacle: {fileID: 11400000, guid: c3c5013b8b71ab644a2186ff25d415f2, type: 2}
       baseWeight: 4
-      addedWeight: 1
-  - spawnData:
-    - obstacle: {fileID: 11400000, guid: 35d1e1d3f8184784987c0ac0ec659f25, type: 2}
-      baseWeight: 16
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 894523796d27b2246b8fea8e935615fa, type: 2}
-      baseWeight: 52
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: d02f335282495e34a852c038bf860bd2, type: 2}
-      baseWeight: 5
       addedWeight: 2
-    - obstacle: {fileID: 11400000, guid: 0992a6edde714cf478babab2478b7f41, type: 2}
-      baseWeight: 5
-      addedWeight: 2
-    - obstacle: {fileID: 11400000, guid: ed26b628efba32e47b45aad25e39a505, type: 2}
-      baseWeight: 20
-      addedWeight: 3
-    - obstacle: {fileID: 11400000, guid: fb3397e3655799c4fbf9d3ff9e5c2b39, type: 2}
-      baseWeight: 36
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
-      baseWeight: 64
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 99725482bfac5de4a9fd1a31b375435e, type: 2}
-      baseWeight: 16
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 16d4bc3f078c8d84f8d1ec922be99a27, type: 2}
-      baseWeight: 16
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: d7e3fbeb9b9673f458027c8177233dfe, type: 2}
-      baseWeight: 16
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 898918ed32e1b7f4e8c80b545867073b, type: 2}
-      baseWeight: 16
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 1eb5e92277d696f4db7e5868d1c1bb7c, type: 2}
-      baseWeight: 16
-      addedWeight: 2
-    - obstacle: {fileID: 11400000, guid: 5ce128060e717b8448d60b3c3e511c7d, type: 2}
-      baseWeight: 16
-      addedWeight: 1
-    - obstacle: {fileID: 11400000, guid: 5ce128060e717b8448d60b3c3e511c7d, type: 2}
-      baseWeight: 16
+    - obstacle: {fileID: 11400000, guid: 83c89cd3ff7fce54ab0493b667c44374, type: 2}
+      baseWeight: 4
       addedWeight: 1
   infiniteBracket:
     spawnData:
