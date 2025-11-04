@@ -116,19 +116,19 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
-    audioClip: {fileID: 8300000, guid: 44766caa059435f4fb71af84b2bea7e4, type: 3}
+    audioClip: {fileID: 8300000, guid: 307d84975c8c7f543842e311e1a709dc, type: 3}
   - name: No Hover
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
     pitch: 1
     loop: 0
-    audioClip: {fileID: 8300000, guid: 951b96d96188f9640b12fa2d7fade185, type: 3}
+    audioClip: {fileID: 8300000, guid: e49874f19fdb7114bbf776cb9e5f53c0, type: 3}
   - name: Button Click
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
     pitch: 1
     loop: 0
-    audioClip: {fileID: 8300000, guid: 0d54653003bc3524ab6b64cac060bd52, type: 3}
+    audioClip: {fileID: 8300000, guid: ddd16025d5ef32249bf91ac485f99fd8, type: 3}
   randomizedSounds:
   - name: Snowball Destruction
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
