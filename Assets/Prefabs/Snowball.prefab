@@ -294,6 +294,8 @@ MonoBehaviour:
     curveSteepness: 20
     maxGain: 0.1
     useSizeAsMax: 0
+    gainCurveSteepness: 8
+    maxSizeGain: 0.15
   effectOnSpeed:
     maxDamageProportion: 0.1
     curveSteepness: 1.5

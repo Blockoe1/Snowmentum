@@ -79,8 +79,14 @@ namespace Snowmentum
             [SerializeField, Tooltip("The maximum positive value this curve can return.")]
             private float maxGain;
             [SerializeField, Tooltip("If true, then the maxGain parameter will be overwritten by the size of " +
-                "the obstacle.")]
-            private bool useSizeAsMax;
+                "the obstacle, and the maxGain value will be used as a multiplier.")]
+            private bool scaleWithObstacleSize;
+
+            [Header("Gaining Size")]
+            [SerializeField, Tooltip("How drastically size gains fall off as the snowball gets larger.")] 
+            private float gainCurveSteepness = 20;
+            [SerializeField, Tooltip("The maximum amount of size the snowball can gain by rolling over an obstacle.")]
+            private float maxSizeGain = 0.1f;
 
             /// <summary>
             /// When the snowball gets in a collision, the snowball's size should be decreased.
@@ -89,14 +95,29 @@ namespace Snowmentum
             /// <param name="snowballSize"></param>
             internal override void OnCollision(float obstacleSize, float snowballSize, SnowballSize sizeSetter)
             {
-                float gain = useSizeAsMax ? obstacleSize : maxGain;
                 // Calculate the change in size.
-                float result = SizeCollisionCurve(obstacleSize, snowballSize, gain, curveSteepness);
-                // Ensures the player only takes a certain amount of damage if they are not one-shot.
-                if (result < 0 && Mathf.Abs(result) < SnowballSize.Value)
+                float result;
+
+                // If the snowball destroyed the obstacle and will gain size, invert the result so that you gain
+                // more size the closer you are to the obstacle's size.
+                if (snowballSize > obstacleSize)
                 {
-                    result = Mathf.Max(result, -SnowballSize.Value * maxDamageProportion);
+                    float gain = scaleWithObstacleSize ? obstacleSize * maxSizeGain : maxSizeGain;
+                    result = -(SizeCollisionCurve(obstacleSize, snowballSize, maxSizeGain, gainCurveSteepness) - gain);
+                    Debug.Log(result);
                 }
+                else
+                {
+                    float gain = scaleWithObstacleSize ? obstacleSize * maxGain : maxGain;
+                    result = SizeCollisionCurve(obstacleSize, snowballSize, gain, curveSteepness);
+
+                    // Ensures the player only takes a certain amount of damage if they are not one-shot.
+                    if (result < 0 && Mathf.Abs(result) < SnowballSize.Value)
+                    {
+                        result = Mathf.Max(result, -SnowballSize.Value * maxDamageProportion);
+                    }
+                }
+
                 sizeSetter.TargetValue_Local += result;
             }
 
