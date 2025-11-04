@@ -48,7 +48,7 @@ MonoBehaviour:
   obstaclePrefab: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
   spawnOnStart: 0
   obstacleSpawnAmount: 1
-  spawnCooldown: 4
+  spawnCooldown: 3
   scaleWithSpeed: 1
   sizeBonusWeight: 10
   minYSpawn: -3

@@ -5145,6 +5145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleData: {fileID: 0}
+  autoUpdateObstacleData: 1
   oldObsData: {fileID: 0}
   rend: {fileID: 8871070839524519023}
   obstacleCollider: {fileID: 7567752226576047106}
@@ -5290,6 +5291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killZone: 16
+  checkNegative: 1
+  checkPositive: 1
   OnEnterKillzone:
     m_PersistentCalls:
       m_Calls:

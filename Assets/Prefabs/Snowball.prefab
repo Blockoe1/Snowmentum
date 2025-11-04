@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 1
-  increasePerSecond: 0.11
+  increasePerSecond: 0.02
   moveToTarget: 7
   useFixedUpdate: 1
   OnDeathEvent:
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c721557f089564d91a8770540b23a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingValue: 1.53
+  startingValue: 4
   increasePerSecond: 0.02
   moveToTarget: 5
   useFixedUpdate: 1
