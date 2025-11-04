@@ -12,6 +12,8 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using static UnityEngine.UI.Image;
+using UnityEditor.MPE;
+
 
 
 
@@ -28,6 +30,7 @@ namespace Snowmentum
         [SerializeField, ShowNestedEditor] private Obstacle obstacleData;
 
         [SerializeField, Space(20)] private bool autoUpdateObstacleData = true;
+        [SerializeField] private bool isGreybox;
 
         private ObstacleReturnFunction obstacleReturnFunction;
         private float obstacleSize;
@@ -119,6 +122,11 @@ namespace Snowmentum
             {
                 rend.sprite = obstacleData.ObstacleSprite;
                 rend.sortingOrder = obstacleData.OrderInLayer;
+
+                if (isGreybox)
+                {
+                    rend.size = obstacleData.SpriteSize;
+                }
             }
             if (score != null)
             {
@@ -251,6 +259,11 @@ namespace Snowmentum
                 obstacleData.OrderInLayer = ProcessAssignment(obstacleData.OrderInLayer, rend.sortingOrder);
                 //obstacleData.ObstacleSprite = rend.sprite;
                 //obstacleData.OrderInLayer = rend.sortingOrder;
+
+                if (isGreybox)
+                {
+                    obstacleData.SpriteSize = ProcessAssignment(obstacleData.SpriteSize, rend.size);
+                }
             }
             if (score != null)
             {
@@ -288,15 +301,18 @@ namespace Snowmentum
                 var animModule = particles.textureSheetAnimation;
                 // Copies the current sprite sheet data to the sprite sheet array.
                 Sprite[] spriteSheet = new Sprite[animModule.spriteCount];
-                obstacleData.SpriteSheet.CopyTo(spriteSheet, 0);
-                // Update the sprite sheet for the particles.
-                for (int i = 0; i < animModule.spriteCount; i++)
+                if (obstacleData.SpriteSize != null)
                 {
-                    //Debug.Log(spriteSheet[i]);
-                    spriteSheet[i] = ProcessAssignment(spriteSheet[i], animModule.GetSprite(i));
-                    //spriteSheet[i] = animModule.GetSprite(i);
+                    obstacleData.SpriteSheet.CopyTo(spriteSheet, 0);
+                    // Update the sprite sheet for the particles.
+                    for (int i = 0; i < animModule.spriteCount; i++)
+                    {
+                        //Debug.Log(spriteSheet[i]);
+                        spriteSheet[i] = ProcessAssignment(spriteSheet[i], animModule.GetSprite(i));
+                        //spriteSheet[i] = animModule.GetSprite(i);
+                    }
+                    obstacleData.SpriteSheet = spriteSheet;
                 }
-                obstacleData.SpriteSheet = spriteSheet;
 
                 // Update the emission shape.
                 var shapeModule = particles.shape;
@@ -372,6 +388,11 @@ namespace Snowmentum
                 rend.sortingOrder = ProcessAssignment(rend.sortingOrder, obstacleData.OrderInLayer);
                 //rend.sprite = obstacleData.ObstacleSprite;
                 //rend.sortingOrder = obstacleData.OrderInLayer;
+
+                if (isGreybox)
+                {
+                    rend.size = ProcessAssignment(rend.size, obstacleData.SpriteSize);
+                }
 
                 // Each component needs to be set dirty individually for changes to be properly saved.
                 if (isDirty)
