@@ -17,7 +17,6 @@ namespace Snowmentum
     {
         [SerializeField] private UnityEvent onSubmit;
         private InputAction submitAction;
-        private bool isPaused = false;
 
         private void Awake()
         {

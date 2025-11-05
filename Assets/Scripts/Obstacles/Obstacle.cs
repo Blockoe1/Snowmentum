@@ -50,6 +50,9 @@ namespace Snowmentum
             "Should approximately correspond to the size of the sprite.")] 
         private float emissionRadius;
 
+        [Header("Greyboxing Only")]
+        [SerializeField] private Vector2 spriteSize = Vector2.one;
+
         [SerializeField, HideInInspector] protected float baseSize;
 
         #region Properties
@@ -138,6 +141,12 @@ namespace Snowmentum
             {
                 return baseSize;
             }
+        }
+
+        public Vector2 SpriteSize
+        {
+            get { return spriteSize; }
+            set { spriteSize = value; }
         }
         #endregion
         #endregion

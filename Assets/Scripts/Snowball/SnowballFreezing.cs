@@ -192,7 +192,6 @@ namespace Snowmentum
             while (isFrozen)
             {
                 FreezeAmount += GetThawRate() * Time.deltaTime;
-                UpdateFreezeStatus(FreezeAmount);
 
                 // If our freeze amount is too low, then we do timed blinks of the frozen snowball sprite.
                 if (FreezeAmount < warningThreshold)
@@ -209,6 +208,9 @@ namespace Snowmentum
                 {
                     ShowingVisuals = true;
                 }
+
+                // Only update freeze status after querying any visuals, so that things always get reset properly.
+                UpdateFreezeStatus(FreezeAmount);
 
                 yield return null;
             }

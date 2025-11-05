@@ -140,6 +140,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.KillZone
   killZone: 16
+  checkNegative: 1
+  checkPositive: 1
+  x:
+    killZone: 16
+    checkNegative: 1
+    checkPositive: 1
+  y:
+    killZone: 0
+    checkNegative: 0
+    checkPositive: 0
   OnEnterKillzone:
     m_PersistentCalls:
       m_Calls:
