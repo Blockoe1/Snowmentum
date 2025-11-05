@@ -26,4 +26,6 @@ MonoBehaviour:
   particleSpriteSheet: []
   particleNumber: 0
   emissionRadius: 0.0001
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
   baseSize: 16
