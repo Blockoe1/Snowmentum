@@ -104,7 +104,7 @@ namespace Snowmentum
                 {
                     float gain = scaleWithObstacleSize ? obstacleSize * maxSizeGain : maxSizeGain;
                     result = -(SizeCollisionCurve(obstacleSize, snowballSize, maxSizeGain, gainCurveSteepness) - gain);
-                    Debug.Log(result);
+                    //Debug.Log(result);
                 }
                 else
                 {
