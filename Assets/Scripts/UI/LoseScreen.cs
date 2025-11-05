@@ -41,15 +41,6 @@ namespace Snowmentum.UI
         {
             //Screen duration is 5 seconds
             yield return new WaitForSeconds(5f);
-            ScoreStatic.CheckHighScore();
-            if (ScoreStatic.CheckHighScore())
-            {
-                TransitionToScene(HIGH_SCORE_SCENE_NAME);
-            }
-            else
-            {
-                TransitionToScene(TITLE_SCREEN_NAME);
-            }
         }
 
         /// <summary>
@@ -63,6 +54,22 @@ namespace Snowmentum.UI
         public void StartScreenDelay()
         {
             StartCoroutine(ScreenDuration());
+        }
+
+        /// <summary>
+        /// Ends the current game and takes the player to the main menu or high score menu based on their score.
+        /// </summary>
+        public void EndGame()
+        {
+            ScoreStatic.CheckHighScore();
+            if (ScoreStatic.CheckHighScore())
+            {
+                TransitionToScene(HIGH_SCORE_SCENE_NAME);
+            }
+            else
+            {
+                TransitionToScene(TITLE_SCREEN_NAME);
+            }
         }
     }
 }
