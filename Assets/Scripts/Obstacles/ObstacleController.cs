@@ -9,10 +9,7 @@
 using Snowmentum.Score;
 using Snowmentum.Size;
 using UnityEngine;
-using System;
 using System.Collections.Generic;
-using static UnityEngine.UI.Image;
-using UnityEditor.MPE;
 
 
 
@@ -30,7 +27,7 @@ namespace Snowmentum
         [SerializeField, ShowNestedEditor] private Obstacle obstacleData;
 
         [SerializeField, Space(20)] private bool autoUpdateObstacleData = true;
-        [SerializeField] private bool isGreybox;
+        //[SerializeField] private bool isGreybox;
 
         private ObstacleReturnFunction obstacleReturnFunction;
         private float obstacleSize;
@@ -123,9 +120,14 @@ namespace Snowmentum
                 rend.sprite = obstacleData.ObstacleSprite;
                 rend.sortingOrder = obstacleData.OrderInLayer;
 
-                if (isGreybox)
+                if (obstacleData.IsGreyboxed)
                 {
+                    rend.drawMode = SpriteDrawMode.Tiled;
                     rend.size = obstacleData.SpriteSize;
+                }
+                else
+                {
+                    rend.drawMode = SpriteDrawMode.Simple;
                 }
             }
             if (score != null)
@@ -260,7 +262,7 @@ namespace Snowmentum
                 //obstacleData.ObstacleSprite = rend.sprite;
                 //obstacleData.OrderInLayer = rend.sortingOrder;
 
-                if (isGreybox)
+                if (obstacleData.IsGreyboxed)
                 {
                     obstacleData.SpriteSize = ProcessAssignment(obstacleData.SpriteSize, rend.size);
                 }
@@ -389,9 +391,14 @@ namespace Snowmentum
                 //rend.sprite = obstacleData.ObstacleSprite;
                 //rend.sortingOrder = obstacleData.OrderInLayer;
 
-                if (isGreybox)
+                if (obstacleData.IsGreyboxed)
                 {
                     rend.size = ProcessAssignment(rend.size, obstacleData.SpriteSize);
+                    rend.drawMode = SpriteDrawMode.Tiled;
+                }
+                else
+                {
+                    rend.drawMode = SpriteDrawMode.Simple;
                 }
 
                 // Each component needs to be set dirty individually for changes to be properly saved.
