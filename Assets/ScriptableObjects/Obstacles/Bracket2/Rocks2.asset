@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
-  m_Name: Rocks
+  m_Name: Rocks2
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 6
-  obstacleSprite: {fileID: -294949627, guid: 424e201fd6688ee4fb1d9b82f0d78b33, type: 3}
+  obstacleSprite: {fileID: 1916150071, guid: 424e201fd6688ee4fb1d9b82f0d78b33, type: 3}
   orderInLayer: 0
   baseScore: 5
   destroySound: 

@@ -15,9 +15,9 @@ MonoBehaviour:
   obstacleSize: 8
   obstacleSprite: {fileID: 21300000, guid: e90353b28c8fed94da57c79d0a538359, type: 3}
   orderInLayer: 0
-  baseScore: 7
-  destroySound: Obstacle Destruction
-  showOutline: 1
+  baseScore: 5
+  destroySound: 
+  showOutline: 0
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 1
@@ -32,4 +32,5 @@ MonoBehaviour:
   - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   particleNumber: 40
   emissionRadius: 0.6
+  spriteSize: {x: 1, y: 1}
   baseSize: 4
