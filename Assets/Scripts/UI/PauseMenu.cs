@@ -57,7 +57,7 @@ namespace Snowmentum
 
             if (isPaused)
             {
-
+                selectedButton.Select();
             }
             else
             {
