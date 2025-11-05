@@ -19,7 +19,6 @@ namespace Snowmentum
         // SerializedProperty variables.
         private SerializedProperty obstacleData;
         private SerializedProperty autoUpdateObstacleData;
-        private SerializedProperty isGreybox;
 
         // Components
         private SerializedProperty rend;
@@ -39,7 +38,6 @@ namespace Snowmentum
         {
             obstacleData = serializedObject.FindProperty(nameof(obstacleData));
             autoUpdateObstacleData = serializedObject.FindProperty(nameof(autoUpdateObstacleData));
-            isGreybox = serializedObject.FindProperty(nameof(isGreybox));
 
             // Components
             rend = serializedObject.FindProperty(nameof(rend));
@@ -77,7 +75,6 @@ namespace Snowmentum
 
             EditorGUILayout.PropertyField(obstacleData);
             EditorGUILayout.PropertyField(autoUpdateObstacleData);
-            EditorGUILayout.PropertyField(isGreybox);
 
             //if (GUILayout.Button("Write Obstacle Data"))
             //{
