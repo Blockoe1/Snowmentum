@@ -25,7 +25,7 @@ public class HoldButtonTimer : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         if (isPointerOver)
         {
-            currentHoldTime += Time.deltaTime;
+            currentHoldTime += Time.unscaledDeltaTime;
             HoldProgress.UpdateProgressFill(currentHoldTime, requiredHoldTime);
             if (currentHoldTime >= requiredHoldTime)
             {

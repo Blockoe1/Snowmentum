@@ -50,7 +50,7 @@ namespace Snowmentum
         {
             pauseMenuPanel.SetActive(isPaused);
             this.isPaused = isPaused;
-            Time.timeScale = isPaused ? 1 : 0;
+            Time.timeScale = isPaused ? 0 : 1;
 
             // Unlock the cursor when paused.
             Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
