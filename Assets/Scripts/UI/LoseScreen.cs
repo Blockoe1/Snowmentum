@@ -6,10 +6,9 @@
 //
 // Brief Description : Controls button functions for the lose screen.
 *****************************************************************************/
+using Snowmentum.Score;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Snowmentum.Score;
 
 namespace Snowmentum.UI
 {
