@@ -185,7 +185,7 @@ namespace Snowmentum
                     spawnedController.SetObstacle(obstacleData);
                     spawnedController.ReturnFunction = ReturnObstacle;
 
-                    Debug.Log("Spawned obstacle " + obstacleData);
+                    //Debug.Log("Spawned obstacle " + obstacleData);
                     
                     //StartCoroutine(SpawnObstacles());
                 }
