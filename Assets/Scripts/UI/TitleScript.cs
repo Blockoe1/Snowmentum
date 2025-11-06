@@ -26,7 +26,7 @@ namespace Snowmentum
         public void PlayGame()
         {
             //We can make the title scene 0 in the build and the gameplay scene 1
-            TransitionManager.LoadScene("GameplayScene");
+            TransitionManager.LoadScene("GameplayScene", TransitionType.Snowy);
         }
 
         /// <summary>

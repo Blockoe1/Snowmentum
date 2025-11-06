@@ -13,9 +13,10 @@ namespace Snowmentum
 {
     public class SceneTransitionTemp : MonoBehaviour
     {
+        [SerializeField] private TransitionType transitionType;
         public void TransitionToScene(string targetScene)
         {
-            TransitionManager.LoadScene(targetScene);
+            TransitionManager.LoadScene(targetScene, transitionType);
         }
     }
 }

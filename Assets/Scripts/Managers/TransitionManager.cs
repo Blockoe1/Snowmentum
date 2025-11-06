@@ -13,10 +13,18 @@ using UnityEngine.UI;
 
 namespace Snowmentum
 {
+    public enum TransitionType
+    {
+        Snowy,
+        FadeToWhite,
+        FadeToBlack
+    }
+
     public class TransitionManager : MonoBehaviour
     {
         [SerializeField] private ParticleSystem transitionParticles;
-        [SerializeField] private Image transitionImage;
+        [SerializeField] private Image fadeToWhite;
+        [SerializeField] private Image fadeToBlack;
         [SerializeField] private float fadeTime;
 
         private static TransitionManager instance;
@@ -43,13 +51,28 @@ namespace Snowmentum
         /// Transitions to a new scene.
         /// </summary>
         /// <param name="sceneName"></param>
-        public static void LoadScene(string sceneName)
+        public static void LoadScene(string sceneName, TransitionType tType = TransitionType.FadeToBlack)
         {
+            // Prevent scene loading if we are already in the middle of a transition.
+            if (instance != null && instance.isTransitioning) { return; }
             if (instance != null)
             {
                 // If there is a TransitionManager, use it to transition to the new scene.
-                //Task.Run(async () => await instance.TransitionToScene(sceneName));
-                instance.StartCoroutine(instance.TransitionToScene(sceneName));
+                switch (tType)
+                {
+                    case TransitionType.Snowy:
+                        instance.StartCoroutine(instance.TransitionToScene(sceneName, instance.fadeToWhite));
+                        // snowy transition plays extra particles.
+                        instance.transitionParticles.Play();
+                        break;
+                    case TransitionType.FadeToWhite:
+                        instance.StartCoroutine(instance.TransitionToScene(sceneName, instance.fadeToWhite));
+                        break;
+                    case TransitionType.FadeToBlack:
+                    default:
+                        instance.StartCoroutine(instance.TransitionToScene(sceneName, instance.fadeToBlack));
+                        break;
+                }
             }
             else
             {
@@ -62,25 +85,22 @@ namespace Snowmentum
         /// Transitions to a new scene.
         /// </summary>
         /// <param name="sceneName"></param>
-        private IEnumerator TransitionToScene(string sceneName)
+        private IEnumerator TransitionToScene(string sceneName, Image fadeImage)
         {
             Debug.Log("Transitioning.");
             isTransitioning = true;
 
-            // Play the particles for transition.
-            //transitionParticles.Play();
-
-            transitionImage.gameObject.SetActive(true);
-            SetImageAlpha(0);
-            yield return StartCoroutine(FadeImageTo(1));
+            fadeImage.gameObject.SetActive(true);
+            SetImageAlpha(fadeImage, 0);
+            yield return StartCoroutine(FadeImageTo(fadeImage, 1));
 
             // Load the scene asyncronously and wait until it's loaded.
             AsyncOperation loadingOp = SceneManager.LoadSceneAsync(sceneName);
             // Wait until we've loaded the scene.
             yield return new WaitWhile(() => !loadingOp.isDone);
 
-            yield return StartCoroutine(FadeImageTo(0));
-            transitionImage.gameObject.SetActive(false);
+            yield return StartCoroutine(FadeImageTo(fadeImage, 0));
+            fadeImage.gameObject.SetActive(false);
 
             isTransitioning = false;
         }
@@ -90,14 +110,14 @@ namespace Snowmentum
         /// </summary>
         /// <param name="targetAlpha"></param>
         /// <returns></returns>
-        private IEnumerator FadeImageTo(int targetAlpha)
+        private IEnumerator FadeImageTo(Image img, int targetAlpha)
         {
-            float step = Mathf.Abs((targetAlpha - transitionImage.color.a) / fadeTime * Time.unscaledDeltaTime);
+            float step = Mathf.Abs((targetAlpha - img.color.a) / fadeTime * Time.unscaledDeltaTime);
             Debug.Log(step);
 
-            while (transitionImage.color.a != targetAlpha)
+            while (img.color.a != targetAlpha)
             {
-                SetImageAlpha(Mathf.MoveTowards(transitionImage.color.a, targetAlpha, step));
+                SetImageAlpha(img, Mathf.MoveTowards(img.color.a, targetAlpha, step));
                 yield return null;
             }
         }
@@ -106,11 +126,11 @@ namespace Snowmentum
         /// Sets the alpha of the transition image.
         /// </summary>
         /// <param name="alpha"></param>
-        private void SetImageAlpha(float alpha)
+        private void SetImageAlpha(Image img, float alpha)
         {
-            Color col = transitionImage.color;
+            Color col = img.color;
             col.a = alpha;
-            transitionImage.color = col;
+            img.color = col;
         }
     }
 }

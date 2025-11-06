@@ -16,6 +16,7 @@ namespace Snowmentum.UI
     public class LoseScreen : MonoBehaviour
     {
         [SerializeField] private float loseScreenTime = 5;
+        [SerializeField] private TransitionType transitionType;
 
         #region CONSTS
         private const string HIGH_SCORE_SCENE_NAME = "SaveHighScoreScene";
@@ -51,7 +52,7 @@ namespace Snowmentum.UI
         /// </summary>
         public void TransitionToScene(string targetScene)
         {
-            TransitionManager.LoadScene(targetScene);
+            TransitionManager.LoadScene(targetScene, transitionType);
         }
 
         public void StartScreenDelay()
