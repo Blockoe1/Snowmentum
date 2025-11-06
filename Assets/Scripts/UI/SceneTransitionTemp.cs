@@ -15,7 +15,7 @@ namespace Snowmentum
     {
         public void TransitionToScene(string targetScene)
         {
-            SceneManager.LoadScene(targetScene);
+            TransitionManager.LoadScene(targetScene);
         }
     }
 }

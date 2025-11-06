@@ -51,7 +51,7 @@ namespace Snowmentum.UI
         /// </summary>
         public void TransitionToScene(string targetScene)
         {
-            SceneManager.LoadScene(targetScene);
+            TransitionManager.LoadScene(targetScene);
         }
 
         public void StartScreenDelay()
