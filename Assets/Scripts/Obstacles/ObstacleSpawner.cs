@@ -157,6 +157,7 @@ namespace Snowmentum
                     // If no obstacle is valid to be spawned right now, then we should skip spawning.
                     if (obstacleData == null)
                     {
+                        //Debug.Log("No obstacle");
                         continue;
                     }
 
@@ -180,10 +181,11 @@ namespace Snowmentum
                     //Spawn obstacle and set it up with it's data
                     //Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity, obstacleParent);
                     spawnedController = GetObstacleController();
-                    spawnedController.transform.position = spawnArea;
+                    spawnedController.SnapPosition(spawnArea);
                     spawnedController.SetObstacle(obstacleData);
                     spawnedController.ReturnFunction = ReturnObstacle;
 
+                    Debug.Log("Spawned obstacle " + obstacleData);
                     
                     //StartCoroutine(SpawnObstacles());
                 }
@@ -277,7 +279,7 @@ namespace Snowmentum
             int bonusWeight = Mathf.RoundToInt(Mathf.Pow(2, -Mathf.Pow(sizeComparison, 2)) * maxBonusWeight);
 
 
-            Debug.Log("Obstacle " + obstacle.Obs + " has a bonus weight of " + bonusWeight);
+            //Debug.Log("Obstacle " + obstacle.Obs + " has a bonus weight of " + bonusWeight);
             return Mathf.Max(obstacle.Weight + bonusWeight, 1);
         }
 
