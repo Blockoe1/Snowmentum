@@ -15,7 +15,7 @@ MonoBehaviour:
   obstacleSize: 17
   obstacleSprite: {fileID: 21300000, guid: 6b791ba0ee1f2274dacbd097e9ad1e78, type: 3}
   orderInLayer: -2
-  baseScore: 1
+  baseScore: 16
   destroySound: 
   showOutline: 0
   tag: Water
