@@ -1724,6 +1724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseScreenTime: 5
+  transitionType: 2
 --- !u!1 &1053529887
 GameObject:
   m_ObjectHideFlags: 0
@@ -12409,10 +12410,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.048695654
-    width: 1
-    height: 0.90097827
+    x: 0.5593773
+    y: 0
+    width: 0.7434227
+    height: 0.66956526
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
