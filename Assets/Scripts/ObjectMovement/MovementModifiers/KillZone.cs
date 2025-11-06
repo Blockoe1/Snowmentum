@@ -13,10 +13,20 @@ namespace Snowmentum
 {
     public class KillZone : MonoBehaviour, IMovementModifier
     {
-        [SerializeField] private float killZone;
-        [SerializeField] private bool checkNegative = true;
-        [SerializeField] private bool checkPositive = true;
+        [SerializeField] private KillZoneDimension x;
+        [SerializeField] private KillZoneDimension y;
         [SerializeField] private UnityEvent OnEnterKillzone;
+
+        #region Nested
+        [System.Serializable]
+        private struct KillZoneDimension
+        {
+            [SerializeField] internal float killZone;
+            [SerializeField] internal bool checkNegative;
+            [SerializeField] internal bool checkPositive;
+        }
+
+        #endregion
 
         /// <summary>
         /// If the object is beyond the kill zone, then mark it for destruction.
@@ -27,12 +37,24 @@ namespace Snowmentum
         public Vector2 MoveUpdate(Transform movedObject, Vector2 targetPos, Vector2 moveVector)
         {
             // Check for exceeding the positive and negative kill zones separately.
-            if ((checkPositive && targetPos.x > killZone) || (checkNegative && targetPos.x < -killZone))
+            if (CheckOutOfBounds(targetPos.x, x) || CheckOutOfBounds(targetPos.y, y))
             {
+                Debug.Log("Hit kill zone at position " + targetPos);
                 OnEnterKillzone?.Invoke();
                 //Destroy(movedObject.gameObject);
             }
             return targetPos;
+        }
+
+        /// <summary>
+        /// Checks if this object has exceeded a kill zone.
+        /// </summary>
+        /// <param name="targetPos"></param>
+        /// <param name="dim"></param>
+        /// <returns></returns>
+        private static bool CheckOutOfBounds(float targetPos, KillZoneDimension dim)
+        {
+            return (dim.checkPositive && targetPos > dim.killZone) || (dim.checkNegative && targetPos < -dim.killZone);
         }
     }
 }

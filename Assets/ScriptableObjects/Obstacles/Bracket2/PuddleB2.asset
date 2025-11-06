@@ -16,7 +16,7 @@ MonoBehaviour:
   obstacleSprite: {fileID: 21300000, guid: 6b791ba0ee1f2274dacbd097e9ad1e78, type: 3}
   orderInLayer: -2
   baseScore: 1
-  destroySound: 
+  destroySound: Obstacle Destruction
   showOutline: 0
   tag: Water
   hasCollision: 0
@@ -26,4 +26,6 @@ MonoBehaviour:
   particleSpriteSheet: []
   particleNumber: 0
   emissionRadius: 0.0001
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
   baseSize: 4

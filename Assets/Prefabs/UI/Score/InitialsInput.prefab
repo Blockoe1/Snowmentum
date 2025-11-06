@@ -203,7 +203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7121508237372936662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -249,7 +249,25 @@ MonoBehaviour:
   selectionIndicator: {fileID: 3277741786420177978}
   inputThreshold: 6500
   inputDelay: 0.25
-  censoredInitials: []
+  censoredInitials:
+  - ASS
+  - FUK
+  - FUC
+  - DIK
+  - DIC
+  - NZI
+  - CUM
+  - ASZ
+  - AZZ
+  - AZS
+  - JAP
+  - NIG
+  - KKK
+  - FAG
+  - DYK
+  - CNT
+  - NYG
+  - DYC
   OnScroll:
     m_PersistentCalls:
       m_Calls:
