@@ -38,6 +38,7 @@ namespace Snowmentum
         [SerializeReference, ReadOnly] private ObjectScaler scaler;
         [SerializeReference, ReadOnly] private AudioRelay relay;
         [SerializeReference, ReadOnly] private ObstacleOutliner outliner;
+        [SerializeReference, ReadOnly] private Rigidbody2D rb;
         [SerializeReference] private ParticleSystem particles;
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace Snowmentum
             relay = GetComponent<AudioRelay>();
             outliner = GetComponent<ObstacleOutliner>();
             particles = GetComponentInChildren<ParticleSystem>();
+            rb = GetComponentInChildren<Rigidbody2D>();
         }
         #endregion
 
@@ -197,6 +199,19 @@ namespace Snowmentum
             {
                 Destroy(gameObject);
             }
+        }
+
+        /// <summary>
+        /// Snaps this obstacle to a given position to reset it.
+        /// </summary>
+        /// <remarks>
+        /// Need to set both rigidbody and transform position to instantly snap it back.
+        /// </remarks>
+        /// <param name="pos"></param>
+        public void SnapPosition(Vector2 pos)
+        {
+            rb.position = pos;
+            transform.position = pos;
         }
 
         #region Editor Only

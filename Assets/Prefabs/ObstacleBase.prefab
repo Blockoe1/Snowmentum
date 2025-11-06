@@ -5147,7 +5147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleData: {fileID: 0}
   autoUpdateObstacleData: 1
-  isGreybox: 0
   oldObsData: {fileID: 0}
   rend: {fileID: 8871070839524519023}
   obstacleCollider: {fileID: 7567752226576047106}
@@ -5155,6 +5154,7 @@ MonoBehaviour:
   scaler: {fileID: 8657666669540303953}
   relay: {fileID: 5866592910555483468}
   outliner: {fileID: 7416643200133424707}
+  rb: {fileID: 3304603884408545833}
   particles: {fileID: 185282512532276888}
 --- !u!114 &8657666669540303953
 MonoBehaviour:
