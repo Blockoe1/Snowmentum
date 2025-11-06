@@ -32,6 +32,6 @@ MonoBehaviour:
   - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   particleNumber: 50
   emissionRadius: 0.5
-  isGreyboxed: 0
+  isGreyboxed: 1
   spriteSize: {x: 1, y: 1}
   baseSize: 4
