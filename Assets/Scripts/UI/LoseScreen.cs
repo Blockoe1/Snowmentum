@@ -15,6 +15,8 @@ namespace Snowmentum.UI
 {
     public class LoseScreen : MonoBehaviour
     {
+        [SerializeField] private float loseScreenTime = 5;
+
         #region CONSTS
         private const string HIGH_SCORE_SCENE_NAME = "SaveHighScoreScene";
         private const string TITLE_SCREEN_NAME = "TitleScene";
@@ -40,16 +42,8 @@ namespace Snowmentum.UI
         IEnumerator ScreenDuration()
         {
             //Screen duration is 5 seconds
-            yield return new WaitForSeconds(5f);
-            ScoreStatic.CheckHighScore();
-            if (ScoreStatic.CheckHighScore())
-            {
-                TransitionToScene(HIGH_SCORE_SCENE_NAME);
-            }
-            else
-            {
-                TransitionToScene(TITLE_SCREEN_NAME);
-            }
+            yield return new WaitForSecondsRealtime(loseScreenTime);
+            EndGame();
         }
 
         /// <summary>
@@ -63,6 +57,22 @@ namespace Snowmentum.UI
         public void StartScreenDelay()
         {
             StartCoroutine(ScreenDuration());
+        }
+
+        /// <summary>
+        /// Ends the current game and takes the player to the main menu or high score menu based on their score.
+        /// </summary>
+        public void EndGame()
+        {
+            ScoreStatic.CheckHighScore();
+            if (ScoreStatic.CheckHighScore())
+            {
+                TransitionToScene(HIGH_SCORE_SCENE_NAME);
+            }
+            else
+            {
+                TransitionToScene(TITLE_SCREEN_NAME);
+            }
         }
     }
 }
