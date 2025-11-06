@@ -15,6 +15,8 @@ namespace Snowmentum.UI
 {
     public class LoseScreen : MonoBehaviour
     {
+        [SerializeField] private float loseScreenTime = 5;
+
         #region CONSTS
         private const string HIGH_SCORE_SCENE_NAME = "SaveHighScoreScene";
         private const string TITLE_SCREEN_NAME = "TitleScene";
@@ -40,7 +42,8 @@ namespace Snowmentum.UI
         IEnumerator ScreenDuration()
         {
             //Screen duration is 5 seconds
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(loseScreenTime);
+            EndGame();
         }
 
         /// <summary>

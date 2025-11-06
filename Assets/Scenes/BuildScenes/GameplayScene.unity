@@ -423,7 +423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5402175773571470017, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5402175773571470017, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1796,6 +1796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dae0e2a92b40246a6487f1c2fdff57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseScreenTime: 5
 --- !u!1 &1053529887
 GameObject:
   m_ObjectHideFlags: 0
@@ -12487,9 +12488,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.048695654
+    y: 0
     width: 1
-    height: 0.90097827
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -18658,7 +18659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5402175773571470017, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 5402175773571470017, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
