@@ -113,7 +113,7 @@ namespace Snowmentum
         private IEnumerator FadeImageTo(Image img, int targetAlpha)
         {
             float step = Mathf.Abs((targetAlpha - img.color.a) / fadeTime * Time.unscaledDeltaTime);
-            Debug.Log(step);
+            //Debug.Log(step);
 
             while (img.color.a != targetAlpha)
             {
