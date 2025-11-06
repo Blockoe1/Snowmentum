@@ -15,7 +15,7 @@ MonoBehaviour:
   obstacleSize: 2
   obstacleSprite: {fileID: 21300000, guid: 7ec80bbd1f4a7814496714e2dc76527f, type: 3}
   orderInLayer: 0
-  baseScore: 5
+  baseScore: 1
   destroySound: Obstacle Destruction
   showOutline: 1
   tag: Untagged
