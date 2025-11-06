@@ -42,7 +42,7 @@ namespace Snowmentum.UI
         IEnumerator ScreenDuration()
         {
             //Screen duration is 5 seconds
-            yield return new WaitForSeconds(loseScreenTime);
+            yield return new WaitForSecondsRealtime(loseScreenTime);
             EndGame();
         }
 

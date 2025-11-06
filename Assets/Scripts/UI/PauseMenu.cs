@@ -6,6 +6,7 @@
 //
 // Brief Description : Controls the pause menu on the PC build.
 *****************************************************************************/
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -31,6 +32,8 @@ namespace Snowmentum
         private void OnDestroy()
         {
             pauseAction.performed -= PauseAction_performed;
+            // Unpauses the game when the pause menu is destroyed.
+            TogglePause(false);
         }
 
         /// <summary>
