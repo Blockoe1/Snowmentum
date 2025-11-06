@@ -29,7 +29,7 @@ namespace Snowmentum
         {
             if (instance != null && instance != this)
             {
-                Destroy(instance);
+                Destroy(gameObject);
                 Debug.Log("Destroyed duplicate TransitionManager.");
             }
             else
@@ -92,7 +92,7 @@ namespace Snowmentum
         /// <returns></returns>
         private IEnumerator FadeImageTo(int targetAlpha)
         {
-            float step = (targetAlpha - transitionImage.color.a) / fadeTime;
+            float step = Mathf.Abs((targetAlpha - transitionImage.color.a) / fadeTime * Time.unscaledDeltaTime);
             Debug.Log(step);
 
             while (transitionImage.color.a != targetAlpha)
