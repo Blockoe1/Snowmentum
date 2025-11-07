@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PuddleB4
   m_EditorClassIdentifier: 
   obstacleSize: 65
-  obstacleSprite: {fileID: 21300000, guid: 6b791ba0ee1f2274dacbd097e9ad1e78, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 4a25ac008d65bee4c832116ef4bd61c7, type: 3}
   orderInLayer: -2
   baseScore: 1
   destroySound: 
@@ -26,4 +26,6 @@ MonoBehaviour:
   particleSpriteSheet: []
   particleNumber: 0
   emissionRadius: 0.0001
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
   baseSize: 64
