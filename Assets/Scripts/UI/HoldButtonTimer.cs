@@ -20,23 +20,28 @@ public class HoldButtonTimer : MonoBehaviour, IPointerEnterHandler, IPointerExit
     private float currentHoldTime = 0f;
     private bool isPointerOver = false;
 
+    /// <summary>
+    /// Subscribe the CleanUp function to the button automatically
+    /// </summary>
+    private void Awake()
+    {
+        usedButton.onClick.AddListener(CleanUp);
+    }
+    private void OnDestroy()
+    {
+        usedButton.onClick.RemoveListener(CleanUp);
+    }
 
     void Update()
     {
         if (isPointerOver)
         {
-            currentHoldTime += Time.deltaTime;
+            currentHoldTime += Time.unscaledDeltaTime;
             HoldProgress.UpdateProgressFill(currentHoldTime, requiredHoldTime);
             if (currentHoldTime >= requiredHoldTime)
             {
                 //activates the on click event of the button, which will be different depending on what each button does
                     usedButton.onClick.Invoke();
-                // Remove the indicator.
-                OnPointerExit(null);
-                
-                // Reset the timer to prevent repeated activation and things breaking
-                currentHoldTime = 0f;
-                isPointerOver = false;
             }
         }
     }
@@ -54,5 +59,18 @@ public class HoldButtonTimer : MonoBehaviour, IPointerEnterHandler, IPointerExit
         isPointerOver = false;
         HoldProgress.SetProgressVisibility(false);
         currentHoldTime = 0f; 
+    }
+
+    /// <summary>
+    /// Separate function called by the button's event so that it gets called when the button is pressed normally as well.
+    /// </summary>
+    public void CleanUp()
+    {
+        // Remove the indicator.
+        OnPointerExit(null);
+
+        // Reset the timer to prevent repeated activation and things breaking
+        currentHoldTime = 0f;
+        isPointerOver = false;
     }
 }

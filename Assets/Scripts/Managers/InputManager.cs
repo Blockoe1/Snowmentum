@@ -43,11 +43,14 @@ namespace Snowmentum
         /// </remarks>
         private void Update()
         {
-            // Use Time.deltaTime here to average the delta into pixels / second.
-            // Without this we get framerate dependence
-            mouseDelta = mouseDeltaAction.ReadValue<Vector2>() / Time.deltaTime;
-            OnDeltaUpdate?.Invoke(mouseDelta);
+            // Only allow mouse updates if the game is not paused.
+            if ( Time.deltaTime > 0)
+            {
+                // Use Time.deltaTime here to average the delta into pixels / second.
+                // Without this we get framerate dependence
+                mouseDelta = mouseDeltaAction.ReadValue<Vector2>() / Time.deltaTime;
+                OnDeltaUpdate?.Invoke(mouseDelta);
+            }
         }
-
     }
 }

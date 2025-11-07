@@ -22,6 +22,7 @@ namespace Snowmentum
         #endregion
 
         [SerializeField] private Image fillImage;
+        [SerializeField] private bool useWorldSpace;
         [Header("Events")]
         [SerializeField] private UnityEvent OnBecomeVisible;
         [SerializeField] private UnityEvent OnBecomeInvisible;
@@ -86,7 +87,12 @@ namespace Snowmentum
         {
             while (isVisible)
             {
-                transform.position = mousePosAction.ReadValue<Vector2>();
+                Vector2 pos = mousePosAction.ReadValue<Vector2>();
+                if (useWorldSpace)
+                {
+                    pos = Camera.main.ScreenToWorldPoint(pos);
+                }
+                transform.position = pos;
                 yield return null;
             }
         }

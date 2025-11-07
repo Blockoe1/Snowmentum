@@ -6,15 +6,17 @@
 //
 // Brief Description : Controls button functions for the lose screen.
 *****************************************************************************/
+using Snowmentum.Score;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Snowmentum.Score;
 
 namespace Snowmentum.UI
 {
     public class LoseScreen : MonoBehaviour
     {
+        [SerializeField] private float loseScreenTime = 5;
+        [SerializeField] private TransitionType transitionType;
+
         #region CONSTS
         private const string HIGH_SCORE_SCENE_NAME = "SaveHighScoreScene";
         private const string TITLE_SCREEN_NAME = "TitleScene";
@@ -40,7 +42,28 @@ namespace Snowmentum.UI
         IEnumerator ScreenDuration()
         {
             //Screen duration is 5 seconds
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSecondsRealtime(loseScreenTime);
+            EndGame();
+        }
+
+        /// <summary>
+        /// Sends player to HighScoreScene after 5 seconds
+        /// </summary>
+        public void TransitionToScene(string targetScene)
+        {
+            TransitionManager.LoadScene(targetScene, transitionType);
+        }
+
+        public void StartScreenDelay()
+        {
+            StartCoroutine(ScreenDuration());
+        }
+
+        /// <summary>
+        /// Ends the current game and takes the player to the main menu or high score menu based on their score.
+        /// </summary>
+        public void EndGame()
+        {
             ScoreStatic.CheckHighScore();
             if (ScoreStatic.CheckHighScore())
             {
@@ -50,19 +73,6 @@ namespace Snowmentum.UI
             {
                 TransitionToScene(TITLE_SCREEN_NAME);
             }
-        }
-
-        /// <summary>
-        /// Sends player to HighScoreScene after 5 seconds
-        /// </summary>
-        public void TransitionToScene(string targetScene)
-        {
-            SceneManager.LoadScene(targetScene);
-        }
-
-        public void StartScreenDelay()
-        {
-            StartCoroutine(ScreenDuration());
         }
     }
 }
