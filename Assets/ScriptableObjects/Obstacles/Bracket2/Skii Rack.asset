@@ -33,5 +33,5 @@ MonoBehaviour:
   particleNumber: 50
   emissionRadius: 0.5
   isGreyboxed: 1
-  spriteSize: {x: 1, y: 1}
+  spriteSize: {x: 2.1, y: 4.99}
   baseSize: 4

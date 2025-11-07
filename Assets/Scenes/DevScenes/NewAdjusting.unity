@@ -1542,6 +1542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseScreenTime: 5
+  transitionType: 0
 --- !u!1 &1053529887
 GameObject:
   m_ObjectHideFlags: 0
