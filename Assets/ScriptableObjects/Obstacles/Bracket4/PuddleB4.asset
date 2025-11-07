@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PuddleB4
   m_EditorClassIdentifier: 
   obstacleSize: 65
-  obstacleSprite: {fileID: 7482667652216324306, guid: 657f7761f7b1d9a49a2e092b9a0bb89f, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 4a25ac008d65bee4c832116ef4bd61c7, type: 3}
   orderInLayer: -2
   baseScore: 1
   destroySound: 

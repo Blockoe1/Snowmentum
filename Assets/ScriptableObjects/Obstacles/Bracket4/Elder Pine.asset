@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Elder Pine
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 128
-  obstacleSprite: {fileID: 7482667652216324306, guid: 657f7761f7b1d9a49a2e092b9a0bb89f, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 098df94bbad58884eac4babc8b25075c, type: 3}
   orderInLayer: 0
   baseScore: 26
   destroySound: Obstacle Destruction

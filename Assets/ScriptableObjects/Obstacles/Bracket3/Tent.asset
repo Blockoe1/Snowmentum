@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tent
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 36
-  obstacleSprite: {fileID: 7482667652216324306, guid: 657f7761f7b1d9a49a2e092b9a0bb89f, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 292a2cb59b22d4342afdbff746d41faf, type: 3}
   orderInLayer: 0
   baseScore: 5
   destroySound: 
