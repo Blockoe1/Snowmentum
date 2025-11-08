@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2_Stick V2
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 5
-  obstacleSprite: {fileID: 21300000, guid: 0dd2e083cb1342544a0a84b97c384c27, type: 3}
+  obstacleSprite: {fileID: 7482667652216324306, guid: 657f7761f7b1d9a49a2e092b9a0bb89f, type: 3}
   orderInLayer: 0
   baseScore: 4
   destroySound: Obstacle Destruction
@@ -21,8 +21,8 @@ MonoBehaviour:
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 1
-  offset: {x: -0.2, y: -0.05}
-  size: {x: 1.8, y: 0.18}
+  offset: {x: 0.0026750562, y: -0.0040152976}
+  size: {x: 1.258401, y: 0.16296938}
   particleSpriteSheet:
   - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
@@ -32,6 +32,6 @@ MonoBehaviour:
   - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   particleNumber: 15
   emissionRadius: 0.06
-  isGreyboxed: 0
-  spriteSize: {x: 1, y: 1}
+  isGreyboxed: 1
+  spriteSize: {x: 1.3, y: 0.2}
   baseSize: 4
