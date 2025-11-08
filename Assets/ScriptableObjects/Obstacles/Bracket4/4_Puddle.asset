@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4_Puddle
   m_EditorClassIdentifier: 
   obstacleSize: 65
-  obstacleSprite: {fileID: 21300000, guid: 4a25ac008d65bee4c832116ef4bd61c7, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 6b791ba0ee1f2274dacbd097e9ad1e78, type: 3}
   orderInLayer: -2
   baseScore: 1
   destroySound: 
@@ -23,7 +23,13 @@ MonoBehaviour:
   capsuleDirection: 0
   offset: {x: -0.104527, y: -0.7702482}
   size: {x: 2.147067, y: 2.147067}
-  particleSpriteSheet: []
+  particleSpriteSheet:
+  - {fileID: -1469363639, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: -1324305762, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: 381464116, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: -871366457, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: 1775187876, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: -144044658, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
   particleNumber: 0
   emissionRadius: 0.0001
   isGreyboxed: 0
