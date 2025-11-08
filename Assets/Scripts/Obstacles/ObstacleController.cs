@@ -395,6 +395,7 @@ namespace Snowmentum
 
                 #region GameObject
                 //gameObject.tag = obstacleData.Tag;
+                gameObject.name = ProcessAssignment(gameObject.name, obstacleData.name);
                 gameObject.tag = ProcessAssignment(gameObject.tag, obstacleData.Tag);
                 // Each component needs to be set dirty individually for changes to be properly saved.
                 if (isDirty)

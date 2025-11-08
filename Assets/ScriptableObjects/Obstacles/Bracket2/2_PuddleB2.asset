@@ -23,7 +23,13 @@ MonoBehaviour:
   capsuleDirection: 0
   offset: {x: -0.104527, y: -0.7702482}
   size: {x: 2.147067, y: 2.147067}
-  particleSpriteSheet: []
+  particleSpriteSheet:
+  - {fileID: -1469363639, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: -1324305762, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: 381464116, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: -871366457, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: 1775187876, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: -144044658, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
   particleNumber: 0
   emissionRadius: 0.0001
   isGreyboxed: 0
