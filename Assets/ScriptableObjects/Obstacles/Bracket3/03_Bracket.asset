@@ -40,6 +40,6 @@ MonoBehaviour:
   - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
     baseWeight: 10
     addedWeight: 1
-  - obstacle: {fileID: 11400000, guid: c911b56a100e52441b61e85680a55c11, type: 2}
+  - obstacle: {fileID: 11400000, guid: 1ff7c471d5be9424abf2e35a0597d642, type: 2}
     baseWeight: 10
     addedWeight: 1
