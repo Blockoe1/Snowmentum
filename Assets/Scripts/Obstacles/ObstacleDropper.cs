@@ -65,6 +65,7 @@ namespace Snowmentum
         {
             if (newSize < oldSize)
             {
+                Debug.Log("Bracket fell from " + oldSize + " to " + newSize);
                 IsFalling = true;
             }    
         }
