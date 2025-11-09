@@ -7,9 +7,8 @@
 // Brief Description : As of script creation this script just handles player movement. 
 // We can expand this script to handle more parts of the snowball if needed though. 
 *****************************************************************************/
-using UnityEngine;
-using UnityEngine.InputSystem;
 using Snowmentum.Size;
+using UnityEngine;
 
 
 namespace Snowmentum
