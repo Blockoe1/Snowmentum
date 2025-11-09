@@ -13,6 +13,7 @@ namespace Snowmentum.Score
     public class ScoreIncrementer : MonoBehaviour
     {
         [SerializeField] private int baseScoreIncrease;
+        [SerializeField] private Animation gainScoreAnimation;
 
         #region Properties
         public int BaseScore
@@ -29,6 +30,7 @@ namespace Snowmentum.Score
         public void AddScore(int toAdd)
         {
             ScoreStatic.Score += toAdd;
+
         }
 
         public void AddBaseScore()
