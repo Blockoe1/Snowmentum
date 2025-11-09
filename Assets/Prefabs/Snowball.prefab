@@ -188,7 +188,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 2.09
+  m_LinearDamping: 2.4
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 805f54d98b0a27b4b8d396e404acd11d, type: 2}
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f23b975e209500489c5e2ab1d04cd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSensitivity: 0.075
+  baseMovementSensitivity: 0.1
   scaleOperation: 2
   movementCurveSteepness: 1.2
   scalerAsymptote: 0.0005
