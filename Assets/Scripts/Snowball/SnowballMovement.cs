@@ -93,7 +93,7 @@ namespace Snowmentum
         private void ApplyMovementForce()
         {
             //Debug.Log(mouseDelta);
-            float deltaScaler = 1f;
+            float deltaScaler = baseMovementSensitivity;
             switch (scaleOperation)
             {
                 case ScaleOperation.Division:
