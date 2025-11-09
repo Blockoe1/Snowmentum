@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
+  m_Name: 2_Rocks3
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
+  obstacleSize: 6
+  obstacleSprite: {fileID: -1303276395, guid: 424e201fd6688ee4fb1d9b82f0d78b33, type: 3}
+  orderInLayer: 0
+  baseScore: 4
+  destroySound: Obstacle Destruction
+  showOutline: 1
+  tag: Untagged
+  hasCollision: 1
+  capsuleDirection: 1
+  offset: {x: -0.04, y: -0.28}
+  size: {x: 0.7, y: 0.35}
+  particleSpriteSheet:
+  - {fileID: -669536997, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+  - {fileID: -1630238224, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+  - {fileID: 1458914380, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+  - {fileID: -595689659, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+  - {fileID: 1775187876, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: -144044658, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  particleNumber: 15
+  emissionRadius: 0.25
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
+  baseSize: 4

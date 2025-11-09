@@ -4976,10 +4976,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2290287356925112515}
+  - component: {fileID: 2002559263234210752}
   - component: {fileID: 8871070839524519023}
   - component: {fileID: 3304603884408545833}
   - component: {fileID: 7567752226576047106}
-  - component: {fileID: 2002559263234210752}
   - component: {fileID: 8657666669540303953}
   - component: {fileID: 2339446773185272735}
   - component: {fileID: 3549831470322472451}
@@ -5011,6 +5011,29 @@ Transform:
   - {fileID: 3290832091738845402}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2002559263234210752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150288299065344882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace173693066bbd4db7544e62a5c022a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleData: {fileID: 0}
+  autoUpdateObstacleData: 1
+  oldObsData: {fileID: 0}
+  rend: {fileID: 8871070839524519023}
+  obstacleCollider: {fileID: 7567752226576047106}
+  score: {fileID: 7647677357995392279}
+  scaler: {fileID: 8657666669540303953}
+  relay: {fileID: 5866592910555483468}
+  outliner: {fileID: 7416643200133424707}
+  rb: {fileID: 3304603884408545833}
+  particles: {fileID: 185282512532276888}
 --- !u!212 &8871070839524519023
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5133,29 +5156,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &2002559263234210752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5150288299065344882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ace173693066bbd4db7544e62a5c022a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstacleData: {fileID: 0}
-  autoUpdateObstacleData: 1
-  oldObsData: {fileID: 0}
-  rend: {fileID: 8871070839524519023}
-  obstacleCollider: {fileID: 7567752226576047106}
-  score: {fileID: 7647677357995392279}
-  scaler: {fileID: 8657666669540303953}
-  relay: {fileID: 5866592910555483468}
-  outliner: {fileID: 7416643200133424707}
-  rb: {fileID: 3304603884408545833}
-  particles: {fileID: 185282512532276888}
 --- !u!114 &8657666669540303953
 MonoBehaviour:
   m_ObjectHideFlags: 0
