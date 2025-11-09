@@ -21,8 +21,8 @@ MonoBehaviour:
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 1
-  offset: {x: 0.008531214, y: 0.0011908999}
-  size: {x: 2.1970625, y: 1.8332531}
+  offset: {x: -0.0107558975, y: 0.00297779}
+  size: {x: 1.608124, y: 1.3793994}
   particleSpriteSheet:
   - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
@@ -33,5 +33,5 @@ MonoBehaviour:
   particleNumber: 50
   emissionRadius: 0.5
   isGreyboxed: 1
-  spriteSize: {x: 2.37, y: 2}
+  spriteSize: {x: 1.7, y: 1.5}
   baseSize: 4
