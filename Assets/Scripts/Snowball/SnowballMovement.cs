@@ -17,8 +17,15 @@ namespace Snowmentum
     {
         //We can change this during gameplay in order to make it harder to move the snowball as it grows in size
         // And also adjust it as needed to make it feel responsive enough
-        [SerializeField] private float baseMovementSensitivity;
-        [SerializeField] private bool scaleWithSnowballSize;
+        [SerializeField, Tooltip("The base sensitivity of the snowball to player input.  If the scale operation is not" +
+            " set to none, this is the movement sensitivity used when the snowball is at size 1.")] 
+        private float baseMovementSensitivity;
+        [SerializeField] private ScaleOperation scaleOperation;
+        [SerializeField, Tooltip("Controls how quickly the player's ability to move the snowball decays as it gets " +
+            "bigger.  Larger numbers means it become harder to move the snowball quicker.")] 
+        private float movementCurveSteepness;
+        [SerializeField, Tooltip("The delta scaler value that the snowball approaches as it continues to get bigger.")] 
+        private float scalerAsymptote;
         //[SerializeField, Tooltip("The maximum mouseDelta that will be read in one frame.  Done to prevent massive" +
         //    " forces from being applied at the start of the game when delta is tracked across a long laggy frame.")]
         //private int maxDelta = 100;
@@ -41,6 +48,16 @@ namespace Snowmentum
         {
             snowballRigidbody = GetComponent<Rigidbody2D>();
         }
+        #endregion
+
+        #region Nested
+        private enum ScaleOperation
+        {
+            None,
+            Division,
+            Exponential
+        }
+
         #endregion
 
         private void Awake()
@@ -76,11 +93,35 @@ namespace Snowmentum
         private void ApplyMovementForce()
         {
             //Debug.Log(mouseDelta);
-            float sizeScale = scaleWithSnowballSize ? SnowballSize.Value : 1f;
-            snowballRigidbody.AddForce((baseMovementSensitivity * InputManager.MouseDelta.y / sizeScale) * Vector2.up);
+            float deltaScaler = 1f;
+            switch (scaleOperation)
+            {
+                case ScaleOperation.Division:
+                    deltaScaler = baseMovementSensitivity / SnowballSize.Value;
+                    break;
+                case ScaleOperation.Exponential:
+                    deltaScaler = MovementScalerCurve(SnowballSize.Value);
+                    break;
+            }
+
+
+            snowballRigidbody.AddForce((InputManager.MouseDelta.y * deltaScaler) * Vector2.up);
 
             //Old movement that used transform.translate. Can probably remove but leaving it for now just in case, I guess
             //transform.Translate(Vector3.up * mouseDelta.y * movementSensitivity);
+        }
+
+        /// <summary>
+        /// Calculates the scaler used for the input mouse delta based on the snowball's size using the formula:
+        /// curveSteepness^(-snowballSize + logbase[curveSteepness](baseSensitivity - asymptote) + 1) + asymptote
+        /// </summary>
+        /// 
+        /// <param name="snowballSize"></param>
+        private float MovementScalerCurve(float snowballSize)
+        {
+            return Mathf.Pow(movementCurveSteepness, 
+                -snowballSize + Mathf.Log(baseMovementSensitivity - scalerAsymptote, movementCurveSteepness) + 1) + 
+                scalerAsymptote;
         }
 
         /// <summary>
