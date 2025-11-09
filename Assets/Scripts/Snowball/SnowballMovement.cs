@@ -70,6 +70,8 @@ namespace Snowmentum
             //this should clamp the snowball and prevent it from moving off the screen, but currently the snowball is just teleporting between the two positions
             //transform.position = new Vector3(Mathf.Clamp(transform.position.y, minY, maxY), transform.position.x);
             ClampY();
+
+            Debug.Log(snowballRigidbody.linearVelocity);
         }
 
         //this function moves the snowball up and down in accordance with the movement of the mouse

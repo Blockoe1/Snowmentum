@@ -374,9 +374,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f23b975e209500489c5e2ab1d04cd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSensitivity: 0.075
+  baseMovementSensitivity: 0.125
   scaleWithSnowballSize: 1
-  maxSpeed: 35
+  maxSpeed: 15
   minY: -3.5
   maxY: 1
   snowballRigidbody: {fileID: 3341841721575561879}
