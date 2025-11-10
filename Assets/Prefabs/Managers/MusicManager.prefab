@@ -64,7 +64,7 @@ MonoBehaviour:
     introTrack: {fileID: 0}
   - name: MainMenu
     mixerGroup: {fileID: 6511246275216553017, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 0.25
+    volume: 0.75
     pitch: 1
     loop: 1
     loopTrack: {fileID: 8300000, guid: ef7ba7e0cf0f7bc4c9cab95693dd7633, type: 3}
