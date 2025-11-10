@@ -51,6 +51,7 @@ namespace Snowmentum
         private float emissionRadius;
 
         [Header("Greyboxing Only")]
+        [SerializeField] private bool isGreyboxed;
         [SerializeField] private Vector2 spriteSize = Vector2.one;
 
         [SerializeField, HideInInspector] protected float baseSize;
@@ -147,6 +148,11 @@ namespace Snowmentum
         {
             get { return spriteSize; }
             set { spriteSize = value; }
+        }
+        public bool IsGreyboxed
+        {
+            get { return isGreyboxed; }
+            set { isGreyboxed = value; }
         }
         #endregion
         #endregion
