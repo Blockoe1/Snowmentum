@@ -90,6 +90,7 @@ namespace Snowmentum
                 Vector2 pos = mousePosAction.ReadValue<Vector2>();
                 if (useWorldSpace)
                 {
+                    //Debug.Log(pos);
                     pos = Camera.main.ScreenToWorldPoint(pos);
                 }
                 transform.position = pos;
