@@ -30,10 +30,10 @@ namespace Snowmentum.Score
         public void AddScore(int toAdd)
         {
             ScoreStatic.Score += toAdd;
-            if (gainScoreAnimation != null)
-            {
-                gainScoreAnimation.PlayAnimation(toAdd);
-            }
+            //if (gainScoreAnimation != null)
+            //{
+            //    gainScoreAnimation.PlayAnimation(toAdd);
+            //}
 
         }
 
