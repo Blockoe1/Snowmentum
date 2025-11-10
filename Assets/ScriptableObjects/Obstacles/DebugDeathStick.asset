@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: DebugDeathStick
   m_EditorClassIdentifier: 
-  obstacleSize: 16
+  obstacleSize: 8
   obstacleSprite: {fileID: 21300000, guid: f3ed3c9c67930d54ebee0eadd1d8b68d, type: 3}
   orderInLayer: 0
   baseScore: 0
@@ -32,4 +32,6 @@ MonoBehaviour:
   - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   particleNumber: 50
   emissionRadius: 0.25
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
   baseSize: 4

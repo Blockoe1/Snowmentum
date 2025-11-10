@@ -16,7 +16,7 @@ namespace Snowmentum.Size
     {
         #region CONSTS
         // The maximum size held by bracket one.
-        public const float BRACKET_SCALE = 4;
+        public const float BRACKET_SCALE = 2; //changed to test parallax sprite scaling, originally 4
         #endregion
 
         private static int bracket;
