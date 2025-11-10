@@ -313,5 +313,21 @@ namespace Snowmentum
             Destroy(gameObject);
             //Destroy(minigameAnimator.gameObject);
         }
+
+        #region Debug
+        public void SetPQSByString(string str)
+        {
+            float.TryParse(str, out packingQualityScaler);
+        }
+        public void SetTSSByString(string str)
+        {
+            float.TryParse(str, out throwStrengthScaler);
+        }
+
+        public void SetSTByString(string str)
+        {
+            float.TryParse(str, out throwSampleTime);
+        }
+        #endregion
     }
 }

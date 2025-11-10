@@ -15,5 +15,5 @@ EditorBuildSettings:
     path: Assets/Scenes/BuildScenes/SaveHighScoreScene.unity
     guid: 8d1bc21c2d3e642409c207b7b58bbd31
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: f9d34323adfe5b1459493a4599fcb405, type: 3}
   m_UseUCBPForAssetBundles: 0

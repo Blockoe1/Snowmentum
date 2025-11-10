@@ -8,6 +8,7 @@
 *****************************************************************************/
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 namespace Snowmentum.Score
 {
@@ -40,7 +41,7 @@ namespace Snowmentum.Score
         /// Updates the score text whenever the player's score changes.
         /// </summary>
         /// <param name="score"></param>
-        private void UpdateScoreText(int score)
+        private void UpdateScoreText(int score, int oldScore)
         {
             textComponent.text = ScoreStatic.FormatScore(score);
         }
