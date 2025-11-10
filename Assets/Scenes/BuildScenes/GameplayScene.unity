@@ -326,10 +326,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7165968061657174781, guid: aec0fb9104bef484bb1ffa3f91888000, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aec0fb9104bef484bb1ffa3f91888000, type: 3}
 --- !u!4 &25846268 stripped
 Transform:
@@ -708,7 +705,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236938000}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -1250,10 +1247,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7165968061657174781, guid: aec0fb9104bef484bb1ffa3f91888000, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aec0fb9104bef484bb1ffa3f91888000, type: 3}
 --- !u!4 &504710885 stripped
 Transform:
@@ -12434,10 +12428,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.049469966
-    width: 1
-    height: 0.90039754
+    x: 0.5757238
+    y: 0
+    width: 0.75228906
+    height: 0.67736185
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
