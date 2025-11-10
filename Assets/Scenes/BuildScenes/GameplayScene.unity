@@ -705,7 +705,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236938000}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -12428,10 +12428,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.5772627
+    x: 0.5757238
     y: 0
-    width: 0.7495708
-    height: 0.6749117
+    width: 0.75228906
+    height: 0.67736185
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
