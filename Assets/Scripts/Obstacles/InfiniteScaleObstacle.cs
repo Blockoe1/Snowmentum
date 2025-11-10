@@ -25,6 +25,8 @@ namespace Snowmentum
         private void OnDisable()
         {
             SizeBracket.OnBracketChanged -= RandomizeSize;
+            // Reset back to 1 after a play session.
+            obstacleSize = 1;
         }
 
         /// <summary>

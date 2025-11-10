@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 4_Shed
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 52
+  obstacleSize: 7.25
   obstacleSprite: {fileID: 21300000, guid: 2fdbc183c6697354783ec1070fc6594f, type: 3}
   orderInLayer: 0
   baseScore: 16
@@ -34,4 +34,4 @@ MonoBehaviour:
   emissionRadius: 0.5
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
-  baseSize: 16
+  baseSize: 4

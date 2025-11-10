@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 4_Elder Pine
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 128
+  obstacleSize: 11
   obstacleSprite: {fileID: 21300000, guid: 098df94bbad58884eac4babc8b25075c, type: 3}
   orderInLayer: 0
   baseScore: 26
@@ -34,4 +34,4 @@ MonoBehaviour:
   emissionRadius: 0.25
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
-  baseSize: 64
+  baseSize: 8
