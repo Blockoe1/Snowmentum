@@ -184,7 +184,7 @@ namespace Snowmentum
         /// <returns></returns>
         private bool CheckValidFirst(GroupScrolledObject obj, Vector3 pos)
         {
-            return GetEdge(obj, Vector3.right, pos).x < xLimit && GetEdge(obj, Vector2.left, pos).x > xLimit;
+            return GetEdge(obj, Vector3.right, pos).x > xLimit && GetEdge(obj, Vector2.left, pos).x < xLimit;
         }
 
         /// <summary>
