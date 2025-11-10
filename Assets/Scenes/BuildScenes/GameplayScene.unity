@@ -1723,7 +1723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dae0e2a92b40246a6487f1c2fdff57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loseScreenTime: 5
+  loseScreenTime: 4
   transitionType: 2
 --- !u!1 &1053529887
 GameObject:
@@ -12410,10 +12410,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.5593773
+    x: 0.5757238
     y: 0
-    width: 0.7434227
-    height: 0.66956526
+    width: 0.75228906
+    height: 0.67736185
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

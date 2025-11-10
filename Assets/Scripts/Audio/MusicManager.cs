@@ -167,24 +167,35 @@ namespace Snowmentum
         /// Sets the current main track and transitions to it.
         /// </summary>
         /// <param name="trackName"></param>
-        private void SetTrack(string trackName)
+        private void SetTrack(string trackName, bool hasFade)
         {
             MusicTrack newTrack = Array.Find(musicTracks, itme => itme.Name == trackName);
             if (newTrack != null && newTrack != currentTrack)
             {
-                // Transition to the new track.
+
                 if (currentTrack != null)
                 {
-                    StartCoroutine(FadeTrack(currentTrack, transitionTime, 0, ResetTrack));
+                    // Transition to the new track.
+                    if (hasFade)
+                    {
+                        StartCoroutine(FadeTrack(currentTrack, transitionTime, 0, ResetTrack));
+                    }
+                    else
+                    {
+                        ResetTrack(currentTrack);
+                    }
                 }
 
                 newTrack.Play();
                 // Reset the track's source volume so it fades in.
-                newTrack.SetSourceVolume(0);
-                // Fade the track to it's new volume.
-                StartCoroutine(FadeTrack(newTrack, transitionTime, newTrack.Volume));
+                if (hasFade)
+                {
+                    newTrack.SetSourceVolume(0);
+                    // Fade the track to it's new volume.
+                    StartCoroutine(FadeTrack(newTrack, transitionTime, newTrack.Volume));
+                }
 
-                currentTrack = newTrack;
+                    currentTrack = newTrack;
             }
         }
 

@@ -15,7 +15,7 @@ namespace Snowmentum
     {
         [SerializeField] private string defaultTrackName;
 
-        public static Action<string> RelaySetTrackEvent;
+        public static Action<string, bool> RelaySetTrackEvent;
         public static Action<string> RelayPlayOverrideTrackEvent;
         public static Action RelayStopOverrideTrackEvent;
 
@@ -28,7 +28,11 @@ namespace Snowmentum
         }
         public void SetTrack(string trackName)
         {
-            RelaySetTrackEvent?.Invoke(trackName);
+            RelaySetTrackEvent?.Invoke(trackName, true);
+        }
+        public void SetTrackImmediate(string trackName)
+        {
+            RelaySetTrackEvent?.Invoke(trackName, false);
         }
 
         /// <summary>
