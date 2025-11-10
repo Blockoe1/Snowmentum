@@ -71,7 +71,7 @@ namespace Snowmentum
             //transform.position = new Vector3(Mathf.Clamp(transform.position.y, minY, maxY), transform.position.x);
             ClampY();
 
-            Debug.Log(snowballRigidbody.linearVelocity);
+            //Debug.Log(snowballRigidbody.linearVelocity);
         }
 
         //this function moves the snowball up and down in accordance with the movement of the mouse
