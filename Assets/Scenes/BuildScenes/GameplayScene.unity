@@ -7124,7 +7124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Score.ScoreDisplayAnimator
   targetPos: {x: 0, y: -40}
   targetColor: {r: 0.65723264, g: 1, b: 0.996493, a: 1}
-  targetProportion: 0.1
+  targetProportion: 0.05
   animTime: 0.25
   textComponent: {fileID: 1211491851}
 --- !u!114 &1221756940 stripped
