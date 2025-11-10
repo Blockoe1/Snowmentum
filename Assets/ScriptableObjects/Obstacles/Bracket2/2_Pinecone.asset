@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 2_Pinecone
   m_EditorClassIdentifier: 
-  obstacleSize: 4
+  obstacleSize: 2
   obstacleSprite: {fileID: 21300000, guid: a31f4db35dce94543acbb2698f2ae096, type: 3}
   orderInLayer: 0
   baseScore: 2
@@ -32,4 +32,6 @@ MonoBehaviour:
   - {fileID: -144044658, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
   particleNumber: 30
   emissionRadius: 0.6
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
   baseSize: 1
