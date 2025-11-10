@@ -306,6 +306,8 @@ MonoBehaviour:
     curveSteepness: 20
     maxGain: 0.1
     scaleWithObstacleSize: 0
+    lives: 0
+    consumeOnHit: 0
     gainCurveSteepness: 8
     maxSizeGain: 0.15
   effectOnSpeed:

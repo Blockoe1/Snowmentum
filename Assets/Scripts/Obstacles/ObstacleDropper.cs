@@ -37,6 +37,7 @@ namespace Snowmentum
         private void OnDisable()
         {
             SizeBracket.OnBracketChanged -= CheckBracketChange;
+            isFalling = false;
         }
 
         /// <summary>
