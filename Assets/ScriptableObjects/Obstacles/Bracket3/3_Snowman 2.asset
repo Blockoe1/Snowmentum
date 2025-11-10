@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 3_Snowman 2
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 45
+  obstacleSize: 36
   obstacleSprite: {fileID: 7482667652216324306, guid: 657f7761f7b1d9a49a2e092b9a0bb89f, type: 3}
   orderInLayer: 0
   baseScore: 14
@@ -20,9 +20,9 @@ MonoBehaviour:
   showOutline: 1
   tag: Untagged
   hasCollision: 1
-  capsuleDirection: 1
-  offset: {x: 0.03, y: -1.15}
-  size: {x: 1.25, y: 0.75}
+  capsuleDirection: 0
+  offset: {x: 0.0009865761, y: 0.0016648769}
+  size: {x: 0.54448795, y: 1.2033119}
   particleSpriteSheet:
   - {fileID: -889968081, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
   - {fileID: -156959124, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
@@ -33,5 +33,5 @@ MonoBehaviour:
   particleNumber: 30
   emissionRadius: 0.5
   isGreyboxed: 1
-  spriteSize: {x: 1, y: 1}
+  spriteSize: {x: 0.9, y: 1.5}
   baseSize: 16

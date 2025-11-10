@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 4
-  increasePerSecond: 0.02
+  increasePerSecond: 0.022
   moveToTarget: 5
   useFixedUpdate: 1
   minSpeed: 1
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a764d599b321e46804eca9a349582b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitImmunity: 1
+  hitImmunity: 2
   flashDelay: 0.1
   effectOnSize:
     maxDamageProportion: 0.5
@@ -376,9 +376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f23b975e209500489c5e2ab1d04cd99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSensitivity: 0.075
+  baseMovementSensitivity: 0.125
   scaleWithSnowballSize: 1
-  maxSpeed: 35
+  maxSpeed: 15
   minY: -3.5
   maxY: 1
   snowballRigidbody: {fileID: 3341841721575561879}
