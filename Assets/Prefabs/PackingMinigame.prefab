@@ -52,7 +52,7 @@ MonoBehaviour:
   maxSpeedGain: 1.5
   throwDelay: 0.5
   minThrowForce: 10000
-  throwSampleTime: 0.25
+  throwSampleTime: 0.1
   throwStrengthScaler: 50500
   startingSpeedScaler: 15
   OnMinigameTransition:

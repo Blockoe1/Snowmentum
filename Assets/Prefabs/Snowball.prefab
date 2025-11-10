@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 1
-  increasePerSecond: 0.02
+  increasePerSecond: 0.05
   moveToTarget: 7
   useFixedUpdate: 1
   OnDeathEvent:
@@ -293,7 +293,9 @@ MonoBehaviour:
     maxDamageProportion: 0.5
     curveSteepness: 20
     maxGain: 0.1
-    useSizeAsMax: 0
+    scaleWithObstacleSize: 0
+    lives: 0
+    consumeOnHit: 0
     gainCurveSteepness: 8
     maxSizeGain: 0.15
   effectOnSpeed:

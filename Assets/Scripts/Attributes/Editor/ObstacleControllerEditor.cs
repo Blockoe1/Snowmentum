@@ -19,7 +19,6 @@ namespace Snowmentum
         // SerializedProperty variables.
         private SerializedProperty obstacleData;
         private SerializedProperty autoUpdateObstacleData;
-        private SerializedProperty isGreybox;
 
         // Components
         private SerializedProperty rend;
@@ -29,6 +28,7 @@ namespace Snowmentum
         private SerializedProperty relay;
         private SerializedProperty outliner;
         private SerializedProperty particles;
+        private SerializedProperty rb;
 
         bool showComponents;
 
@@ -39,7 +39,6 @@ namespace Snowmentum
         {
             obstacleData = serializedObject.FindProperty(nameof(obstacleData));
             autoUpdateObstacleData = serializedObject.FindProperty(nameof(autoUpdateObstacleData));
-            isGreybox = serializedObject.FindProperty(nameof(isGreybox));
 
             // Components
             rend = serializedObject.FindProperty(nameof(rend));
@@ -49,6 +48,7 @@ namespace Snowmentum
             relay = serializedObject.FindProperty(nameof(relay));
             outliner = serializedObject.FindProperty(nameof(outliner));
             particles = serializedObject.FindProperty(nameof(particles));
+            rb = serializedObject.FindProperty(nameof(rb));
         }
 
         /// <summary>
@@ -77,7 +77,6 @@ namespace Snowmentum
 
             EditorGUILayout.PropertyField(obstacleData);
             EditorGUILayout.PropertyField(autoUpdateObstacleData);
-            EditorGUILayout.PropertyField(isGreybox);
 
             //if (GUILayout.Button("Write Obstacle Data"))
             //{
@@ -102,6 +101,7 @@ namespace Snowmentum
                 EditorGUILayout.PropertyField(relay);
                 EditorGUILayout.PropertyField(outliner);
                 EditorGUILayout.PropertyField(particles);
+                EditorGUILayout.PropertyField(rb);
 
                 EditorGUI.EndDisabledGroup();
                 EditorGUI.indentLevel--;

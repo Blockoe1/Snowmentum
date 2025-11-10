@@ -22,7 +22,7 @@ namespace Snowmentum.Score
         #endregion
 
         private static int score;
-        public static event Action<int> OnScoreUpdated;
+        public static event Action<int, int> OnScoreUpdated;
 
         private static HighScore[] highScores;
 
@@ -52,8 +52,9 @@ namespace Snowmentum.Score
             }
             set
             {
+                int oldScore = score;
                 score = value;
-                OnScoreUpdated?.Invoke(score);
+                OnScoreUpdated?.Invoke(score, oldScore);
             }
         }
         #endregion
