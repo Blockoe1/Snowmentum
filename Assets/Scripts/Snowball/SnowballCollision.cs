@@ -82,6 +82,13 @@ namespace Snowmentum
                 "the obstacle, and the maxGain value will be used as a multiplier.")]
             private bool scaleWithObstacleSize;
 
+            [Header("Death Protection")]
+            [SerializeField, Tooltip("The number of times the snowball is prevented from dying.")]
+            private int lives;
+            [SerializeField, Tooltip("If true, then the snowball \"loses a life\" whenever they take any damage, " +
+                "even if it didn't kill them.")] 
+            private bool consumeOnHit;
+
             [Header("Gaining Size")]
             [SerializeField, Tooltip("How drastically size gains fall off as the snowball gets larger.")] 
             private float gainCurveSteepness = 20;
@@ -110,11 +117,22 @@ namespace Snowmentum
                 {
                     float gain = scaleWithObstacleSize ? obstacleSize * maxGain : maxGain;
                     result = SizeCollisionCurve(obstacleSize, snowballSize, gain, curveSteepness);
-
-                    // Ensures the player only takes a certain amount of damage if they are not one-shot.
-                    if (result < 0 && Mathf.Abs(result) < SnowballSize.Value)
+                    
+                    // Ensures the player only takes a certain amount of damage if they are not one-shot
+                    if (Mathf.Abs(result) < SnowballSize.Value)
                     {
                         result = Mathf.Max(result, -SnowballSize.Value * maxDamageProportion);
+                        if (consumeOnHit)
+                        {
+                            lives--;
+                        }
+                    }
+                    // If the player does take fatal damage, use a fatalResist instead and take only the max
+                    // damage proportion.
+                    else if (lives > 0)
+                    {
+                        result = Mathf.Max(result, -SnowballSize.Value * maxDamageProportion);
+                        lives--;
                     }
                 }
 

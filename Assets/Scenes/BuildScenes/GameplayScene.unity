@@ -326,7 +326,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7165968061657174781, guid: aec0fb9104bef484bb1ffa3f91888000, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: aec0fb9104bef484bb1ffa3f91888000, type: 3}
 --- !u!4 &25846268 stripped
 Transform:
@@ -705,7 +708,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236938000}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -1247,7 +1250,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7165968061657174781, guid: aec0fb9104bef484bb1ffa3f91888000, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: aec0fb9104bef484bb1ffa3f91888000, type: 3}
 --- !u!4 &504710885 stripped
 Transform:
@@ -6965,6 +6971,7 @@ GameObject:
   - component: {fileID: 1211491852}
   - component: {fileID: 1211491851}
   - component: {fileID: 1211491850}
+  - component: {fileID: 1211491853}
   m_Layer: 5
   m_Name: ScoreCounter
   m_TagString: Untagged
@@ -7103,6 +7110,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211491848}
   m_CullTransparentMesh: 1
+--- !u!114 &1211491853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211491848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0977b327b05d71e4c8bfc63744b8e803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Score.ScoreDisplayAnimator
+  targetPos: {x: 0, y: -40}
+  targetColor: {r: 0.65723264, g: 1, b: 0.996493, a: 1}
+  targetProportion: 0.05
+  animTime: 0.25
+  textComponent: {fileID: 1211491851}
 --- !u!114 &1221756940 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
@@ -12410,10 +12434,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.5593773
-    y: 0
-    width: 0.7434227
-    height: 0.66956526
+    x: 0
+    y: 0.049469966
+    width: 1
+    height: 0.90039754
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
