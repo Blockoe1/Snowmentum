@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a764d599b321e46804eca9a349582b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitImmunity: 1
+  hitImmunity: 2
   flashDelay: 0.1
   effectOnSize:
     maxDamageProportion: 0.5
