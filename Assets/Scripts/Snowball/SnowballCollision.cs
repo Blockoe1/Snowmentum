@@ -256,7 +256,7 @@ namespace Snowmentum
         private void OnTriggerEnter2D(Collider2D collision)
         {
             //Debug.Log(isImmune);
-            if (!isImmune && collision.gameObject.TryGetComponent(out ObstacleCollision obstacle) && 
+            if (collision.gameObject.TryGetComponent(out ObstacleCollision obstacle) && 
                 obstacle.HasCollision)
             {
                 // Save the snowball's current size so that any changes to size dont affect any of the other math.
@@ -265,7 +265,7 @@ namespace Snowmentum
                 //Debug.Log("Collided with " + obstacle.name + " of size " + obstacle.ObstacleSize);
 
                 // Change the player's values based on our result curves defined in the inspector.
-                if (!IsInvincible)
+                if (!IsInvincible && !isImmune)
                 {
                     effectOnSpeed.OnCollision(obstacle.ObstacleSize, snowballSizeVal, speedComp);
                     effectOnSize.OnCollision(obstacle.ObstacleSize, snowballSizeVal, sizeComp);
@@ -275,7 +275,7 @@ namespace Snowmentum
                 {
                     obstacle.DestroyObstacle(obstacle.ObstacleSize / snowballSizeVal);
                 }
-                else
+                else if (!isImmune)
                 {
                     obstacle.OnDealDamage(obstacle.ObstacleSize / snowballSizeVal);
                 }

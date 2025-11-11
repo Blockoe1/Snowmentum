@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Snowmentum_UI_Font_NoShadow Atlas Material
-  m_Shader: {fileID: 4800000, guid: 128e987d567d4e2c824d754223b3f3b0, type: 3}
+  m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,6 +23,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cube:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _FaceTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -31,22 +39,104 @@ Material:
         m_Texture: {fileID: -7460981259634733116}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _OutlineTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Ambient: 0.5
+    - _Bevel: 0.5
+    - _BevelAmount: 0
+    - _BevelClamp: 0
+    - _BevelOffset: 0
+    - _BevelRoundness: 0
+    - _BevelType: 0
+    - _BevelWidth: 0
+    - _BumpFace: 0
+    - _BumpOutline: 0
     - _ColorMask: 15
     - _CullMode: 0
+    - _Diffuse: 0.5
+    - _DiffusePower: 1
+    - _FaceDilate: 0
+    - _FaceUVSpeedX: 0
+    - _FaceUVSpeedY: 0
+    - _GlowInner: 0.05
+    - _GlowOffset: 0
+    - _GlowOuter: 0.05
+    - _GlowPower: 0.75
+    - _GradientScale: 6
+    - _LightAngle: 3.1416
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
+    - _OutlineMode: 0
+    - _OutlineSoftness: 0
+    - _OutlineUVSpeedX: 0
+    - _OutlineUVSpeedY: 0
+    - _OutlineWidth: 0
+    - _PerspectiveFilter: 0.875
+    - _QueueControl: -1
+    - _QueueOffset: 0
+    - _Reflectivity: 10
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.7291667
+    - _ScaleRatioC: 0.7291667
+    - _ScaleX: 1
+    - _ScaleY: 1
+    - _ShaderFlags: 0
+    - _Sharpness: 0
+    - _SpecularPower: 2
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
+    - _TextureHeight: 256
+    - _TextureWidth: 256
+    - _UnderlayDilate: 0
+    - _UnderlayOffsetX: 0.458
+    - _UnderlayOffsetY: -0.457
+    - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
+    - _WeightBold: 0.5
+    - _WeightNormal: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FaceUVSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
+    - _IsoPerimeter: {r: 0, g: 0, b: 0, a: 0}
+    - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor1: {r: 0, g: 1, b: 1, a: 1}
+    - _OutlineColor2: {r: 0.009433985, g: 0.02534519, b: 1, a: 1}
+    - _OutlineColor3: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineOffset1: {r: 0, g: 0, b: 0, a: 0}
+    - _OutlineOffset2: {r: 0, g: 0, b: 0, a: 0}
+    - _OutlineOffset3: {r: 0, g: 0, b: 0, a: 0}
+    - _OutlineUVSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Softness: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 1}
+    - _UnderlayOffset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!28 &-7460981259634733116
@@ -138,7 +228,7 @@ MonoBehaviour:
     faceIndex: 0
     pointSizeSamplingMode: 1
     pointSize: 16
-    padding: 1
+    padding: 5
     paddingMode: 2
     packingMode: 4
     atlasWidth: 256
@@ -209,8 +299,8 @@ MonoBehaviour:
       m_HorizontalBearingY: 0
       m_HorizontalAdvance: 22
     m_GlyphRect:
-      m_X: 1
-      m_Y: 103
+      m_X: 35
+      m_Y: 89
       m_Width: 20
       m_Height: 32
     m_Scale: 1
@@ -389,8 +479,8 @@ MonoBehaviour:
       m_HorizontalBearingY: 0
       m_HorizontalAdvance: 22
     m_GlyphRect:
-      m_X: 23
-      m_Y: 205
+      m_X: 95
+      m_Y: 131
       m_Width: 20
       m_Height: 32
     m_Scale: 1
@@ -644,8 +734,8 @@ MonoBehaviour:
       m_HorizontalBearingY: 0
       m_HorizontalAdvance: 22
     m_GlyphRect:
-      m_X: 89
-      m_Y: 35
+      m_X: 185
+      m_Y: 89
       m_Width: 20
       m_Height: 32
     m_Scale: 1
@@ -811,25 +901,25 @@ MonoBehaviour:
   m_ClearDynamicDataOnBuild: 1
   m_AtlasWidth: 256
   m_AtlasHeight: 256
-  m_AtlasPadding: 1
+  m_AtlasPadding: 5
   m_AtlasRenderMode: 4122
   m_UsedGlyphRects:
   - m_X: 0
     m_Y: 0
-    m_Width: 22
-    m_Height: 34
+    m_Width: 11
+    m_Height: 11
   - m_X: 0
-    m_Y: 34
-    m_Width: 22
-    m_Height: 34
+    m_Y: 11
+    m_Width: 30
+    m_Height: 42
   - m_X: 0
-    m_Y: 68
-    m_Width: 22
-    m_Height: 34
+    m_Y: 53
+    m_Width: 30
+    m_Height: 42
   - m_X: 0
-    m_Y: 102
-    m_Width: 22
-    m_Height: 34
+    m_Y: 95
+    m_Width: 30
+    m_Height: 42
   - m_X: 0
     m_Y: 136
     m_Width: 22
@@ -961,7 +1051,132 @@ MonoBehaviour:
     m_Height: 18
   - m_X: 242
     m_Y: 0
-    m_Width: 14
+    m_Width: 30
+    m_Height: 42
+  - m_X: 60
+    m_Y: 0
+    m_Width: 30
+    m_Height: 42
+  - m_X: 90
+    m_Y: 0
+    m_Width: 30
+    m_Height: 42
+  - m_X: 120
+    m_Y: 0
+    m_Width: 30
+    m_Height: 42
+  - m_X: 150
+    m_Y: 0
+    m_Width: 30
+    m_Height: 42
+  - m_X: 0
+    m_Y: 221
+    m_Width: 16
+    m_Height: 26
+  - m_X: 180
+    m_Y: 0
+    m_Width: 30
+    m_Height: 42
+  - m_X: 210
+    m_Y: 0
+    m_Width: 30
+    m_Height: 42
+  - m_X: 30
+    m_Y: 42
+    m_Width: 30
+    m_Height: 42
+  - m_X: 30
+    m_Y: 84
+    m_Width: 30
+    m_Height: 42
+  - m_X: 30
+    m_Y: 126
+    m_Width: 30
+    m_Height: 42
+  - m_X: 30
+    m_Y: 168
+    m_Width: 30
+    m_Height: 42
+  - m_X: 30
+    m_Y: 210
+    m_Width: 30
+    m_Height: 42
+  - m_X: 60
+    m_Y: 42
+    m_Width: 30
+    m_Height: 42
+  - m_X: 60
+    m_Y: 84
+    m_Width: 30
+    m_Height: 42
+  - m_X: 60
+    m_Y: 126
+    m_Width: 30
+    m_Height: 42
+  - m_X: 60
+    m_Y: 168
+    m_Width: 30
+    m_Height: 42
+  - m_X: 60
+    m_Y: 210
+    m_Width: 30
+    m_Height: 42
+  - m_X: 90
+    m_Y: 42
+    m_Width: 30
+    m_Height: 42
+  - m_X: 120
+    m_Y: 42
+    m_Width: 30
+    m_Height: 42
+  - m_X: 150
+    m_Y: 42
+    m_Width: 30
+    m_Height: 42
+  - m_X: 180
+    m_Y: 42
+    m_Width: 30
+    m_Height: 42
+  - m_X: 210
+    m_Y: 42
+    m_Width: 30
+    m_Height: 42
+  - m_X: 90
+    m_Y: 84
+    m_Width: 30
+    m_Height: 42
+  - m_X: 90
+    m_Y: 126
+    m_Width: 30
+    m_Height: 42
+  - m_X: 90
+    m_Y: 168
+    m_Width: 30
+    m_Height: 42
+  - m_X: 90
+    m_Y: 210
+    m_Width: 30
+    m_Height: 42
+  - m_X: 120
+    m_Y: 84
+    m_Width: 30
+    m_Height: 42
+  - m_X: 150
+    m_Y: 84
+    m_Width: 30
+    m_Height: 42
+  - m_X: 180
+    m_Y: 84
+    m_Width: 30
+    m_Height: 42
+  m_FreeGlyphRects:
+  - m_X: 11
+    m_Y: 0
+    m_Width: 19
+    m_Height: 11
+  - m_X: 240
+    m_Y: 0
+    m_Width: 16
     m_Height: 256
   - m_X: 66
     m_Y: 68
