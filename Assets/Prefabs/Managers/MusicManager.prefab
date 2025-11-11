@@ -76,3 +76,10 @@ MonoBehaviour:
     loop: 0
     loopTrack: {fileID: 8300000, guid: 4a89f43dabf8f0e4b8bd22d5323f5f91, type: 3}
     introTrack: {fileID: 0}
+  - name: Packing
+    mixerGroup: {fileID: 6511246275216553017, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    loopTrack: {fileID: 8300000, guid: d9b92172efd71ab4e8ad05ac20f3a30e, type: 3}
+    introTrack: {fileID: 0}
