@@ -116,11 +116,26 @@ namespace Snowmentum.Size
         }
 
         /// <summary>
+        /// Immediately scales this object to the correct size with no perspective scaling.
+        /// </summary>
+        public void ScaleToEnvironment()
+        {
+            // Dont allow any scale updating if the snowball has a 0 or negative size.
+            if (EnvironmentSize.Value <= 0) { return; }
+
+            float sizeRatio = objectSize / EnvironmentSize.Value;
+            // Scales the object based on the ratio of the obstacle and snowball sizes.
+            ScaleObject(transform, sizeRatio);
+            // Store the size ratio used this update so that we can reference it next update.
+            oldSize = sizeRatio;
+        }
+
+        /// <summary>
         /// Scales this obstacle based on it's base size.
         /// </summary>
         /// <param name="objToScale">The object to scale</param>
         /// <param name="scale">The scale to set for this obstacle.</param>
-        private void ScaleObject(Transform objToScale, float scale)
+        private static void ScaleObject(Transform objToScale, float scale)
         {
             objToScale.localScale = Vector3.one * scale;
         }
