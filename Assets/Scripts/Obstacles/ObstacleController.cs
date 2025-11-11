@@ -82,6 +82,12 @@ namespace Snowmentum
             ToggleObstacle(true);
 
             ReadObstacleData();
+
+            // Have the obstacle immediately scale itself when it is set to prevent it from moving perspective.
+            if (scaler != null)
+            {
+                scaler.ScaleToEnvironment();
+            }
         }
 
         /// <summary>
@@ -202,13 +208,13 @@ namespace Snowmentum
         }
 
         /// <summary>
-        /// Snaps this obstacle to a given position to reset it.
+        /// Resets the obstacle back to a given position.
         /// </summary>
         /// <remarks>
         /// Need to set both rigidbody and transform position to instantly snap it back.
         /// </remarks>
         /// <param name="pos"></param>
-        public void SnapPosition(Vector2 pos)
+        public void Reset(Vector2 pos)
         {
             rb.position = pos;
             transform.position = pos;

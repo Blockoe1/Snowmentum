@@ -39,7 +39,8 @@ namespace Snowmentum
             // Check for exceeding the positive and negative kill zones separately.
             if (CheckOutOfBounds(targetPos.x, x) || CheckOutOfBounds(targetPos.y, y))
             {
-                //Debug.Log("Hit kill zone at position " + targetPos);
+                //Debug.Log( "Obstacle" + GetComponent<ObstacleController>().ObstacleData.name +
+                //  "Hit kill zone at position " + targetPos);
                 OnEnterKillzone?.Invoke();
                 //Destroy(movedObject.gameObject);
             }

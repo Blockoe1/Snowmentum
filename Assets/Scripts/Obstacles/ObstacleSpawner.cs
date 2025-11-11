@@ -181,7 +181,7 @@ namespace Snowmentum
                     //Spawn obstacle and set it up with it's data
                     //Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity, obstacleParent);
                     spawnedController = GetObstacleController();
-                    spawnedController.SnapPosition(spawnArea);
+                    spawnedController.Reset(spawnArea);
                     spawnedController.SetObstacle(obstacleData);
                     spawnedController.ReturnFunction = ReturnObstacle;
 
