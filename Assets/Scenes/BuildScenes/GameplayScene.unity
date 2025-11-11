@@ -19041,10 +19041,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObstacleSpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 2743703267137731669, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3479750891367725736, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
