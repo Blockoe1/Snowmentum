@@ -14,8 +14,8 @@ namespace Snowmentum.Size
     {
         #region CONSTS
         // The scale that the snowball should be set at for size 1.
-        public static readonly Vector3 REFERENCE_SCALE = new Vector3(0.25f, 0.25f, 0.25f);
         #endregion
+        [SerializeField] private Vector3 referenceScale = new Vector3(0.2f, 0.2f, 0.2f);
 
         #region Component References
         [Header("Components")]
@@ -40,7 +40,7 @@ namespace Snowmentum.Size
             EnvironmentSize.OnValueChanged += OnEnvironmentSize;
 
             // Sets the snowball to the reference scale so that it doesnt flash large on screen.
-            transform.localScale = REFERENCE_SCALE;
+            //transform.localScale = REFERENCE_SCALE;
         }
         private void OnDestroy()
         {
@@ -81,9 +81,9 @@ namespace Snowmentum.Size
         private void UpdateSnowballScale()
         {
             // Prevent /0 error.
-            if (SnowballSize.Value == 0 || EnvironmentSize.Value == 0) { return; }
+            if (SnowballSize.Value == 0 || EnvironmentSize.Value == 0) { Debug.Log("Returned");  return; }
             // Sets the snowball scale based on it's size and our environment size.
-            transform.localScale = REFERENCE_SCALE * (SnowballSize.Value / EnvironmentSize.Value);
+            transform.localScale = referenceScale * (SnowballSize.Value / EnvironmentSize.Value);
         }
 
         /// <summary>
