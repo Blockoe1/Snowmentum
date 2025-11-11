@@ -17,6 +17,7 @@ namespace Snowmentum.Size
         #region CONSTS
         // The maximum size held by bracket one.
         public const float BRACKET_SCALE = 2;
+        public const float SMALLEST_BRACKET_LIMIT = 1;
         #endregion
 
         private static int bracket;
@@ -90,7 +91,8 @@ namespace Snowmentum.Size
         public static void UpdateBracket(float snowballSize)
         {
             // Only change our bracket if we are beyond the pre-calculated limits of our current bracket.
-            if (snowballSize < sizeMin || snowballSize > sizeMax)
+            // If the snowball is lower than size 1, that's too small for any bracket.
+            if (snowballSize > SMALLEST_BRACKET_LIMIT && snowballSize < sizeMin || snowballSize > sizeMax)
             {
                 Bracket = GetBracket(snowballSize);
             }
