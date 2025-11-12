@@ -83,7 +83,7 @@ namespace Snowmentum
                             objects.RemoveAt(i);
                             objects.Add(currentObj);
 
-                            Debug.Log("Push");
+                            //Debug.Log("Push");
                             loopCount++;
                             if (loopCount == 100)
                             {
