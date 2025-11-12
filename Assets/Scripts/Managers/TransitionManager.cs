@@ -92,6 +92,8 @@ namespace Snowmentum
             Debug.Log("Transitioning.");
             isTransitioning = true;
 
+            OnTransitionEvent?.Invoke();
+
             fadeImage.gameObject.SetActive(true);
             SetImageAlpha(fadeImage, 0);
             yield return StartCoroutine(FadeImageTo(fadeImage, 1));
