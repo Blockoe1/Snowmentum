@@ -5355,9 +5355,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadlyColor: {r: 1, g: 0.2924527, b: 0.31376427, a: 1}
   destroyableColor: {r: 0.26996374, g: 0.26100624, b: 1, a: 1}
-  maxOutlineAlpha: 0.65
+  maxOutlineAlpha: 0.725
   maxTintValue: 0.25
-  maxDistance: 7
+  maxDistance: 9
   outlineBlinkDelay: 0.1
   showOutline: 0
   rend: {fileID: 8871070839524519023}
