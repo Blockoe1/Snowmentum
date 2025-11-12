@@ -5395,6 +5395,21 @@ MonoBehaviour:
   fadeToWhite: {fileID: 1085501723}
   fadeToBlack: {fileID: 177350280}
   fadeTime: 1
+  OnTransitionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2655540289460433953}
+        m_TargetAssemblyTypeName: Snowmentum.AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu Transition
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &547037478
 Transform:
   m_ObjectHideFlags: 0
@@ -7404,10 +7419,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.7796391
+    x: 0
     y: 0
-    width: 1.1340206
-    height: 1.1344538
+    width: 0.9988545
+    height: 0.99923605
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -7884,7 +7899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
       propertyPath: sounds.Array.data[12].name
-      value: Throw Transition
+      value: Menu Transition
       objectReference: {fileID: 0}
     - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
       propertyPath: sounds.Array.data[12].pitch
@@ -7907,6 +7922,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
+--- !u!114 &2655540289460433953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
+  m_PrefabInstance: {fileID: 2655540289460433952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e91c7e5eb0c9b49a756a7620554394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6472282336533055612
 PrefabInstance:
   m_ObjectHideFlags: 0
