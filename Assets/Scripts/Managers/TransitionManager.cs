@@ -8,6 +8,7 @@
 *****************************************************************************/
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -26,6 +27,7 @@ namespace Snowmentum
         [SerializeField] private Image fadeToWhite;
         [SerializeField] private Image fadeToBlack;
         [SerializeField] private float fadeTime;
+        [SerializeField] private UnityEvent OnTransitionEvent;
 
         private static TransitionManager instance;
         private bool isTransitioning;
@@ -89,6 +91,8 @@ namespace Snowmentum
         {
             Debug.Log("Transitioning.");
             isTransitioning = true;
+
+            OnTransitionEvent?.Invoke();
 
             fadeImage.gameObject.SetActive(true);
             SetImageAlpha(fadeImage, 0);

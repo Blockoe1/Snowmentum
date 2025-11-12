@@ -58,7 +58,7 @@ namespace Snowmentum
         private void SizeBracket_OnBracketChanged(int newBracket, int oldBracket)
         {
             // Only pause if we aren't initializing the bracket.
-            if (oldBracket > 0 && oldBracket != newBracket)
+            if (newBracket > 1 && oldBracket != newBracket)
             {
                 spawner.IsPaused = true;
             }
