@@ -270,7 +270,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snowballSizeText: {fileID: 7796099}
   displayedDigits: 5
-  postfixDigits: 1
 --- !u!1 &10622759
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,6 +2323,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dae0e2a92b40246a6487f1c2fdff57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseScreenTime: 5
+  transitionType: 0
+  highScoreScene: TrackballAdjustments
+  mainMenuScene: TrackballAdjustments
 --- !u!1 &903875371
 GameObject:
   m_ObjectHideFlags: 0
