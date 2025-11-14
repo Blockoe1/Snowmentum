@@ -36,6 +36,7 @@ namespace Snowmentum
         /// <param name="isFrozen"></param>
         public void PlaySnowballBlinkSound(bool isFrozen)
         {
+            Debug.Log(isFrozen);
             audioRelay.Play(isFrozen ? toFrozenSound : toNormalSound);
         }
     }
