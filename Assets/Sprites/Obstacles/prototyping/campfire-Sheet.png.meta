@@ -121,9 +121,9 @@ TextureImporter:
       name: campfire-Sheet_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 64
-        width: 64
+        width: 68
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -143,9 +143,9 @@ TextureImporter:
       name: campfire-Sheet_1
       rect:
         serializedVersion: 2
-        x: 70
+        x: 68
         y: 64
-        width: 64
+        width: 68
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -165,9 +165,9 @@ TextureImporter:
       name: campfire-Sheet_2
       rect:
         serializedVersion: 2
-        x: 138
+        x: 136
         y: 64
-        width: 64
+        width: 68
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -187,9 +187,9 @@ TextureImporter:
       name: campfire-Sheet_3
       rect:
         serializedVersion: 2
-        x: 206
+        x: 204
         y: 64
-        width: 64
+        width: 68
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -209,9 +209,9 @@ TextureImporter:
       name: campfire-Sheet_4
       rect:
         serializedVersion: 2
-        x: 274
+        x: 272
         y: 64
-        width: 64
+        width: 68
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -231,9 +231,9 @@ TextureImporter:
       name: campfire-Sheet_5
       rect:
         serializedVersion: 2
-        x: 342
+        x: 340
         y: 64
-        width: 64
+        width: 68
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -253,9 +253,9 @@ TextureImporter:
       name: campfire-Sheet_6
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 64
+        width: 68
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -283,7 +283,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":2.0},"gridSpriteSize":{"x":68.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       campfire-Sheet_0: 6911056676163173146
       campfire-Sheet_1: 3638588854622080461
