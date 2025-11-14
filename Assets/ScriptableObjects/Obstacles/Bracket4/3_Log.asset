@@ -21,8 +21,8 @@ MonoBehaviour:
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 1
-  offset: {x: 0.23102131, y: -0.032274812}
-  size: {x: 2.2760086, y: 0.5784934}
+  offset: {x: 0.23414567, y: -0.035539646}
+  size: {x: 2.2822497, y: 0.4981738}
   particleSpriteSheet:
   - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
