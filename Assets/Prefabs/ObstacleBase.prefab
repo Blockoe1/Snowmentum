@@ -5374,4 +5374,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ad2a0072c957946ae7475a4921e381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleDropper
-  fallSpeed: 1
+  fallSpeed: 2
