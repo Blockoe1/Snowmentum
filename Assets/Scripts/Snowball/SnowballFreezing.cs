@@ -14,6 +14,7 @@ using UnityEngine.Events;
 namespace Snowmentum
 {
     [RequireComponent(typeof(SpriteRenderer))]
+    [RequireComponent(typeof(SnowballCollision))]
     public class SnowballFreezing : MonoBehaviour
     {
         #region CONSTS
@@ -45,6 +46,20 @@ namespace Snowmentum
         private byte waterNumber;
         private bool showingVisuals;
 
+        #region Component References
+        [Header("Components")]
+        [SerializeReference] protected SnowballCollision collision;
+
+        /// <summary>
+        /// Get components on reset.
+        /// </summary>
+        [ContextMenu("Get Component References")]
+        private void Reset()
+        {
+            collision = GetComponent<SnowballCollision>();
+        }
+        #endregion
+
         #region Properties
         public static bool IsFrozen => isFrozen;
         private bool IsFrozen_Internal
@@ -56,16 +71,16 @@ namespace Snowmentum
                 if (isFrozen != value)
                 {
                     isFrozen = value;
+                    if (collision != null)
+                    {
+                        collision.IsInvincible = value;
+                    }
+                    // If the snowball freezes for any reason, play the OnFreezeEvent events.
                     if (isFrozen)
                     {
                         OnFreezeEvent?.Invoke();
                         // Make sure to enable/disable visuals when isFrozen changes.
                         ShowingVisuals = true;
-                    }
-                    else
-                    {
-                        OnThawEvent?.Invoke();
-                        ShowingVisuals = false;
                     }
                 }
             }
@@ -158,32 +173,20 @@ namespace Snowmentum
             while (waterNumber > 0)
             {
                 FreezeAmount += GetFreezeRate() * Time.deltaTime;
-                UpdateFreezeStatus(FreezeAmount);
+
+                // Switches the snowball to the frozen state.
+                if (!IsFrozen_Internal && freezeAmount >= FREEZE_THRESHOLD)
+                {
+                    //Debug.Log("Frozen");
+                    IsFrozen_Internal = true;
+                    // Need to decrement our freezeAmount while the snowball is frozen.
+                    StartCoroutine(WhileFrozenRoutine());
+                }
                 yield return null;
             }
         }
         #endregion
 
-        /// <summary>
-        /// Updates the current state of the snowball between frozen and thawed.
-        /// </summary>
-        /// <param name="freezeAmount">The current freezeAmount of the snowball.</param>
-        private void UpdateFreezeStatus(float freezeAmount)
-        {
-            // Switches the snowball to the frozen state.
-            if (!IsFrozen_Internal && freezeAmount >= FREEZE_THRESHOLD)
-            {
-                //Debug.Log("Frozen");
-                IsFrozen_Internal = true;
-                // Need to decrement our freezeAmount while the snowball is frozen.
-                StartCoroutine(WhileFrozenRoutine());
-            }
-            // Switches the snowball back to it's normal state.
-            else if (IsFrozen_Internal && freezeAmount <= 0)
-            {
-                IsFrozen_Internal = false;
-            }
-        }
 
         /// <summary>
         /// Causes the snowball to gain freezeAmount while it's in water
@@ -192,7 +195,7 @@ namespace Snowmentum
         private IEnumerator WhileFrozenRoutine()
         {
             float flashTimer = 0;
-            while (IsFrozen)
+            while (FreezeAmount > 0)
             {
                 FreezeAmount += GetThawRate() * Time.deltaTime;
 
@@ -213,16 +216,17 @@ namespace Snowmentum
                     ShowingVisuals = true;
                 }
 
-                UpdateFreezeStatus(FreezeAmount);
-
-
                 yield return null;
             }
-            // When our freeze expires, secretly re-freeze internally for a short period of time to give the player
-            // more leeway.
-            isFrozen = true;
+
+            // Once our freeze amount expires, play events and wait a fraction of a second before turning off
+            // incvincibility.
+            OnThawEvent?.Invoke();
+            ShowingVisuals = false;
+
             yield return new WaitForSeconds(freezeLeewayTime);
-            isFrozen = false;
+
+            IsFrozen_Internal = false;
         }
 
         ///// <summary>

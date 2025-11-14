@@ -346,11 +346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2158679142822102053, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_fontSize
-      value: 80
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2158679142822102053, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_fontSizeBase
-      value: 80
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2891410005566400619, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_Name
@@ -1662,6 +1662,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loseScreenTime: 4
   transitionType: 2
+  highScoreScene: SaveHighScoreScene
+  mainMenuScene: TitleScene
 --- !u!1 &1053529887
 GameObject:
   m_ObjectHideFlags: 0
@@ -18308,15 +18310,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2158679142822102053, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_text
-      value: QUIT TO MENU
+      value: QUIT
       objectReference: {fileID: 0}
     - target: {fileID: 2158679142822102053, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_fontSize
-      value: 80
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2158679142822102053, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_fontSizeBase
-      value: 80
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158679142822102053, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
+      propertyPath: m_characterSpacing
+      value: 6.9
       objectReference: {fileID: 0}
     - target: {fileID: 2891410005566400619, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_Name

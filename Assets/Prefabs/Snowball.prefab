@@ -416,16 +416,16 @@ MonoBehaviour:
   OnFreezeEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 231841834676547580}
-        m_TargetAssemblyTypeName: Snowmentum.SnowballCollision, Assembly-CSharp
-        m_MethodName: set_IsInvincible
-        m_Mode: 6
+      - m_Target: {fileID: 4745236545671037846}
+        m_TargetAssemblyTypeName: Snowmentum.MusicRelay, Assembly-CSharp
+        m_MethodName: PlayOverrideTrack
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Frozen
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 3125016369631847124}
@@ -500,25 +500,13 @@ MonoBehaviour:
           m_StringArgument: Freezing Over
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 4745236545671037846}
-        m_TargetAssemblyTypeName: Snowmentum.MusicRelay, Assembly-CSharp
-        m_MethodName: PlayOverrideTrack
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Frozen
-          m_BoolArgument: 1
-        m_CallState: 2
   OnThawEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 231841834676547580}
-        m_TargetAssemblyTypeName: Snowmentum.SnowballCollision, Assembly-CSharp
-        m_MethodName: set_IsInvincible
-        m_Mode: 6
+      - m_Target: {fileID: 4745236545671037846}
+        m_TargetAssemblyTypeName: Snowmentum.MusicRelay, Assembly-CSharp
+        m_MethodName: StopOverrideTrack
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -578,18 +566,6 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Thawing
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4745236545671037846}
-        m_TargetAssemblyTypeName: Snowmentum.MusicRelay, Assembly-CSharp
-        m_MethodName: StopOverrideTrack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -692,6 +668,7 @@ MonoBehaviour:
           m_StringArgument: Snow Freezing
           m_BoolArgument: 0
         m_CallState: 2
+  collision: {fileID: 231841834676547580}
 --- !u!114 &8135800488676584112
 MonoBehaviour:
   m_ObjectHideFlags: 0
