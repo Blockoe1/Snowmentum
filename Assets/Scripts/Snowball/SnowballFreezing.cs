@@ -10,6 +10,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace Snowmentum
 {
@@ -62,29 +63,6 @@ namespace Snowmentum
 
         #region Properties
         public static bool IsFrozen => isFrozen;
-        private bool IsFrozen_Internal
-        {
-            get { return isFrozen; }
-            set
-            {
-                // Only allow changes if we are moving to a new state.
-                if (isFrozen != value)
-                {
-                    isFrozen = value;
-                    if (collision != null)
-                    {
-                        collision.IsInvincible = value;
-                    }
-                    // If the snowball freezes for any reason, play the OnFreezeEvent events.
-                    if (isFrozen)
-                    {
-                        OnFreezeEvent?.Invoke();
-                        // Make sure to enable/disable visuals when isFrozen changes.
-                        ShowingVisuals = true;
-                    }
-                }
-            }
-        }
 
         private bool ShowingVisuals
         {
@@ -175,10 +153,17 @@ namespace Snowmentum
                 FreezeAmount += GetFreezeRate() * Time.deltaTime;
 
                 // Switches the snowball to the frozen state.
-                if (!IsFrozen_Internal && freezeAmount >= FREEZE_THRESHOLD)
+                if (!isFrozen && freezeAmount >= FREEZE_THRESHOLD)
                 {
                     //Debug.Log("Frozen");
-                    IsFrozen_Internal = true;
+                    isFrozen = true;
+                    if (collision != null)
+                    {
+                        collision.IsInvincible = isFrozen;
+                    }
+                    OnFreezeEvent?.Invoke();
+                    // Make sure to enable/disable visuals when isFrozen changes.
+                    ShowingVisuals = true;
                     // Need to decrement our freezeAmount while the snowball is frozen.
                     StartCoroutine(WhileFrozenRoutine());
                 }
@@ -218,15 +203,18 @@ namespace Snowmentum
 
                 yield return null;
             }
+            OnThawEvent?.Invoke();
+            ShowingVisuals = false;
+            isFrozen = false;
 
             // Once our freeze amount expires, play events and wait a fraction of a second before turning off
             // incvincibility.
-            OnThawEvent?.Invoke();
-            ShowingVisuals = false;
-
             yield return new WaitForSeconds(freezeLeewayTime);
 
-            IsFrozen_Internal = false;
+            if (collision != null)
+            {
+                collision.IsInvincible = isFrozen;
+            }
         }
 
         ///// <summary>
