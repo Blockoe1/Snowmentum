@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 3125016369631847124}
   - component: {fileID: 4430849798646462092}
   - component: {fileID: 4745236545671037846}
+  - component: {fileID: 2624231000111200055}
   m_Layer: 0
   m_Name: Snowball
   m_TagString: Player
@@ -375,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26551764b132bb04b84531422d071eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceScale: {x: 0.2, y: 0.2, z: 0.2}
   snowballRigidbody: {fileID: 3341841721575561879}
 --- !u!114 &3017659872710321336
 MonoBehaviour:
@@ -408,6 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freezeTime: 2.04
   frozenTime: 5
+  freezeLeewayTime: 0.5
   warningThreshold: 0.25
   flashDelay: 0.15
   OnFreezeEvent:
@@ -623,6 +626,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2624231000111200055}
+        m_TargetAssemblyTypeName: Snowmentum.FreezeSounds, Assembly-CSharp
+        m_MethodName: PlaySnowballBlinkSound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnEnterWaterEvent:
     m_PersistentCalls:
       m_Calls:
@@ -803,6 +818,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.MusicRelay
   defaultTrackName: Level
+--- !u!114 &2624231000111200055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182634060681000022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a9397e5219d944298744e531eb4ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.FreezeSounds
+  toNormalSound: SnowballBlink
+  toFrozenSound: SnowballFrozenBlink
+  audioRelay: {fileID: 3125016369631847124}
 --- !u!1001 &1465078866390381935
 PrefabInstance:
   m_ObjectHideFlags: 0

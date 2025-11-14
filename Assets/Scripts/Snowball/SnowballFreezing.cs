@@ -26,6 +26,9 @@ namespace Snowmentum
         [SerializeField, Tooltip("The base amount of time that the snowball will stay frozen without moving " +
             "through water.")] 
         private float frozenTime;
+        [SerializeField, Tooltip("The amount of extra time that the snowball is actually invincible after " +
+            "the freeze expires.")] 
+        private float freezeLeewayTime;
         [SerializeField, Range(0, FREEZE_THRESHOLD)] private float warningThreshold = 0.25f;
         [SerializeField] private float flashDelay = 0.1f;
         [Header("Events")]
@@ -189,7 +192,7 @@ namespace Snowmentum
         private IEnumerator WhileFrozenRoutine()
         {
             float flashTimer = 0;
-            while (isFrozen)
+            while (IsFrozen)
             {
                 FreezeAmount += GetThawRate() * Time.deltaTime;
 
@@ -203,17 +206,23 @@ namespace Snowmentum
                         flashTimer = flashDelay;
                     }
                 }
-                // If we go above our threshold, we need to make sure we reset visuals.
+                // If the freeze amount goes above the threshold again, make sure that proper visuals are
+                // shown as we're not blinking.
                 else if (!ShowingVisuals)
                 {
                     ShowingVisuals = true;
                 }
 
-                // Only update freeze status after querying any visuals, so that things always get reset properly.
                 UpdateFreezeStatus(FreezeAmount);
+
 
                 yield return null;
             }
+            // When our freeze expires, secretly re-freeze internally for a short period of time to give the player
+            // more leeway.
+            isFrozen = true;
+            yield return new WaitForSeconds(freezeLeewayTime);
+            isFrozen = false;
         }
 
         ///// <summary>
