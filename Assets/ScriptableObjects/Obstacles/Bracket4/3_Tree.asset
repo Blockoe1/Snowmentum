@@ -22,7 +22,7 @@ MonoBehaviour:
   hasCollision: 1
   capsuleDirection: 0
   offset: {x: 0.014256075, y: -0.012111902}
-  size: {x: 0.46000728, y: 1.5}
+  size: {x: 0.46000728, y: 1.4115086}
   particleSpriteSheet:
   - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
