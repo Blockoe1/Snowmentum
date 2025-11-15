@@ -4,8 +4,8 @@
 // Creation Date : 10/22/2025
 // Last Modified : 10/22/2025
 //
-// Brief Description : Reads arcade stick input and buttons and converts them into mouse input sent to the initials
-// input menu.
+// Brief Description : Addon for the Initials Input Menu that Reads arcade stick input and button and buttons and 
+// converts them into mouse input.
 *****************************************************************************/
 using System.Collections;
 using UnityEngine;
@@ -17,6 +17,7 @@ namespace Snowmentum.UI
     public class InitialsArcadeInput : MonoBehaviour
     {
         private InputAction navigateAction;
+        private InputAction submitAction;
         private bool isInput;
 
         #region Component References
@@ -39,16 +40,18 @@ namespace Snowmentum.UI
         private void Awake()
         {
             navigateAction = InputSystem.actions.FindAction("Navigate");
+            submitAction = InputSystem.actions.FindAction("Submit");
             //Debug.Log(navigateAction);
 
             navigateAction.started += NavigateAction_started;
             navigateAction.canceled += NavigateAction_canceled;
+            submitAction.performed += SubmitAction_Performed;
         }
-
         private void OnDestroy()
         {
             navigateAction.started -= NavigateAction_started;
             navigateAction.canceled -= NavigateAction_canceled;
+            submitAction.performed -= SubmitAction_Performed;
         }
 
         /// <summary>
@@ -84,6 +87,15 @@ namespace Snowmentum.UI
                 inputMenu.HandleInput(input);
                 yield return null;
             }
+        }
+
+        /// <summary>
+        /// When the player presses the submit button, accept the initials.
+        /// </summary>
+        /// <param name="obj"></param>
+        private void SubmitAction_Performed(InputAction.CallbackContext obj)
+        {
+            inputMenu.SaveHighScore();
         }
     }
 }
