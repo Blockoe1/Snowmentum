@@ -70,7 +70,7 @@ namespace Snowmentum
                 //{
                 //    charIndex = 0;
                 //}
-                CollectionHelpers.LoopIndex(ValidCharacters, ref charIndex);
+                CollectionHelpers.LoopIndex(ValidCharacters.Length, ref charIndex);
 
                 //charDisplayTexts.text = validCharacters[charIndex].ToString();
             }
@@ -133,7 +133,7 @@ namespace Snowmentum
                 // Move the display texts to a new index position.
                 newIndex = i - inputAmount;
 
-                bool didLoop = CollectionHelpers.LoopIndex(charTexts, ref newIndex);
+                bool didLoop = CollectionHelpers.LoopIndex(charTexts.Length, ref newIndex);
                 if (didLoop)
                 {
                     UpdateChar(charTexts[i], newIndex);
@@ -161,7 +161,7 @@ namespace Snowmentum
         private void UpdateChar(TMP_Text updateText, int textIndex)
         {
             int index = CharIndex + (textIndex - selectedTextIndex);
-            CollectionHelpers.LoopIndex(ValidCharacters, ref index);
+            CollectionHelpers.LoopIndex(ValidCharacters.Length, ref index);
             //Debug.Log(index);
             updateText.text = ValidCharacters[index].ToString();
         }

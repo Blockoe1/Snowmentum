@@ -13,11 +13,31 @@ namespace Snowmentum
 {
     public class TimeManager : MonoBehaviour
     {
+        [SerializeField, Tooltip("The amount of time in seconds that a day full day/night cycle lasts.")]
+        private float cycleLength;
         [SerializeField] private CelestialBody[] celestialBodies;
-        [SerializeField, Tooltip("The amount of time in seconds that a day full day/night cycle lasts.")] private float dayTime;
+        [Header("Debug")]
+        [SerializeField] private bool updateInEditor;
+        [SerializeField, Range(0f, 1f)] private float debugTime;
 
         private float time;
         private bool isTimeMoving;
+
+        private void OnValidate()
+        {
+            if (updateInEditor)
+            {
+                UpdateBodies(debugTime);
+            }
+        }
+
+        /// <summary>
+        /// Debug start the day/night cycle.
+        /// </summary>
+        private void Start()
+        {
+            StartTime();
+        }
 
         /// <summary>
         /// Starts the passage of time.
@@ -28,9 +48,39 @@ namespace Snowmentum
             StartCoroutine(TimeRoutine());
         }
 
+        /// <summary>
+        /// Controls the flow of the day/night cycle and updates each celestial body.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.NotImplementedException"></exception>
         private IEnumerator TimeRoutine()
         {
-            throw new System.NotImplementedException();
+            while (isTimeMoving)
+            {
+                time += Time.deltaTime;
+                if (time > cycleLength)
+                {
+                    time -= cycleLength;
+                }
+                
+                UpdateBodies(time / cycleLength);
+
+                yield return null;
+            }
+        }
+
+        /// <summary>
+        /// Updates the celestial bodies based on the current time.
+        /// </summary>
+        /// <param name="normalizedTime"></param>
+        private void UpdateBodies(float normalizedTime)
+        {
+            // Update the celestial bodies.
+            foreach (var body in celestialBodies)
+            {
+                body.TimeUpdate(normalizedTime);
+            }
         }
     }
+
 }

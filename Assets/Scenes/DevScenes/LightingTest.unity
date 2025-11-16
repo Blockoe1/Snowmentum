@@ -270,7 +270,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snowballSizeText: {fileID: 7796099}
   displayedDigits: 5
-  postfixDigits: 1
 --- !u!1 &25348670
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,9 +302,9 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.2
-  m_Color: {r: 1, g: 0.880627, b: 0.55660367, a: 1}
-  m_Intensity: 1.2
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 0.5670546, b: 0.36163503, a: 1}
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 4da8d05e00000000cfec2be73154aaf2154f9420
@@ -328,8 +327,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 8.01
-  m_PointLightOuterRadius: 50
+  m_PointLightInnerRadius: 3.72
+  m_PointLightOuterRadius: 12.54
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -349,7 +348,7 @@ Transform:
   m_GameObject: {fileID: 25348670}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.20375013, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1636,6 +1635,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dae0e2a92b40246a6487f1c2fdff57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseScreenTime: 5
+  transitionType: 0
+  highScoreScene: SaveHighScoreScene
+  mainMenuScene: TitleScene
 --- !u!1 &1053529887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,8 +1716,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053529887}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8377705, y: -3.1657827, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12034,6 +12037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1440213097}
+  - component: {fileID: 1440213098}
   m_Layer: 0
   m_Name: DayNightCycle
   m_TagString: Untagged
@@ -12050,7 +12054,7 @@ Transform:
   m_GameObject: {fileID: 1440213096}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12058,6 +12062,23 @@ Transform:
   - {fileID: 1053529889}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1440213098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440213096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7ac4e48b3342d47affbaccec777acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.TimeManager
+  cycleLength: 10
+  celestialBodies:
+  - {fileID: 1783229587}
+  updateInEditor: 1
+  debugTime: 0.41
 --- !u!1001 &1480778683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12203,9 +12224,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.048695654
+    y: 0
     width: 1
-    height: 0.90097827
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -12950,6 +12971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1783229585}
   - component: {fileID: 1783229586}
+  - component: {fileID: 1783229587}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -12965,8 +12987,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783229584}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.31, y: 4.11, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.22164, y: 2.6791337, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13021,7 +13043,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: -9
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.9844635, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.9843137, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13031,6 +13053,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1783229587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783229584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c29e13a2e4325d4e9df53c8c034d00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.CelestialBody
+  angleOffset: 0
+  radialOffset: 5
+  bodyLight: {fileID: 25348671}
+  keyframes:
+  - time: 0.008
+    lightColor: {r: 1, g: 0.5686275, b: 0.36078432, a: 1}
+    lightIntensity: 0
+    innerRadius: 0
+    outerRadius: 0
+  - time: 0.05
+    lightColor: {r: 1, g: 0.5686275, b: 0.36078432, a: 1}
+    lightIntensity: 1
+    innerRadius: 3.72
+    outerRadius: 12.5
+  - time: 0.1
+    lightColor: {r: 1, g: 0.9098039, b: 0.65882355, a: 1}
+    lightIntensity: 1.2
+    innerRadius: 8.01
+    outerRadius: 50
+  - time: 0.4
+    lightColor: {r: 1, g: 0.9098039, b: 0.65882355, a: 1}
+    lightIntensity: 1.2
+    innerRadius: 8.01
+    outerRadius: 50
+  - time: 0.46
+    lightColor: {r: 0.9607843, g: 0.4117647, b: 0.28235295, a: 1}
+    lightIntensity: 0.5
+    innerRadius: 1.26
+    outerRadius: 7
+  - time: 0.511
+    lightColor: {r: 0.9607843, g: 0.4117647, b: 0.28235295, a: 1}
+    lightIntensity: 0
+    innerRadius: 0
+    outerRadius: 0
 --- !u!1 &1788025630
 GameObject:
   m_ObjectHideFlags: 0
