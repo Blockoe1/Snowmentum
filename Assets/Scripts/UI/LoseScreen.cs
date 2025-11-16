@@ -16,10 +16,12 @@ namespace Snowmentum.UI
     {
         [SerializeField] private float loseScreenTime = 5;
         [SerializeField] private TransitionType transitionType;
+        [SerializeField] private string highScoreScene = "SaveHighScoreScene";
+        [SerializeField] private string mainMenuScene = "TitleScene";
 
         #region CONSTS
-        private const string HIGH_SCORE_SCENE_NAME = "SaveHighScoreScene";
-        private const string TITLE_SCREEN_NAME = "TitleScene";
+        //private const string HIGH_SCORE_SCENE_NAME = "SaveHighScoreScene";
+        //private const string TITLE_SCREEN_NAME = "TitleScene";
         #endregion
 
         /// <summary>
@@ -67,11 +69,11 @@ namespace Snowmentum.UI
             ScoreStatic.CheckHighScore();
             if (ScoreStatic.CheckHighScore())
             {
-                TransitionToScene(HIGH_SCORE_SCENE_NAME);
+                TransitionToScene(highScoreScene);
             }
             else
             {
-                TransitionToScene(TITLE_SCREEN_NAME);
+                TransitionToScene(mainMenuScene);
             }
         }
     }

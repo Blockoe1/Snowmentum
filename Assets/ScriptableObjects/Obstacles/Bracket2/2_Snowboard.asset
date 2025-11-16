@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 2_Snowboard
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 12
-  obstacleSprite: {fileID: 21300000, guid: 83952e0f0b842744198f3387f28f0e5c, type: 3}
+  obstacleSize: 2.9
+  obstacleSprite: {fileID: 0}
   orderInLayer: 0
   baseScore: 6
   destroySound: Obstacle Destruction
@@ -21,7 +21,7 @@ MonoBehaviour:
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 1
-  offset: {x: 0, y: -0.19}
+  offset: {x: 0, y: -0.05}
   size: {x: 1.8, y: 0.2}
   particleSpriteSheet:
   - {fileID: -889968081, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
@@ -34,4 +34,4 @@ MonoBehaviour:
   emissionRadius: 0.2
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
-  baseSize: 4
+  baseSize: 2

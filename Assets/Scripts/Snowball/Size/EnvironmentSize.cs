@@ -120,7 +120,7 @@ namespace Snowmentum
             // Update our move speed based on our old and new target value so that moveToTarget represents the amount
             // of transition time.
             moveSpeed = Mathf.Abs(TargetValue - oldTarget) / moveToTarget;
-            Debug.Log(moveSpeed);
+            //Debug.Log(moveSpeed);
         }
     }
 }

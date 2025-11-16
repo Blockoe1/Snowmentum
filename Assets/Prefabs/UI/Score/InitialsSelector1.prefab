@@ -205,23 +205,23 @@ MonoBehaviour:
   - {fileID: 5312266749548382504}
   - {fileID: 3236449589349129423}
   displaySettings:
-  - yPos: 125
+  - yPos: 150
     fontSize: 0
     alpha: 0
     isSelectedChar: 0
-  - yPos: 75
-    fontSize: 50
+  - yPos: 125
+    fontSize: 30
     alpha: 0.5882353
     isSelectedChar: 0
   - yPos: 0
-    fontSize: 80
+    fontSize: 63
     alpha: 1
     isSelectedChar: 1
-  - yPos: -75
-    fontSize: 50
+  - yPos: -125
+    fontSize: 30
     alpha: 0.5882353
     isSelectedChar: 0
-  - yPos: -125
+  - yPos: -150
     fontSize: 0
     alpha: 0
     isSelectedChar: 0

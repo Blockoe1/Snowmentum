@@ -48,12 +48,12 @@ MonoBehaviour:
   minigameAnimator: {fileID: 4880275567121914993}
   maxSizeGain: 0.5
   packingTime: 3
-  packingQualityScaler: 765000
+  packingQualityScaler: 300000
   maxSpeedGain: 1.5
   throwDelay: 0.5
   minThrowForce: 10000
   throwSampleTime: 0.1
-  throwStrengthScaler: 50500
+  throwStrengthScaler: 18000
   startingSpeedScaler: 15
   OnMinigameTransition:
     m_PersistentCalls:

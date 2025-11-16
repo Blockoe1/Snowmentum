@@ -53,8 +53,17 @@ namespace Snowmentum
         private readonly Queue<ObstacleController> inactiveObstacles = new();
 
         private bool isSpawning;
+        private bool isPaused;
 
-        
+
+        #region Properties
+        public bool IsPaused
+        {
+            get { return isPaused; }
+            set { isPaused = value; }
+        }
+        #endregion
+
 
         //#region Nested
         //[System.Serializable]
@@ -121,6 +130,7 @@ namespace Snowmentum
             if (spawnOnStart)
             {
                 StartCoroutine(SpawnObstacles(0));
+                
             }
         }
 
@@ -181,7 +191,7 @@ namespace Snowmentum
                     //Spawn obstacle and set it up with it's data
                     //Instantiate(obstacleSpawn, SpawnArea, Quaternion.identity, obstacleParent);
                     spawnedController = GetObstacleController();
-                    spawnedController.SnapPosition(spawnArea);
+                    spawnedController.Reset(spawnArea);
                     spawnedController.SetObstacle(obstacleData);
                     spawnedController.ReturnFunction = ReturnObstacle;
 
@@ -190,19 +200,17 @@ namespace Snowmentum
                     //StartCoroutine(SpawnObstacles());
                 }
 
-                if (scaleWithSpeed)
+                float timer = spawnCooldown;
+                while (timer > 0)
                 {
-                    float timer = spawnCooldown;
-                    while(timer > 0)
+                    // Prevent the timer from decreasing if spawning is paused.
+                    if (!isPaused)
                     {
-                        timer -= Time.deltaTime * SnowballSpeed.Value; 
-                        yield return null;
+                        float timerDecay = scaleWithSpeed ? Time.deltaTime * SnowballSpeed.Value : Time.deltaTime;
+                        timer -= timerDecay;
                     }
-                }
-                else
-                {
-                    yield return new WaitForSeconds(spawnCooldown);
-                }                
+                    yield return null;
+                }              
             }
         }
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 1_Stick
   m_EditorClassIdentifier: 
-  obstacleSize: 3.5
+  obstacleSize: 1.75
   obstacleSprite: {fileID: 21300000, guid: f3ed3c9c67930d54ebee0eadd1d8b68d, type: 3}
   orderInLayer: 0
   baseScore: 2

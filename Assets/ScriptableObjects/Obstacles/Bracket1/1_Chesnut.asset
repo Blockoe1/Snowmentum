@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 1_Chesnut
   m_EditorClassIdentifier: 
-  obstacleSize: 3
+  obstacleSize: 1.5
   obstacleSprite: {fileID: 21300000, guid: 36ac8feed49d85c49b94f8804d007a92, type: 3}
   orderInLayer: 0
   baseScore: 2
@@ -20,9 +20,9 @@ MonoBehaviour:
   showOutline: 1
   tag: Untagged
   hasCollision: 1
-  capsuleDirection: 0
+  capsuleDirection: 1
   offset: {x: 0.03, y: -0.05}
-  size: {x: 1.1, y: 1.2}
+  size: {x: 0.98, y: 0.9}
   particleSpriteSheet:
   - {fileID: -1806765887, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
   - {fileID: -733742154, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
@@ -32,4 +32,6 @@ MonoBehaviour:
   - {fileID: 15126433, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
   particleNumber: 25
   emissionRadius: 0.5
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
   baseSize: 1
