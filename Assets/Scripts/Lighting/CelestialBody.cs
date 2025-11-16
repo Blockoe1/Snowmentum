@@ -7,6 +7,7 @@
 // Brief Description : Controls the movement of a celestial body around the center of the screen based on the time.
 *****************************************************************************/
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -42,9 +43,9 @@ namespace Snowmentum
         /// </summary>
         private void Awake()
         {
-            keyframes.OrderBy(item => item.time).ToArray();
             if (keyframes.Length > 1)
             {
+                keyframes = keyframes.OrderBy(item => item.time).ToArray();
                 hasKeyframes = true;
                 currentKeyframe = 0;
                 targetKeyframe = 1;
@@ -65,30 +66,49 @@ namespace Snowmentum
 
             if (hasKeyframes)
             {
-                // If this is the last keyframe, don't update until normalizedTime has looped.
-                if (targetKeyframe != 0 || normalizedTime < keyframes[currentKeyframe].time)
+                void IncrementKeyframe()
                 {
-                    // Update next and current keyframes.
-                    if (normalizedTime > keyframes[targetKeyframe].time)
+                    currentKeyframe = targetKeyframe;
+                    targetKeyframe++;
+                    CollectionHelpers.LoopIndex(keyframes.Length, ref targetKeyframe);
+                }
+                void DecrementKeyframe()
+                {
+                    targetKeyframe = currentKeyframe;
+                    currentKeyframe--;
+                    CollectionHelpers.LoopIndex(keyframes.Length, ref currentKeyframe);
+                }
+
+                // Update next and current keyframes.
+                if (targetKeyframe == 0)
+                {
+                    // Need to do extra checks when looping to ensure things move properly.
+                    if (normalizedTime >= keyframes[targetKeyframe].time && 
+                        normalizedTime < keyframes[targetKeyframe + 1].time)
                     {
-                        currentKeyframe = targetKeyframe;
-                        targetKeyframe++;
-                        CollectionHelpers.LoopIndex(keyframes.Length, ref targetKeyframe);
+                        IncrementKeyframe();
+                    }
+                    else if (normalizedTime < keyframes[currentKeyframe].time && 
+                        normalizedTime > keyframes[currentKeyframe - 1].time)
+                    {
+                        DecrementKeyframe();
+                    }
+                }
+                else
+                {
+                    if (normalizedTime >= keyframes[targetKeyframe].time)
+                    {
+                        IncrementKeyframe();
                     }
                     else if (normalizedTime < keyframes[currentKeyframe].time)
                     {
-                        targetKeyframe = currentKeyframe;
-                        currentKeyframe--;
-                        CollectionHelpers.LoopIndex(keyframes.Length, ref currentKeyframe);
+                        DecrementKeyframe();   
                     }
                 }
 
-                Debug.Log(currentKeyframe + " " + targetKeyframe);
-                // Calculate the distance between them.
-                float toTarget = normalizedTime - keyframes[currentKeyframe].time;
-                float keyframeDistance = keyframes[targetKeyframe].time - keyframes[currentKeyframe].time;
-                // Calculate the normalized progress between the two keyframes.
-                float normalizedKeyframeDistance = toTarget / keyframeDistance;
+                    Debug.Log(currentKeyframe + " " + targetKeyframe);
+                float normalizedKeyframeDistance = 
+                    GetNomalizedKeyDistance(keyframes[currentKeyframe], keyframes[targetKeyframe], normalizedTime);
 
                 // lerp between the two keyframes.
                 SetTimeData(LerpKeyframe(keyframes[currentKeyframe], keyframes[targetKeyframe], 
@@ -126,6 +146,24 @@ namespace Snowmentum
                 bodyLight.pointLightInnerRadius = keyframe.innerRadius;
                 bodyLight.pointLightOuterRadius = keyframe.outerRadius;
             }
+        }
+
+        /// <summary>
+        /// Calculates the normalized progress between two keyframes given a certain normalized time.
+        /// </summary>
+        /// <param name="current"></param>
+        /// <param name="target"></param>
+        /// <param name="normalizedTime"></param>
+        /// <returns></returns>
+        private static float GetNomalizedKeyDistance(TimeKeyframe current, TimeKeyframe target, 
+            float normalizedTime)
+        {
+            // Calculate the distance between them.
+            float toTarget = normalizedTime - current.time;
+            float keyframeDistance = target.time - current.time;
+            // Calculate the normalized progress between the two keyframes.
+            float normalizedKeyframeDistance = toTarget / keyframeDistance;
+            return normalizedKeyframeDistance;
         }
 
         /// <summary>
