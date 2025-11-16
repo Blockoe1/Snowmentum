@@ -315,8 +315,8 @@ MonoBehaviour:
     maxDamageProportion: 0.05
     curveSteepness: 1.5
     curveScale: 0.3
-    minDamageKnockback: 8
-    knockbackCurveSteepness: 2
+    minDamageKnockback: 10
+    knockbackCurveSteepness: 1.9
     knockbackCurveScale: 1
   OnTakeDamage:
     m_PersistentCalls:
