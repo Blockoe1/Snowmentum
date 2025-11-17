@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 2_Bush
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 3.9
+  obstacleSize: 4
   obstacleSprite: {fileID: 21300000, guid: e90353b28c8fed94da57c79d0a538359, type: 3}
   orderInLayer: 0
   baseScore: 5
