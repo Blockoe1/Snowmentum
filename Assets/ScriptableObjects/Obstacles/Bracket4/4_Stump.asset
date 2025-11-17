@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4_Stump
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 0
-  obstacleSprite: {fileID: 0}
+  obstacleSprite: {fileID: 21300000, guid: 3014916efeb05504fb99fa91d9e15998, type: 3}
   orderInLayer: 0
   baseScore: 0
   destroySound: Obstacle Destruction
@@ -23,9 +23,13 @@ MonoBehaviour:
   capsuleDirection: 0
   offset: {x: 0, y: 0}
   size: {x: 1, y: 1}
-  particleSpriteSheet: []
+  particleSpriteSheet:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   particleNumber: 0
-  emissionRadius: 0
+  emissionRadius: 0.0001
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
-  baseSize: 0
+  baseSize: 1
