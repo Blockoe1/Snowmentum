@@ -23,9 +23,13 @@ MonoBehaviour:
   capsuleDirection: 0
   offset: {x: 0, y: 0}
   size: {x: 1, y: 1}
-  particleSpriteSheet: []
+  particleSpriteSheet:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   particleNumber: 0
-  emissionRadius: 0
+  emissionRadius: 0.0001
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
   baseSize: 4
