@@ -268,6 +268,8 @@ MonoBehaviour:
   - CNT
   - NYG
   - DYC
+  - PUS
+  - COK
   OnScroll:
     m_PersistentCalls:
       m_Calls:
@@ -334,6 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d4b0154df0a7e4a9722fb601e08dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionType: 0
 --- !u!114 &766292497696511938
 MonoBehaviour:
   m_ObjectHideFlags: 0

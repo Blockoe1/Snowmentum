@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 4_Log
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 10
+  obstacleSize: 12
   obstacleSprite: {fileID: 21300000, guid: 6acd680b1d2c767439cc589837641d71, type: 3}
   orderInLayer: 0
-  baseScore: 13
+  baseScore: 15
   destroySound: Obstacle Destruction
   showOutline: 1
   tag: Untagged
