@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
-  m_Name: 4_Broken Log
+  m_Name: 3_Bush_F2
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 9
-  obstacleSprite: {fileID: -2252870272638687543, guid: 524a69287cb98ee4b859a80e89a78529, type: 3}
+  obstacleSize: 3.9
+  obstacleSprite: {fileID: 21300000, guid: e90353b28c8fed94da57c79d0a538359, type: 3}
   orderInLayer: 0
-  baseScore: 13
+  baseScore: 5
   destroySound: Obstacle Destruction
   showOutline: 1
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 1
-  offset: {x: 0.12580736, y: 0.002647579}
-  size: {x: 0.8914113, y: 0.47029576}
+  offset: {x: 0.022, y: -0.21}
+  size: {x: 2.3, y: 1.2}
   particleSpriteSheet:
   - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
@@ -30,8 +30,8 @@ MonoBehaviour:
   - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  particleNumber: 20
-  emissionRadius: 0.2
+  particleNumber: 40
+  emissionRadius: 0.6
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
-  baseSize: 8
+  baseSize: 2

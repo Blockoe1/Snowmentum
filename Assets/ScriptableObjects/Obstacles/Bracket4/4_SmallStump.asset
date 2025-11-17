@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 4_SmallStump
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 8
+  obstacleSize: 8.5
   obstacleSprite: {fileID: 21300000, guid: fa65c6aae8b00044d875efdac20c9a35, type: 3}
   orderInLayer: 0
   baseScore: 10
@@ -20,9 +20,9 @@ MonoBehaviour:
   showOutline: 1
   tag: Untagged
   hasCollision: 1
-  capsuleDirection: 0
-  offset: {x: 0.08, y: -0.08}
-  size: {x: 0.55, y: 0.55}
+  capsuleDirection: 1
+  offset: {x: -0.003006039, y: 0.020427467}
+  size: {x: 0.36759132, y: 0.23437276}
   particleSpriteSheet:
   - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
@@ -34,4 +34,4 @@ MonoBehaviour:
   emissionRadius: 0.25
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
-  baseSize: 4
+  baseSize: 8
