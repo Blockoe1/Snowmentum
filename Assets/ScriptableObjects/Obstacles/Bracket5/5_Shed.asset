@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
-  m_Name: 4_Lodge
+  m_Name: 5_Shed
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 14
-  obstacleSprite: {fileID: 21300000, guid: 65ff36233865a77478f3b699b6228172, type: 3}
+  obstacleSize: 24
+  obstacleSprite: {fileID: 21300000, guid: 2fdbc183c6697354783ec1070fc6594f, type: 3}
   orderInLayer: 0
-  baseScore: 30
+  baseScore: 16
   destroySound: Obstacle Destruction
   showOutline: 1
   tag: Untagged
   hasCollision: 1
-  capsuleDirection: 1
-  offset: {x: 0, y: -0.08}
-  size: {x: 1.4, y: 0.65}
+  capsuleDirection: 0
+  offset: {x: 0.01, y: -0.02}
+  size: {x: 1.25, y: 1.5}
   particleSpriteSheet:
   - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  particleNumber: 50
+  particleNumber: 45
   emissionRadius: 0.5
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
-  baseSize: 8
+  baseSize: 16
