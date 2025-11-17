@@ -45,14 +45,13 @@ namespace Snowmentum
         public void StartMinigame()
         {
             InputManager.OnDeltaUpdate += MouseUpdate;
-
         }
 
         /// <summary>
         /// Handles mouse input.
         /// </summary>
         /// <param name="delta"></param>
-        protected abstract void MouseUpdate(Vector2 delta);
+        protected abstract void MouseUpdate(Vector2 mouseDelta);
 
         /// <summary>
         /// Controls the progression of time through this minigame segment.

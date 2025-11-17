@@ -28,28 +28,19 @@ namespace Snowmentum
             // Skip any updates where our mouse didnt move.
             if (mouseDelta == Vector2.zero)
             {
+                // Reset the animator.
                 anim.SetInteger(DIRECTION_ANIM_INT, 0);
                 anim.SetBool(VERTICAL_ANIM_BOOL, false);
                 return;
             }
 
             // Update the animator.
-            if (mouseDelta.y > mouseDelta.x)
-            {
-                // For vertical input
-                anim.SetInteger(DIRECTION_ANIM_INT, -1);
-                anim.SetBool(VERTICAL_ANIM_BOOL, true);
-            }
-            else
-            {
-                // For horizontal inputs, we also need to flip the sprite renderer if we're packing negative.
-                anim.SetInteger(DIRECTION_ANIM_INT, 1);
-                anim.SetBool(VERTICAL_ANIM_BOOL, false);
-            }
+            anim.SetBool(VERTICAL_ANIM_BOOL, mouseDelta.y > mouseDelta.x);
+            anim.SetInteger(DIRECTION_ANIM_INT, mouseDelta.x > 0 ? 1 : -1); 
 
-                // Increase the quality of the snowball based on how much the mouse delta changed since the
-                // last update.
-                packingQuality += Vector2.Distance(lastDelta, mouseDelta);
+            // Increase the quality of the snowball based on how much the mouse delta changed since the
+            // last update.
+            packingQuality += Vector2.Distance(lastDelta, mouseDelta);
             lastDelta = mouseDelta;
 
             // Only allow the timer to update once the player has done at least one input.
@@ -72,7 +63,6 @@ namespace Snowmentum
                 timer -= Time.deltaTime;
                 yield return null;
             }
-
             CompleteMinigame(packingQuality);
         }
     }
