@@ -37,3 +37,6 @@ MonoBehaviour:
   - obstacle: {fileID: 11400000, guid: 55525bc753fb43245a9f61ba300bcb01, type: 2}
     baseWeight: 19
     addedWeight: 7
+  - obstacle: {fileID: 11400000, guid: fb3397e3655799c4fbf9d3ff9e5c2b39, type: 2}
+    baseWeight: 19
+    addedWeight: 7
