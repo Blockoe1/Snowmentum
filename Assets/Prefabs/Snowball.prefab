@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d02852d69ffadb4fbcc8bafb7deda3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingValue: 0.25
+  startingValue: 0.5
   increasePerSecond: 0.0125
   moveToTarget: 7
   useFixedUpdate: 1
