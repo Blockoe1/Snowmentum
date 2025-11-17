@@ -8,6 +8,7 @@
 // We can expand this script to handle more parts of the snowball if needed though. 
 *****************************************************************************/
 using Snowmentum.Size;
+using System.Collections;
 using UnityEngine;
 
 
@@ -28,6 +29,8 @@ namespace Snowmentum
         private float maxSpeed;
         [SerializeField] private float minY;
         [SerializeField] private float maxY;
+
+        private bool movementPaused;
 
         #region Component References
         [Header("Components")]
@@ -77,9 +80,13 @@ namespace Snowmentum
         //this function moves the snowball up and down in accordance with the movement of the mouse
         private void ApplyMovementForce()
         {
-            //Debug.Log(mouseDelta);
-            float sizeScale = scaleWithSnowballSize ? SnowballSize.Value : 1f;
-            snowballRigidbody.AddForce((baseMovementSensitivity * InputManager.MouseDelta.y / sizeScale) * Vector2.up);
+            // Prevent movement if movement is paused.
+            if (!movementPaused)
+            {
+                //Debug.Log(mouseDelta);
+                float sizeScale = scaleWithSnowballSize ? SnowballSize.Value : 1f;
+                snowballRigidbody.AddForce((baseMovementSensitivity * InputManager.MouseDelta.y / sizeScale) * Vector2.up);
+            }
 
             //Old movement that used transform.translate. Can probably remove but leaving it for now just in case, I guess
             //transform.Translate(Vector3.up * mouseDelta.y * movementSensitivity);
@@ -136,5 +143,28 @@ namespace Snowmentum
         //{
         //    mouseMovement.started -= Handle_SnowballMouseMovement;
         //}
+
+        /// <summary>
+        /// Pauses the snowball's movement for a certain period of time.
+        /// </summary>
+        /// <param name="duration"></param>
+        public void PauseMovement(float duration)
+        {
+            movementPaused = true;
+            StartCoroutine(PauseRoutine(duration));
+        }
+        public void Unpause()
+        {
+            movementPaused = false;
+        }
+        private IEnumerator PauseRoutine(float duration)
+        {
+            while (duration > 0 && movementPaused)
+            {
+                duration -= Time.deltaTime;
+                yield return null;
+            }
+            movementPaused = false;
+        }
     }
 }
