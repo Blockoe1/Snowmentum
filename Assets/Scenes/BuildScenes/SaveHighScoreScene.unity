@@ -488,10 +488,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.2921875
+    x: 0
     y: 0
-    width: 0.36944446
-    height: 0.36944443
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1179,34 +1179,6 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1143058335969125488, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[0].yPos
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 1143058335969125488, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[1].yPos
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 1143058335969125488, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[3].yPos
-      value: -125
-      objectReference: {fileID: 0}
-    - target: {fileID: 1143058335969125488, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[4].yPos
-      value: -150
-      objectReference: {fileID: 0}
-    - target: {fileID: 1143058335969125488, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[1].fontSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1143058335969125488, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[2].fontSize
-      value: 63
-      objectReference: {fileID: 0}
-    - target: {fileID: 1143058335969125488, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[3].fontSize
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 1227905960569846366, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -1362,34 +1334,6 @@ PrefabInstance:
     - target: {fileID: 4794326054251732251, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464662059725436033, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[0].yPos
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464662059725436033, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[1].yPos
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464662059725436033, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[3].yPos
-      value: -125
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464662059725436033, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[4].yPos
-      value: -150
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464662059725436033, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[1].fontSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464662059725436033, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[2].fontSize
-      value: 63
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464662059725436033, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[3].fontSize
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5532613327032587922, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
       propertyPath: m_fontAsset
@@ -1670,34 +1614,6 @@ PrefabInstance:
     - target: {fileID: 8776906656609168719, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193476860006111434, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[0].yPos
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193476860006111434, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[1].yPos
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193476860006111434, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[3].yPos
-      value: -125
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193476860006111434, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[4].yPos
-      value: -150
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193476860006111434, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[1].fontSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193476860006111434, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[2].fontSize
-      value: 63
-      objectReference: {fileID: 0}
-    - target: {fileID: 9193476860006111434, guid: 9d06c8264caabc847a5e31853c06aa4e, type: 3}
-      propertyPath: displaySettings.Array.data[3].fontSize
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

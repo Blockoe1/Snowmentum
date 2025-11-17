@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 2_Skiis
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 2.75
-  obstacleSprite: {fileID: 7482667652216324306, guid: 657f7761f7b1d9a49a2e092b9a0bb89f, type: 3}
+  obstacleSize: 3
+  obstacleSprite: {fileID: 21300000, guid: e29c579b91e839f4285d1ac546779b1e, type: 3}
   orderInLayer: 0
   baseScore: 5
   destroySound: Obstacle Destruction
@@ -21,8 +21,8 @@ MonoBehaviour:
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 1
-  offset: {x: -0.018143896, y: -0.005761212}
-  size: {x: 2.0092618, y: 0.23326351}
+  offset: {x: 0, y: 0.25}
+  size: {x: 2, y: 0.4}
   particleSpriteSheet:
   - {fileID: -889968081, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
   - {fileID: -732115837, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
@@ -32,6 +32,6 @@ MonoBehaviour:
   - {fileID: -1804804186, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
   particleNumber: 30
   emissionRadius: 0.5
-  isGreyboxed: 1
-  spriteSize: {x: 2.1, y: 0.25}
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
   baseSize: 2

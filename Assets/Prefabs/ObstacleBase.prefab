@@ -1591,6 +1591,8 @@ ParticleSystem:
     - sprite: {fileID: -406349086, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
     - sprite: {fileID: -1987503855, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
     - sprite: {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
+    - sprite: {fileID: 0}
+    - sprite: {fileID: 0}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -5374,4 +5376,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ad2a0072c957946ae7475a4921e381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleDropper
-  fallSpeed: 1
+  fallSpeed: 2
