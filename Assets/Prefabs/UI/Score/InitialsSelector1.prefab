@@ -216,7 +216,7 @@ MonoBehaviour:
   - yPos: 0
     fontSize: 63
     alpha: 1
-    isSelectedChar: 0
+    isSelectedChar: 1
   - yPos: -125
     fontSize: 30
     alpha: 0.5882353
