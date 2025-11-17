@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: 03_Bracket
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleBracket
   spawnData:
-  - obstacle: {fileID: 11400000, guid: d02f335282495e34a852c038bf860bd2, type: 2}
-    baseWeight: 8
-    addedWeight: 2
   - obstacle: {fileID: 11400000, guid: 0992a6edde714cf478babab2478b7f41, type: 2}
     baseWeight: 8
     addedWeight: 2
