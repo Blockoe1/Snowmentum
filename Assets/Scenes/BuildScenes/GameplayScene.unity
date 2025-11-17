@@ -1075,7 +1075,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 250, y: 1.0999756}
+  m_AnchoredPosition: {x: 250, y: 1.1000977}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &419100787
@@ -12277,42 +12277,42 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
-      objectReference: {fileID: -669536997, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: UVModule.sprites.Array.data[1].sprite
       value: 
-      objectReference: {fileID: -1630238224, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: UVModule.sprites.Array.data[2].sprite
       value: 
-      objectReference: {fileID: -41123417, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: UVModule.sprites.Array.data[3].sprite
       value: 
-      objectReference: {fileID: 1458914380, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: UVModule.sprites.Array.data[4].sprite
       value: 
-      objectReference: {fileID: 1473342118, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: UVModule.sprites.Array.data[5].sprite
       value: 
-      objectReference: {fileID: -595689659, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
+      objectReference: {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
-      objectReference: {fileID: 11400000, guid: e0ac2bff0c8fd584b8650bd1e5d57346, type: 2}
+      objectReference: {fileID: 11400000, guid: a8bbee3164c7fb94d8618066fe5a039e, type: 2}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: obstacleData
       value: 
-      objectReference: {fileID: 11400000, guid: e0ac2bff0c8fd584b8650bd1e5d57346, type: 2}
+      objectReference: {fileID: 11400000, guid: a8bbee3164c7fb94d8618066fe5a039e, type: 2}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: obstacleSize
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: autoUpdateObstacleData
@@ -12324,7 +12324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12404,7 +12404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Name
-      value: 1_Pebble
+      value: TutorializeObstacle
       objectReference: {fileID: 0}
     - target: {fileID: 5866592910555483468, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: soundName
@@ -12416,11 +12416,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Size.x
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Size.y
       value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Direction
@@ -12433,7 +12437,7 @@ PrefabInstance:
     - target: {fileID: 8871070839524519023, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fab0ba91ddb0c2c4c87b9411cfbaec07, type: 3}
+      objectReference: {fileID: 21300000, guid: 7ec80bbd1f4a7814496714e2dc76527f, type: 3}
     m_RemovedComponents:
     - {fileID: 7078567782857989211, guid: 3586529929dfe284a88be892efb227ca, type: 3}
     m_RemovedGameObjects: []
@@ -12600,10 +12604,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.30312502
+    x: 0.7796391
     y: 0
-    width: 0.33981484
-    height: 0.3398148
+    width: 1.1340206
+    height: 1.1344538
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -13329,7 +13333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19383,6 +19387,10 @@ PrefabInstance:
       propertyPath: sizeBonusWeight
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
+      propertyPath: 'brackets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2df33305f65b0274aaf136fed9e7f74b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
