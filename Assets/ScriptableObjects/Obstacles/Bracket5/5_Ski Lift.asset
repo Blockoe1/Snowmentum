@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
-  m_Name: 2_Snowboard
+  m_Name: 5_Ski Lift
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 3.3
-  obstacleSprite: {fileID: 21300000, guid: 83952e0f0b842744198f3387f28f0e5c, type: 3}
+  obstacleSize: 32
+  obstacleSprite: {fileID: 7482667652216324306, guid: 657f7761f7b1d9a49a2e092b9a0bb89f, type: 3}
   orderInLayer: 0
-  baseScore: 6
+  baseScore: 30
   destroySound: Obstacle Destruction
   showOutline: 1
   tag: Untagged
   hasCollision: 1
-  capsuleDirection: 1
-  offset: {x: 0, y: -0.19}
-  size: {x: 1.8, y: 0.2}
+  capsuleDirection: 0
+  offset: {x: -0.006945193, y: -0.0042901635}
+  size: {x: 0.7761303, y: 1.3690501}
   particleSpriteSheet:
   - {fileID: -889968081, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
-  - {fileID: -732115837, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
   - {fileID: -156959124, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  - {fileID: -732115837, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
   - {fileID: 1789747204, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
   - {fileID: -494359493, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
   - {fileID: -1804804186, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
-  particleNumber: 25
-  emissionRadius: 0.2
-  isGreyboxed: 0
-  spriteSize: {x: 1, y: 1}
-  baseSize: 2
+  particleNumber: 35
+  emissionRadius: 0.1
+  isGreyboxed: 1
+  spriteSize: {x: 1.2, y: 1.8}
+  baseSize: 16

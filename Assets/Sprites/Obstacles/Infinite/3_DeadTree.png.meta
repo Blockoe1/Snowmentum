@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 524a69287cb98ee4b859a80e89a78529
+guid: 314e45a7fa7bc604b8756f55392e6dad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7888663036090841681
-    second: log2_0
-  - first:
-      213: -2252870272638687543
-    second: log2_1
+      213: -8341525629099474566
+    second: 3_DeadTree_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,45 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: log2_0
+      name: Snowmentum_Sprite_Obstacle_Pinecone_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 47
-        height: 32
+        width: 18
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 15af2f24c392a7d60800000000000000
-      internalID: 7888663036090841681
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: log2_1
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 0
-        width: 47
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c6655a5c623cb0e0800000000000000
-      internalID: -2252870272638687543
+      spriteID: 0c45e66dbf50b3cc0800000000000000
+      internalID: -3730381287153838912
       vertices: []
       indices: 
       edges: []
@@ -158,12 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":47.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      log2_0: 7888663036090841681
-      log2_1: -2252870272638687543
+      Snowmentum_Sprite_Obstacle_Pinecone_0: -3730381287153838912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
