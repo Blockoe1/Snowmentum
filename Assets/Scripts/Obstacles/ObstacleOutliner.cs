@@ -17,8 +17,8 @@ namespace Snowmentum
     [RequireComponent(typeof(ObstacleController))]
     public class ObstacleOutliner : MonoBehaviour
     {
-        [SerializeField] private Color deadlyColor = Color.red;
-        [SerializeField] private Color destroyableColor = Color.green;
+        [SerializeField, ColorUsage(true, true)] private Color deadlyColor = Color.red;
+        [SerializeField, ColorUsage(true, true)] private Color destroyableColor = Color.green;
         [SerializeField, Tooltip("The maximum alpha value that the outline can have."), Range(0, 1)] 
         private float maxOutlineAlpha;
         [SerializeField, Tooltip("The maximum amount the object's sprite gets tinted."), Range(0, 1)]

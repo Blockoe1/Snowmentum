@@ -5027,6 +5027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleData: {fileID: 0}
   autoUpdateObstacleData: 1
+  obstacleSize: 0
   oldObsData: {fileID: 0}
   rend: {fileID: 8871070839524519023}
   obstacleCollider: {fileID: 7567752226576047106}
@@ -5355,8 +5356,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794b4b2889e3ba446933a10d731f47f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadlyColor: {r: 1, g: 0.2924527, b: 0.31376427, a: 1}
-  destroyableColor: {r: 0.26996374, g: 0.26100624, b: 1, a: 1}
+  deadlyColor: {r: 1.9766748, g: 0.5780839, b: 0.62020993, a: 1}
+  destroyableColor: {r: 0.5336305, g: 0.5159244, b: 1.9766748, a: 1}
   maxOutlineAlpha: 0.725
   maxTintValue: 0.25
   maxDistance: 9
