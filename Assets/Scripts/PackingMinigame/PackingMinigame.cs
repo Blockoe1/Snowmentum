@@ -37,6 +37,8 @@ namespace Snowmentum
         private float throwStrengthScaler = 10000;
         [SerializeField, Tooltip("Multiplied by the scaled throwStrength to get the starting speed of the snowball")] 
         private float startingSpeedScaler;
+        [SerializeField, Tooltip("The minimum starting speed that the snowball is thrown at.")] 
+        private float minStartingSpeed;
 
         [Header("Events")]
         [SerializeField] private UnityEvent OnMinigameTransition;
@@ -305,7 +307,8 @@ namespace Snowmentum
             //Debug.Log($"Packing Quality: {packingQuality}.  Throw Strength: {throwStrength}");
 
             // Use this event to start the snowball moving at a speed that scales based on the throw strength
-            OnMultipliedMinigameThrow?.Invoke(throwStrength * startingSpeedScaler);
+            //Debug.Log(throwStrength * startingSpeedScaler);
+            OnMultipliedMinigameThrow?.Invoke(Mathf.Max(throwStrength * startingSpeedScaler, minStartingSpeed));
 
             minigameState = null;
 
