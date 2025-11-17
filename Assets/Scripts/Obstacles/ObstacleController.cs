@@ -25,7 +25,7 @@ namespace Snowmentum
         //[SerializeField] private bool isGreybox;
 
         private ObstacleReturnFunction obstacleReturnFunction;
-        private float obstacleSize;
+        [SerializeField, HideInInspector] private float obstacleSize;
 
 #if UNITY_EDITOR
         [SerializeField, HideInInspector] private Obstacle oldObsData;
@@ -398,6 +398,9 @@ namespace Snowmentum
                     }
                     return origin;
                 }
+
+                // Native variables.
+                obstacleSize = ProcessAssignment(obstacleSize, obstacleData.ObstacleSize);
 
                 #region GameObject
                 //gameObject.tag = obstacleData.Tag;
