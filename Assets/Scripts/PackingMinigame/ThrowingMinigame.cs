@@ -27,12 +27,13 @@ namespace Snowmentum
         private float sampleTimer;
 
         /// <summary>
-        /// Starts the throw portion of the minigame.
+        /// Instead of immediately starting the minigame, wait for a delay.
         /// </summary>
-        public void StartThrow()
+
+        public override void StartMinigame()
         {
             StartCoroutine(Timer());
-        }    
+        }
 
         protected override void MouseUpdate(Vector2 mouseDelta)
         {
@@ -72,7 +73,7 @@ namespace Snowmentum
         protected override IEnumerator Timer()
         {
             yield return new WaitForSeconds(throwDelay);
-            StartMinigame();
+            base.StartMinigame();
         }
     }
 }

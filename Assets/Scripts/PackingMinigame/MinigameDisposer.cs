@@ -12,13 +12,13 @@ namespace Snowmentum
 {
     public class MinigameDisposer : MonoBehaviour
     {
-        [SerializeField] private ThrowingMinigame throwMinigame;
+        [SerializeField] private MinigameBase nextMinigame;
 
         public void StartThrow()
         {
-            if (throwMinigame != null)
+            if (nextMinigame != null)
             {
-                throwMinigame.StartThrow();
+                nextMinigame.StartMinigame();
             }
             DestroyMinigame();
         }

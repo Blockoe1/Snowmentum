@@ -55,7 +55,7 @@ namespace Snowmentum
         /// <summary>
         /// Starts the minigame.
         /// </summary>
-        public void StartMinigame()
+        public virtual void StartMinigame()
         {
             InputManager.OnDeltaUpdate += MouseUpdate;
         }

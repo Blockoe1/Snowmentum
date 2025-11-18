@@ -35,7 +35,7 @@ namespace Snowmentum
             }
 
             // Update the animator.
-            anim.SetBool(VERTICAL_ANIM_BOOL, mouseDelta.y > mouseDelta.x);
+            anim.SetBool(VERTICAL_ANIM_BOOL, Mathf.Abs(mouseDelta.y) > Mathf.Abs(mouseDelta.x));
             anim.SetInteger(DIRECTION_ANIM_INT, mouseDelta.x > 0 ? 1 : -1); 
 
             // Increase the quality of the snowball based on how much the mouse delta changed since the

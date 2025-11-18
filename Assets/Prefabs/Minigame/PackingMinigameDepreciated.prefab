@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 7419261161447084949}
   - component: {fileID: 233647119936114998}
   m_Layer: 0
-  m_Name: PackingMinigame
+  m_Name: PackingMinigameDepreciated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
