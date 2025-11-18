@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: 5_Ski Lift
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 32
-  obstacleSprite: {fileID: 7482667652216324306, guid: 657f7761f7b1d9a49a2e092b9a0bb89f, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 966d927e7be4f3245a08793251579dd0, type: 3}
   orderInLayer: 0
-  baseScore: 30
+  baseScore: 50
   destroySound: Obstacle Destruction
   showOutline: 1
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 0
-  offset: {x: -0.006945193, y: -0.0042901635}
-  size: {x: 0.7761303, y: 1.3690501}
+  offset: {x: 0.014668703, y: -0.1204648}
+  size: {x: 0.5383773, y: 1.5}
   particleSpriteSheet:
   - {fileID: -889968081, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
   - {fileID: -156959124, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
@@ -32,6 +32,6 @@ MonoBehaviour:
   - {fileID: -1804804186, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
   particleNumber: 35
   emissionRadius: 0.1
-  isGreyboxed: 1
-  spriteSize: {x: 1.2, y: 1.8}
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
   baseSize: 16
