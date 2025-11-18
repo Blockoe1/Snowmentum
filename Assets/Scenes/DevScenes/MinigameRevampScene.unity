@@ -12637,10 +12637,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.30468753
     y: 0
-    width: 1
-    height: 1
+    width: 0.3453704
+    height: 0.34537035
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -19466,10 +19466,6 @@ PrefabInstance:
       propertyPath: snowballSpeed
       value: 
       objectReference: {fileID: 1671779627}
-    - target: {fileID: 3615205238401087452, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1911501355, guid: b1177cc346d9bc04caa1276a713f9c8b, type: 3}
     - target: {fileID: 3711161457828201969, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
       propertyPath: m_Name
       value: ThrowMinigame
