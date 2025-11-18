@@ -73,7 +73,7 @@ namespace Snowmentum
         /// <summary>
         /// Resets this snowball value.
         /// </summary>
-        protected abstract void ResetValues();
+        public abstract void ResetValues();
 
         /// <summary>
         /// Moves the actual value towards the target.  Should be called by an event that happens when TargetValue changes.

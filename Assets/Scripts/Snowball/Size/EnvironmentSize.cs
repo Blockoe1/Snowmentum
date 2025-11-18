@@ -75,7 +75,7 @@ namespace Snowmentum
         /// <summary>
         /// Resets the environment size
         /// </summary>
-        protected override void ResetValues()
+        public override void ResetValues()
         {
             TargetValue = startingValue;
             Value = startingValue;

@@ -61,7 +61,7 @@ namespace Snowmentum
         /// <summary>
         /// Resets values on awake
         /// </summary>
-        protected override void ResetValues()
+        public override void ResetValues()
         {
             TargetValue = startingValue;
             Value = startingValue;

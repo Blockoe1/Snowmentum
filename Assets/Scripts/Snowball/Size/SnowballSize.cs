@@ -99,7 +99,7 @@ namespace Snowmentum.Size
         /// <summary>
         /// Resets values
         /// </summary>
-        protected override void ResetValues()
+        public override void ResetValues()
         {
             TargetValue = startingValue;
             Value = startingValue;
