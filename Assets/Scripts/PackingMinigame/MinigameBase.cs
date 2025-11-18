@@ -22,6 +22,7 @@ namespace Snowmentum
         protected float maxOutput;
         [SerializeField, Tooltip("The amount of time that this segment of the minigame reads player input.")] 
         protected float sampleTime;
+        [SerializeField] private bool playOnAwake;
         [SerializeField, Tooltip("Event called when this segment of the minigame is complete.")] 
         private UnityEvent<float> OnMinigameComplete;
 
@@ -38,6 +39,18 @@ namespace Snowmentum
             anim = GetComponent<Animator>();
         }
         #endregion
+
+        /// <summary>
+        /// Start the minigame on awake if it's set.
+        /// </summary>
+
+        private void Awake()
+        {
+            if (playOnAwake)
+            {
+                StartMinigame();
+            }
+        }
 
         /// <summary>
         /// Starts the minigame.

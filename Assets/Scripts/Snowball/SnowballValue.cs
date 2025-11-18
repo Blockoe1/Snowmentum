@@ -6,8 +6,6 @@
 //
 // Brief Description : Controls a value accessible to all objects by reference to this ScriptableObject.
 *****************************************************************************/
-using System;
-using System.Collections;
 using UnityEngine;
 
 namespace Snowmentum
@@ -21,6 +19,7 @@ namespace Snowmentum
         [SerializeField, Tooltip("The speed at which this value's actual value moves towards the target value.")] 
         protected float moveToTarget;
         [SerializeField] private bool useFixedUpdate;
+        [SerializeField] private bool resetOnAwake;
 
         /// <summary>
         /// Continually updates the given value over time.
@@ -59,6 +58,22 @@ namespace Snowmentum
             }
             MoveToTarget(timeDelta);
         }
+
+        /// <summary>
+        /// Reset the values on awake if it's set
+        /// </summary>
+        protected virtual void Awake()
+        {
+            if (resetOnAwake)
+            {
+                ResetValues();
+            }
+        }
+
+        /// <summary>
+        /// Resets this snowball value.
+        /// </summary>
+        protected abstract void ResetValues();
 
         /// <summary>
         /// Moves the actual value towards the target.  Should be called by an event that happens when TargetValue changes.

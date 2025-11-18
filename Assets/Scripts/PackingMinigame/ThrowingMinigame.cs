@@ -13,6 +13,7 @@ namespace Snowmentum
 {
     public class ThrowingMinigame : MinigameBase
     {
+        [Header("Throwing Settings")]
         [SerializeField, Tooltip("The amount of time to delay after the the throw starts.")] 
         private float throwDelay;
         [SerializeField] private float requiredThrowForce;

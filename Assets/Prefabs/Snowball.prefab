@@ -100,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8420961822085175188
 Transform:
   m_ObjectHideFlags: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   increasePerSecond: 0.0125
   moveToTarget: 7
   useFixedUpdate: 1
+  resetOnAwake: 0
   OnDeathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -287,6 +288,7 @@ MonoBehaviour:
   increasePerSecond: 0.022
   moveToTarget: 5
   useFixedUpdate: 1
+  resetOnAwake: 0
   minSpeed: 1
 --- !u!114 &231841834676547580
 MonoBehaviour:
@@ -364,6 +366,7 @@ MonoBehaviour:
   increasePerSecond: 0
   moveToTarget: 3
   useFixedUpdate: 1
+  resetOnAwake: 0
 --- !u!114 &5246366932903730779
 MonoBehaviour:
   m_ObjectHideFlags: 0

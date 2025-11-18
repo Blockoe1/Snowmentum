@@ -1684,6 +1684,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 933332013}
+  - component: {fileID: 933332015}
+  - component: {fileID: 933332014}
   m_Layer: 0
   m_Name: ThrowMinigame
   m_TagString: Untagged
@@ -1706,6 +1708,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &933332014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933332012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142c22ad6437e2e44adceb15823e1513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ThrowingMinigame
+  scaler: 18000
+  maxOutput: 1.5
+  sampleTime: 0.1
+  playOnAwake: 0
+  OnMinigameComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  anim: {fileID: 933332015}
+  throwDelay: 0.5
+  requiredThrowForce: 10000
+--- !u!95 &933332015
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933332012}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1053529887
 GameObject:
   m_ObjectHideFlags: 0
@@ -13214,6 +13260,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1225979867564382840, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: resetOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -13225,6 +13275,10 @@ PrefabInstance:
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449946722729724061, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnToggleVisualsEvent.m_PersistentCalls.m_Calls.Array.size
@@ -13401,10 +13455,6 @@ PrefabInstance:
     - target: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_Name
       value: Snowball
-      objectReference: {fileID: 0}
-    - target: {fileID: 9182634060681000022, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19057,7 +19107,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4103294547523150432}
-  - component: {fileID: 4638828410370215647}
   - component: {fileID: 7419261161927560384}
   - component: {fileID: 233647119388986979}
   - component: {fileID: 7419261161927560385}
@@ -19079,6 +19128,10 @@ PrefabInstance:
     - target: {fileID: 1460788240214685260, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: m_Name
       value: PackingMinigame(old)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460788240214685260, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4103294549144026421, guid: 30dd8407d4d96f64daa478bf9cecc07e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19471,224 +19524,6 @@ Transform:
   - {fileID: 5726502727394288466}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4638828410370215647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1460788240741886233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5192cc8f5bda0b44d809d2e91a1c6b33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minigameAnimator: {fileID: 7419261161927560384}
-  maxSizeGain: 0.5
-  packingTime: 3
-  packingQualityScaler: 300000
-  maxSpeedGain: 1.5
-  throwDelay: 0.5
-  minThrowForce: 10000
-  throwSampleTime: 0.1
-  throwStrengthScaler: 18000
-  startingSpeedScaler: 15
-  minStartingSpeed: 15
-  OnMinigameTransition:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2090663217}
-        m_TargetAssemblyTypeName: Snowmentum.UI.ControlsUI, Assembly-CSharp
-        m_MethodName: AdvanceSequence
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnMinigameComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1671779629}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 236938002}
-        m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
-        m_MethodName: set_alpha
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: Test
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Snowmentum.TimerDisplayer, Assembly-CSharp
-        m_MethodName: StartStopwatch
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1287089183}
-        m_TargetAssemblyTypeName: Snowmentum.BackgroundObjectSpawner, Assembly-CSharp
-        m_MethodName: StartSpawning
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Test
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 800908753}
-        m_TargetAssemblyTypeName: Snowmentum.BackgroundObjectSpawner, Assembly-CSharp
-        m_MethodName: StartSpawning
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Test
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2090663217}
-        m_TargetAssemblyTypeName: Snowmentum.UI.ControlsUI, Assembly-CSharp
-        m_MethodName: AdvanceSequence
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Test
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1671779630}
-        m_TargetAssemblyTypeName: Snowmentum.MusicRelay, Assembly-CSharp
-        m_MethodName: SetTrack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Test
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Snowmentum.AudioRelay, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Throwing
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1177910789}
-        m_TargetAssemblyTypeName: Snowmentum.SnowballMovement, Assembly-CSharp
-        m_MethodName: PauseMovement
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: Throwing
-          m_BoolArgument: 1
-        m_CallState: 2
-  OnMinigamePack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1671779628}
-        m_TargetAssemblyTypeName: Snowmentum.Size.SnowballSize, Assembly-CSharp
-        m_MethodName: AddTargetValue
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnMinigameThrow:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1671779627}
-        m_TargetAssemblyTypeName: Snowmentum.SnowballSpeed, Assembly-CSharp
-        m_MethodName: AddTargetValue
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1671779626}
-        m_TargetAssemblyTypeName: Snowmentum.SnowballCollision, Assembly-CSharp
-        m_MethodName: GiveImmunity
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1221756940}
-        m_TargetAssemblyTypeName: Snowmentum.ObstacleSpawner, Assembly-CSharp
-        m_MethodName: StartSpawning
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnMultipliedMinigameThrow:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1671779627}
-        m_TargetAssemblyTypeName: Snowmentum.SnowballSpeed, Assembly-CSharp
-        m_MethodName: set_Value_Local
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4869938652150076001
 GameObject:
   m_ObjectHideFlags: 0
@@ -19825,9 +19660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7aeadc8c8a2f044a993cb9196b61e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.PackingMinigame
-  scaler: 1000000
-  maxOutput: 0
-  sampleTime: 0
+  scaler: 300000
+  maxOutput: 0.5
+  sampleTime: 3
+  playOnAwake: 0
   OnMinigameComplete:
     m_PersistentCalls:
       m_Calls: []

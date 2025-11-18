@@ -61,16 +61,24 @@ namespace Snowmentum
         /// <summary>
         /// Reset values on start.
         /// </summary>
-        private void Awake()
+        protected override void Awake()
         {
-            TargetValue = startingValue;
-            Value = startingValue;
+            base.Awake();
 
             // Set the pivot point of the snowball so that obstacles know where to scale based on.
             // Set this whenever the value changes so it's up to date when obstacles need it.
             scalePivot = new Vector2(transform.position.x, HORIZON_LINE);
 
             SizeBracket.OnBracketChanged += UpdateEnvironmentSize;
+        }
+
+        /// <summary>
+        /// Resets the environment size
+        /// </summary>
+        protected override void ResetValues()
+        {
+            TargetValue = startingValue;
+            Value = startingValue;
         }
 
         private void OnDestroy()
