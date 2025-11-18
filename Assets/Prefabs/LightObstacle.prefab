@@ -54,15 +54,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7416643200133424707, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: deadlyColor.b
-      value: 0.441054
+      value: 0.48189852
       objectReference: {fileID: 0}
     - target: {fileID: 7416643200133424707, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: deadlyColor.g
-      value: 0.3707917
+      value: 0.40512946
       objectReference: {fileID: 0}
     - target: {fileID: 7416643200133424707, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: deadlyColor.r
-      value: 2.742138
+      value: 2.996078
       objectReference: {fileID: 0}
     - target: {fileID: 7416643200133424707, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: maxOutlineAlpha
@@ -70,15 +70,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7416643200133424707, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: destroyableColor.b
-      value: 1.4735974
+      value: 2.9960783
       objectReference: {fileID: 0}
     - target: {fileID: 7416643200133424707, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: destroyableColor.g
-      value: 0.088044845
+      value: 0.17901039
       objectReference: {fileID: 0}
     - target: {fileID: 7416643200133424707, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: destroyableColor.r
-      value: 0.103440076
+      value: 0.21031156
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
