@@ -12637,10 +12637,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.30468753
+    x: 0
     y: 0
-    width: 0.3453704
-    height: 0.34537035
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -19466,6 +19466,10 @@ PrefabInstance:
       propertyPath: snowballSpeed
       value: 
       objectReference: {fileID: 1671779627}
+    - target: {fileID: 3615205238401087452, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1911501355, guid: b1177cc346d9bc04caa1276a713f9c8b, type: 3}
     - target: {fileID: 3711161457828201969, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
       propertyPath: m_Name
       value: ThrowMinigame
@@ -19634,6 +19638,10 @@ PrefabInstance:
     - target: {fileID: 2297055894346351732, guid: ef05c73fc957cef46ae9ad6b3acbfdf8, type: 3}
       propertyPath: m_Name
       value: PackingMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2297055894346351732, guid: ef05c73fc957cef46ae9ad6b3acbfdf8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5506200701023435628, guid: ef05c73fc957cef46ae9ad6b3acbfdf8, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Target
