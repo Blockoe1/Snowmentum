@@ -12180,6 +12180,17 @@ Transform:
   - {fileID: 324948663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369253451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 560194940052961131, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
+  m_PrefabInstance: {fileID: 8495014412000530608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b529c24fec7ad6641ae68b5ddeb59b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.SnowballYeeter
 --- !u!1 &1385867306
 GameObject:
   m_ObjectHideFlags: 0
@@ -12626,10 +12637,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.30468753
     y: 0
-    width: 1
-    height: 1
+    width: 0.3453704
+    height: 0.34537035
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -13205,8 +13216,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1225979867564382840, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
-      propertyPath: resetOnAwake
+    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
@@ -13220,6 +13239,18 @@ PrefabInstance:
     - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
+      objectReference: {fileID: 1671779630}
+    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Snowmentum.MusicRelay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681645269302268440, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: Snowmentum.TimerDisplayer, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4449946722729724061, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_Enabled
@@ -19480,13 +19511,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8053965814956573927, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1671779627}
+    - target: {fileID: 8053965814956573927, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1671779629}
+      objectReference: {fileID: 1369253451}
     - target: {fileID: 8053965814956573927, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1671779627}
+      objectReference: {fileID: 1671779629}
     - target: {fileID: 8053965814956573927, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -19523,6 +19558,18 @@ PrefabInstance:
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[11].m_Target
       value: 
       objectReference: {fileID: 236938002}
+    - target: {fileID: 8053965814956573927, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetValues
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053965814956573927, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: YeetSnowball
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053965814956573927, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
+      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Snowmentum.SnowballSpeed, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19536,6 +19583,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 43942690380335014, guid: ef05c73fc957cef46ae9ad6b3acbfdf8, type: 3}
+      propertyPath: nextMinigame
+      value: 
+      objectReference: {fileID: 933332014}
     - target: {fileID: 43942690380335014, guid: ef05c73fc957cef46ae9ad6b3acbfdf8, type: 3}
       propertyPath: throwMinigame
       value: 
