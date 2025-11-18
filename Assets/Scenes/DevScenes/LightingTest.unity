@@ -12305,7 +12305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7ac4e48b3342d47affbaccec777acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.TimeManager
-  cycleLength: 10
+  cycleLength: 180
   celestialBodies:
   - {fileID: 1783229587}
   - {fileID: 1628027654}
@@ -12472,8 +12472,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.1
-  m_PointLightOuterRadius: 1
+  m_PointLightInnerRadius: 0.2
+  m_PointLightOuterRadius: 2
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -13190,6 +13190,10 @@ PrefabInstance:
       propertyPath: OnDeathEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1788025634}
+    - target: {fileID: 4449946722729724061, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnToggleVisualsEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
