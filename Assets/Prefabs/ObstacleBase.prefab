@@ -4990,6 +4990,7 @@ GameObject:
   - component: {fileID: 5866592910555483468}
   - component: {fileID: 7416643200133424707}
   - component: {fileID: 7078567782857989211}
+  - component: {fileID: 2904791822597733056}
   m_Layer: 0
   m_Name: ObstacleBase
   m_TagString: Untagged
@@ -5034,7 +5035,7 @@ MonoBehaviour:
   score: {fileID: 7647677357995392279}
   scaler: {fileID: 8657666669540303953}
   relay: {fileID: 5866592910555483468}
-  outliner: {fileID: 7416643200133424707}
+  colorizer: {fileID: 2904791822597733056}
   rb: {fileID: 3304603884408545833}
   particles: {fileID: 185282512532276888}
 --- !u!212 &8871070839524519023
@@ -5364,7 +5365,6 @@ MonoBehaviour:
   outlineBlinkDelay: 0.1
   showOutline: 0
   rend: {fileID: 8871070839524519023}
-  controller: {fileID: 2002559263234210752}
 --- !u!114 &7078567782857989211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5378,3 +5378,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleDropper
   fallSpeed: 2
+--- !u!114 &2904791822597733056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150288299065344882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a1cee91e634b648bacebc3b4b622d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleColorizer
+  deadlyColor: {r: 1.9766748, g: 0.5780839, b: 0.62020993, a: 1}
+  destroyableColor: {r: 0.5336305, g: 0.5159244, b: 1.9766748, a: 1}
+  maxAlpha: 0.725
+  maxDistance: 9
+  showColors: 0
+  OnColorUpdateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  controller: {fileID: 2002559263234210752}
