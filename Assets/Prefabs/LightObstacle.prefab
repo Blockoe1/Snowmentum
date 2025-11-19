@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7416643200133424707, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: maxOutlineAlpha
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7416643200133424707, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: destroyableColor.b
