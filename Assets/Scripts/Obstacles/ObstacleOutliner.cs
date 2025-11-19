@@ -9,8 +9,6 @@
 using Snowmentum.Size;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Rendering;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace Snowmentum
 {
@@ -29,7 +27,6 @@ namespace Snowmentum
         [SerializeField] private bool showOutline;
 
         private Color baseColor;
-        private bool isBlink;
 
         #region Component References
         [Header("Components")]
@@ -64,7 +61,6 @@ namespace Snowmentum
         private void Awake()
         {
             baseColor = rend.color;
-
         }
 
         /// <summary>
