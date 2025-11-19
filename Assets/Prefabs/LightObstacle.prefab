@@ -47,9 +47,9 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.7
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 4da8d05e000000003154aaf2154f9420
@@ -131,6 +131,30 @@ PrefabInstance:
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904791822597733056, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: OnColorUpdateEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904791822597733056, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: OnColorUpdateEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7645837424531992823}
+    - target: {fileID: 2904791822597733056, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: OnColorUpdateEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904791822597733056, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: OnColorUpdateEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_color
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904791822597733056, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: OnColorUpdateEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Rendering.Universal.Light2D, Unity.RenderPipelines.Universal.2D.Runtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904791822597733056, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: OnColorUpdateEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Name

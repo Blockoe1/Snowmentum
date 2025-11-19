@@ -17,7 +17,7 @@ MonoBehaviour:
   orderInLayer: 0
   baseScore: 1
   destroySound: Obstacle Destruction
-  showOutline: 1
+  showColors: 1
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 1

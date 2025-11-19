@@ -13,16 +13,7 @@ namespace Snowmentum
     [RequireComponent(typeof(ObstacleController))]
     public class ObstacleOutliner : MonoBehaviour
     {
-        [SerializeField, ColorUsage(true, true)] private Color deadlyColor = Color.red;
-        [SerializeField, ColorUsage(true, true)] private Color destroyableColor = Color.blue;
-        [SerializeField, Tooltip("The maximum alpha value that the outline can have."), Range(0, 1)] 
-        private float maxOutlineAlpha;
-        [SerializeField, Tooltip("The maximum amount the object's sprite gets tinted."), Range(0, 1)]
-        private float maxTintValue;
-        [SerializeField, Tooltip("The maximum distance away that the outline will be visible at.")] 
-        private float maxDistance;
         [SerializeField] private float outlineBlinkDelay = 0.1f;
-        [SerializeField] private bool showOutline;
 
         private bool blockColorUpdates;
         //private Color baseColor;
@@ -41,17 +32,6 @@ namespace Snowmentum
         }
         #endregion
 
-        #region Properties
-        public bool ShowOutline
-        {
-            get { return showOutline; }
-            set 
-            {
-                showOutline = value; 
-            }
-        }
-        #endregion
-
         ///// <summary>
         ///// Set the obstacle's base color.
         ///// </summary>
@@ -64,7 +44,7 @@ namespace Snowmentum
         /// Sets the color of this obstacle's outline.
         /// </summary>
         /// <param name="color"></param>
-        private void SetOutlineColor(Color color)
+        public void SetOutlineColor(Color color)
         {
             if (blockColorUpdates) { return; }
             rend.material.color = color;
