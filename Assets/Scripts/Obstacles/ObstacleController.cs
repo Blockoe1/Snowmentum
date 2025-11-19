@@ -147,7 +147,7 @@ namespace Snowmentum
             }
             if (outliner != null)
             {
-                outliner.ToggleOutline(obstacleData.ShowOutline);
+                outliner.ToggleColor(obstacleData.ShowOutline);
             }
 
             // Collider Updates

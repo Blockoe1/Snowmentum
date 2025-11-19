@@ -16,7 +16,7 @@ namespace Snowmentum
     public class ObstacleOutliner : MonoBehaviour
     {
         [SerializeField, ColorUsage(true, true)] private Color deadlyColor = Color.red;
-        [SerializeField, ColorUsage(true, true)] private Color destroyableColor = Color.green;
+        [SerializeField, ColorUsage(true, true)] private Color destroyableColor = Color.blue;
         [SerializeField, Tooltip("The maximum alpha value that the outline can have."), Range(0, 1)] 
         private float maxOutlineAlpha;
         [SerializeField, Tooltip("The maximum amount the object's sprite gets tinted."), Range(0, 1)]
@@ -86,7 +86,7 @@ namespace Snowmentum
         /// Toggles this outline.
         /// </summary>
         /// <param name="toggle"></param>
-        public void ToggleOutline(bool toggle)
+        public void ToggleColor(bool toggle)
         {
             // Prevents redundant assignment.
             if (toggle == ShowOutline) { return; }
@@ -107,7 +107,7 @@ namespace Snowmentum
         /// Gets the correct outline color based on the size of the snowball compared to the obstacle.
         /// </summary>
         /// <returns></returns>
-        private Color GetOutlineColor()
+        private Color GetColor()
         {
             // Update the color based on the size difference between this obstacle and the snowball.
             if (SnowballSize.Value > controller.ObstacleSize || SnowballFreezing.ShowVisuals)
@@ -138,7 +138,7 @@ namespace Snowmentum
 
             // Tint the object's sprite
             float tintStrength = Mathf.Lerp(maxTintValue, 0, normalizedDistance);
-            Color tintColor = Color.Lerp(baseColor, GetOutlineColor(), tintStrength);
+            Color tintColor = Color.Lerp(baseColor, GetColor(), tintStrength);
 
             // Apply the color changes.
             rend.color = tintColor;
@@ -151,7 +151,7 @@ namespace Snowmentum
         /// <param name="alpha"></param>
         private void SetOutlineAlpha(float alpha)
         {
-            Color col = GetOutlineColor();
+            Color col = GetColor();
             col.a = alpha;
             rend.material.color = col;
         }
@@ -179,11 +179,11 @@ namespace Snowmentum
             for (int i = 0; i < blinkAmount; i++)
             {
                 // Temporarily disable the outline and set it manually.
-                ToggleOutline(false);
+                ToggleColor(false);
                 SetOutlineAlpha(1);
                 yield return new WaitForSeconds(outlineBlinkDelay);
 
-                ToggleOutline(true);
+                ToggleColor(true);
                 yield return new WaitForSeconds(outlineBlinkDelay);
             }
         }
