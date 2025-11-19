@@ -13205,10 +13205,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.30312502
+    x: 0.30364585
     y: 0
-    width: 0.33981484
-    height: 0.3398148
+    width: 0.34722224
+    height: 0.3472222
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -19967,10 +19967,6 @@ PrefabInstance:
       propertyPath: obstacleParent
       value: 
       objectReference: {fileID: 1081323402}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: obstaclePrefab
-      value: 
-      objectReference: {fileID: 5813630016007184807, guid: 9456b0c5cef463348ade2925dda79dd3, type: 3}
     - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
       propertyPath: sizeBonusWeight
       value: 1000

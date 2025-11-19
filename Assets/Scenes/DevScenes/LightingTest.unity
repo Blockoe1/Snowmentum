@@ -19461,10 +19461,6 @@ PrefabInstance:
       propertyPath: obstacleParent
       value: 
       objectReference: {fileID: 1081323402}
-    - target: {fileID: 8126731613167737089, guid: ae6b9ab7b739b2049a409b8e80c3aa8c, type: 3}
-      propertyPath: obstaclePrefab
-      value: 
-      objectReference: {fileID: 5813630016007184807, guid: 9456b0c5cef463348ade2925dda79dd3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

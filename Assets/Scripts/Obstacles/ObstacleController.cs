@@ -10,6 +10,8 @@ using Snowmentum.Score;
 using Snowmentum.Size;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -39,6 +41,7 @@ namespace Snowmentum
         [SerializeReference, ReadOnly] private AudioRelay relay;
         [SerializeReference, ReadOnly] private ObstacleColorizer colorizer;
         [SerializeReference, ReadOnly] private Rigidbody2D rb;
+        [SerializeReference, ReadOnly] private Light2D obstacleLight;
         [SerializeReference] private ParticleSystem particles;
 
         /// <summary>
@@ -53,8 +56,9 @@ namespace Snowmentum
             scaler = GetComponent<ObjectScaler>();
             relay = GetComponent<AudioRelay>();
             colorizer = GetComponent<ObstacleColorizer>();
+            rb = GetComponent<Rigidbody2D>();
             particles = GetComponentInChildren<ParticleSystem>();
-            rb = GetComponentInChildren<Rigidbody2D>();
+            obstacleLight = GetComponentInChildren<Light2D>();
         }
         #endregion
 
