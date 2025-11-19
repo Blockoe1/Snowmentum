@@ -1,12 +1,10 @@
 /*****************************************************************************
 // File Name : ObstacleOutliner.cs
-// Author :
-// Creation Date : 
-// Last Modified : 
+// Author : Brandon Koederitz
+// Creation Date : 11/19/2025
 //
-// Brief Description : 
+// Brief Description : Updates the color of the obstacles outline.
 *****************************************************************************/
-using Snowmentum.Size;
 using System.Collections;
 using UnityEngine;
 
@@ -26,12 +24,12 @@ namespace Snowmentum
         [SerializeField] private float outlineBlinkDelay = 0.1f;
         [SerializeField] private bool showOutline;
 
-        private Color baseColor;
+        private bool blockColorUpdates;
+        //private Color baseColor;
 
         #region Component References
         [Header("Components")]
         [SerializeReference] private SpriteRenderer rend;
-        [SerializeReference] private ObstacleController controller;
 
         /// <summary>
         /// Get components on reset.
@@ -40,7 +38,6 @@ namespace Snowmentum
         private void Reset()
         {
             rend = GetComponent<SpriteRenderer>();
-            controller = GetComponent<ObstacleController>();
         }
         #endregion
 
@@ -55,94 +52,22 @@ namespace Snowmentum
         }
         #endregion
 
-        /// <summary>
-        /// Subscribe/unsubscribe to functions.
-        /// </summary>
-        private void Awake()
-        {
-            baseColor = rend.color;
-        }
+        ///// <summary>
+        ///// Set the obstacle's base color.
+        ///// </summary>
+        //private void Awake()
+        //{
+        //    baseColor = rend.color;
+        //}
 
         /// <summary>
-        /// When this object is enabled/disabled, make sure to set up it's subscriptions or reset the outline.
+        /// Sets the color of this obstacle's outline.
         /// </summary>
-        private void OnEnable()
+        /// <param name="color"></param>
+        private void SetOutlineColor(Color color)
         {
-            if (ShowOutline)
-            {
-                SnowballPosition.OnPositionChanged += UpdateOutline;
-            }
-            else
-            {
-                ResetColor();
-            }
-        }
-        private void OnDisable()
-        {
-            SnowballPosition.OnPositionChanged -= UpdateOutline;
-        }
-
-        /// <summary>
-        /// Toggles this outline.
-        /// </summary>
-        /// <param name="toggle"></param>
-        public void ToggleColor(bool toggle)
-        {
-            // Prevents redundant assignment.
-            if (toggle == ShowOutline) { return; }
-            ShowOutline = toggle;
-            // Disable the outline if ShowOutline is set to false.
-            if (ShowOutline)
-            {
-                SnowballPosition.OnPositionChanged += UpdateOutline;
-            }
-            else
-            {
-                SnowballPosition.OnPositionChanged -= UpdateOutline;
-                ResetColor();
-            }
-        }
-
-        /// <summary>
-        /// Gets the correct outline color based on the size of the snowball compared to the obstacle.
-        /// </summary>
-        /// <returns></returns>
-        private Color GetColor()
-        {
-            // Update the color based on the size difference between this obstacle and the snowball.
-            if (SnowballSize.Value > controller.ObstacleSize || SnowballFreezing.ShowVisuals)
-            {
-                return destroyableColor;
-            }
-            else
-            {
-                return deadlyColor;
-            }
-        }
-
-        /// <summary>
-        /// Updates the outline based on this object's distance from the snowball.
-        /// </summary>
-        /// <param name="snowballPos">The position of the snwoball.</param>
-        private void UpdateOutline(Vector2 snowballPos)
-        {
-            // If ShowOutline is disabled, then we should never update our outline.
-            if (!showOutline) { return; }
-            // Update the alpha value based on the distance from the snowball and obstacle.
-            float distance = Vector2.Distance(snowballPos, transform.position);
-            // Calculate the normalized distance value based on the max distance that is used to LERP between the
-            // alpha values.
-            float normalizedDistance = distance / maxDistance;
-            // Lerp between the max alpha and 0.  maxAlpha should be reached at distance 0.
-            float alpha  = Mathf.Lerp(maxOutlineAlpha, 0, normalizedDistance);
-
-            // Tint the object's sprite
-            float tintStrength = Mathf.Lerp(maxTintValue, 0, normalizedDistance);
-            Color tintColor = Color.Lerp(baseColor, GetColor(), tintStrength);
-
-            // Apply the color changes.
-            rend.color = tintColor;
-            SetOutlineAlpha(alpha);
+            if (blockColorUpdates) { return; }
+            rend.material.color = color;
         }
 
         /// <summary>
@@ -151,20 +76,20 @@ namespace Snowmentum
         /// <param name="alpha"></param>
         private void SetOutlineAlpha(float alpha)
         {
-            Color col = GetColor();
+            Color col = rend.material.color;
             col.a = alpha;
             rend.material.color = col;
         }
 
-        /// <summary>
-        /// Resets this obstacle's colors back to 0.
-        /// </summary>
-        private void ResetColor()
-        {
-            // Set the outline to completely transparent on awake.
-            rend.material.color = Color.clear;
-            rend.color = baseColor;
-        }
+        ///// <summary>
+        ///// Resets this obstacle's colors back to 0.
+        ///// </summary>
+        //private void ResetColor()
+        //{
+        //    // Set the outline to completely transparent on awake.
+        //    rend.material.color = Color.clear;
+        //    rend.color = baseColor;
+        //}
 
         /// <summary>
         /// Causes the outline to blink and then show in full, overriding any changes caused by distance.
@@ -179,11 +104,11 @@ namespace Snowmentum
             for (int i = 0; i < blinkAmount; i++)
             {
                 // Temporarily disable the outline and set it manually.
-                ToggleColor(false);
+                blockColorUpdates = true;
                 SetOutlineAlpha(1);
                 yield return new WaitForSeconds(outlineBlinkDelay);
 
-                ToggleColor(true);
+                blockColorUpdates = false;
                 yield return new WaitForSeconds(outlineBlinkDelay);
             }
         }

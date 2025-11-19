@@ -37,7 +37,7 @@ namespace Snowmentum
         [SerializeReference, ReadOnly] private ScoreIncrementer score;
         [SerializeReference, ReadOnly] private ObjectScaler scaler;
         [SerializeReference, ReadOnly] private AudioRelay relay;
-        [SerializeReference, ReadOnly] private ObstacleOutliner outliner;
+        [SerializeReference, ReadOnly] private ObstacleColorizer outliner;
         [SerializeReference, ReadOnly] private Rigidbody2D rb;
         [SerializeReference] private ParticleSystem particles;
 
@@ -52,7 +52,7 @@ namespace Snowmentum
             score = GetComponent<ScoreIncrementer>();
             scaler = GetComponent<ObjectScaler>();
             relay = GetComponent<AudioRelay>();
-            outliner = GetComponent<ObstacleOutliner>();
+            outliner = GetComponent<ObstacleColorizer>();
             particles = GetComponentInChildren<ParticleSystem>();
             rb = GetComponentInChildren<Rigidbody2D>();
         }
