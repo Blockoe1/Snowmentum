@@ -17,7 +17,7 @@ MonoBehaviour:
   orderInLayer: -2
   baseScore: 1
   destroySound: 
-  showOutline: 0
+  showColors: 0
   tag: Water
   hasCollision: 0
   capsuleDirection: 0

@@ -68,6 +68,27 @@ namespace Snowmentum
         }
 
         /// <summary>
+        /// Toggles this outline.
+        /// </summary>
+        /// <param name="toggle"></param>
+        public void ToggleColor(bool toggle)
+        {
+            // Prevents redundant assignment.
+            if (toggle == ShowColors) { return; }
+            ShowColors = toggle;
+            // Disable the outline if ShowOutline is set to false.
+            if (ShowColors)
+            {
+                SnowballPosition.OnPositionChanged += UpdateOutline;
+            }
+            else
+            {
+                SnowballPosition.OnPositionChanged -= UpdateOutline;
+                ResetColor();
+            }
+        }
+
+        /// <summary>
         /// Gets the correct color based on the distance from the snowball.
         /// </summary>
         /// <returns></returns>

@@ -37,7 +37,7 @@ namespace Snowmentum
         [SerializeReference, ReadOnly] private ScoreIncrementer score;
         [SerializeReference, ReadOnly] private ObjectScaler scaler;
         [SerializeReference, ReadOnly] private AudioRelay relay;
-        [SerializeReference, ReadOnly] private ObstacleColorizer outliner;
+        [SerializeReference, ReadOnly] private ObstacleColorizer colorizer;
         [SerializeReference, ReadOnly] private Rigidbody2D rb;
         [SerializeReference] private ParticleSystem particles;
 
@@ -52,7 +52,7 @@ namespace Snowmentum
             score = GetComponent<ScoreIncrementer>();
             scaler = GetComponent<ObjectScaler>();
             relay = GetComponent<AudioRelay>();
-            outliner = GetComponent<ObstacleColorizer>();
+            colorizer = GetComponent<ObstacleColorizer>();
             particles = GetComponentInChildren<ParticleSystem>();
             rb = GetComponentInChildren<Rigidbody2D>();
         }
@@ -145,9 +145,9 @@ namespace Snowmentum
             {
                 relay.SoundName = obstacleData.DestroySound;
             }
-            if (outliner != null)
+            if (colorizer != null)
             {
-                outliner.ToggleColor(obstacleData.ShowOutline);
+                colorizer.ToggleColor(obstacleData.ShowColors);
             }
 
             // Collider Updates
@@ -295,9 +295,9 @@ namespace Snowmentum
                     obstacleData.DestroySound = ProcessAssignment(obstacleData.DestroySound, relay.SoundName);
                     //obstacleData.DestroySound = relay.SoundName;
                 }
-                if (outliner != null)
+                if (colorizer != null)
                 {
-                    obstacleData.ShowOutline = ProcessAssignment(obstacleData.ShowOutline, outliner.ShowOutline);
+                    obstacleData.ShowColors = ProcessAssignment(obstacleData.ShowColors, colorizer.ShowColors);
                     //obstacleData.ShowOutline = outliner.ShowOutline;
                 }
 
@@ -486,16 +486,16 @@ namespace Snowmentum
                 }
                 #endregion
 
-                #region Outline
-                if (outliner != null)
+                #region Colorizer
+                if (colorizer != null)
                 {
-                    outliner.ShowOutline = ProcessAssignment(outliner.ShowOutline, obstacleData.ShowOutline);
+                    colorizer.ShowColors = ProcessAssignment(colorizer.ShowColors, obstacleData.ShowColors);
                     //outliner.ShowOutline = obstacleData.ShowOutline;
 
                     // Each component needs to be set dirty individually for changes to be properly saved.
                     if (isDirty)
                     {
-                        EditorUtility.SetDirty(outliner);
+                        EditorUtility.SetDirty(colorizer);
                         isDirty = false;
                     }
                 }
