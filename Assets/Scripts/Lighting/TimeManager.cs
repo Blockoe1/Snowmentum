@@ -16,6 +16,7 @@ namespace Snowmentum
         [SerializeField, Tooltip("The amount of time in seconds that a day full day/night cycle lasts.")]
         private float cycleLength;
         [SerializeField] private CelestialBody[] celestialBodies;
+        [SerializeField] private bool startOnAwake;
         [Header("Debug")]
         [SerializeField] private bool updateInEditor;
         [SerializeField, Range(0f, 1f)] private float debugTime;
@@ -36,7 +37,10 @@ namespace Snowmentum
         /// </summary>
         private void Start()
         {
-            StartTime();
+            if (startOnAwake)
+            {
+                StartTime();
+            }
         }
 
         /// <summary>
