@@ -293,7 +293,7 @@ MonoBehaviour:
   hitImmunity: 2
   flashDelay: 0.1
   sizeDamage:
-    curveSteepness: 4
+    curveSteepness: 5
     maxGain: 0.5
     scaleWithObstacleSize: 0
     maxDamageProportion: 0.5
