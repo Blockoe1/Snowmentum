@@ -1573,7 +1573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5506200701023435628, guid: ef05c73fc957cef46ae9ad6b3acbfdf8, type: 3}
       propertyPath: scaler
-      value: 600000
+      value: 1500000
       objectReference: {fileID: 0}
     - target: {fileID: 5506200701023435628, guid: ef05c73fc957cef46ae9ad6b3acbfdf8, type: 3}
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -12814,10 +12814,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.6359375
+    x: 0
     y: 0
-    width: 0.050000004
-    height: 0.05
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
