@@ -8,6 +8,7 @@
 *****************************************************************************/
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -22,10 +23,10 @@ namespace Snowmentum
 
     public class TransitionManager : MonoBehaviour
     {
-        [SerializeField] private ParticleSystem transitionParticles;
         [SerializeField] private Image fadeToWhite;
         [SerializeField] private Image fadeToBlack;
         [SerializeField] private float fadeTime;
+        [SerializeField] private UnityEvent OnSnowyTransition;
 
         private static TransitionManager instance;
         private bool isTransitioning;
@@ -62,8 +63,8 @@ namespace Snowmentum
                 {
                     case TransitionType.Snowy:
                         instance.StartCoroutine(instance.TransitionToScene(sceneName, instance.fadeToWhite));
-                        // snowy transition plays extra particles.
-                        instance.transitionParticles.Play();
+                        // snowy transition plays extra particles and has other effects..
+                        instance.OnSnowyTransition?.Invoke();
                         break;
                     case TransitionType.FadeToWhite:
                         instance.StartCoroutine(instance.TransitionToScene(sceneName, instance.fadeToWhite));

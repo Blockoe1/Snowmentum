@@ -8,6 +8,7 @@
 // We can expand this script to handle more parts of the snowball if needed though. 
 *****************************************************************************/
 using Snowmentum.Size;
+using System.Collections;
 using UnityEngine;
 
 
@@ -35,6 +36,8 @@ namespace Snowmentum
         private float maxSpeed;
         [SerializeField] private float minY;
         [SerializeField] private float maxY;
+
+        private bool movementPaused;
 
         #region Component References
         [Header("Components")]
@@ -87,25 +90,30 @@ namespace Snowmentum
             //this should clamp the snowball and prevent it from moving off the screen, but currently the snowball is just teleporting between the two positions
             //transform.position = new Vector3(Mathf.Clamp(transform.position.y, minY, maxY), transform.position.x);
             ClampY();
+
+            //Debug.Log(snowballRigidbody.linearVelocity);
         }
 
         //this function moves the snowball up and down in accordance with the movement of the mouse
         private void ApplyMovementForce()
         {
             //Debug.Log(mouseDelta);
-            float deltaScaler = baseMovementSensitivity;
-            switch (scaleOperation)
+            if (!movementPaused)
             {
-                case ScaleOperation.Division:
-                    deltaScaler = baseMovementSensitivity / SnowballSize.Value;
-                    break;
-                case ScaleOperation.Exponential:
-                    deltaScaler = MovementScalerCurve(SnowballSize.Value);
-                    break;
+                float deltaScaler = baseMovementSensitivity;
+                switch (scaleOperation)
+                {
+                    case ScaleOperation.Division:
+                        deltaScaler = baseMovementSensitivity / SnowballSize.Value;
+                        break;
+                    case ScaleOperation.Exponential:
+                        deltaScaler = MovementScalerCurve(SnowballSize.Value);
+                        break;
+                }
+
+
+                snowballRigidbody.AddForce((InputManager.MouseDelta.y * deltaScaler) * Vector2.up);
             }
-
-
-            snowballRigidbody.AddForce((InputManager.MouseDelta.y * deltaScaler) * Vector2.up);
 
             //Old movement that used transform.translate. Can probably remove but leaving it for now just in case, I guess
             //transform.Translate(Vector3.up * mouseDelta.y * movementSensitivity);
@@ -175,5 +183,28 @@ namespace Snowmentum
         //{
         //    mouseMovement.started -= Handle_SnowballMouseMovement;
         //}
+
+        /// <summary>
+        /// Pauses the snowball's movement for a certain period of time.
+        /// </summary>
+        /// <param name="duration"></param>
+        public void PauseMovement(float duration)
+        {
+            movementPaused = true;
+            StartCoroutine(PauseRoutine(duration));
+        }
+        public void Unpause()
+        {
+            movementPaused = false;
+        }
+        private IEnumerator PauseRoutine(float duration)
+        {
+            while (duration > 0 && movementPaused)
+            {
+                duration -= Time.deltaTime;
+                yield return null;
+            }
+            movementPaused = false;
+        }
     }
 }

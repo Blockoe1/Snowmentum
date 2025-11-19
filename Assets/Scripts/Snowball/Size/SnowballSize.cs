@@ -88,14 +88,21 @@ namespace Snowmentum.Size
         #endregion
 
         /// <summary>
-        /// Resets values on start (so that things can subscribe to events on awake)
+        /// Setup event references.
         /// </summary>
-        private void Awake()
+        protected override void Awake()
+        {
+            Internal_OnDeathEvent = OnSnowballDeath;
+            base.Awake();
+        }
+
+        /// <summary>
+        /// Resets values
+        /// </summary>
+        public override void ResetValues()
         {
             TargetValue = startingValue;
             Value = startingValue;
-
-            Internal_OnDeathEvent = OnSnowballDeath;
         }
 
         /// <summary>

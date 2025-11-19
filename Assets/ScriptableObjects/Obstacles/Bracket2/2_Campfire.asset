@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 2_Campfire
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 10
-  obstacleSprite: {fileID: 21300000, guid: b6b853281d6487d4cb92b27f4f143a81, type: 3}
+  obstacleSize: 3.7
+  obstacleSprite: {fileID: -5525346469155709991, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
   orderInLayer: 0
   baseScore: 3
   destroySound: Obstacle Destruction
@@ -21,8 +21,8 @@ MonoBehaviour:
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 1
-  offset: {x: 0.040239602, y: -0.19667009}
-  size: {x: 1.8681535, y: 0.99384385}
+  offset: {x: 0.040239602, y: -0.09}
+  size: {x: 1.8681535, y: 1.5}
   particleSpriteSheet:
   - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
@@ -32,6 +32,6 @@ MonoBehaviour:
   - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   particleNumber: 10
   emissionRadius: 0.25
-  isGreyboxed: 1
-  spriteSize: {x: 2, y: 1.6}
-  baseSize: 4
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
+  baseSize: 2

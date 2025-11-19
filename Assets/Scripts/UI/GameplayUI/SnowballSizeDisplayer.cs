@@ -18,7 +18,6 @@ namespace Snowmentum.UI
         private float sizeForText;
         [SerializeField] private TMP_Text snowballSizeText;
         [SerializeField] private int displayedDigits = 5;
-        [SerializeField] private int postfixDigits = 1;
 
         // Update is called once per frame
         void Update()
@@ -27,10 +26,10 @@ namespace Snowmentum.UI
             //This does mean that the text displays you as 4meters in size when you are at 3.6 meters, for example, but I am hoping that is fine
             sizeForText = SnowballSize.Value;
             sizeForText = Mathf.Round(sizeForText * 100);
-            snowballSizeText.text = AddDigits(displayedDigits, sizeForText, postfixDigits);
+            snowballSizeText.text = AddDigits(displayedDigits, sizeForText);
         }
 
-        private static string AddDigits(int digits, float sizeValue, int postfixDigits)
+        private static string AddDigits(int digits, float sizeValue)
         {
             string sizeString = sizeValue.ToString("F0"); 
 
@@ -38,12 +37,6 @@ namespace Snowmentum.UI
             for (int i = sizeString.Length; i < digits; i++)
             {
                 sizeString = "0" + sizeString;
-            }
-
-            // Add postfix zeros
-            for (int i = 0; i < postfixDigits; i++)
-            {
-                sizeString = sizeString + "mm";
             }
 
             return sizeString;

@@ -25,7 +25,7 @@ namespace Snowmentum
         //[SerializeField] private bool isGreybox;
 
         private ObstacleReturnFunction obstacleReturnFunction;
-        private float obstacleSize;
+        [SerializeField, HideInInspector] private float obstacleSize;
 
 #if UNITY_EDITOR
         [SerializeField, HideInInspector] private Obstacle oldObsData;
@@ -82,6 +82,12 @@ namespace Snowmentum
             ToggleObstacle(true);
 
             ReadObstacleData();
+
+            // Have the obstacle immediately scale itself when it is set to prevent it from moving perspective.
+            if (scaler != null)
+            {
+                scaler.ScaleToEnvironment();
+            }
         }
 
         /// <summary>
@@ -202,13 +208,13 @@ namespace Snowmentum
         }
 
         /// <summary>
-        /// Snaps this obstacle to a given position to reset it.
+        /// Resets the obstacle back to a given position.
         /// </summary>
         /// <remarks>
         /// Need to set both rigidbody and transform position to instantly snap it back.
         /// </remarks>
         /// <param name="pos"></param>
-        public void SnapPosition(Vector2 pos)
+        public void Reset(Vector2 pos)
         {
             rb.position = pos;
             transform.position = pos;
@@ -392,6 +398,9 @@ namespace Snowmentum
                     }
                     return origin;
                 }
+
+                // Native variables.
+                obstacleSize = ProcessAssignment(obstacleSize, obstacleData.ObstacleSize);
 
                 #region GameObject
                 //gameObject.tag = obstacleData.Tag;

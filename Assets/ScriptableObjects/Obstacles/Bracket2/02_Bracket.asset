@@ -14,16 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleBracket
   spawnData:
   - obstacle: {fileID: 11400000, guid: 898918ed32e1b7f4e8c80b545867073b, type: 2}
-    baseWeight: 5
-    addedWeight: 3
-  - obstacle: {fileID: 11400000, guid: ec7c11f8572073e4689f8eb5066b24b9, type: 2}
-    baseWeight: 5
-    addedWeight: 2
-  - obstacle: {fileID: 11400000, guid: 59348b3d256f78940b17609ba2b4f0f5, type: 2}
-    baseWeight: 5
+    baseWeight: 9
     addedWeight: 2
   - obstacle: {fileID: 11400000, guid: 16d4bc3f078c8d84f8d1ec922be99a27, type: 2}
-    baseWeight: 5
+    baseWeight: 8
     addedWeight: 1
   - obstacle: {fileID: 11400000, guid: 99725482bfac5de4a9fd1a31b375435e, type: 2}
     baseWeight: 5
@@ -32,23 +26,20 @@ MonoBehaviour:
     baseWeight: 12
     addedWeight: 1
   - obstacle: {fileID: 11400000, guid: 4b8c68ae31efb814ea00585c9095dc00, type: 2}
-    baseWeight: 6
+    baseWeight: 13
     addedWeight: 4
-  - obstacle: {fileID: 11400000, guid: 1eb5e92277d696f4db7e5868d1c1bb7c, type: 2}
-    baseWeight: 8
-    addedWeight: 2
   - obstacle: {fileID: 11400000, guid: 7963b423ca323ab4e9248c1244bf5358, type: 2}
     baseWeight: 0
     addedWeight: 2
-  - obstacle: {fileID: 11400000, guid: 78865d770f1d6cf478eb76785020b389, type: 2}
-    baseWeight: 4
+  - obstacle: {fileID: 11400000, guid: 1eb5e92277d696f4db7e5868d1c1bb7c, type: 2}
+    baseWeight: 5
     addedWeight: 1
   - obstacle: {fileID: 11400000, guid: 8aa4bbbc7ff45094ab3f1de652e7d45b, type: 2}
-    baseWeight: 8
-    addedWeight: 2
-  - obstacle: {fileID: 11400000, guid: 7c1c414329aa2fb4aa399fe0f21d1c39, type: 2}
-    baseWeight: 8
-    addedWeight: 2
-  - obstacle: {fileID: 11400000, guid: 78865d770f1d6cf478eb76785020b389, type: 2}
-    baseWeight: 4
+    baseWeight: 5
     addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: 7c1c414329aa2fb4aa399fe0f21d1c39, type: 2}
+    baseWeight: 5
+    addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: bd67023797275ff47bf03af559c18122, type: 2}
+    baseWeight: 8
+    addedWeight: 2

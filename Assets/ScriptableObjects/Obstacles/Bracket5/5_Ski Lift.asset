@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
+  m_Name: 5_Ski Lift
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
+  obstacleSize: 32
+  obstacleSprite: {fileID: 21300000, guid: 966d927e7be4f3245a08793251579dd0, type: 3}
+  orderInLayer: 0
+  baseScore: 50
+  destroySound: Obstacle Destruction
+  showOutline: 1
+  tag: Untagged
+  hasCollision: 1
+  capsuleDirection: 0
+  offset: {x: 0.014668703, y: -0.1204648}
+  size: {x: 0.5383773, y: 1.5}
+  particleSpriteSheet:
+  - {fileID: -889968081, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  - {fileID: -156959124, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  - {fileID: -732115837, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  - {fileID: 1789747204, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  - {fileID: -494359493, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  - {fileID: -1804804186, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
+  particleNumber: 35
+  emissionRadius: 0.1
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
+  baseSize: 16

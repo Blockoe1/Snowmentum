@@ -13,24 +13,27 @@ MonoBehaviour:
   m_Name: 04_Bracket
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleBracket
   spawnData:
-  - obstacle: {fileID: 11400000, guid: d02755d9c616cf4479bc722f98ed60eb, type: 2}
+  - obstacle: {fileID: 11400000, guid: 35d1e1d3f8184784987c0ac0ec659f25, type: 2}
+    baseWeight: 6
+    addedWeight: 5
+  - obstacle: {fileID: 11400000, guid: 5ce128060e717b8448d60b3c3e511c7d, type: 2}
+    baseWeight: 5
+    addedWeight: 3
+  - obstacle: {fileID: 11400000, guid: 894523796d27b2246b8fea8e935615fa, type: 2}
+    baseWeight: 3
+    addedWeight: 3
+  - obstacle: {fileID: 11400000, guid: ed26b628efba32e47b45aad25e39a505, type: 2}
+    baseWeight: 12
+    addedWeight: 6
+  - obstacle: {fileID: 11400000, guid: f26c2902a667c1c408188fc28876b74a, type: 2}
+    baseWeight: 2
+    addedWeight: 17
+  - obstacle: {fileID: 11400000, guid: d504ae35f0be2a043ace579a2f0d8d3c, type: 2}
     baseWeight: 7
-    addedWeight: 1
-  - obstacle: {fileID: 11400000, guid: 5737c5406c54a804dae9d933048133c9, type: 2}
-    baseWeight: 7
-    addedWeight: 1
-  - obstacle: {fileID: 11400000, guid: 55f47ad838fbe5b4b82f51987a015d6e, type: 2}
-    baseWeight: 5
-    addedWeight: 1
-  - obstacle: {fileID: 11400000, guid: c28dac9929775fa4fa4f0a0afe19e41d, type: 2}
-    baseWeight: 5
-    addedWeight: 1
-  - obstacle: {fileID: 11400000, guid: c6bc4c1f720873240af28d16538c03c1, type: 2}
-    baseWeight: 5
-    addedWeight: 1
-  - obstacle: {fileID: 11400000, guid: c3c5013b8b71ab644a2186ff25d415f2, type: 2}
-    baseWeight: 4
-    addedWeight: 2
-  - obstacle: {fileID: 11400000, guid: 83c89cd3ff7fce54ab0493b667c44374, type: 2}
-    baseWeight: 4
-    addedWeight: 1
+    addedWeight: 6
+  - obstacle: {fileID: 11400000, guid: fb2c5e4986f2aa846a67e7ea5f2ddf6b, type: 2}
+    baseWeight: 13
+    addedWeight: 4
+  - obstacle: {fileID: 11400000, guid: cea7f1ea23455644bb5d2ed418ced345, type: 2}
+    baseWeight: 13
+    addedWeight: 4
