@@ -301,7 +301,7 @@ MonoBehaviour:
     consumeOnHit: 0
   sizeGaining:
     curveSteepness: 8
-    maxGain: 0.1
+    maxGain: 0.05
     scaleWithObstacleSize: 1
   speedDamage:
     curveSteepness: 1.5

@@ -59,7 +59,8 @@ namespace Snowmentum
         }
         #endregion
 
-        #region Nested
+        #region Collision Formulas
+        #region Base
         [System.Serializable]
         private abstract class CollisionFormula
         {
@@ -115,7 +116,7 @@ namespace Snowmentum
                 return -Mathf.Pow(curveSteepness, (-snowballSize + obstacleSize)) * curveScale;
             }
         }
-
+        #endregion
         /// <summary>
         /// Controls damage dealt to the snowball.
         /// </summary>
@@ -262,7 +263,7 @@ namespace Snowmentum
                     {
                         speedComp.TargetValue_Local += speedDamage.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
                         speedKnockback.SetStoredSpeed(speedComp.Value_Local);
-                        speedComp.Value_Local = speedKnockback.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
+                        speedComp.Value_Local += speedKnockback.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
                         sizeComp.TargetValue_Local += sizeDamage.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
                     }
                     // Apply positive benefits.
