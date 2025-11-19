@@ -15,6 +15,7 @@ namespace Snowmentum
     {
         #region CONSTS
         private const string THROW_ANIM_TRIGGER = "Throw";
+        private const string READY_ANIM_TRIGGER = "MinigameStart";
         #endregion
 
         [Header("Throwing Settings")]
@@ -33,6 +34,7 @@ namespace Snowmentum
         public override void StartMinigame()
         {
             StartCoroutine(Timer());
+            anim.SetTrigger(READY_ANIM_TRIGGER);
         }
 
         protected override void MouseUpdate(Vector2 mouseDelta)

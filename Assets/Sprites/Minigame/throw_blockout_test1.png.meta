@@ -1,0 +1,668 @@
+fileFormatVersion: 2
+guid: b1177cc346d9bc04caa1276a713f9c8b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6738793346524105882
+    second: throw_blockout_test1_0
+  - first:
+      213: -5003512146749148832
+    second: throw_blockout_test1_1
+  - first:
+      213: 8766001382552488600
+    second: throw_blockout_test1_2
+  - first:
+      213: -5466847226974346457
+    second: throw_blockout_test1_3
+  - first:
+      213: 5845563932202607907
+    second: throw_blockout_test1_4
+  - first:
+      213: -5691180487108517987
+    second: throw_blockout_test1_5
+  - first:
+      213: -2026937922813227346
+    second: throw_blockout_test1_6
+  - first:
+      213: -8414817072430293230
+    second: throw_blockout_test1_7
+  - first:
+      213: 1433722257769591811
+    second: throw_blockout_test1_8
+  - first:
+      213: -2260133653377325498
+    second: throw_blockout_test1_9
+  - first:
+      213: 7373526841474160980
+    second: throw_blockout_test1_10
+  - first:
+      213: 6126105423924338028
+    second: throw_blockout_test1_11
+  - first:
+      213: 4832889576170688044
+    second: throw_blockout_test1_12
+  - first:
+      213: -6765137790412575797
+    second: throw_blockout_test1_13
+  - first:
+      213: 6412100313127820252
+    second: throw_blockout_test1_14
+  - first:
+      213: 4474730477718987024
+    second: throw_blockout_test1_15
+  - first:
+      213: -7896994096020747310
+    second: throw_blockout_test1_16
+  - first:
+      213: 8367744601690532605
+    second: throw_blockout_test1_17
+  - first:
+      213: 1940850803017638123
+    second: throw_blockout_test1_18
+  - first:
+      213: -1005830469452521668
+    second: throw_blockout_test1_19
+  - first:
+      213: 5096575939743731432
+    second: throw_blockout_test1_20
+  - first:
+      213: 4887843729897851003
+    second: throw_blockout_test1_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: throw_blockout_test1_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 522
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d7a9cbdfa4418941b4711b513ffe1d6
+      internalID: 1911501355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_1
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 522
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bfbfd1f58bc61a429de6c83e37e01e5
+      internalID: -1055459527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_2
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 522
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c8febb643d13748af8fe232fcc1503
+      internalID: -842727889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_3
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 522
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6a535176d0a0944a462e6c9cb365bc
+      internalID: -1781769587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_4
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 522
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74992738a0127b949a24a5dbe6ee2f53
+      internalID: -880908790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 392
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8186cfa89ac956a438e883721f13b860
+      internalID: 491206967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 392
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb13de14889c0e84f97ad978e8704274
+      internalID: -13303442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_7
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 392
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b527a189d8999f4b8dff5285b18c66b
+      internalID: -883761285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_8
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 392
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35cb4902f87a6e442bdd3a3fedf8c119
+      internalID: 1042912188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_9
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 392
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c1ae2c66891e747a3d9a6ec59cb98e
+      internalID: 1484946109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 262
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e109ca5285e48a1499eb52d36683cec7
+      internalID: -1287688267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_11
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 262
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764fac6eb7d5a2147a156146cc43237d
+      internalID: -1100713609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_12
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 262
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b06d1aa41989a349b671e811fa8ca05
+      internalID: 2024525636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_13
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 262
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b40a2501ee63e4faf75310bccb10e9
+      internalID: -1972602805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_14
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 262
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402de9e410d5b2a44b6457cbd4c93087
+      internalID: -890905844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 132
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5ca1126d77f6946bbde4c56f355e75
+      internalID: -867351190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_16
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 132
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7127182ee2c90f446a3e35ffe422b02c
+      internalID: 455085173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_17
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 132
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a386632d43e32d478ef7f66c5234e4e
+      internalID: 1493050397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_18
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 132
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f24bd1bd0412c4b9157ca79bc13093
+      internalID: -610154824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_19
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 132
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e260b92f6b2f4449cb88a29c811a95
+      internalID: -1206659193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: throw_blockout_test1_20
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eac398bccddf994f91d3843e83d834b
+      internalID: -1952277602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":5.0},"gridSpriteSize":{"x":192.0,"y":128.0},"gridSpriteOffset":{"x":2.0,"y":2.0},"gridSpritePadding":{"x":2.0,"y":2.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":1,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      throw_blockout_test1_0: 1911501355
+      throw_blockout_test1_1: -1055459527
+      throw_blockout_test1_10: -1287688267
+      throw_blockout_test1_11: -1100713609
+      throw_blockout_test1_12: 2024525636
+      throw_blockout_test1_13: -1972602805
+      throw_blockout_test1_14: -890905844
+      throw_blockout_test1_15: -867351190
+      throw_blockout_test1_16: 455085173
+      throw_blockout_test1_17: 1493050397
+      throw_blockout_test1_18: -610154824
+      throw_blockout_test1_19: -1206659193
+      throw_blockout_test1_2: -842727889
+      throw_blockout_test1_20: -1952277602
+      throw_blockout_test1_3: -1781769587
+      throw_blockout_test1_4: -880908790
+      throw_blockout_test1_5: 491206967
+      throw_blockout_test1_6: -13303442
+      throw_blockout_test1_7: -883761285
+      throw_blockout_test1_8: 1042912188
+      throw_blockout_test1_9: 1484946109
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
