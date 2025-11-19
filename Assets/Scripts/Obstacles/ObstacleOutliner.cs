@@ -114,7 +114,7 @@ namespace Snowmentum
         private Color GetOutlineColor()
         {
             // Update the color based on the size difference between this obstacle and the snowball.
-            if (SnowballSize.Value > controller.ObstacleSize || SnowballFreezing.IsFrozen)
+            if (SnowballSize.Value > controller.ObstacleSize || SnowballFreezing.ShowVisuals)
             {
                 return destroyableColor;
             }
