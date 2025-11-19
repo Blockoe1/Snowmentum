@@ -173,6 +173,7 @@ namespace Snowmentum
             internal override float Evaluate(float obstacleSize, float snowballSize)
             {
                 float gain = scaleWithObstacleSize ? obstacleSize * maxGain : maxGain;
+                Debug.Log(-(base.Evaluate(obstacleSize, snowballSize) - gain));
                 return -(base.Evaluate(obstacleSize, snowballSize) - gain);
             }
         }
@@ -259,15 +260,15 @@ namespace Snowmentum
                     // Apply damage and negative effects
                     if (snowballSizeVal < obstacle.ObstacleSize)
                     {
-                        speedComp.TargetValue_Local = speedDamage.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
+                        speedComp.TargetValue_Local += speedDamage.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
                         speedKnockback.SetStoredSpeed(speedComp.Value_Local);
                         speedComp.Value_Local = speedKnockback.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
-                        sizeComp.TargetValue_Local = sizeDamage.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
+                        sizeComp.TargetValue_Local += sizeDamage.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
                     }
                     // Apply positive benefits.
                     else
                     {
-                        sizeComp.TargetValue_Local = sizeGaining.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
+                        sizeComp.TargetValue_Local += sizeGaining.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
                     }
 
                     //    speedDamage.OnCollision(obstacle.ObstacleSize, snowballSizeVal, speedComp);
