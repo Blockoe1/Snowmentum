@@ -17,6 +17,7 @@ namespace Snowmentum
         private float cycleLength;
         [SerializeField] private CelestialBody[] celestialBodies;
         [SerializeField] private bool startOnAwake;
+        [SerializeField] private float startingTime;
         [Header("Debug")]
         [SerializeField] private bool updateInEditor;
         [SerializeField, Range(0f, 1f)] private float debugTime;
@@ -49,6 +50,7 @@ namespace Snowmentum
         public void StartTime()
         {
             isTimeMoving = true;
+            time = startingTime;
             StartCoroutine(TimeRoutine());
         }
 
