@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.SnowballLight
   radiusScale: 0.5
-  innerOuterDist: 2
+  innerOuterDist: 3
   snowballLight: {fileID: 5104873237832276759}
 --- !u!1 &9182634060681000022
 GameObject:
