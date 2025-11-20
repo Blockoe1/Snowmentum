@@ -53,7 +53,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 528ea311f0fed9a4ebe11c6aebf06654, type: 3}
   - name: Obstacle Destruction
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 1
+    volume: 0.536
     pitch: 1
     loop: 0
     audioClip: {fileID: 8300000, guid: 587b96989afd3cf4cb97b8eaf63c38c9, type: 3}
@@ -77,7 +77,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 00ce3acff2d956e43986b9506823cfb4, type: 3}
   - name: Snow Packing
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 1
+    volume: 0.6
     pitch: 1
     loop: 0
     audioClip: {fileID: 8300000, guid: 2365e29588d674f439153560029bd18e, type: 3}

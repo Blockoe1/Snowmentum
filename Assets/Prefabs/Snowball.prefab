@@ -100,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8420961822085175188
 Transform:
   m_ObjectHideFlags: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   increasePerSecond: 0.0125
   moveToTarget: 7
   useFixedUpdate: 1
+  resetOnAwake: 0
   OnDeathEvent:
     m_PersistentCalls:
       m_Calls:
@@ -246,16 +247,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4745236545671037846}
         m_TargetAssemblyTypeName: Snowmentum.TimerDisplayer, Assembly-CSharp
-        m_MethodName: StopStopwatch
+        m_MethodName: SetTrackImmediate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: GameOver
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4745236545671037846}
@@ -287,6 +288,7 @@ MonoBehaviour:
   increasePerSecond: 0.022
   moveToTarget: 5
   useFixedUpdate: 1
+  resetOnAwake: 0
   minSpeed: 1
 --- !u!114 &231841834676547580
 MonoBehaviour:
@@ -315,8 +317,8 @@ MonoBehaviour:
     maxDamageProportion: 0.05
     curveSteepness: 1.5
     curveScale: 0.3
-    minDamageKnockback: 8
-    knockbackCurveSteepness: 2
+    minDamageKnockback: 10
+    knockbackCurveSteepness: 1.9
     knockbackCurveScale: 1
   OnTakeDamage:
     m_PersistentCalls:
@@ -364,6 +366,7 @@ MonoBehaviour:
   increasePerSecond: 0
   moveToTarget: 3
   useFixedUpdate: 1
+  resetOnAwake: 1
 --- !u!114 &5246366932903730779
 MonoBehaviour:
   m_ObjectHideFlags: 0
