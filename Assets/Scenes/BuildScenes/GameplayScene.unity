@@ -6880,10 +6880,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 989503879829878671, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
-      propertyPath: cycleLength
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 1133049752906520760, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
       propertyPath: keyframes.Array.size
       value: 7
