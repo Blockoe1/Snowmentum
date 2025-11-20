@@ -18,6 +18,8 @@ namespace Snowmentum
         private const string DELTA_ACTION_NAME = "MouseMovement";
         #endregion
 
+        [SerializeField] private float mouseSensitivity = 1f;
+
         private static Vector2 mouseDelta;
         
         private InputAction mouseDeltaAction;
@@ -48,7 +50,7 @@ namespace Snowmentum
             {
                 // Use Time.deltaTime here to average the delta into pixels / second.
                 // Without this we get framerate dependence
-                mouseDelta = mouseDeltaAction.ReadValue<Vector2>() / Time.deltaTime;
+                mouseDelta = mouseDeltaAction.ReadValue<Vector2>() * mouseSensitivity / Time.deltaTime;
                 OnDeltaUpdate?.Invoke(mouseDelta);
             }
         }
