@@ -6880,6 +6880,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 989503879829878671, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
+      propertyPath: cycleLength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133049752906520760, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
+      propertyPath: keyframes.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133049752906520760, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
+      propertyPath: keyframes.Array.data[7].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133049752906520760, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
+      propertyPath: keyframes.Array.data[7].lightColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133049752906520760, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
+      propertyPath: keyframes.Array.data[7].lightColor.b
+      value: 0.9882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133049752906520760, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
+      propertyPath: keyframes.Array.data[7].lightColor.g
+      value: 0.827451
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133049752906520760, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
+      propertyPath: keyframes.Array.data[7].lightColor.r
+      value: 0.5686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133049752906520760, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
+      propertyPath: keyframes.Array.data[7].lightIntensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3855622087832680449, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
       propertyPath: m_Name
       value: DayNightCycle (1)

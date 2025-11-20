@@ -2295,7 +2295,7 @@ Transform:
   m_GameObject: {fileID: 704017164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.37, y: -2.8177042, z: 0}
+  m_LocalPosition: {x: 5.37, y: 9.08125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3315,20 +3315,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_PointLightInnerRadius
-      value: 0.5
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 2
+      value: 5.42
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
-      objectReference: {fileID: 11400000, guid: de6339ec7ff617141aee6a497d74c093, type: 2}
+      objectReference: {fileID: 11400000, guid: 63ccbbf9fbc690641baebe05ecb1ec0d, type: 2}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: obstacleData
       value: 
-      objectReference: {fileID: 11400000, guid: de6339ec7ff617141aee6a497d74c093, type: 2}
+      objectReference: {fileID: 11400000, guid: 63ccbbf9fbc690641baebe05ecb1ec0d, type: 2}
+    - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: obstacleSize
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.12999964
@@ -3371,7 +3375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Name
-      value: 1_Chesnut
+      value: 1_Deshelled_Chestnut
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_TagString
@@ -3387,19 +3391,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Size.x
-      value: 1.1
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Size.y
-      value: 1.2
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Offset.x
-      value: 0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Offset.y
-      value: -0.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Direction
@@ -3420,7 +3424,7 @@ PrefabInstance:
     - target: {fileID: 8871070839524519023, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 36ac8feed49d85c49b94f8804d007a92, type: 3}
+      objectReference: {fileID: 21300000, guid: dcbf88753951b864ba16541a8d9253f9, type: 3}
     - target: {fileID: 8871070839524519023, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -3776,7 +3780,7 @@ Transform:
   m_GameObject: {fileID: 1006660179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.07211, y: -4.7577043, z: 0}
+  m_LocalPosition: {x: -1.07211, y: 7.14125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4187,7 +4191,7 @@ Transform:
   m_GameObject: {fileID: 1069299004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -12.537704, z: 0}
+  m_LocalPosition: {x: 0, y: -0.6387501, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4224,7 +4228,7 @@ Transform:
   m_GameObject: {fileID: 1081557371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.45, y: 1.1122961, z: 0}
+  m_LocalPosition: {x: 5.45, y: 13.0112505, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5247,7 +5251,7 @@ Transform:
   m_GameObject: {fileID: 1392363556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.23, y: -9.157704, z: 0}
+  m_LocalPosition: {x: 5.23, y: 2.74125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5866,7 +5870,7 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.30364585
+    x: 0.3072917
     y: 0
     width: 0.34722224
     height: 0.3472222

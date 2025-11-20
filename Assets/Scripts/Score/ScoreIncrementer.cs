@@ -48,7 +48,7 @@ namespace Snowmentum.Score
         /// <param name="multiplier"></param>
         public void AddScoreMultiplied(float multiplier)
         {
-            Debug.Log("Adding Score multiplied by " + multiplier);
+            //Debug.Log("Adding Score multiplied by " + multiplier);
             AddScore(Mathf.CeilToInt(baseScoreIncrease * multiplier));
         }
     }

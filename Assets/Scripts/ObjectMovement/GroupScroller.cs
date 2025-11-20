@@ -126,7 +126,7 @@ namespace Snowmentum
                             objects.RemoveAt(objects.Count - 1);
                             objects.Insert(0, toPullObj);
 
-                            Debug.Log("Pull");
+                            //Debug.Log("Pull");
                             loopCount++;
                             if (loopCount == 100)
                             {

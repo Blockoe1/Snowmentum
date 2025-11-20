@@ -106,9 +106,10 @@ namespace Snowmentum
                     }
                 }
 
-                    Debug.Log(currentKeyframe + " " + targetKeyframe);
+                    Debug.Log(name + ": " + currentKeyframe + " " + targetKeyframe);
                 float normalizedKeyframeDistance = 
-                    GetNomalizedKeyDistance(keyframes[currentKeyframe], keyframes[targetKeyframe], normalizedTime);
+                    GetNomalizedKeyDistance(keyframes[currentKeyframe], keyframes[targetKeyframe], normalizedTime, 
+                    targetKeyframe == 0);
 
                 // lerp between the two keyframes.
                 SetTimeData(LerpKeyframe(keyframes[currentKeyframe], keyframes[targetKeyframe], 
@@ -151,16 +152,21 @@ namespace Snowmentum
         /// <summary>
         /// Calculates the normalized progress between two keyframes given a certain normalized time.
         /// </summary>
-        /// <param name="current"></param>
-        /// <param name="target"></param>
+        /// <param name="currentIndex"></param>
+        /// <param name="targetIndex"></param>
         /// <param name="normalizedTime"></param>
         /// <returns></returns>
-        private static float GetNomalizedKeyDistance(TimeKeyframe current, TimeKeyframe target, 
-            float normalizedTime)
+        private static float GetNomalizedKeyDistance(TimeKeyframe currentIndex, TimeKeyframe targetIndex, 
+            float normalizedTime, bool isLooped)
         {
             // Calculate the distance between them.
-            float toTarget = normalizedTime - current.time;
-            float keyframeDistance = target.time - current.time;
+            float toTarget = normalizedTime - currentIndex.time;
+            float keyframeDistance = targetIndex.time - currentIndex.time;
+            // If this is a looped keyframe, we need to increment keyframeDistance by 1.
+            if (isLooped)
+            {
+                keyframeDistance += 1;
+            }
             // Calculate the normalized progress between the two keyframes.
             float normalizedKeyframeDistance = toTarget / keyframeDistance;
             return normalizedKeyframeDistance;
