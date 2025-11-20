@@ -29,6 +29,7 @@ namespace Snowmentum
         private SerializedProperty colorizer;
         private SerializedProperty particles;
         private SerializedProperty rb;
+        private SerializedProperty obstacleLight;
 
         bool showComponents;
 
@@ -49,6 +50,7 @@ namespace Snowmentum
             colorizer = serializedObject.FindProperty(nameof(colorizer));
             particles = serializedObject.FindProperty(nameof(particles));
             rb = serializedObject.FindProperty(nameof(rb));
+            obstacleLight = serializedObject.FindProperty(nameof(obstacleLight));
         }
 
         /// <summary>
@@ -102,6 +104,7 @@ namespace Snowmentum
                 EditorGUILayout.PropertyField(colorizer);
                 EditorGUILayout.PropertyField(particles);
                 EditorGUILayout.PropertyField(rb);
+                EditorGUILayout.PropertyField(obstacleLight);
 
                 EditorGUI.EndDisabledGroup();
                 EditorGUI.indentLevel--;

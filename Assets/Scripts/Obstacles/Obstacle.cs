@@ -50,6 +50,10 @@ namespace Snowmentum
             "Should approximately correspond to the size of the sprite.")] 
         private float emissionRadius;
 
+        [Header("Lighting")]
+        [SerializeField] private float innerRadius;
+        [SerializeField] private float outerRadius;
+
         [Header("Greyboxing Only")]
         [SerializeField] private bool isGreyboxed;
         [SerializeField] private Vector2 spriteSize = Vector2.one;
@@ -143,7 +147,21 @@ namespace Snowmentum
                 return baseSize;
             }
         }
+        #endregion
 
+        #region Lighting
+        public float InnerRadius
+        { 
+            get { return innerRadius; }
+            set { innerRadius = value; }
+        }
+        public float OuterRadius
+        {
+            get { return outerRadius; }
+            set { outerRadius = value; }
+        }
+        #endregion
+        #region Greyboxing
         public Vector2 SpriteSize
         {
             get { return spriteSize; }

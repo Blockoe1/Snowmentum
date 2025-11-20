@@ -108,6 +108,10 @@ namespace Snowmentum
             {
                 obstacleCollider.enabled = isEnabled;
             }
+            if (obstacleLight != null)
+            {
+                obstacleLight.enabled = isEnabled;
+            }
         }
 
         /// <summary>
@@ -192,6 +196,12 @@ namespace Snowmentum
                 var burst = emissionModue.GetBurst(0);
                 burst.count = obstacleData.ParticleNumber;
                 emissionModue.SetBurst(0, burst);
+            }
+
+            if (obstacleLight != null)
+            {
+                obstacleLight.pointLightInnerRadius = obstacleData.InnerRadius;
+                obstacleLight.pointLightOuterRadius = obstacleData.OuterRadius;
             }
         }
 
@@ -326,7 +336,8 @@ namespace Snowmentum
                     // Copies the current sprite sheet data to the sprite sheet array.
                     if (obstacleData.SpriteSheet != null)
                     {
-                        Sprite[] spriteSheet = new Sprite[Mathf.Max(obstacleData.SpriteSheet.Length, animModule.spriteCount)];
+                        Sprite[] spriteSheet = 
+                            new Sprite[Mathf.Max(obstacleData.SpriteSheet.Length, animModule.spriteCount)];
                         obstacleData.SpriteSheet.CopyTo(spriteSheet, 0);
                         // Update the sprite sheet for the particles.
                         for (int i = 0; i < spriteSheet.Length; i++)
@@ -347,7 +358,16 @@ namespace Snowmentum
                     var emissionModue = particles.emission;
                     var burst = emissionModue.GetBurst(0);
                     //obstacleData.ParticleNumber = (int)burst.count.constant;
-                    obstacleData.ParticleNumber = ProcessAssignment(obstacleData.ParticleNumber, (int)burst.count.constant);
+                    obstacleData.ParticleNumber = 
+                        ProcessAssignment(obstacleData.ParticleNumber, (int)burst.count.constant);
+                }
+
+                if (obstacleLight != null)
+                {
+                    obstacleData.InnerRadius = 
+                        ProcessAssignment(obstacleData.InnerRadius, obstacleLight.pointLightInnerRadius);
+                    obstacleData.OuterRadius = 
+                        ProcessAssignment(obstacleData.OuterRadius, obstacleLight.pointLightOuterRadius);
                 }
 
                 //SaveObstacleData();
@@ -573,6 +593,22 @@ namespace Snowmentum
                     if (isDirty)
                     {
                         EditorUtility.SetDirty(particles);
+                        isDirty = false;
+                    }
+                }
+                #endregion
+
+                #region Light
+                if (obstacleLight != null)
+                {
+                    obstacleLight.pointLightInnerRadius = ProcessAssignment(obstacleLight.pointLightInnerRadius, 
+                        obstacleData.InnerRadius);
+                    obstacleLight.pointLightOuterRadius = ProcessAssignment(obstacleLight.pointLightOuterRadius, 
+                        obstacleData.OuterRadius);
+
+                    if (isDirty)
+                    {
+                        EditorUtility.SetDirty(obstacleLight);
                         isDirty = false;
                     }
                 }

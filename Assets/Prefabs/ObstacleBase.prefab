@@ -5038,6 +5038,7 @@ MonoBehaviour:
   relay: {fileID: 5866592910555483468}
   colorizer: {fileID: 2904791822597733056}
   rb: {fileID: 3304603884408545833}
+  obstacleLight: {fileID: 988936022405747948}
   particles: {fileID: 185282512532276888}
 --- !u!212 &8871070839524519023
 SpriteRenderer:
