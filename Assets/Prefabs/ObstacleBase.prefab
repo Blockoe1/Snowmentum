@@ -5387,9 +5387,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleColorizer
   deadlyColor: {r: 1.8490566, g: 0.2616587, b: 0.3062487, a: 1}
-  destroyableColor: {r: 0.12210222, g: 0.10217138, b: 1.5471698, a: 1}
-  maxAlpha: 0.725
-  maxDistance: 9
+  destroyableColor: {r: 0.13635908, g: 0.09771916, b: 2.3903716, a: 1}
+  maxAlpha: 0.85
+  maxDistance: 11
   showColors: 1
   OnColorUpdateEvent:
     m_PersistentCalls:
