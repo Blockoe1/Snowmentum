@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "ArcadeControls",
+    "name": "MainControls",
     "maps": [
         {
             "name": "Player",

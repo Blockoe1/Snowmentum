@@ -8,6 +8,7 @@
 *****************************************************************************/
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -64,7 +65,11 @@ namespace Snowmentum
             }
             else
             {
-
+                // Deselect the button.
+                if (EventSystem.current != null)
+                {
+                    EventSystem.current.SetSelectedGameObject(null);
+                }
             }
         }
     }
