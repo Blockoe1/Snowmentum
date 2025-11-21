@@ -17,7 +17,7 @@ MonoBehaviour:
   orderInLayer: 0
   baseScore: 1
   destroySound: Obstacle Destruction
-  showOutline: 1
+  showColors: 1
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 1
@@ -32,6 +32,8 @@ MonoBehaviour:
   - {fileID: -595689659, guid: 44bd119e09507d4429bdce70d193e1d8, type: 3}
   particleNumber: 5
   emissionRadius: 0.1
+  innerRadius: 0.21
+  outerRadius: 1.59
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
   baseSize: 1

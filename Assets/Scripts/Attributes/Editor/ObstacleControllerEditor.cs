@@ -26,9 +26,10 @@ namespace Snowmentum
         private SerializedProperty score;
         private SerializedProperty scaler;
         private SerializedProperty relay;
-        private SerializedProperty outliner;
+        private SerializedProperty colorizer;
         private SerializedProperty particles;
         private SerializedProperty rb;
+        private SerializedProperty obstacleLight;
 
         bool showComponents;
 
@@ -46,9 +47,10 @@ namespace Snowmentum
             score = serializedObject.FindProperty(nameof(score));
             scaler = serializedObject.FindProperty(nameof(scaler));
             relay = serializedObject.FindProperty(nameof(relay));
-            outliner = serializedObject.FindProperty(nameof(outliner));
+            colorizer = serializedObject.FindProperty(nameof(colorizer));
             particles = serializedObject.FindProperty(nameof(particles));
             rb = serializedObject.FindProperty(nameof(rb));
+            obstacleLight = serializedObject.FindProperty(nameof(obstacleLight));
         }
 
         /// <summary>
@@ -99,9 +101,10 @@ namespace Snowmentum
                 EditorGUILayout.PropertyField(score);
                 EditorGUILayout.PropertyField(scaler);
                 EditorGUILayout.PropertyField(relay);
-                EditorGUILayout.PropertyField(outliner);
+                EditorGUILayout.PropertyField(colorizer);
                 EditorGUILayout.PropertyField(particles);
                 EditorGUILayout.PropertyField(rb);
+                EditorGUILayout.PropertyField(obstacleLight);
 
                 EditorGUI.EndDisabledGroup();
                 EditorGUI.indentLevel--;

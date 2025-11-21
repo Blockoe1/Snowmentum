@@ -10,6 +10,8 @@ using Snowmentum.Score;
 using Snowmentum.Size;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -37,8 +39,9 @@ namespace Snowmentum
         [SerializeReference, ReadOnly] private ScoreIncrementer score;
         [SerializeReference, ReadOnly] private ObjectScaler scaler;
         [SerializeReference, ReadOnly] private AudioRelay relay;
-        [SerializeReference, ReadOnly] private ObstacleOutliner outliner;
+        [SerializeReference, ReadOnly] private ObstacleColorizer colorizer;
         [SerializeReference, ReadOnly] private Rigidbody2D rb;
+        [SerializeReference, ReadOnly] private Light2D obstacleLight;
         [SerializeReference] private ParticleSystem particles;
 
         /// <summary>
@@ -52,9 +55,10 @@ namespace Snowmentum
             score = GetComponent<ScoreIncrementer>();
             scaler = GetComponent<ObjectScaler>();
             relay = GetComponent<AudioRelay>();
-            outliner = GetComponent<ObstacleOutliner>();
+            colorizer = GetComponent<ObstacleColorizer>();
+            rb = GetComponent<Rigidbody2D>();
             particles = GetComponentInChildren<ParticleSystem>();
-            rb = GetComponentInChildren<Rigidbody2D>();
+            obstacleLight = GetComponentInChildren<Light2D>();
         }
         #endregion
 
@@ -104,6 +108,10 @@ namespace Snowmentum
             {
                 obstacleCollider.enabled = isEnabled;
             }
+            if (obstacleLight != null)
+            {
+                obstacleLight.enabled = isEnabled;
+            }
         }
 
         /// <summary>
@@ -145,9 +153,9 @@ namespace Snowmentum
             {
                 relay.SoundName = obstacleData.DestroySound;
             }
-            if (outliner != null)
+            if (colorizer != null)
             {
-                outliner.ToggleOutline(obstacleData.ShowOutline);
+                colorizer.ToggleColor(obstacleData.ShowColors);
             }
 
             // Collider Updates
@@ -188,6 +196,12 @@ namespace Snowmentum
                 var burst = emissionModue.GetBurst(0);
                 burst.count = obstacleData.ParticleNumber;
                 emissionModue.SetBurst(0, burst);
+            }
+
+            if (obstacleLight != null)
+            {
+                obstacleLight.pointLightInnerRadius = obstacleData.InnerRadius;
+                obstacleLight.pointLightOuterRadius = obstacleData.OuterRadius;
             }
         }
 
@@ -295,9 +309,9 @@ namespace Snowmentum
                     obstacleData.DestroySound = ProcessAssignment(obstacleData.DestroySound, relay.SoundName);
                     //obstacleData.DestroySound = relay.SoundName;
                 }
-                if (outliner != null)
+                if (colorizer != null)
                 {
-                    obstacleData.ShowOutline = ProcessAssignment(obstacleData.ShowOutline, outliner.ShowOutline);
+                    obstacleData.ShowColors = ProcessAssignment(obstacleData.ShowColors, colorizer.ShowColors);
                     //obstacleData.ShowOutline = outliner.ShowOutline;
                 }
 
@@ -322,7 +336,8 @@ namespace Snowmentum
                     // Copies the current sprite sheet data to the sprite sheet array.
                     if (obstacleData.SpriteSheet != null)
                     {
-                        Sprite[] spriteSheet = new Sprite[Mathf.Max(obstacleData.SpriteSheet.Length, animModule.spriteCount)];
+                        Sprite[] spriteSheet = 
+                            new Sprite[Mathf.Max(obstacleData.SpriteSheet.Length, animModule.spriteCount)];
                         obstacleData.SpriteSheet.CopyTo(spriteSheet, 0);
                         // Update the sprite sheet for the particles.
                         for (int i = 0; i < spriteSheet.Length; i++)
@@ -343,7 +358,16 @@ namespace Snowmentum
                     var emissionModue = particles.emission;
                     var burst = emissionModue.GetBurst(0);
                     //obstacleData.ParticleNumber = (int)burst.count.constant;
-                    obstacleData.ParticleNumber = ProcessAssignment(obstacleData.ParticleNumber, (int)burst.count.constant);
+                    obstacleData.ParticleNumber = 
+                        ProcessAssignment(obstacleData.ParticleNumber, (int)burst.count.constant);
+                }
+
+                if (obstacleLight != null)
+                {
+                    obstacleData.InnerRadius = 
+                        ProcessAssignment(obstacleData.InnerRadius, obstacleLight.pointLightInnerRadius);
+                    obstacleData.OuterRadius = 
+                        ProcessAssignment(obstacleData.OuterRadius, obstacleLight.pointLightOuterRadius);
                 }
 
                 //SaveObstacleData();
@@ -486,16 +510,16 @@ namespace Snowmentum
                 }
                 #endregion
 
-                #region Outline
-                if (outliner != null)
+                #region Colorizer
+                if (colorizer != null)
                 {
-                    outliner.ShowOutline = ProcessAssignment(outliner.ShowOutline, obstacleData.ShowOutline);
+                    colorizer.ShowColors = ProcessAssignment(colorizer.ShowColors, obstacleData.ShowColors);
                     //outliner.ShowOutline = obstacleData.ShowOutline;
 
                     // Each component needs to be set dirty individually for changes to be properly saved.
                     if (isDirty)
                     {
-                        EditorUtility.SetDirty(outliner);
+                        EditorUtility.SetDirty(colorizer);
                         isDirty = false;
                     }
                 }
@@ -569,6 +593,22 @@ namespace Snowmentum
                     if (isDirty)
                     {
                         EditorUtility.SetDirty(particles);
+                        isDirty = false;
+                    }
+                }
+                #endregion
+
+                #region Light
+                if (obstacleLight != null)
+                {
+                    obstacleLight.pointLightInnerRadius = ProcessAssignment(obstacleLight.pointLightInnerRadius, 
+                        obstacleData.InnerRadius);
+                    obstacleLight.pointLightOuterRadius = ProcessAssignment(obstacleLight.pointLightOuterRadius, 
+                        obstacleData.OuterRadius);
+
+                    if (isDirty)
+                    {
+                        EditorUtility.SetDirty(obstacleLight);
                         isDirty = false;
                     }
                 }

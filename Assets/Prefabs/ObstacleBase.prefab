@@ -4990,6 +4990,7 @@ GameObject:
   - component: {fileID: 5866592910555483468}
   - component: {fileID: 7416643200133424707}
   - component: {fileID: 7078567782857989211}
+  - component: {fileID: 2904791822597733056}
   m_Layer: 0
   m_Name: ObstacleBase
   m_TagString: Untagged
@@ -5011,6 +5012,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3290832091738845402}
+  - {fileID: 5721016279569335654}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2002559263234210752
@@ -5027,14 +5029,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleData: {fileID: 0}
   autoUpdateObstacleData: 1
+  obstacleSize: 0
   oldObsData: {fileID: 0}
   rend: {fileID: 8871070839524519023}
   obstacleCollider: {fileID: 7567752226576047106}
   score: {fileID: 7647677357995392279}
   scaler: {fileID: 8657666669540303953}
   relay: {fileID: 5866592910555483468}
-  outliner: {fileID: 7416643200133424707}
+  colorizer: {fileID: 2904791822597733056}
   rb: {fileID: 3304603884408545833}
+  obstacleLight: {fileID: 988936022405747948}
   particles: {fileID: 185282512532276888}
 --- !u!212 &8871070839524519023
 SpriteRenderer:
@@ -5355,15 +5359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794b4b2889e3ba446933a10d731f47f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadlyColor: {r: 1, g: 0.2924527, b: 0.31376427, a: 1}
-  destroyableColor: {r: 0.26996374, g: 0.26100624, b: 1, a: 1}
-  maxOutlineAlpha: 0.725
-  maxTintValue: 0.25
-  maxDistance: 9
   outlineBlinkDelay: 0.1
-  showOutline: 0
   rend: {fileID: 8871070839524519023}
-  controller: {fileID: 2002559263234210752}
 --- !u!114 &7078567782857989211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5377,3 +5374,132 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleDropper
   fallSpeed: 2
+--- !u!114 &2904791822597733056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150288299065344882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a1cee91e634b648bacebc3b4b622d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleColorizer
+  deadlyColor: {r: 1.8490566, g: 0.2616587, b: 0.3062487, a: 1}
+  destroyableColor: {r: 0.13635908, g: 0.09771916, b: 2.3903716, a: 1}
+  maxAlpha: 0.85
+  maxDistance: 11
+  showColors: 1
+  OnColorUpdateEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7416643200133424707}
+        m_TargetAssemblyTypeName: Snowmentum.ObstacleOutliner, Assembly-CSharp
+        m_MethodName: SetOutlineColor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 988936022405747948}
+        m_TargetAssemblyTypeName: UnityEngine.Rendering.Universal.Light2D, Unity.RenderPipelines.Universal.2D.Runtime
+        m_MethodName: set_color
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  controller: {fileID: 2002559263234210752}
+--- !u!1 &7379783817527938468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5721016279569335654}
+  - component: {fileID: 988936022405747948}
+  m_Layer: 0
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5721016279569335654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7379783817527938468}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2290287356925112515}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &988936022405747948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7379783817527938468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
+  m_ComponentVersion: 2
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.7
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.75
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: 4da8d05e000000003154aaf2154f9420
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 2
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
