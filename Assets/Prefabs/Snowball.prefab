@@ -248,18 +248,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4745236545671037846}
-        m_TargetAssemblyTypeName: Snowmentum.TimerDisplayer, Assembly-CSharp
-        m_MethodName: SetTrackImmediate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: GameOver
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4745236545671037846}
         m_TargetAssemblyTypeName: Snowmentum.MusicRelay, Assembly-CSharp
         m_MethodName: SetTrackImmediate
         m_Mode: 5
@@ -285,7 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 4
-  increasePerSecond: 0.022
+  increasePerSecond: 0.02
   moveToTarget: 5
   useFixedUpdate: 1
   resetOnAwake: 0
@@ -304,22 +292,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitImmunity: 2
   flashDelay: 0.1
-  effectOnSize:
-    maxDamageProportion: 0.5
-    curveSteepness: 20
-    maxGain: 0.1
+  sizeDamage:
+    curveSteepness: 5
+    maxGain: 0.5
     scaleWithObstacleSize: 0
+    maxDamageProportion: 0.5
     lives: 0
     consumeOnHit: 0
-    gainCurveSteepness: 8
-    maxSizeGain: 0.1
-  effectOnSpeed:
-    maxDamageProportion: 0.05
+  sizeGaining:
+    curveSteepness: 8
+    maxGain: 0.05
+    scaleWithObstacleSize: 1
+  speedDamage:
     curveSteepness: 1.5
     curveScale: 0.3
+    maxDamageProportion: 0.05
+  speedKnockback:
+    curveSteepness: 1.9
+    curveScale: 1
     minDamageKnockback: 10
-    knockbackCurveSteepness: 1.9
-    knockbackCurveScale: 1
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
