@@ -5027,6 +5027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleData: {fileID: 0}
   autoUpdateObstacleData: 1
+  obstacleSize: 0
   oldObsData: {fileID: 0}
   rend: {fileID: 8871070839524519023}
   obstacleCollider: {fileID: 7567752226576047106}
