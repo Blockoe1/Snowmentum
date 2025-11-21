@@ -17,7 +17,7 @@ MonoBehaviour:
   orderInLayer: -1
   baseScore: 5
   destroySound: 
-  showOutline: 0
+  showColors: 0
   tag: Water
   hasCollision: 0
   capsuleDirection: 0
@@ -30,4 +30,6 @@ MonoBehaviour:
   - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   particleNumber: 0
   emissionRadius: 0.0001
+  isGreyboxed: 0
+  spriteSize: {x: 1, y: 1}
   baseSize: 1

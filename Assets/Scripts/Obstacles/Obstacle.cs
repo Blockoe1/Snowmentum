@@ -26,7 +26,7 @@ namespace Snowmentum
         [SerializeField, Tooltip("The sound to play when this obstacle is destroyed.")]
         private string destroySound = "Obstacle Destruction";
         [SerializeField, Tooltip("Whether this obstacle should show an outline as the snowball gets close or not.")]
-        private bool showOutline = true;
+        private bool showColors = true;
         [SerializeField, Tooltip("The tag of the obstacle game object.  Only used for specific special cases where " +
             "a custom identifier is needed, such as puddles.")] 
         private string tag = "Untagged";
@@ -49,6 +49,10 @@ namespace Snowmentum
         [SerializeField, Tooltip("The size of the circle that particles spawn from when the obstacle is destroyed.  " +
             "Should approximately correspond to the size of the sprite.")] 
         private float emissionRadius;
+
+        [Header("Lighting")]
+        [SerializeField] private float innerRadius;
+        [SerializeField] private float outerRadius;
 
         [Header("Greyboxing Only")]
         [SerializeField] private bool isGreyboxed;
@@ -96,10 +100,10 @@ namespace Snowmentum
             get { return hasCollision; }
             set { hasCollision = value; }
         }
-        public bool ShowOutline
+        public bool ShowColors
         { 
-            get { return showOutline; }
-            set { showOutline = value; }
+            get { return showColors; }
+            set { showColors = value; }
         }
         #region Particles
         public Sprite[] SpriteSheet
@@ -143,7 +147,21 @@ namespace Snowmentum
                 return baseSize;
             }
         }
+        #endregion
 
+        #region Lighting
+        public float InnerRadius
+        { 
+            get { return innerRadius; }
+            set { innerRadius = value; }
+        }
+        public float OuterRadius
+        {
+            get { return outerRadius; }
+            set { outerRadius = value; }
+        }
+        #endregion
+        #region Greyboxing
         public Vector2 SpriteSize
         {
             get { return spriteSize; }

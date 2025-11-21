@@ -159,6 +159,14 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.44
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -312,6 +320,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.93
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -595,6 +611,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -854,6 +874,14 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 5.38
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -1024,6 +1052,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -1070,6 +1102,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904791822597733056, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: showColors
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
@@ -1182,6 +1218,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -1228,6 +1268,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904791822597733056, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: showColors
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
@@ -1335,6 +1379,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.94
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -1490,6 +1542,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.32
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -1624,6 +1680,90 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
   m_PrefabInstance: {fileID: 562164408}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &662303844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 662303846}
+  - component: {fileID: 662303845}
+  m_Layer: 0
+  m_Name: Night Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &662303845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662303844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
+  m_ComponentVersion: 2
+  m_LightType: 4
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.5
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: 4da8d05e000000003154aaf2154f9420
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!4 &662303846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662303844}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3226581, y: -2.9720788, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &668810506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1663,6 +1803,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -1821,6 +1969,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.92
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -1992,6 +2148,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -2038,6 +2198,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904791822597733056, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: showColors
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
@@ -2131,7 +2295,7 @@ Transform:
   m_GameObject: {fileID: 704017164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.37, y: 8.63, z: 0}
+  m_LocalPosition: {x: 5.37, y: 9.08125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2189,6 +2353,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -2360,6 +2532,14 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.86
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -2530,6 +2710,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -2699,6 +2883,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -2959,6 +3151,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -3117,14 +3313,26 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 5.42
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
-      objectReference: {fileID: 11400000, guid: de6339ec7ff617141aee6a497d74c093, type: 2}
+      objectReference: {fileID: 11400000, guid: 63ccbbf9fbc690641baebe05ecb1ec0d, type: 2}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: obstacleData
       value: 
-      objectReference: {fileID: 11400000, guid: de6339ec7ff617141aee6a497d74c093, type: 2}
+      objectReference: {fileID: 11400000, guid: 63ccbbf9fbc690641baebe05ecb1ec0d, type: 2}
+    - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: obstacleSize
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.12999964
@@ -3167,7 +3375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Name
-      value: 1_Chesnut
+      value: 1_Deshelled_Chestnut
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_TagString
@@ -3183,19 +3391,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Size.x
-      value: 1.1
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Size.y
-      value: 1.2
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Offset.x
-      value: 0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Offset.y
-      value: -0.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7567752226576047106, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Direction
@@ -3216,7 +3424,7 @@ PrefabInstance:
     - target: {fileID: 8871070839524519023, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 36ac8feed49d85c49b94f8804d007a92, type: 3}
+      objectReference: {fileID: 21300000, guid: dcbf88753951b864ba16541a8d9253f9, type: 3}
     - target: {fileID: 8871070839524519023, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -3274,6 +3482,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 4.76
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -3417,6 +3633,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -3463,6 +3683,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904791822597733056, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: showColors
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
@@ -3556,7 +3780,7 @@ Transform:
   m_GameObject: {fileID: 1006660179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.07211, y: 6.69, z: 0}
+  m_LocalPosition: {x: -1.07211, y: 7.14125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3613,6 +3837,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.06
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -3792,6 +4024,14 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 6.78
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -3951,7 +4191,7 @@ Transform:
   m_GameObject: {fileID: 1069299004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.09, z: 0}
+  m_LocalPosition: {x: 0, y: -0.6387501, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3988,7 +4228,7 @@ Transform:
   m_GameObject: {fileID: 1081557371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.45, y: 12.56, z: 0}
+  m_LocalPosition: {x: 5.45, y: 13.0112505, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4037,6 +4277,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -4175,6 +4423,10 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -4333,6 +4585,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.26
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -4499,6 +4759,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.86
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -4674,6 +4942,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.32
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -4832,6 +5104,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -4878,6 +5154,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2290287356925112515, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904791822597733056, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: showColors
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
@@ -4971,7 +5251,7 @@ Transform:
   m_GameObject: {fileID: 1392363556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.23, y: 2.29, z: 0}
+  m_LocalPosition: {x: 5.23, y: 2.74125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5030,6 +5310,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.98
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -5173,6 +5461,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -5235,7 +5527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5150288299065344882, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: m_Name
-      value: 2_Pinecone
+      value: 2_Pinecone_F1
       objectReference: {fileID: 0}
     - target: {fileID: 5866592910555483468, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: soundName
@@ -5387,6 +5679,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 4.61
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -5570,10 +5870,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.3072917
     y: 0
-    width: 0
-    height: 0
+    width: 0.34722224
+    height: 0.3472222
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -5738,6 +6038,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.52
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -5892,6 +6196,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -6045,6 +6353,10 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -6216,6 +6528,14 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -6335,7 +6655,7 @@ Transform:
   m_GameObject: {fileID: 1845856287}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.68333, y: 12.14447, z: 0}
+  m_LocalPosition: {x: 1.68333, y: -0.75421906, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6383,6 +6703,10 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -6553,6 +6877,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.22
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -6924,6 +7256,14 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.96
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -7094,6 +7434,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.34
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -7251,6 +7595,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -7430,6 +7782,14 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 1.59
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -7587,6 +7947,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.42
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -7762,6 +8130,14 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -7899,6 +8275,14 @@ PrefabInstance:
     - target: {fileID: 185282512532276888, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.66
       objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
@@ -8066,6 +8450,14 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 988936022405747948, guid: 3586529929dfe284a88be892efb227ca, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.44
+      objectReference: {fileID: 0}
     - target: {fileID: 2002559263234210752, guid: 3586529929dfe284a88be892efb227ca, type: 3}
       propertyPath: oldObsData
       value: 
@@ -8214,3 +8606,4 @@ SceneRoots:
   - {fileID: 834277412}
   - {fileID: 238925998}
   - {fileID: 1480778683}
+  - {fileID: 662303846}
