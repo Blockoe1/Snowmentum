@@ -760,10 +760,6 @@ PrefabInstance:
       propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[12].m_Target
       value: 
       objectReference: {fileID: 236938002}
-    - target: {fileID: 8053965814956573927, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
-      propertyPath: OnMinigameComplete.m_PersistentCalls.m_Calls.Array.data[13].m_Target
-      value: 
-      objectReference: {fileID: 236938002}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1574,7 +1570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2297055894346351732, guid: ef05c73fc957cef46ae9ad6b3acbfdf8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2977733273041567016, guid: ef05c73fc957cef46ae9ad6b3acbfdf8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -12953,8 +12949,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

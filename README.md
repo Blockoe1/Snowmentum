@@ -3,8 +3,8 @@
 A 2D side scrolling infinite runner about growing a snowball to destructive sizes.
 
 Known Bugs:
-- Obstacles have a rare chance of screwing the player over by spawning in an impassible line.
-- The snoeball sometimes doesnt transition back to the default sprite when it thaws.
+- Backgrounds will break if the snowball gets too large (Only happens past bracket 5.)
+- The first time the main theme loops, there's an auditory stutter.
 
 
-Everything is controlled with the mouse/trackpad/trackball.  There are no button inputs required; however, you can use the joystick and top buttons to navigate menus.
+Everything is controlled with the mouse/trackpad/trackball.  There are no button inputs required; however, you can use the joystick and buttons on arcade, or arrow keys/wasd and spacebar/enter on PC to navigate menus.

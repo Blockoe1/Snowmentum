@@ -174,7 +174,7 @@ namespace Snowmentum
             internal override float Evaluate(float obstacleSize, float snowballSize)
             {
                 float gain = scaleWithObstacleSize ? obstacleSize * maxGain : maxGain;
-                Debug.Log(-(base.Evaluate(obstacleSize, snowballSize) - gain));
+                //Debug.Log(-(base.Evaluate(obstacleSize, snowballSize) - gain));
                 return -(base.Evaluate(obstacleSize, snowballSize) - gain);
             }
         }
