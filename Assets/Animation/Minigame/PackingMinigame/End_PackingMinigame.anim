@@ -92,7 +92,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1026657421, guid: fd3271106bfcaf94f976fd486ddcc5b5, type: 3}
+      value: {fileID: 2113952470, guid: 9b4a8505207344d448b00cafd6938315, type: 3}
     attribute: m_Sprite
     path: ErinHands
     classID: 212
@@ -142,7 +142,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1026657421, guid: fd3271106bfcaf94f976fd486ddcc5b5, type: 3}
+    - {fileID: 2113952470, guid: 9b4a8505207344d448b00cafd6938315, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
