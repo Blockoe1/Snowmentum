@@ -106,7 +106,7 @@ namespace Snowmentum
                     }
                 }
 
-                    Debug.Log(name + ": " + currentKeyframe + " " + targetKeyframe);
+                    //Debug.Log(name + ": " + currentKeyframe + " " + targetKeyframe);
                 float normalizedKeyframeDistance = 
                     GetNomalizedKeyDistance(keyframes[currentKeyframe], keyframes[targetKeyframe], normalizedTime, 
                     targetKeyframe == 0);
