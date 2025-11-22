@@ -51,7 +51,7 @@ MonoBehaviour:
   obstacleSpawnAmount: 1
   spawnCooldown: 3.5
   scaleWithSpeed: 1
-  maxBonusWeight: 10
+  maxBonusWeight: 20
   minYSpawn: -3
   maxYSpawn: 1
   minimumYDistance: 2

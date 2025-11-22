@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3442375463111230466}
   - component: {fileID: 3049989257839691347}
   - component: {fileID: 846400833816720499}
+  - component: {fileID: 7939486360312387423}
   m_Layer: 0
   m_Name: ThrowMinigame
   m_TagString: Untagged
@@ -101,6 +102,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7939486360312387423}
+        m_TargetAssemblyTypeName: Snowmentum.MusicRelay, Assembly-CSharp
+        m_MethodName: SetTrack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Throwing
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
@@ -202,6 +215,18 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Snowmentum.SnowballMovement, Assembly-CSharp
         m_MethodName: PauseMovement
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Throwing
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+        m_MethodName: set_alpha
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -363,3 +388,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.MinigameDisposer
   nextMinigame: {fileID: 0}
+--- !u!114 &7939486360312387423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3711161457828201969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7c904ae1545804ca16da5031b25ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.MusicRelay
+  defaultTrackName: Level

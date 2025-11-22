@@ -17,12 +17,12 @@ MonoBehaviour:
   orderInLayer: 0
   baseScore: 2
   destroySound: Obstacle Destruction
-  showOutline: 1
+  showColors: 1
   tag: Untagged
   hasCollision: 1
-  capsuleDirection: 1
+  capsuleDirection: 0
   offset: {x: 0.03, y: -0.05}
-  size: {x: 0.98, y: 0.9}
+  size: {x: 1.1, y: 1.2}
   particleSpriteSheet:
   - {fileID: -1806765887, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
   - {fileID: -733742154, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
@@ -32,6 +32,8 @@ MonoBehaviour:
   - {fileID: 15126433, guid: 84b77c227ddc54649b3135b8c0667cc5, type: 3}
   particleNumber: 25
   emissionRadius: 0.5
+  innerRadius: 0.5
+  outerRadius: 2
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
   baseSize: 1

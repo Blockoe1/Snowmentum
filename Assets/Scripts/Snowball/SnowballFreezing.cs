@@ -43,9 +43,9 @@ namespace Snowmentum
         private static float freezeAmount;
         public static event Action<float> OnFreezeAmountChanged;
 
-        private static bool isFrozen;
+        private static bool showVisuals;
         private byte waterNumber;
-        private bool showingVisuals;
+        private bool isFrozen;
 
         #region Component References
         [Header("Components")]
@@ -62,14 +62,14 @@ namespace Snowmentum
         #endregion
 
         #region Properties
-        public static bool IsFrozen => isFrozen;
+        public static bool ShowVisuals => showVisuals;
 
-        private bool ShowingVisuals
+        private bool ShowVisuals_Local
         {
-            get { return showingVisuals; }
+            get { return showVisuals; }
             set
             {
-                showingVisuals = value;
+                showVisuals = value;
                 OnToggleVisualsEvent?.Invoke(value);
             }
         }
@@ -156,14 +156,14 @@ namespace Snowmentum
                 if (!isFrozen && freezeAmount >= FREEZE_THRESHOLD)
                 {
                     //Debug.Log("Frozen");
+                    // Make sure to enable/disable visuals when isFrozen changes.
+                    ShowVisuals_Local = true;
                     isFrozen = true;
                     if (collision != null)
                     {
                         collision.IsInvincible = isFrozen;
                     }
                     OnFreezeEvent?.Invoke();
-                    // Make sure to enable/disable visuals when isFrozen changes.
-                    ShowingVisuals = true;
                     // Need to decrement our freezeAmount while the snowball is frozen.
                     StartCoroutine(WhileFrozenRoutine());
                 }
@@ -190,30 +190,30 @@ namespace Snowmentum
                     flashTimer -= Time.deltaTime;
                     if (flashTimer < 0)
                     {
-                        ShowingVisuals = !ShowingVisuals;
+                        ShowVisuals_Local = !ShowVisuals_Local;
                         flashTimer = flashDelay;
                     }
                 }
                 // If the freeze amount goes above the threshold again, make sure that proper visuals are
                 // shown as we're not blinking.
-                else if (!ShowingVisuals)
+                else if (!ShowVisuals_Local)
                 {
-                    ShowingVisuals = true;
+                    ShowVisuals_Local = true;
                 }
 
                 yield return null;
             }
             OnThawEvent?.Invoke();
-            ShowingVisuals = false;
-            isFrozen = false;
+            ShowVisuals_Local = false;
 
             // Once our freeze amount expires, play events and wait a fraction of a second before turning off
             // incvincibility.
             yield return new WaitForSeconds(freezeLeewayTime);
 
+            isFrozen = false;
             if (collision != null)
             {
-                collision.IsInvincible = isFrozen;
+                collision.IsInvincible = showVisuals;
             }
         }
 
