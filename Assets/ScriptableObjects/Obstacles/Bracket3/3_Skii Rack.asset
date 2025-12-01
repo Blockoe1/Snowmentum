@@ -34,6 +34,6 @@ MonoBehaviour:
   emissionRadius: 0.5
   innerRadius: 0.35
   outerRadius: 2
-  isGreyboxed: 1
+  isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
   baseSize: 4
