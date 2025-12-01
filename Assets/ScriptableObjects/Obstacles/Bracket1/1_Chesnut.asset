@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 1_Chesnut
   m_EditorClassIdentifier: 
   obstacleSize: 1.5
+  baseBracket: 1
   obstacleSprite: {fileID: 21300000, guid: 36ac8feed49d85c49b94f8804d007a92, type: 3}
   orderInLayer: 0
   baseScore: 2
