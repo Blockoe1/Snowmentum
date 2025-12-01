@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: River
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 1
+  baseBracket: 1
   obstacleSprite: {fileID: 21300000, guid: 6b631f27966f2464b9184edf5f98db1a, type: 3}
   orderInLayer: -1
   baseScore: 5
@@ -30,6 +31,8 @@ MonoBehaviour:
   - {fileID: 900659448, guid: 6816d243b12370e47b0e34a4b76dc92c, type: 3}
   particleNumber: 0
   emissionRadius: 0.0001
+  innerRadius: 0
+  outerRadius: 0
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
   baseSize: 1

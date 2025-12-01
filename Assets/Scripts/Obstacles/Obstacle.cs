@@ -7,6 +7,7 @@
 // Brief Description : Holds the data relating to a specific obstacle.
 *****************************************************************************/
 using Snowmentum.Size;
+using UnityEditor;
 using UnityEngine;
 
 namespace Snowmentum
@@ -17,6 +18,9 @@ namespace Snowmentum
         [SerializeField, Tooltip("The size required for the snowball to destroy this obstacle.  Does not affect " +
             "obstacle scale.")] 
         protected float obstacleSize;
+        [SerializeField, Tooltip("The bracket that this obstacle belongs to.  Used for scaling obstacles that reuse " +
+            "sprites between brackets.")]
+        protected int baseBracket;
         [SerializeField, Tooltip("The sprite of the obstacle.")] private Sprite obstacleSprite;
         [SerializeField, Tooltip("Obstacle renderer's order within the obstacle sorting later.")] 
         private int orderInLayer;
@@ -67,7 +71,16 @@ namespace Snowmentum
             set 
             {
                 obstacleSize = value;
-                baseSize = SizeBracket.GetMinSize(SizeBracket.GetBracket(obstacleSize));
+                //baseSize = SizeBracket.GetMinSize(SizeBracket.GetBracket(obstacleSize));
+            }
+        }
+        public int BaseBracket
+        {
+            get { return baseBracket; }
+            set
+            {
+                baseBracket = value;
+                baseSize = SizeBracket.GetMinSize(BaseBracket);
             }
         }
         public Sprite ObstacleSprite
@@ -181,7 +194,10 @@ namespace Snowmentum
         private void OnValidate()
         {
             // Update base size 
-            ObstacleSize = obstacleSize;
+            //ObstacleSize = obstacleSize;
+            //BaseBracket = SizeBracket.GetBracket(ObstacleSize);
+            BaseBracket = baseBracket;
+            //EditorUtility.SetDirty(this);
         }
     }
 }

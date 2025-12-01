@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Infinite_Tree1
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.InfiniteScaleObstacle
   obstacleSize: 1
+  baseBracket: 1
   obstacleSprite: {fileID: 21300000, guid: 314e45a7fa7bc604b8756f55392e6dad, type: 3}
   orderInLayer: 0
   baseScore: 30

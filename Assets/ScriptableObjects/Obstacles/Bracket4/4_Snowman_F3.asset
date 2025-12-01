@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 4_Snowman_F3
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 6.25
+  baseBracket: 3
   obstacleSprite: {fileID: 21300000, guid: fef52543abf3a744094b8b2d98a43bfb, type: 3}
   orderInLayer: 0
   baseScore: 14
