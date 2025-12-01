@@ -35,6 +35,7 @@ namespace Snowmentum
         public void SetFloat(float value)
         {
             anim.SetFloat(paramName, value);
+            Debug.Log("Throw Strength: " + value.ToString());
         }
 
         /// <summary>

@@ -50,6 +50,7 @@ namespace Snowmentum
             {
                 // Once we've started sampling, play the throw animation
                 anim.SetTrigger(THROW_ANIM_TRIGGER);
+
                 isSampling = true;
             }
 
@@ -63,6 +64,7 @@ namespace Snowmentum
                 if (sampleTimer >= sampleTime)
                 {
                     CompleteMinigame(totalThrowForce);
+                    
                     //minigameController.CompleteMinigame(storedPackingQuality, totalThrowForce);
                 }
             }

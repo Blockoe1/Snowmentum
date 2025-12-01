@@ -672,9 +672,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThrowMinigame
       objectReference: {fileID: 0}
+    - target: {fileID: 3711161457828201969, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4188130249509090726, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.25
+      value: -4.14
       objectReference: {fileID: 0}
     - target: {fileID: 4188130249509090726, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12942,7 +12946,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.9991777
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
