@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 1_Pebble
   m_EditorClassIdentifier: 
   obstacleSize: 0.5
+  baseBracket: 1
   obstacleSprite: {fileID: 21300000, guid: fab0ba91ddb0c2c4c87b9411cfbaec07, type: 3}
   orderInLayer: 0
   baseScore: 1

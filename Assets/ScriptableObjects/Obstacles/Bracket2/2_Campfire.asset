@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 2_Campfire
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 3.7
+  baseBracket: 2
   obstacleSprite: {fileID: -5525346469155709991, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
   orderInLayer: 0
   baseScore: 3

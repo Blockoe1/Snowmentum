@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: TutorializeObstacle
   m_EditorClassIdentifier: 
   obstacleSize: 0.1
+  baseBracket: 1
   obstacleSprite: {fileID: 21300000, guid: 7ec80bbd1f4a7814496714e2dc76527f, type: 3}
   orderInLayer: 0
   baseScore: 1
   destroySound: Obstacle Destruction
-  showOutline: 1
+  showColors: 1
   tag: Untagged
   hasCollision: 1
   capsuleDirection: 1
@@ -32,6 +33,8 @@ MonoBehaviour:
   - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   particleNumber: 10
   emissionRadius: 0.1
+  innerRadius: 0
+  outerRadius: 0
   isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
   baseSize: 1
