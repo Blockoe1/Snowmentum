@@ -137,11 +137,16 @@ namespace Snowmentum
         /// <summary>
         /// Resets bracket time when we enter a new bracket.
         /// </summary>
-        /// <param name="arg1"></param>
-        /// <param name="arg2"></param>
-        private void ResetBracketTime(int arg1, int arg2)
+        /// <param name="newBracket"></param>
+        /// <param name="oldBracket"></param>
+        private void ResetBracketTime(int newBracket, int oldBracket)
         {
-            bracketTime = 0;
+            // Only reset bracket time if we went up a bracket.
+            if (newBracket > oldBracket)
+            {
+                bracketTime = 0;
+                Debug.Log("Reset bracket time.");
+            }
         }
 
 
