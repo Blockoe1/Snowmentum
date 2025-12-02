@@ -131,15 +131,15 @@ namespace Snowmentum
                 rend.sprite = obstacleData.ObstacleSprite;
                 rend.sortingOrder = obstacleData.OrderInLayer;
 
-                if (obstacleData.IsGreyboxed)
-                {
-                    rend.drawMode = SpriteDrawMode.Tiled;
-                    rend.size = obstacleData.SpriteSize;
-                }
-                else
-                {
-                    rend.drawMode = SpriteDrawMode.Simple;
-                }
+                //if (obstacleData.IsGreyboxed)
+                //{
+                //    rend.drawMode = SpriteDrawMode.Tiled;
+                //    rend.size = obstacleData.SpriteSize;
+                //}
+                //else
+                //{
+                //    rend.drawMode = SpriteDrawMode.Simple;
+                //}
             }
             if (score != null)
             {
@@ -294,10 +294,10 @@ namespace Snowmentum
                     //obstacleData.ObstacleSprite = rend.sprite;
                     //obstacleData.OrderInLayer = rend.sortingOrder;
 
-                    if (obstacleData.IsGreyboxed)
-                    {
-                        obstacleData.SpriteSize = ProcessAssignment(obstacleData.SpriteSize, rend.size);
-                    }
+                    //if (obstacleData.IsGreyboxed)
+                    //{
+                    //    obstacleData.SpriteSize = ProcessAssignment(obstacleData.SpriteSize, rend.size);
+                    //}
                 }
                 if (score != null)
                 {
@@ -446,15 +446,15 @@ namespace Snowmentum
                     //rend.sprite = obstacleData.ObstacleSprite;
                     //rend.sortingOrder = obstacleData.OrderInLayer;
 
-                    if (obstacleData.IsGreyboxed)
-                    {
-                        rend.size = ProcessAssignment(rend.size, obstacleData.SpriteSize);
-                        rend.drawMode = SpriteDrawMode.Tiled;
-                    }
-                    else
-                    {
-                        rend.drawMode = SpriteDrawMode.Simple;
-                    }
+                    //if (obstacleData.IsGreyboxed)
+                    //{
+                    //    rend.size = ProcessAssignment(rend.size, obstacleData.SpriteSize);
+                    //    rend.drawMode = SpriteDrawMode.Tiled;
+                    //}
+                    //else
+                    //{
+                    //    rend.drawMode = SpriteDrawMode.Simple;
+                    //}
 
                     // Each component needs to be set dirty individually for changes to be properly saved.
                     if (isDirty)

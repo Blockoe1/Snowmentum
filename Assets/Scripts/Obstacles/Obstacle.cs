@@ -21,19 +21,21 @@ namespace Snowmentum
         [SerializeField, Tooltip("The bracket that this obstacle belongs to.  Used for scaling obstacles that reuse " +
             "sprites between brackets.")]
         protected int baseBracket;
-        [SerializeField, Tooltip("The sprite of the obstacle.")] private Sprite obstacleSprite;
-        [SerializeField, Tooltip("Obstacle renderer's order within the obstacle sorting later.")] 
-        private int orderInLayer;
         [SerializeField, Tooltip("The base amount of score the player gains when this obstacle is destroyed by a " +
             "snowball of similar size")] 
         private int baseScore;
         [SerializeField, Tooltip("The sound to play when this obstacle is destroyed.")]
         private string destroySound = "Obstacle Destruction";
+        [SerializeField, Tooltip("The tag of the obstacle game object.  Only used for specific special cases where " +
+    "a custom identifier is needed, such as puddles.")]
+        private string tag = "Untagged";
+
+        [Header("Appearance")]
+        [SerializeField, Tooltip("The sprite of the obstacle.")] private Sprite obstacleSprite;
+        [SerializeField, Tooltip("Obstacle renderer's order within the obstacle sorting later.")]
+        private int orderInLayer;
         [SerializeField, Tooltip("Whether this obstacle should show an outline as the snowball gets close or not.")]
         private bool showColors = true;
-        [SerializeField, Tooltip("The tag of the obstacle game object.  Only used for specific special cases where " +
-            "a custom identifier is needed, such as puddles.")] 
-        private string tag = "Untagged";
 
         [Header("Hitbox")]
         [SerializeField, Tooltip("Whether the obstacle has normal collision with the snowball.")] 
@@ -58,9 +60,9 @@ namespace Snowmentum
         [SerializeField] private float innerRadius;
         [SerializeField] private float outerRadius;
 
-        [Header("Greyboxing Only")]
-        [SerializeField] private bool isGreyboxed;
-        [SerializeField] private Vector2 spriteSize = Vector2.one;
+        //[Header("Greyboxing Only")]
+        //[SerializeField] private bool isGreyboxed;
+        //[SerializeField] private Vector2 spriteSize = Vector2.one;
 
         [SerializeField, HideInInspector] protected float baseSize;
 
@@ -175,16 +177,16 @@ namespace Snowmentum
         }
         #endregion
         #region Greyboxing
-        public Vector2 SpriteSize
-        {
-            get { return spriteSize; }
-            set { spriteSize = value; }
-        }
-        public bool IsGreyboxed
-        {
-            get { return isGreyboxed; }
-            set { isGreyboxed = value; }
-        }
+        //public Vector2 SpriteSize
+        //{
+        //    get { return spriteSize; }
+        //    set { spriteSize = value; }
+        //}
+        //public bool IsGreyboxed
+        //{
+        //    get { return isGreyboxed; }
+        //    set { isGreyboxed = value; }
+        //}
         #endregion
         #endregion
 
