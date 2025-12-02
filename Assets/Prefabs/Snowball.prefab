@@ -290,7 +290,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 2.09
+  m_LinearDamping: 2.4
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 805f54d98b0a27b4b8d396e404acd11d, type: 2}
@@ -403,7 +403,7 @@ MonoBehaviour:
     lives: 0
     consumeOnHit: 0
   sizeGaining:
-    curveSteepness: 8
+    curveSteepness: 4
     maxGain: 0.05
     scaleWithObstacleSize: 1
   speedDamage:
@@ -488,7 +488,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMovementSensitivity: 0.075
-  scaleWithSnowballSize: 1
+  scaleOperation: 2
+  minSensitivity: 0.02
+  movementCurveSteepness: 1.5
   maxSpeed: 15
   minY: -3.5
   maxY: 1
