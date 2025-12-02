@@ -13,28 +13,21 @@ MonoBehaviour:
   m_Name: 1_Stick
   m_EditorClassIdentifier: 
   obstacleSize: 1.75
+  requiredBracketTime: 5
   baseBracket: 1
-  obstacleSprite: {fileID: 21300000, guid: f3ed3c9c67930d54ebee0eadd1d8b68d, type: 3}
-  orderInLayer: 0
   baseScore: 2
   destroySound: Obstacle Destruction
-  showColors: 1
   tag: Untagged
+  obstacleSprite: {fileID: 21300000, guid: f3ed3c9c67930d54ebee0eadd1d8b68d, type: 3}
+  orderInLayer: 0
+  showColors: 1
   hasCollision: 1
   capsuleDirection: 1
   offset: {x: -0.05, y: 0.1}
   size: {x: 1.5, y: 0.175}
-  particleSpriteSheet:
-  - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  particleMaterial: {fileID: 11400000, guid: 294906ec96008ca41aba30031225b75d, type: 2}
   particleNumber: 50
   emissionRadius: 0.25
   innerRadius: 0.42
   outerRadius: 2.7
-  isGreyboxed: 0
-  spriteSize: {x: 1, y: 1}
   baseSize: 1
