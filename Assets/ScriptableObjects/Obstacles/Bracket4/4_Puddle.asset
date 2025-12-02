@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 4_Puddle
   m_EditorClassIdentifier: 
   obstacleSize: 9
+  baseBracket: 4
   obstacleSprite: {fileID: 21300000, guid: 6b791ba0ee1f2274dacbd097e9ad1e78, type: 3}
   orderInLayer: -2
   baseScore: 16

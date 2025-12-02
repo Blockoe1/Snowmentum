@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 1_Stick
   m_EditorClassIdentifier: 
   obstacleSize: 1.75
+  baseBracket: 1
   obstacleSprite: {fileID: 21300000, guid: f3ed3c9c67930d54ebee0eadd1d8b68d, type: 3}
   orderInLayer: 0
   baseScore: 2

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 4_Broken Log
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 9.25
+  baseBracket: 4
   obstacleSprite: {fileID: -2252870272638687543, guid: 524a69287cb98ee4b859a80e89a78529, type: 3}
   orderInLayer: 0
   baseScore: 13
