@@ -2,7 +2,7 @@
 // File Name : SnowballSize.cs
 // Author : Brandon Koederitz
 // Creation Date : 9/19/2025
-// Last Modified : 9/29/2025
+// Last Modified : 12/2/2025
 //
 // Brief Description : Holds the snowball's current size.
 *****************************************************************************/
@@ -20,6 +20,8 @@ namespace Snowmentum.Size
         // we dont get big pixels.
         public const float OBSTACLE_RANGE_SCALE = 2f;
         #endregion
+        [SerializeField] private float bonusGainPerBracket;
+        [SerializeField] private CurveType bonusCurveType;
 
         [Header("Events")]
         [SerializeField] private UnityEvent<float> OnDeathEvent;
@@ -32,6 +34,8 @@ namespace Snowmentum.Size
 
         // Not using event here since there should theoretically only be 1 snowball.
         private static Action<float> Internal_OnDeathEvent;
+
+        private float baseIncreasePerSecond;
 
         #region Component References
         [Header("Components")]
@@ -87,17 +91,32 @@ namespace Snowmentum.Size
         public override float Value_Local { get => Value; set => Value = value; }
         #endregion
 
+        #region Nested
+        private enum CurveType
+        { 
+            None,
+            Linear,
+            Exponential
+        }
+
+        #endregion
+
         /// <summary>
         /// Setup event references.
         /// </summary>
         protected override void Awake()
         {
             Internal_OnDeathEvent = OnSnowballDeath;
+            // Store the base increase per second for later calculations.
+            baseIncreasePerSecond = increasePerSecond;
+            SizeBracket.OnBracketChanged += UpdateIncreasePerSecond;
+            // Manually update the increase per second in case the bracket has been set before awake was called.
+            UpdateIncreasePerSecond(SizeBracket.Bracket, 0);
             base.Awake();
         }
 
         /// <summary>
-        /// Resets values
+        /// Resets values back to their starting value.
         /// </summary>
         public override void ResetValues()
         {
@@ -114,6 +133,30 @@ namespace Snowmentum.Size
             // erorrs
             targetSize = 0;
             size = 0;
+            SizeBracket.OnBracketChanged -= UpdateIncreasePerSecond;
+        }
+
+        /// <summary>
+        /// Changes the increasePerSecond based on the current bracket.
+        /// </summary>
+        /// <param name="newBracket"></param>
+        /// <param name="oldBracket"></param>
+        private void UpdateIncreasePerSecond(int newBracket, int oldBracket)
+        {
+            Debug.Log("Adjusted increase per second.");
+            switch (bonusCurveType)
+            { 
+                case CurveType.Linear:
+                    increasePerSecond = (bonusGainPerBracket * newBracket) + baseIncreasePerSecond;
+                    break;
+                case CurveType.Exponential:
+                    //increasePerSecond = Mathf.Pow(SizeBracket.BRACKET_SCALE, newBracket * bonusGainPerBracket - 1) 
+                    //    - 0.5f + baseIncreasePerSecond;
+                    increasePerSecond = (bonusGainPerBracket * Mathf.Pow(SizeBracket.BRACKET_SCALE, newBracket - 1)) 
+                        + baseIncreasePerSecond;
+                    break;
+            }
+
         }
 
         #region Value Changes
