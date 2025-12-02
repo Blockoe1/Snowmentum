@@ -5036,7 +5036,7 @@ MonoBehaviour:
   obstacleCollider: {fileID: 7567752226576047106}
   score: {fileID: 7647677357995392279}
   scaler: {fileID: 8657666669540303953}
-  anim: {fileID: 0}
+  anim: {fileID: 9126678546504219387}
   relay: {fileID: 5866592910555483468}
   colorizer: {fileID: 2904791822597733056}
   rb: {fileID: 3304603884408545833}
