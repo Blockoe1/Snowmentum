@@ -44,5 +44,16 @@ namespace Snowmentum
             weight = baseWeight;
         }
         #endregion
+
+        #region Properties
+        public float RequiredBracketTime
+        {  
+            get 
+            { 
+                if (obstacle == null) { return 0f; }
+                return obstacle.RequiredBracketTime; 
+            } 
+        }
+        #endregion
     }
 }
