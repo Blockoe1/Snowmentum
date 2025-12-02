@@ -249,6 +249,18 @@ MonoBehaviour:
           m_StringArgument: Throwing
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 375328914199520754}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Trip
+          m_BoolArgument: 1
+        m_CallState: 2
   anim: {fileID: 375328914199520754}
   throwDelay: 0.5
   requiredThrowForce: 10000
