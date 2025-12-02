@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 4_Log
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 12
+  requiredBracketTime: 10
   baseBracket: 4
   baseScore: 13
   destroySound: Obstacle Destruction
@@ -25,13 +26,6 @@ MonoBehaviour:
   offset: {x: 0.23414567, y: -0.035539646}
   size: {x: 2.2822497, y: 0.4981738}
   particleMaterial: {fileID: 11400000, guid: 294906ec96008ca41aba30031225b75d, type: 2}
-  particleSpriteSheet:
-  - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
   particleNumber: 30
   emissionRadius: 0.4
   innerRadius: 0.47

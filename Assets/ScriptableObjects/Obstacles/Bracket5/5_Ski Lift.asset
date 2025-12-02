@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 5_Ski Lift
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 32
+  requiredBracketTime: 10
   baseBracket: 5
   baseScore: 50
   destroySound: Obstacle Destruction
@@ -25,13 +26,6 @@ MonoBehaviour:
   offset: {x: 0.014668703, y: -0.1204648}
   size: {x: 0.5383773, y: 1.5}
   particleMaterial: {fileID: 11400000, guid: 4860cf95087b61a469047e2f3c8c570d, type: 2}
-  particleSpriteSheet:
-  - {fileID: -889968081, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
-  - {fileID: -156959124, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
-  - {fileID: -732115837, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
-  - {fileID: 1789747204, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
-  - {fileID: -494359493, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
-  - {fileID: -1804804186, guid: cacb80b3005b09b4eb397335ece32323, type: 3}
   particleNumber: 35
   emissionRadius: 0.1
   innerRadius: 0.48
