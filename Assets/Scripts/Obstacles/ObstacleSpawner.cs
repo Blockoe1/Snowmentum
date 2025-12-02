@@ -7,8 +7,10 @@
 // Brief Description : Continually spawns obstacles.
 *****************************************************************************/
 using Snowmentum.Size;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Snowmentum
@@ -52,6 +54,7 @@ namespace Snowmentum
 
         private readonly Queue<ObstacleController> inactiveObstacles = new();
 
+        private float bracketTime;
         private bool isSpawning;
         private bool isPaused;
 
@@ -119,6 +122,29 @@ namespace Snowmentum
         //}
         //#endregion
 
+        /// <summary>
+        /// Subscribe/Unsubscribe to OnBracketChanged event to reset bracket time every time we enter a new bracket.
+        /// </summary>
+        private void Awake()
+        {
+            SizeBracket.OnBracketChanged += ResetBracketTime;
+        }
+        private void OnDestroy()
+        {
+            SizeBracket.OnBracketChanged -= ResetBracketTime;
+        }
+
+        /// <summary>
+        /// Resets bracket time when we enter a new bracket.
+        /// </summary>
+        /// <param name="arg1"></param>
+        /// <param name="arg2"></param>
+        private void ResetBracketTime(int arg1, int arg2)
+        {
+            bracketTime = 0;
+        }
+
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -130,7 +156,6 @@ namespace Snowmentum
             if (spawnOnStart)
             {
                 StartCoroutine(SpawnObstacles(0));
-                
             }
         }
 
@@ -162,7 +187,7 @@ namespace Snowmentum
                 for (int i = 0; i < obstacleSpawnAmount; i++)
                 {
                     //Pick an obstacle to spawn
-                    obstacleData = GetObstacleData(spawnBracket.SpawnData, maxBonusWeight);
+                    obstacleData = GetObstacleData(spawnBracket.SpawnData, maxBonusWeight, bracketTime);
 
                     // If no obstacle is valid to be spawned right now, then we should skip spawning.
                     if (obstacleData == null)
@@ -208,6 +233,8 @@ namespace Snowmentum
                     {
                         float timerDecay = scaleWithSpeed ? Time.deltaTime * SnowballSpeed.Value : Time.deltaTime;
                         timer -= timerDecay;
+                        // Track the amount of time that we've been in a certain bracket.
+                        bracketTime += Time.deltaTime;
                     }
                     yield return null;
                 }              
@@ -220,10 +247,14 @@ namespace Snowmentum
         /// </summary>
         /// <param name="spawnData">The list of obstacles to pick from.</param>
         /// <returns></returns>
-        private static Obstacle GetObstacleData(ObstacleSpawnData[] spawnData, float maxBonusWeight)
+        private static Obstacle GetObstacleData(ObstacleSpawnData[] spawnData, float maxBonusWeight, float bracketTime)
         {
             // Return null if there are no valid obstacles to spawn at the moment.
             if (spawnData.Length == 0) { return null; }
+
+            // Items should never be null since spawnData is set in the editor.
+            // Filter out invalid obstacles that are outside the bracket time
+            spawnData = Array.FindAll(spawnData, item => item.RequiredBracketTime < bracketTime);
 
             // Calculate the total weight of the valid objects
             int totalWeight = 0;

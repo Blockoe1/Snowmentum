@@ -18,6 +18,9 @@ namespace Snowmentum
         [SerializeField, Tooltip("The size required for the snowball to destroy this obstacle.  Does not affect " +
             "obstacle scale.")] 
         protected float obstacleSize;
+        [SerializeField, Tooltip("The amount of time in seconds that the player has to be in a bracket before this " +
+            "obstacle begins to spawn.")]
+        protected float requiredBracketTime;
         [SerializeField, Tooltip("The bracket that this obstacle belongs to.  Used for scaling obstacles that reuse " +
             "sprites between brackets.")]
         protected int baseBracket;
@@ -75,6 +78,11 @@ namespace Snowmentum
                 obstacleSize = value;
                 //baseSize = SizeBracket.GetMinSize(SizeBracket.GetBracket(obstacleSize));
             }
+        }
+        public float RequiredBracketTime
+        {
+            get { return requiredBracketTime; }
+            set { requiredBracketTime = value; }
         }
         public int BaseBracket
         {
