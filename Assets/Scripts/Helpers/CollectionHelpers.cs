@@ -51,22 +51,21 @@ public static class CollectionHelpers
     /// <summary>
     /// Loops an index around if it exceeds the bounds of a collection.
     /// </summary>
-    /// <typeparam name="T">The type stored in the collection.</typeparam>
-    /// <param name="collection">THe collection to loop the index within.</param>
+    /// <param name="count">The number of elements in the collection.</param>
     /// <param name="index">The current value of the index.</param>
     /// <returns> The looped index value.</returns>
-    public static bool LoopIndex<T>(IEnumerable<T> collection, ref int index)
+    public static bool LoopIndex(int count, ref int index)
     {
         bool didLoop = false;
-        if (index >= collection.Count())
+        if (index >= count)
         {
             didLoop = true;
-            index -= collection.Count();
+            index -= count;
         }
         else if (index < 0)
         {
             didLoop = true;
-            index += collection.Count();
+            index += count;
         }
         return didLoop;
     }

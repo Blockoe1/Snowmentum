@@ -933,7 +933,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -953,7 +953,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 546590485
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5895,7 +5895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ALLERRGIC TO BANANAS:'
+  m_text: 'ALLERGIC TO BANANAS:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5dde9703f44caf144897045d33ccb693, type: 2}
   m_sharedMaterial: {fileID: -8296649811938863094, guid: 5dde9703f44caf144897045d33ccb693, type: 2}
@@ -6414,7 +6414,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921175759}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: fe19591f40082a448a8190af717e25ea, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 2b08ce0e3db649343a36a9e8459be4ad, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -8518,8 +8518,8 @@ Camera:
   m_GameObject: {fileID: 2020301235}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -8536,10 +8536,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.30468753
+    x: 0.3072917
     y: 0
-    width: 0.3453704
-    height: 0.34537035
+    width: 0.34722224
+    height: 0.3472222
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

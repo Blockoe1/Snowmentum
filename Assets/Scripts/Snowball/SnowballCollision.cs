@@ -6,9 +6,9 @@
 //
 // Brief Description : Controls the result of a snowball's collision with an obstacle.  Goes on the snowball.
 *****************************************************************************/
+using Snowmentum.Size;
 using System.Collections;
 using UnityEngine;
-using Snowmentum.Size;
 using UnityEngine.Events;
 
 namespace Snowmentum
@@ -20,8 +20,10 @@ namespace Snowmentum
         private float hitImmunity;
         [SerializeField] private float flashDelay;
 
-        [SerializeField] private SizeUpdater effectOnSize;
-        [SerializeField] private SpeedUpdater effectOnSpeed;
+        [SerializeField] private SizeDamage sizeDamage;
+        [SerializeField] private SizeGaining sizeGaining;
+        [SerializeField] private SpeedDamage speedDamage;
+        [SerializeField] private SpeedKnockback speedKnockback;
 
         [Header("Events")]
         [SerializeField] private UnityEvent<float> OnTakeDamage;
@@ -57,87 +59,26 @@ namespace Snowmentum
         }
         #endregion
 
-        #region Nested
-        private abstract class ValueUpdater<T>
+        #region Collision Formulas
+        #region Base
+        [System.Serializable]
+        private abstract class CollisionFormula
         {
-            [SerializeField, Tooltip("The maximum proportion of this target value that can be lost from a " +
-                "collision, unless it is reduced to less than 0.  Set to 1 to have no max value."), Range(0f, 1f)]
-            protected float maxDamageProportion;
             [SerializeField, Tooltip("The steepness of the curve.  Higher numbers will result in harsher punishments" +
                 " for colliding with objects that are smaller than you."), Min(1.001f)]
             protected float curveSteepness = 2;
 
-            internal abstract void OnCollision(float obstacleSize, float snowballSize, T snowballValue);
+            internal abstract float Evaluate(float obstacleSize, float snowballSize);
         }
 
-        /// <summary>
-        /// Updates the snowball's size based on collisions.
-        /// </summary>
         [System.Serializable]
-        private class SizeUpdater : ValueUpdater<SnowballSize>
+        private abstract class SizeCollisionFormula : CollisionFormula
         {
             [SerializeField, Tooltip("The maximum positive value this curve can return.")]
-            private float maxGain;
+            protected float maxGain;
             [SerializeField, Tooltip("If true, then the maxGain parameter will be overwritten by the size of " +
                 "the obstacle, and the maxGain value will be used as a multiplier.")]
-            private bool scaleWithObstacleSize;
-
-            [Header("Death Protection")]
-            [SerializeField, Tooltip("The number of times the snowball is prevented from dying.")]
-            private int lives;
-            [SerializeField, Tooltip("If true, then the snowball \"loses a life\" whenever they take any damage, " +
-                "even if it didn't kill them.")] 
-            private bool consumeOnHit;
-
-            [Header("Gaining Size")]
-            [SerializeField, Tooltip("How drastically size gains fall off as the snowball gets larger.")] 
-            private float gainCurveSteepness = 20;
-            [SerializeField, Tooltip("The maximum amount of size the snowball can gain by rolling over an obstacle.")]
-            private float maxSizeGain = 0.1f;
-
-            /// <summary>
-            /// When the snowball gets in a collision, the snowball's size should be decreased.
-            /// </summary>
-            /// <param name="obstacleSize"></param>
-            /// <param name="snowballSize"></param>
-            internal override void OnCollision(float obstacleSize, float snowballSize, SnowballSize sizeSetter)
-            {
-                // Calculate the change in size.
-                float result;
-
-                // If the snowball destroyed the obstacle and will gain size, invert the result so that you gain
-                // more size the closer you are to the obstacle's size.
-                if (snowballSize > obstacleSize)
-                {
-                    float gain = scaleWithObstacleSize ? obstacleSize * maxSizeGain : maxSizeGain;
-                    result = -(SizeCollisionCurve(obstacleSize, snowballSize, maxSizeGain, gainCurveSteepness) - gain);
-                    //Debug.Log(result);
-                }
-                else
-                {
-                    float gain = scaleWithObstacleSize ? obstacleSize * maxGain : maxGain;
-                    result = SizeCollisionCurve(obstacleSize, snowballSize, gain, curveSteepness);
-                    
-                    // Ensures the player only takes a certain amount of damage if they are not one-shot
-                    if (Mathf.Abs(result) < SnowballSize.Value)
-                    {
-                        result = Mathf.Max(result, -SnowballSize.Value * maxDamageProportion);
-                        if (consumeOnHit)
-                        {
-                            lives--;
-                        }
-                    }
-                    // If the player does take fatal damage, use a fatalResist instead and take only the max
-                    // damage proportion.
-                    else if (lives > 0)
-                    {
-                        result = Mathf.Max(result, -SnowballSize.Value * maxDamageProportion);
-                        lives--;
-                    }
-                }
-
-                sizeSetter.TargetValue_Local += result;
-            }
+            protected bool scaleWithObstacleSize;
 
             /// <summary>
             /// The formula
@@ -146,77 +87,21 @@ namespace Snowmentum
             /// </summary>
             /// <param name="obstacleSize"></param>
             /// <param name="snowballSize"></param>
-            /// <param name="gain">The maximum positive value this curve can output.</param>
-            /// <param name="curveSteepness"></param>
             /// <returns></returns>
-            private static float SizeCollisionCurve(float obstacleSize, float snowballSize, float gain, 
-                float curveSteepness)
+            internal override float Evaluate(float obstacleSize, float snowballSize)
             {
+                float gain = scaleWithObstacleSize ? obstacleSize * maxGain : maxGain;
                 return -Mathf.Pow(curveSteepness, -snowballSize + obstacleSize +
                     Mathf.Log(gain, curveSteepness)) + gain;
             }
         }
 
-        /// <summary>
-        /// Updates the snowball's speed based on collisions.
-        /// </summary>
         [System.Serializable]
-        private class SpeedUpdater : ValueUpdater<SnowballSpeed>
+        private abstract class SpeedCollisionFormula : CollisionFormula
         {
             [SerializeField, Tooltip("The scale of this curve.  The negative value that is returned when a " +
                 "collision happens between two objects of the same size will be equal to this."), Min(0.01f)]
-            private float curveScale = 0.01f;
-            [Header("Knockback Settings")]
-            [SerializeField, Tooltip("The minimum knockback applied to the snowball when the obstacle is not " +
-                "destroyed."), Min(0f)]
-            private float minDamageKnockback;
-            [SerializeField, Tooltip("The steepness of the curve.  Higher numbers will result in harsher punishments" +
-                " for colliding with objects that are smaller than you."), Min(1.001f)]
-            private float knockbackCurveSteepness = 2;
-            [SerializeField, Tooltip("The scale of the curve used to calculate knockback.  The negative value " +
-                "that is returned when a collision happens between two objects of the same size will be equal " +
-                "to this."), Min(0.01f)]
-            private float knockbackCurveScale = 0.01f;
-
-            /// <summary>
-            /// When the snowball gets in a collision, they should get a kickback of speed and their target speed should
-            /// be reduced.
-            /// </summary>
-            /// <param name="obstacleSize"></param>
-            /// <param name="snowballSize"></param>
-            internal override void OnCollision(float obstacleSize, float snowballSize, SnowballSpeed speedSetter)
-            {
-                // Only change size if the snowball takes damage.
-                if (snowballSize > obstacleSize) { return; }
-                float result;
-                // Target speed reduction.  Only reduced if the snowball is smaller.
-                result = SpeedCollisionCurve(obstacleSize, snowballSize, curveScale, curveSteepness);
-                // Ensures the player only loses up to a certain amount of speed per collision.
-                if (result < 0)
-                {
-                    result = Mathf.Max(result, -SnowballSpeed.TargetValue * maxDamageProportion);
-                }
-                speedSetter.TargetValue_Local += result;
-
-                // Speed kickback.
-                result = SpeedCollisionCurve(obstacleSize, snowballSize, knockbackCurveScale, knockbackCurveSteepness);
-                if (obstacleSize > snowballSize)
-                {
-                    // If the obstacle is larger than the snowball, then a fixed kickback is applied so that the player
-                    // always has some room to move around the obstacle.
-                    result = Mathf.Min(-minDamageKnockback, speedSetter.Value_Local * result);
-                }
-                else
-                {
-                    // If the snowball was larger, then the obstacle is destroyed and we can apply a smaller kickback
-                    // since the obstacle is no longer in the way.
-                    
-                    // Scale the effect on the speed based on our current speed.  Done this way so that if a reult of 0
-                    // is returned, then no speed is changed, but we can still have an affect on our speed if its high.
-                    result = speedSetter.Value_Local * result;
-                }
-                speedSetter.Value_Local += result;
-            }
+            protected float curveScale = 0.01f;
 
             /// <summary>
             /// The formula
@@ -225,13 +110,119 @@ namespace Snowmentum
             /// </summary>
             /// <param name="obstacleSize"></param>
             /// <param name="snowballSize"></param>
-            /// <param name="curveScale"></param>
-            /// <param name="curveSteepness"></param>
             /// <returns></returns>
-            private static float SpeedCollisionCurve(float obstacleSize, float snowballSize, float curveScale,
-                float curveSteepness)
+            internal override float Evaluate(float obstacleSize, float snowballSize)
             {
                 return -Mathf.Pow(curveSteepness, (-snowballSize + obstacleSize)) * curveScale;
+            }
+        }
+        #endregion
+        /// <summary>
+        /// Controls damage dealt to the snowball.
+        /// </summary>
+        [System.Serializable]
+        private class SizeDamage : SizeCollisionFormula
+        {
+            [SerializeField, Tooltip("The maximum proportion of this target value that can be lost from a " +
+                "collision, unless it is reduced to less than 0.  Set to 1 to have no max value."), Range(0f, 1f)]
+            protected float maxDamageProportion;
+            [Header("Death Protection")]
+            [SerializeField, Tooltip("The number of times the snowball is prevented from dying.")]
+            private int lives;
+            [SerializeField, Tooltip("If true, then the snowball \"loses a life\" whenever they take any damage, " +
+                "even if it didn't kill them.")]
+            private bool consumeOnHit;
+
+            internal override float Evaluate(float obstacleSize, float snowballSize)
+            {
+                float result = base.Evaluate(obstacleSize, snowballSize);
+
+                // Ensures the player only takes a certain amount of damage if they are not one-shot
+                if (Mathf.Abs(result) < SnowballSize.Value)
+                {
+                    result = Mathf.Max(result, -SnowballSize.Value * maxDamageProportion);
+                    if (consumeOnHit)
+                    {
+                        lives--;
+                    }
+                }
+                // If the player does take fatal damage, use a fatalResist instead and take only the max
+                // damage proportion.
+                else if (lives > 0)
+                {
+                    result = Mathf.Max(result, -SnowballSize.Value * maxDamageProportion);
+                    lives--;
+                }
+
+                return result;
+            }
+        }
+
+        /// <summary>
+        /// Controls gaining size when you destroy an obstacle.
+        /// </summary>
+        [System.Serializable]
+        private class SizeGaining : SizeCollisionFormula
+        {
+            /// <summary>
+            /// Invert and subtract the evaluated curve to make it so that you gain more size the closer you are to
+            /// the obstacle's size.
+            /// </summary>
+            /// <param name="obstacleSize"></param>
+            /// <param name="snowballSize"></param>
+            /// <returns></returns>
+            internal override float Evaluate(float obstacleSize, float snowballSize)
+            {
+                float gain = scaleWithObstacleSize ? obstacleSize * maxGain : maxGain;
+                //Debug.Log(-(base.Evaluate(obstacleSize, snowballSize) - gain));
+                return -(base.Evaluate(obstacleSize, snowballSize) - gain);
+            }
+        }
+
+        /// <summary>
+        /// Manages losing speed when you hit an obstacle.
+        /// </summary>
+        [System.Serializable]
+        private class SpeedDamage : SpeedCollisionFormula
+        {
+            [SerializeField, Tooltip("The maximum proportion of this target value that can be lost from a " +
+                "collision, unless it is reduced to less than 0.  Set to 1 to have no max value."), Range(0f, 1f)]
+            protected float maxDamageProportion;
+
+            internal override float Evaluate(float obstacleSize, float snowballSize)
+            {
+                // Target speed reduction.  Only reduced if the snowball is smaller.
+                float result = base.Evaluate(obstacleSize, snowballSize);
+                // Ensures the player only loses up to a certain amount of speed per collision.
+                if (result < 0)
+                {
+                    result = Mathf.Max(result, -SnowballSpeed.TargetValue * maxDamageProportion);
+                }
+                return result;
+            }
+
+        }
+
+        [System.Serializable]
+        private class SpeedKnockback : SpeedCollisionFormula
+        {
+            [SerializeField, Tooltip("The minimum knockback applied to the snowball when the obstacle is not " +
+                "destroyed."), Min(0f)]
+            private float minDamageKnockback;
+
+            private float storedSpeed;
+
+            public void SetStoredSpeed(float ss)
+            {
+                storedSpeed = ss;
+            }
+
+            internal override float Evaluate(float obstacleSize, float snowballSize)
+            {
+                // Speed kickback.
+                float result = base.Evaluate(obstacleSize, snowballSize);
+                result = Mathf.Min(-minDamageKnockback, storedSpeed * result);
+                return result;
             }
         }
         #endregion
@@ -267,8 +258,22 @@ namespace Snowmentum
                 // Change the player's values based on our result curves defined in the inspector.
                 if (!IsInvincible && !isImmune)
                 {
-                    effectOnSpeed.OnCollision(obstacle.ObstacleSize, snowballSizeVal, speedComp);
-                    effectOnSize.OnCollision(obstacle.ObstacleSize, snowballSizeVal, sizeComp);
+                    // Apply damage and negative effects
+                    if (snowballSizeVal < obstacle.ObstacleSize)
+                    {
+                        speedComp.TargetValue_Local += speedDamage.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
+                        speedKnockback.SetStoredSpeed(speedComp.Value_Local);
+                        speedComp.Value_Local += speedKnockback.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
+                        sizeComp.TargetValue_Local += sizeDamage.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
+                    }
+                    // Apply positive benefits.
+                    else
+                    {
+                        sizeComp.TargetValue_Local += sizeGaining.Evaluate(obstacle.ObstacleSize, snowballSizeVal);
+                    }
+
+                    //    speedDamage.OnCollision(obstacle.ObstacleSize, snowballSizeVal, speedComp);
+                    //sizeDamage.OnCollision(obstacle.ObstacleSize, snowballSizeVal, sizeComp);
                 }
 
                 if (IsInvincible || snowballSizeVal > obstacle.ObstacleSize)

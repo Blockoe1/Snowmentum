@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: 1_Puddle
   m_EditorClassIdentifier: 
   obstacleSize: 1
+  baseBracket: 1
   obstacleSprite: {fileID: 21300000, guid: 6b791ba0ee1f2274dacbd097e9ad1e78, type: 3}
   orderInLayer: -2
   baseScore: 5
   destroySound: 
-  showOutline: 0
+  showColors: 0
   tag: Water
   hasCollision: 0
   capsuleDirection: 0
@@ -32,5 +33,8 @@ MonoBehaviour:
   - {fileID: -144044658, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
   particleNumber: 0
   emissionRadius: 0.0001
+  innerRadius: 0
+  outerRadius: 0
+  isGreyboxed: 0
   spriteSize: {x: 1, y: 1}
   baseSize: 1

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdec8b64c0c49b4994bb3d6fa98fa4f, type: 3}
+  m_Name: Pinecone
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleParticleMaterial
+  particleSpriteSheet:
+  - {fileID: -1469363639, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: -1324305762, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: 381464116, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: -871366457, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: 1775187876, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
+  - {fileID: -144044658, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}

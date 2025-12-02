@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 3442375463111230466}
   - component: {fileID: 3049989257839691347}
   - component: {fileID: 846400833816720499}
+  - component: {fileID: 7939486360312387423}
+  - component: {fileID: 6537434216570010730}
   m_Layer: 0
   m_Name: ThrowMinigame
   m_TagString: Untagged
@@ -101,6 +103,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7939486360312387423}
+        m_TargetAssemblyTypeName: Snowmentum.MusicRelay, Assembly-CSharp
+        m_MethodName: SetTrack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Throwing
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
@@ -223,6 +237,30 @@ MonoBehaviour:
           m_StringArgument: Throwing
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 6537434216570010730}
+        m_TargetAssemblyTypeName: Snowmentum.AnimatorParamSetter, Assembly-CSharp
+        m_MethodName: SetFloat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Throwing
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 375328914199520754}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: Trip
+          m_BoolArgument: 1
+        m_CallState: 2
   anim: {fileID: 375328914199520754}
   throwDelay: 0.5
   requiredThrowForce: 10000
@@ -288,7 +326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1911501355, guid: b1177cc346d9bc04caa1276a713f9c8b, type: 3}
+  m_Sprite: {fileID: 385500511, guid: 02f4a25d1d57ec14bbe10da204f70de3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -363,3 +401,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.MinigameDisposer
   nextMinigame: {fileID: 0}
+--- !u!114 &7939486360312387423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3711161457828201969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7c904ae1545804ca16da5031b25ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.MusicRelay
+  defaultTrackName: Level
+--- !u!114 &6537434216570010730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3711161457828201969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a28ce3f859c5946b90dcd79af9d375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.AnimatorParamSetter
+  paramName: ThrowStrength
+  anim: {fileID: 375328914199520754}

@@ -7,6 +7,7 @@
 // Brief Description : Holds the data relating to a specific obstacle.
 *****************************************************************************/
 using Snowmentum.Size;
+using UnityEditor;
 using UnityEngine;
 
 namespace Snowmentum
@@ -17,19 +18,34 @@ namespace Snowmentum
         [SerializeField, Tooltip("The size required for the snowball to destroy this obstacle.  Does not affect " +
             "obstacle scale.")] 
         protected float obstacleSize;
-        [SerializeField, Tooltip("The sprite of the obstacle.")] private Sprite obstacleSprite;
-        [SerializeField, Tooltip("Obstacle renderer's order within the obstacle sorting later.")] 
-        private int orderInLayer;
+        [SerializeField, Tooltip("The amount of time in seconds that the player has to be in a bracket before this " +
+            "obstacle begins to spawn.")]
+        protected float requiredBracketTime;
+        [SerializeField, Tooltip("The bracket that this obstacle belongs to.  Used for scaling obstacles that reuse " +
+            "sprites between brackets.")]
+        protected int baseBracket;
         [SerializeField, Tooltip("The base amount of score the player gains when this obstacle is destroyed by a " +
             "snowball of similar size")] 
         private int baseScore;
         [SerializeField, Tooltip("The sound to play when this obstacle is destroyed.")]
         private string destroySound = "Obstacle Destruction";
-        [SerializeField, Tooltip("Whether this obstacle should show an outline as the snowball gets close or not.")]
-        private bool showOutline = true;
         [SerializeField, Tooltip("The tag of the obstacle game object.  Only used for specific special cases where " +
-            "a custom identifier is needed, such as puddles.")] 
+    "a custom identifier is needed, such as puddles.")]
         private string tag = "Untagged";
+
+        [Header("Appearance")]
+        [SerializeField, Tooltip("The sprite of the obstacle.")] private Sprite obstacleSprite;
+        [SerializeField, Tooltip("Obstacle renderer's order within the obstacle sorting later.")]
+        private int orderInLayer;
+        [SerializeField, Tooltip("Whether this obstacle should show an outline as the snowball gets close or not.")]
+        private bool showColors = true;
+        [Header("Animation")]
+        [SerializeField, Tooltip("Whether this sprite is animated or not.  Disable for non-animated sprites.")]
+        private bool isAnimated;
+        [SerializeField, Tooltip("The frames per second of the animation.")]
+        private int fps = 5;
+        [SerializeField, Tooltip("The frames of this obstacle's sprite animation.")]
+        private Sprite[] animationFrames;
 
         [Header("Hitbox")]
         [SerializeField, Tooltip("Whether the obstacle has normal collision with the snowball.")] 
@@ -42,17 +58,21 @@ namespace Snowmentum
         private Vector2 size = Vector2.one;
 
         [Header("Particles")]
-        [SerializeField, Tooltip("The sprites used by this obstacle's destruction particles.")]
-        private Sprite[] particleSpriteSheet;
+        [SerializeField, Tooltip("The set of sprites used by this obstacle's destruction particles.")]
+        private ObstacleParticleMaterial particleMaterial;
         [SerializeField, Tooltip("The number of particles to spawn when the obstacle is destroyed.")] 
         private int particleNumber;
         [SerializeField, Tooltip("The size of the circle that particles spawn from when the obstacle is destroyed.  " +
             "Should approximately correspond to the size of the sprite.")] 
         private float emissionRadius;
 
-        [Header("Greyboxing Only")]
-        [SerializeField] private bool isGreyboxed;
-        [SerializeField] private Vector2 spriteSize = Vector2.one;
+        [Header("Lighting")]
+        [SerializeField] private float innerRadius;
+        [SerializeField] private float outerRadius;
+
+        //[Header("Greyboxing Only")]
+        //[SerializeField] private bool isGreyboxed;
+        //[SerializeField] private Vector2 spriteSize = Vector2.one;
 
         [SerializeField, HideInInspector] protected float baseSize;
 
@@ -63,19 +83,24 @@ namespace Snowmentum
             set 
             {
                 obstacleSize = value;
-                baseSize = SizeBracket.GetMinSize(SizeBracket.GetBracket(obstacleSize));
+                //baseSize = SizeBracket.GetMinSize(SizeBracket.GetBracket(obstacleSize));
             }
         }
-        public Sprite ObstacleSprite
+        public float RequiredBracketTime
         {
-            get { return obstacleSprite; }
-            set { obstacleSprite = value; }
+            get { return requiredBracketTime; }
+            set { requiredBracketTime = value; }
         }
-        public int OrderInLayer
+        public int BaseBracket
         {
-            get { return orderInLayer; }
-            set { orderInLayer = value; }
+            get { return baseBracket; }
+            set
+            {
+                baseBracket = value;
+                baseSize = SizeBracket.GetMinSize(BaseBracket);
+            }
         }
+
         public int BaseScore
         {
             get { return baseScore; }
@@ -91,21 +116,52 @@ namespace Snowmentum
             get { return destroySound; }
             set { destroySound = value; }
         }
-        public bool HasCollision
+        public float BaseSize
         {
-            get { return hasCollision; }
-            set { hasCollision = value; }
+            get
+            {
+                return baseSize;
+            }
         }
-        public bool ShowOutline
-        { 
-            get { return showOutline; }
-            set { showOutline = value; }
+        #region Visuals
+        public Sprite ObstacleSprite
+        {
+            get { return obstacleSprite; }
+            set { obstacleSprite = value; }
         }
+        public int OrderInLayer
+        {
+            get { return orderInLayer; }
+            set { orderInLayer = value; }
+        }
+        public bool ShowColors
+        {
+            get { return showColors; }
+            set { showColors = value; }
+        }
+        public bool IsAnimated
+        {
+            get { return isAnimated; }
+        }
+        public int FPS
+        {
+            get { return fps; }
+            set { fps = value; }
+        }
+        public Sprite[] AnimationFrames
+        {
+            get { return animationFrames; }
+            set { animationFrames = value; }
+        }
+        #endregion
         #region Particles
-        public Sprite[] SpriteSheet
+        public Sprite[] ParticleSpriteSheet
         {
-            get { return particleSpriteSheet; }
-            set { particleSpriteSheet = value; }
+            get 
+            { 
+                if (particleMaterial == null) { return null; }
+                return particleMaterial.ParticleSpriteSheet; 
+            }
         }
         public int ParticleNumber
         {
@@ -135,25 +191,37 @@ namespace Snowmentum
             get { return capsuleDirection; }
             set { capsuleDirection = value; }
         }
+        public bool HasCollision
+        {
+            get { return hasCollision; }
+            set { hasCollision = value; }
+        }
         // The base size fot his obstacle that is used for scaling.
-        public float BaseSize
-        {
-            get
-            {
-                return baseSize;
-            }
-        }
+        #endregion
 
-        public Vector2 SpriteSize
-        {
-            get { return spriteSize; }
-            set { spriteSize = value; }
+        #region Lighting
+        public float InnerRadius
+        { 
+            get { return innerRadius; }
+            set { innerRadius = value; }
         }
-        public bool IsGreyboxed
+        public float OuterRadius
         {
-            get { return isGreyboxed; }
-            set { isGreyboxed = value; }
+            get { return outerRadius; }
+            set { outerRadius = value; }
         }
+        #endregion
+        #region Greyboxing
+        //public Vector2 SpriteSize
+        //{
+        //    get { return spriteSize; }
+        //    set { spriteSize = value; }
+        //}
+        //public bool IsGreyboxed
+        //{
+        //    get { return isGreyboxed; }
+        //    set { isGreyboxed = value; }
+        //}
         #endregion
         #endregion
 
@@ -163,7 +231,10 @@ namespace Snowmentum
         private void OnValidate()
         {
             // Update base size 
-            ObstacleSize = obstacleSize;
+            //ObstacleSize = obstacleSize;
+            //BaseBracket = SizeBracket.GetBracket(ObstacleSize);
+            BaseBracket = baseBracket;
+            //EditorUtility.SetDirty(this);
         }
     }
 }

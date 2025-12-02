@@ -12,26 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d09c1f6dce008b479d6ce97f67023e0, type: 3}
   m_Name: Infinite_Tree2
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.InfiniteScaleObstacle
-  obstacleSize: 1
-  obstacleSprite: {fileID: 21300000, guid: 314e45a7fa7bc604b8756f55392e6dad, type: 3}
-  orderInLayer: 0
+  obstacleSize: 5.05875
+  requiredBracketTime: 0
+  baseBracket: 1
   baseScore: 30
   destroySound: Obstacle Destruction
-  showOutline: 1
   tag: Untagged
+  obstacleSprite: {fileID: 21300000, guid: 314e45a7fa7bc604b8756f55392e6dad, type: 3}
+  orderInLayer: 0
+  showColors: 1
   hasCollision: 1
   capsuleDirection: 0
   offset: {x: -0.005, y: -0.15}
   size: {x: 0.04, y: 0.2}
-  particleSpriteSheet:
-  - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  particleMaterial: {fileID: 11400000, guid: 294906ec96008ca41aba30031225b75d, type: 2}
   particleNumber: 30
   emissionRadius: 0.25
-  isGreyboxed: 0
-  spriteSize: {x: 1, y: 1}
+  innerRadius: 0.5
+  outerRadius: 3.5
   baseSize: 1
