@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 2_Pinecone_F1
   m_EditorClassIdentifier: 
-  obstacleSize: 2
+  obstacleSize: 2.65
+  requiredBracketTime: 0
   baseBracket: 1
   baseScore: 2
   destroySound: Obstacle Destruction
@@ -20,18 +21,14 @@ MonoBehaviour:
   obstacleSprite: {fileID: 21300000, guid: a31f4db35dce94543acbb2698f2ae096, type: 3}
   orderInLayer: 0
   showColors: 1
+  isAnimated: 0
+  fps: 5
+  animationFrames: []
   hasCollision: 1
   capsuleDirection: 0
   offset: {x: 0.1, y: -0.03}
   size: {x: 1.3, y: 1.3}
   particleMaterial: {fileID: 11400000, guid: bcb545344c59a774bb96d5fe714c9224, type: 2}
-  particleSpriteSheet:
-  - {fileID: -1469363639, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
-  - {fileID: -1324305762, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
-  - {fileID: 381464116, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
-  - {fileID: -871366457, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
-  - {fileID: 1775187876, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
-  - {fileID: -144044658, guid: bd8f4856156b60b4db92e0126d7ae066, type: 3}
   particleNumber: 30
   emissionRadius: 0.6
   innerRadius: 0.15
