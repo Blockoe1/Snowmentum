@@ -21,6 +21,15 @@ MonoBehaviour:
   obstacleSprite: {fileID: -5525346469155709991, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
   orderInLayer: 0
   showColors: 1
+  isAnimated: 1
+  fps: 5
+  animationFrames:
+  - {fileID: 6911056676163173146, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
+  - {fileID: 3638588854622080461, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
+  - {fileID: 4258691910607252123, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
+  - {fileID: -167408823652372025, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
+  - {fileID: -6563699389893897227, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
+  - {fileID: -2002984010778373910, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
   hasCollision: 1
   capsuleDirection: 1
   offset: {x: 0.040239602, y: -0.09}

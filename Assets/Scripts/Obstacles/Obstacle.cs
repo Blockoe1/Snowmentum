@@ -39,6 +39,13 @@ namespace Snowmentum
         private int orderInLayer;
         [SerializeField, Tooltip("Whether this obstacle should show an outline as the snowball gets close or not.")]
         private bool showColors = true;
+        [Header("Animation")]
+        [SerializeField, Tooltip("Whether this sprite is animated or not.  Disable for non-animated sprites.")]
+        private bool isAnimated;
+        [SerializeField, Tooltip("The frames per second of the animation.")]
+        private int fps = 5;
+        [SerializeField, Tooltip("The frames of this obstacle's sprite animation.")]
+        private Sprite[] animationFrames;
 
         [Header("Hitbox")]
         [SerializeField, Tooltip("Whether the obstacle has normal collision with the snowball.")] 
@@ -93,16 +100,7 @@ namespace Snowmentum
                 baseSize = SizeBracket.GetMinSize(BaseBracket);
             }
         }
-        public Sprite ObstacleSprite
-        {
-            get { return obstacleSprite; }
-            set { obstacleSprite = value; }
-        }
-        public int OrderInLayer
-        {
-            get { return orderInLayer; }
-            set { orderInLayer = value; }
-        }
+
         public int BaseScore
         {
             get { return baseScore; }
@@ -118,16 +116,44 @@ namespace Snowmentum
             get { return destroySound; }
             set { destroySound = value; }
         }
-        public bool HasCollision
+        public float BaseSize
         {
-            get { return hasCollision; }
-            set { hasCollision = value; }
+            get
+            {
+                return baseSize;
+            }
+        }
+        #region Visuals
+        public Sprite ObstacleSprite
+        {
+            get { return obstacleSprite; }
+            set { obstacleSprite = value; }
+        }
+        public int OrderInLayer
+        {
+            get { return orderInLayer; }
+            set { orderInLayer = value; }
         }
         public bool ShowColors
-        { 
+        {
             get { return showColors; }
             set { showColors = value; }
         }
+        public bool IsAnimated
+        {
+            get { return isAnimated; }
+        }
+        public int FPS
+        {
+            get { return fps; }
+            set { fps = value; }
+        }
+        public Sprite[] AnimationFrames
+        {
+            get { return animationFrames; }
+            set { animationFrames = value; }
+        }
+        #endregion
         #region Particles
         public Sprite[] ParticleSpriteSheet
         {
@@ -165,14 +191,12 @@ namespace Snowmentum
             get { return capsuleDirection; }
             set { capsuleDirection = value; }
         }
-        // The base size fot his obstacle that is used for scaling.
-        public float BaseSize
+        public bool HasCollision
         {
-            get
-            {
-                return baseSize;
-            }
+            get { return hasCollision; }
+            set { hasCollision = value; }
         }
+        // The base size fot his obstacle that is used for scaling.
         #endregion
 
         #region Lighting
