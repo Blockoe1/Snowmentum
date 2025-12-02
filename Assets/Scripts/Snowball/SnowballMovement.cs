@@ -22,11 +22,11 @@ namespace Snowmentum
             " set to none, this is the movement sensitivity used when the snowball is at size 1.")] 
         private float baseMovementSensitivity;
         [SerializeField] private ScaleOperation scaleOperation;
+        [SerializeField, Tooltip("The minimum sensitivity that the snowball can have..")]
+        private float minSensitivity;
         [SerializeField, Tooltip("Controls how quickly the player's ability to move the snowball decays as it gets " +
             "bigger.  Larger numbers means it become harder to move the snowball quicker.")] 
         private float movementCurveSteepness;
-        [SerializeField, Tooltip("The delta scaler value that the snowball approaches as it continues to get bigger.")] 
-        private float scalerAsymptote;
         //[SerializeField, Tooltip("The maximum mouseDelta that will be read in one frame.  Done to prevent massive" +
         //    " forces from being applied at the start of the game when delta is tracked across a long laggy frame.")]
         //private int maxDelta = 100;
@@ -104,7 +104,7 @@ namespace Snowmentum
                 switch (scaleOperation)
                 {
                     case ScaleOperation.Division:
-                        deltaScaler = baseMovementSensitivity / SnowballSize.Value;
+                        deltaScaler = Mathf.Max(baseMovementSensitivity / SnowballSize.Value, minSensitivity);
                         break;
                     case ScaleOperation.Exponential:
                         deltaScaler = MovementScalerCurve(SnowballSize.Value);
@@ -128,8 +128,8 @@ namespace Snowmentum
         private float MovementScalerCurve(float snowballSize)
         {
             return Mathf.Pow(movementCurveSteepness, 
-                -snowballSize + Mathf.Log(baseMovementSensitivity - scalerAsymptote, movementCurveSteepness) + 1) + 
-                scalerAsymptote;
+                -snowballSize + Mathf.Log(baseMovementSensitivity - minSensitivity, movementCurveSteepness) + 1) + 
+                minSensitivity;
         }
 
         /// <summary>

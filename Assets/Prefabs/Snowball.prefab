@@ -403,7 +403,7 @@ MonoBehaviour:
     lives: 0
     consumeOnHit: 0
   sizeGaining:
-    curveSteepness: 8
+    curveSteepness: 4
     maxGain: 0.05
     scaleWithObstacleSize: 1
   speedDamage:
@@ -488,9 +488,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMovementSensitivity: 0.075
-  scaleOperation: 1
-  movementCurveSteepness: 2
-  scalerAsymptote: 0.04
+  scaleOperation: 2
+  minSensitivity: 0.02
+  movementCurveSteepness: 1.5
   maxSpeed: 15
   minY: -3.5
   maxY: 1
