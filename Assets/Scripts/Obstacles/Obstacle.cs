@@ -48,8 +48,8 @@ namespace Snowmentum
         private Vector2 size = Vector2.one;
 
         [Header("Particles")]
-        [SerializeField, Tooltip("The sprites used by this obstacle's destruction particles.")]
-        private Sprite[] particleSpriteSheet;
+        [SerializeField, Tooltip("The set of sprites used by this obstacle's destruction particles.")]
+        private ObstacleParticleMaterial particleMaterial;
         [SerializeField, Tooltip("The number of particles to spawn when the obstacle is destroyed.")] 
         private int particleNumber;
         [SerializeField, Tooltip("The size of the circle that particles spawn from when the obstacle is destroyed.  " +
@@ -121,10 +121,13 @@ namespace Snowmentum
             set { showColors = value; }
         }
         #region Particles
-        public Sprite[] SpriteSheet
+        public Sprite[] ParticleSpriteSheet
         {
-            get { return particleSpriteSheet; }
-            set { particleSpriteSheet = value; }
+            get 
+            { 
+                if (particleMaterial == null) { return null; }
+                return particleMaterial.ParticleSpriteSheet; 
+            }
         }
         public int ParticleNumber
         {
