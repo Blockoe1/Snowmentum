@@ -143,7 +143,7 @@ namespace Snowmentum.Size
         /// <param name="oldBracket"></param>
         private void UpdateIncreasePerSecond(int newBracket, int oldBracket)
         {
-            Debug.Log("Adjusted increase per second.");
+            //Debug.Log("Adjusted increase per second.");
             switch (bonusCurveType)
             { 
                 case CurveType.Linear:
