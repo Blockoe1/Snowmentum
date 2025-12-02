@@ -111,7 +111,7 @@ namespace Snowmentum
                         break;
                 }
 
-
+                Debug.Log(deltaScaler);
                 snowballRigidbody.AddForce((InputManager.MouseDelta.y * deltaScaler) * Vector2.up);
             }
 
