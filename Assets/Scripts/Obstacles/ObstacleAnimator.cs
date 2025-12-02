@@ -58,12 +58,10 @@ namespace Snowmentum
         /// </summary>
         public void Play()
         {
-            Debug.Log("Play Called");
             // Prevent playing the animation if there are no specified sprite frames.
             if (spriteFrames == null || spriteFrames.Length == 0) { return; }
             if (animRoutine == null)
             {
-                Debug.Log("Started Animation");
                 animRoutine = StartCoroutine(AnimationRoutine());
             }
         }
