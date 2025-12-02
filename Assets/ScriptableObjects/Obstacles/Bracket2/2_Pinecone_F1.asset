@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 2_Pinecone_F1
   m_EditorClassIdentifier: 
-  obstacleSize: 3
+  obstacleSize: 2.65
   requiredBracketTime: 0
   baseBracket: 1
   baseScore: 2
