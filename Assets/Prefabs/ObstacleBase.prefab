@@ -4991,6 +4991,7 @@ GameObject:
   - component: {fileID: 7416643200133424707}
   - component: {fileID: 7078567782857989211}
   - component: {fileID: 2904791822597733056}
+  - component: {fileID: 9126678546504219387}
   m_Layer: 0
   m_Name: ObstacleBase
   m_TagString: Untagged
@@ -5035,6 +5036,7 @@ MonoBehaviour:
   obstacleCollider: {fileID: 7567752226576047106}
   score: {fileID: 7647677357995392279}
   scaler: {fileID: 8657666669540303953}
+  anim: {fileID: 0}
   relay: {fileID: 5866592910555483468}
   colorizer: {fileID: 2904791822597733056}
   rb: {fileID: 3304603884408545833}
@@ -5419,6 +5421,21 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   controller: {fileID: 2002559263234210752}
+--- !u!114 &9126678546504219387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5150288299065344882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b5fa01a98cbfb44a2bcc17e0d4ec5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleAnimator
+  spriteFrames: []
+  fps: 0
+  rend: {fileID: 8871070839524519023}
 --- !u!1 &7379783817527938468
 GameObject:
   m_ObjectHideFlags: 0

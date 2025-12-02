@@ -38,6 +38,7 @@ namespace Snowmentum
         [SerializeReference, ReadOnly] private CapsuleCollider2D obstacleCollider;
         [SerializeReference, ReadOnly] private ScoreIncrementer score;
         [SerializeReference, ReadOnly] private ObjectScaler scaler;
+        [SerializeReference, ReadOnly] private ObstacleAnimator anim;
         [SerializeReference, ReadOnly] private AudioRelay relay;
         [SerializeReference, ReadOnly] private ObstacleColorizer colorizer;
         [SerializeReference, ReadOnly] private Rigidbody2D rb;
@@ -55,6 +56,7 @@ namespace Snowmentum
             score = GetComponent<ScoreIncrementer>();
             scaler = GetComponent<ObjectScaler>();
             relay = GetComponent<AudioRelay>();
+            anim = GetComponent<ObstacleAnimator>();
             colorizer = GetComponent<ObstacleColorizer>();
             rb = GetComponent<Rigidbody2D>();
             particles = GetComponentInChildren<ParticleSystem>();
@@ -82,10 +84,10 @@ namespace Snowmentum
             if (obstacleData == null) { return; }
             this.obstacleData = obstacleData;
 
+            ReadObstacleData();
+
             // Always toggle the obstacle on when new data is set.
             ToggleObstacle(true);
-
-            ReadObstacleData();
 
             // Have the obstacle immediately scale itself when it is set to prevent it from moving perspective.
             if (scaler != null)
@@ -112,6 +114,21 @@ namespace Snowmentum
             {
                 obstacleLight.enabled = isEnabled;
             }
+            if (anim != null)
+            {
+                if (obstacleData != null && obstacleData.IsAnimated)
+                {
+                    if (isEnabled)
+                    {
+                        anim.Play();
+                    }
+                    else
+                    {
+                        anim.Stop();
+                    }
+                }
+            }
+
         }
 
         /// <summary>
@@ -152,6 +169,11 @@ namespace Snowmentum
             if (relay != null)
             {
                 relay.SoundName = obstacleData.DestroySound;
+            }
+            if (anim != null && obstacleData.IsAnimated)
+            {
+                anim.AnimationFrames = obstacleData.AnimationFrames;
+                anim.FPS = obstacleData.FPS;
             }
             if (colorizer != null)
             {
@@ -308,6 +330,11 @@ namespace Snowmentum
                 {
                     obstacleData.DestroySound = ProcessAssignment(obstacleData.DestroySound, relay.SoundName);
                     //obstacleData.DestroySound = relay.SoundName;
+                }
+                if (anim != null && obstacleData.IsAnimated)
+                {
+                    obstacleData.AnimationFrames = ProcessAssignment(obstacleData.AnimationFrames, anim.AnimationFrames);
+                    obstacleData.FPS = ProcessAssignment(obstacleData.FPS, anim.FPS);
                 }
                 if (colorizer != null)
                 {
@@ -506,6 +533,21 @@ namespace Snowmentum
                     if (isDirty)
                     {
                         EditorUtility.SetDirty(relay);
+                        isDirty = false;
+                    }
+                }
+                #endregion
+
+                #region Animator
+                if (anim != null && obstacleData.IsAnimated)
+                {
+                    anim.AnimationFrames = ProcessAssignment(anim.AnimationFrames, obstacleData.AnimationFrames);
+                    anim.FPS = ProcessAssignment(anim.FPS, obstacleData.FPS);
+
+                    // Each component needs to be set dirty individually for changes to be properly saved.
+                    if (isDirty)
+                    {
+                        EditorUtility.SetDirty(anim);
                         isDirty = false;
                     }
                 }
