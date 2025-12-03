@@ -135,6 +135,60 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     audioClip: {fileID: 8300000, guid: aebae0e89d575dc43ae340319487ef87, type: 3}
+  - name: Falling Tree
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: fb95a01deedc3d246a5b77012744cf7c, type: 3}
+  - name: Wood Breaking
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 680633602a1b317449660b84c0a630b4, type: 3}
+  - name: Rock Destroyed
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 29ef2a29f34c0cf489632773d565fdba, type: 3}
+  - name: Campfire Extinguished
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 2f3dd54aec0e74943b16ff6122a23bf2, type: 3}
+  - name: Plastic Destroyed
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: 6d5e68762ae68f349a98fc18582dac0c, type: 3}
+  - name: Ice Shatter
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: d092e46fc661f7841abcfef2ecdeb8c3, type: 3}
+  - name: Gravel Destroyed
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: e35126b9cc8bb5b40856ed7a4814a2d9, type: 3}
+  - name: Large Building Destroyed
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: c45b4e34d4c55e94ba05f8544000879c, type: 3}
+  - name: Small Building Destroyed
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 0.57
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: c45b4e34d4c55e94ba05f8544000879c, type: 3}
   randomizedSounds:
   - name: Snowball Destruction
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}

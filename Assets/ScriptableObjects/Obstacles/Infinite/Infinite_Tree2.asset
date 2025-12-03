@@ -12,15 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d09c1f6dce008b479d6ce97f67023e0, type: 3}
   m_Name: Infinite_Tree2
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.InfiniteScaleObstacle
-  obstacleSize: 5.05875
+  obstacleSize: 12.911533
   requiredBracketTime: 0
   baseBracket: 1
   baseScore: 30
-  destroySound: Obstacle Destruction
+  destroySound: Falling Tree
   tag: Untagged
   obstacleSprite: {fileID: 21300000, guid: 314e45a7fa7bc604b8756f55392e6dad, type: 3}
   orderInLayer: 0
   showColors: 1
+  isAnimated: 0
+  fps: 5
+  animationFrames: []
   hasCollision: 1
   capsuleDirection: 0
   offset: {x: -0.005, y: -0.15}
