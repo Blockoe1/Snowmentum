@@ -10,27 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
-  m_Name: 2_Campfire
+  m_Name: 4_Tent_F3
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 4.5
-  requiredBracketTime: 10
-  baseBracket: 2
-  baseScore: 3
+  obstacleSize: 5.7
+  requiredBracketTime: 5
+  baseBracket: 3
+  baseScore: 12
   destroySound: Obstacle Destruction
   tag: Untagged
-  obstacleSprite: {fileID: -5525346469155709991, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 292a2cb59b22d4342afdbff746d41faf, type: 3}
   orderInLayer: 0
   showColors: 1
-  isAnimated: 1
-  fps: 0
-  animationFrames: []
   hasCollision: 1
   capsuleDirection: 1
-  offset: {x: 0.040239602, y: -0.09}
-  size: {x: 1.8681535, y: 1.5}
+  offset: {x: -0.015, y: -0.18}
+  size: {x: 0.9, y: 0.5}
   particleMaterial: {fileID: 11400000, guid: 294906ec96008ca41aba30031225b75d, type: 2}
-  particleNumber: 10
+  particleNumber: 30
   emissionRadius: 0.25
-  innerRadius: 0.85
-  outerRadius: 3.66
-  baseSize: 2
+  innerRadius: 0.35
+  outerRadius: 2
+  baseSize: 4
