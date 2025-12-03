@@ -8986,30 +8986,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.size
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[24].name
-      value: Nut Destroyed
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[24].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[24].volume
-      value: 0.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[24].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 748234f1727ae9c40a402aec1f4fb63e, type: 3}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[24].mixerGroup
-      value: 
-      objectReference: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
