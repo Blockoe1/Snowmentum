@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 4_Stump
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 7.75
-  requiredBracketTime: 0
-  baseBracket: 0
-  baseScore: 0
-  destroySound: Wood Breaking
+  obstacleSize: 10.7
+  requiredBracketTime: 2
+  baseBracket: 4
+  baseScore: 13
+  destroySound: Obstacle Destruction
   tag: Untagged
   obstacleSprite: {fileID: 21300000, guid: 3014916efeb05504fb99fa91d9e15998, type: 3}
   orderInLayer: 0
@@ -33,4 +33,4 @@ MonoBehaviour:
   emissionRadius: 0.25
   innerRadius: 0.4
   outerRadius: 2.94
-  baseSize: 0.5
+  baseSize: 8
