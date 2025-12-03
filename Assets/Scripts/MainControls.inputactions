@@ -80,15 +80,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "ForceQuit",
-                    "type": "Button",
-                    "id": "536ba2ce-8950-4291-874f-07829a87457f",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
