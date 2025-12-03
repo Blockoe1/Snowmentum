@@ -664,6 +664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThrowMinigame
       objectReference: {fileID: 0}
+    - target: {fileID: 3711161457828201969, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4188130249509090726, guid: 966b486ae34961b499b581ae4eae7c25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.25
@@ -1847,6 +1851,7 @@ GameObject:
   - component: {fileID: 900215125}
   - component: {fileID: 900215124}
   - component: {fileID: 900215127}
+  - component: {fileID: 900215128}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
@@ -1928,6 +1933,29 @@ MonoBehaviour:
   transitionType: 2
   highScoreScene: SaveHighScoreScene
   mainMenuScene: TitleScene
+  animator: {fileID: 900215128}
+--- !u!95 &900215128
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900215123}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97321a757822d2e4fb74a8fe1a1ae67d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1053529887
 GameObject:
   m_ObjectHideFlags: 0
@@ -12934,7 +12962,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.9991777
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60

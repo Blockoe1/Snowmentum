@@ -18,6 +18,7 @@ namespace Snowmentum.UI
         [SerializeField] private TransitionType transitionType;
         [SerializeField] private string highScoreScene = "SaveHighScoreScene";
         [SerializeField] private string mainMenuScene = "TitleScene";
+        [SerializeField] private Animator animator;
 
         #region CONSTS
         //private const string HIGH_SCORE_SCENE_NAME = "SaveHighScoreScene";
