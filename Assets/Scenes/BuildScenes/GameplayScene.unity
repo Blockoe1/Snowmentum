@@ -346,24 +346,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2158679142822102053, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_fontSize
-      value: 60
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2158679142822102053, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_fontSizeBase
-      value: 60
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2891410005566400619, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_Name
       value: Resume
       objectReference: {fileID: 0}
-    - target: {fileID: 3077306723937771876, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3077306723937771876, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7482667652216324306, guid: 657f7761f7b1d9a49a2e092b9a0bb89f, type: 3}
     - target: {fileID: 5402175773571470017, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -18926,11 +18918,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2158679142822102053, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_fontSize
-      value: 60
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2158679142822102053, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_fontSizeBase
-      value: 60
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2158679142822102053, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_characterSpacing
@@ -18940,14 +18932,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quit
       objectReference: {fileID: 0}
-    - target: {fileID: 3077306723937771876, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3077306723937771876, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7482667652216324306, guid: 657f7761f7b1d9a49a2e092b9a0bb89f, type: 3}
     - target: {fileID: 5402175773571470017, guid: a53dec9bd87f84f43a02dd6d13323739, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
