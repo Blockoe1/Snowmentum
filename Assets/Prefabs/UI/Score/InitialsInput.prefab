@@ -111,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
+  m_AnchoredPosition: {x: 250, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5503706007595992829
@@ -250,16 +250,12 @@ MonoBehaviour:
   inputThreshold: 6500
   inputDelay: 0.25
   censoredInitials:
-  - ASS
   - FUK
   - FUC
   - DIK
   - DIC
   - NZI
   - CUM
-  - ASZ
-  - AZZ
-  - AZS
   - JAP
   - NIG
   - KKK
@@ -270,6 +266,50 @@ MonoBehaviour:
   - DYC
   - PUS
   - COK
+  - NEG
+  - BBC
+  - DIH
+  - COC
+  - DIX
+  - DIQ
+  - SLT
+  - HOR
+  - HOR
+  - FCU
+  - FKU
+  - PRN
+  - FAP
+  - KOQ
+  - DCK
+  - CLT
+  - FUX
+  - FUQ
+  - FUQ
+  - FGT
+  - NGR
+  - KNT
+  - KUM
+  - VAG
+  - JYZ
+  - JIZ
+  - DYQ
+  - DYX
+  - DYK
+  - DYC
+  - BCH
+  - VAJ
+  - VJN
+  - WAP
+  - STD
+  - KYS
+  - MUF
+  - SLG
+  - FOB
+  - MLF
+  - DLF
+  - GLF
+  - MIK
+  - MIC
   OnScroll:
     m_PersistentCalls:
       m_Calls:
@@ -397,8 +437,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0.667, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -126, y: 0}
+  m_SizeDelta: {x: 145, y: 145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8226548734379943414
 CanvasRenderer:
@@ -421,15 +461,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_Color: {r: 1, g: 0.8901961, b: 0.47843137, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 38cf4c84a50ebfb4f8b443e04f6a1716, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -446,6 +486,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7121508237372936662}
     m_Modifications:
+    - target: {fileID: 1692253700004684371, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -125
+      objectReference: {fileID: 0}
     - target: {fileID: 2634034571819124802, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_Name
       value: InitialsSelector3
@@ -512,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 100
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -529,6 +573,10 @@ PrefabInstance:
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975158058561416188, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -559,6 +607,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7121508237372936662}
     m_Modifications:
+    - target: {fileID: 1692253700004684371, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -125
+      objectReference: {fileID: 0}
     - target: {fileID: 2634034571819124802, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_Name
       value: InitialsSelector1
@@ -624,10 +676,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -642,6 +690,10 @@ PrefabInstance:
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975158058561416188, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -672,6 +724,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7121508237372936662}
     m_Modifications:
+    - target: {fileID: 1692253700004684371, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -125
+      objectReference: {fileID: 0}
     - target: {fileID: 2634034571819124802, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_Name
       value: InitialsSelector2
@@ -738,7 +794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -755,6 +811,10 @@ PrefabInstance:
     - target: {fileID: 3570041150370960200, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975158058561416188, guid: c91036404a0e96344a913f03a8ad12fb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
