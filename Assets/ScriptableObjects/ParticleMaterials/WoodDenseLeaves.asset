@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdec8b64c0c49b4994bb3d6fa98fa4f, type: 3}
+  m_Name: WoodDenseLeaves
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleParticleMaterial
+  particleSpriteSheet:
+  - {fileID: -1708280428, guid: 4ffa4536d93ee8d4aac22a1b8e53f545, type: 3}
+  - {fileID: 560035773, guid: 4ffa4536d93ee8d4aac22a1b8e53f545, type: 3}
+  - {fileID: -1720971748, guid: 4ffa4536d93ee8d4aac22a1b8e53f545, type: 3}
+  - {fileID: 1868400491, guid: 4ffa4536d93ee8d4aac22a1b8e53f545, type: 3}
+  - {fileID: -1588918687, guid: 4ffa4536d93ee8d4aac22a1b8e53f545, type: 3}
+  - {fileID: 1166901133, guid: 4ffa4536d93ee8d4aac22a1b8e53f545, type: 3}

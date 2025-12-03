@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 3_Bush_F2
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 3.9
+  requiredBracketTime: 0
   baseBracket: 2
   baseScore: 5
   destroySound: Obstacle Destruction
@@ -20,18 +21,14 @@ MonoBehaviour:
   obstacleSprite: {fileID: 21300000, guid: e90353b28c8fed94da57c79d0a538359, type: 3}
   orderInLayer: 0
   showColors: 1
+  isAnimated: 0
+  fps: 5
+  animationFrames: []
   hasCollision: 1
   capsuleDirection: 1
   offset: {x: 0.022, y: -0.21}
   size: {x: 2.3, y: 1.2}
-  particleMaterial: {fileID: 11400000, guid: 294906ec96008ca41aba30031225b75d, type: 2}
-  particleSpriteSheet:
-  - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 69967535, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1666026055, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 2079704219, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1609860144, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
-  - {fileID: 1184114340, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}
+  particleMaterial: {fileID: 11400000, guid: 63c7c4ebea3c6be47acbaf54b3aa17b1, type: 2}
   particleNumber: 40
   emissionRadius: 0.6
   innerRadius: 0.35

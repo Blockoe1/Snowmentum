@@ -21,11 +21,14 @@ MonoBehaviour:
   obstacleSprite: {fileID: 21300000, guid: 329cfbb1596ea2b4a825163c82460cab, type: 3}
   orderInLayer: 0
   showColors: 1
+  isAnimated: 0
+  fps: 5
+  animationFrames: []
   hasCollision: 1
   capsuleDirection: 0
   offset: {x: 0.08393693, y: -0.11618018}
   size: {x: 0.635468, y: 1.2309375}
-  particleMaterial: {fileID: 11400000, guid: 294906ec96008ca41aba30031225b75d, type: 2}
+  particleMaterial: {fileID: 11400000, guid: f7eb8c6823e25414497061b003bb4901, type: 2}
   particleNumber: 30
   emissionRadius: 0.1
   innerRadius: 0.38

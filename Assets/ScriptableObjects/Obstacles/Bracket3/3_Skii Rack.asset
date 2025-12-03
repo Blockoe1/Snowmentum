@@ -28,7 +28,7 @@ MonoBehaviour:
   capsuleDirection: 0
   offset: {x: 0.00019031763, y: -0.008102655}
   size: {x: 0.58900464, y: 0.8253846}
-  particleMaterial: {fileID: 11400000, guid: 294906ec96008ca41aba30031225b75d, type: 2}
+  particleMaterial: {fileID: 11400000, guid: f7eb8c6823e25414497061b003bb4901, type: 2}
   particleNumber: 50
   emissionRadius: 0.5
   innerRadius: 0.35
