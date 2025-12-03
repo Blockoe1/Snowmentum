@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fdec8b64c0c49b4994bb3d6fa98fa4f, type: 3}
-  m_Name: Wood
+  m_Name: WoodMidLeaves
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleParticleMaterial
   particleSpriteSheet:
   - {fileID: -2084277154, guid: e5ea0c06eb3416a4e8d2c280b0dc24b3, type: 3}

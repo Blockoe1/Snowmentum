@@ -16,7 +16,7 @@ MonoBehaviour:
   requiredBracketTime: 10
   baseBracket: 4
   baseScore: 13
-  destroySound: Obstacle Destruction
+  destroySound: Wood Breaking
   tag: Untagged
   obstacleSprite: {fileID: 21300000, guid: 6acd680b1d2c767439cc589837641d71, type: 3}
   orderInLayer: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   capsuleDirection: 1
   offset: {x: 0.23414567, y: -0.035539646}
   size: {x: 2.2822497, y: 0.4981738}
-  particleMaterial: {fileID: 11400000, guid: 294906ec96008ca41aba30031225b75d, type: 2}
+  particleMaterial: {fileID: 11400000, guid: f7eb8c6823e25414497061b003bb4901, type: 2}
   particleNumber: 30
   emissionRadius: 0.4
   innerRadius: 0.47
