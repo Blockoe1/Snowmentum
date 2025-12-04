@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ce8168339d25eca4da1200f4f45507f2
+guid: da34263089a37af40884ab39192fac85
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7894973526907495775
-    second: 2_PineconeSmall_0
+      213: 6923640090277676100
+    second: 5_PineTree_Small_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -89,6 +89,32 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
