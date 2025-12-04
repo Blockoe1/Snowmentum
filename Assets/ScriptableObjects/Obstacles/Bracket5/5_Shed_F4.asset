@@ -27,7 +27,7 @@ MonoBehaviour:
   hasCollision: 1
   capsuleDirection: 0
   offset: {x: 0.01, y: -0.02}
-  size: {x: 1.25, y: 1.5}
+  size: {x: 0.57, y: 0.71}
   particleMaterial: {fileID: 11400000, guid: f7eb8c6823e25414497061b003bb4901, type: 2}
   particleNumber: 45
   emissionRadius: 0.5
