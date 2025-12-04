@@ -32,7 +32,7 @@ namespace Snowmentum
         private void SubmitAction_performed(InputAction.CallbackContext obj)
         {
             onSubmit?.Invoke();
-            //TransitionManager.LoadScene("TransitionFootageScene", TransitionType.Snowy);
+            TransitionManager.LoadScene("TransitionFootageScene", TransitionType.Snowy);
             //isPaused = !isPaused;
             //if (isPaused)
             //{
