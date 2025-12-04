@@ -403,7 +403,7 @@ MonoBehaviour:
     lives: 0
     consumeOnHit: 0
   sizeGaining:
-    curveSteepness: 4
+    curveSteepness: 6
     maxGain: 0.05
     scaleWithObstacleSize: 1
   speedDamage:
