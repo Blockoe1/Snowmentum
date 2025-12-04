@@ -16,11 +16,14 @@ MonoBehaviour:
   requiredBracketTime: 10
   baseBracket: 1
   baseScore: 2
-  destroySound: Obstacle Destruction
+  destroySound: Nut Destroyed
   tag: Untagged
   obstacleSprite: {fileID: 21300000, guid: 36ac8feed49d85c49b94f8804d007a92, type: 3}
   orderInLayer: 0
   showColors: 1
+  isAnimated: 0
+  fps: 5
+  animationFrames: []
   hasCollision: 1
   capsuleDirection: 0
   offset: {x: 0.03, y: -0.05}
