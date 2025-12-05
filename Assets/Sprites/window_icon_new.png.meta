@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: bb2f7bd147d9f6c4780fa9a6b00a5a91
+guid: d8d7005d889b0bb4597ed5f9970c105b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1961292790668143303
-    second: background_trees_0
+      213: -6743267382547185941
+    second: window_icon_new_0
+  - first:
+      213: 5582829878949251614
+    second: window_icon_new_1
+  - first:
+      213: 8349725117690403279
+    second: window_icon_new_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +52,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background_trees 1_0
+      name: window_icon_new_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 513
-        height: 225
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 32, y: 0, z: 32, w: 0}
+        x: 59
+        y: 355
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b03186bc333bf6e4ea7387e5155df13d
-      internalID: 592559979
+      spriteID: beefbcdfa0a1b62a0800000000000000
+      internalID: -6743267382547185941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: window_icon_new_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 351
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a053022323a7d40800000000000000
+      internalID: 5582829878949251614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: window_icon_new_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 369
+        height: 353
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc9d71c71ce20e370800000000000000
+      internalID: 8349725117690403279
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 71e6a77bf7315fa4e8c24e7287ee5ae4
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,8 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      background_trees 1_0: 592559979
-      background_trees_0: 1961292790668143303
+      window_icon_new_0: -6743267382547185941
+      window_icon_new_1: 5582829878949251614
+      window_icon_new_2: 8349725117690403279
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bb2f7bd147d9f6c4780fa9a6b00a5a91
+guid: 9f4cb0a72fd7ee747b53b2f2364ad2bd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1961292790668143303
-    second: background_trees_0
+      213: -5183756314255143157
+    second: bg4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background_trees 1_0
+      name: bg4_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 513
-        height: 225
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 32, y: 0, z: 32, w: 0}
+        width: 512
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b03186bc333bf6e4ea7387e5155df13d
-      internalID: 592559979
+      spriteID: b0f42aec8199f08b0800000000000000
+      internalID: -5183756314255143157
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 71e6a77bf7315fa4e8c24e7287ee5ae4
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      background_trees 1_0: 592559979
-      background_trees_0: 1961292790668143303
+      bg4_0: -5183756314255143157
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
