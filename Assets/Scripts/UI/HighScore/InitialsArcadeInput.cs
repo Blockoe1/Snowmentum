@@ -95,7 +95,9 @@ namespace Snowmentum.UI
         /// <param name="obj"></param>
         private void SubmitAction_Performed(InputAction.CallbackContext obj)
         {
-            inputMenu.SaveHighScore();
+            //inputMenu.SaveHighScore();
+            // Submit scrolls to the next item instead of auto submitting.
+            inputMenu.HandleInput(Vector2Int.right);
         }
     }
 }

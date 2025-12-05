@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 8
   requiredBracketTime: 0
-  baseBracket: 3
-  baseScore: 5
+  baseBracket: 4
+  baseScore: 12
   destroySound: Falling Tree
   tag: Untagged
-  obstacleSprite: {fileID: 21300000, guid: 329cfbb1596ea2b4a825163c82460cab, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: d8b4e77c527577644bad0565b31cdf14, type: 3}
   orderInLayer: 0
   showColors: 1
   isAnimated: 0
@@ -26,11 +26,11 @@ MonoBehaviour:
   animationFrames: []
   hasCollision: 1
   capsuleDirection: 0
-  offset: {x: 0.08393693, y: -0.0055631995}
-  size: {x: 0.635468, y: 1.4521714}
+  offset: {x: 0.06, y: -0.03}
+  size: {x: 0.27, y: 0.64}
   particleMaterial: {fileID: 11400000, guid: f7eb8c6823e25414497061b003bb4901, type: 2}
   particleNumber: 30
   emissionRadius: 0.1
   innerRadius: 0.37
   outerRadius: 3.05
-  baseSize: 4
+  baseSize: 8
