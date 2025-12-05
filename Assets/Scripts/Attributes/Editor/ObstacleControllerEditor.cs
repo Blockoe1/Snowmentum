@@ -66,13 +66,13 @@ namespace Snowmentum
             ObstacleController controller = (ObstacleController)target;
 
             // Get any changes made to other components.
-            if (controller.AutoUpdateObstacleData)
-            {
-                //Debug.Log("Obstacle GO automatically Updated");
-                // Run SetObstacle so other values are updated.
-                controller.Editor_WriteObstacleData();
+            //if (controller.AutoUpdateObstacleData)
+            //{
+            //    //Debug.Log("Obstacle GO automatically Updated");
+            //    // Run SetObstacle so other values are updated.
+            //    controller.Editor_WriteObstacleData();
 
-            }
+            //}
 
             // Show the default script reference.
             GUI.enabled = false;

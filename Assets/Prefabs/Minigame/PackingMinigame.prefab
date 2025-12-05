@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7aeadc8c8a2f044a993cb9196b61e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.PackingMinigame
-  scaler: 300000
+  scaler: 200000
   maxOutput: 0.5
   sampleTime: 3
   playOnAwake: 0
