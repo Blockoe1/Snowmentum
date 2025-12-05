@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 3_Broken tree
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 5.25
+  obstacleSize: 5.35
   requiredBracketTime: 3
   baseBracket: 3
-  baseScore: 9
+  baseScore: 7
   destroySound: Wood Breaking
   tag: Untagged
   obstacleSprite: {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
