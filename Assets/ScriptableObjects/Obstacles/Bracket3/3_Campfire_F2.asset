@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
   obstacleSize: 4
   requiredBracketTime: 0
-  baseBracket: 2
+  baseBracket: 3
   baseScore: 3
   destroySound: Campfire Extinguished
   tag: Untagged
-  obstacleSprite: {fileID: -5525346469155709991, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
+  obstacleSprite: {fileID: 21300000, guid: 9ca9bdb440d22e149bdc7c59eb0e3a3c, type: 3}
   orderInLayer: 0
   showColors: 1
   isAnimated: 0
@@ -33,4 +33,4 @@ MonoBehaviour:
   emissionRadius: 0.25
   innerRadius: 0.35
   outerRadius: 2
-  baseSize: 2
+  baseSize: 4

@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0702afb19cbe1954793c2dc0f60683d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1
+  mouseSensitivity: 0.5
 --- !u!4 &515834080
 Transform:
   m_ObjectHideFlags: 0
@@ -12959,10 +12959,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.31614584
+    x: 0.3078125
     y: 0
-    width: 0.34074077
-    height: 0.34074074
+    width: 0.34629634
+    height: 0.34629628
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -13446,7 +13446,6 @@ RectTransform:
   m_Children:
   - {fileID: 236938001}
   - {fileID: 2090663216}
-  - {fileID: 1643213300}
   - {fileID: 900215126}
   - {fileID: 1202042048}
   m_Father: {fileID: 0}
@@ -13531,55 +13530,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575453706}
   m_CullTransparentMesh: 1
---- !u!1 &1643213299
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1643213300}
-  - component: {fileID: 1643213301}
-  m_Layer: 5
-  m_Name: ScorePopups
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1643213300
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1643213299}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1573731197}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1643213301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1643213299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fb40b7eeef386647af90a14682f9000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Score.ScorePopupManager
-  scorePopupPrefab: {fileID: 82816633647946051, guid: 6115e053027aa954184dc74a696e45a3, type: 3}
 --- !u!1001 &1671779625
 PrefabInstance:
   m_ObjectHideFlags: 0
