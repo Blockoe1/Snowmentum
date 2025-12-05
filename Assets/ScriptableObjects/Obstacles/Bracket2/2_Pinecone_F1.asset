@@ -15,7 +15,7 @@ MonoBehaviour:
   obstacleSize: 2.5
   requiredBracketTime: 0
   baseBracket: 2
-  baseScore: 2
+  baseScore: 4
   destroySound: Obstacle Destruction
   tag: Untagged
   obstacleSprite: {fileID: 21300000, guid: ce8168339d25eca4da1200f4f45507f2, type: 3}

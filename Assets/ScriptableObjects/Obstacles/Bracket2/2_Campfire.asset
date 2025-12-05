@@ -15,7 +15,7 @@ MonoBehaviour:
   obstacleSize: 4.5
   requiredBracketTime: 10
   baseBracket: 2
-  baseScore: 3
+  baseScore: 7
   destroySound: Campfire Extinguished
   tag: Untagged
   obstacleSprite: {fileID: -5525346469155709991, guid: 9361e70c4eaae98418edb1c76a7a358c, type: 3}
