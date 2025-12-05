@@ -8,6 +8,7 @@
 *****************************************************************************/
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Snowmentum
 {
@@ -18,6 +19,7 @@ namespace Snowmentum
         [SerializeField] private CelestialBody[] celestialBodies;
         [SerializeField] private bool startOnAwake;
         [SerializeField] private float startingTime;
+        [SerializeField] private UnityEvent OnNewDayEvent;
         [Header("Debug")]
         [SerializeField] private bool updateInEditor;
         [SerializeField, Range(0f, 1f)] private float debugTime;
@@ -67,6 +69,7 @@ namespace Snowmentum
                 if (time > cycleLength)
                 {
                     time -= cycleLength;
+                    OnNewDayEvent?.Invoke();
                 }
                 
                 UpdateBodies(time / cycleLength);
