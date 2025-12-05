@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 5_Shed_F4
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 14
+  obstacleSize: 20
   requiredBracketTime: 0
   baseBracket: 5
-  baseScore: 16
+  baseScore: 22
   destroySound: Small Building Destroyed
   tag: Untagged
   obstacleSprite: {fileID: 21300000, guid: 3b89ecc7dc387d14cb54f15dfd5fcd85, type: 3}
@@ -27,7 +27,7 @@ MonoBehaviour:
   hasCollision: 1
   capsuleDirection: 0
   offset: {x: 0.01, y: -0.02}
-  size: {x: 1.25, y: 1.5}
+  size: {x: 0.57, y: 0.71}
   particleMaterial: {fileID: 11400000, guid: f7eb8c6823e25414497061b003bb4901, type: 2}
   particleNumber: 45
   emissionRadius: 0.5

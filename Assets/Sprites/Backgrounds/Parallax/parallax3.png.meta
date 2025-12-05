@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bb2f7bd147d9f6c4780fa9a6b00a5a91
+guid: 0939680332fe72843a1121af146ffa52
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1961292790668143303
-    second: background_trees_0
+      213: 5696323822460017740
+    second: parallax3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background_trees 1_0
+      name: parallax3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 513
-        height: 225
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 32, y: 0, z: 32, w: 0}
+        width: 512
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b03186bc333bf6e4ea7387e5155df13d
-      internalID: 592559979
+      spriteID: c4c135b06586d0f40800000000000000
+      internalID: 5696323822460017740
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 71e6a77bf7315fa4e8c24e7287ee5ae4
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      background_trees 1_0: 592559979
-      background_trees_0: 1961292790668143303
+      parallax3_0: 5696323822460017740
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
