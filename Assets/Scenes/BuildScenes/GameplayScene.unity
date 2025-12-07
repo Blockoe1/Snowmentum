@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0702afb19cbe1954793c2dc0f60683d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1
+  mouseSensitivity: 0.5
 --- !u!4 &515834080
 Transform:
   m_ObjectHideFlags: 0
@@ -6897,10 +6897,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 989503879829878671, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
-      propertyPath: cycleLength
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 3855622087832680449, guid: 31ef4b07840b9ce449e277ab0ef338e2, type: 3}
       propertyPath: m_Name
       value: DayNightCycle (1)
@@ -13735,6 +13731,10 @@ PrefabInstance:
     - target: {fileID: 6477381704800582678, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: OnToggleVisualsEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165628667471022399, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
+      propertyPath: startingValue
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8420961822085175188, guid: 048bcac6b518fa747b8a5e4936fb2679, type: 3}
       propertyPath: m_LocalPosition.x
