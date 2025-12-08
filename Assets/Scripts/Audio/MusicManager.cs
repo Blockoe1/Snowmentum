@@ -89,7 +89,7 @@ namespace Snowmentum
                     introSource.Play();
                     // Use doubles for more precision.
                     // Calculate the precise time to start the looping track.
-                    double introDuraction = (double)introTrack.samples / introTrack.frequency;
+                    double introDuraction = introTrack.samples / (double)introTrack.frequency;
                     double playTime = AudioSettings.dspTime + introDuraction;
 
                     //instance.StartCoroutine(ToLoopRoutine(loopSource, playTime));
