@@ -929,6 +929,10 @@ PrefabInstance:
       propertyPath: speedScale
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3187612761379975962, guid: 6a152c82da2d3864396b4f01f13d8158, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 6266522942342720396, guid: 6a152c82da2d3864396b4f01f13d8158, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
