@@ -16,7 +16,7 @@ MonoBehaviour:
   requiredBracketTime: 3
   baseBracket: 3
   baseScore: 7
-  destroySound: Wood Breaking
+  destroySound: Wood Smash
   tag: Untagged
   obstacleSprite: {fileID: -4119993721317957089, guid: 1bda999e27c4ed147985a0e5f897ded0, type: 3}
   orderInLayer: 0
