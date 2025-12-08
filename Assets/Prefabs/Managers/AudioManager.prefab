@@ -149,7 +149,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 680633602a1b317449660b84c0a630b4, type: 3}
   - name: Rock Destroyed
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 0
     audioClip: {fileID: 8300000, guid: 29ef2a29f34c0cf489632773d565fdba, type: 3}
@@ -159,24 +159,18 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     audioClip: {fileID: 8300000, guid: 2f3dd54aec0e74943b16ff6122a23bf2, type: 3}
-  - name: Plastic Destroyed
+  - name: Plastic Smash
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 1
+    volume: 0.85
     pitch: 1
     loop: 0
-    audioClip: {fileID: 8300000, guid: 6d5e68762ae68f349a98fc18582dac0c, type: 3}
+    audioClip: {fileID: 8300000, guid: e559ebd41fa9ac7428fdc24283caf588, type: 3}
   - name: Ice Shatter
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
     pitch: 1
     loop: 0
     audioClip: {fileID: 8300000, guid: d092e46fc661f7841abcfef2ecdeb8c3, type: 3}
-  - name: Gravel Destroyed
-    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 0
-    audioClip: {fileID: 8300000, guid: e35126b9cc8bb5b40856ed7a4814a2d9, type: 3}
   - name: Large Building Destroyed
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 1
@@ -189,6 +183,18 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     audioClip: {fileID: 8300000, guid: c45b4e34d4c55e94ba05f8544000879c, type: 3}
+  - name: Wood Smash
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 0.72
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: eb8968902ea58844592800f83d15781e, type: 3}
+  - name: Snow Smash
+    mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
+    volume: 0.72
+    pitch: 1
+    loop: 0
+    audioClip: {fileID: 8300000, guid: fbabfe2dad6428b44afe5f5e9ba6318b, type: 3}
   randomizedSounds:
   - name: Snowball Destruction
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
