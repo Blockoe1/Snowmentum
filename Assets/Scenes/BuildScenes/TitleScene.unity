@@ -8553,10 +8553,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.31770834
     y: 0
-    width: 1
-    height: 0.99966645
+    width: 0.34722224
+    height: 0.3472222
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -8999,54 +8999,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.size
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[24].name
-      value: Wood Smash
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[25].name
-      value: Plastic Smash
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[24].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[25].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[17].volume
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[24].volume
-      value: 0.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[25].volume
-      value: 0.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[24].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: eb8968902ea58844592800f83d15781e, type: 3}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[25].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: e559ebd41fa9ac7428fdc24283caf588, type: 3}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[24].mixerGroup
-      value: 
-      objectReference: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    - target: {fileID: 1936045370682820391, guid: 5caef4cc1dab67d4a93df5022604b56b, type: 3}
-      propertyPath: sounds.Array.data[25].mixerGroup
-      value: 
-      objectReference: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
