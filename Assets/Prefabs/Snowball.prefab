@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 0.5
-  increasePerSecond: 0.0085
+  increasePerSecond: 0.0105
   moveToTarget: 7
   useFixedUpdate: 1
   resetOnAwake: 0
@@ -404,7 +404,7 @@ MonoBehaviour:
     consumeOnHit: 0
   sizeGaining:
     curveSteepness: 6
-    maxGain: 0.03
+    maxGain: 0.04
     scaleWithObstacleSize: 1
   speedDamage:
     curveSteepness: 1.5
