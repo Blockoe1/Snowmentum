@@ -80,7 +80,7 @@ namespace Snowmentum.Score
 
             // Set the positions.
             transform.position = position;
-            Debug.Log(position);
+            //Debug.Log(position);
 
             // Starts the animation.
             StartCoroutine(AnimationRoutine(new AnimationData<Vector2>(position, position + targetOffset, positionCurve), 
