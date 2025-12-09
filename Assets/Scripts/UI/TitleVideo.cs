@@ -7,6 +7,7 @@
 // Brief Description : Controls transitions to and playing the tutorial video on the title screen.
 *****************************************************************************/
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -17,9 +18,23 @@ namespace Snowmentum.UI
     {
         [SerializeField] private Image fadeToBlack;
         [SerializeField] private GameObject titleScreen;
-        [SerializeField] private VideoPlayer tutorialVideo;
+        [SerializeField] private GameObject videoScreen;
         [SerializeField] private float titleScreenTime;
         [SerializeField] private float fadeTime;
+
+        #region Component References
+        [Header("Components")]
+        [SerializeReference] private VideoPlayer vidPlayer;
+
+        /// <summary>
+        /// Get components on reset.
+        /// </summary>
+        [ContextMenu("Get Component References")]
+        private void Reset()
+        {
+            vidPlayer = GetComponent<VideoPlayer>();
+        }
+        #endregion
 
         /// <summary>
         /// Start the video transition routine once the game starts.
@@ -36,7 +51,7 @@ namespace Snowmentum.UI
         private IEnumerator VideoRoutine()
         {
             float halfFadeTime = fadeTime / 2;
-            float videoLength = (float)tutorialVideo.length;
+            float videoLength = (float)vidPlayer.length;
 
             // Local Functions for readability.
             Coroutine FadeToBlack()
@@ -55,7 +70,7 @@ namespace Snowmentum.UI
             void ToggleTitle(bool toggle)
             {
                 titleScreen.SetActive(toggle);
-                tutorialVideo.gameObject.SetActive(!toggle);
+                videoScreen.gameObject.SetActive(!toggle);
             }
 
             while (true)
@@ -68,7 +83,7 @@ namespace Snowmentum.UI
 
                 // Start the video and hide the title screen.
                 ToggleTitle(false);
-                tutorialVideo.Play();
+                vidPlayer.Play();
 
                 // Fade in.
                 yield return FadeIn();
@@ -82,7 +97,7 @@ namespace Snowmentum.UI
 
                 // Disable video and re-show the title
                 ToggleTitle(true);
-                tutorialVideo.Stop();
+                vidPlayer.Stop();
 
                 // Fade back in.
                 yield return FadeIn();
