@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 2bac5191122a1704dab7a7d0aac30b97
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8581370432214522255
+    second: trailer_assets_0
+  - first:
+      213: -7855191816847693272
+    second: trailer_assets_1
+  - first:
+      213: -8784177434947936246
+    second: trailer_assets_2
+  - first:
+      213: 2787251116654179016
+    second: trailer_assets_3
+  - first:
+      213: 5509972438995388739
+    second: trailer_assets_4
+  - first:
+      213: -1483480156226560996
+    second: trailer_assets_5
+  - first:
+      213: 538527051675027373
+    second: trailer_assets_6
+  - first:
+      213: -1699438994969328996
+    second: trailer_assets_7
+  - first:
+      213: -1045493266983332690
+    second: trailer_assets_8
+  - first:
+      213: 8929474386878604168
+    second: trailer_assets_9
+  - first:
+      213: 8028112537126182100
+    second: trailer_assets_10
+  - first:
+      213: 7371156863255671817
+    second: trailer_assets_11
+  - first:
+      213: 3552812402261962991
+    second: trailer_assets_12
+  - first:
+      213: 8515330403148134440
+    second: trailer_assets_13
+  - first:
+      213: 9211510575595194790
+    second: trailer_assets_14
+  - first:
+      213: -4063574378133019861
+    second: trailer_assets_15
+  - first:
+      213: 7290995153209782956
+    second: trailer_assets_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: trailer_assets_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 43
+        width: 46
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17620d5de09d8e880800000000000000
+      internalID: -8581370432214522255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 45
+        width: 43
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82aec3249a0ccf290800000000000000
+      internalID: -7855191816847693272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_2
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 43
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a002de9d925581680800000000000000
+      internalID: -8784177434947936246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_3
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 43
+        width: 46
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c2bbf38f1e4ea620800000000000000
+      internalID: 2787251116654179016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_4
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 45
+        width: 43
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349438c7dba577c40800000000000000
+      internalID: 5509972438995388739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_5
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 43
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1c56c068ae996be0800000000000000
+      internalID: -1483480156226560996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_6
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 43
+        width: 43
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da74701108b397700800000000000000
+      internalID: 538527051675027373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_7
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 45
+        width: 43
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c920863fc316a68e0800000000000000
+      internalID: -1699438994969328996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_8
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 43
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea45566b969ad71f0800000000000000
+      internalID: -1045493266983332690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_9
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 7
+        width: 95
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88329dcf4addbeb70800000000000000
+      internalID: 8929474386878604168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_10
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 42
+        width: 43
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dc144851d5996f60800000000000000
+      internalID: 8028112537126182100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_11
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 45
+        width: 43
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9047902fc1c9b4660800000000000000
+      internalID: 7371156863255671817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_12
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 43
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe03d666e002e4130800000000000000
+      internalID: 3552812402261962991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_13
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 1
+        width: 95
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8287ab0b2e78c2670800000000000000
+      internalID: 8515330403148134440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_14
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 46
+        width: 144
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a90b17501cd5df70800000000000000
+      internalID: 9211510575595194790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_15
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 46
+        width: 144
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b23a00102a84b97c0800000000000000
+      internalID: -4063574378133019861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trailer_assets_16
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 45
+        width: 144
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2f9266671de2560800000000000000
+      internalID: 7290995153209782956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      trailer_assets_0: -8581370432214522255
+      trailer_assets_1: -7855191816847693272
+      trailer_assets_10: 8028112537126182100
+      trailer_assets_11: 7371156863255671817
+      trailer_assets_12: 3552812402261962991
+      trailer_assets_13: 8515330403148134440
+      trailer_assets_14: 9211510575595194790
+      trailer_assets_15: -4063574378133019861
+      trailer_assets_16: 7290995153209782956
+      trailer_assets_2: -8784177434947936246
+      trailer_assets_3: 2787251116654179016
+      trailer_assets_4: 5509972438995388739
+      trailer_assets_5: -1483480156226560996
+      trailer_assets_6: 538527051675027373
+      trailer_assets_7: -1699438994969328996
+      trailer_assets_8: -1045493266983332690
+      trailer_assets_9: 8929474386878604168
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
