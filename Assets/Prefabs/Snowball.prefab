@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 4
-  increasePerSecond: 0.02
+  increasePerSecond: 0.019
   moveToTarget: 5
   useFixedUpdate: 1
   resetOnAwake: 0
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMovementSensitivity: 0.075
   scaleOperation: 2
-  minSensitivity: 0.02
+  minSensitivity: 0.022
   movementCurveSteepness: 1.5
   maxSpeed: 15
   minY: -3.5
