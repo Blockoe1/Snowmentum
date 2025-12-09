@@ -39,6 +39,7 @@ namespace Snowmentum
             [Header("Tracks")]
             [SerializeField] private AudioClip loopTrack;
             [SerializeField] private AudioClip introTrack;
+            [SerializeField] private int msIntroBuffer;
 
             internal float Volume => volume;
             // Gets the volume of the audio sources.  Should be the same for the normal and loop sources.
@@ -92,8 +93,9 @@ namespace Snowmentum
                     double introDuraction = introTrack.samples / (double)introTrack.frequency;
                     double playTime = AudioSettings.dspTime + introDuraction;
 
+                    Debug.Log(introDuraction);
                     //instance.StartCoroutine(ToLoopRoutine(loopSource, playTime));
-                    source.PlayScheduled(playTime);
+                    source.PlayScheduled(playTime + (msIntroBuffer / 1000.0));
                 }
                 else
                 {
