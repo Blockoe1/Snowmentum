@@ -317,11 +317,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 0.5
-  increasePerSecond: 0.0075
+  increasePerSecond: 0.0085
   moveToTarget: 7
   useFixedUpdate: 1
   resetOnAwake: 0
-  bonusGainPerBracket: 0.005
+  bonusGainPerBracket: 0.006
   bonusCurveType: 2
   OnDeathEvent:
     m_PersistentCalls:
