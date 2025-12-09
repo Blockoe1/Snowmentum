@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734e950c317c80c459b6e80d28e6f05e, type: 3}
+  m_Name: RedOnly
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleBracket
+  spawnData:
+  - obstacle: {fileID: 11400000, guid: 63d51bcc8bbff094eabef003f1dc02f5, type: 2}
+    baseWeight: 4
+    addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: ec09f765d73579746a84eb03cbb047f6, type: 2}
+    baseWeight: 5
+    addedWeight: 2
+  - obstacle: {fileID: 11400000, guid: 63ccbbf9fbc690641baebe05ecb1ec0d, type: 2}
+    baseWeight: 4
+    addedWeight: 3
