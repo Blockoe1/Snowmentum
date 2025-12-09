@@ -16,7 +16,7 @@ MonoBehaviour:
   requiredBracketTime: 0
   baseBracket: 3
   baseScore: 7
-  destroySound: Campfire Extinguished
+  destroySound: Rock Destroyed
   tag: Untagged
   obstacleSprite: {fileID: 21300000, guid: 9ca9bdb440d22e149bdc7c59eb0e3a3c, type: 3}
   orderInLayer: 0
