@@ -34,3 +34,5 @@ MonoBehaviour:
   innerRadius: 0.5
   outerRadius: 3.5
   baseSize: 1
+  minRandRatio: 0.33
+  maxRandRatio: 0.66

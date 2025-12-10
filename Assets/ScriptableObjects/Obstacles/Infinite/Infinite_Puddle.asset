@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d09c1f6dce008b479d6ce97f67023e0, type: 3}
-  m_Name: Infinite_Tree1
+  m_Name: Infinite_Puddle
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.InfiniteScaleObstacle
-  obstacleSize: 63.049503
+  obstacleSize: 38.4
   requiredBracketTime: 0
-  baseBracket: 1
-  baseScore: 35
-  destroySound: Falling Tree
-  tag: Untagged
-  obstacleSprite: {fileID: 21300000, guid: 314e45a7fa7bc604b8756f55392e6dad, type: 3}
-  orderInLayer: 0
-  showColors: 1
+  baseBracket: 6
+  baseScore: 1
+  destroySound: Obstacle Destruction
+  tag: Water
+  obstacleSprite: {fileID: 21300000, guid: 6b791ba0ee1f2274dacbd097e9ad1e78, type: 3}
+  orderInLayer: -2
+  showColors: 0
   isAnimated: 0
   fps: 5
   animationFrames: []
-  hasCollision: 1
+  hasCollision: 0
   capsuleDirection: 0
-  offset: {x: 0.03, y: -0.12}
-  size: {x: 0.22, y: 0.55}
-  particleMaterial: {fileID: 11400000, guid: 294906ec96008ca41aba30031225b75d, type: 2}
-  particleNumber: 30
-  emissionRadius: 0.25
-  innerRadius: 0.5
-  outerRadius: 3.5
-  baseSize: 1
+  offset: {x: -0.1, y: -0.77}
+  size: {x: 2.15, y: 2.15}
+  particleMaterial: {fileID: 0}
+  particleNumber: 0
+  emissionRadius: 0
+  innerRadius: 0
+  outerRadius: 0
+  baseSize: 32
   minRandRatio: 0
-  maxRandRatio: 0.33
+  maxRandRatio: 0
