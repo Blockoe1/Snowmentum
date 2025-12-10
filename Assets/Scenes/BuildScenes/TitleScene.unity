@@ -263,7 +263,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69803508}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 6a3f5794704e4ff43966169178105bba, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 2364fa05b08189141a002ba6008e5277, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -8543,8 +8543,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 0
+    height: 0
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
