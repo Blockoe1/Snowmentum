@@ -7,7 +7,6 @@
 // Brief Description : Special obstacle variant that infintiely scales based on the current size bracket.
 *****************************************************************************/
 using Snowmentum.Size;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace Snowmentum
