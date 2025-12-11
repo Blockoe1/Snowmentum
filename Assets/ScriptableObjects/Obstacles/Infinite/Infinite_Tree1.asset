@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d09c1f6dce008b479d6ce97f67023e0, type: 3}
   m_Name: Infinite_Tree1
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.InfiniteScaleObstacle
-  obstacleSize: 1
+  obstacleSize: 63.049503
   requiredBracketTime: 0
   baseBracket: 1
   baseScore: 35
@@ -26,11 +26,13 @@ MonoBehaviour:
   animationFrames: []
   hasCollision: 1
   capsuleDirection: 0
-  offset: {x: -0.005, y: -0.15}
-  size: {x: 0.04, y: 0.2}
+  offset: {x: 0.03, y: -0.12}
+  size: {x: 0.22, y: 0.55}
   particleMaterial: {fileID: 11400000, guid: 294906ec96008ca41aba30031225b75d, type: 2}
   particleNumber: 30
   emissionRadius: 0.25
   innerRadius: 0.5
   outerRadius: 3.5
   baseSize: 1
+  minRandRatio: 0
+  maxRandRatio: 0.33
