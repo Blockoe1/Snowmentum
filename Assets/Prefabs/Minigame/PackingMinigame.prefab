@@ -451,9 +451,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.TieredSprite
   updateSprites:
   - sprite: {fileID: -1528242958, guid: e5c4d34904aa8da4f9f267b3017b0f6f, type: 3}
-    transitionSize: 0.4
+    transitionSize: 0.35
   - sprite: {fileID: 2096108804, guid: e5c4d34904aa8da4f9f267b3017b0f6f, type: 3}
-    transitionSize: 0.2
+    transitionSize: 0.15
   - sprite: {fileID: 489549586, guid: e5c4d34904aa8da4f9f267b3017b0f6f, type: 3}
     transitionSize: 0
   rend: {fileID: 2977733273041567016}

@@ -20,8 +20,8 @@ MonoBehaviour:
     baseWeight: 8
     addedWeight: 1
   - obstacle: {fileID: 11400000, guid: 99725482bfac5de4a9fd1a31b375435e, type: 2}
-    baseWeight: 5
-    addedWeight: 1
+    baseWeight: 2
+    addedWeight: 3
   - obstacle: {fileID: 11400000, guid: c911b56a100e52441b61e85680a55c11, type: 2}
     baseWeight: 12
     addedWeight: 1
@@ -41,5 +41,5 @@ MonoBehaviour:
     baseWeight: 5
     addedWeight: 1
   - obstacle: {fileID: 11400000, guid: bd67023797275ff47bf03af559c18122, type: 2}
-    baseWeight: 8
+    baseWeight: 2
     addedWeight: 2

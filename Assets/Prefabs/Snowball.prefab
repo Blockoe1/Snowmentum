@@ -317,11 +317,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 0.5
-  increasePerSecond: 0.0075
+  increasePerSecond: 0.0105
   moveToTarget: 7
   useFixedUpdate: 1
   resetOnAwake: 0
-  bonusGainPerBracket: 0.005
+  bonusGainPerBracket: 0.006
   bonusCurveType: 2
   OnDeathEvent:
     m_PersistentCalls:
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingValue: 4
-  increasePerSecond: 0.02
+  increasePerSecond: 0.019
   moveToTarget: 5
   useFixedUpdate: 1
   resetOnAwake: 0
@@ -404,7 +404,7 @@ MonoBehaviour:
     consumeOnHit: 0
   sizeGaining:
     curveSteepness: 6
-    maxGain: 0.03
+    maxGain: 0.04
     scaleWithObstacleSize: 1
   speedDamage:
     curveSteepness: 1.5
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMovementSensitivity: 0.075
   scaleOperation: 2
-  minSensitivity: 0.02
+  minSensitivity: 0.022
   movementCurveSteepness: 1.5
   maxSpeed: 15
   minY: -3.5
