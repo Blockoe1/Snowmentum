@@ -55,6 +55,7 @@ MonoBehaviour:
     loop: 1
     loopTrack: {fileID: 8300000, guid: 8a8bf6448b5d30045a0b43978117f658, type: 3}
     introTrack: {fileID: 8300000, guid: c4bfddeb427a6314cb0964c3050d4244, type: 3}
+    msIntroBuffer: 180
   - name: Frozen
     mixerGroup: {fileID: 6511246275216553017, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 0.55
@@ -62,13 +63,15 @@ MonoBehaviour:
     loop: 1
     loopTrack: {fileID: 8300000, guid: 41e8b54c52d8b654e952dd92b2a93896, type: 3}
     introTrack: {fileID: 0}
+    msIntroBuffer: 0
   - name: MainMenu
     mixerGroup: {fileID: 6511246275216553017, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 0.7
+    volume: 0.9
     pitch: 1
     loop: 1
     loopTrack: {fileID: 8300000, guid: 4dfc713a85d62914a9c18efb6ade6aa3, type: 3}
     introTrack: {fileID: 8300000, guid: 14342c2962e302945b85626dad05f1ec, type: 3}
+    msIntroBuffer: 0
   - name: GameOver
     mixerGroup: {fileID: 6511246275216553017, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 0.35
@@ -76,6 +79,7 @@ MonoBehaviour:
     loop: 0
     loopTrack: {fileID: 8300000, guid: 4a89f43dabf8f0e4b8bd22d5323f5f91, type: 3}
     introTrack: {fileID: 0}
+    msIntroBuffer: 0
   - name: Packing
     mixerGroup: {fileID: 6511246275216553017, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
     volume: 0.5
@@ -83,3 +87,4 @@ MonoBehaviour:
     loop: 1
     loopTrack: {fileID: 8300000, guid: d9b92172efd71ab4e8ad05ac20f3a30e, type: 3}
     introTrack: {fileID: 0}
+    msIntroBuffer: 0
