@@ -323,6 +323,8 @@ MonoBehaviour:
   scalePerspectiveX: 1
   scalePerspectiveY: 1
   scaleOnSpawn: 0
+  limitEnvironmentSize: 1
+  maxEnvSize: 16
 --- !u!1 &3767570842865473107 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8547768223595833983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
@@ -404,6 +406,8 @@ MonoBehaviour:
   scalePerspectiveX: 1
   scalePerspectiveY: 1
   scaleOnSpawn: 0
+  limitEnvironmentSize: 1
+  maxEnvSize: 16
 --- !u!1 &4358606327849666867 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9127174723714643231, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
