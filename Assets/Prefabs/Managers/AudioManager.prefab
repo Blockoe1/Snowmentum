@@ -143,13 +143,13 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: fb95a01deedc3d246a5b77012744cf7c, type: 3}
   - name: Wood Breaking
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 1
+    volume: 0.9
     pitch: 1
     loop: 0
     audioClip: {fileID: 8300000, guid: 680633602a1b317449660b84c0a630b4, type: 3}
   - name: Rock Destroyed
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 0.6
+    volume: 0.375
     pitch: 1
     loop: 0
     audioClip: {fileID: 8300000, guid: 29ef2a29f34c0cf489632773d565fdba, type: 3}
@@ -161,7 +161,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 2f3dd54aec0e74943b16ff6122a23bf2, type: 3}
   - name: Plastic Smash
     mixerGroup: {fileID: 1950813943884785658, guid: 067a8ad941e2b5046913ecc4c0352a26, type: 2}
-    volume: 0.6
+    volume: 0.4
     pitch: 0.8
     loop: 0
     audioClip: {fileID: 8300000, guid: e559ebd41fa9ac7428fdc24283caf588, type: 3}
