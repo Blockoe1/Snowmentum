@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: f4b2c359b5230654fbf743a68767ea74
+guid: 88a24e1864c0db342b49c79a3d663f2a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1641259752620419291
-    second: bg3_0
+      213: -8726904330242532414
+    second: rocks2_0
+  - first:
+      213: 49461173754034318
+    second: rocks2_1
+  - first:
+      213: 19255745974337637
+    second: rocks2_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -100,23 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg3_0
+      name: rocks2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 288
+        x: 3
+        y: 5
+        width: 28
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5271ae463f21939e0800000000000000
-      internalID: -1641259752620419291
+      spriteID: 2cb531fafbec3e680800000000000000
+      internalID: -8726904330242532414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks2_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8878cbeca8bfa000800000000000000
+      internalID: 49461173754034318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rocks2_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 6
+        width: 35
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5608faabff8644000800000000000000
+      internalID: 19255745974337637
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 7bc572457ee752a48bd221cfbc6770ef
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bg3_0: -1641259752620419291
+      rocks2_0: -8726904330242532414
+      rocks2_1: 49461173754034318
+      rocks2_2: 19255745974337637
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

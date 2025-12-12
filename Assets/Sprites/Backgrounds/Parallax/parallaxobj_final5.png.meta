@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: f4b2c359b5230654fbf743a68767ea74
+guid: 8d5ba95635861814ba9d94da4035b3ba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1641259752620419291
-    second: bg3_0
+      213: 5816261252962975866
+    second: parallaxobj_final5_0
+  - first:
+      213: -3877677108720727183
+    second: parallaxobj_final5_1
+  - first:
+      213: 219925152648702439
+    second: parallaxobj_final5_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,8 +54,8 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
-  alignment: 0
+  spriteMeshType: 1
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg3_0
+      name: parallaxobj_final5_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 38
         y: 0
-        width: 512
-        height: 288
+        width: 32
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5271ae463f21939e0800000000000000
-      internalID: -1641259752620419291
+      spriteID: a700abf2bc287b050800000000000000
+      internalID: 5816261252962975866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: parallaxobj_final5_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 0
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17b8905e639bf2ac0800000000000000
+      internalID: -3877677108720727183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: parallaxobj_final5_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 61
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e9acc8d2c45d0300800000000000000
+      internalID: 219925152648702439
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bg3_0: -1641259752620419291
+      parallaxobj_final5_0: 5816261252962975866
+      parallaxobj_final5_1: -3877677108720727183
+      parallaxobj_final5_2: 219925152648702439
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
