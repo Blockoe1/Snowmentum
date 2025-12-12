@@ -14,32 +14,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleBracket
   spawnData:
   - obstacle: {fileID: 11400000, guid: 898918ed32e1b7f4e8c80b545867073b, type: 2}
-    baseWeight: 9
-    addedWeight: 2
+    baseWeight: 90
+    addedWeight: 20
   - obstacle: {fileID: 11400000, guid: 16d4bc3f078c8d84f8d1ec922be99a27, type: 2}
-    baseWeight: 8
-    addedWeight: 1
+    baseWeight: 80
+    addedWeight: 10
   - obstacle: {fileID: 11400000, guid: 99725482bfac5de4a9fd1a31b375435e, type: 2}
-    baseWeight: 2
-    addedWeight: 3
+    baseWeight: 20
+    addedWeight: 30
   - obstacle: {fileID: 11400000, guid: c911b56a100e52441b61e85680a55c11, type: 2}
-    baseWeight: 12
-    addedWeight: 1
+    baseWeight: 120
+    addedWeight: 10
   - obstacle: {fileID: 11400000, guid: 4b8c68ae31efb814ea00585c9095dc00, type: 2}
-    baseWeight: 13
-    addedWeight: 4
+    baseWeight: 130
+    addedWeight: 40
   - obstacle: {fileID: 11400000, guid: 7963b423ca323ab4e9248c1244bf5358, type: 2}
     baseWeight: 0
-    addedWeight: 2
+    addedWeight: 20
+  - obstacle: {fileID: 11400000, guid: 9f07a26c9561ba94a9978126297f5baa, type: 2}
+    baseWeight: 0
+    addedWeight: 1
   - obstacle: {fileID: 11400000, guid: 1eb5e92277d696f4db7e5868d1c1bb7c, type: 2}
-    baseWeight: 5
-    addedWeight: 1
+    baseWeight: 50
+    addedWeight: 10
+  - obstacle: {fileID: 11400000, guid: 06ad7b60b889aa54fadaefb0944b145f, type: 2}
+    baseWeight: 1
+    addedWeight: 0
   - obstacle: {fileID: 11400000, guid: 8aa4bbbc7ff45094ab3f1de652e7d45b, type: 2}
-    baseWeight: 5
-    addedWeight: 1
+    baseWeight: 50
+    addedWeight: 10
+  - obstacle: {fileID: 11400000, guid: c05ac8930ba38c04abfe4ad1261b2981, type: 2}
+    baseWeight: 1
+    addedWeight: 0
   - obstacle: {fileID: 11400000, guid: 7c1c414329aa2fb4aa399fe0f21d1c39, type: 2}
-    baseWeight: 5
-    addedWeight: 1
+    baseWeight: 50
+    addedWeight: 10
+  - obstacle: {fileID: 11400000, guid: 7a7a4f5634e5f294b8a00ced90a19aa0, type: 2}
+    baseWeight: 1
+    addedWeight: 0
   - obstacle: {fileID: 11400000, guid: bd67023797275ff47bf03af559c18122, type: 2}
-    baseWeight: 2
-    addedWeight: 2
+    baseWeight: 80
+    addedWeight: 20
+  - obstacle: {fileID: 11400000, guid: a17a3f53c1a054b4a897edc7e431bbdb, type: 2}
+    baseWeight: 1
+    addedWeight: 0

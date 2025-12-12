@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
+  m_Name: 3_Outhouse
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
+  obstacleSize: 16.5
+  requiredBracketTime: 10
+  baseBracket: 4
+  baseScore: 19
+  destroySound: Small Building Destroyed
+  tag: Untagged
+  obstacleSprite: {fileID: 281315310943963590, guid: d61869e9c26342241b8eccc8890898a4, type: 3}
+  orderInLayer: 0
+  showColors: 1
+  isAnimated: 0
+  fps: 8
+  animationFrames:
+  - {fileID: 281315310943963590, guid: d61869e9c26342241b8eccc8890898a4, type: 3}
+  - {fileID: -6555611496316424947, guid: d61869e9c26342241b8eccc8890898a4, type: 3}
+  - {fileID: -6396805837617788188, guid: d61869e9c26342241b8eccc8890898a4, type: 3}
+  - {fileID: 1760179717856140674, guid: d61869e9c26342241b8eccc8890898a4, type: 3}
+  hasCollision: 1
+  capsuleDirection: 0
+  offset: {x: 0, y: -0.2}
+  size: {x: 0.96, y: 1.2}
+  particleMaterial: {fileID: 11400000, guid: f7eb8c6823e25414497061b003bb4901, type: 2}
+  particleNumber: 45
+  emissionRadius: 0.5
+  innerRadius: 0.76
+  outerRadius: 2.86
+  baseSize: 8

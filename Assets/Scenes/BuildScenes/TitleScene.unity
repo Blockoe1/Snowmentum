@@ -7303,6 +7303,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367417393}
   m_CullTransparentMesh: 1
+--- !u!1001 &1373234466
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5838654762483123280, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_Name
+      value: TitleScreenSnow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828983496403352386, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: lengthInSec
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828983496403352386, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: SizeModule.separateAxes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828983496403352386, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 4.5358596
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828983496403352386, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828983496403352386, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0.7321431
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828983496403352386, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: 0.10328265
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828983496403352386, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828983496403352386, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0.34579444
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828983496403352386, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: 0.10328265
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04827435
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.14033595
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.14033595
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.693041
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.693041
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -247.106
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -270
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337517117068360074, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337517117068360074, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 546590485
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
 --- !u!1001 &1373670434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8557,7 +8658,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.9991337
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -9167,3 +9268,4 @@ SceneRoots:
   - {fileID: 2020301238}
   - {fileID: 921313696}
   - {fileID: 2130863318}
+  - {fileID: 1373234466}
