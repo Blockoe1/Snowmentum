@@ -31,15 +31,30 @@ MonoBehaviour:
   - obstacle: {fileID: 11400000, guid: 7963b423ca323ab4e9248c1244bf5358, type: 2}
     baseWeight: 0
     addedWeight: 2
+  - obstacle: {fileID: 11400000, guid: 9f07a26c9561ba94a9978126297f5baa, type: 2}
+    baseWeight: 1
+    addedWeight: 0
   - obstacle: {fileID: 11400000, guid: 1eb5e92277d696f4db7e5868d1c1bb7c, type: 2}
     baseWeight: 5
     addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: 06ad7b60b889aa54fadaefb0944b145f, type: 2}
+    baseWeight: 1
+    addedWeight: 0
   - obstacle: {fileID: 11400000, guid: 8aa4bbbc7ff45094ab3f1de652e7d45b, type: 2}
     baseWeight: 5
     addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: c05ac8930ba38c04abfe4ad1261b2981, type: 2}
+    baseWeight: 1
+    addedWeight: 0
   - obstacle: {fileID: 11400000, guid: 7c1c414329aa2fb4aa399fe0f21d1c39, type: 2}
     baseWeight: 5
     addedWeight: 1
+  - obstacle: {fileID: 11400000, guid: 7a7a4f5634e5f294b8a00ced90a19aa0, type: 2}
+    baseWeight: 1
+    addedWeight: 0
+  - obstacle: {fileID: 11400000, guid: bd67023797275ff47bf03af559c18122, type: 2}
+    baseWeight: 8
+    addedWeight: 2
   - obstacle: {fileID: 11400000, guid: bd67023797275ff47bf03af559c18122, type: 2}
     baseWeight: 8
     addedWeight: 2

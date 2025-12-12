@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: f4b2c359b5230654fbf743a68767ea74
+guid: 0031f2ed34f530d459af43c30e78cf8e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1641259752620419291
-    second: bg3_0
+      213: -3246761582723223892
+    second: parallaxobj_final4_0
+  - first:
+      213: 2780905627064867355
+    second: parallaxobj_final4_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,8 +51,8 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
-  alignment: 0
+  spriteMeshType: 1
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg3_0
+      name: parallaxobj_final4_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 64
         y: 0
-        width: 512
-        height: 288
+        width: 7
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5271ae463f21939e0800000000000000
-      internalID: -1641259752620419291
+      spriteID: caea567ea8f21f2d0800000000000000
+      internalID: -3246761582723223892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: parallaxobj_final4_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a16171fe2c79620800000000000000
+      internalID: 2780905627064867355
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bg3_0: -1641259752620419291
+      parallaxobj_final4_0: -3246761582723223892
+      parallaxobj_final4_1: 2780905627064867355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

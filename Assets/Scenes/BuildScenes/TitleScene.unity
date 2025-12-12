@@ -6104,6 +6104,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609191171}
   m_CullTransparentMesh: 1
+--- !u!1001 &687004499
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5838654762483123280, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_Name
+      value: Snow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828983496403352386, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 5.911207
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828983496403352386, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.45199
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.45199
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.45199
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04827435
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.08963491
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.08963491
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7014026
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7014026
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -255.435
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125500798911392185, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -270
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337517117068360074, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337517117068360074, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337517117068360074, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 546590485
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 70c638463247b6048a39f2aeb971fe59, type: 3}
 --- !u!1 &699526173
 GameObject:
   m_ObjectHideFlags: 0
@@ -8557,7 +8646,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.9991337
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -9165,5 +9254,6 @@ SceneRoots:
   - {fileID: 1532499904}
   - {fileID: 117796571}
   - {fileID: 2020301238}
+  - {fileID: 687004499}
   - {fileID: 921313696}
   - {fileID: 2130863318}
