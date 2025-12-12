@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.ObstacleBracket
   spawnData:
   - obstacle: {fileID: 11400000, guid: 15d69278c2ad5c54ea15f76459a9ffdc, type: 2}
-    baseWeight: 5
-    addedWeight: 1
+    baseWeight: 20
+    addedWeight: 4
   - obstacle: {fileID: 11400000, guid: 8f2f2588a76fbfb42beb764841970c15, type: 2}
-    baseWeight: 5
-    addedWeight: 1
+    baseWeight: 15
+    addedWeight: 3
   - obstacle: {fileID: 11400000, guid: 93ec0cd21cbfde045b80d27b3eb14da5, type: 2}
-    baseWeight: 5
-    addedWeight: 1
+    baseWeight: 10
+    addedWeight: 2
+  - obstacle: {fileID: 11400000, guid: b38ada5807e566a4e85ee9bea3eb8fe3, type: 2}
+    baseWeight: 0
+    addedWeight: 3

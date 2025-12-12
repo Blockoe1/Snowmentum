@@ -204,10 +204,10 @@ namespace Snowmentum.Size
         }
 
         #region Debug
-        [ContextMenu("Half Size")]
-        public void HelfSize()
+        [ContextMenu("Double Size")]
+        public void DoubleSize()
         {
-            TargetValue_Local -= 0.5f;
+            TargetValue_Local *= 2f;
         }
         #endregion
     }
