@@ -639,7 +639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &230474730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7879,7 +7879,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -20, y: -581}
-  m_SizeDelta: {x: 1251.5, y: 379.8}
+  m_SizeDelta: {x: 1200, y: 379.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1756793588
 MonoBehaviour:
@@ -7902,7 +7902,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: STORMWAVE AUDIO.  VIEXGAMER.  JURIJ.  SWISH SWOOSH.  YODGUARD.  ALICE SOUNDZ. 
-    KRZYSZTOF SZYMANSKI
+    KRZYSZTOF SZYMANSKI.  FREESOUND COMMUNITY.  FLORAPHONIC.  DRAGON STUDIO.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5dde9703f44caf144897045d33ccb693, type: 2}
   m_sharedMaterial: {fileID: -8296649811938863094, guid: 5dde9703f44caf144897045d33ccb693, type: 2}
@@ -8555,9 +8555,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
-    width: 1
-    height: 1
+    y: 0.055555556
+    width: 0.33333334
+    height: 0.3333333
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
