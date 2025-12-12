@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+      objectReference: {fileID: 21300000, guid: 0939680332fe72843a1121af146ffa52, type: 3}
     - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_DrawMode
       value: 2
@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+      objectReference: {fileID: 21300000, guid: 0939680332fe72843a1121af146ffa52, type: 3}
     - target: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_DrawMode
       value: 2

@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 1590732877
   m_SortingLayer: -1
   m_SortingOrder: -11
-  m_Sprite: {fileID: 21300000, guid: d7880120bf3ceaf439cdd7051246ff36, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4b2c359b5230654fbf743a68767ea74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,6 +98,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f4b2c359b5230654fbf743a68767ea74, type: 3}
+    - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f4b2c359b5230654fbf743a68767ea74, type: 3}
+    - target: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2011204882391688640, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: speedScale
       value: 0.5
