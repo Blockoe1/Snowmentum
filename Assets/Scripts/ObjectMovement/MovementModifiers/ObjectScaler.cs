@@ -25,6 +25,8 @@ namespace Snowmentum.Size
         [SerializeField, Tooltip("When set to true, the object will scale it's position based on it's starting size" +
     " when it spawns.  This results in obstacles spawning at varied locations based on their size.")]
         private bool scaleOnSpawn;
+        [SerializeField] private bool limitEnvironmentSize;
+        [SerializeField] private float maxEnvSize;
 
         private float oldSize = 1;
 
@@ -53,7 +55,7 @@ namespace Snowmentum.Size
         private void OnEnable()
         {
             // Added this in for the background decorations.  If obstacles break, this is the first place to look.
-            oldSize = objectSize / EnvironmentSize.Value;
+            oldSize = objectSize / GetEnvironmentSize();
         }
 
         /// <summary>
@@ -63,6 +65,13 @@ namespace Snowmentum.Size
         //{
         //    ScaleObstacle(obstacleSize);
         //}
+
+        
+        private float GetEnvironmentSize()
+        {
+            // Clamp the environment size so that some objects can't scale beyond a certain range.
+            return limitEnvironmentSize ? Mathf.Min(maxEnvSize, EnvironmentSize.Value) : EnvironmentSize.Value;
+        }
 
         /// <summary>
         /// Continually update the size of our obstacle based on the size of the snowball.
@@ -95,7 +104,8 @@ namespace Snowmentum.Size
             // Dont allow any scale updating if the snowball has a 0 or negative size.
             if(EnvironmentSize.Value <= 0) { return targetPos; }
 
-            float sizeRatio = objectSize / EnvironmentSize.Value;
+
+            float sizeRatio = objectSize / GetEnvironmentSize();
             // Save the size ratio of this iteration so that changes in size can be tracked.
             if (scalePerspectiveX || scalePerspectiveY)
             {
@@ -123,7 +133,7 @@ namespace Snowmentum.Size
             // Dont allow any scale updating if the snowball has a 0 or negative size.
             if (EnvironmentSize.Value <= 0) { return; }
 
-            float sizeRatio = objectSize / EnvironmentSize.Value;
+            float sizeRatio = objectSize / GetEnvironmentSize();
             // Scales the object based on the ratio of the obstacle and snowball sizes.
             ScaleObject(transform, sizeRatio);
             // Store the size ratio used this update so that we can reference it next update.

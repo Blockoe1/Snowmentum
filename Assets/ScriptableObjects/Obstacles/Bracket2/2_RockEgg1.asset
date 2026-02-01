@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
+  m_Name: 2_RockEgg1
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
+  obstacleSize: 2
+  requiredBracketTime: 0
+  baseBracket: 2
+  baseScore: 3
+  destroySound: Rock Destroyed
+  tag: Untagged
+  obstacleSprite: {fileID: -8726904330242532414, guid: 88a24e1864c0db342b49c79a3d663f2a, type: 3}
+  orderInLayer: 0
+  showColors: 1
+  isAnimated: 0
+  fps: 5
+  animationFrames: []
+  hasCollision: 1
+  capsuleDirection: 1
+  offset: {x: -0.04, y: -0.07}
+  size: {x: 0.7, y: 0.35}
+  particleMaterial: {fileID: 11400000, guid: 52f28cffa8cd5724199949cc35b4c62e, type: 2}
+  particleNumber: 15
+  emissionRadius: 0.25
+  innerRadius: 0.32
+  outerRadius: 2
+  baseSize: 2

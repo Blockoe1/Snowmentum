@@ -14,6 +14,10 @@ namespace Snowmentum
 {
     public class SpriteTiler : MonoBehaviour
     {
+        #region CONSTS
+        // Prevents the 9-slice error by stopping size updates at sizes larger than 32.
+        private const int CUTOFF_SIZE = 32;
+        #endregion
         [SerializeField] private bool scaleX;
         [SerializeField] private bool scaleY;
         [SerializeField, Tooltip("The base bracket that this background should be scaled based on.")] 
@@ -89,6 +93,8 @@ namespace Snowmentum
             // The width and height of this sprite renderer should be set to the min size of the bracket.
             float minSize = SizeBracket.GetMinSize(bracket - (baseBracket - 1));
 
+            // Prevent the "Cannot generate 9 slice" error by not tiling sprites beyond a certain environment size.
+            if (minSize >= CUTOFF_SIZE) { return; }
             // Update the size of the sprite renderer.
             Vector2 size = rend.size;
             if (scaleX)

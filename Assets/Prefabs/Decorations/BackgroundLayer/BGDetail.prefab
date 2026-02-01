@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+      objectReference: {fileID: 21300000, guid: 0939680332fe72843a1121af146ffa52, type: 3}
     - target: {fileID: 668958753603900405, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_DrawMode
       value: 2
@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7a968931b98f2aa4f98df5ca2c32ca3a, type: 3}
+      objectReference: {fileID: 21300000, guid: 0939680332fe72843a1121af146ffa52, type: 3}
     - target: {fileID: 1418189516763149969, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
       propertyPath: m_DrawMode
       value: 2
@@ -323,6 +323,8 @@ MonoBehaviour:
   scalePerspectiveX: 1
   scalePerspectiveY: 1
   scaleOnSpawn: 0
+  limitEnvironmentSize: 1
+  maxEnvSize: 16
 --- !u!1 &3767570842865473107 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8547768223595833983, guid: 2802c411ec52f7b428288568caa7a374, type: 3}
@@ -404,6 +406,8 @@ MonoBehaviour:
   scalePerspectiveX: 1
   scalePerspectiveY: 1
   scaleOnSpawn: 0
+  limitEnvironmentSize: 1
+  maxEnvSize: 16
 --- !u!1 &4358606327849666867 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9127174723714643231, guid: 2802c411ec52f7b428288568caa7a374, type: 3}

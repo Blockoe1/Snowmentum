@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
+  m_Name: 3_TentEgg
+  m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
+  obstacleSize: 6.9
+  requiredBracketTime: 5
+  baseBracket: 3
+  baseScore: 10
+  destroySound: Obstacle Destruction
+  tag: Untagged
+  obstacleSprite: {fileID: 21300000, guid: cea89684521874d408533ee412349c75, type: 3}
+  orderInLayer: 0
+  showColors: 1
+  isAnimated: 0
+  fps: 5
+  animationFrames: []
+  hasCollision: 1
+  capsuleDirection: 1
+  offset: {x: -0.015, y: -0.18}
+  size: {x: 0.9, y: 0.5}
+  particleMaterial: {fileID: 11400000, guid: 5617c31cf64a3284980b0b9acfdb7f2f, type: 2}
+  particleNumber: 30
+  emissionRadius: 0.25
+  innerRadius: 0.35
+  outerRadius: 2
+  baseSize: 4

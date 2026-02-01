@@ -14,6 +14,9 @@ namespace Snowmentum
     [CreateAssetMenu(fileName = "InfiniteScaleObstacle", menuName = "ScriptableObjects/Infinite Scale Obstacle")]
     public class InfiniteScaleObstacle : Obstacle
     {
+        [SerializeField, Range(0f, 1f)] private float minRandRatio;
+        [SerializeField, Range(0f, 1f)] private float maxRandRatio;
+
         /// <summary>
         /// When this SO is enabled/Disabled, subscribe/Unsubscribe to the size bracket's OnBracketChanged event
         /// So we can randomize this object's size based on the new bracket.
@@ -40,7 +43,8 @@ namespace Snowmentum
         /// <param name="bracket"></param>
         private void RandomizeSize(int bracket, int oldBracket)
         {
-            obstacleSize = Random.Range(SizeBracket.GetMinSize(bracket), SizeBracket.GetMaxSize(bracket));
+            obstacleSize = SizeBracket.GetMinSize(bracket) + Random.Range(SizeBracket.GetMaxSize(bracket) * 
+                minRandRatio, SizeBracket.GetMaxSize(bracket) * maxRandRatio);
             //Debug.Log(obstacleSize);
 
             // Set obstacleSize to base size directly so that the obstacle scales up despite it's sprite.

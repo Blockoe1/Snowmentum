@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3021169dfd2bd54b8fc15c6385ead30, type: 3}
   m_Name: 4_Tent_F3
   m_EditorClassIdentifier: Assembly-CSharp::Snowmentum.Obstacle
-  obstacleSize: 5.7
+  obstacleSize: 6.5
   requiredBracketTime: 5
   baseBracket: 4
   baseScore: 10
