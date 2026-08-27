@@ -1,0 +1,1 @@
+Place the InactivityTracker prefab in the FIRST scene of your project. That's it! 
